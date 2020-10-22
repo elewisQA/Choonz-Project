@@ -20,7 +20,7 @@ These are TBD for now, but will be included here within a `_documentation` folde
 
 ## ERD
 
-TBD
+![Entity Relationship Diagram](documentation/ERD.png)
 
 ## UML
 
