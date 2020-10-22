@@ -41,8 +41,11 @@ TBD
 
 ### Development Team
 
-- Team names and roles here, e.g. **Scrum Master**
+- Cristina Lopez Canoyra
+- Nikolett Bajna
+- Liam Harrold
+- Avi Hart
+- Elizabeth Lewis
 
 ## Acknowledgements
 
-- Probably not needed currently, but teams may wish to credit those outside the academy/stackoverflow users/reddit posts/whatever else they've used here
