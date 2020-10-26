@@ -54,9 +54,6 @@ public class TESTArtist {
 				newTestAlbums);	
 	
 		// test assertion
-		assertThat(newTestArtist.getId() == newId);
-		assertThat(newTestArtist.getName().equals(newName));
-		assertThat(newTestArtist.getAlbums() == newTestAlbums);
 		assertThat(newTestArtist instanceof Artist);
 	}
 	
