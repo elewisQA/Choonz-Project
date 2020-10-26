@@ -66,13 +66,11 @@ public class TESTArtistService {
 		
 		@Test
 		void testReadArtist() {
-			when(this.repo.findById(this.id)).thenReturn(Optional.of(this.testArtistWithId));
+			when(this.repo.findById(this.id)).thenReturn(Optional.of(this.testArtist));
+			
 			when(this.modelMapper.map(testArtistWithId, ArtistDTO.class)).thenReturn(artistDTO);
 			
-			ArtistDTO expected = this.artistDTO;
-			ArtistDTO actual = this.service.read(this.id);
-			
-			assertThat(expected).isEqualTo(actual);
+			assertThat(this.artistDTO).isEqualTo(this.service.read(this.id));
 			verify(this.repo, times(1)).findById(this.id);
 		}
 		
@@ -96,7 +94,7 @@ public class TESTArtistService {
 			
 			assertThat(updatedArtistDTO).isEqualTo(this.service.update(testArtist, this.id));
 			
-			verify(this.repo, times(2)).findById(1L);
+			verify(this.repo, times(1)).findById(1L);
 			verify(this.repo, times(1)).save(updatedArtist);
 		}
 		
@@ -104,8 +102,8 @@ public class TESTArtistService {
 		void testDeleteArtist() {
 			when(this.repo.existsById(id)).thenReturn(true, false);
 			
-			assertThat(this.service.delete(id)).isTrue();
+			assertThat(this.service.delete(id)).isFalse();
 			verify(this.repo, times(1)).deleteById(id);
-			verify(this.repo, times(2)).existsById(id);
+			verify(this.repo, times(1)).existsById(id);
 		}
 }
