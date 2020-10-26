@@ -2,6 +2,14 @@ body {
     padding-top: 70px;
 }
 
+.card-body a{
+  text-decoration: none;
+}
+
+.card-body a:hover{
+  letter-spacing: 1px;
+}
+
 /* ditch the ugle blue outline */
 .navbar-toggler:focus,
 .navbar-toggler:active {
@@ -15,7 +23,6 @@ body {
 
 .navbar-toggler:not(.collapsed) .navbar-toggler-icon {
     display: inline;
-
 }
 
 #Search {
