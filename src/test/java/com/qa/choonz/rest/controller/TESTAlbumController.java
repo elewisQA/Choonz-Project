@@ -42,14 +42,14 @@ public class TESTAlbumController {
 				this.testService);
 		// Initialize album & album-dto
 		this.tracks = new ArrayList<Track>();
-		Album testAlbum = new Album(
+		this.testAlbum = new Album(
 				this.id, 
 				this.name, 
 				this.tracks, 
 				null, 
 				null, 
 				this.cover);
-		AlbumDTO testDTO = new AlbumDTO(
+		this.testDTO = new AlbumDTO(
 				this.id, 
 				this.name, 
 				this.tracks, 
