@@ -65,6 +65,12 @@
 			<artifactId>selenium-java</artifactId>
 		</dependency>
 		<dependency>
+		    <groupId>org.junit.jupiter</groupId>
+		    <artifactId>junit-jupiter-api</artifactId>
+		    <version>5.6.2</version>
+		    <scope>test</scope>
+		</dependency>		
+		<dependency>
 			<groupId>io.springfox</groupId>
 			<artifactId>springfox-swagger-ui</artifactId>
 			<version>2.9.2</version>
