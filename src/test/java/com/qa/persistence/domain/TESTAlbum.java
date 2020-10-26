@@ -22,6 +22,7 @@ public class TESTAlbum {
 	final String cover = "not-a-cover";
 	List<Track> tracks;
 
+	//--[ Test Setup ]--
 	@BeforeEach
 	void init() {
 		this.tracks = new ArrayList<Track>();
