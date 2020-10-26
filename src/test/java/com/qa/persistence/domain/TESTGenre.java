@@ -33,4 +33,32 @@ public class TESTGenre {
 				this.description, 
 				this.albums);
 	}
+	
+	//--[ Test Methods ]--
+	@Test
+	void testZeroArgsConstructor() {
+		// test setup
+		Genre newGenre = new Genre();
+		
+		// test assertion
+		assertThat(newGenre instanceof Genre);
+	}
+	
+	@Test
+	void testAllArgsConstructor() {
+		// test setup
+		Genre newGenre = new Genre(
+				this.id, 
+				this.name, 
+				this.description, 
+				this.albums);
+		
+		// test assertion
+		assertThat(newGenre instanceof Genre);
+	}
+	
+	@Test
+	void testGetId() {
+		//asserThat(this.testGenre.getId() == this.id);
+	}
 }
