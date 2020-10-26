@@ -2,12 +2,12 @@ package com.qa.choonz.rest.dto;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -115,5 +115,10 @@ public class TESTPlaylistDTO {
 		
 		assertThat(!this.testPlaylist.equals(emptyPlaylist));
 		assertThat(this.testPlaylist.equals(fullPlaylist));
+	}
+	
+	@AfterEach
+	void teardown() {
+		this.testPlaylist = null;
 	}
 }
