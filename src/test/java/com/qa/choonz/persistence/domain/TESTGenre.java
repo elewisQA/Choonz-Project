@@ -59,6 +59,54 @@ public class TESTGenre {
 	
 	@Test
 	void testGetId() {
-		//asserThat(this.testGenre.getId() == this.id);
+		assertThat(this.testGenre.getId() == this.id);
+	}
+	
+	@Test
+	void testSetId() {
+		Long newId = 2l;
+		this.testGenre.setId(newId);
+		
+		assertThat(this.testGenre.getId() == newId);
+	}
+	
+	@Test
+	void testGetName() {
+		assertThat(this.testGenre.getName() == this.name);
+	}
+	
+	@Test
+	void testSetName() {
+		String newName = "R&B";
+		this.testGenre.setName(newName);
+		
+		assertThat(this.testGenre.getName() == newName);
+	}
+	
+	@Test
+	void testGetDescription() {
+		assertThat(this.testGenre.getDescription() == this.description);
+	}
+	
+	@Test
+	void testSetDescription() {
+		String newDescription = "Deep music";
+		this.testGenre.setDescription(newDescription);
+		
+		assertThat(this.testGenre.getDescription() == newDescription);
+	}
+	
+	@Test
+	void testGetAlbums() {
+		assertThat(this.testGenre.getAlbums() == this.albums);
+	}
+	
+	@Test
+	void testSetAlbums() {
+		Album newAlbum = new Album();
+		List<Album> newAlbums = new ArrayList<Album>();
+		newAlbums.add(newAlbum);
+		
+		assertThat(this.testGenre.getAlbums() == newAlbums);
 	}
 }
