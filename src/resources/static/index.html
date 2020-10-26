@@ -10,17 +10,16 @@
 </head>
 
 <body>
-<!-- Navbar -->
-
-<nav class="navbar fixed-top navbar-expand-lg bg-light navbar-light">
-    <a class="navbar-brand" href="./">
-    <img class="logo" src="../img/Choonz.jpg" width="auto" ml-auto height="50"></a>
+<!-- Navbar with search -->
+<nav class="navbar fixed-top navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
+    <a class="navbar-brand" href="index.html">
+        <img class="logo" src="../img/Choonz.png" width="auto" ml-auto height="50">
+    </a>
     <button class="navbar-toggler collapsed border-0" type="button" data-toggle="collapse" data-target="#collapsingNavbar">
-        <span class="navbar-toggler-icon"></span>
-        <div class="close-icon py-1">✖</div>
+        <div class="navbar-toggler-icon"><span class="closeX" style="display: none;">✖</span></div>
     </button>
     <div class="collapse navbar-collapse" id="collapsingNavbar">
-        <ul class="nav navbar-nav">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
             <li class="nav-item">
                 <a class="nav-link" href="/tracks">Featured Tracks</a>
             </li>
@@ -28,27 +27,30 @@
                 <a class="nav-link" href="/artists">Artists</a>
             </li>
             <li class="nav-item">
+                <a class="nav-link" href="/albums">Albums</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/genres">Genres</a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" href="/playlists">Top Playlists</a>
             </li>
         </ul>
+        <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
     </div>
 </nav>
-<!-- /Navbar -->
+<!-- /Navbar with search -->
 
-<!-- Search -->
+<!-- Without login -->
 
-    <div class="container">
-        <div class="row">
-            <div class="col-lg mt-5">
-                <form class="form-inline d-flex justify-content-center md-form form-sm">
-                    <input class="form-control form-control-sm mr-1 w-75" type="text" placeholder="Search for music..." aria-label="Search">
-                    <button type="submit" id="Search"> Search </button>
-                </form>
-            </div>
-        </div>
-    </div>
+<!-- /Without login -->
 
-<!-- /Search -->
+<!-- With login -->
+
+<!-- /With login -->
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
