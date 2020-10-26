@@ -92,7 +92,7 @@ public class TESTPlaylistDTO {
 	@Test
 	public void toStringTests() {		
 		assertThat(this.testPlaylist.toString()
-				.equals("Playlist [id=1, name=Choonz, description=Bangers, artwork=Picture, tracks=null]"));
+				.equals("PlaylistDTO [id=1, name=Choonz, description=Bangers, artwork=Picture, tracks=null]"));
 	}
 	
 	@Test

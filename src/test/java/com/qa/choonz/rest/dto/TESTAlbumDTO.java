@@ -109,7 +109,7 @@ public class TESTAlbumDTO {
 	@Test
 	void testToString() {
 		assertThat(this.testAlbumDTO.toString()
-				.equals("Album [id=1, name=Dark Side of the Moon, "
+				.equals("AlbumDTO [id=1, name=Dark Side of the Moon, "
 						+ "tracks=[], artist=null, genre=null, "
 						+ "cover=not-a-cover]"));
 	}

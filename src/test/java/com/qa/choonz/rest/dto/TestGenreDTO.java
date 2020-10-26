@@ -90,7 +90,7 @@ public class TestGenreDTO {
 	@Test
 	void testToString() {
 		assertThat(this.testGenre.toString()
-				.equals("Genre [id=1, name=Pop, description=Pop music, albums=null]"));
+				.equals("GenreDTO [id=1, name=Pop, description=Pop music, albums=null]"));
 	}
 	
 	@Test
