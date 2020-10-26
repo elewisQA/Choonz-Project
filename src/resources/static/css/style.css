@@ -32,3 +32,13 @@ body {
   color: white;
 
 }
+
+/* card style */
+.row {
+  margin: 2%;
+}
+
+.card {
+  height: 333px;
+  width: 235px;
+}
