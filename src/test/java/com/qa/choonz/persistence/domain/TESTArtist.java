@@ -127,7 +127,7 @@ public class TESTArtist {
 	@Test
 	void testToString() {
 		assertThat(this.testArtist.toString()
-				.equals("ArtistDTO [id=1, name=Pink Floyd, albums=[Album "
+				.equals("Artist [id=1, name=Pink Floyd, albums=[Album "
 						+ "[id=0, name=null, tracks=null, artist=null, "
 						+ "genre=null, cover=null]]]"));
 	}
