@@ -1,9 +1,8 @@
 package com.qa.persistence.domain;
 
+//--[ Imports ]--
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatIllegalStateException;
-
-//--[ Imports ]--
 
 import java.util.ArrayList;
 import java.util.List;
