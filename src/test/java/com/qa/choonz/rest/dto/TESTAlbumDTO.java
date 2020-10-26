@@ -11,7 +11,6 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import com.qa.choonz.persistence.domain.Album;
 import com.qa.choonz.persistence.domain.Track;
 
 public class TESTAlbumDTO {
