@@ -26,9 +26,7 @@ public class TESTArtist {
 	@BeforeEach
 	void init() {
 		// Initialize testing vars
-		Album testAlbum = new Album();
 		this.testAlbums = new ArrayList<Album>();
-		this.testAlbums.add(testAlbum);
 		this.testArtist = new Artist(
 				this.id, 
 				this.name, 
@@ -50,9 +48,7 @@ public class TESTArtist {
 		// test setup
 		Long newId = this.id + 1;
 		String newName = "R.E.M";
-		Album newTestAlbum = new Album();
 		List<Album> newTestAlbums = new ArrayList<Album>();
-		newTestAlbums.add(newTestAlbum);
 		Artist newTestArtist = new Artist(
 				newId, 
 				newName,
