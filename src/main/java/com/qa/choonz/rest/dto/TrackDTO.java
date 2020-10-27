@@ -57,9 +57,13 @@ public class TrackDTO {
 	}
 
 	public void setAlbum(Album album) {
-		this.albumName = album.getName();
-		this.albumId = album.getId();
-		// TODO mirror playlist-setters conditioning
+		if (album != null) {
+			this.albumName = album.getName();
+			this.albumId = album.getId();
+		} else {
+			this.albumName = null;
+			this.albumId = null;
+		}
 	}
 
 	// TODO add setters for name / id

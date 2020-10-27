@@ -62,10 +62,12 @@ public class AlbumDTO {
     }
 
     public void setTracks(List<Track> tracks) {
-        this.tracks = new HashMap<Long, String>();
-        for (Track t: tracks) {
-        	this.tracks.put(t.getId(), t.getName());
-        }
+    	this.tracks = new HashMap<Long, String>();
+    	if (tracks != null) {
+	        for (Track t: tracks) {
+	        	this.tracks.put(t.getId(), t.getName());
+	        }
+    	}
     }
 
     public String getArtistName() {
@@ -77,8 +79,13 @@ public class AlbumDTO {
     }
 
     public void setArtist(Artist artist) {
-    	this.artistName = artist.getName();
-        this.artistId = artist.getId();
+    	if (artist != null) {
+	    	this.artistName = artist.getName();
+	        this.artistId = artist.getId();
+    	} else {
+    		this.artistName = null;
+    		this.artistId = null;
+    	}
     }
 
     public String getGenreName() {
@@ -90,8 +97,13 @@ public class AlbumDTO {
     }
 
     public void setGenre(Genre genre) {
-        this.genreName = genre.getName();
-        this.genreId = genre.getId();
+    	if (genre != null) {
+    		this.genreName = genre.getName();
+            this.genreId = genre.getId();
+    	} else {
+    		this.genreName = null;
+    		this.genreId = null;
+    	}
     }
 
     public String getCover() {
