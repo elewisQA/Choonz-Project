@@ -5,7 +5,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -80,13 +82,15 @@ public class TESTPlaylistDTO {
 	}
 	
 	@Test
-	void getSetAlbumsTest() {
+	void getSetTracksTest() {
 		Track newTrack = new Track();
 		List<Track> newTracks = new ArrayList<Track>();
 		newTracks.add(newTrack);
 		this.testPlaylist.setTracks(newTracks);
-	
-		assertEquals(newTracks,this.testPlaylist.getTracks());
+		Map<Long,String> track = new HashMap<Long,String>();
+		track.put(newTrack.getId(), newTrack.getName());
+		
+		assertEquals(track,this.testPlaylist.getTracks());
 	}
 	// TODO Album getting / setting not yet implemented in PlaylistDTO
 	
