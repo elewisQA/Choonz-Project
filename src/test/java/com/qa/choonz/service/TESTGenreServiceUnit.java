@@ -17,9 +17,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 
 import com.qa.choonz.persistence.domain.Album;
-import com.qa.choonz.persistence.domain.Artist;
 import com.qa.choonz.persistence.domain.Genre;
-import com.qa.choonz.persistence.repository.AlbumRepository;
 import com.qa.choonz.persistence.repository.GenreRepository;
 import com.qa.choonz.rest.dto.GenreDTO;
 
@@ -38,7 +36,6 @@ public class TESTGenreServiceUnit {
 	private GenreDTO genreDTO;
 	private Genre testGenre;
 	private Genre testGenreWithId;
-	private Album testAlbum;
 	private List<Album> testAlbums;
 	private List<Genre> testGenres;
 	

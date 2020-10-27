@@ -21,8 +21,6 @@ import com.qa.choonz.persistence.domain.Artist;
 import com.qa.choonz.persistence.repository.ArtistRepository;
 import com.qa.choonz.rest.dto.ArtistDTO;
 
-import net.bytebuddy.asm.Advice.This;
-
 @SpringBootTest
 public class TESTArtistServiceUnit {
 
@@ -37,11 +35,11 @@ public class TESTArtistServiceUnit {
 	//--[ Test Variables ]--
 		
 		private ArtistDTO artistDTO;
-		Artist testArtist;
-		Artist testArtistWithId;
+		private Artist testArtist;
+		private Artist testArtistWithId;
 		final Long id = 1l;
 		final String name = "Pink Floyd";
-		List<Album> testAlbums;
+		private List<Album> testAlbums;
 		private List<Artist> artistList;
 
 		//--[ Test Setup ]--
@@ -49,10 +47,12 @@ public class TESTArtistServiceUnit {
 		void init() {
 			// Initialize testing vars
 			this.testAlbums = new ArrayList<Album>();
+			this.artistList = new ArrayList<>();
 			this.testArtist = new Artist(
 					this.id, 
 					this.name, 
 					this.testAlbums);
+			artistList.add(testArtist);
 		}
 		
 		@Test
