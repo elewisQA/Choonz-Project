@@ -12,7 +12,7 @@ a{
 }
 
 .card-body a:hover{
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
 }
 
 /* ditch the ugle blue outline */
@@ -67,11 +67,6 @@ a{
 /* card style */
 .row {
   margin: 2%;
-}
-
-.card {
-  height: 333px;
-  width: 235px;
 }
 
 /*login or register*/
@@ -166,3 +161,69 @@ a{
     display:inline-block;
     padding:10px 0;
 }
+
+#albums div.card {
+  height: 333px;
+  width: 235px;
+  transition: width 0.5s, height 0.5s;
+}
+
+#albums div.card:hover {
+  width: 245px;
+  height: 343px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#artists div.card {
+  height: 370px;
+  width: 235px;
+  transition: width 0.5s, height 0.5s;
+}
+
+#artists div.card:hover {
+  width: 245px;
+  height: 380px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#genres div.card {
+  height: 200px;
+  width: 300px;
+  transition: width 0.5s, height 0.5s;
+  background: rgba(105, 113, 114, 0.473);
+}
+
+#genres div.card:hover {
+  width: 310px;
+  height: 208px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#genres img {
+  object-fit: cover;
+  opacity: 0.5;
+}
+
+#genres h1 {
+  transform: translate(0, 100%);
+  color: whitesmoke;
+}
+
+#genres a {
+  text-decoration: none;
+}
+
+#genres a:hover {
+  letter-spacing: 2px;
+}
+
+#genres i {
+  font-size: 450%;
+  color: whitesmoke;
+  transform: translate(0, 80%);
+}
+
+#genres i:hover {
+  font-size: 470%;
+}
+
