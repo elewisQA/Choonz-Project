@@ -54,6 +54,7 @@ public class TESTPlaylistServiceUnit {
     	this.tracks = new ArrayList<>();
     	this.testPlaylist = new Playlist(this.id,this.name,this.description
     			,this.artwork,this.tracks);
+    	this.playlistList.add(testPlaylist);
     	this.playlistDTO = this.mapToDTO(testPlaylist);
     }
     

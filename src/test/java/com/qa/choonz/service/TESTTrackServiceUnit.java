@@ -20,7 +20,6 @@ import com.qa.choonz.persistence.domain.Album;
 import com.qa.choonz.persistence.domain.Playlist;
 import com.qa.choonz.persistence.domain.Track;
 import com.qa.choonz.persistence.repository.TrackRepository;
-import com.qa.choonz.rest.dto.PlaylistDTO;
 import com.qa.choonz.rest.dto.TrackDTO;
 
 @SpringBootTest
@@ -56,6 +55,7 @@ public class TESTTrackServiceUnit {
     	this.trackList = new ArrayList<>();
     	this.testTrack = new Track(this.id,this.name,this.album,this.playlist,this.duration
     			,this.lyrics);
+    	this.trackList.add(testTrack);
     	this.trackDTO = this.mapToDTO(testTrack);
     }
     
