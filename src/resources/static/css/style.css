@@ -7,8 +7,13 @@ body {
     overflow-y: hidden;
 }
 
+.navbar{
+  background-color: lightblue;
+}
+
 .card-body a{
   text-decoration: none;
+  color: #000000;
 }
 
 .card-body a:hover{
@@ -163,14 +168,14 @@ body {
 }
 
 #albums div.card {
-  height: 333px;
+  height: 345px;
   width: 235px;
   transition: width 0.5s, height 0.5s;
 }
 
 #albums div.card:hover {
   width: 245px;
-  height: 343px;
+  height: 355px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
