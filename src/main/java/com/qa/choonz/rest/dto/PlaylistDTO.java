@@ -27,8 +27,10 @@ public class PlaylistDTO {
         this.description = description;
         this.artwork = artwork;
         this.tracks = new HashMap<Long, String>();
-        for (Track t: tracks) {
-        	this.tracks.put(t.getId(), t.getName());
+        if (tracks != null) {
+	        for (Track t: tracks) {
+	        	this.tracks.put(t.getId(), t.getName());
+	        }
         }
     }
 
@@ -100,8 +102,10 @@ public class PlaylistDTO {
      */
     public void setTracks(List<Track> tracks) {
         this.tracks = new HashMap<Long, String>();
-        for (Track t: tracks) {
-        	this.tracks.put(t.getId(), t.getName());
+        if (tracks != null) {
+	        for (Track t: tracks) {
+	        	this.tracks.put(t.getId(), t.getName());
+	        }
         }
     }
 

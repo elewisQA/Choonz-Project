@@ -4,7 +4,9 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -71,7 +73,9 @@ public class TESTArtistDTO {
 		newAlbums.add(newAlbum);
 		this.testArtist.setAlbums(newAlbums);
 		
-		assertEquals(newAlbums,this.testArtist.getAlbums());
+		Map<Long, String> newAlbumsMap = new HashMap<Long, String>();
+		newAlbumsMap.put(newAlbum.getId(), newAlbum.getName());
+		assertEquals(newAlbumsMap,this.testArtist.getAlbums());
 	}
 	
 	@Test

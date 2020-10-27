@@ -5,7 +5,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -74,21 +76,24 @@ public class TESTAlbumDTO {
 		List<Track> newTracks = new ArrayList<Track>();
 		this.testAlbumDTO.setTracks(newTracks);
 		
-		assertEquals(newTracks,this.testAlbumDTO.getTracks());
+		Map<Long, String> newTracksMap = new HashMap<Long, String>();
+		assertEquals(newTracksMap,this.testAlbumDTO.getTracks());
 	}
 	
 	@Test
 	public void getSetArtistTest() {
 		this.testAlbumDTO.setArtist(null);
 		
-		assertNull(this.testAlbumDTO.getArtist());
+		assertNull(this.testAlbumDTO.getArtistName());
+		assertNull(this.testAlbumDTO.getArtistId());
 	}
 	
 	@Test
 	public void getSetGenreTest() {
 		this.testAlbumDTO.setGenre(null);
 		
-		assertNull(this.testAlbumDTO.getGenre());
+		assertNull(this.testAlbumDTO.getGenreName());
+		assertNull(this.testAlbumDTO.getGenreName());
 	}
 	
 	@Test

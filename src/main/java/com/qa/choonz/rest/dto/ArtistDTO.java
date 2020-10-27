@@ -24,8 +24,10 @@ public class ArtistDTO {
         this.id = id;
         this.name = name;
         this.albums = new HashMap<Long, String>();
-        for (Album a: albums) {
-        	this.albums.put(a.getId(), a.getName());
+        if (albums != null) {
+	        for (Album a: albums) {
+	        	this.albums.put(a.getId(), a.getName());
+	        }
         }
     }
 
