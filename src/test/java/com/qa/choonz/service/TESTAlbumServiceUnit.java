@@ -100,7 +100,7 @@ public class TESTAlbumServiceUnit {
 			
 			AlbumDTO albumDTO = new AlbumDTO(this.id, this.name, this.testTracks, this.testArtist, this.testGenre, this.cover);
 			
-			Album updatedAlbum = new Album(this.id, albumDTO.getName(), albumDTO.getTracks(), albumDTO.getArtist(), albumDTO.getGenre(), albumDTO.getCover());
+			Album updatedAlbum = new Album(this.id, albumDTO.getName(), this.testTracks, this.testArtist, this.testGenre, albumDTO.getCover());
 			
 			AlbumDTO updatedAlbumDTO = new AlbumDTO(this.id, updatedAlbum.getName(), updatedAlbum.getTracks(), updatedAlbum.getArtist(), updatedAlbum.getGenre(), updatedAlbum.getCover());
 			
