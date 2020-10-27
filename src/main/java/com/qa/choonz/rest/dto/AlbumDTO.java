@@ -1,6 +1,9 @@
 package com.qa.choonz.rest.dto;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 
 import com.qa.choonz.persistence.domain.Artist;
@@ -11,9 +14,11 @@ public class AlbumDTO {
 
     private long id;
     private String name;
-    private List<Track> tracks;
-    private Artist artist;
-    private Genre genre;
+    private Map<Long, String> tracks;
+    private String artistName;
+    private Long artistId;
+    private String genreName;
+    private Long genreId;
     private String cover;
 
     public AlbumDTO() {
@@ -25,9 +30,14 @@ public class AlbumDTO {
         super();
         this.id = id;
         this.name = name;
-        this.tracks = tracks;
-        this.artist = artist;
-        this.genre = genre;
+        this.tracks = new HashMap<Long, String>();
+        for (Track t: tracks) {
+        	this.tracks.put(t.getId(), t.getName());
+        }
+        this.artistName = artist.getName();
+        this.artistId = artist.getId();
+        this.genreName = genre.getName();
+        this.genreId = genre.getId();
         this.cover = cover;
     }
 
@@ -47,28 +57,53 @@ public class AlbumDTO {
         this.name = name;
     }
 
-    public List<Track> getTracks() {
+    public Map<Long, String> getTracks() {
         return tracks;
     }
 
     public void setTracks(List<Track> tracks) {
-        this.tracks = tracks;
+    	this.tracks = new HashMap<Long, String>();
+    	if (tracks != null) {
+	        for (Track t: tracks) {
+	        	this.tracks.put(t.getId(), t.getName());
+	        }
+    	}
     }
 
-    public Artist getArtist() {
-        return artist;
+    public String getArtistName() {
+        return artistName;
+    }
+    
+    public Long getArtistId() {
+    	return artistId;
     }
 
     public void setArtist(Artist artist) {
-        this.artist = artist;
+    	if (artist != null) {
+	    	this.artistName = artist.getName();
+	        this.artistId = artist.getId();
+    	} else {
+    		this.artistName = null;
+    		this.artistId = null;
+    	}
     }
 
-    public Genre getGenre() {
-        return genre;
+    public String getGenreName() {
+        return genreName;
+    }
+    
+    public Long getGenreId() {
+    	return this.genreId;
     }
 
     public void setGenre(Genre genre) {
-        this.genre = genre;
+    	if (genre != null) {
+    		this.genreName = genre.getName();
+            this.genreId = genre.getId();
+    	} else {
+    		this.genreName = null;
+    		this.genreId = null;
+    	}
     }
 
     public String getCover() {
@@ -83,14 +118,15 @@ public class AlbumDTO {
     public String toString() {
         StringBuilder builder = new StringBuilder();
         builder.append("AlbumDTO [id=").append(id).append(", name=").append(name).append(", tracks=").append(tracks)
-                .append(", artist=").append(artist).append(", genre=").append(genre).append(", cover=").append(cover)
+                .append(", artist=").append(artistName).append(", genre=").append(genreName).append(", cover=").append(cover)
                 .append("]");
         return builder.toString();
+        // TODO add artistId, genreId
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(artist, cover, genre, id, name, tracks);
+        return Objects.hash(artistName, artistId, cover, genreName, genreId, id, name, tracks);
     }
 
     @Override
@@ -102,9 +138,10 @@ public class AlbumDTO {
             return false;
         }
         AlbumDTO other = (AlbumDTO) obj;
-        return Objects.equals(artist, other.artist) && Objects.equals(cover, other.cover)
-                && Objects.equals(genre, other.genre) && id == other.id && Objects.equals(name, other.name)
+        return Objects.equals(artistName, other.artistName) && Objects.equals(cover, other.cover)
+                && Objects.equals(genreName, other.genreName) && id == other.id && Objects.equals(name, other.name)
                 && Objects.equals(tracks, other.tracks);
+        // TODO add artistId, genreId
     }
 
 }

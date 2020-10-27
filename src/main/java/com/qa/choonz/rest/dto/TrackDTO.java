@@ -2,13 +2,16 @@ package com.qa.choonz.rest.dto;
 
 import com.qa.choonz.persistence.domain.Album;
 import com.qa.choonz.persistence.domain.Playlist;
+import java.util.Objects;
 
 public class TrackDTO {
 
     private long id;
     private String name;
-    private Album album;
-    private Playlist playlist;
+    private String albumName;
+    private Long albumId;
+    private String playlistName;
+    private Long playlistId;
     private int duration;
     private String lyrics;
 
@@ -21,8 +24,10 @@ public class TrackDTO {
     	super();
     	this.id = id;
     	this.name = name;
-    	this.album = album;
-    	this.playlist = playlist;
+    	this.albumName = album.getName();
+    	this.albumId = album.getId();
+    	this.playlistName = playlist.getName();
+    	this.playlistId = playlist.getId();
     	this.duration = duration;
     	this.lyrics = lyrics;
     }
@@ -43,20 +48,42 @@ public class TrackDTO {
 		this.name = name;
 	}
 
-	public Album getAlbum() {
-		return album;
+	public String getAlbumName() {
+		return this.albumName;
+	}
+	
+	public Long getAlbumId() {
+		return this.albumId;
 	}
 
 	public void setAlbum(Album album) {
-		this.album = album;
+		if (album != null) {
+			this.albumName = album.getName();
+			this.albumId = album.getId();
+		} else {
+			this.albumName = null;
+			this.albumId = null;
+		}
 	}
 
-	public Playlist getPlaylist() {
-		return playlist;
+	// TODO add setters for name / id
+	
+	public String getPlaylistName() {
+		return this.playlistName;
+	}
+	
+	public Long getPlaylistId() {
+		return this.playlistId;
 	}
 
 	public void setPlaylist(Playlist playlist) {
-		this.playlist = playlist;
+		if (playlist != null) {
+			this.playlistName = playlist.getName();
+			this.playlistId = playlist.getId();
+		} else {
+			this.playlistName = null;
+			this.playlistId = null;
+		}
 	}
 
 	public int getDuration() {
@@ -77,21 +104,14 @@ public class TrackDTO {
 
 	@Override
 	public String toString() {
-		return "TrackDTO [id=" + id + ", name=" + name + ", album=" + album + ", playlist=" + playlist + ", duration="
+		// TODO add in IDs
+		return "TrackDTO [id=" + id + ", name=" + name + ", album=" + albumName + ", playlist=" + playlistName + ", duration="
 				+ duration + ", lyrics=" + lyrics + "]";
 	}
 
 	@Override
 	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((album == null) ? 0 : album.hashCode());
-		result = prime * result + duration;
-		result = prime * result + (int) (id ^ (id >>> 32));
-		result = prime * result + ((lyrics == null) ? 0 : lyrics.hashCode());
-		result = prime * result + ((name == null) ? 0 : name.hashCode());
-		result = prime * result + ((playlist == null) ? 0 : playlist.hashCode());
-		return result;
+		return Objects.hash(albumName, albumId, duration, id, lyrics, name, playlistName, albumId);
 	}
 
 	@Override
@@ -103,10 +123,10 @@ public class TrackDTO {
 		if (getClass() != obj.getClass())
 			return false;
 		TrackDTO other = (TrackDTO) obj;
-		if (album == null) {
-			if (other.album != null)
+		if (albumName == null) {
+			if (other.albumName != null)
 				return false;
-		} else if (!album.equals(other.album))
+		} else if (!albumName.equals(other.albumName))
 			return false;
 		if (duration != other.duration)
 			return false;
@@ -122,10 +142,10 @@ public class TrackDTO {
 				return false;
 		} else if (!name.equals(other.name))
 			return false;
-		if (playlist == null) {
-			if (other.playlist != null)
+		if (playlistName == null) {
+			if (other.playlistName != null)
 				return false;
-		} else if (!playlist.equals(other.playlist))
+		} else if (!playlistName.equals(other.playlistName))
 			return false;
 		return true;
 	}
