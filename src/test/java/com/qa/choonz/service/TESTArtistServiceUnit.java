@@ -21,8 +21,10 @@ import com.qa.choonz.persistence.domain.Artist;
 import com.qa.choonz.persistence.repository.ArtistRepository;
 import com.qa.choonz.rest.dto.ArtistDTO;
 
+import net.bytebuddy.asm.Advice.This;
+
 @SpringBootTest
-public class TESTArtistService {
+public class TESTArtistServiceUnit {
 
 	@Autowired
 	private ArtistService service;
@@ -33,12 +35,14 @@ public class TESTArtistService {
 	@MockBean
 	private ModelMapper modelMapper;
 	//--[ Test Variables ]--
+		
 		private ArtistDTO artistDTO;
 		Artist testArtist;
 		Artist testArtistWithId;
 		final Long id = 1l;
 		final String name = "Pink Floyd";
 		List<Album> testAlbums;
+		private List<Artist> artistList;
 
 		//--[ Test Setup ]--
 		@BeforeEach
@@ -72,6 +76,16 @@ public class TESTArtistService {
 			
 			assertThat(this.artistDTO).isEqualTo(this.service.read(this.id));
 			verify(this.repo, times(1)).findById(this.id);
+		}
+		
+		@Test
+		void testReadAllArtists() {
+			when(this.repo.findAll()).thenReturn(this.artistList);
+			
+			when(this.modelMapper.map(this.testArtistWithId, ArtistDTO.class)).thenReturn(artistDTO);
+			
+			assertThat(this.service.read().isEmpty()).isFalse();
+			verify(this.repo, times(1)).findAll();
 		}
 		
 		@Test
