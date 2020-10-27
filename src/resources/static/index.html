@@ -3,52 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="/css/style.css" rel="stylesheet">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link rel="stylesheet" href="../static/css/style.css">
     <title>Choonz Music</title>
 </head>
 
 <body>
-<!-- Navbar -->
-
-<nav class="navbar fixed-top navbar-expand-lg bg-light navbar-light">
-    <a class="navbar-brand" href="./">
-    <img class="logo" src="../img/Choonz.jpg" width="auto" ml-auto height="50"></a>
+<!-- Navbar with search -->
+<nav class="navbar fixed-top navbar-expand-lg navbar-light" style="background-color: lightblue;">
+    <a class="navbar-brand" href="index.html">
+        <img class="logo" src="../img/Choonz.png" width="auto" ml-auto height="50">
+    </a>
     <button class="navbar-toggler collapsed border-0" type="button" data-toggle="collapse" data-target="#collapsingNavbar">
         <span class="navbar-toggler-icon"></span>
         <div class="close-icon py-1">✖</div>
     </button>
     <div class="collapse navbar-collapse" id="collapsingNavbar">
-        <ul class="nav navbar-nav">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
             <li class="nav-item">
                 <a class="nav-link" href="/tracks">Featured Tracks</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/artists">Artists</a>
+                <a class="nav-link" href="artists.html">Artists</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="albums.html">Albums</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="genres.html">Genres</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/playlists">Top Playlists</a>
             </li>
         </ul>
+        <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search">
+            <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>
+        </form>
+        <button type="button" class="btn btn-info" style="margin-left: 5px" onclick="showLogin()">Login</button>
     </div>
 </nav>
-<!-- /Navbar -->
+<!-- /Navbar with search -->
 
-<!-- Search -->
+<!-- Top quote -->
+<div class="topquote">“Where words fail, music speaks.”</div><div class="andersen">– Hans Christian Andersen</div>
+<!-- /Top quote -->
 
-    <div class="container">
-        <div class="row">
-            <div class="col-lg mt-5">
-                <form class="form-inline d-flex justify-content-center md-form form-sm">
-                    <input class="form-control form-control-sm mr-1 w-75" type="text" placeholder="Search for music..." aria-label="Search">
-                    <button type="submit" id="Search"> Search </button>
-                </form>
+<!-- Login -->
+    <div id="login" class="login-reg-panel">                      
+        <div class="register-info-box">
+            <h2>Don't have an account?</h2>
+            <label id="label-login" for="log-login-show">Register</label>
+            <input type="radio" name="active-log-panel" id="log-login-show">
+        </div>
+                            
+        <div class="white-panel">
+            <div class="login-show">
+                <h2>LOGIN</h2>
+                <input type="text" placeholder="Username">
+                <input type="password" placeholder="Password">
+                <input type="button" value="Login">
+                <a href="">Forgot password?</a>
             </div>
         </div>
     </div>
+<!-- /Login -->
 
-<!-- /Search -->
+<!-- With login -->
+
+<!-- /With login -->
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
