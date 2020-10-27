@@ -106,7 +106,25 @@ public class TESTGenre {
 		Album newAlbum = new Album();
 		List<Album> newAlbums = new ArrayList<Album>();
 		newAlbums.add(newAlbum);
+		testGenre.setAlbums(newAlbums);
 		
 		assertThat(this.testGenre.getAlbums() == newAlbums);
+	}
+	
+	@Test
+	void testToString() {
+		assertThat(this.testGenre.toString()
+				.equals("Genre [id=1, name=Psychadelic Rock, description=Unusual rock-music.,"
+						+ "albums=null]"));
+	}
+	
+	@Test
+	void testHashCode() {
+		assertThat(this.testGenre.hashCode() == -1259434520);
+	}
+	
+	@AfterEach
+	void teardown() {
+		this.testGenre = null;
 	}
 }
