@@ -88,6 +88,7 @@ public class TESTPlaylistDTO {
 	
 		assertEquals(newTracks,this.testPlaylist.getTracks());
 	}
+	// TODO Album getting / setting not yet implemented in PlaylistDTO
 	
 	@Test
 	public void toStringTests() {		
