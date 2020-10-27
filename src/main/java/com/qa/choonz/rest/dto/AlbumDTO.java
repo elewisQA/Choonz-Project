@@ -34,10 +34,20 @@ public class AlbumDTO {
         for (Track t: tracks) {
         	this.tracks.put(t.getId(), t.getName());
         }
-        this.artistName = artist.getName();
-        this.artistId = artist.getId();
-        this.genreName = genre.getName();
-        this.genreId = genre.getId();
+    	if (artist != null) {
+	    	this.artistName = artist.getName();
+	        this.artistId = artist.getId();
+    	} else {
+    		this.artistName = null;
+    		this.artistId = null;
+    	}
+    	if (genre != null) {
+    		this.genreName = genre.getName();
+            this.genreId = genre.getId();
+    	} else {
+    		this.genreName = null;
+    		this.genreId = null;
+    	}
         this.cover = cover;
     }
 
