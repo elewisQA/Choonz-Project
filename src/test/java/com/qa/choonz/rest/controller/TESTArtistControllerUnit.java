@@ -34,10 +34,7 @@ public class TESTArtistControllerUnit {
 	@MockBean
 	private ArtistService service;
 	
-	@MockBean
-	private ArtistRepository repo;
-	
-	@MockBean
+	@Autowired
 	private ModelMapper modelMapper;
 	//--[ Test Variables ]--
 		Album testAlbum;
@@ -57,12 +54,13 @@ public class TESTArtistControllerUnit {
 				@BeforeEach
 				void init() {
 					// Initialize testing vars
+					this.testArtists = new ArrayList<>();
 					this.testAlbums = new ArrayList<Album>();
 					this.testArtist = new Artist(
 							this.id, 
 							this.name, 
 							this.testAlbums);
-					testAlbums.add(testAlbum);
+					testArtists.add(testArtist);
 				}
 		
 			
@@ -101,7 +99,7 @@ public class TESTArtistControllerUnit {
 		@Test
 		void testUpdateArtist() {
 			ArtistDTO newArtist = new ArtistDTO(this.id, this.name, this.testAlbums);
-			ArtistDTO newArtistWithId = new ArtistDTO(this.id, newArtist.getName(), newArtist.getAlbums());
+			ArtistDTO newArtistWithId = new ArtistDTO(this.id, newArtist.getName(),this.testAlbums);
 			
 			when(this.service.update(testArtist, this.id)).thenReturn(newArtistWithId);
 			

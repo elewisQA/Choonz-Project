@@ -48,11 +48,8 @@ public class TESTAlbumControllerUnit {
 		//--[ Test Setup ]--
 		@Autowired
 		private AlbumController controller;
-		
-		@MockBean
-		private AlbumRepository repo;
-		
-		@MockBean
+				
+		@Autowired
 		ModelMapper modelMapper;
 		
 		@MockBean
@@ -72,7 +69,6 @@ public class TESTAlbumControllerUnit {
 			this.testAlbumWithId = new Album(testAlbum.getId(), testAlbum.getName(), testAlbum.getTracks(), testAlbum.getArtist(), 
 					testAlbum.getGenre(), testAlbum.getCover());
 			this.testAlbumWithId.setId(id);
-			this.testAlbums.add(testAlbumWithId);
 			this.albumDTO = this.mapToDTO(testAlbumWithId);
 			testAlbums.add(testAlbum);
 			
@@ -116,7 +112,7 @@ public class TESTAlbumControllerUnit {
 		@Test
 		void testUpdate() {
 			AlbumDTO newAlbum = new AlbumDTO(this.id, this.name, this.testTracks, this.testArtist, this.testGenre, this.cover);
-			AlbumDTO newAlbumWithId = new AlbumDTO(this.id, newAlbum.getName(), newAlbum.getTracks(), newAlbum.getArtist(), newAlbum.getGenre(), newAlbum.getCover());
+			AlbumDTO newAlbumWithId = new AlbumDTO(this.id, newAlbum.getName(), this.testTracks, this.testArtist, this.testGenre, newAlbum.getCover());
 			
 			
 			when(this.service.update(testAlbum, this.id)).thenReturn(newAlbumWithId);
