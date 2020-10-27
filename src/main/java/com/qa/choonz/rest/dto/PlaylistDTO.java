@@ -1,6 +1,8 @@
 package com.qa.choonz.rest.dto;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 
 import com.qa.choonz.persistence.domain.Track;
@@ -11,7 +13,7 @@ public class PlaylistDTO {
     private String name;
     private String description;
     private String artwork;
-    private List<Track> tracks;
+    private Map<Long, String> tracks;
 
     public PlaylistDTO() {
         super();
@@ -24,7 +26,10 @@ public class PlaylistDTO {
         this.name = name;
         this.description = description;
         this.artwork = artwork;
-        this.tracks = tracks;
+        this.tracks = new HashMap<Long, String>();
+        for (Track t: tracks) {
+        	this.tracks.put(t.getId(), t.getName());
+        }
     }
 
     /**
@@ -86,7 +91,7 @@ public class PlaylistDTO {
     /**
      * @return the tracks
      */
-    public List<Track> getTracks() {
+    public Map<Long, String> getTracks() {
         return tracks;
     }
 
@@ -94,7 +99,10 @@ public class PlaylistDTO {
      * @param tracks the tracks to set
      */
     public void setTracks(List<Track> tracks) {
-        this.tracks = tracks;
+        this.tracks = new HashMap<Long, String>();
+        for (Track t: tracks) {
+        	this.tracks.put(t.getId(), t.getName());
+        }
     }
 
     @Override
