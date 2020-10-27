@@ -24,10 +24,20 @@ public class TrackDTO {
     	super();
     	this.id = id;
     	this.name = name;
-    	this.albumName = album.getName();
-    	this.albumId = album.getId();
-    	this.playlistName = playlist.getName();
-    	this.playlistId = playlist.getId();
+		if (album != null) {
+			this.albumName = album.getName();
+			this.albumId = album.getId();
+		} else {
+			this.albumName = null;
+			this.albumId = null;
+		}
+		if (playlist != null) {
+			this.playlistName = playlist.getName();
+			this.playlistId = playlist.getId();
+		} else {
+			this.playlistName = null;
+			this.playlistId = null;
+		}
     	this.duration = duration;
     	this.lyrics = lyrics;
     }
