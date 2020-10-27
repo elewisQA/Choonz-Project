@@ -103,8 +103,11 @@ public class TESTTrackServiceUnit {
     	TrackDTO trackDTO = new TrackDTO(this.id,this.name,this.album,this.playlist,this.duration
     			,this.lyrics);
     	
-    	Track updatedTrack = new Track(this.id,trackDTO.getName(),trackDTO.getAlbum()
-    			,trackDTO.getPlaylist(),trackDTO.getDuration(),trackDTO.getLyrics());
+    	Track updatedTrack = new Track(this.id,trackDTO.getName(),
+    			this.album,
+    			this.playlist,
+    			trackDTO.getDuration(),
+    			trackDTO.getLyrics());
     	
     	TrackDTO updatedTrackDTO = new TrackDTO(this.id,updatedTrack.getName(),updatedTrack.getAlbum()
     			,updatedTrack.getPlaylist(),updatedTrack.getDuration(),updatedTrack.getLyrics());

@@ -99,8 +99,11 @@ public class TESTPlaylistServiceUnit {
     	
     	PlaylistDTO playlistDTO = new PlaylistDTO(this.id,this.name,this.description,this.artwork,this.tracks);
     	
-    	Playlist updatedPlaylist = new Playlist(this.id,playlistDTO.getName(),playlistDTO.getDescription()
-    			,playlistDTO.getArtwork(),playlistDTO.getTracks());
+    	Playlist updatedPlaylist = new Playlist(this.id,
+    			playlistDTO.getName(),
+    			playlistDTO.getDescription(),
+    			playlistDTO.getArtwork(),
+    			this.tracks);
     	
     	PlaylistDTO updatedPlaylistDTO = new PlaylistDTO(this.id,updatedPlaylist.getName()
     			,updatedPlaylist.getDescription()

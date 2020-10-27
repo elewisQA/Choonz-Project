@@ -90,12 +90,12 @@ public class TESTArtistServiceUnit {
 		
 		@Test
 		void testUpdateArtist() {
-			Artist artist = new Artist(this.id, this.name, testAlbums);
+			Artist artist = new Artist(this.id, this.name, this.testAlbums);
 //			artist.setId(this.id);
 			
-			ArtistDTO artistDTO = new ArtistDTO(this.id, this.name, testAlbums);
+			ArtistDTO artistDTO = new ArtistDTO(this.id, this.name, this.testAlbums);
 			
-			Artist updatedArtist = new Artist(this.id, artistDTO.getName(), artistDTO.getAlbums());
+			Artist updatedArtist = new Artist(this.id, artistDTO.getName(), this.testAlbums);
 			
 			ArtistDTO updatedArtistDTO = new ArtistDTO(this.id, updatedArtist.getName(), updatedArtist.getAlbums());
 			
