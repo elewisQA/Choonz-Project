@@ -19,7 +19,6 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import com.qa.choonz.persistence.domain.Playlist;
 import com.qa.choonz.persistence.domain.Track;
 import com.qa.choonz.persistence.repository.PlaylistRepository;
-import com.qa.choonz.rest.dto.ArtistDTO;
 import com.qa.choonz.rest.dto.PlaylistDTO;
 
 @SpringBootTest
@@ -38,6 +37,7 @@ public class TESTPlaylistServiceUnit {
         return this.modelMapper.map(playlist, PlaylistDTO.class);
     }
     
+    private List<Playlist> playlistList;
     private Playlist testPlaylist;
     private Playlist testPlaylistWithId;
     private PlaylistDTO playlistDTO;
@@ -50,6 +50,7 @@ public class TESTPlaylistServiceUnit {
     
     @BeforeEach
     void init() {
+    	this.playlistList = new ArrayList<>();
     	this.tracks = new ArrayList<>();
     	this.testPlaylist = new Playlist(this.id,this.name,this.description
     			,this.artwork,this.tracks);
@@ -78,6 +79,17 @@ public class TESTPlaylistServiceUnit {
 		assertThat(this.playlistDTO).isEqualTo(this.service.read(this.id));
 		
 		verify(this.repo, times(1)).findById(this.id);
+    }
+    
+    @Test
+    void realAllTest() {
+        when(repo.findAll()).thenReturn(this.playlistList);
+
+        when(this.modelMapper.map(testPlaylistWithId, PlaylistDTO.class)).thenReturn(playlistDTO);
+
+        assertThat(this.service.read().isEmpty()).isFalse();
+
+        verify(repo, times(1)).findAll();
     }
     
     @Test
