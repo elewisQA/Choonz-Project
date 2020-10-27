@@ -40,7 +40,7 @@ public class TESTArtistControllerUnit {
 	@MockBean
 	private ModelMapper modelMapper;
 	//--[ Test Variables ]--
-		
+		Album testAlbum;
 		ArtistDTO artistDTO;
 		Artist testArtist;
 		Artist testArtistWithId;
@@ -62,6 +62,7 @@ public class TESTArtistControllerUnit {
 							this.id, 
 							this.name, 
 							this.testAlbums);
+					testAlbums.add(testAlbum);
 				}
 		
 			
