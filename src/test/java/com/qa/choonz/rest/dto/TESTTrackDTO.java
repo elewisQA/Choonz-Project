@@ -4,6 +4,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+
 import java.util.ArrayList;
 
 import org.junit.jupiter.api.AfterEach;
@@ -81,7 +82,8 @@ public class TESTTrackDTO {
 		Album newAlbum = new Album();
 		this.testTrack.setAlbum(newAlbum);
 		
-		assertEquals(newAlbum,this.testTrack.getAlbum());
+		assertEquals(newAlbum.getName(), this.testTrack.getAlbumName());
+		assertEquals(newAlbum.getId(), this.testTrack.getAlbumId());
 	}
 	
 	@Test
@@ -89,7 +91,8 @@ public class TESTTrackDTO {
 		Playlist newPlaylist = new Playlist();
 		this.testTrack.setPlaylist(newPlaylist);
 		
-		assertEquals(newPlaylist,this.testTrack.getPlaylist());
+		assertEquals(newPlaylist.getName(),this.testTrack.getPlaylistName());
+		assertEquals(newPlaylist.getId(),this.testTrack.getPlaylistId());
 	}
 	
 	@Test
