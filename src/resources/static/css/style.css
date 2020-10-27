@@ -57,11 +57,23 @@ body {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
+#artists div.card {
+  height: 370px;
+  width: 235px;
+  transition: width 0.5s, height 0.5s;
+}
+
+#artists div.card:hover {
+  width: 245px;
+  height: 380px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
 #genres div.card {
   height: 200px;
   width: 300px;
   transition: width 0.5s, height 0.5s;
-  background: grey;
+  background: rgba(105, 113, 114, 0.473);
 }
 
 #genres div.card:hover {
@@ -72,7 +84,7 @@ body {
 
 #genres img {
   object-fit: cover;
-  opacity: 0.6;
+  opacity: 0.5;
 }
 
 #genres h1 {
@@ -85,7 +97,7 @@ body {
 }
 
 #genres a:hover {
-  letter-spacing: 1px;
+  letter-spacing: 2px;
 }
 
 #genres i {
