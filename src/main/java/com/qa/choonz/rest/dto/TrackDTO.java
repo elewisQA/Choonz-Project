@@ -7,8 +7,10 @@ public class TrackDTO {
 
     private long id;
     private String name;
-    private Album album;
-    private Playlist playlist;
+    private String albumName;
+    private Long albumId;
+    private String playlistName;
+    private Long playlistId;
     private int duration;
     private String lyrics;
 
@@ -21,8 +23,10 @@ public class TrackDTO {
     	super();
     	this.id = id;
     	this.name = name;
-    	this.album = album;
-    	this.playlist = playlist;
+    	this.albumName = album.getName();
+    	this.albumId = album.getId();
+    	this.playlistName = playlist.getName();
+    	this.playlistId = playlist.getId();
     	this.duration = duration;
     	this.lyrics = lyrics;
     }
@@ -43,22 +47,36 @@ public class TrackDTO {
 		this.name = name;
 	}
 
-	public Album getAlbum() {
-		return album;
+	public String getAlbumName() {
+		return this.albumName;
+	}
+	
+	public Long getAlbumId() {
+		return this.albumId;
 	}
 
 	public void setAlbum(Album album) {
-		this.album = album;
+		this.albumName = album.getName();
+		this.albumId = album.getId();
 	}
 
-	public Playlist getPlaylist() {
-		return playlist;
+	// TODO add setters for name / id
+	
+	public String getPlaylistName() {
+		return this.playlistName;
+	}
+	
+	public Long getPlaylistId() {
+		return this.playlistId;
 	}
 
 	public void setPlaylist(Playlist playlist) {
-		this.playlist = playlist;
+		this.playlistName = playlist.getName();
+		this.playlistId = playlist.getId();
 	}
 
+	// TODO add setters for name / id
+	
 	public int getDuration() {
 		return duration;
 	}
@@ -77,7 +95,8 @@ public class TrackDTO {
 
 	@Override
 	public String toString() {
-		return "TrackDTO [id=" + id + ", name=" + name + ", album=" + album + ", playlist=" + playlist + ", duration="
+		// TODO add in IDs
+		return "TrackDTO [id=" + id + ", name=" + name + ", album=" + albumName + ", playlist=" + playlistName + ", duration="
 				+ duration + ", lyrics=" + lyrics + "]";
 	}
 
@@ -85,12 +104,12 @@ public class TrackDTO {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((album == null) ? 0 : album.hashCode());
+		result = prime * result + ((albumName == null) ? 0 : albumName.hashCode());
 		result = prime * result + duration;
 		result = prime * result + (int) (id ^ (id >>> 32));
 		result = prime * result + ((lyrics == null) ? 0 : lyrics.hashCode());
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
-		result = prime * result + ((playlist == null) ? 0 : playlist.hashCode());
+		result = prime * result + ((playlistName == null) ? 0 : playlistName.hashCode());
 		return result;
 	}
 
@@ -103,10 +122,10 @@ public class TrackDTO {
 		if (getClass() != obj.getClass())
 			return false;
 		TrackDTO other = (TrackDTO) obj;
-		if (album == null) {
-			if (other.album != null)
+		if (albumName == null) {
+			if (other.albumName != null)
 				return false;
-		} else if (!album.equals(other.album))
+		} else if (!albumName.equals(other.albumName))
 			return false;
 		if (duration != other.duration)
 			return false;
@@ -122,10 +141,10 @@ public class TrackDTO {
 				return false;
 		} else if (!name.equals(other.name))
 			return false;
-		if (playlist == null) {
-			if (other.playlist != null)
+		if (playlistName == null) {
+			if (other.playlistName != null)
 				return false;
-		} else if (!playlist.equals(other.playlist))
+		} else if (!playlistName.equals(other.playlistName))
 			return false;
 		return true;
 	}
