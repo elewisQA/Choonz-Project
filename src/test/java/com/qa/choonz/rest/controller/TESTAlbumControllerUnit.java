@@ -116,10 +116,10 @@ public class TESTAlbumControllerUnit {
 		
 		@Test
 		void testUpdate() {
-			final Long ID = 1L;
-			Album updateAlbum = mock(Album.class);
-			when(updateAlbum.getId()).thenReturn(ID);
-			controller.update(updateAlbum, ID);
+//			final Long ID = 1L;
+//			Album updateAlbum = mock(Album.class);
+//			when(updateAlbum.getId()).thenReturn(ID);
+//			controller.update(updateAlbum, ID);
 			// TODO some assetion for update
 		}
 		
