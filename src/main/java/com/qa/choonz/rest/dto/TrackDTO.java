@@ -2,6 +2,7 @@ package com.qa.choonz.rest.dto;
 
 import com.qa.choonz.persistence.domain.Album;
 import com.qa.choonz.persistence.domain.Playlist;
+import java.util.Objects;
 
 public class TrackDTO {
 
@@ -71,12 +72,15 @@ public class TrackDTO {
 	}
 
 	public void setPlaylist(Playlist playlist) {
-		this.playlistName = playlist.getName();
-		this.playlistId = playlist.getId();
+		if (playlist != null) {
+			this.playlistName = playlist.getName();
+			this.playlistId = playlist.getId();
+		} else {
+			this.playlistName = null;
+			this.playlistId = null;
+		}
 	}
 
-	// TODO add setters for name / id
-	
 	public int getDuration() {
 		return duration;
 	}
@@ -102,15 +106,7 @@ public class TrackDTO {
 
 	@Override
 	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((albumName == null) ? 0 : albumName.hashCode());
-		result = prime * result + duration;
-		result = prime * result + (int) (id ^ (id >>> 32));
-		result = prime * result + ((lyrics == null) ? 0 : lyrics.hashCode());
-		result = prime * result + ((name == null) ? 0 : name.hashCode());
-		result = prime * result + ((playlistName == null) ? 0 : playlistName.hashCode());
-		return result;
+		return Objects.hash(albumName, albumId, duration, id, lyrics, name, playlistName, albumId);
 	}
 
 	@Override
