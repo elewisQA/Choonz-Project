@@ -15,6 +15,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.HttpStatus;
@@ -33,10 +34,10 @@ public class TESTAlbumControllerUnit {
 
 	//--[ Test Variables ]--
 		AlbumRepository testRepo;
-		final Long id = 1L;
-		final String name = "Test Album";
-		final String cover = "../";
-		List<Track> tracks;
+		private final Long id = 1L;
+		private final String name = "Test Album";
+		private final String cover = "../";
+		List<Track> testTracks;
 		List<Album> testAlbums;
 		Artist testArtist;
 		Album testAlbum;
@@ -45,6 +46,9 @@ public class TESTAlbumControllerUnit {
 		AlbumDTO albumDTO;
 		
 		//--[ Test Setup ]--
+		@Autowired
+		private AlbumController controller;
+		
 		@MockBean
 		private AlbumRepository repo;
 		
@@ -54,8 +58,6 @@ public class TESTAlbumControllerUnit {
 		@MockBean
 		private AlbumService service;
 		
-		@InjectMocks
-		private AlbumController controller;
 		
 		private AlbumDTO mapToDTO(Album album) {
 			return this.modelMapper.map(album,  AlbumDTO.class);
@@ -64,22 +66,19 @@ public class TESTAlbumControllerUnit {
 		@BeforeEach
 		void init() {
 			this.testAlbums = new ArrayList<Album>();
-			this.testAlbum = new Album(this.id, this.name, this.tracks, this.testArtist,
+			this.testTracks = new ArrayList<Track>();
+			this.testAlbum = new Album(this.id, this.name, this.testTracks, this.testArtist,
 					this.testGenre, this.cover);
 			this.testAlbumWithId = new Album(testAlbum.getId(), testAlbum.getName(), testAlbum.getTracks(), testAlbum.getArtist(), 
 					testAlbum.getGenre(), testAlbum.getCover());
 			this.testAlbumWithId.setId(id);
 			this.testAlbums.add(testAlbumWithId);
 			this.albumDTO = this.mapToDTO(testAlbumWithId);
+			testAlbums.add(testAlbum);
 			
 		}
 		
 		//--[ Test Cases ]--
-//		@Test
-//		void testConstructor() {
-//			AlbumController newController = new AlbumController(this.service);
-//			assertThat(newController instanceof AlbumController);
-//		}
 		
 		@Test
 		void testCreate() {
@@ -116,17 +115,23 @@ public class TESTAlbumControllerUnit {
 		
 		@Test
 		void testUpdate() {
-//			final Long ID = 1L;
-//			Album updateAlbum = mock(Album.class);
-//			when(updateAlbum.getId()).thenReturn(ID);
-//			controller.update(updateAlbum, ID);
+			AlbumDTO newAlbum = new AlbumDTO(this.id, this.name, this.testTracks, this.testArtist, this.testGenre, this.cover);
+			AlbumDTO newAlbumWithId = new AlbumDTO(this.id, newAlbum.getName(), newAlbum.getTracks(), newAlbum.getArtist(), newAlbum.getGenre(), newAlbum.getCover());
+			
+			
+			when(this.service.update(testAlbum, this.id)).thenReturn(newAlbumWithId);
+			
+			assertThat(new ResponseEntity<AlbumDTO>(newAlbumWithId, HttpStatus.ACCEPTED))
+				.isEqualTo(this.controller.update(testAlbum, this.id));
+			
+			verify(this.service, times(1)).update(testAlbum, this.id);
+			
 			// TODO some assetion for update
 		}
 		
 		@Test
 		void testDelete() {
-			final Long ID = 1L;
-			ResponseEntity<AlbumDTO> response = controller.delete(ID);
+			ResponseEntity<AlbumDTO> response = controller.delete(this.id);
 			assertThat(response.getStatusCode() == HttpStatus.NO_CONTENT);
 			// TODO add more assetions
 		}
