@@ -7,7 +7,7 @@ body {
     overflow-y: hidden;
 }
 
-a{
+.card-body a{
   text-decoration: none;
 }
 
@@ -71,7 +71,7 @@ a{
 
 /*login or register*/
 #login{
-  display: none;
+  display: block;
 }
 
 .login-reg-panel{
