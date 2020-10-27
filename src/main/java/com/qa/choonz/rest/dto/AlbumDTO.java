@@ -12,7 +12,8 @@ public class AlbumDTO {
     private long id;
     private String name;
     private List<Track> tracks;
-    private Artist artist;
+    private String artistName;
+    private Long artistId;
     private Genre genre;
     private String cover;
 
@@ -26,7 +27,8 @@ public class AlbumDTO {
         this.id = id;
         this.name = name;
         this.tracks = tracks;
-        this.artist = artist;
+        this.artistName = artist.getName();
+        this.artistId = artist.getId();
         this.genre = genre;
         this.cover = cover;
     }
@@ -55,12 +57,17 @@ public class AlbumDTO {
         this.tracks = tracks;
     }
 
-    public Artist getArtist() {
-        return artist;
+    public String getArtistName() {
+        return artistName;
+    }
+    
+    public Long getArtistId() {
+    	return artistId;
     }
 
     public void setArtist(Artist artist) {
-        this.artist = artist;
+    	this.artistName = artist.getName();
+        this.artistId = artist.getId();
     }
 
     public Genre getGenre() {
@@ -83,14 +90,15 @@ public class AlbumDTO {
     public String toString() {
         StringBuilder builder = new StringBuilder();
         builder.append("AlbumDTO [id=").append(id).append(", name=").append(name).append(", tracks=").append(tracks)
-                .append(", artist=").append(artist).append(", genre=").append(genre).append(", cover=").append(cover)
+                .append(", artist=").append(artistName).append(", genre=").append(genre).append(", cover=").append(cover)
                 .append("]");
         return builder.toString();
+        // TODO add artistId
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(artist, cover, genre, id, name, tracks);
+        return Objects.hash(artistName, artistId, cover, genre, id, name, tracks);
     }
 
     @Override
@@ -102,9 +110,10 @@ public class AlbumDTO {
             return false;
         }
         AlbumDTO other = (AlbumDTO) obj;
-        return Objects.equals(artist, other.artist) && Objects.equals(cover, other.cover)
+        return Objects.equals(artistName, other.artistName) && Objects.equals(cover, other.cover)
                 && Objects.equals(genre, other.genre) && id == other.id && Objects.equals(name, other.name)
                 && Objects.equals(tracks, other.tracks);
+        // TODO add artistId
     }
 
 }
