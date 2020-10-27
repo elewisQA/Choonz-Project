@@ -36,11 +36,12 @@ public class TESTGenreServiceUnit {
 	private ModelMapper modelMapper;
 	
 	private GenreDTO genreDTO;
-	Genre testGenre;
-	Genre testGenreWithId;
-	Album testAlbum;
-	List<Album> testAlbums;
-	List<Genre> testGenres;
+	private Genre testGenre;
+	private Genre testGenreWithId;
+	private Album testAlbum;
+	private List<Album> testAlbums;
+	private List<Genre> testGenres;
+	
 	final Long id = 1L;
 	final String name = "R&B";
 	final String description = "Meaningful music";
@@ -49,7 +50,9 @@ public class TESTGenreServiceUnit {
 	@BeforeEach
 	void init() {
 		this.testAlbums = new ArrayList<Album>();
+		this.testGenres = new ArrayList<Genre>();
 		this.testGenre = new Genre(this.id, this.name, this.description, this.testAlbums);
+		testGenres.add(testGenre);
 	}
 	
 	@Test
