@@ -38,25 +38,26 @@ public class TESTAlbumServiceUnit {
 	//--[ Test Variables ]--
 		private AlbumDTO albumtDTO;
 //		Track testTracks;
-		Genre testGenre;
-		Artist testArtist;
-		Album testAlbum;
-		Album testAlbumtWithId;
+		private Genre testGenre;
+		private Artist testArtist;
+		private Album testAlbum;
+		private Album testAlbumtWithId;
 		final Long id = 1l;
 		final String name = "Beauty Behind The Madness";
-		String cover = "Test";
-		List<Track> testTracks;
-		List<Album> testAlbums;
+		final String cover = "Test";
+		private List<Track> testTracks;
+		private List<Album> testAlbums;
 
 		//--[ Test Setup ]--
 		@BeforeEach
 		void init() {
 			// Initialize testing vars
 			this.testAlbums = new ArrayList<Album>();
+			this.testTracks = new ArrayList<Track>();
 			this.testAlbum = new Album(this.id, this.name,
 					this.testTracks, this.testArtist,
 					this.testGenre, this.cover);
-
+			testAlbums.add(testAlbum);
 		}
 		
 		@Test
