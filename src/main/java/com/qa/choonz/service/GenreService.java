@@ -43,6 +43,10 @@ public class GenreService {
 
     public GenreDTO update(Genre genre, long id) {
         Genre toUpdate = this.repo.findById(id).orElseThrow(GenreNotFoundException::new);
+        toUpdate.setName(toUpdate.getName());
+        toUpdate.setDescription(toUpdate.getDescription());
+        toUpdate.setAlbums(toUpdate.getAlbums());
+        toUpdate.setPicture(toUpdate.getPicture());
         Genre updated = this.repo.save(toUpdate);
         return this.mapToDTO(updated);
     }

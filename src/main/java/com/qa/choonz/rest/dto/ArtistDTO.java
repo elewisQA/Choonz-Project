@@ -12,6 +12,7 @@ public class ArtistDTO {
 
     private long id;
     private String name;
+    private String picture;
     private Map<Long, String> albums;
 
     public ArtistDTO() {
@@ -19,10 +20,11 @@ public class ArtistDTO {
         // TODO Auto-generated constructor stub
     }
 
-    public ArtistDTO(long id, String name, List<Album> albums) {
+    public ArtistDTO(long id, String name, String picture, List<Album> albums) {
         super();
         this.id = id;
         this.name = name;
+        this.picture = picture;
         this.albums = new HashMap<Long, String>();
         if (albums != null) {
 	        for (Album a: albums) {
@@ -46,6 +48,14 @@ public class ArtistDTO {
     public void setName(String name) {
         this.name = name;
     }
+    
+    public String getPicture() {
+        return picture;
+    }
+
+    public void setPicture(String picture) {
+        this.picture = picture;
+    }
 
     public Map<Long, String> getAlbums() {
         return albums;
@@ -63,14 +73,14 @@ public class ArtistDTO {
     @Override
     public String toString() {
         StringBuilder builder = new StringBuilder();
-        builder.append("ArtistDTO [id=").append(id).append(", name=").append(name).append(", albums=").append(albums)
+        builder.append("ArtistDTO [id=").append(id).append(", name=").append(name).append(", picture=").append(picture).append(", albums=").append(albums)
                 .append("]");
         return builder.toString();
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(albums, id, name);
+        return Objects.hash(albums, id, name, picture);
     }
 
     @Override
@@ -82,7 +92,7 @@ public class ArtistDTO {
             return false;
         }
         ArtistDTO other = (ArtistDTO) obj;
-        return Objects.equals(albums, other.albums) && id == other.id && Objects.equals(name, other.name);
+        return Objects.equals(albums, other.albums) && id == other.id && Objects.equals(name, other.name) && Objects.equals(picture, other.picture);
     }
 
 }
