@@ -231,3 +231,7 @@ body {
   font-size: 470%;
 }
 
+#exampleModalLabel {
+  transform: translate(90%, 0%);
+  color: rgb(72, 86, 97);
+}
