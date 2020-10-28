@@ -36,12 +36,12 @@ public class TESTTackServiceIntegration {
 	}
 	
 	//--[ Set-up Test Variables ]--
-	private final Long ID = 1L;
-	private final String NAME = "Eclipse";
-	private final String LYRICS = "I'll see you on the Dark side of the moon";
+	private Long id;
+	private final String NAME = "Comfortably Numb";
+	private final String LYRICS = "I have become comfortably numb";
 	private Album album;
 	private Playlist playlist;
-	private final int duration = 2;
+	private final int DURATION = 2;
 	private Track testTrack;
 	private Track testTrackWithId;
 	private TrackDTO trackDTO;
@@ -56,16 +56,26 @@ public class TESTTackServiceIntegration {
 		// Instantiate vars for the test-track
 		album = new Album(1L, "Pink", null, null, null, "cover");
 		playlist = new Playlist(1L, "Playlist", "Description", "cover", null);
-		// Instantiate track objs.
-		this.testTrack = new Track(
-				ID, 
-				NAME, 
-				album, 
-				playlist, 
-				duration,
-				LYRICS);
+		// Instantiate Album and Playlist.
+		// The ID's and names for these match those found in Data.sql
+		// The rest of the info here doesn't matter / isn't used by the repo
+		this.album = new Album(3, "The Wall", null, null, null, null);
+		this.playlist = new Playlist(1, "Playlist One", null, null, null);
+		this.playlist.setId(1);
+		this.playlist.setName("Playlist One");
+		// Instantiate the test-track
+		// Have to use setters as we don't want to include the ID 
+		// And no constructor exists to set all these without an id
+		this.testTrack = new Track();
+		this.testTrack.setName(this.NAME);
+		this.testTrack.setLyrics(this.LYRICS);
+		this.testTrack.setDuration(this.DURATION);
+		this.testTrack.setAlbum(album);
+		this.testTrack.setPlaylist(playlist);
 		this.testTrackWithId = this.repo.save(testTrack);
-		// instantiate DTOs
+		this.id = this.testTrackWithId.getId();
+		// instantiate track DTOs
+		// DTO With ID must be set manually as you cant "get" an album from a Track DTO
 		this.trackDTO = this.mapToDTO(this.testTrackWithId);
 		this.trackDTOWithId = new TrackDTO();
 		this.trackDTOWithId.setId(this.trackDTO.getId());
@@ -81,12 +91,14 @@ public class TESTTackServiceIntegration {
 	//--[ Test Cases ]--
 	@Test
 	void testCreate() throws Exception {
+		System.out.println(this.testTrack.toString());
+		System.out.println(this.trackDTOWithId.toString());
 		assertThat(this.trackDTOWithId).isEqualTo(this.service.create(this.testTrack));
 	}
 	
 	@Test
 	void testReadOne() throws Exception {
-		assertThat(this.trackDTOWithId).isEqualTo(this.service.read(this.ID));
+		assertThat(this.trackDTOWithId).isEqualTo(this.service.read(this.id));
 	}
 	
 	@Test
@@ -99,13 +111,12 @@ public class TESTTackServiceIntegration {
 	@Test
 	void testUpdate() throws Exception {
 		assertThat(this.trackDTOWithId)
-		.isEqualTo(this.service.update(this.testTrack, this.ID));
-		// TODO may need fixing
+		.isEqualTo(this.service.update(this.testTrack, this.id));
 	}
 	
 	@Test
 	void testDelete() throws Exception {
-		assertThat(this.service.delete(this.ID)).isTrue();
+		assertThat(this.service.delete(this.id)).isTrue();
 	}
 	
 	
