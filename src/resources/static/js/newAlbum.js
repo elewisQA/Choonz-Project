@@ -3,15 +3,17 @@ document.querySelector("form.albums").addEventListener("submit", function(stop){
     let albumModal = document.querySelector("form.albums").elements;
     console.log(albumModal);
     let albumName = albumModal['albumName'].value;
-    let albumGenre = albumModal['albumGenre'].value;
+    let albumGenreID = albumModal['albumGenre'].value;
+    let albumGenreName = albumModal['albumGenre'].genreText;
     let albumCover = albumModal['albumCover'].value;
-    let albumArtist = albumModal['albumArtist'].value;
-    addAlbum(albumName, albumGenre, albumCover, albumArtist);
+    let albumArtistID = albumModal['albumArtist'].value;
+    let albumArtistName = albumModal['albumArtist'].artistText;
+    addAlbum(albumName, albumGenreID, albumArtistName, albumCover, albumArtistID, albumArtistName);
     
 })
 
 
-function addAlbum(albumName, albumGenre, albumCover, albumArtist) {
+function addAlbum(albumName, albumGenreID, albumGenreName, albumCover, albumArtistID, albumArtistName) {
 
     fetch('http://localhost:8082/albums/create', {
         method: 'post',
@@ -21,12 +23,12 @@ function addAlbum(albumName, albumGenre, albumCover, albumArtist) {
         body:json = JSON.stringify({
             "name": albumName,
             "artist": {
-                "id": 1,
-                "name": albumArtist
+                "id": albumArtistID,
+                "name": albumArtistName
             },
             "genre": {
-                "id": 1,
-                "name": albumGenre
+                "id": albumGenreID,
+                "name": albumGenreName
             },
             "cover": albumCover,
         })
@@ -40,3 +42,79 @@ function addAlbum(albumName, albumGenre, albumCover, albumArtist) {
             console.log('Request failed', error);
         });
 }
+
+fetch('http://localhost:8082/artists/read')
+  .then(
+    function(response) {
+      if (response.status !== 200) {
+        console.log('Looks like there was a problem. Status Code: ' +
+          response.status);
+        return;
+      }
+
+      // Examine the text in the response
+      response.json().then(function(data) {
+        console.log(data);
+
+        feedDropdownWithArtists(data);
+      });
+    }
+  )
+  .catch(function(err) {
+    console.log('Fetch Error :-S', err);
+  });
+
+  fetch('http://localhost:8082/genres/read')
+  .then(
+    function(response) {
+      if (response.status !== 200) {
+        console.log('Looks like there was a problem. Status Code: ' +
+          response.status);
+        return;
+      }
+
+      // Examine the text in the response
+      response.json().then(function(data) {
+        console.log(data);
+
+        feedDropdownWithGenres(data);
+      });
+    }
+  )
+  .catch(function(err) {
+    console.log('Fetch Error :-S', err);
+  });
+
+  function feedDropdownWithArtists(alldata) {
+
+    for (let key of alldata) {
+      console.log(key);
+      console.log(key['artistName']);
+
+      let dropdown = document.getElementById("artistDD");
+      let option = document.createElement("option");
+      option.value = key['id'];
+      let artistText = document.createTextNode(key['name']);
+      option.appendChild(artistText);
+      dropdown.appendChild(option);
+      
+    }
+
+  }
+
+  function feedDropdownWithGenres(alldata) {
+
+    for (let key of alldata) {
+      console.log(key);
+      console.log(key['genreName']);
+
+      let dropdown = document.getElementById("genreDD");
+      let option = document.createElement("option");
+      option.value = key['id'];
+      let genreText = document.createTextNode(key['name']);
+      option.appendChild(genreText);
+      dropdown.appendChild(option);
+      
+    }
+
+  }
