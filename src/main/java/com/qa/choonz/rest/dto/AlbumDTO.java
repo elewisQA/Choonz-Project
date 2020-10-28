@@ -81,6 +81,10 @@ public class AlbumDTO {
 	        }
     	}
     }
+    
+    public void setTracks(Map<Long, String> tracks) {
+    	this.tracks = tracks;
+    }
 
     public String getArtistName() {
         return artistName;
