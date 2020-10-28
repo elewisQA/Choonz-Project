@@ -2,6 +2,8 @@ package com.qa.choonz.service;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -12,6 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import com.qa.choonz.persistence.domain.Playlist;
+import com.qa.choonz.persistence.domain.Track;
 import com.qa.choonz.persistence.repository.PlaylistRepository;
 import com.qa.choonz.rest.dto.PlaylistDTO;
 
@@ -37,6 +40,8 @@ public class TESTPlaylistServiceIntegration {
 	private Long id;
 	private final String NAME = "Playlist Tree";
 	private final String DESC = "This is a test playlist.";
+	private final String ART = "../";
+	private List<Track> tracks;
 	private Playlist testPlaylist;
 	private Playlist testPlaylistWithId;
 	private PlaylistDTO playlistDTO;
@@ -47,11 +52,13 @@ public class TESTPlaylistServiceIntegration {
 	@BeforeEach
 	void init() {
 		this.repo.deleteAll();
-		
+		tracks = new ArrayList<Track>();
 		// Instantiate the test-playlist
 		testPlaylist = new Playlist();
 		testPlaylist.setName(NAME);
 		testPlaylist.setDescription(DESC);
+		testPlaylist.setTracks(tracks);
+		testPlaylist.setArtwork(ART);
 		this.testPlaylistWithId = this.repo.save(testPlaylist);
 		this.id = this.testPlaylistWithId.getId();
 		
