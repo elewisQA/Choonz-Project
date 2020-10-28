@@ -44,6 +44,7 @@ public class ArtistService {
     public ArtistDTO update(Artist artist, long id) {
         Artist toUpdate = this.repo.findById(id).orElseThrow(ArtistNotFoundException::new);
         toUpdate.setName(artist.getName());
+        toUpdate.setPicture(artist.getPicture());
         toUpdate.setAlbums(artist.getAlbums());
         Artist updated = this.repo.save(toUpdate);
         return this.mapToDTO(updated);
