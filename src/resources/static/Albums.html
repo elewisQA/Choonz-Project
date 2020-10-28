@@ -92,24 +92,26 @@
           </button> -->
         </div>
         <div class="modal-body">
-          <form class="albums" method="POST">
+          <form name="createNewAlbum" class="albums" method="POST" onsubmit="return validateForm()">
             <div class="form-group">
               <label for="albumName">Album name: </label>
-              <input type="text" class="form-control" id="albumName">
+              <input type="text" class="form-control" id="albumName" name="name">
             </div>
             <div class="form-group">
               <label for="albumArtist">Artist: </label>
               <select name="albumArtist" id="artistDD">
+                <option value="0">Select an Artist</option>
               </select>
             </div>
             <div class="form-group">
               <label for="albumGenre">Genre: </label>
               <select name="albumGenre" id="genreDD">
+                <option value="0">Select a Genre</option>
               </select>
             </div>
             <div class="form-group">
               <label for="albumCover">Cover URL: </label>
-              <input type="text" class="form-control" id="albumCover">     
+              <input type="text" class="form-control" id="albumCover" name="cover">     
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
