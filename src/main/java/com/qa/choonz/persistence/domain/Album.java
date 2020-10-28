@@ -1,3 +1,4 @@
+  
 package com.qa.choonz.persistence.domain;
 
 import java.util.List;
@@ -14,6 +15,9 @@ import javax.persistence.OneToMany;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 @Entity
 public class Album {
 
@@ -26,12 +30,15 @@ public class Album {
     @Column(unique = true)
     private String name;
 
+    @JsonManagedReference
     @OneToMany(mappedBy = "album", cascade = CascadeType.ALL)
     private List<Track> tracks;
 
+    @JsonBackReference
     @ManyToOne
     private Artist artist;
 
+    @JsonBackReference
     @ManyToOne
     private Genre genre;
 
