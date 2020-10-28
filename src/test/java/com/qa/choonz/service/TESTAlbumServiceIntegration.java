@@ -67,7 +67,15 @@ public class TESTAlbumServiceIntegration {
 //		this.testAlbumDTO = this.mapToDTO(testAlbumWithId);
 //		this.id = this.testAlbumWithId.getId();
 		this.repo.deleteAll();
-		testAlbum = new Album(id, name, testTracks, testArtist, testGenre, cover);
+		//testAlbum = new Album(id, name, testTracks, testArtist, testGenre, cover);
+		
+		this.testArtist = new Artist();
+		this.testArtist.setId(1);
+		this.testArtist.setName("Pink Floyd");
+		
+		this.testGenre = new Genre();
+		this.testGenre.setId(2);
+		this.testGenre.setName("Psychedelic Rock");
 		
 		this.testAlbum = new Album();
 		this.testAlbum.setName(this.name);
@@ -83,8 +91,10 @@ public class TESTAlbumServiceIntegration {
 		this.albumDTOWithId.setId(this.albumDTO.getId());
 		this.albumDTOWithId.setName(this.albumDTO.getName());
 		this.albumDTOWithId.setTracks(this.testTracks);
-		this.albumDTOWithId.setArtist(this.testArtist);
-		this.albumDTOWithId.setGenre(this.testGenre);
+		this.albumDTOWithId.setArtistName(this.albumDTO.getArtistName());
+		this.albumDTOWithId.setArtistId(this.albumDTO.getArtistId());
+		this.albumDTOWithId.setGenreName(this.albumDTO.getGenreName());
+		this.albumDTOWithId.setGenreId(this.albumDTO.getGenreId());
 		this.albumDTOWithId.setCover(this.albumDTO.getCover());
 		
 	}
