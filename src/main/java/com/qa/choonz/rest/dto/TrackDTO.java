@@ -76,7 +76,14 @@ public class TrackDTO {
 		}
 	}
 
-	// TODO add setters for name / id
+	public void setAlbumName(String albumName) {
+		this.albumName = albumName;
+	}
+
+
+	public void setAlbumId(Long albumId) {
+		this.albumId = albumId;
+	}
 	
 	public String getPlaylistName() {
 		return this.playlistName;
@@ -94,6 +101,14 @@ public class TrackDTO {
 			this.playlistName = null;
 			this.playlistId = null;
 		}
+	}
+	
+	public void setPlaylistName(String playlistName) {
+		this.playlistName = playlistName;
+	}
+	
+	public void setPlaylistId(Long playlistId) {
+		this.playlistId = playlistId;
 	}
 
 	public int getDuration() {
