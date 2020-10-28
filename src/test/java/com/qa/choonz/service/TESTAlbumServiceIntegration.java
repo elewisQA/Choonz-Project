@@ -11,6 +11,7 @@ import org.junit.jupiter.api.Test;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
 
 import com.qa.choonz.persistence.domain.Album;
 import com.qa.choonz.persistence.domain.Artist;
@@ -42,58 +43,75 @@ public class TESTAlbumServiceIntegration {
     // because we don't need to convert any returned objects to JSON
     // that's a controller job, and we're not testing the controller!
 	
-	private Album testAlbum;
-	private Album testAlbumWithId;
-	private AlbumDTO testAlbumDTO;
-	private Artist testArtist;
-	private Genre testGenre;
-	
+	private Long id = 1L;
 	private final String name = "Beauty Behind The Madness";
-	private final String artistName = "The Weeknd";
-	private final String genreName = "R&B";
+	private final String artist = "The Weeknd";
 	private final String cover = "Test Cover";
+	private Genre testGenre;
+	private Artist testArtist;
 	private List<Track> testTracks;
 	private List<Album> testAlbums;
-	private Long id = 1L;
+	private Album testAlbum;
+	private Album testAlbumWithId;
+	private AlbumDTO albumDTO;
+	private AlbumDTO albumDTOWithId;
+	
 	
 	
 	@BeforeEach
 	void init() {
+//		this.repo.deleteAll();
+//		this.testAlbum = new Album(id, name, testTracks, 
+//				testArtist, testGenre, cover);
+//		this.testAlbumWithId = this.repo.save(this.testAlbum);
+//		this.testAlbumDTO = this.mapToDTO(testAlbumWithId);
+//		this.id = this.testAlbumWithId.getId();
 		this.repo.deleteAll();
-		this.testAlbum = new Album(id, name, testTracks, 
-				testArtist, testGenre, cover);
-		this.testAlbumWithId = this.repo.save(this.testAlbum);
-		this.testAlbumDTO = this.mapToDTO(testAlbumWithId);
+		testAlbum = new Album(id, name, testTracks, testArtist, testGenre, cover);
+		
+		this.testAlbum = new Album();
+		this.testAlbum.setName(this.name);
+		this.testAlbum.setTracks(this.testTracks);
+		this.testAlbum.setArtist(this.testArtist);
+		this.testAlbum.setGenre(this.testGenre);
+		this.testAlbum.setCover(this.cover);
+		this.testAlbumWithId = this.repo.save(testAlbum);
 		this.id = this.testAlbumWithId.getId();
+		
+		this.albumDTO = this.mapToDTO(this.testAlbumWithId);
+		this.albumDTOWithId = new AlbumDTO();
+		this.albumDTOWithId.setId(this.albumDTO.getId());
+		this.albumDTOWithId.setName(this.albumDTO.getName());
+		this.albumDTOWithId.setTracks(this.testTracks);
+		this.albumDTOWithId.setArtist(this.testArtist);
+		this.albumDTOWithId.setGenre(this.testGenre);
+		this.albumDTOWithId.setCover(this.albumDTO.getCover());
+		
 	}
 	
 	@Test
 	void testCreate() {
-		assertThat(this.testAlbumDTO)
-		.isEqualTo(this.service.create(testAlbum));
+		System.out.println(this.testAlbum.toString());
+		System.out.println(this.albumDTOWithId.toString());
+		assertThat(this.albumDTOWithId).isEqualTo(this.service.create(this.testAlbum));
 	}
 	
 	@Test
-	void testRead() {
-		assertThat(this.testAlbumDTO)
+	void testRead() throws Exception {
+		assertThat(this.albumDTOWithId)
 			.isEqualTo(this.service.read(this.id));
 	}
 	
 	@Test
-	void testReadAll() {
-		assertThat(this.service.read())
-		.isEqualTo(Stream.of(this.testAlbumDTO)
-				.collect(Collectors.toList()));
+	void testReadAll() throws Exception {
+		assertThat(Stream.of(this.albumDTOWithId).collect(Collectors.toList()))
+		.isEqualTo(this.service.read());
 	}
 	
 	@Test
 	void testUpdate() {
-		AlbumDTO newAlbum = new AlbumDTO(id, "Starboy", testTracks, testArtist, testGenre, cover);
-		AlbumDTO updatedAlbum =
-				new AlbumDTO(this.id, newAlbum.getName(), newAlbum.getTracks(),
-						newAlbum.getArtistName(), newAlbum.getGenre(), newAlbum.getCover());
 		
-		assertThat(updatedAlbum).isEqualTo(this.service.update(newAlbum, this.id));
+		assertThat(this.albumDTOWithId).isEqualTo(this.service.update(this.testAlbum, this.id));
 	}
 	
 	@Test
