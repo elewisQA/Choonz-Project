@@ -67,7 +67,7 @@ fetch('http://localhost:8082/genres/read')
     let linkAdd = document.createElement("a");
     linkAdd.setAttribute("id", "addnew");
     linkAdd.href ="#";
-    body.appendChild(linkAdd);
+    card.appendChild(linkAdd);
 
     let icon = document.createElement("i");
     icon.className = "fas fa-plus";

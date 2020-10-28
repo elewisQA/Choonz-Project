@@ -42,7 +42,7 @@ fetch('http://localhost:8082/albums/read')
       card.appendChild(body);
 
       let linkTitle = document.createElement("a");
-      linkTitle.href = "#";
+      linkTitle.href = "viewAlbum.html?id=" + key['id'];
       let title = document.createElement("h5");
       title.className = "card-title";
       let titleText = document.createTextNode(key['name']);
