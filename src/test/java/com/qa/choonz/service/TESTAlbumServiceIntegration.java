@@ -97,7 +97,7 @@ public class TESTAlbumServiceIntegration {
 	}
 	
 	@Test
-	void testRead() throws Exception {
+	void testRead() {
 		assertThat(this.albumDTOWithId)
 			.isEqualTo(this.service.read(this.id));
 	}
