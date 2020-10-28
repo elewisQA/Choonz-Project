@@ -87,10 +87,8 @@ public class TESTPlaylistDTO {
 		List<Track> newTracks = new ArrayList<Track>();
 		newTracks.add(newTrack);
 		this.testPlaylist.setTracks(newTracks);
-		Map<Long,String> track = new HashMap<Long,String>();
-		track.put(newTrack.getId(), newTrack.getName());
 		
-		assertEquals(track,this.testPlaylist.getTracks());
+		assertEquals(newTracks,this.testPlaylist.getTracks());
 	}
 	// TODO Album getting / setting not yet implemented in PlaylistDTO
 	

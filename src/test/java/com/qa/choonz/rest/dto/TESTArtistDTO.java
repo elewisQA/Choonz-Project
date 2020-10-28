@@ -73,9 +73,7 @@ public class TESTArtistDTO {
 		newAlbums.add(newAlbum);
 		this.testArtist.setAlbums(newAlbums);
 		
-		Map<Long, String> newAlbumsMap = new HashMap<Long, String>();
-		newAlbumsMap.put(newAlbum.getId(), newAlbum.getName());
-		assertEquals(newAlbumsMap,this.testArtist.getAlbums());
+		assertEquals(newAlbums,this.testArtist.getAlbums());
 	}
 	
 	@Test
