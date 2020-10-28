@@ -98,7 +98,7 @@ public class TESTArtistControllerIntegration {
     
     @Test
     void testUpdate() throws Exception{
-    	ArtistDTO newArtist = new ArtistDTO();
+    	Artist newArtist = new Artist();
     	newArtist.setId(this.id);
     	newArtist.setName("Tyler the creator");
     	newArtist.setAlbums(null);

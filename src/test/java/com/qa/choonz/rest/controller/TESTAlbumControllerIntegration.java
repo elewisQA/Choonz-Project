@@ -100,7 +100,7 @@ public class TESTAlbumControllerIntegration {
     
     @Test
     void testUpdate() throws Exception{
-    	AlbumDTO newAlbum = new AlbumDTO();
+    	Album newAlbum = new Album();
     	newAlbum.setId(this.id);
     	newAlbum.setName("Flower Boy");
     	newAlbum.setCover("new image");

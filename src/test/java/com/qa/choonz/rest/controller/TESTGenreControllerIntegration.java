@@ -100,7 +100,7 @@ public class TESTGenreControllerIntegration {
     
     @Test
     void testUpdate() throws Exception{
-    	GenreDTO newGenre = new GenreDTO();
+    	Genre newGenre = new Genre();
     	newGenre.setId(this.id);
     	newGenre.setName("Rock");
     	newGenre.setDescription("Guitar smash");
