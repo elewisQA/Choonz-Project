@@ -82,8 +82,7 @@ public class TESTTrackDTO {
 		Album newAlbum = new Album();
 		this.testTrack.setAlbum(newAlbum);
 		
-		assertEquals(newAlbum.getName(), this.testTrack.getAlbumName());
-		assertEquals(newAlbum.getId(), this.testTrack.getAlbumId());
+		assertEquals(newAlbum, this.testTrack.getAlbum());
 	}
 	
 	@Test
@@ -91,8 +90,7 @@ public class TESTTrackDTO {
 		Playlist newPlaylist = new Playlist();
 		this.testTrack.setPlaylist(newPlaylist);
 		
-		assertEquals(newPlaylist.getName(),this.testTrack.getPlaylistName());
-		assertEquals(newPlaylist.getId(),this.testTrack.getPlaylistId());
+		assertEquals(newPlaylist,this.testTrack.getPlaylist());
 	}
 	
 	@Test
