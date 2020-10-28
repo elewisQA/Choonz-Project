@@ -31,8 +31,10 @@ public class AlbumDTO {
         this.id = id;
         this.name = name;
         this.tracks = new HashMap<Long, String>();
-        for (Track t: tracks) {
-        	this.tracks.put(t.getId(), t.getName());
+        if (tracks != null) {
+	        for (Track t: tracks) {
+	        	this.tracks.put(t.getId(), t.getName());
+	        }
         }
     	if (artist != null) {
 	    	this.artistName = artist.getName();
@@ -97,6 +99,14 @@ public class AlbumDTO {
     		this.artistId = null;
     	}
     }
+    
+    public void setArtistName(String name) {
+    	this.artistName = name;
+    }
+    
+    public void setArtistId(Long id) {
+    	this.artistId = id;
+    }
 
     public String getGenreName() {
         return genreName;
@@ -116,6 +126,14 @@ public class AlbumDTO {
     	}
     }
 
+    public void setGenreName(String name) {
+    	this.genreName = name;
+    }
+    
+    public void setGenreId(Long id) {
+    	this.genreId = id;
+    }
+    
     public String getCover() {
         return cover;
     }
