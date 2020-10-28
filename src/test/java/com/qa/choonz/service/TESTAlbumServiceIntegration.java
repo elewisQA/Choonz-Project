@@ -2,6 +2,7 @@ package com.qa.choonz.service;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -50,7 +51,7 @@ public class TESTAlbumServiceIntegration {
 	private Genre testGenre;
 	private Artist testArtist;
 	private List<Track> testTracks;
-	private List<Album> testAlbums;
+	//private List<Album> testAlbums;
 	private Album testAlbum;
 	private Album testAlbumWithId;
 	private AlbumDTO albumDTO;
@@ -60,22 +61,20 @@ public class TESTAlbumServiceIntegration {
 	
 	@BeforeEach
 	void init() {
-//		this.repo.deleteAll();
-//		this.testAlbum = new Album(id, name, testTracks, 
-//				testArtist, testGenre, cover);
-//		this.testAlbumWithId = this.repo.save(this.testAlbum);
-//		this.testAlbumDTO = this.mapToDTO(testAlbumWithId);
-//		this.id = this.testAlbumWithId.getId();
 		this.repo.deleteAll();
-		//testAlbum = new Album(id, name, testTracks, testArtist, testGenre, cover);
 		
+		// Setup Artist
 		this.testArtist = new Artist();
 		this.testArtist.setId(1);
-		this.testArtist.setName("Pink Floyd");
+		this.testArtist.setName("Pink Floyd");		
 		
+		// Setup Genre
 		this.testGenre = new Genre();
 		this.testGenre.setId(2);
 		this.testGenre.setName("Psychedelic Rock");
+		
+		// Instantiate 
+		this.testTracks = new ArrayList<Track>();
 		
 		this.testAlbum = new Album();
 		this.testAlbum.setName(this.name);
@@ -90,7 +89,7 @@ public class TESTAlbumServiceIntegration {
 		this.albumDTOWithId = new AlbumDTO();
 		this.albumDTOWithId.setId(this.albumDTO.getId());
 		this.albumDTOWithId.setName(this.albumDTO.getName());
-		this.albumDTOWithId.setTracks(this.testTracks);
+		this.albumDTOWithId.setTracks(this.albumDTO.getTracks());
 		this.albumDTOWithId.setArtistName(this.albumDTO.getArtistName());
 		this.albumDTOWithId.setArtistId(this.albumDTO.getArtistId());
 		this.albumDTOWithId.setGenreName(this.albumDTO.getGenreName());

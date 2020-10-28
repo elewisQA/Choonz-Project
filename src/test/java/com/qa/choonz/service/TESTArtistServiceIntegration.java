@@ -2,6 +2,7 @@ package com.qa.choonz.service;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -44,7 +45,11 @@ public class TESTArtistServiceIntegration {
 	@BeforeEach
 	void init() {
 		this.repo.deleteAll();
-		testArtist = new Artist(id, name, testAlbums);
+		this.testArtist = new Artist();
+		this.testArtist.setId(1L);
+		this.testArtist.setName("Pink Floyd");
+		
+		this.testAlbums = new ArrayList<Album>();
 		
 		this.testArtist = new Artist();
 		this.testArtist.setName(this.name);
@@ -56,8 +61,7 @@ public class TESTArtistServiceIntegration {
 		this.artistDTOWithId = new ArtistDTO();
 		this.artistDTOWithId.setId(this.artistDTO.getId());
 		this.artistDTOWithId.setName(this.artistDTO.getName());
-		this.artistDTOWithId.setAlbums(this.testAlbums);	
-		
+		this.artistDTOWithId.setAlbums(this.artistDTO.getAlbums());			
 	}
 	
 	@Test
