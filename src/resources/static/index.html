@@ -3,11 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <link rel="stylesheet" href="../static/css/style.css">
     <title>Choonz Music</title>
 </head>
@@ -44,7 +41,7 @@
             <input class="form-control mr-sm-2" type="search" placeholder="Search">
             <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>
         </form>
-        <button type="button" class="btn btn-info" style="margin-left: 5px" onclick="showLogin()">Login</button>
+        <button type="button" id="loginBtn" class="btn btn-info" style="margin-left: 5px" onclick="showLogin()">Login</button>
     </div>
 </nav>
 <!-- /Navbar with search -->
@@ -54,11 +51,11 @@
 <!-- /Top quote -->
 
 <!-- Login -->
-    <div id="login" class="login-reg-panel">                      
+    <div class="login-reg-panel" id="login">                      
         <div class="register-info-box">
             <h2>Don't have an account?</h2>
             <label id="label-login" for="log-login-show">Register</label>
-            <input type="radio" name="active-log-panel" id="log-login-show">
+            <input type="radio" name="active-log-panel" id="log-login-show" data-toggle="modal" data-target="#exampleModal">
         </div>
                             
         <div class="white-panel">
@@ -73,10 +70,54 @@
     </div>
 <!-- /Login -->
 
-<!-- With login -->
+<!-- Register -->
 
-<!-- /With login -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Registration form</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <form name="RegForm" action="/playlists.html" onsubmit="return register()" method="post">
+                <div class="form-group">
+                  <label for="FirstName" class="col-form-label">First Name:</label>
+                  <input type="text" class="form-control" id="FirstName">
+                </div>
+                <div class="form-group">
+                    <label for="LastName" class="col-form-label">Last Name:</label>
+                    <input type="text" class="form-control" id="LastName">
+                </div>
+                <div class="form-group">
+                    <label for="Username" class="col-form-label">Username:</label>
+                    <input type="text" class="form-control" id="Username">
+                </div>
+                <div class="form-group">
+                    <label for="Email" class="col-form-label">Email:</label>
+                    <input type="text" class="form-control" id="Email">
+                </div>
+                <div class="form-group">
+                    <label for="Password" class="col-form-label">Password:</label>
+                    <input type="password" class="form-control" id="Password">
+                </div>
+                <div class="modal-footer">
+                <input type="submit" class="btn btn-secondary" value="Sign up!" name="Sign up" /> 
+                <input type="reset" class="btn btn-secondary" value="Reset" name="Reset" />
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+              </form>
+        </div>
+      </div>
+    </div>
+  </div>
 
+<!-- /Register -->
+
+<script src="../static/js/front.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
