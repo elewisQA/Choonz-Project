@@ -4,7 +4,6 @@ body {
     height:100vh;
 	  min-height:550px;
 	  position:relative;
-    overflow-y: hidden;
 }
 
 .navbar{
