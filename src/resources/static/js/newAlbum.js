@@ -1,4 +1,4 @@
-document.querySelector("form").addEventListener("submit", function(stop){
+document.querySelector("form.albums").addEventListener("submit", function(stop){
     stop.preventDefault();
     let albumModal = document.querySelector("form.albums").elements;
     console.log(albumModal);
@@ -34,6 +34,7 @@ function addAlbum(albumName, albumGenre, albumCover, albumArtist) {
         .then(json)
         .then(function (data) {
             console.log('Request succeeded with JSON response', data);
+            window.location.href = "albums.html";
         })
         .catch(function (error) {
             console.log('Request failed', error);

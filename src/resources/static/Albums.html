@@ -92,7 +92,7 @@
           </button> -->
         </div>
         <div class="modal-body">
-          <form class="albums" method="POST" action="index.html">
+          <form class="albums" method="POST">
             <div class="form-group">
               <label for="albumName">Album name: </label>
               <input type="text" class="form-control" id="albumName">
@@ -103,11 +103,12 @@
               <label for="albumArtist">Artist: </label>
               <input type="text" class="form-control" id="albumArtist">   
             </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="reset" class="btn btn-info" id="reset-button">Clear</button>
+              <button type="submit" class="btn btn-info" id="submit-button">Save changes</button>
+            </div>
           </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="submit" class="btn btn-info" id="submit-button">Save changes</button>
         </div>
       </div>
     </div>
