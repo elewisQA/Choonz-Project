@@ -225,6 +225,17 @@ body {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
+#genres div.card img {
+  height: 200px;
+  width: 300px;
+  transition: width 0.5s, height 0.5s;
+}
+
+#genres div.card:hover img {
+  height: 208px;
+  width: 310px;
+}
+
 #genres img {
   object-fit: cover;
   opacity: 0.5;
