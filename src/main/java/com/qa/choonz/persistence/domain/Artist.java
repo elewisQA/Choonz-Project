@@ -27,7 +27,7 @@ public class Artist {
     @Column(unique = true)
     private String name;
 
-    @JsonManagedReference
+    @JsonManagedReference(value="primary")
     @OneToMany(mappedBy = "artist", cascade = CascadeType.ALL)
     private List<Album> albums;
 

@@ -30,15 +30,15 @@ public class Album {
     @Column(unique = true)
     private String name;
 
-    @JsonManagedReference
+    @JsonManagedReference(value="album")
     @OneToMany(mappedBy = "album", cascade = CascadeType.ALL)
     private List<Track> tracks;
 
-    @JsonBackReference
+    @JsonBackReference(value="primary")
     @ManyToOne
     private Artist artist;
 
-    @JsonBackReference
+    @JsonBackReference(value="secondary")
     @ManyToOne
     private Genre genre;
 

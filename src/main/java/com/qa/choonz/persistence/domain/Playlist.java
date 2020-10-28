@@ -37,7 +37,7 @@ public class Playlist {
     @Column(unique = true)
     private String artwork;
 
-    @JsonManagedReference
+    @JsonManagedReference(value="secondary")
     @OneToMany(mappedBy = "playlist", cascade = CascadeType.ALL)
     private List<Track> tracks;
 

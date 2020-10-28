@@ -32,7 +32,7 @@ public class Genre {
     @Column(unique = true)
     private String description;
 
-    @JsonManagedReference
+    @JsonManagedReference(value="secondary")
     @OneToMany(mappedBy = "genre", cascade = CascadeType.ALL)
     private List<Album> albums;
 

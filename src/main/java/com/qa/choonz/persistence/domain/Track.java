@@ -25,11 +25,11 @@ public class Track {
     @Column(unique = true)
     private String name;
 
-    @JsonBackReference
+    @JsonBackReference(value="album")
     @ManyToOne
     private Album album;
 
-    @JsonBackReference
+    @JsonBackReference(value="secondary")
     @ManyToOne
     private Playlist playlist;
 
