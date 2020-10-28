@@ -103,6 +103,7 @@ public class TESTPlaylistControllerIntegration {
     @Test
     void testUpdate() throws Exception{
     	Playlist newPlaylist = new Playlist();
+    	newPlaylist.setId(this.id);
     	newPlaylist.setName("Big tunes");
     	newPlaylist.setDescription("Big bangers");
     	newPlaylist.setArtwork("Art");
