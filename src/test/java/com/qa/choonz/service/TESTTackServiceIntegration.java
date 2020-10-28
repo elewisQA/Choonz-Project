@@ -1,5 +1,6 @@
 package com.qa.choonz.service;
 
+//---[ Imports ]---
 import static org.assertj.core.api.Assertions.assertThat;
 
 import java.util.stream.Collectors;
@@ -56,6 +57,7 @@ public class TESTTackServiceIntegration {
 		// Instantiate vars for the test-track
 		album = new Album(1L, "Pink", null, null, null, "cover");
 		playlist = new Playlist(1L, "Playlist", "Description", "cover", null);
+		
 		// Instantiate Album and Playlist.
 		// The ID's and names for these match those found in Data.sql
 		// The rest of the info here doesn't matter / isn't used by the repo
@@ -63,6 +65,7 @@ public class TESTTackServiceIntegration {
 		this.playlist = new Playlist(1, "Playlist One", null, null, null);
 		this.playlist.setId(1);
 		this.playlist.setName("Playlist One");
+		
 		// Instantiate the test-track
 		// Have to use setters as we don't want to include the ID 
 		// And no constructor exists to set all these without an id
@@ -74,6 +77,7 @@ public class TESTTackServiceIntegration {
 		this.testTrack.setPlaylist(playlist);
 		this.testTrackWithId = this.repo.save(testTrack);
 		this.id = this.testTrackWithId.getId();
+		
 		// instantiate track DTOs
 		// DTO With ID must be set manually as you cant "get" an album from a Track DTO
 		this.trackDTO = this.mapToDTO(this.testTrackWithId);
@@ -91,8 +95,6 @@ public class TESTTackServiceIntegration {
 	//--[ Test Cases ]--
 	@Test
 	void testCreate() throws Exception {
-		System.out.println(this.testTrack.toString());
-		System.out.println(this.trackDTOWithId.toString());
 		assertThat(this.trackDTOWithId).isEqualTo(this.service.create(this.testTrack));
 	}
 	
