@@ -1,6 +1,8 @@
 package com.qa.choonz.rest.dto;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 
 import com.qa.choonz.persistence.domain.Album;
@@ -11,7 +13,7 @@ public class GenreDTO {
     private String name;
     private String picture;
     private String description;
-    private List<Album> albums;
+    private Map<Long, String> albums;
 
     public GenreDTO() {
         super();
@@ -24,7 +26,12 @@ public class GenreDTO {
         this.name = name;
         this.picture = picture;
         this.description = description;
-        this.albums = albums;
+        this.albums = new HashMap<Long, String>();
+        if (albums != null) {
+        	for (Album a: albums) {
+        		this.albums.put(a.getId(), a.getName());
+        	}
+        }
     }
 
     public long getId() {
@@ -59,12 +66,17 @@ public class GenreDTO {
         this.description = description;
     }
 
-    public List<Album> getAlbums() {
+    public Map<Long, String> getAlbums() {
         return albums;
     }
 
     public void setAlbums(List<Album> albums) {
-        this.albums = albums;
+        this.albums = new HashMap<Long, String>();
+        if (albums != null) {
+        	for (Album a: albums) {
+        		this.albums.put(a.getId(), a.getName());
+        	}
+        }
     }
 
     @Override
