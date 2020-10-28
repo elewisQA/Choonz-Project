@@ -55,6 +55,7 @@ public class TESTArtistControllerIntegration {
     @BeforeEach
     void init() {
     	this.repo.deleteAll();
+    	
     	this.testAlbums= new ArrayList<>();
     	this.testArtist = new Artist();
     	this.testArtist.setName(this.name);
