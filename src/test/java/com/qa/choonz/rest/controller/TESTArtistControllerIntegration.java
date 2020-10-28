@@ -108,7 +108,7 @@ public class TESTArtistControllerIntegration {
     	updatedArtist.setId(this.id);
     	
         String output = this.mock
-                .perform(request(HttpMethod.PUT, "/artists/update/" + this.id).accept(MediaType.APPLICATION_JSON)
+                .perform(request(HttpMethod.POST, "/artists/update/" + this.id).accept(MediaType.APPLICATION_JSON)
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(this.objectMapper.writeValueAsString(newArtist)))
                 .andExpect(status().isAccepted()).andReturn().getResponse().getContentAsString();
