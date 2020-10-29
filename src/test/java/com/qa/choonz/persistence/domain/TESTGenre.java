@@ -20,6 +20,7 @@ public class TESTGenre {
 	Genre testGenre;
 	final Long id = 1l;
 	final String name = "Psychadelic Rock";
+	final String picture ="../";
 	final String description = "Unusual rock-music.";
 	List<Album> albums;
 	
@@ -29,7 +30,8 @@ public class TESTGenre {
 		this.albums = new ArrayList<Album>();
 		this.testGenre = new Genre(
 				this.id, 
-				this.name, 
+				this.name,
+				this.picture,
 				this.description, 
 				this.albums);
 	}
@@ -50,6 +52,7 @@ public class TESTGenre {
 		Genre newGenre = new Genre(
 				this.id, 
 				this.name, 
+				this.picture,
 				this.description, 
 				this.albums);
 		

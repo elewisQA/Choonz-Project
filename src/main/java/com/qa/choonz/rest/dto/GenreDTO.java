@@ -14,7 +14,7 @@ public class GenreDTO {
     private String name;
     private String picture;
     private String description;
-    private Map<Long, String> albums;
+    private List<Album> albums;
 
     public GenreDTO() {
         super();
@@ -27,12 +27,7 @@ public class GenreDTO {
         this.name = name;
         this.picture = picture;
         this.description = description;
-        this.albums = new HashMap<Long, String>();
-        if (albums != null) {
-        	for (Album a: albums) {
-        		this.albums.put(a.getId(), a.getName());
-        	}
-        }
+        this.albums = albums;
     }
 
     public long getId() {
@@ -67,17 +62,12 @@ public class GenreDTO {
         this.description = description;
     }
 
-    public Map<Long, String> getAlbums() {
-        return albums;
-    }
-
     public void setAlbums(List<Album> albums) {
-        this.albums = new HashMap<Long, String>();
-        if (albums != null) {
-        	for (Album a: albums) {
-        		this.albums.put(a.getId(), a.getName());
-        	}
-        }
+        this.albums = albums;
+    }
+    
+    public List<Album> getAlbums() {
+    	return this.albums;
     }
 
     @Override

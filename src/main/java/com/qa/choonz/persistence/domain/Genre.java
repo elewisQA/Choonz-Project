@@ -52,14 +52,14 @@ public class Genre {
         this.description = description;
         this.albums = albums;
     }
-
-    @Override
-    public String toString() {
-        StringBuilder builder = new StringBuilder();
-        builder.append("Genre [id=").append(id).append(", name=").append(name).append(", description=")
-                .append(description).append(", albums=").append(albums).append("]");
-        return builder.toString();
-    }
+    
+	@Override
+	 public String toString() {
+	      StringBuilder builder = new StringBuilder();
+	      builder.append("Genre [id=").append(this.id).append(", name=").append(this.name).append(", picture=").append(this.picture).append(", description=")
+	               .append(this.description).append(", albums=").append(this.albums).append("]");
+	      return builder.toString();
+	   }
 
     public long getId() {
 		return id;
@@ -101,13 +101,7 @@ public class Genre {
 		this.albums = albums;
 	}
 
-	@Override
-  public String toString() {
-       StringBuilder builder = new StringBuilder();
-       builder.append("Genre [id=").append(id).append(", name=").append(name).append(", picture=").append(picture).append(", description=")
-               .append(description).append(", albums=").append(albums).append("]");
-       return builder.toString();
-    }
+
 
     @Override
     public int hashCode() {

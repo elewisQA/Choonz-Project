@@ -19,6 +19,7 @@ public class TestGenreDTO {
     final long id = 1L;
     final String name = "Pop";
     final String description = "Pop music";
+    final String picture = "../";
     List<Album> testAlbums;
     
 	@BeforeEach
@@ -27,6 +28,7 @@ public class TestGenreDTO {
 		this.testGenre = new GenreDTO(
 				this.id,
 				this.name,
+				this.picture,
 				this.description,
 				this.testAlbums);
 	}
@@ -42,11 +44,13 @@ public class TestGenreDTO {
 	void testAllArgsConstructor() {
 		Long newId = this.id + 1;
 		String newName = "R&B";
+		String newPicture = "../";
 		String newDesc = "Rhythm and blues";
 		List<Album> newTestAlbums = new ArrayList<Album>();
 		GenreDTO newTestGenre = new GenreDTO(
 				newId, 
 				newName,
+				newPicture,
 				newDesc,
 				newTestAlbums);	
 	
@@ -95,8 +99,8 @@ public class TestGenreDTO {
 	
 	@Test
 	public void hashCodeTest() {		
-		GenreDTO genre1 = new GenreDTO(1L,"Pop","Pop music",null);
-		GenreDTO genre2 = new GenreDTO(1L,"Pop","Pop music",null);
+		GenreDTO genre1 = new GenreDTO(1L,"Pop", "/pic/1", "Pop music",null);
+		GenreDTO genre2 = new GenreDTO(1L,"Pop", "/pic/1", "Pop music",null);
 		
 		assertTrue(genre1.hashCode() == genre2.hashCode());
 	}
@@ -107,6 +111,7 @@ public class TestGenreDTO {
 		GenreDTO fullGenre = new GenreDTO(
 				this.id, 
 				this.name,
+				this.picture,
 				this.description,
 				this.testAlbums);
 		

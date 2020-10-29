@@ -43,6 +43,7 @@ public class TESTArtistControllerUnit {
 		Artist testArtistWithId;
 		final Long id = 1l;
 		final String name = "Pink Floyd";
+		final String picture = "Picture";
 		List<Album> testAlbums;
 		List<Artist> testArtists;
 		
@@ -58,7 +59,8 @@ public class TESTArtistControllerUnit {
 					this.testAlbums = new ArrayList<Album>();
 					this.testArtist = new Artist(
 							this.id, 
-							this.name, 
+							this.name,
+							this.picture,
 							this.testAlbums);
 					testArtists.add(testArtist);
 				}
@@ -98,8 +100,8 @@ public class TESTArtistControllerUnit {
 		
 		@Test
 		void testUpdateArtist() {
-			ArtistDTO newArtist = new ArtistDTO(this.id, this.name, this.testAlbums);
-			ArtistDTO newArtistWithId = new ArtistDTO(this.id, newArtist.getName(),this.testAlbums);
+			ArtistDTO newArtist = new ArtistDTO(this.id, this.name,this.picture, this.testAlbums);
+			ArtistDTO newArtistWithId = new ArtistDTO(this.id, newArtist.getName(),newArtist.getPicture(),this.testAlbums);
 			
 			when(this.service.update(testArtist, this.id)).thenReturn(newArtistWithId);
 			
