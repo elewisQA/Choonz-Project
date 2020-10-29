@@ -42,13 +42,14 @@ public class TESTGenreServiceUnit {
 	final Long id = 1L;
 	final String name = "R&B";
 	final String description = "Meaningful music";
+	final String picture = "TestPicture";
 	
 	
 	@BeforeEach
 	void init() {
 		this.testAlbums = new ArrayList<Album>();
 		this.testGenres = new ArrayList<Genre>();
-		this.testGenre = new Genre(this.id, this.name, this.description, this.testAlbums);
+		this.testGenre = new Genre(this.id, this.name, this.picture, this.description, this.testAlbums);
 		testGenres.add(testGenre);
 	}
 	
@@ -83,11 +84,11 @@ public class TESTGenreServiceUnit {
 	
 	@Test
 	void testUpdateGenre() {
-		Genre genre = new Genre(this.id, this.name, this.description, this.testAlbums);
-		GenreDTO genreDTO = new GenreDTO(this.id, this.name, this.description, this.testAlbums);
+		Genre genre = new Genre(this.id, this.name, this.picture, this.description, this.testAlbums);
+		GenreDTO genreDTO = new GenreDTO(this.id, this.name, this.picture, this.description, this.testAlbums);
 		
-		Genre updatedGenre = new Genre(this.id, genreDTO.getName(), genreDTO.getDescription(), genreDTO.getAlbums());
-		GenreDTO updatedGenreDTO = new GenreDTO(this.id, updatedGenre.getName(), updatedGenre.getDescription(), updatedGenre.getAlbums());
+		Genre updatedGenre = new Genre(this.id, genreDTO.getName(), genreDTO.getPicture(), genreDTO.getDescription(), genreDTO.getAlbums());
+		GenreDTO updatedGenreDTO = new GenreDTO(this.id, updatedGenre.getName(), updatedGenre.getPicture(), updatedGenre.getDescription(), updatedGenre.getAlbums());
 		
 		when(this.repo.findById(this.id)).thenReturn(Optional.of(genre));
 		when(this.repo.save(genre)).thenReturn(updatedGenre);
