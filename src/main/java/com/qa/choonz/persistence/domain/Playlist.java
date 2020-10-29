@@ -14,6 +14,7 @@ import javax.persistence.OneToMany;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity
@@ -38,7 +39,7 @@ public class Playlist {
     @Column(unique = true)
     private String artwork;
 
-    @JsonManagedReference(value="secondary")
+    @JsonBackReference(value="secondary")
     @ManyToMany(mappedBy = "playlists", cascade = CascadeType.ALL)
     private List<Track> tracks;
 
