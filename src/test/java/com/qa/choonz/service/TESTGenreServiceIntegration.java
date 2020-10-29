@@ -40,7 +40,6 @@ public class TESTGenreServiceIntegration {
 	private List<Album> testAlbums;
 	private Genre testGenre;
 	private Genre testGenreWithId;
-	private GenreDTO genreDTO;
 	private GenreDTO genreDTOWithId;
 	
 	@BeforeEach
@@ -60,21 +59,18 @@ public class TESTGenreServiceIntegration {
 		this.testGenreWithId = this.repo.save(testGenre);
 		this.id = this.testGenreWithId.getId();
 		
-		this.genreDTO = this.mapToDTO(this.testGenreWithId);
-		this.genreDTOWithId = new GenreDTO();
-		this.genreDTOWithId.setId(this.genreDTO.getId());
-		this.genreDTOWithId.setName(this.genreDTO.getName());
-		this.genreDTOWithId.setDescription(this.genreDTO.getDescription());
-		this.genreDTOWithId.setAlbums(this.genreDTO.getAlbums());
+		this.genreDTOWithId = this.mapToDTO(this.testGenreWithId);
 		
 	}
 	
 	@Test
 	void testCreate() {
-		System.out.println(this.testGenre.toString());
-		System.out.println(this.genreDTOWithId.toString());
-		assertThat(this.genreDTOWithId).isEqualTo(this.service.create(this.testGenre));
-		
+		assertThat(this.genreDTOWithId.getName())
+		.isEqualTo(this.service
+				.create(this.testGenre).getName());
+		assertThat(this.genreDTOWithId.getId())
+		.isEqualTo(this.service
+				.create(this.testGenre).getId());
 	}
 	
 	@Test
@@ -90,7 +86,12 @@ public class TESTGenreServiceIntegration {
 	
 	@Test
 	void testUpdate() {
-		assertThat(this.genreDTOWithId).isEqualTo(this.service.update(this.testGenre, this.id));
+		assertThat(this.genreDTOWithId.getName())
+		.isEqualTo(this.service
+				.update(this.testGenre, this.id).getName());
+		assertThat(this.genreDTOWithId.getId())
+		.isEqualTo(this.service
+				.update(this.testGenre, this.id).getId());
 	}
 	
 	@Test

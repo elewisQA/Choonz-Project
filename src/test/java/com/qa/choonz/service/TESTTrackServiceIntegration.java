@@ -80,20 +80,18 @@ public class TESTTrackServiceIntegration {
 		
 		// instantiate track DTOs
 		// DTO With ID must be set manually as you cant "get" an album from a Track DTO
-		this.trackDTO = this.mapToDTO(this.testTrackWithId);
-		this.trackDTOWithId = new TrackDTO();
-		this.trackDTOWithId.setId(this.trackDTO.getId());
-		this.trackDTOWithId.setName(this.trackDTO.getName());
-		this.trackDTOWithId.setAlbum(this.trackDTO.getAlbum());
-		this.trackDTOWithId.setPlaylist(this.trackDTO.getPlaylist());
-		this.trackDTOWithId.setDuration(this.trackDTO.getDuration());
-		this.trackDTOWithId.setLyrics(this.trackDTO.getLyrics());
+		this.trackDTOWithId = this.mapToDTO(this.testTrackWithId);
 	}
 	
 	//--[ Test Cases ]--
 	@Test
 	void testCreate() throws Exception {
-		assertThat(this.trackDTOWithId).isEqualTo(this.service.create(this.testTrack));
+		assertThat(this.trackDTOWithId.getName())
+		.isEqualTo(this.service
+				.create(this.testTrack).getName());
+		assertThat(this.trackDTOWithId.getId())
+		.isEqualTo(this.service
+				.create(this.testTrack).getId());
 	}
 	
 	@Test
@@ -110,8 +108,12 @@ public class TESTTrackServiceIntegration {
 	
 	@Test
 	void testUpdate() throws Exception {
-		assertThat(this.trackDTOWithId)
-		.isEqualTo(this.service.update(this.testTrack, this.id));
+		assertThat(this.trackDTOWithId.getName())
+		.isEqualTo(this.service
+				.update(this.testTrack, this.id).getName());
+		assertThat(this.trackDTOWithId.getId())
+		.isEqualTo(this.service
+				.update(this.testTrack, this.id).getId());
 	}
 	
 	@Test

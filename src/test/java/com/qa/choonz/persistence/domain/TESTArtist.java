@@ -26,10 +26,7 @@ public class TESTArtist {
 	void init() {
 		// Initialize testing vars
 		this.testAlbums = new ArrayList<Album>();
-		this.testArtist = new Artist(
-				this.id, 
-				this.name, 
-				this.testAlbums);
+		this.testArtist = new Artist(this.id, this.name, this.testAlbums);
 	}
 	
 	//--[ Test Methods ]--
