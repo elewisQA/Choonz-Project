@@ -100,15 +100,56 @@ function populate(data) {
      songName.appendChild(link);
       
      let songIcon = document.createElement("td");
-      let linkSong = document.createElement("a");
+     let dropdownMenu = document.createElement("div");
+     dropdownMenu.className="dropdown";
+     songIcon.appendChild(dropdownMenu);
+      
+    let linkSong = document.createElement("a");
       linkSong.href ="#";
+      linkSong.id ="dropdownMenu2";
+      linkSong.setAttribute("data-toggle", "dropdown");
+      linkSong.setAttribute("aria-haspopup", "true");
+      linkSong.setAttribute("aria-expanded", "false");
       let infoSong = document.createElement("i");
       infoSong.className ="fas fa-ellipsis-h";
       infoSong.id = "info_tracks"
       row.appendChild(songIcon);
       linkSong.appendChild(infoSong);
-      songIcon.appendChild(linkSong);
+      dropdownMenu.appendChild(linkSong);
+
+      let dropdown = document.createElement("div");
+      dropdown.className = "dropdown-menu";
+      dropdownMenu.appendChild(dropdown);
+
+      let linkDelete = document.createElement("a");
+      linkDelete.href='#';
+      linkDelete.className = "dropdown-item";
+      linkDelete.id = "delete-track";
+      linkDelete.type = "sumbit"
+      linkDelete.textContent = "Delete";
+      dropdown.appendChild(linkDelete);
+      let spanDelete = document.createElement("span");
+      spanDelete.id ="album-menu-delete";
+      linkDelete.appendChild(spanDelete);
+      let iconDelete = document.createElement("i");
+      iconDelete.className = "far fa-trash-alt";
+      spanDelete.appendChild(iconDelete);
+
+      let linkPlaylist = document.createElement("a");
+      linkPlaylist.href="#";
+      linkPlaylist.className = "dropdown-item";
+      linkPlaylist.textContent = "Add to Playlist";
+      dropdown.appendChild(linkPlaylist);
+
+      let spanPlaylist = document.createElement("span");
+      spanPlaylist.id ="album-menu-playlist";
+      linkPlaylist.appendChild(spanPlaylist);
+
+      let iconPlaylist = document.createElement("i");
+      iconPlaylist.className = "fas fa-music";
+      spanPlaylist.appendChild(iconPlaylist);
 
      songCount++;
     }
 }
+

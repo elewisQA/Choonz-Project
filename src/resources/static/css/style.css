@@ -343,3 +343,11 @@ body {
 #table_container th {
   color: #444444bd;
 }
+
+#album-menu-delete {
+  margin-left: 58%;
+}
+
+#album-menu-playlist{
+  margin-left: 10%;
+}
