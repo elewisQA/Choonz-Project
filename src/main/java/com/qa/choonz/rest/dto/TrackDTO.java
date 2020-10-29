@@ -77,9 +77,9 @@ public class TrackDTO {
 		this.lyrics = lyrics;
 	}
 
+	
 	@Override
 	public String toString() {
-		// TODO add in IDs
 		return "TrackDTO [id=" + id + ", name=" + name + ", album=" + album + ", playlist=" + playlist + ", duration="
 				+ duration + ", lyrics=" + lyrics + "]";
 	}
