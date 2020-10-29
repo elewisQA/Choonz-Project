@@ -3,6 +3,8 @@ package com.qa.choonz.service;
 //---[ Imports ]---
 import static org.assertj.core.api.Assertions.assertThat;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -96,14 +98,23 @@ public class TESTTrackServiceIntegration {
 	
 	@Test
 	void testReadOne() throws Exception {
-		assertThat(this.trackDTOWithId).isEqualTo(this.service.read(this.id));
+		assertThat(this.trackDTOWithId.getName())
+		.isEqualTo(this.service
+				.read(this.id).getName());
+		assertThat(this.trackDTOWithId.getId())
+		.isEqualTo(this.service
+				.read(this.id).getId());
 	}
 	
 	@Test
 	void testRead() throws Exception {
-		assertThat(Stream.of(this.trackDTOWithId)
-				.collect(Collectors.toList()))
-		.isEqualTo(this.service.read());
+		List<TrackDTO> things = this.service.read();
+		List<TrackDTO> testThings = new ArrayList<>();
+		testThings.add(this.trackDTOWithId);
+		assertThat(testThings.get(0).getName())
+		.isEqualTo(things.get(0).getName());
+		assertThat(testThings.get(0).getId())
+		.isEqualTo(things.get(0).getId());
 	}
 	
 	@Test
