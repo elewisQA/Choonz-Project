@@ -55,7 +55,7 @@ public class TESTTrackControllerIntegration {
 	private Long id;
 	private final String name = "Song";
 	private final Album album = null;
-	private final Playlist playlist = null;
+	private final List<Playlist> playlist = null;
 	private final int duration = 180;
 	private final String lyrics = "Lyrics";
 	
