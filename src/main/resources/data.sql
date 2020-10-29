@@ -1,6 +1,7 @@
 /* Insert Some Artists */
 INSERT INTO ARTIST VALUES (1, 'Pink Floyd');
 INSERT INTO ARTIST VALUES (2, 'ABBA');
+INSERT INTO ARTIST VALUES (3, 'Gorrilaz');
 /* Insert some Genres */
 INSERT INTO GENRE VALUES (1, 'Time to Dance!', 'Disco');
 INSERT INTO GENRE VALUES (2, 'Rock inspired by psychedelic culture', 'Psychedelic Rock');
