@@ -44,6 +44,7 @@ public class TESTTrackServiceIntegration {
 	private final String LYRICS = "I have become comfortably numb";
 	private Album album;
 	private Playlist playlist;
+	private List<Playlist> playList;
 	private final int DURATION = 2;
 	private Track testTrack;
 	private Track testTrackWithId;
@@ -76,7 +77,7 @@ public class TESTTrackServiceIntegration {
 		this.testTrack.setLyrics(this.LYRICS);
 		this.testTrack.setDuration(this.DURATION);
 		this.testTrack.setAlbum(album);
-		this.testTrack.setPlaylist(playlist);
+		this.testTrack.setPlaylists(playList);
 		this.testTrackWithId = this.repo.save(testTrack);
 		this.id = this.testTrackWithId.getId();
 		

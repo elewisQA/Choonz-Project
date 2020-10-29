@@ -5,6 +5,9 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.junit.jupiter.api.Test;
 
 import com.qa.choonz.persistence.domain.Album;
@@ -20,9 +23,14 @@ public class TESTTrack {
 		assertTrue(emptyTrack instanceof Track);
 		
 		Album album = new Album();
-		Playlist playlist = new Playlist();
+		List<Playlist> playlists = new ArrayList<Playlist>();
 		
-		Track track = new Track(1L,"Song",album,playlist,180,"Lyrics");
+		Track track = new Track(1L,
+				"Song",
+				album,
+				playlists,
+				180,
+				"Lyrics");
 		
 		assertTrue(track instanceof Track);
 	}
@@ -57,11 +65,11 @@ public class TESTTrack {
 	@Test
 	public void getSetPlaylistTest() {
 		Track emptyTrack = new Track();
-		Playlist playlist = new Playlist();
+		List<Playlist> playlists = new ArrayList<Playlist>();
 		
-		emptyTrack.setPlaylist(playlist);
+		emptyTrack.setPlaylists(playlists);
 		
-		assertEquals(playlist,emptyTrack.getPlaylist());
+		assertEquals(playlists,emptyTrack.getPlaylists());
 	}
 	
 	@Test
@@ -85,19 +93,18 @@ public class TESTTrack {
 	@Test
 	public void toStringTests() {		
 		Track track = new Track(1L,"Song",null,null,180,"Lyrics");
-		
 		assertNotNull(track.toString());
-		assertEquals("Track [id=1, name=Song, album=null, playlist=null, duration=180, lyrics=Lyrics]"
+		assertEquals("Track [id=1, name=Song, album=null, playlists=null, duration=180, lyrics=Lyrics]"
 				,track.toString());
 	}
 	
 	@Test
 	public void hashCodeTest() {
 		Album album = new Album();
-		Playlist playlist = new Playlist();
+		List<Playlist> playlists = new ArrayList<Playlist>();
 		
-		Track track1 = new Track(1L,"Song",album,playlist,180,"Lyrics");
-		Track track2 = new Track(1L,"Song",album,playlist,180,"Lyrics");
+		Track track1 = new Track(1L,"Song",album,playlists,180,"Lyrics");
+		Track track2 = new Track(1L,"Song",album,playlists,180,"Lyrics");
 		
 		assertTrue(track1.hashCode() == track2.hashCode());
 	}
@@ -105,9 +112,9 @@ public class TESTTrack {
 	@Test
 	public void equalsTest() {
 		Album album = new Album();
-		Playlist playlist = new Playlist();
+		List<Playlist> playlists = new ArrayList<Playlist>();
 		
-		Track track = new Track(1L,"Song",album,playlist,180,"Lyrics");
+		Track track = new Track(1L,"Song",album,playlists,180,"Lyrics");
 		
 		assertTrue(track.equals(track));
 		assertFalse(track.equals(album));
