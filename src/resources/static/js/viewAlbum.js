@@ -58,14 +58,21 @@ function populate(data) {
     genre.textContent = data["genreName"];
     linkGenre.appendChild(genre);
 
+    let linkInfo = document.createElement("a");
+    linkInfo.href="#";
+    let info = document.createElement("i");
+    info.className = "fas fa-info-circle";
+    linkInfo.appendChild(info);
+
     textContainer.appendChild(albumName);
     textContainer.appendChild(linkArtist);
     textContainer.appendChild(linkGenre);
+    textContainer.appendChild(linkInfo);
 
     let tableContainer = document.createElement("div");
     tableContainer.id = "table_container";
     let table = document.createElement("table");
-    table.className = "table";
+    table.className = "table table-hover";
     let tableBody = document.createElement("tbody");
     find.appendChild(tableContainer);
     tableContainer.appendChild(table);
@@ -91,6 +98,17 @@ function populate(data) {
      link.textContent = value;
      row.appendChild(songName);
      songName.appendChild(link);
+      
+     let songIcon = document.createElement("td");
+      let linkSong = document.createElement("a");
+      linkSong.href ="#";
+      let infoSong = document.createElement("i");
+      infoSong.className ="fas fa-ellipsis-h";
+      infoSong.id = "info_tracks"
+      row.appendChild(songIcon);
+      linkSong.appendChild(infoSong);
+      songIcon.appendChild(linkSong);
+
      songCount++;
     }
 }
