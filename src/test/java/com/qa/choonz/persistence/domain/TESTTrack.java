@@ -93,9 +93,8 @@ public class TESTTrack {
 	@Test
 	public void toStringTests() {		
 		Track track = new Track(1L,"Song",null,null,180,"Lyrics");
-		
 		assertNotNull(track.toString());
-		assertEquals("Track [id=1, name=Song, album=null, playlist=null, duration=180, lyrics=Lyrics]"
+		assertEquals("Track [id=1, name=Song, album=null, playlists=null, duration=180, lyrics=Lyrics]"
 				,track.toString());
 	}
 	
