@@ -1,4 +1,4 @@
-let valid = true;
+
 
 function validateForm(){
 
@@ -9,32 +9,26 @@ function validateForm(){
     if (name.value == "") { 
         window.alert("Please enter the name of the album."); 
         name.focus(); 
-        valid = false;
-        return false; 
+        return true; 
     }
     if (genre.value == 0) { 
         window.alert("Please select the genre."); 
         genre.focus();
-        valid = false;
         return false; 
     }
     if (artist.value == 0) { 
         window.alert("Please select the artist."); 
         artist.focus(); 
-        valid = false;
         return false; 
     }
     if (cover.value == "") { 
         window.alert("Please paste the link of the image for this album."); 
         cover.focus(); 
-        valid = false;
         return false; 
     }
 
     return false;
 }
-
-if(valid){
     document.querySelector("form.albums").addEventListener("submit", function(stop){
         stop.preventDefault();
         let albumModal = document.querySelector("form.albums").elements;
@@ -72,14 +66,12 @@ if(valid){
             .then(json)
             .then(function (data) {
                 console.log('Request succeeded with JSON response', data);
-                window.location.href = "albums.html";
+                // window.location.href = "albums.html";
             })
             .catch(function (error) {
                 console.log('Request failed', error);
             });
     }
-    
-}
 
 fetch('http://localhost:8082/artists/read')
       .then(
