@@ -1,29 +1,32 @@
-function validateForm(){
+// Example starter JavaScript for disabling form submissions if there are invalid fields
+(function() {
+    'use strict';
+    window.addEventListener('load', function() {
+      // Fetch all the forms we want to apply custom Bootstrap validation styles to
+      var forms = document.getElementsByClassName('needs-validation');
+      // Loop over them and prevent submission
+      var validation = Array.prototype.filter.call(forms, function(form) {
+        form.addEventListener('submit', function(event) {
+          if (form.checkValidity() === false) {
+            event.preventDefault();
+            event.stopPropagation();
+          }
+            form.classList.add('was-validated');
+        }, false);
+      });
+    }, false);
+  })();
 
-    var name = document.forms["createNewArtist"]["name"];
-    var pic = document.forms["createNewArtist"]["pic"];
-    if (name.value == "") { 
-        window.alert("Please enter the name of the artist."); 
-        name.focus(); 
-        return true; 
-    }
-    if (pic.value == "") { 
-        window.alert("Please add the link of the image for this artist."); 
-        pic.focus();
-        return false; 
-    }
-
-    return false;
-}
-    document.querySelector("form.artists").addEventListener("submit", function(stop){
+    document.querySelector("form#createNewArtist").addEventListener("submit", function(stop){
         stop.preventDefault();
-        let artistModal = document.querySelector("form.artists").elements;
+        let artistModal = document.querySelector("form#createNewArtist").elements;
         console.log(artistModal);
         let artistName = artistModal['artistName'].value;
         let artistPic = artistModal['artistPic'].value;
         addArtist(artistName, artistPic);
         
-    })
+    });
+
     
     function addArtist(artistName, artistPic) {
     
@@ -40,7 +43,7 @@ function validateForm(){
             .then(json)
             .then(function (data) {
                 console.log('Request succeeded with JSON response', data);
-                // window.location.href = "albums.html";
+                location.reload();
             })
             .catch(function (error) {
                 console.log('Request failed', error);
