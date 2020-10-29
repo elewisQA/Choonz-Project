@@ -14,29 +14,43 @@ function showLogin() {
   }
 }
 
-$(document).ready(function(){
-  $('.login-info-box').fadeOut();
-  $('.login-show').addClass('show-log-panel');
-});
+function register() { 
+  var firstname = document.forms["RegForm"]["FirstName"]; 
+  var lastname = document.forms["RegForm"]["LastName"]; 
+  var username = document.forms["RegForm"]["Username"]; 
+  var email = document.forms["RegForm"]["Email"]; 
+  var password = document.forms["RegForm"]["Password"]; 
 
+  if (firstname.value == "") { 
+      window.alert("Please enter your first name."); 
+      firstname.focus(); 
+      return false; 
+  } 
 
-$('.login-reg-panel input[type="radio"]').on('change', function() {
-  if($('#log-login-show').is(':checked')) {
-      $('.register-info-box').fadeOut(); 
-      $('.login-info-box').fadeIn();
-      
-      $('.white-panel').addClass('right-log');
-      $('.register-show').addClass('show-log-panel');
-      $('.login-show').removeClass('show-log-panel');
-      
-  }
-  else if($('#log-reg-show').is(':checked')) {
-      $('.register-info-box').fadeIn();
-      $('.login-info-box').fadeOut();
-      
-      $('.white-panel').removeClass('right-log');
-      
-      $('.login-show').addClass('show-log-panel');
-      $('.register-show').removeClass('show-log-panel');
-  }
-});
+  if (lastname.value == "") { 
+      window.alert("Please enter your last name."); 
+      lastname.focus(); 
+      return false; 
+  } 
+
+  if (username.value == "") { 
+    window.alert("Please enter your username."); 
+    username.focus(); 
+    return false; 
+} 
+
+  if (email.value == "") { 
+      window.alert( 
+        "Please enter a valid e-mail address."); 
+      email.focus(); 
+      return false; 
+  } 
+
+  if (password.value == "") { 
+      window.alert("Please enter your password"); 
+      password.focus(); 
+      return false; 
+  } 
+
+  return true; 
+} 

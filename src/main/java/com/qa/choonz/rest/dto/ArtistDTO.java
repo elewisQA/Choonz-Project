@@ -69,6 +69,10 @@ public class ArtistDTO {
 	        }
     	}
     }
+    
+    public void setAlbums(Map<Long, String> albums) {
+    	this.albums = albums;
+    }
 
     @Override
     public String toString() {
