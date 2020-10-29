@@ -28,7 +28,6 @@ public class GenreDTO {
         this.picture = picture;
         this.description = description;
         this.albums = albums;
-       
     }
 
     public long getId() {
@@ -63,13 +62,12 @@ public class GenreDTO {
         this.description = description;
     }
 
-    public List<Album> getAlbums() {
-        return albums;
-    }
-
     public void setAlbums(List<Album> albums) {
         this.albums = albums;
-        
+    }
+    
+    public List<Album> getAlbums() {
+    	return this.albums;
     }
 
     @Override

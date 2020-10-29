@@ -48,12 +48,13 @@ public class TESTGenreControllerUnit {
 	final Long id = 1L;
 	final String name = "R&B";
 	final String description = "Meaningful music";
+	final String picture = "Picture";
 	
 	@BeforeEach
 	void init() {
 		this.testAlbums = new ArrayList<Album>();
 		this.genreList = new ArrayList<Genre>();
-		this.testGenre = new Genre(this.id, this.name, this.description, this.testAlbums);
+		this.testGenre = new Genre(this.id, this.name,this.picture, this.description, this.testAlbums);
 		genreList.add(testGenre);
 	}
 	
@@ -92,9 +93,9 @@ public class TESTGenreControllerUnit {
     
     @Test
     void updateTest() {
-    	Genre newGenre = new Genre(this.id,this.name,this.description,this.testAlbums);
+    	Genre newGenre = new Genre(this.id,this.name,this.picture,this.description,this.testAlbums);
     	
-    	GenreDTO updatedGenre = new GenreDTO(this.id,newGenre.getName()
+    	GenreDTO updatedGenre = new GenreDTO(this.id,newGenre.getName(),newGenre.getPicture()
     			,newGenre.getDescription()
     			,newGenre.getAlbums());
     	
