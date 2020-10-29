@@ -11,6 +11,8 @@ import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 @Entity
 public class Track {
 
@@ -23,9 +25,11 @@ public class Track {
     @Column(unique = true)
     private String name;
 
+    @JsonBackReference(value="album")
     @ManyToOne
     private Album album;
 
+    @JsonBackReference(value="secondary")
     @ManyToOne
     private Playlist playlist;
 
@@ -98,6 +102,7 @@ public class Track {
         this.lyrics = lyrics;
     }
 
+    
     @Override
     public String toString() {
         StringBuilder builder = new StringBuilder();

@@ -44,7 +44,6 @@ public class TESTPlaylistServiceIntegration {
 	private List<Track> tracks;
 	private Playlist testPlaylist;
 	private Playlist testPlaylistWithId;
-	private PlaylistDTO playlistDTO;
 	private PlaylistDTO playlistDTOWithId;
 	
 	//===[ All Test Code ]===
@@ -63,19 +62,18 @@ public class TESTPlaylistServiceIntegration {
 		this.id = this.testPlaylistWithId.getId();
 		
 		// Instantiate DTOs
-		this.playlistDTO = this.mapToDTO(this.testPlaylistWithId);
-		this.playlistDTOWithId = new PlaylistDTO();
-		this.playlistDTOWithId.setId(this.playlistDTO.getId());
-		this.playlistDTOWithId.setName(this.playlistDTO.getName());
-		this.playlistDTOWithId.setDescription(this.playlistDTO.getDescription());
-		this.playlistDTOWithId.setTracks(this.playlistDTO.getTracks());
-		this.playlistDTOWithId.setArtwork(this.playlistDTO.getArtwork());
+		this.playlistDTOWithId = this.mapToDTO(this.testPlaylistWithId);
 	}
 	
 	//--[ Test Cases ]--
 	@Test
 	void testCreate() throws Exception {
-		assertThat(this.playlistDTOWithId).isEqualTo(this.service.create(this.testPlaylist));
+		assertThat(this.playlistDTOWithId.getName())
+		.isEqualTo(this.service
+				.create(this.testPlaylist).getName());
+		assertThat(this.playlistDTOWithId.getId())
+		.isEqualTo(this.service
+				.create(this.testPlaylist).getId());
 	}
 	
 	@Test
@@ -92,8 +90,12 @@ public class TESTPlaylistServiceIntegration {
 	
 	@Test
 	void testUpdate() throws Exception {
-		assertThat(this.playlistDTOWithId)
-		.isEqualTo(this.service.update(this.testPlaylist, this.id));
+		assertThat(this.playlistDTOWithId.getName())
+		.isEqualTo(this.service
+				.update(this.testPlaylist, this.id).getName());
+		assertThat(this.playlistDTOWithId.getId())
+		.isEqualTo(this.service
+				.update(this.testPlaylist, this.id).getId());
 	}
 	
 	@Test

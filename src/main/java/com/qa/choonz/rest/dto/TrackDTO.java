@@ -8,10 +8,8 @@ public class TrackDTO {
 
     private long id;
     private String name;
-    private String albumName;
-    private Long albumId;
-    private String playlistName;
-    private Long playlistId;
+    private Album album;
+    private Playlist playlist;
     private int duration;
     private String lyrics;
 
@@ -24,20 +22,8 @@ public class TrackDTO {
     	super();
     	this.id = id;
     	this.name = name;
-		if (album != null) {
-			this.albumName = album.getName();
-			this.albumId = album.getId();
-		} else {
-			this.albumName = null;
-			this.albumId = null;
-		}
-		if (playlist != null) {
-			this.playlistName = playlist.getName();
-			this.playlistId = playlist.getId();
-		} else {
-			this.playlistName = null;
-			this.playlistId = null;
-		}
+    	this.album = album;
+    	this.playlist = playlist;
     	this.duration = duration;
     	this.lyrics = lyrics;
     }
@@ -58,57 +44,21 @@ public class TrackDTO {
 		this.name = name;
 	}
 
-	public String getAlbumName() {
-		return this.albumName;
-	}
-	
-	public Long getAlbumId() {
-		return this.albumId;
+	public Album getAlbum() {
+		return this.album;
 	}
 
 	public void setAlbum(Album album) {
-		if (album != null) {
-			this.albumName = album.getName();
-			this.albumId = album.getId();
-		} else {
-			this.albumName = null;
-			this.albumId = null;
-		}
-	}
-
-	public void setAlbumName(String albumName) {
-		this.albumName = albumName;
-	}
-
-
-	public void setAlbumId(Long albumId) {
-		this.albumId = albumId;
+		this.album = album;
 	}
 	
-	public String getPlaylistName() {
-		return this.playlistName;
-	}
 	
-	public Long getPlaylistId() {
-		return this.playlistId;
+	public Playlist getPlaylist() {
+		return this.playlist;
 	}
 
 	public void setPlaylist(Playlist playlist) {
-		if (playlist != null) {
-			this.playlistName = playlist.getName();
-			this.playlistId = playlist.getId();
-		} else {
-			this.playlistName = null;
-			this.playlistId = null;
-		}
-	}
-	
-	public void setPlaylistName(String playlistName) {
-		this.playlistName = playlistName;
-	}
-	
-	public void setPlaylistId(Long playlistId) {
-		this.playlistId = playlistId;
+		this.playlist = playlist;
 	}
 
 	public int getDuration() {
@@ -127,16 +77,16 @@ public class TrackDTO {
 		this.lyrics = lyrics;
 	}
 
+	
 	@Override
 	public String toString() {
-		// TODO add in IDs
-		return "TrackDTO [id=" + id + ", name=" + name + ", album=" + albumName + ", playlist=" + playlistName + ", duration="
+		return "TrackDTO [id=" + id + ", name=" + name + ", album=" + album + ", playlist=" + playlist + ", duration="
 				+ duration + ", lyrics=" + lyrics + "]";
 	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(albumName, albumId, duration, id, lyrics, name, playlistName, albumId);
+		return Objects.hash(album, duration, id, lyrics, name, playlist);
 	}
 
 	@Override
@@ -148,10 +98,10 @@ public class TrackDTO {
 		if (getClass() != obj.getClass())
 			return false;
 		TrackDTO other = (TrackDTO) obj;
-		if (albumName == null) {
-			if (other.albumName != null)
+		if (album == null) {
+			if (other.album != null)
 				return false;
-		} else if (!albumName.equals(other.albumName))
+		} else if (!album.equals(other.album))
 			return false;
 		if (duration != other.duration)
 			return false;
@@ -167,10 +117,10 @@ public class TrackDTO {
 				return false;
 		} else if (!name.equals(other.name))
 			return false;
-		if (playlistName == null) {
-			if (other.playlistName != null)
+		if (playlist == null) {
+			if (other.playlist != null)
 				return false;
-		} else if (!playlistName.equals(other.playlistName))
+		} else if (!playlist.equals(other.playlist))
 			return false;
 		return true;
 	}

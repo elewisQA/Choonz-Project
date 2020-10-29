@@ -13,6 +13,8 @@ import javax.persistence.OneToMany;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 @Entity
 public class Genre {
 
@@ -30,6 +32,7 @@ public class Genre {
     @Column(unique = true)
     private String description;
 
+    @JsonManagedReference(value="secondary")
     @OneToMany(mappedBy = "genre", cascade = CascadeType.ALL)
     private List<Album> albums;
     
@@ -48,6 +51,14 @@ public class Genre {
         this.picture = picture;
         this.description = description;
         this.albums = albums;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder builder = new StringBuilder();
+        builder.append("Genre [id=").append(id).append(", name=").append(name).append(", description=")
+                .append(description).append(", albums=").append(albums).append("]");
+        return builder.toString();
     }
 
     public long getId() {
@@ -91,11 +102,11 @@ public class Genre {
 	}
 
 	@Override
-    public String toString() {
-        StringBuilder builder = new StringBuilder();
-        builder.append("Genre [id=").append(id).append(", name=").append(name).append(", picture=").append(picture).append(", description=")
-                .append(description).append(", albums=").append(albums).append("]");
-        return builder.toString();
+  public String toString() {
+       StringBuilder builder = new StringBuilder();
+       builder.append("Genre [id=").append(id).append(", name=").append(name).append(", picture=").append(picture).append(", description=")
+               .append(description).append(", albums=").append(albums).append("]");
+       return builder.toString();
     }
 
     @Override
