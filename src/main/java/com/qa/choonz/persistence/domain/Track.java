@@ -16,7 +16,9 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 @Entity
 public class Track {
@@ -34,7 +36,9 @@ public class Track {
     @ManyToOne
     private Album album;
 
-    @JsonManagedReference(value="secondary")
+    @JsonIdentityInfo(
+    		  generator = ObjectIdGenerators.PropertyGenerator.class, 
+    		  property = "id")
     @ManyToMany
     @JoinTable(
     		name = "track_playlists",

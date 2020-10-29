@@ -26,5 +26,5 @@ INSERT INTO TRACK(ID, DURATION, NAME, ALBUM_ID) VALUES (12, 3.35, 'Mamma Mia', 2
 INSERT INTO PLAYLIST VALUES (1, 'a', 'Number one playlist!', 'Playlist One');
 INSERT INTO PLAYLIST VALUES (2, 'b', 'Second best playlist!', 'Playlist 2');
 /* Add some songs to a playlist */ 
-INSERT INTO track_playlist VALUES(1, 1);
-INSERT INTO track_playlist VALUES(11, 1);
+INSERT INTO track_playlists VALUES(1, 1);
+INSERT INTO track_playlists VALUES(11, 1);
