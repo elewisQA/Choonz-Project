@@ -83,8 +83,10 @@ public class TESTAlbumServiceIntegration {
 		this.testAlbum = new Album();
 		this.testAlbum.setName(this.name);
 		this.testAlbum.setTracks(this.testTracks);
-		this.testAlbum.setArtist(this.testArtist);
-		this.testAlbum.setGenre(this.testGenre);
+		//this.testAlbum.setArtist(this.testArtist);
+		this.testAlbum.setArtist(null);
+		//this.testAlbum.setGenre(this.testGenre);
+		this.testAlbum.setGenre(null);
 		this.testAlbum.setCover(this.cover);
 		this.testAlbumWithId = this.repo.save(testAlbum);
 		this.id = this.testAlbumWithId.getId();
