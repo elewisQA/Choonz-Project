@@ -28,11 +28,11 @@ function validateForm(){
         let genreName = genreModal['genreName'].value;
         let genrePic = genreModal['genrePic'].value;
         let genreDesc = genreModal['genreDesc'].value;
-        addAlbum(genreName, genrePic, genreDesc);
+        addGenre(genreName, genrePic, genreDesc);
         
     })
     
-    function addAlbum(genreName, genrePic, genreDesc) {
+    function addGenre(genreName, genrePic, genreDesc) {
     
         fetch('http://localhost:8082/genres/create', {
             method: 'post',
@@ -41,7 +41,7 @@ function validateForm(){
             },
             body:json = JSON.stringify({
                 "name": genreName,
-                "piture": genrePic,
+                "picture": genrePic,
                 "description": genreDesc
             })
             })

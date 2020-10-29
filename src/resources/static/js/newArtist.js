@@ -21,11 +21,11 @@ function validateForm(){
         console.log(artistModal);
         let artistName = artistModal['artistName'].value;
         let artistPic = artistModal['artistPic'].value;
-        addAlbum(artistName, artistPic);
+        addArtist(artistName, artistPic);
         
     })
     
-    function addAlbum(artistName, artistPic) {
+    function addArtist(artistName, artistPic) {
     
         fetch('http://localhost:8082/artists/create', {
             method: 'post',
