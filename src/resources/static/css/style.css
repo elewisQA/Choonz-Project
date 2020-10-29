@@ -4,7 +4,6 @@ body {
     height:100vh;
 	  min-height:550px;
 	  position:relative;
-    overflow-y: hidden;
 }
 
 .navbar{
@@ -179,6 +178,17 @@ body {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
+#albums div.card img {
+  height: 235px;
+  width: 235px;
+  transition: width 0.5s, height 0.5s;
+}
+
+#albums div.card:hover img {
+  height: 245px;
+  width: 245px;
+}
+
 #artists div.card {
   height: 370px;
   width: 235px;
@@ -189,6 +199,17 @@ body {
   width: 245px;
   height: 380px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#artists div.card img {
+  height: 300px;
+  width: 235px;
+  transition: width 0.5s, height 0.5s;
+}
+
+#artists div.card:hover img {
+  height: 310px;
+  width: 245px;
 }
 
 #genres div.card {
@@ -204,14 +225,26 @@ body {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
+#genres div.card img {
+  height: 200px;
+  width: 300px;
+  transition: width 0.5s, height 0.5s;
+}
+
+#genres div.card:hover img {
+  height: 208px;
+  width: 310px;
+}
+
 #genres img {
   object-fit: cover;
   opacity: 0.5;
 }
 
 #genres h1 {
-  transform: translate(0, 100%);
-  color: whitesmoke;
+  margin-top: 15%;
+  margin-bottom: auto;
+  color: rgba(0, 0, 0, 0.863);
 }
 
 #genres a {
@@ -232,3 +265,66 @@ body {
   font-size: 470%;
 }
 
+#exampleModalLabel {
+  transform: translate(90%, 0%);
+  color: rgb(72, 86, 97);
+}
+
+#image_album {
+  width: 30%;
+  position: sticky;
+  top: 24%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 2%;
+  margin-top: 5%;
+}
+
+#text_container {
+  display: inline-block;
+  margin-left: 4%;
+  width: 50%;
+}
+
+#main_info {
+  margin: 2% 2% 0% 12% ;
+}
+
+#text_container {
+  vertical-align: top;
+}
+
+#text_container h1 {
+  padding: 10% 3% 3% 0%;
+}
+
+#text_container h2 {
+  padding: 0% 3% 0% 0%;
+  color: rgb(45, 146, 192);
+}
+
+#text_container p {
+  padding: 2% 3% 10% 0%;
+  color: #444444cc;
+}
+
+ #table_container{
+   max-width: 600px;
+  margin-left: 30%;
+}
+
+#text_container a {
+  text-decoration: none;
+}
+
+#text_container a:hover{
+  letter-spacing: 0.5px;
+}
+
+#table_container a {
+  text-decoration: none;
+  color: #242424;
+}
+
+#table_container th {
+  color: #444444bd;
+}
