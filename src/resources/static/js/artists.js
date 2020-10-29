@@ -1,4 +1,4 @@
-fetch('http://localhost:8082/albums/read')
+fetch('http://localhost:8082/artists/read')
   .then(
     function(response) {
       if (response.status !== 200) {
@@ -11,7 +11,7 @@ fetch('http://localhost:8082/albums/read')
       response.json().then(function(data) {
         console.log(data);
 
-        createAlbumCard(data);
+        createArtistCard(data);
       });
     }
   )
@@ -19,13 +19,13 @@ fetch('http://localhost:8082/albums/read')
     console.log('Fetch Error :-S', err);
   });
 
-  function createAlbumCard(alldata) {
+  function createArtistCard(alldata) {
 
     for (let key of alldata) {
       console.log(key);
       console.log(key['artistName']);
 
-      let find = document.getElementById("albums");
+      let find = document.getElementById("artists");
       let column = document.createElement("div");
       column.className = "col mb-4";
       let card = document.createElement("div");
@@ -35,36 +35,24 @@ fetch('http://localhost:8082/albums/read')
 
       let image = document.createElement("img");
       image.className = "card-img-top";
-      image.src = key['cover'];
+      image.src = key['picture'];
       card.appendChild(image);
       let body = document.createElement("div");
       body.className = "card-body";
       card.appendChild(body);
 
-      let linkTitle = document.createElement("a");
-      linkTitle.href = "viewAlbum.html?id=" + key['id'];
-      let title = document.createElement("h5");
-      title.className = "card-title";
-      let titleText = document.createTextNode(key['name']);
-      title.style = "text-align: center"
-      body.appendChild(linkTitle);
-      linkTitle.appendChild(title);
-      title.appendChild(titleText);
-
       let linkArtist = document.createElement("a");
       linkArtist.href = "#";
-      let artist = document.createElement("p");
-      artist.className = "card-text";
-      let artistSmall = document.createElement("small");
-      artistSmall.className = "text-muted";
-      let artistSmallText = document.createTextNode(key['artistName']);
+      let artist = document.createElement("h5");
+      artist.className = "card-title";
+      let artistText = document.createTextNode(key['name']);
+      artist.style = "text-align: center"
       body.appendChild(linkArtist);
       linkArtist.appendChild(artist);
-      artist.appendChild(artistSmall);
-      artistSmall.appendChild(artistSmallText);
+      artist.appendChild(artistText);
       
     }
-    let find = document.getElementById("albums");
+    let find = document.getElementById("artists");
     let column = document.createElement("div");
     column.className = "col mb-4";
     let card = document.createElement("div");
@@ -74,7 +62,7 @@ fetch('http://localhost:8082/albums/read')
 
     let image = document.createElement("img");
     image.className = "card-img-top";
-    image.src = "https://i.pinimg.com/originals/c9/db/b1/c9dbb1ad7c558a37c6291681aca99058.jpg";
+    image.src = "../img/newArtist.jpg";
     card.appendChild(image);
 
     let body = document.createElement("div");
@@ -84,8 +72,6 @@ fetch('http://localhost:8082/albums/read')
     let linkAdd = document.createElement("a");
     linkAdd.className = "btn btn-info";
     linkAdd.href ="#";
-    linkAdd.setAttribute("data-toggle", "modal")
-    linkAdd.setAttribute("data-target", "#exampleModal")
     body.appendChild(linkAdd);
 
     let icon = document.createElement("i");

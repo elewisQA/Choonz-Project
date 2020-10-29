@@ -32,17 +32,20 @@ public class Genre {
 
     @OneToMany(mappedBy = "genre", cascade = CascadeType.ALL)
     private List<Album> albums;
+    
+    private String picture;
 
     public Genre() {
         super();
         // TODO Auto-generated constructor stub
     }
 
-    public Genre(long id, @NotNull @Size(max = 100) String name, @NotNull @Size(max = 250) String description,
+    public Genre(long id, @NotNull @Size(max = 100) String name, String picture, @NotNull @Size(max = 250) String description,
             List<Album> albums) {
         super();
         this.id = id;
         this.name = name;
+        this.picture = picture;
         this.description = description;
         this.albums = albums;
     }
@@ -62,6 +65,14 @@ public class Genre {
 	public void setName(String name) {
 		this.name = name;
 	}
+	
+	public String getPicture() {
+        return picture;
+    }
+
+    public void setPicture(String picture) {
+        this.picture = picture;
+    }
 
 	public String getDescription() {
 		return description;
@@ -82,14 +93,14 @@ public class Genre {
 	@Override
     public String toString() {
         StringBuilder builder = new StringBuilder();
-        builder.append("Genre [id=").append(id).append(", name=").append(name).append(", description=")
+        builder.append("Genre [id=").append(id).append(", name=").append(name).append(", picture=").append(picture).append(", description=")
                 .append(description).append(", albums=").append(albums).append("]");
         return builder.toString();
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(albums, description, id, name);
+        return Objects.hash(albums, description, id, name, picture);
     }
 
     @Override
@@ -102,7 +113,7 @@ public class Genre {
         }
         Genre other = (Genre) obj;
         return Objects.equals(albums, other.albums) && Objects.equals(description, other.description) && id == other.id
-                && Objects.equals(name, other.name);
+                && Objects.equals(name, other.name) && Objects.equals(picture, other.picture);
     }
 
 }
