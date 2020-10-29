@@ -68,7 +68,7 @@
           </div> -->
       </div>
 
-        <!-- Modal -->
+  <!-- Modal -->
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -79,7 +79,7 @@
           </button> -->
         </div>
         <div class="modal-body">
-          <form name="createNewGenre" class="genres" id="genres" method="POST" onsubmit="return validateForm()">
+          <form name="createNewGenre" class="genres" id="genresModal" method="POST" onsubmit="return validateForm()">
             <div class="form-group">
               <label for="genreName">Genre name: </label>
               <input type="text" class="form-control" id="genreName" name="name">
@@ -90,7 +90,7 @@
             </div>
             <div class="form-group">
               <label for="genreDesc">Description: </label>
-              <textarea class="form-control" id="genreDesc" name="desc" form="genres">     
+              <textarea class="form-control" id="genreDesc" name="desc" form="genresModal"></textarea>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -104,7 +104,7 @@
   </div>
   <!-- /Modal -->
 
-    <script src="../static/js/newGenre.js"></script>
+    <!-- <script src="../static/js/newGenre.js"></script> -->
     <script src="../static/js/genres.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
