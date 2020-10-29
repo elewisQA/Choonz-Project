@@ -29,6 +29,7 @@ function getID(id) {
 
 function populate(data) {
     console.log(data['name']);
+    console.log(data['id']);
     let find = document.getElementById("main_info");
     let image = document.createElement("img");
     image.src = data['cover'];
@@ -60,6 +61,8 @@ function populate(data) {
 
     let linkInfo = document.createElement("a");
     linkInfo.href="#";
+    linkInfo.setAttribute("data-toggle", "modal");
+    linkInfo.setAttribute("data-target", "#exampleModal");
     let info = document.createElement("i");
     info.className = "far fa-edit";
     linkInfo.appendChild(info);
@@ -128,7 +131,7 @@ function populate(data) {
       linkDelete.addEventListener("click", function(stop){
         stop.preventDefault();  
         deleteTrack(key);    
-    })
+      })
       linkDelete.textContent = "Delete";
       dropdown.appendChild(linkDelete);
       let spanDelete = document.createElement("span");
@@ -154,10 +157,31 @@ function populate(data) {
 
      songCount++;
     }
+
+    let findDelete = document.getElementById("modal-footer");
+    let deleteButton = document.createElement("a");
+    //deleteButton.href="albums.html";
+    deleteButton.className="btn btn-danger";
+    deleteButton.textContent = "Delete";
+    deleteButton.setAttribute("onClick", "location.href = 'albums.html';");
+    deleteButton.addEventListener("click", function(stop){
+      stop.preventDefault(); 
+      deleteAlbum(data['id']);    
+    })
+    findDelete.appendChild(deleteButton);
 }
 
 function deleteTrack(id) {
   fetch('http://localhost:8082/tracks/delete/' + id, {
+  method: 'DELETE',
+  })
+  .then(res => res.text()) // or res.json()
+  .then(res => console.log(res))
+
+}
+
+function deleteAlbum(id) {
+  fetch('http://localhost:8082/albums/delete/' + id, {
   method: 'DELETE',
   })
   .then(res => res.text()) // or res.json()
