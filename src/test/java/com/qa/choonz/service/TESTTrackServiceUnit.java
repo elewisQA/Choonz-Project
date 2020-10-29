@@ -111,7 +111,7 @@ public class TESTTrackServiceUnit {
     			trackDTO.getLyrics());
     	
     	TrackDTO updatedTrackDTO = new TrackDTO(this.id,updatedTrack.getName(),updatedTrack.getAlbum()
-    			,updatedTrack.getPlaylist(),updatedTrack.getDuration(),updatedTrack.getLyrics());
+    			,updatedTrack.getPlaylists(),updatedTrack.getDuration(),updatedTrack.getLyrics());
     	
 		when(this.repo.findById(this.id)).thenReturn(Optional.of(track));
 		

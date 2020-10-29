@@ -37,7 +37,7 @@ public class Track {
     @JsonManagedReference(value="secondary")
     @ManyToMany
     @JoinTable(
-    		name = "track_playlist",
+    		name = "track_playlists",
     		joinColumns = @JoinColumn(name = "track_id"),
     		inverseJoinColumns = @JoinColumn(name = "playlist_id"))
     private List<Playlist> playlists;
@@ -87,11 +87,11 @@ public class Track {
         this.album = album;
     }
 
-    public List<Playlist> getPlaylist() {
+    public List<Playlist> getPlaylists() {
         return playlists;
     }
 
-    public void setPlaylist(List<Playlist> playlists) {
+    public void setPlaylists(List<Playlist> playlists) {
         this.playlists = playlists;
     }
 
@@ -116,7 +116,7 @@ public class Track {
     public String toString() {
         StringBuilder builder = new StringBuilder();
         builder.append("Track [id=").append(id).append(", name=").append(name).append(", album=").append(album)
-                .append(", playlist=").append(playlists).append(", duration=").append(duration).append(", lyrics=")
+                .append(", playlists=").append(playlists).append(", duration=").append(duration).append(", lyrics=")
                 .append(lyrics).append("]");
         return builder.toString();
     }

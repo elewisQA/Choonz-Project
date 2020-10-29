@@ -67,9 +67,9 @@ public class TESTTrack {
 		Track emptyTrack = new Track();
 		List<Playlist> playlists = new ArrayList<Playlist>();
 		
-		emptyTrack.setPlaylist(playlists);
+		emptyTrack.setPlaylists(playlists);
 		
-		assertEquals(playlists,emptyTrack.getPlaylist());
+		assertEquals(playlists,emptyTrack.getPlaylists());
 	}
 	
 	@Test

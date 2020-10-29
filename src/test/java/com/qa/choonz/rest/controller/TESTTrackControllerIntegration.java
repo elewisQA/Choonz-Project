@@ -55,7 +55,7 @@ public class TESTTrackControllerIntegration {
 	private Long id;
 	private final String name = "Song";
 	private final Album album = null;
-	private final List<Playlist> playlist = null;
+	private List<Playlist> playlist = null;
 	private final int duration = 180;
 	private final String lyrics = "Lyrics";
 	
@@ -63,10 +63,12 @@ public class TESTTrackControllerIntegration {
     void init() {
     	this.repo.deleteAll();
     	
+    	this.playlist = new ArrayList<Playlist>();
+    	
     	this.testTrack = new Track();
     	this.testTrack.setName(this.name);
     	this.testTrack.setAlbum(this.album);
-    	this.testTrack.setPlaylist(this.playlist);
+    	this.testTrack.setPlaylists(this.playlist);
     	this.testTrack.setDuration(this.duration);
     	this.testTrack.setLyrics(this.lyrics);
     	this.testTrackWithId = this.repo.save(this.testTrack);
@@ -111,14 +113,14 @@ public class TESTTrackControllerIntegration {
     	newTrack.setId(this.id);
     	newTrack.setName("Big tune");
     	newTrack.setAlbum(this.album);
-    	newTrack.setPlaylist(this.playlist);
+    	newTrack.setPlaylists(this.playlist);
     	newTrack.setDuration(240);
     	newTrack.setLyrics("New lyrics");
     	Track updatedTrack = new Track();
     	updatedTrack.setId(this.id);
     	updatedTrack.setName(newTrack.getName());
     	updatedTrack.setAlbum(newTrack.getAlbum());
-    	updatedTrack.setPlaylist(newTrack.getPlaylist());
+    	updatedTrack.setPlaylists(newTrack.getPlaylists());
     	updatedTrack.setDuration(newTrack.getDuration());
     	updatedTrack.setLyrics(newTrack.getLyrics());
     	

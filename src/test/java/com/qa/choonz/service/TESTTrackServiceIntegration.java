@@ -77,7 +77,7 @@ public class TESTTrackServiceIntegration {
 		this.testTrack.setLyrics(this.LYRICS);
 		this.testTrack.setDuration(this.DURATION);
 		this.testTrack.setAlbum(album);
-		this.testTrack.setPlaylist(playList);
+		this.testTrack.setPlaylists(playList);
 		this.testTrackWithId = this.repo.save(testTrack);
 		this.id = this.testTrackWithId.getId();
 		

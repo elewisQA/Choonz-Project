@@ -97,7 +97,7 @@ public class TESTTrackControllerUnit {
     	Track newTrack = new Track(this.id,this.name,this.album,this.playlist,this.duration
     			,this.lyrics);
     	TrackDTO updatedTrack = new TrackDTO(this.id,newTrack.getName(),newTrack.getAlbum()
-    			,newTrack.getPlaylist(),newTrack.getDuration(),newTrack.getLyrics());
+    			,newTrack.getPlaylists(),newTrack.getDuration(),newTrack.getLyrics());
     	
     	when(service.update(newTrack, id)).thenReturn(updatedTrack);
     	

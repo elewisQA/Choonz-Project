@@ -47,7 +47,7 @@ public class TrackService {
         toUpdate.setAlbum(track.getAlbum());
         toUpdate.setDuration(track.getDuration());
         toUpdate.setLyrics(track.getLyrics());
-        toUpdate.setPlaylist(track.getPlaylist());
+        toUpdate.setPlaylists(track.getPlaylists());
         Track updated = this.repo.save(toUpdate);
         return this.mapToDTO(updated);
     }
