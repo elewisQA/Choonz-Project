@@ -124,8 +124,11 @@ function populate(data) {
       let linkDelete = document.createElement("a");
       linkDelete.href='#';
       linkDelete.className = "dropdown-item";
-      linkDelete.id = "delete-track";
-      linkDelete.type = "sumbit"
+      linkDelete.setAttribute("onClick", "window.location.reload();");
+      linkDelete.addEventListener("click", function(stop){
+        stop.preventDefault();  
+        deleteTrack(key);    
+    })
       linkDelete.textContent = "Delete";
       dropdown.appendChild(linkDelete);
       let spanDelete = document.createElement("span");
@@ -153,3 +156,11 @@ function populate(data) {
     }
 }
 
+function deleteTrack(id) {
+  fetch('http://localhost:8082/tracks/delete/' + id, {
+  method: 'DELETE',
+  })
+  .then(res => res.text()) // or res.json()
+  .then(res => console.log(res))
+
+}
