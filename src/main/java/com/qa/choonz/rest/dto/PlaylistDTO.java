@@ -108,6 +108,10 @@ public class PlaylistDTO {
 	        }
         }
     }
+    
+    public void setTracks(Map<Long, String> tracks) {
+    	this.tracks = tracks;
+    }
 
     @Override
     public String toString() {
