@@ -52,6 +52,7 @@ public class TESTGenre {
 		Genre newGenre = new Genre(
 				this.id, 
 				this.name, 
+				this.picture,
 				this.description, 
 				this.albums);
 		
