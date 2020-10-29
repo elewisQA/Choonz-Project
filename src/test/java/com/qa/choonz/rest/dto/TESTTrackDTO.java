@@ -6,6 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 
 import java.util.ArrayList;
+import java.util.List;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -20,17 +21,18 @@ public class TESTTrackDTO {
     final long id=1L;
     final String name="Song";
     final Album album=null;
-    final Playlist playlist=null;
+    private List<Playlist> playlists;
     final int duration=180;
     final String lyrics="Lyrics";
     
 	@BeforeEach
 	void init() {
+		this.playlists = new ArrayList<Playlist>();
 		this.testTrack = new TrackDTO(
 				this.id,
 				this.name,
 				this.album,
-				this.playlist,
+				this.playlists,
 				this.duration,
 				this.lyrics);
 	}
@@ -47,14 +49,14 @@ public class TESTTrackDTO {
 		Long newId = this.id + 1;
 		String newName = "New song";
 		Album newAlbum = null;
-		Playlist newPlaylist = null;
+		List<Playlist> newPlaylists = new ArrayList<Playlist>();
 		int newDuration = 240;
 		String newLyrics = "New lyrics";
 		TrackDTO newTestTrack = new TrackDTO(
 				newId, 
 				newName,
 				newAlbum,
-				newPlaylist,
+				newPlaylists,
 				newDuration,
 				newLyrics);	
 	
@@ -87,10 +89,10 @@ public class TESTTrackDTO {
 	
 	@Test
 	void getSetPlaylistTest() {
-		Playlist newPlaylist = new Playlist();
-		this.testTrack.setPlaylist(newPlaylist);
+		List<Playlist> newPlaylists = new ArrayList<Playlist>();
+		this.testTrack.setPlaylists(newPlaylists);
 		
-		assertEquals(newPlaylist,this.testTrack.getPlaylist());
+		assertEquals(newPlaylists,this.testTrack.getPlaylists());
 	}
 	
 	@Test
@@ -130,7 +132,7 @@ public class TESTTrackDTO {
 				this.id, 
 				this.name,
 				this.album,
-				this.playlist,
+				this.playlists,
 				this.duration,
 				this.lyrics);
 		
