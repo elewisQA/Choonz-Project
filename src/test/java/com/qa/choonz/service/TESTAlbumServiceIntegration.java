@@ -90,10 +90,8 @@ public class TESTAlbumServiceIntegration {
 		this.albumDTOWithId.setId(this.albumDTO.getId());
 		this.albumDTOWithId.setName(this.albumDTO.getName());
 		this.albumDTOWithId.setTracks(this.albumDTO.getTracks());
-		this.albumDTOWithId.setArtistName(this.albumDTO.getArtistName());
-		this.albumDTOWithId.setArtistId(this.albumDTO.getArtistId());
-		this.albumDTOWithId.setGenreName(this.albumDTO.getGenreName());
-		this.albumDTOWithId.setGenreId(this.albumDTO.getGenreId());
+		this.albumDTOWithId.setArtist(this.albumDTO.getArtist());
+		this.albumDTOWithId.setGenre(this.albumDTO.getGenre());
 		this.albumDTOWithId.setCover(this.albumDTO.getCover());
 		
 	}

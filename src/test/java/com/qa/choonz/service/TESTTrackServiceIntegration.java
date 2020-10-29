@@ -84,10 +84,8 @@ public class TESTTrackServiceIntegration {
 		this.trackDTOWithId = new TrackDTO();
 		this.trackDTOWithId.setId(this.trackDTO.getId());
 		this.trackDTOWithId.setName(this.trackDTO.getName());
-		this.trackDTOWithId.setAlbumId(this.trackDTO.getAlbumId());
-		this.trackDTOWithId.setAlbumName(this.trackDTO.getAlbumName());
-		this.trackDTOWithId.setPlaylistName(this.trackDTO.getPlaylistName());
-		this.trackDTOWithId.setPlaylistId(this.trackDTO.getPlaylistId());
+		this.trackDTOWithId.setAlbum(this.trackDTO.getAlbum());
+		this.trackDTOWithId.setPlaylist(this.trackDTO.getPlaylist());
 		this.trackDTOWithId.setDuration(this.trackDTO.getDuration());
 		this.trackDTOWithId.setLyrics(this.trackDTO.getLyrics());
 	}
