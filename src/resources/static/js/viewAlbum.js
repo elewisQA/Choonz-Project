@@ -61,7 +61,7 @@ function populate(data) {
     let linkInfo = document.createElement("a");
     linkInfo.href="#";
     let info = document.createElement("i");
-    info.className = "fas fa-info-circle";
+    info.className = "far fa-edit";
     linkInfo.appendChild(info);
 
     textContainer.appendChild(albumName);
