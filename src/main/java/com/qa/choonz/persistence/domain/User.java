@@ -5,8 +5,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -36,7 +36,7 @@ public class User {
 	private String password;
 	
 	@JsonManagedReference(value="owner")
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.ALL)
 	private List<Playlist> playlists;
 	
 	//--[ Constructors ]--
@@ -45,7 +45,7 @@ public class User {
 		this.playlists = new ArrayList<>();
 	}
 	
-	public User(long id, @NotNull @Size(max = 100) String name, @NotNull @Size(max = 100) String password, List<Playlist> playlists) {
+	public User(long id, @NotNull @Size(max = 100) String username, @NotNull @Size(max = 100) String password, List<Playlist> playlists) {
 		this.id = id;
 		this.username = username;
 		this.password = password;
