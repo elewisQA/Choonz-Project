@@ -13,7 +13,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 //===[ Testing Code ]===
-public class TestAlbumDomain {
+class TestAlbumDomain_UnitTest {
 	//--[ Test Variables ]--
 	Album testAlbum;
 	final Long id = 1l;
