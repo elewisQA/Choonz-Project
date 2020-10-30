@@ -22,7 +22,7 @@ import com.qa.choonz.rest.dto.TrackDTO;
 
 //===[ Testing Code ]===
 @SpringBootTest
-public class TESTTrackServiceIntegration {
+class TestTrackServiceIntegration {
 	//--[ Set-up Test Integrations ]--
 	@Autowired
 	private TrackService service;

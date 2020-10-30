@@ -22,7 +22,7 @@ import com.qa.choonz.persistence.repository.PlaylistRepository;
 import com.qa.choonz.rest.dto.PlaylistDTO;
 
 @SpringBootTest
-public class TESTPlaylistServiceUnit {
+class TestPlaylistServiceUnit {
 
 	@Autowired
 	private PlaylistService service;

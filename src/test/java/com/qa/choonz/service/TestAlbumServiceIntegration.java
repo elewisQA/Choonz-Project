@@ -22,7 +22,7 @@ import com.qa.choonz.persistence.repository.AlbumRepository;
 import com.qa.choonz.rest.dto.AlbumDTO;
 
 @SpringBootTest
-public class TESTAlbumServiceIntegration {
+class TestAlbumServiceIntegration {
 
 	// because we're testing the service layer, we can't use a MockMvc
     // because MockMvc only models a controller (in mockito format)
