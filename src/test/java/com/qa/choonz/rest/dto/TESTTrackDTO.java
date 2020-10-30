@@ -1,6 +1,5 @@
 package com.qa.choonz.rest.dto;
 
-import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -41,7 +40,7 @@ public class TESTTrackDTO {
 	void testZeroArgsConstructor() {
 		TrackDTO newTestTrack = new TrackDTO();
 
-		assertThat(newTestTrack instanceof TrackDTO);
+		assertTrue(newTestTrack instanceof TrackDTO);
 	}
 	
 	@Test
@@ -60,7 +59,7 @@ public class TESTTrackDTO {
 				newDuration,
 				newLyrics);	
 	
-		assertThat(newTestTrack instanceof TrackDTO);
+		assertTrue(newTestTrack instanceof TrackDTO);
 	}
 	
 	@Test
@@ -113,7 +112,7 @@ public class TESTTrackDTO {
 	
 	@Test
 	public void toStringTests() {		
-		assertThat(this.testTrack.toString()
+		assertTrue(this.testTrack.toString()
 				.equals("TrackDTO [id=1, name=Song, album=null, playlist=null, duration=180, lyrics=Lyrics]"));
 	}
 	
@@ -136,8 +135,8 @@ public class TESTTrackDTO {
 				this.duration,
 				this.lyrics);
 		
-		assertThat(!this.testTrack.equals(emptyTrack));
-		assertThat(this.testTrack.equals(fullTrack));
+		assertTrue(!this.testTrack.equals(emptyTrack));
+		assertTrue(this.testTrack.equals(fullTrack));
 	}
 	
 	@AfterEach

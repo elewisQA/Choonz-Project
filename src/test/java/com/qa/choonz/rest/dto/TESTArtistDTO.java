@@ -1,12 +1,10 @@
 package com.qa.choonz.rest.dto;
 
-import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -36,7 +34,7 @@ public class TESTArtistDTO {
 	void testZeroArgsConstructor() {
 		ArtistDTO newTestArtist = new ArtistDTO();
 
-		assertThat(newTestArtist instanceof ArtistDTO);
+		assertTrue(newTestArtist instanceof ArtistDTO);
 	}
 	
 	@Test
@@ -51,7 +49,7 @@ public class TESTArtistDTO {
 				newPicture,
 				newTestAlbums);	
 	
-		assertThat(newTestArtist instanceof ArtistDTO);
+		assertTrue(newTestArtist instanceof ArtistDTO);
 	}
 	
 	@Test
@@ -89,18 +87,18 @@ public class TESTArtistDTO {
 				this.picture,
 				this.testAlbums);
 		
-		assertThat(!this.testArtist.equals(emptyArtist));
-		assertThat(this.testArtist.equals(fullArtist));
+		assertTrue(!this.testArtist.equals(emptyArtist));
+		assertTrue(this.testArtist.equals(fullArtist));
 	}
 	
 	@Test
 	void testHashCode() {
-		assertThat(this.testArtist.hashCode() == -1259434520);
+		assertTrue(this.testArtist.hashCode() == -1259434520);
 	}
 	
 	@Test
 	void testToString() {
-		assertThat(this.testArtist.toString()
+		assertTrue(this.testArtist.toString()
 				.equals("Artist [id=1, name=Pink Floyd, albums=[Album "
 						+ "[id=0, name=null, tracks=null, artist=null, "
 						+ "genre=null, cover=null]]]"));
