@@ -49,14 +49,14 @@ function populate(data) {
     linkArtist.href="#";
     let artist = document.createElement("h2");
     artist.style = "font-size: 25px;";
-    artist.textContent = data["artistName"];
+    artist.textContent = data["artist"]["name"];
     linkArtist.appendChild(artist);
 
     let linkGenre = document.createElement("a");
     linkGenre.href="#";
     let genre = document.createElement("p");
     genre.style = "font-size: 17px;";
-    genre.textContent = data["genreName"];
+    genre.textContent = data["genre"]["name"];
     linkGenre.appendChild(genre);
 
     let linkInfo = document.createElement("a");
@@ -80,12 +80,12 @@ function populate(data) {
     find.appendChild(tableContainer);
     tableContainer.appendChild(table);
     table.appendChild(tableBody);
-
+    console.log(data["tracks"]);
     let songCount = 1;
     // Populate the table
     for (let key in data['tracks']) { 
-    console.log(key);
-     let value = data['tracks'][key];
+    console.log(data["tracks"][key]["id"]);
+     let value = data['tracks'][key]["name"];
      console.log(value);
      let row = document.createElement("tr");
      tableBody.appendChild(row);
@@ -130,7 +130,7 @@ function populate(data) {
       linkDelete.setAttribute("onClick", "window.location.reload();");
       linkDelete.addEventListener("click", function(stop){
         stop.preventDefault();  
-        deleteTrack(key);    
+        deleteTrack((data["tracks"][key]["id"]));    
       })
       linkDelete.textContent = "Delete";
       dropdown.appendChild(linkDelete);

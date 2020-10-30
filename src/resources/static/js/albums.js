@@ -23,7 +23,7 @@ fetch('http://localhost:8082/albums/read')
 
     for (let key of alldata) {
       console.log(key);
-      console.log(key['artistName']);
+      console.log(key['artist']['name']);
 
       let find = document.getElementById("albums");
       let column = document.createElement("div");
@@ -57,7 +57,7 @@ fetch('http://localhost:8082/albums/read')
       artist.className = "card-text";
       let artistSmall = document.createElement("small");
       artistSmall.className = "text-muted";
-      let artistSmallText = document.createTextNode(key['artistName']);
+      let artistSmallText = document.createTextNode(key['artist']['name']);
       body.appendChild(linkArtist);
       linkArtist.appendChild(artist);
       artist.appendChild(artistSmall);
