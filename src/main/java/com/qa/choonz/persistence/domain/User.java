@@ -112,12 +112,13 @@ public class User {
         if (this == obj) {
             return true;
         }
-        if (!(obj instanceof Album)) {
+        if (!(obj instanceof User)) {
             return false;
         }
         User other = (User) obj;
         return Objects.equals(username, other.username)
-                && Objects.equals(password, other.password) && id == other.id
+                && Objects.equals(password, other.password) 
+                && this.id == other.id
                 && Objects.equals(playlists, other.playlists);
 	}
 }
