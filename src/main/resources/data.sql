@@ -1,6 +1,7 @@
 /* Insert Some Artists */
 INSERT INTO ARTIST(ID, PICTURE, NAME) VALUES (1, 'https://cdn.britannica.com/64/23164-050-A7D2E9D9/Pink-Floyd.jpg', 'Pink Floyd');
 INSERT INTO ARTIST(ID, PICTURE, NAME) VALUES (2, 'https://i.pinimg.com/736x/f9/8b/c0/f98bc0f9c2ed2ec01816665ccc0a9d1a.jpg', 'ABBA');
+INSERT INTO ARTIST(ID, NAME) VALUES (3, 'Gorrilaz');
 /* Insert some Genres */
 INSERT INTO GENRE(ID, PICTURE, DESCRIPTION, NAME) VALUES (1, 'https://www.udiscovermusic.com/wp-content/uploads/2017/04/1000x600oktolikediscoresize-web-optimised.jpg', 'Time to Dance!', 'Disco');
 INSERT INTO GENRE(ID, PICTURE, DESCRIPTION, NAME) VALUES (2, 'https://m.media-amazon.com/images/I/71i0QeO0IOL._SS500_.jpg', 'Rock inspired by psychedelic culture', 'Psychedelic Rock');
@@ -21,8 +22,9 @@ INSERT INTO TRACK(ID, DURATION, NAME, ALBUM_ID) VALUES (9, 3.47, 'Brain Damage',
 INSERT INTO TRACK(ID, DURATION, NAME, ALBUM_ID) VALUES (10, 2.10, 'Eclipse', 1);
 INSERT INTO TRACK(ID, DURATION, NAME, ALBUM_ID) VALUES (11, 3.07, 'Honey, Honey', 2);
 INSERT INTO TRACK(ID, DURATION, NAME, ALBUM_ID) VALUES (12, 3.35, 'Mamma Mia', 2);
-/*INSERT INTO TRACK(ID, DURATION, NAME, ALBUM_ID) VALUES (13, 3.18, 'In the flesh?', 2);
-INSERT INTO TRACK(ID, DURATION, NAME, ALBUM_ID) VALUES (14, 2.26, 'The Thin Ice', 2);*/
-/* Add Songs to playlist */
+/* Insert some playlists */
 INSERT INTO PLAYLIST VALUES (1, 'a', 'Number one playlist!', 'Playlist One');
 INSERT INTO PLAYLIST VALUES (2, 'b', 'Second best playlist!', 'Playlist 2');
+/* Add some songs to a playlist */ 
+INSERT INTO track_playlists VALUES(1, 1);
+INSERT INTO track_playlists VALUES(11, 1);

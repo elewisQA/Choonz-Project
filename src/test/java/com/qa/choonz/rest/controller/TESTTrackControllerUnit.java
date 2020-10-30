@@ -46,7 +46,7 @@ public class TESTTrackControllerUnit {
 	private final Long id = 1L;
 	private final String name = "Song";
 	private final Album album = null;
-	private final Playlist playlist = null;
+	private final List<Playlist> playlist = null;
 	private final int duration = 180;
 	private final String lyrics = "Lyrics";
 
@@ -97,7 +97,7 @@ public class TESTTrackControllerUnit {
     	Track newTrack = new Track(this.id,this.name,this.album,this.playlist,this.duration
     			,this.lyrics);
     	TrackDTO updatedTrack = new TrackDTO(this.id,newTrack.getName(),newTrack.getAlbum()
-    			,newTrack.getPlaylist(),newTrack.getDuration(),newTrack.getLyrics());
+    			,newTrack.getPlaylists(),newTrack.getDuration(),newTrack.getLyrics());
     	
     	when(service.update(newTrack, id)).thenReturn(updatedTrack);
     	

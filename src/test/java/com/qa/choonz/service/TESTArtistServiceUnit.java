@@ -39,6 +39,7 @@ public class TESTArtistServiceUnit {
 		private Artist testArtistWithId;
 		final Long id = 1l;
 		final String name = "Pink Floyd";
+		final String picture = "TestPicture";
 		private List<Album> testAlbums;
 		private List<Artist> artistList;
 
@@ -51,6 +52,7 @@ public class TESTArtistServiceUnit {
 			this.testArtist = new Artist(
 					this.id, 
 					this.name, 
+					this.picture,
 					this.testAlbums);
 			artistList.add(testArtist);
 		}
@@ -90,14 +92,14 @@ public class TESTArtistServiceUnit {
 		
 		@Test
 		void testUpdateArtist() {
-			Artist artist = new Artist(this.id, this.name, this.testAlbums);
+			Artist artist = new Artist(this.id, this.name, this.picture, this.testAlbums);
 //			artist.setId(this.id);
 			
-			ArtistDTO artistDTO = new ArtistDTO(this.id, this.name, this.testAlbums);
+			ArtistDTO artistDTO = new ArtistDTO(this.id, this.name, this.picture, this.testAlbums);
 			
-			Artist updatedArtist = new Artist(this.id, artistDTO.getName(), this.testAlbums);
+			Artist updatedArtist = new Artist(this.id, artistDTO.getName(), artistDTO.getPicture(), this.testAlbums);
 			
-			ArtistDTO updatedArtistDTO = new ArtistDTO(this.id, updatedArtist.getName(), updatedArtist.getAlbums());
+			ArtistDTO updatedArtistDTO = new ArtistDTO(this.id, updatedArtist.getName(), updatedArtist.getPicture(), updatedArtist.getAlbums());
 			
 			
 			when(this.repo.findById(this.id)).thenReturn(Optional.of(artist));

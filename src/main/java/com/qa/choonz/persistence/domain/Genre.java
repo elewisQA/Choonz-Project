@@ -13,6 +13,8 @@ import javax.persistence.OneToMany;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 @Entity
 public class Genre {
 
@@ -30,6 +32,7 @@ public class Genre {
     @Column(unique = true)
     private String description;
 
+    @JsonManagedReference(value="secondary")
     @OneToMany(mappedBy = "genre", cascade = CascadeType.ALL)
     private List<Album> albums;
     
@@ -49,6 +52,14 @@ public class Genre {
         this.description = description;
         this.albums = albums;
     }
+    
+	@Override
+	 public String toString() {
+	      StringBuilder builder = new StringBuilder();
+	      builder.append("Genre [id=").append(this.id).append(", name=").append(this.name).append(", picture=").append(this.picture).append(", description=")
+	               .append(this.description).append(", albums=").append(this.albums).append("]");
+	      return builder.toString();
+	   }
 
     public long getId() {
 		return id;
@@ -90,13 +101,7 @@ public class Genre {
 		this.albums = albums;
 	}
 
-	@Override
-    public String toString() {
-        StringBuilder builder = new StringBuilder();
-        builder.append("Genre [id=").append(id).append(", name=").append(name).append(", picture=").append(picture).append(", description=")
-                .append(description).append(", albums=").append(albums).append("]");
-        return builder.toString();
-    }
+
 
     @Override
     public int hashCode() {

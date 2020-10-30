@@ -1,5 +1,4 @@
 
-
 function validateForm(){
 
     var name = document.forms["createNewAlbum"]["name"];
@@ -22,13 +21,16 @@ function validateForm(){
         return false; 
     }
     if (cover.value == "") { 
-        window.alert("Please add the link of the image for this album."); 
+        window.alert("Please paste the link of the image for this album."); 
         cover.focus(); 
         return false; 
     }
 
     return false;
 }
+
+const findAlbumId = new URLSearchParams(window.location.search);
+
     document.querySelector("form.albums").addEventListener("submit", function(stop){
         stop.preventDefault();
         let albumModal = document.querySelector("form.albums").elements;
@@ -39,19 +41,28 @@ function validateForm(){
         let albumCover = albumModal['albumCover'].value;
         let albumArtistID = albumModal['albumArtist'].value;
         let albumArtistName = albumModal['albumArtist'].artistText;
-        addAlbum(albumName, albumGenreID, albumGenreName, albumCover, albumArtistID, albumArtistName);
+
+        
+        for (let found of findAlbumId) {
+            console.log(found);
+            let id = found[1];
+            console.log(id); 
+        } 
+        
+        //updateAlbum(albumName, albumGenreID, albumGenreName, albumCover, albumArtistID, albumArtistName, id);
         
     })
     
-    function addAlbum(albumName, albumGenreID, albumGenreName, albumCover, albumArtistID, albumArtistName) {
+    function updateAlbum(albumName, albumGenreID, albumGenreName, albumCover, albumArtistID, albumArtistName, id) {
     
-        fetch('http://localhost:8082/albums/create', {
-            method: 'post',
+        fetch('http://localhost:8082/albums/update/' + id, {
+            method: 'put',
             headers: {
                   "Content-type": "application/json"
             },
             body:json = JSON.stringify({
                 "name": albumName,
+                "id": id,
                 "artist": {
                     "id": albumArtistID,
                     "name": albumArtistName
@@ -119,7 +130,7 @@ fetch('http://localhost:8082/artists/read')
     
         for (let key of alldata) {
           console.log(key);
-          console.log(key['artistName']);
+          console.log(key['name']);
     
           let dropdown = document.getElementById("artistDD");
           let option = document.createElement("option");

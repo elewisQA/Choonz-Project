@@ -76,24 +76,21 @@ public class TESTAlbumDTO {
 		List<Track> newTracks = new ArrayList<Track>();
 		this.testAlbumDTO.setTracks(newTracks);
 		
-		Map<Long, String> newTracksMap = new HashMap<Long, String>();
-		assertEquals(newTracksMap,this.testAlbumDTO.getTracks());
+		assertEquals(newTracks,this.testAlbumDTO.getTracks());
 	}
 	
 	@Test
 	public void getSetArtistTest() {
 		this.testAlbumDTO.setArtist(null);
 		
-		assertNull(this.testAlbumDTO.getArtistName());
-		assertNull(this.testAlbumDTO.getArtistId());
+		assertNull(this.testAlbumDTO.getArtist());
 	}
 	
 	@Test
 	public void getSetGenreTest() {
 		this.testAlbumDTO.setGenre(null);
 		
-		assertNull(this.testAlbumDTO.getGenreName());
-		assertNull(this.testAlbumDTO.getGenreName());
+		assertNull(this.testAlbumDTO.getGenre());
 	}
 	
 	@Test

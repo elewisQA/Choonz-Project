@@ -19,6 +19,7 @@ public class TESTArtist {
 	Artist testArtist;
 	final Long id = 1l;
 	final String name = "Pink Floyd";
+	final String picture = "../";
 	List<Album> testAlbums;
 
 	//--[ Test Setup ]--
@@ -26,10 +27,7 @@ public class TESTArtist {
 	void init() {
 		// Initialize testing vars
 		this.testAlbums = new ArrayList<Album>();
-		this.testArtist = new Artist(
-				this.id, 
-				this.name, 
-				this.testAlbums);
+		this.testArtist = new Artist(this.id, this.name, this.picture, this.testAlbums);
 	}
 	
 	//--[ Test Methods ]--
@@ -47,10 +45,12 @@ public class TESTArtist {
 		// test setup
 		Long newId = this.id + 1;
 		String newName = "R.E.M";
+		String newPicture = "../";
 		List<Album> newTestAlbums = new ArrayList<Album>();
 		Artist newTestArtist = new Artist(
 				newId, 
 				newName,
+				newPicture,
 				newTestAlbums);	
 	
 		// test assertion
@@ -112,6 +112,7 @@ public class TESTArtist {
 		Artist fullArtist = new Artist(
 				this.id, 
 				this.name, 
+				this.picture,
 				this.testAlbums);
 		
 		assertThat(!this.testArtist.equals(emptyArtist));

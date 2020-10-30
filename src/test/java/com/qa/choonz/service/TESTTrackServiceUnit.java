@@ -39,6 +39,7 @@ public class TESTTrackServiceUnit {
     }
     
     private List<Track> trackList;
+    private List<Playlist> playList;
     private Track testTrack;
     private Track testTrackWithId;
     private TrackDTO trackDTO;
@@ -53,7 +54,7 @@ public class TESTTrackServiceUnit {
     @BeforeEach
     void init() {
     	this.trackList = new ArrayList<>();
-    	this.testTrack = new Track(this.id,this.name,this.album,this.playlist,this.duration
+    	this.testTrack = new Track(this.id,this.name,this.album,this.playList, this.duration
     			,this.lyrics);
     	this.trackList.add(testTrack);
     	this.trackDTO = this.mapToDTO(testTrack);
@@ -97,20 +98,20 @@ public class TESTTrackServiceUnit {
     
     @Test
     void updateTest(){
-    	Track track = new Track(this.id,this.name,this.album,this.playlist,this.duration
+    	Track track = new Track(this.id,this.name,this.album,this.playList,this.duration
     			,this.lyrics);
     	
-    	TrackDTO trackDTO = new TrackDTO(this.id,this.name,this.album,this.playlist,this.duration
+    	TrackDTO trackDTO = new TrackDTO(this.id,this.name,this.album,this.playList,this.duration
     			,this.lyrics);
     	
     	Track updatedTrack = new Track(this.id,trackDTO.getName(),
     			this.album,
-    			this.playlist,
+    			this.playList,
     			trackDTO.getDuration(),
     			trackDTO.getLyrics());
     	
     	TrackDTO updatedTrackDTO = new TrackDTO(this.id,updatedTrack.getName(),updatedTrack.getAlbum()
-    			,updatedTrack.getPlaylist(),updatedTrack.getDuration(),updatedTrack.getLyrics());
+    			,updatedTrack.getPlaylists(),updatedTrack.getDuration(),updatedTrack.getLyrics());
     	
 		when(this.repo.findById(this.id)).thenReturn(Optional.of(track));
 		

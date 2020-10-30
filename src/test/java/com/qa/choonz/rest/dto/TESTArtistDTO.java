@@ -19,6 +19,7 @@ public class TESTArtistDTO {
 	ArtistDTO testArtist;
 	final Long id = 1l;
 	final String name = "Pink Floyd";
+	final String picture = "../";
 	List<Album> testAlbums;
 	
 	@BeforeEach
@@ -27,6 +28,7 @@ public class TESTArtistDTO {
 		this.testArtist = new ArtistDTO(
 				this.id, 
 				this.name, 
+				this.picture,
 				this.testAlbums);
 	}
 	
@@ -41,10 +43,12 @@ public class TESTArtistDTO {
 	void testAllArgsConstructor() {
 		Long newId = this.id + 1;
 		String newName = "R.E.M";
+		String newPicture = "../";
 		List<Album> newTestAlbums = new ArrayList<Album>();
 		ArtistDTO newTestArtist = new ArtistDTO(
 				newId, 
 				newName,
+				newPicture,
 				newTestAlbums);	
 	
 		assertThat(newTestArtist instanceof ArtistDTO);
@@ -73,9 +77,7 @@ public class TESTArtistDTO {
 		newAlbums.add(newAlbum);
 		this.testArtist.setAlbums(newAlbums);
 		
-		Map<Long, String> newAlbumsMap = new HashMap<Long, String>();
-		newAlbumsMap.put(newAlbum.getId(), newAlbum.getName());
-		assertEquals(newAlbumsMap,this.testArtist.getAlbums());
+		assertEquals(newAlbums,this.testArtist.getAlbums());
 	}
 	
 	@Test
@@ -84,6 +86,7 @@ public class TESTArtistDTO {
 		ArtistDTO fullArtist = new ArtistDTO(
 				this.id, 
 				this.name, 
+				this.picture,
 				this.testAlbums);
 		
 		assertThat(!this.testArtist.equals(emptyArtist));

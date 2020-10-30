@@ -2,16 +2,16 @@ package com.qa.choonz.rest.dto;
 
 import com.qa.choonz.persistence.domain.Album;
 import com.qa.choonz.persistence.domain.Playlist;
+
+import java.util.List;
 import java.util.Objects;
 
 public class TrackDTO {
 
     private long id;
     private String name;
-    private String albumName;
-    private Long albumId;
-    private String playlistName;
-    private Long playlistId;
+    private Album album;
+    private List<Playlist> playlists;
     private int duration;
     private String lyrics;
 
@@ -20,24 +20,12 @@ public class TrackDTO {
         // TODO Auto-generated constructor stub
     }
 
-    public TrackDTO(long id, String name, Album album, Playlist playlist, int duration, String lyrics) {
+    public TrackDTO(long id, String name, Album album, List<Playlist> playlists, int duration, String lyrics) {
     	super();
     	this.id = id;
     	this.name = name;
-		if (album != null) {
-			this.albumName = album.getName();
-			this.albumId = album.getId();
-		} else {
-			this.albumName = null;
-			this.albumId = null;
-		}
-		if (playlist != null) {
-			this.playlistName = playlist.getName();
-			this.playlistId = playlist.getId();
-		} else {
-			this.playlistName = null;
-			this.playlistId = null;
-		}
+    	this.album = album;
+    	this.playlists = playlists;
     	this.duration = duration;
     	this.lyrics = lyrics;
     }
@@ -58,57 +46,21 @@ public class TrackDTO {
 		this.name = name;
 	}
 
-	public String getAlbumName() {
-		return this.albumName;
-	}
-	
-	public Long getAlbumId() {
-		return this.albumId;
+	public Album getAlbum() {
+		return this.album;
 	}
 
 	public void setAlbum(Album album) {
-		if (album != null) {
-			this.albumName = album.getName();
-			this.albumId = album.getId();
-		} else {
-			this.albumName = null;
-			this.albumId = null;
-		}
-	}
-
-	public void setAlbumName(String albumName) {
-		this.albumName = albumName;
-	}
-
-
-	public void setAlbumId(Long albumId) {
-		this.albumId = albumId;
+		this.album = album;
 	}
 	
-	public String getPlaylistName() {
-		return this.playlistName;
-	}
 	
-	public Long getPlaylistId() {
-		return this.playlistId;
+	public List<Playlist> getPlaylists() {
+		return this.playlists;
 	}
 
-	public void setPlaylist(Playlist playlist) {
-		if (playlist != null) {
-			this.playlistName = playlist.getName();
-			this.playlistId = playlist.getId();
-		} else {
-			this.playlistName = null;
-			this.playlistId = null;
-		}
-	}
-	
-	public void setPlaylistName(String playlistName) {
-		this.playlistName = playlistName;
-	}
-	
-	public void setPlaylistId(Long playlistId) {
-		this.playlistId = playlistId;
+	public void setPlaylists(List<Playlist> playlists) {
+		this.playlists = playlists;
 	}
 
 	public int getDuration() {
@@ -127,16 +79,16 @@ public class TrackDTO {
 		this.lyrics = lyrics;
 	}
 
+	
 	@Override
 	public String toString() {
-		// TODO add in IDs
-		return "TrackDTO [id=" + id + ", name=" + name + ", album=" + albumName + ", playlist=" + playlistName + ", duration="
+		return "TrackDTO [id=" + id + ", name=" + name + ", album=" + album + ", playlist=" + playlists + ", duration="
 				+ duration + ", lyrics=" + lyrics + "]";
 	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(albumName, albumId, duration, id, lyrics, name, playlistName, albumId);
+		return Objects.hash(album, duration, id, lyrics, name, playlists);
 	}
 
 	@Override
@@ -148,10 +100,10 @@ public class TrackDTO {
 		if (getClass() != obj.getClass())
 			return false;
 		TrackDTO other = (TrackDTO) obj;
-		if (albumName == null) {
-			if (other.albumName != null)
+		if (album == null) {
+			if (other.album != null)
 				return false;
-		} else if (!albumName.equals(other.albumName))
+		} else if (!album.equals(other.album))
 			return false;
 		if (duration != other.duration)
 			return false;
@@ -167,10 +119,10 @@ public class TrackDTO {
 				return false;
 		} else if (!name.equals(other.name))
 			return false;
-		if (playlistName == null) {
-			if (other.playlistName != null)
+		if (playlists == null) {
+			if (other.playlists != null)
 				return false;
-		} else if (!playlistName.equals(other.playlistName))
+		} else if (!playlists.equals(other.playlists))
 			return false;
 		return true;
 	}

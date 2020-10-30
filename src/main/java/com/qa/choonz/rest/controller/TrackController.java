@@ -31,6 +31,7 @@ public class TrackController {
 
     @PostMapping("/create")
     public ResponseEntity<TrackDTO> create(@RequestBody Track track) {
+    	System.out.println("Track: " + track);
         return new ResponseEntity<TrackDTO>(this.service.create(track), HttpStatus.CREATED);
     }
 
