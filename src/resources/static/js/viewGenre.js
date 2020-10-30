@@ -52,17 +52,17 @@ function populate(data) {
     genre.textContent = data["description"];
     descGenre.appendChild(genre);
 
-    let linkInfo = document.createElement("a");
-    linkInfo.href="#";
-    linkInfo.setAttribute("data-toggle", "modal");
-    linkInfo.setAttribute("data-target", "#exampleModal");
-    let info = document.createElement("i");
-    info.className = "far fa-edit";
-    linkInfo.appendChild(info);
+    // let linkInfo = document.createElement("a");
+    // linkInfo.href="#";
+    // linkInfo.setAttribute("data-toggle", "modal");
+    // linkInfo.setAttribute("data-target", "#exampleModal");
+    // let info = document.createElement("i");
+    // info.className = "far fa-edit";
+    // linkInfo.appendChild(info);
 
     textContainer.appendChild(genreName);
     textContainer.appendChild(descGenre);
-    textContainer.appendChild(linkInfo);
+    // textContainer.appendChild(linkInfo);
 
     let tableContainer = document.createElement("div");
     tableContainer.id = "table_container";
@@ -72,82 +72,84 @@ function populate(data) {
     find.appendChild(tableContainer);
     tableContainer.appendChild(table);
     table.appendChild(tableBody);
-    console.log(data["tracks"]);
-    let songCount = 1;
+    console.log(data["albums"]);
     // Populate the table
-    for (let key in data['tracks']) { 
-    console.log(data["tracks"][key]["id"]);
-     let value = data['tracks'][key]["name"];
-     console.log(value);
-     let row = document.createElement("tr");
-     tableBody.appendChild(row);
+    for (let a of data['albums']) { 
+        for(let key in a['tracks']){
+            console.log(a["tracks"][key]["id"]);
+            let value = a['tracks'][key]["name"];
+            console.log(value);
+            let row = document.createElement("tr");
+            tableBody.appendChild(row);
 
-     let songId = document.createElement("th");
-     songId.scope = "row";
-     songId.textContent = songCount;
-     row.appendChild(songId);
+            let albumCover = document.createElement("th");
+            albumCover.scope = "row";
+            let albumImage = document.createElement("img");
+            albumImage.src = a["cover"];
+            albumImage.id = "img_track_album";
+            albumCover.appendChild(albumImage);
+            row.appendChild(albumCover);
 
-     let songName = document.createElement("td");
-     let link = document.createElement("a");
-     link.href = "#";
-     link.textContent = value;
-     row.appendChild(songName);
-     songName.appendChild(link);
-      
-     let songIcon = document.createElement("td");
-     let dropdownMenu = document.createElement("div");
-     dropdownMenu.className="dropdown";
-     songIcon.appendChild(dropdownMenu);
-      
-    let linkSong = document.createElement("a");
-      linkSong.href ="#";
-      linkSong.id ="dropdownMenu2";
-      linkSong.setAttribute("data-toggle", "dropdown");
-      linkSong.setAttribute("aria-haspopup", "true");
-      linkSong.setAttribute("aria-expanded", "false");
-      let infoSong = document.createElement("i");
-      infoSong.className ="fas fa-ellipsis-h";
-      infoSong.id = "info_tracks"
-      row.appendChild(songIcon);
-      linkSong.appendChild(infoSong);
-      dropdownMenu.appendChild(linkSong);
+            let songName = document.createElement("td");
+            let link = document.createElement("a");
+            link.href = "#";
+            link.textContent = value;
+            row.appendChild(songName);
+            songName.appendChild(link);
+            
+            let songIcon = document.createElement("td");
+            let dropdownMenu = document.createElement("div");
+            dropdownMenu.className="dropdown";
+            songIcon.appendChild(dropdownMenu);
+            
+            let linkSong = document.createElement("a");
+            linkSong.href ="#";
+            linkSong.id ="dropdownMenu2";
+            linkSong.setAttribute("data-toggle", "dropdown");
+            linkSong.setAttribute("aria-haspopup", "true");
+            linkSong.setAttribute("aria-expanded", "false");
+            let infoSong = document.createElement("i");
+            infoSong.className ="fas fa-ellipsis-h";
+            infoSong.id = "info_tracks"
+            row.appendChild(songIcon);
+            linkSong.appendChild(infoSong);
+            dropdownMenu.appendChild(linkSong);
 
-      let dropdown = document.createElement("div");
-      dropdown.className = "dropdown-menu";
-      dropdownMenu.appendChild(dropdown);
+            let dropdown = document.createElement("div");
+            dropdown.className = "dropdown-menu";
+            dropdownMenu.appendChild(dropdown);
 
-      let linkDelete = document.createElement("a");
-      linkDelete.href='#';
-      linkDelete.className = "dropdown-item";
-      linkDelete.setAttribute("onClick", "window.location.reload();");
-      linkDelete.addEventListener("click", function(stop){
-        stop.preventDefault();  
-        deleteTrack((data["tracks"][key]["id"]));    
-      })
-      linkDelete.textContent = "Delete";
-      dropdown.appendChild(linkDelete);
-      let spanDelete = document.createElement("span");
-      spanDelete.id ="album-menu-delete";
-      linkDelete.appendChild(spanDelete);
-      let iconDelete = document.createElement("i");
-      iconDelete.className = "far fa-trash-alt";
-      spanDelete.appendChild(iconDelete);
+            // let linkDelete = document.createElement("a");
+            // linkDelete.href='#';
+            // linkDelete.className = "dropdown-item";
+            // linkDelete.setAttribute("onClick", "window.location.reload();");
+            // linkDelete.addEventListener("click", function(stop){
+            //     stop.preventDefault();  
+            //     deleteTrack((a["tracks"][key]["id"]));    
+            // })
+            // linkDelete.textContent = "Delete";
+            // dropdown.appendChild(linkDelete);
+            // let spanDelete = document.createElement("span");
+            // spanDelete.id ="album-menu-delete";
+            // linkDelete.appendChild(spanDelete);
+            // let iconDelete = document.createElement("i");
+            // iconDelete.className = "far fa-trash-alt";
+            // spanDelete.appendChild(iconDelete);
 
-      let linkPlaylist = document.createElement("a");
-      linkPlaylist.href="#";
-      linkPlaylist.className = "dropdown-item";
-      linkPlaylist.textContent = "Add to Playlist";
-      dropdown.appendChild(linkPlaylist);
+            let linkPlaylist = document.createElement("a");
+            linkPlaylist.href="#";
+            linkPlaylist.className = "dropdown-item";
+            linkPlaylist.textContent = "Add to Playlist";
+            dropdown.appendChild(linkPlaylist);
 
-      let spanPlaylist = document.createElement("span");
-      spanPlaylist.id ="album-menu-playlist";
-      linkPlaylist.appendChild(spanPlaylist);
+            let spanPlaylist = document.createElement("span");
+            spanPlaylist.id ="album-menu-playlist";
+            linkPlaylist.appendChild(spanPlaylist);
 
-      let iconPlaylist = document.createElement("i");
-      iconPlaylist.className = "fas fa-music";
-      spanPlaylist.appendChild(iconPlaylist);
-
-     songCount++;
+            let iconPlaylist = document.createElement("i");
+            iconPlaylist.className = "fas fa-music";
+            spanPlaylist.appendChild(iconPlaylist);
+        }
     }
 
     let findDelete = document.getElementById("modal-footer");
