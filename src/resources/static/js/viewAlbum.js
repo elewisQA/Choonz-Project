@@ -59,18 +59,18 @@ function populate(data) {
     genre.textContent = data["genre"]["name"];
     linkGenre.appendChild(genre);
 
-    let linkInfo = document.createElement("a");
-    linkInfo.href="#";
-    linkInfo.setAttribute("data-toggle", "modal");
-    linkInfo.setAttribute("data-target", "#exampleModal");
-    let info = document.createElement("i");
-    info.className = "far fa-edit";
-    linkInfo.appendChild(info);
+    // let linkInfo = document.createElement("a");
+    // linkInfo.href="#";
+    // linkInfo.setAttribute("data-toggle", "modal");
+    // linkInfo.setAttribute("data-target", "#exampleModal");
+    // let info = document.createElement("i");
+    // info.className = "far fa-edit";
+    // linkInfo.appendChild(info);
 
     textContainer.appendChild(albumName);
     textContainer.appendChild(linkArtist);
     textContainer.appendChild(linkGenre);
-    textContainer.appendChild(linkInfo);
+    // textContainer.appendChild(linkInfo);
 
     let tableContainer = document.createElement("div");
     tableContainer.id = "table_container";
@@ -124,22 +124,23 @@ function populate(data) {
       dropdown.className = "dropdown-menu";
       dropdownMenu.appendChild(dropdown);
 
-      let linkDelete = document.createElement("a");
-      linkDelete.href='#';
-      linkDelete.className = "dropdown-item";
-      linkDelete.setAttribute("onClick", "window.location.reload();");
-      linkDelete.addEventListener("click", function(stop){
-        stop.preventDefault();  
-        deleteTrack((data["tracks"][key]["id"]));    
-      })
-      linkDelete.textContent = "Delete";
-      dropdown.appendChild(linkDelete);
-      let spanDelete = document.createElement("span");
-      spanDelete.id ="album-menu-delete";
-      linkDelete.appendChild(spanDelete);
-      let iconDelete = document.createElement("i");
-      iconDelete.className = "far fa-trash-alt";
-      spanDelete.appendChild(iconDelete);
+      //Delete song from album functionality for admin
+      // let linkDelete = document.createElement("a");
+      // linkDelete.href='#';
+      // linkDelete.className = "dropdown-item";
+      // linkDelete.setAttribute("onClick", "window.location.reload();");
+      // linkDelete.addEventListener("click", function(stop){
+      //   stop.preventDefault();  
+      //   deleteTrack((data["tracks"][key]["id"]));    
+      // })
+      // linkDelete.textContent = "Delete";
+      // dropdown.appendChild(linkDelete);
+      // let spanDelete = document.createElement("span");
+      // spanDelete.id ="album-menu-delete";
+      // linkDelete.appendChild(spanDelete);
+      // let iconDelete = document.createElement("i");
+      // iconDelete.className = "far fa-trash-alt";
+      // spanDelete.appendChild(iconDelete);
 
       let linkPlaylist = document.createElement("a");
       linkPlaylist.href="#";
@@ -157,18 +158,18 @@ function populate(data) {
 
      songCount++;
     }
-
-    let findDelete = document.getElementById("modal-footer");
-    let deleteButton = document.createElement("a");
-    //deleteButton.href="albums.html";
-    deleteButton.className="btn btn-danger";
-    deleteButton.textContent = "Delete";
-    deleteButton.setAttribute("onClick", "location.href = 'albums.html';");
-    deleteButton.addEventListener("click", function(stop){
-      stop.preventDefault(); 
-      deleteAlbum(data['id']);    
-    })
-    findDelete.appendChild(deleteButton);
+    //Delete album functionality for admin
+    // let findDelete = document.getElementById("modal-footer");
+    // let deleteButton = document.createElement("a");
+    // //deleteButton.href="albums.html";
+    // deleteButton.className="btn btn-danger";
+    // deleteButton.textContent = "Delete";
+    // deleteButton.setAttribute("onClick", "location.href = 'albums.html';");
+    // deleteButton.addEventListener("click", function(stop){
+    //   stop.preventDefault(); 
+    //   deleteAlbum(data['id']);    
+    // })
+    // findDelete.appendChild(deleteButton);
 }
 
 function deleteTrack(id) {

@@ -23,7 +23,8 @@ fetch('http://localhost:8082/artists/read')
 
     for (let key of alldata) {
       console.log(key);
-      console.log(key['artistName']);
+      console.log(key['name']);
+      console.log(key['id']);
 
       let find = document.getElementById("artists");
       let column = document.createElement("div");
@@ -42,7 +43,7 @@ fetch('http://localhost:8082/artists/read')
       card.appendChild(body);
 
       let linkArtist = document.createElement("a");
-      linkArtist.href = "#";
+      linkArtist.href = "viewArtist.html?id=" + key['id'];
       let artist = document.createElement("h5");
       artist.className = "card-title";
       let artistText = document.createTextNode(key['name']);

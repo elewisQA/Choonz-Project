@@ -41,6 +41,7 @@ fetch('http://localhost:8082/albums/read')
       body.className = "card-body";
       card.appendChild(body);
 
+      console.log(key['artist']['id']);
       let linkTitle = document.createElement("a");
       linkTitle.href = "viewAlbum.html?id=" + key['id'];
       let title = document.createElement("h5");
@@ -52,7 +53,7 @@ fetch('http://localhost:8082/albums/read')
       title.appendChild(titleText);
 
       let linkArtist = document.createElement("a");
-      linkArtist.href = "#";
+      linkArtist.href = "viewArtist.html?id=" + key['artist']['id'];
       let artist = document.createElement("p");
       artist.className = "card-text";
       let artistSmall = document.createElement("small");
