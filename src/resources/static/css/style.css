@@ -338,3 +338,10 @@ body {
 .invalid input:required:valid {
   background: #17D654;
 }
+#album-menu-delete {
+  margin-left: 58%;
+}
+
+#album-menu-playlist{
+  margin-left: 10%;
+}
