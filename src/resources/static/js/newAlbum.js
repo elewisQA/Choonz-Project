@@ -22,7 +22,7 @@ function validateForm(){
         return false; 
     }
     if (cover.value == "") { 
-        window.alert("Please paste the link of the image for this album."); 
+        window.alert("Please add the link of the image for this album."); 
         cover.focus(); 
         return false; 
     }

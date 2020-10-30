@@ -67,6 +67,8 @@ fetch('http://localhost:8082/genres/read')
     let linkAdd = document.createElement("a");
     linkAdd.setAttribute("id", "addnew");
     linkAdd.href ="#";
+    linkAdd.setAttribute("data-toggle", "modal")
+    linkAdd.setAttribute("data-target", "#exampleModal")
     card.appendChild(linkAdd);
 
     let icon = document.createElement("i");
