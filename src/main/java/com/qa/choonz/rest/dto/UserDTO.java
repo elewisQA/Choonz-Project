@@ -87,12 +87,13 @@ public class UserDTO {
         if (this == obj) {
             return true;
         }
-        if (!(obj instanceof Album)) {
+        if (!(obj instanceof UserDTO)) {
             return false;
         }
         UserDTO other = (UserDTO) obj;
         return Objects.equals(username, other.username)
-                && Objects.equals(password, other.password) && id == other.id
+                && Objects.equals(password, other.password) 
+                && id == other.id
                 && Objects.equals(playlists, other.playlists);
 	}
 }
