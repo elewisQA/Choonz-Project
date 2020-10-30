@@ -22,9 +22,11 @@ INSERT INTO TRACK(ID, DURATION, NAME, ALBUM_ID) VALUES (9, 3.47, 'Brain Damage',
 INSERT INTO TRACK(ID, DURATION, NAME, ALBUM_ID) VALUES (10, 2.10, 'Eclipse', 1);
 INSERT INTO TRACK(ID, DURATION, NAME, ALBUM_ID) VALUES (11, 3.07, 'Honey, Honey', 2);
 INSERT INTO TRACK(ID, DURATION, NAME, ALBUM_ID) VALUES (12, 3.35, 'Mamma Mia', 2);
+/* Insert a user */
+INSERT INTO USER(ID, USERNAME, PASSWORD) VALUES (1, 'test', 'password');
 /* Insert some playlists */
-INSERT INTO PLAYLIST VALUES (1, 'a', 'Number one playlist!', 'Playlist One');
-INSERT INTO PLAYLIST VALUES (2, 'b', 'Second best playlist!', 'Playlist 2');
+INSERT INTO PLAYLIST VALUES (1, 'a', 'Number one playlist!', 'Playlist One', 1);
+INSERT INTO PLAYLIST VALUES (2, 'b', 'Second best playlist!', 'Playlist 2', 1);
 /* Add some songs to a playlist */ 
 INSERT INTO track_playlists VALUES(1, 1);
 INSERT INTO track_playlists VALUES(11, 1);
