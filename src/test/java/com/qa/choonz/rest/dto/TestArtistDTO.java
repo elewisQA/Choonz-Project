@@ -93,15 +93,19 @@ public class TestArtistDTO {
 	
 	@Test
 	void testHashCode() {
-		assertTrue(this.testArtist.hashCode() == -1259434520);
+		ArtistDTO newArtist = new ArtistDTO(	
+				this.id, 
+				this.name, 
+				this.picture,
+				this.testAlbums);
+		assertTrue(this.testArtist.hashCode() == newArtist.hashCode());
 	}
 	
 	@Test
 	void testToString() {
+		System.out.println(this.testArtist.toString());
 		assertTrue(this.testArtist.toString()
-				.equals("Artist [id=1, name=Pink Floyd, albums=[Album "
-						+ "[id=0, name=null, tracks=null, artist=null, "
-						+ "genre=null, cover=null]]]"));
+				.equals("ArtistDTO [id=1, name=Pink Floyd, picture=../, albums=[]]"));
 	}
 	
 	@AfterEach

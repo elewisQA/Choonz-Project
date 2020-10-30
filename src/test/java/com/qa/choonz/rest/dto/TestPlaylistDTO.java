@@ -90,9 +90,10 @@ public class TestPlaylistDTO {
 	// TODO Album getting / setting not yet implemented in PlaylistDTO
 	
 	@Test
-	public void toStringTests() {		
+	public void toStringTests() {
+		System.out.println(this.testPlaylist.toString());
 		assertTrue(this.testPlaylist.toString()
-				.equals("PlaylistDTO [id=1, name=Choonz, description=Bangers, artwork=Picture, tracks=null]"));
+				.equals("PlaylistDTO [id=1, name=Tunes, description=Bangers only, artwork=Arty, tracks=[]]"));
 	}
 	
 	@Test
