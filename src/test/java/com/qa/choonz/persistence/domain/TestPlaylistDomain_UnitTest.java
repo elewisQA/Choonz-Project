@@ -9,10 +9,10 @@ import java.util.List;
 
 import org.junit.jupiter.api.Test;
 
-public class TestPlaylistDomain_UnitTest {
+class TestPlaylistDomain_UnitTest {
 	
 	@Test
-	public void constructorTests() {
+	void constructorTests() {
 		Playlist emptyPlaylist = new Playlist();
 		
 		assertTrue(emptyPlaylist instanceof Playlist);
@@ -22,7 +22,7 @@ public class TestPlaylistDomain_UnitTest {
 	}
 	
 	@Test
-	public void getSetIdTest() {
+	void getSetIdTest() {
 		Playlist emptyPlaylist = new Playlist();
 		
 		emptyPlaylist.setId(1L);
@@ -31,7 +31,7 @@ public class TestPlaylistDomain_UnitTest {
 	}
 	
 	@Test
-	public void getSetNameTest() {
+	void getSetNameTest() {
 		Playlist emptyPlaylist = new Playlist();
 		emptyPlaylist.setName("Song");
 		
@@ -39,7 +39,7 @@ public class TestPlaylistDomain_UnitTest {
 	}
 	
 	@Test
-	public void getSetDescriptionTest() {
+	void getSetDescriptionTest() {
 		Playlist emptyPlaylist = new Playlist();
 		emptyPlaylist.setDescription("Bangers");
 		
@@ -47,7 +47,7 @@ public class TestPlaylistDomain_UnitTest {
 	}
 	
 	@Test
-	public void getSetArtworkTest() {
+	void getSetArtworkTest() {
 		Playlist emptyPlaylist = new Playlist();
 		emptyPlaylist.setArtwork("Picture");
 		
@@ -55,7 +55,7 @@ public class TestPlaylistDomain_UnitTest {
 	}
 	
 	@Test
-	public void getSetTracksTest() {
+	void getSetTracksTest() {
 		Track track = new Track();
 		List<Track> tracks = new ArrayList<>();
 		tracks.add(track);
@@ -67,7 +67,7 @@ public class TestPlaylistDomain_UnitTest {
 	}
 	
 	@Test
-	public void toStringTests() {		
+	void toStringTests() {		
 		Playlist playlist = new Playlist(1L,"Choonz","Bangers","Picture",null);
 		
 		assertEquals("Playlist [id=1, name=Choonz, description=Bangers, artwork=Picture, tracks=null]"
@@ -75,7 +75,7 @@ public class TestPlaylistDomain_UnitTest {
 	}
 	
 	@Test
-	public void hashCodeTest() {		
+	void hashCodeTest() {		
 		Playlist playlist1 = new Playlist(1L,"Choonz","Bangers","Picture",null);
 		Playlist playlist2 = new Playlist(1L,"Choonz","Bangers","Picture",null);
 		
@@ -83,7 +83,7 @@ public class TestPlaylistDomain_UnitTest {
 	}
 	
 	@Test
-	public void equalsTest() {
+	void equalsTest() {
 		Playlist playlist = new Playlist(1L,"Choonz","Bangers","Picture",null);
 		Track track = new Track();
 		
