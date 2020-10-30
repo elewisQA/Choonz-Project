@@ -13,7 +13,7 @@ import org.junit.jupiter.api.Test;
 import com.qa.choonz.persistence.domain.Playlist;
 import com.qa.choonz.persistence.domain.Track;
 
-public class TESTPlaylistDTO {
+public class TestPlaylistDTO {
 	
 	PlaylistDTO testPlaylist;
 	final long id = 1L;

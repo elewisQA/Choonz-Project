@@ -12,7 +12,7 @@ import org.junit.jupiter.api.Test;
 
 import com.qa.choonz.persistence.domain.Album;
 
-public class TESTArtistDTO {
+public class TestArtistDTO {
 
 	ArtistDTO testArtist;
 	final Long id = 1l;
