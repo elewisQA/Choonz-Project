@@ -7,51 +7,58 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 class TestPlaylistDomain_UnitTest {
+	// Test Variables 
+	Playlist testPlaylist;
 	
-	@Test
-	void constructorTests() {
-		Playlist emptyPlaylist = new Playlist();
-		
-		assertTrue(emptyPlaylist instanceof Playlist);
-		
-		Playlist playlist = new Playlist(1L,"Choonz","Bangers","Picture",null);
-		assertTrue(playlist instanceof Playlist);
+	@BeforeEach
+	void init() {
+		this.testPlaylist = new Playlist();
 	}
 	
 	@Test
-	void getSetIdTest() {
-		Playlist emptyPlaylist = new Playlist();
+	void testZeroArgsConstructor() {
+		Playlist newPlaylist = new Playlist();
 		
-		emptyPlaylist.setId(1L);
+		assertTrue(newPlaylist instanceof Playlist);
+	}
+	
+	@Test
+	void testAllArgsConstructor() {
+		Playlist newPlaylist = new Playlist(1L, "Choonz", "Bangers", "Picture", null);
+		assertTrue(newPlaylist instanceof Playlist);
+	}
+	
+	@Test
+	void getSetIdTest() {	
+		this.testPlaylist.setId(1L);
 		
-		assertEquals(1L, emptyPlaylist.getId());
+		assertEquals(1L, this.testPlaylist.getId());
 	}
 	
 	@Test
 	void getSetNameTest() {
-		Playlist emptyPlaylist = new Playlist();
-		emptyPlaylist.setName("Song");
+		this.testPlaylist.setName("Song");
 		
-		assertEquals("Song", emptyPlaylist.getName());
+		assertEquals("Song", this.testPlaylist.getName());
 	}
 	
 	@Test
 	void getSetDescriptionTest() {
-		Playlist emptyPlaylist = new Playlist();
-		emptyPlaylist.setDescription("Bangers");
+		this.testPlaylist.setDescription("Bangers");
 		
-		assertEquals("Bangers", emptyPlaylist.getDescription());
+		assertEquals("Bangers", this.testPlaylist.getDescription());
 	}
 	
 	@Test
 	void getSetArtworkTest() {
-		Playlist emptyPlaylist = new Playlist();
-		emptyPlaylist.setArtwork("Picture");
+		this.testPlaylist.setArtwork("Picture");
 		
-		assertEquals("Picture", emptyPlaylist.getArtwork());
+		assertEquals("Picture", this.testPlaylist.getArtwork());
 	}
 	
 	@Test
@@ -60,18 +67,17 @@ class TestPlaylistDomain_UnitTest {
 		List<Track> tracks = new ArrayList<>();
 		tracks.add(track);
 		
-		Playlist emptyPlaylist = new Playlist();
-		emptyPlaylist.setTracks(tracks);
+		this.testPlaylist.setTracks(tracks);
 		
-		assertEquals(tracks, emptyPlaylist.getTracks());
+		assertEquals(tracks, this.testPlaylist.getTracks());
 	}
 	
 	@Test
 	void toStringTests() {		
-		Playlist playlist = new Playlist(1L,"Choonz","Bangers","Picture",null);
+		Playlist newPlaylist = new Playlist(1L,"Choonz","Bangers","Picture",null);
 		
 		assertEquals("Playlist [id=1, name=Choonz, description=Bangers, artwork=Picture, tracks=null]"
-				,playlist.toString());
+				,newPlaylist.toString());
 	}
 	
 	@Test
@@ -84,10 +90,14 @@ class TestPlaylistDomain_UnitTest {
 	
 	@Test
 	void equalsTest() {
-		Playlist playlist = new Playlist(1L,"Choonz","Bangers","Picture",null);
-		Track track = new Track();
+		Playlist newPlaylist = new Playlist();
 		
-		assertEquals(playlist, playlist);
-		assertFalse(playlist.equals(track));
+		assertEquals(newPlaylist, this.testPlaylist);
+		assertFalse(newPlaylist.equals(null));
+	}
+	
+	@AfterEach
+	void teardown() {
+		testPlaylist = null;
 	}
 }
