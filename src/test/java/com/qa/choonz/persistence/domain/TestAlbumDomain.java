@@ -1,7 +1,9 @@
 package com.qa.choonz.persistence.domain;
 
-//--[ Imports ]--
-import static org.assertj.core.api.Assertions.assertThat;
+//---[ Imports ]---
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,11 +12,8 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import com.qa.choonz.persistence.domain.Album;
-import com.qa.choonz.persistence.domain.Track;
-
 //===[ Testing Code ]===
-public class TESTAlbum {
+public class TestAlbumDomain {
 	//--[ Test Variables ]--
 	Album testAlbum;
 	final Long id = 1l;
@@ -42,7 +41,7 @@ public class TESTAlbum {
 		Album newAlbum = new Album();
 		
 		// test assertion
-		assertThat(newAlbum instanceof Album);
+		assertTrue(newAlbum instanceof Album);
 	}
 	
 	@Test
@@ -57,12 +56,12 @@ public class TESTAlbum {
 				this.cover);
 		
 		// test assertion
-		assertThat(newAlbum instanceof Album);
+		assertTrue(newAlbum instanceof Album);
 	}
 	
 	@Test
 	void testGetId() {
-		assertThat(this.testAlbum.getId() == this.id);
+		assertEquals(this.testAlbum.getId(), this.id);
 	}
 	
 	@Test
@@ -72,12 +71,12 @@ public class TESTAlbum {
 		this.testAlbum.setId(newId);
 		
 		// test assertion
-		assertThat(this.testAlbum.getId() == newId);
+		assertEquals(this.testAlbum.getId(), newId);
 	}
 	
 	@Test
 	void testGetName() {
-		assertThat(this.testAlbum.getName().equals(this.name));
+		assertEquals(this.testAlbum.getName(), this.name);
 	}
 	
 	@Test
@@ -87,12 +86,12 @@ public class TESTAlbum {
 		this.testAlbum.setName(newName);
 		
 		// test assertion
-		assertThat(this.testAlbum.getName().equals(newName));
+		assertEquals(this.testAlbum.getName(), newName);
 	}
 	
 	@Test
 	void testGetTracks() {
-		assertThat(this.testAlbum.getTracks() == this.tracks);
+		assertEquals(this.testAlbum.getTracks(), this.tracks);
 	}
 	
 	@Test
@@ -102,12 +101,12 @@ public class TESTAlbum {
 		this.testAlbum.setTracks(newTracks);
 		
 		// test assertion
-		assertThat(this.testAlbum.getTracks() == newTracks);
+		assertEquals(this.testAlbum.getTracks(), newTracks);
 	}
 	
 	@Test
 	void testGetArtist() {
-		assertThat(this.testAlbum.getArtist() == null);
+		assertEquals(this.testAlbum.getArtist(), null);
 	}
 	
 	@Test
@@ -116,12 +115,12 @@ public class TESTAlbum {
 		this.testAlbum.setArtist(null);
 		
 		// test assertion
-		assertThat(this.testAlbum.getArtist() == null);
+		assertEquals(this.testAlbum.getArtist(), null);
 	}
 	
 	@Test
 	void testGetGenre() {
-		assertThat(this.testAlbum.getGenre() == null);
+		assertEquals(this.testAlbum.getGenre(), null);
 	}
 	
 	@Test
@@ -130,7 +129,7 @@ public class TESTAlbum {
 		this.testAlbum.setGenre(null);
 		
 		// test assertion
-		assertThat(this.testAlbum.getGenre() == null);
+		assertEquals(this.testAlbum.getGenre(), null);
 	}
 	
 	@Test
@@ -146,23 +145,23 @@ public class TESTAlbum {
 				this.cover);
 		
 		// test assertion
-		assertThat(!this.testAlbum.equals(emptyAlbum));
-		assertThat(this.testAlbum.equals(fullAlbum));
+		assertFalse(this.testAlbum.equals(emptyAlbum));
+		assertEquals(this.testAlbum, fullAlbum);
 	}
 	
 	@Test
 	void testToString() {
 		//TODO fill this method in
-		assertThat(this.testAlbum.toString()
-				.equals("Album [id=1, name=Dark Side of the Moon, "
+		assertEquals(this.testAlbum.toString(),
+				"Album [id=1, name=Dark Side of the Moon, "
 						+ "tracks=[], artist=null, genre=null, "
-						+ "cover=not-a-cover]"));
+						+ "cover=not-a-cover]");
 	}
 	
 	@Test
 	void testHashCode() {
 		// TODO check this method is correct / if better test method exists
-		assertThat(this.testAlbum.hashCode() == -1870013350);
+		assertEquals(this.testAlbum.hashCode(), -1870013350);
 	}
 	
 	//--[ Test Tear-Down ]--
