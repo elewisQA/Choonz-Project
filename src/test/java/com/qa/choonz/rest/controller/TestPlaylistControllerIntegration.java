@@ -21,6 +21,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.qa.choonz.persistence.domain.Playlist;
 import com.qa.choonz.persistence.domain.Track;
+import com.qa.choonz.persistence.domain.User;
 import com.qa.choonz.persistence.repository.PlaylistRepository;
 import com.qa.choonz.rest.dto.PlaylistDTO;
 
@@ -53,6 +54,7 @@ class TestPlaylistControllerIntegration {
     private final String description = "Bangers only";
     private final String artwork = "artwork";
     private List<Track> tracks;
+    private final User testUser = null;
     
     @BeforeEach
     void init() {
@@ -64,6 +66,7 @@ class TestPlaylistControllerIntegration {
     	this.testPlaylist.setDescription(this.description);
     	this.testPlaylist.setArtwork(this.artwork);
     	this.testPlaylist.setTracks(this.tracks);
+    	this.testPlaylist.setUser(this.testUser);
     	this.testPlaylistWithId = this.repo.save(this.testPlaylist);
     	this.playlistDTO = this.mapToDTO(this.testPlaylistWithId);
     	
@@ -108,12 +111,14 @@ class TestPlaylistControllerIntegration {
     	newPlaylist.setDescription("Big bangers");
     	newPlaylist.setArtwork("Art");
     	newPlaylist.setTracks(null);
+    	newPlaylist.setUser(null);
     	Playlist updatedPlaylist = new Playlist();
     	updatedPlaylist.setId(this.id);
     	updatedPlaylist.setName(newPlaylist.getName());
     	updatedPlaylist.setDescription(newPlaylist.getDescription());
     	updatedPlaylist.setArtwork(newPlaylist.getArtwork());
     	updatedPlaylist.setTracks(null);
+    	updatedPlaylist.setUser(null);
     	
         String output = this.mock
                 .perform(request(HttpMethod.POST, "/playlists/update/" + this.id).accept(MediaType.APPLICATION_JSON)
