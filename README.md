@@ -1,16 +1,16 @@
 # Choonz-Starter
 
-Starter code for SDET final project specification - music website "Choonz"
+'Choonz' is a Music website, designed and tested as part of the final project for SDET.
 
 ## Concept
 
-This code is designed as a starting point for the final project specification for SDET.
+The 'Choonz' website will allow a user to browse music, being able to look at tracks, artists, albums, genres - as well as being able to view and make playlists.
 
 This should be scaleable from 3 to 5+ entities:
 
 - **MUST HAVE** - Track, Artist, Album
-- **COULD HAVE** - Genre, Playlist
-- Others TBD
+- **SHOULD HAVE** - Genre, Playlist
+- **COULD HAVE** - Login System (restrict playlist creation to logged in users)
 
 ## Specifications
 
@@ -41,11 +41,11 @@ TBD
 
 ### Development Team
 
-- Cristina Lopez Canoyra
-- Nikolett Bajna
-- Liam Harrold
-- Avi Hart
-- Elizabeth Lewis
+- [**Cristina Lopez Canoyra**](https://github.com/clc15735)
+- [**Nikolett Bajna**](https://github.com/nikolettbajna)
+- [**Liam Harrold**](https://github.com/LHarroldQA)
+- [**Avi Hart**](https://github.com/AviNissimHart)
+- [**Elizabeth Lewis**](https://github.com/elewisQA)
 
 ## Acknowledgements
 
