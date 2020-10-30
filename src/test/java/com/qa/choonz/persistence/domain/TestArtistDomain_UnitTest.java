@@ -1,7 +1,7 @@
 package com.qa.choonz.persistence.domain;
 
-//--[ Imports ]--
-import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,11 +10,8 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import com.qa.choonz.persistence.domain.Album;
-import com.qa.choonz.persistence.domain.Artist;
-
 //===[ Testing Code ]===
-public class TESTArtist {
+class TestArtistDomain_UnitTest {
 	//--[ Test Variables ]--
 	Artist testArtist;
 	final Long id = 1l;
@@ -37,7 +34,7 @@ public class TESTArtist {
 		Artist newTestArtist = new Artist();
 		
 		// test assertion
-		assertThat(newTestArtist instanceof Artist);
+		assertTrue(newTestArtist instanceof Artist);
 	}
 	
 	@Test
@@ -54,13 +51,13 @@ public class TESTArtist {
 				newTestAlbums);	
 	
 		// test assertion
-		assertThat(newTestArtist instanceof Artist);
+		assertTrue(newTestArtist instanceof Artist);
 	}
 	
 	
 	@Test
 	void testGetId() {
-		assertThat(this.testArtist.getId() == this.id);
+		assertEquals(this.id, this.testArtist.getId());
 	}
 	
 	@Test
@@ -70,12 +67,12 @@ public class TESTArtist {
 		this.testArtist.setId(newId);
 		
 		// test assertion
-		assertThat(this.testArtist.getId() == newId);
+		assertEquals(newId, this.testArtist.getId());
 	}
 	
 	@Test
 	void testGetName() {
-		assertThat(this.testArtist.getName() == this.name);
+		assertEquals(this.name, this.testArtist.getName());
 	}
 	
 	@Test
@@ -85,12 +82,12 @@ public class TESTArtist {
 		this.testArtist.setName(newName);
 		
 		// test assertion
-		assertThat(this.testArtist.getName().equals(newName));
+		assertEquals(newName, this.testArtist.getName());
 	}
 	
 	@Test
 	void testGetAlbums() {
-		assertThat(this.testArtist.getAlbums() == this.testAlbums);
+		assertEquals(this.testAlbums, this.testArtist.getAlbums());
 	}
 	
 	@Test
@@ -102,7 +99,7 @@ public class TESTArtist {
 		this.testArtist.setAlbums(newAlbums);
 		
 		// test assertion
-		assertThat(this.testArtist.getAlbums() == newAlbums);
+		assertEquals(newAlbums, this.testArtist.getAlbums());
 	}
 	
 	
@@ -115,22 +112,20 @@ public class TESTArtist {
 				this.picture,
 				this.testAlbums);
 		
-		assertThat(!this.testArtist.equals(emptyArtist));
-		assertThat(this.testArtist.equals(fullArtist));
+		assertTrue(!this.testArtist.equals(emptyArtist));
+		assertEquals(fullArtist, this.testArtist);
 	}
 	
 	@Test
 	void testHashCode() {
 		// TODO check this method is correct / if better test method exists
-		assertThat(this.testArtist.hashCode() == -1259434520);
+		assertEquals(-192099002, this.testArtist.hashCode());
 	}
 	
 	@Test
 	void testToString() {
-		assertThat(this.testArtist.toString()
-				.equals("Artist [id=1, name=Pink Floyd, albums=[Album "
-						+ "[id=0, name=null, tracks=null, artist=null, "
-						+ "genre=null, cover=null]]]"));
+		assertEquals("Artist [id=1, name=Pink Floyd, picture=../, albums=[]]",
+				this.testArtist.toString());
 	}
 	
 	//--[ Test Tear-Down ]--
