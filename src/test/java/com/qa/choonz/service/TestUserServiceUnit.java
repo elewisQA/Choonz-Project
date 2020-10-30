@@ -30,7 +30,7 @@ class TestUserServiceUnit {
 	@Autowired
 	private UserService service;
 	
-	@Autowired
+	@MockBean
 	private UserRepository repo;
 	
 	@MockBean
@@ -56,6 +56,8 @@ class TestUserServiceUnit {
 						this.username,
 						this.password,
 						this.testPlaylists);
+				this.userList = new ArrayList<>();
+				userList.add(testUser);
 			}
 			
 			@Test
