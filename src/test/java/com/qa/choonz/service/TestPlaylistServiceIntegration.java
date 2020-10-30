@@ -20,7 +20,7 @@ import com.qa.choonz.rest.dto.PlaylistDTO;
 
 //===[ Testing Code ]===
 @SpringBootTest
-public class TESTPlaylistServiceIntegration {
+class TestPlaylistServiceIntegration {
 	//--[ Set-up Test Integrations ]--
 	@Autowired
 	private PlaylistService service;

@@ -22,7 +22,7 @@ import com.qa.choonz.persistence.repository.GenreRepository;
 import com.qa.choonz.rest.dto.GenreDTO;
 
 @SpringBootTest
-public class TESTGenreServiceUnit {
+class TestGenreServiceUnit {
 	
 	@Autowired
 	private GenreService service;

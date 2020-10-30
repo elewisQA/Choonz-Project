@@ -22,7 +22,7 @@ import com.qa.choonz.persistence.repository.ArtistRepository;
 import com.qa.choonz.rest.dto.ArtistDTO;
 
 @SpringBootTest
-public class TESTArtistServiceUnit {
+class TestArtistServiceUnit {
 
 	@Autowired
 	private ArtistService service;

@@ -23,7 +23,7 @@ import com.qa.choonz.persistence.repository.TrackRepository;
 import com.qa.choonz.rest.dto.TrackDTO;
 
 @SpringBootTest
-public class TESTTrackServiceUnit {
+class TestTrackServiceUnit {
 
 	@Autowired
 	private TrackService service;
