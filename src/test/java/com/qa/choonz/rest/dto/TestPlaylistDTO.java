@@ -12,6 +12,7 @@ import org.junit.jupiter.api.Test;
 
 import com.qa.choonz.persistence.domain.Playlist;
 import com.qa.choonz.persistence.domain.Track;
+import com.qa.choonz.persistence.domain.User;
 
 public class TestPlaylistDTO {
 	
@@ -21,16 +22,19 @@ public class TestPlaylistDTO {
 	final String description = "Bangers only";
 	final String artwork = "Arty";
 	List<Track> testTracks;
+	User testUser;
 	
 	@BeforeEach
 	void init() {
 		this.testTracks = new ArrayList<Track>();
+		this.testUser = new User();
 		this.testPlaylist = new PlaylistDTO(
 				this.id,
 				this.name,
 				this.description,
 				this.artwork,
-				this.testTracks);
+				this.testTracks,
+				this.testUser);
 	}
 	
 	@Test
@@ -42,7 +46,7 @@ public class TestPlaylistDTO {
 	
 	@Test
 	public void allArgsconstructorTest() {
-		Playlist playlist = new Playlist(1L,"Choonz","Bangers","Picture",null);
+		Playlist playlist = new Playlist(1L,"Choonz","Bangers","Picture",null, null);
 		assertTrue(playlist instanceof Playlist);
 	}
 	
@@ -91,15 +95,15 @@ public class TestPlaylistDTO {
 	
 	@Test
 	public void toStringTests() {
-		System.out.println(this.testPlaylist.toString());
 		assertTrue(this.testPlaylist.toString()
-				.equals("PlaylistDTO [id=1, name=Tunes, description=Bangers only, artwork=Arty, tracks=[]]"));
+				.equals("PlaylistDTO [id=1, name=Tunes, description=Bangers only, artwork=Arty, "
+						+ "tracks=[], user=User [id=null, username=null, password=null, playlists=[]]]"));
 	}
 	
 	@Test
 	public void hashCodeTest() {		
-		PlaylistDTO playlist1 = new PlaylistDTO(1L,"Choonz","Bangers","Picture",null);
-		PlaylistDTO playlist2 = new PlaylistDTO(1L,"Choonz","Bangers","Picture",null);
+		PlaylistDTO playlist1 = new PlaylistDTO(1L,"Choonz","Bangers","Picture",null, null);
+		PlaylistDTO playlist2 = new PlaylistDTO(1L,"Choonz","Bangers","Picture",null, null);
 		
 		assertTrue(playlist1.hashCode() == playlist2.hashCode());
 	}
@@ -112,7 +116,8 @@ public class TestPlaylistDTO {
 				this.name, 
 				this.description,
 				this.artwork,
-				this.testTracks);
+				this.testTracks,
+				this.testUser);
 		
 		assertTrue(!this.testPlaylist.equals(emptyPlaylist));
 		assertTrue(this.testPlaylist.equals(fullPlaylist));
