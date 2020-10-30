@@ -47,7 +47,6 @@ class TestUserServiceIntegration {
 		this.repo.deleteAll();
 		this.testPlaylists = new ArrayList<>();
 		this.testUser = new User();
-		this.testUser.setId(this.id);
 		this.testUser.setUsername(this.username);
 		this.testUser.setPassword(this.password);
 		this.testUser.setPlaylists(this.testPlaylists);
