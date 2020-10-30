@@ -72,6 +72,8 @@ fetch('http://localhost:8082/artists/read')
     let linkAdd = document.createElement("a");
     linkAdd.className = "btn btn-info";
     linkAdd.href ="#";
+    linkAdd.setAttribute("data-toggle", "modal")
+    linkAdd.setAttribute("data-target", "#exampleModal")
     body.appendChild(linkAdd);
 
     let icon = document.createElement("i");

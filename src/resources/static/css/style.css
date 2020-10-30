@@ -283,15 +283,13 @@ body {
   display: inline-block;
   margin-left: 4%;
   width: 50%;
+  vertical-align: top;
 }
 
 #main_info {
   margin: 2% 2% 0% 12% ;
 }
 
-#text_container {
-  vertical-align: top;
-}
 
 #text_container h1 {
   padding: 10% 3% 3% 0%;
@@ -303,13 +301,30 @@ body {
 }
 
 #text_container p {
-  padding: 2% 3% 10% 0%;
+  padding: 2% 3% 0% 0%;
   color: #444444cc;
+}
+
+#text_container i {
+  padding-top: 2%;
+  color: rgba(45, 145, 192, 0.726);
+  font-size: 160%;
+}
+
+#text_container i:hover {
+ 
+  color: rgb(45, 146, 192);
 }
 
  #table_container{
    max-width: 600px;
   margin-left: 30%;
+}
+
+#info_tracks{
+  color: rgba(45, 145, 192, 0.726);;
+  position: absolute;
+  padding-top: 7px;
 }
 
 #text_container a {
@@ -327,4 +342,22 @@ body {
 
 #table_container th {
   color: #444444bd;
+}
+
+/* .invalid class prevents CSS from automatically applying */
+.invalid input:required:invalid {
+  background: #BE4C54;
+}
+
+/* Mark valid inputs during .invalid state */
+.invalid input:required:valid {
+  background: #17D654;
+}
+
+#album-menu-delete {
+  margin-left: 58%;
+}
+
+#album-menu-playlist{
+  margin-left: 10%;
 }
