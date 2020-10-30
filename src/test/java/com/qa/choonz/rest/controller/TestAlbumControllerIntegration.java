@@ -26,7 +26,7 @@ import com.qa.choonz.rest.dto.AlbumDTO;
 
 @SpringBootTest
 @AutoConfigureMockMvc
-public class TESTAlbumControllerIntegration {
+class TestAlbumControllerIntegration {
 
     @Autowired
     private MockMvc mock;

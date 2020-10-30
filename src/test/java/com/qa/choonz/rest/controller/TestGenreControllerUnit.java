@@ -24,7 +24,7 @@ import com.qa.choonz.rest.dto.GenreDTO;
 import com.qa.choonz.service.GenreService;
 
 @SpringBootTest
-public class TESTGenreControllerUnit {
+class TestGenreControllerUnit {
 
 	@Autowired
 	private GenreController controller;

@@ -26,7 +26,7 @@ import com.qa.choonz.rest.dto.ArtistDTO;
 
 @SpringBootTest
 @AutoConfigureMockMvc
-public class TESTArtistControllerIntegration {
+class TestArtistControllerIntegration {
 
     @Autowired
     private MockMvc mock;
