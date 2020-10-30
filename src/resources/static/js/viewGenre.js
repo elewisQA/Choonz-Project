@@ -155,7 +155,7 @@ function populate(data) {
     //deleteButton.href="albums.html";
     deleteButton.className="btn btn-danger";
     deleteButton.textContent = "Delete";
-    deleteButton.setAttribute("onClick", "location.href = 'albums.html';");
+    deleteButton.setAttribute("onClick", "location.href = 'genres.html';");
     deleteButton.addEventListener("click", function(stop){
       stop.preventDefault(); 
       deleteAlbum(data['id']);    
