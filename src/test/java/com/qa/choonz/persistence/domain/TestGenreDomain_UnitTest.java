@@ -1,7 +1,8 @@
 package com.qa.choonz.persistence.domain;
 
 //--[ Imports ]--
-import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,7 +16,7 @@ import com.qa.choonz.persistence.domain.Genre;
 import com.qa.choonz.persistence.domain.Track;
 
 //===[ Testing Code ]===
-public class TESTGenre {
+public class TestGenreDomain_UnitTest {
 	//--[ Test Variables ]--
 	Genre testGenre;
 	final Long id = 1l;
@@ -43,7 +44,7 @@ public class TESTGenre {
 		Genre newGenre = new Genre();
 		
 		// test assertion
-		assertThat(newGenre instanceof Genre);
+		assertTrue(newGenre instanceof Genre);
 	}
 	
 	@Test
@@ -57,12 +58,12 @@ public class TESTGenre {
 				this.albums);
 		
 		// test assertion
-		assertThat(newGenre instanceof Genre);
+		assertTrue(newGenre instanceof Genre);
 	}
 	
 	@Test
 	void testGetId() {
-		assertThat(this.testGenre.getId() == this.id);
+		assertEquals(this.testGenre.getId(), this.id);
 	}
 	
 	@Test
@@ -70,12 +71,12 @@ public class TESTGenre {
 		Long newId = 2l;
 		this.testGenre.setId(newId);
 		
-		assertThat(this.testGenre.getId() == newId);
+		assertEquals(this.testGenre.getId(), newId);
 	}
 	
 	@Test
 	void testGetName() {
-		assertThat(this.testGenre.getName() == this.name);
+		assertEquals(this.testGenre.getName(), this.name);
 	}
 	
 	@Test
@@ -83,12 +84,12 @@ public class TESTGenre {
 		String newName = "R&B";
 		this.testGenre.setName(newName);
 		
-		assertThat(this.testGenre.getName() == newName);
+		assertEquals(this.testGenre.getName(), newName);
 	}
 	
 	@Test
 	void testGetDescription() {
-		assertThat(this.testGenre.getDescription() == this.description);
+		assertEquals(this.testGenre.getDescription(), this.description);
 	}
 	
 	@Test
@@ -96,12 +97,12 @@ public class TESTGenre {
 		String newDescription = "Deep music";
 		this.testGenre.setDescription(newDescription);
 		
-		assertThat(this.testGenre.getDescription() == newDescription);
+		assertEquals(this.testGenre.getDescription(), newDescription);
 	}
 	
 	@Test
 	void testGetAlbums() {
-		assertThat(this.testGenre.getAlbums() == this.albums);
+		assertEquals(this.testGenre.getAlbums(), this.albums);
 	}
 	
 	@Test
@@ -111,19 +112,18 @@ public class TESTGenre {
 		newAlbums.add(newAlbum);
 		testGenre.setAlbums(newAlbums);
 		
-		assertThat(this.testGenre.getAlbums() == newAlbums);
+		assertEquals(this.testGenre.getAlbums(), newAlbums);
 	}
 	
 	@Test
 	void testToString() {
-		assertThat(this.testGenre.toString()
-				.equals("Genre [id=1, name=Psychadelic Rock, description=Unusual rock-music.,"
-						+ "albums=null]"));
+		assertEquals(this.testGenre.toString(),
+				"Genre [id=1, name=Psychadelic Rock, picture=../, description=Unusual rock-music., albums=[]]");
 	}
 	
 	@Test
 	void testHashCode() {
-		assertThat(this.testGenre.hashCode() == -1259434520);
+		assertEquals(this.testGenre.hashCode(), -320901008);
 	}
 	
 	@AfterEach

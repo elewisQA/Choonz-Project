@@ -119,15 +119,13 @@ class TestArtistDomain_UnitTest {
 	@Test
 	void testHashCode() {
 		// TODO check this method is correct / if better test method exists
-		assertEquals(this.testArtist.hashCode(), -1259434520);
+		assertEquals(this.testArtist.hashCode(), -192099002);
 	}
 	
 	@Test
 	void testToString() {
 		assertEquals(this.testArtist.toString(),
-				"Artist [id=1, name=Pink Floyd, albums=[Album "
-						+ "[id=0, name=null, tracks=null, artist=null, "
-						+ "genre=null, cover=null]]]");
+				"Artist [id=1, name=Pink Floyd, picture=../, albums=[]]");
 	}
 	
 	//--[ Test Tear-Down ]--
