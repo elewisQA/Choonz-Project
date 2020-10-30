@@ -11,8 +11,11 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 //===[ Object code ]===
 @Entity
@@ -32,8 +35,8 @@ public class User {
 	@Column(unique = true)
 	private String password;
 	
-	//@JsonManagedReference(value="owner")
-	//@ManyToOne
+	@JsonManagedReference(value="owner")
+	@ManyToOne
 	private List<Playlist> playlists;
 	
 	//--[ Constructors ]--
