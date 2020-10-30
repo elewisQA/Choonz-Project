@@ -1,6 +1,7 @@
 package com.qa.choonz.rest.controller;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
@@ -115,7 +116,7 @@ class TestArtistControllerUnit {
 		@Test
 		void testDeleteArtist() {
 			ResponseEntity<ArtistDTO> response = controller.delete(this.id);
-			assertTrue(response.getStatusCode() == HttpStatus.INTERNAL_SERVER_ERROR);
+			assertEquals(response.getStatusCode(), HttpStatus.INTERNAL_SERVER_ERROR);
 			// TODO Check out this status code issue as well
 			
 		}
