@@ -30,7 +30,7 @@ class TestUserServiceUnit {
 	@Autowired
 	private UserService service;
 	
-	@Autowired
+	@MockBean
 	private UserRepository repo;
 	
 	@MockBean
@@ -51,11 +51,13 @@ class TestUserServiceUnit {
 			@BeforeEach
 			void init() {
 				this.testPlaylists = new ArrayList<Playlist>();
+				this.userList = new ArrayList<>();
 				this.testUser = new User(
 						this.id,
 						this.username,
 						this.password,
 						this.testPlaylists);
+				userList.add(this.testUser);
 			}
 			
 			@Test
