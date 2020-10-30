@@ -270,7 +270,7 @@ body {
   color: rgb(72, 86, 97);
 }
 
-#image_album {
+#image_album, #image_genre {
   width: 30%;
   position: sticky;
   top: 24%;

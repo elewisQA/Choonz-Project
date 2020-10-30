@@ -44,7 +44,7 @@ fetch('http://localhost:8082/genres/read')
       let text = document.createElement("div");
       text.className = "card-img-overlay text-center";
       let linkGenre = document.createElement("a");
-      linkGenre.href = "#";
+      linkGenre.href = "viewGenre.html?id=" + key['id'];
       let genre = document.createElement("h1");
       genre.className = "card-title";
       let genreText = document.createTextNode(key['name']);
