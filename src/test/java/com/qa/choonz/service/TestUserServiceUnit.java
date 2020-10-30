@@ -111,6 +111,10 @@ class TestUserServiceUnit {
 			
 			@Test
 			void testDeleteUser() {
+				when(this.repo.existsById(id)).thenReturn(true, false);
 				
+				assertThat(this.service.delete(id)).isFalse();
+				verify(this.repo, times(1)).deleteById(id);
+				verify(this.repo, times(1)).existsById(id);
 			}
 }
