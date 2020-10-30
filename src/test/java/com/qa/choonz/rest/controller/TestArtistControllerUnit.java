@@ -116,7 +116,7 @@ class TestArtistControllerUnit {
 		@Test
 		void testDeleteArtist() {
 			ResponseEntity<ArtistDTO> response = controller.delete(this.id);
-			assertEquals(response.getStatusCode(), HttpStatus.INTERNAL_SERVER_ERROR);
+			assertEquals(HttpStatus.INTERNAL_SERVER_ERROR, response.getStatusCode());
 			// TODO Check out this status code issue as well
 			
 		}

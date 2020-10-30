@@ -130,7 +130,7 @@ class TestAlbumControllerUnit {
 		@Test
 		void testDelete() {
 			ResponseEntity<AlbumDTO> response = controller.delete(this.id);
-			assertEquals(response.getStatusCode(), HttpStatus.INTERNAL_SERVER_ERROR);
+			assertEquals(HttpStatus.INTERNAL_SERVER_ERROR, response.getStatusCode());
 			// TODO check up on this assertion^^^ as it only returns true with error 500
 		}
 		
