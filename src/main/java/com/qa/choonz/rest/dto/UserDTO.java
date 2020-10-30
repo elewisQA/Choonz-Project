@@ -1,11 +1,11 @@
 package com.qa.choonz.rest.dto;
 
+//---[ Imports ]---
 import java.util.List;
 import java.util.Objects;
 
 import com.qa.choonz.persistence.domain.Album;
 import com.qa.choonz.persistence.domain.Playlist;
-import com.qa.choonz.persistence.domain.User;
 
 //===[ Object Code ]===
 public class UserDTO {
