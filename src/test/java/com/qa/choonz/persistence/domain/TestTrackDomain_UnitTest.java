@@ -8,118 +8,117 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import com.qa.choonz.persistence.domain.Album;
 import com.qa.choonz.persistence.domain.Playlist;
 import com.qa.choonz.persistence.domain.Track;
 
-public class TESTTrack {
-		
+public class TestTrackDomain_UnitTest {
+	//--[ Test Variables ]--
+	Track testTrack;
+	
+	@BeforeEach
+	void init() {
+		this.testTrack = new Track();
+	}
+	
 	@Test
-	public void constructorTests() {
-		Track emptyTrack = new Track();
+	void testZeroArgsConstructor() {	
+		Track newTrack = new Track();
 		
-		assertTrue(emptyTrack instanceof Track);
-		
+		assertTrue(newTrack instanceof Track);
+	}
+	
+	@Test
+	void testAllArgsConstructor() {
+		List<Playlist> playlists = new ArrayList<>();
 		Album album = new Album();
+		Track newTrack = new Track(1L, "track", album, playlists, 5, "../");
+		assertTrue(newTrack instanceof Track);
+	}
+	
+	@Test
+	void getSetIdTest() {		
+		testTrack.setId(1L);
+		
+		assertEquals(1L,testTrack.getId());
+	}
+	
+	@Test
+	void getSetNameTest() {
+		this.testTrack.setName("Song");
+		
+		assertEquals("Song",this.testTrack.getName());
+	}
+	
+	@Test
+	void getSetAlbumTest() {
+		Album album = new Album();
+		
+		this.testTrack.setAlbum(album);
+		
+		assertEquals(album,this.testTrack.getAlbum());
+	}
+	
+	@Test
+	void getSetPlaylistTest() {
 		List<Playlist> playlists = new ArrayList<Playlist>();
 		
-		Track track = new Track(1L,
-				"Song",
-				album,
-				playlists,
-				180,
-				"Lyrics");
+		this.testTrack.setPlaylists(playlists);
 		
-		assertTrue(track instanceof Track);
+		assertEquals(playlists,this.testTrack.getPlaylists());
 	}
 	
 	@Test
-	public void getSetIdTest() {
-		Track emptyTrack = new Track();
+	void getSetDurationTest() {
+		this.testTrack.setDuration(180);
 		
-		emptyTrack.setId(1L);
-		
-		assertEquals(1L,emptyTrack.getId());
+		assertEquals(180, this.testTrack.getDuration());
 	}
 	
 	@Test
-	public void getSetNameTest() {
-		Track emptyTrack = new Track();
-		emptyTrack.setName("Song");
+	void getSetLyricsTest() {
+		this.testTrack.setLyrics("La la la");
 		
-		assertEquals("Song",emptyTrack.getName());
+		assertEquals("La la la", this.testTrack.getLyrics());
 	}
 	
 	@Test
-	public void getSetAlbumTest() {
-		Track emptyTrack = new Track();
-		Album album = new Album();
-		
-		emptyTrack.setAlbum(album);
-		
-		assertEquals(album,emptyTrack.getAlbum());
-	}
-	
-	@Test
-	public void getSetPlaylistTest() {
-		Track emptyTrack = new Track();
-		List<Playlist> playlists = new ArrayList<Playlist>();
-		
-		emptyTrack.setPlaylists(playlists);
-		
-		assertEquals(playlists,emptyTrack.getPlaylists());
-	}
-	
-	@Test
-	public void getSetDurationTest() {
-		Track emptyTrack = new Track();
-		
-		emptyTrack.setDuration(180);
-		
-		assertEquals(180,emptyTrack.getDuration());
-	}
-	
-	@Test
-	public void getSetLyricsTest() {
-		Track emptyTrack = new Track();
-		
-		emptyTrack.setLyrics("La la la");
-		
-		assertEquals("La la la",emptyTrack.getLyrics());
-	}
-	
-	@Test
-	public void toStringTests() {		
+	void toStringTests() {		
 		Track track = new Track(1L,"Song",null,null,180,"Lyrics");
 		assertNotNull(track.toString());
-		assertEquals("Track [id=1, name=Song, album=null, playlists=null, duration=180, lyrics=Lyrics]"
-				,track.toString());
+		assertEquals("Track [id=1, name=Song, album=null, playlists=null, duration=180, lyrics=Lyrics]", 
+				track.toString());
 	}
 	
 	@Test
-	public void hashCodeTest() {
+	void hashCodeTest() {
 		Album album = new Album();
 		List<Playlist> playlists = new ArrayList<Playlist>();
 		
 		Track track1 = new Track(1L,"Song",album,playlists,180,"Lyrics");
 		Track track2 = new Track(1L,"Song",album,playlists,180,"Lyrics");
 		
-		assertTrue(track1.hashCode() == track2.hashCode());
+		assertEquals(track1.hashCode(), track2.hashCode());
 	}
 	
 	@Test
-	public void equalsTest() {
+	void equalsTest() {
 		Album album = new Album();
 		List<Playlist> playlists = new ArrayList<Playlist>();
 		
 		Track track = new Track(1L,"Song",album,playlists,180,"Lyrics");
 		
-		assertTrue(track.equals(track));
-		assertFalse(track.equals(album));
+		assertEquals(track, track);
+		assertFalse(track.equals(null));
 	}
 	
-	
+	@AfterEach
+	void teardown() {
+		
+	}
 
 }
