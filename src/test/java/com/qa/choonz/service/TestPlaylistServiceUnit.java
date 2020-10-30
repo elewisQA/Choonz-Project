@@ -105,7 +105,7 @@ class TestPlaylistServiceUnit {
     			playlistDTO.getName(),
     			playlistDTO.getDescription(),
     			playlistDTO.getArtwork(),
-    			this.tracks, this.user);
+    			this.tracks, this.testUser);
     	
     	PlaylistDTO updatedPlaylistDTO = new PlaylistDTO(this.id,updatedPlaylist.getName()
     			,updatedPlaylist.getDescription()
