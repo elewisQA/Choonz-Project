@@ -43,9 +43,9 @@ TBD
 
 - [**Cristina Lopez Canoyra**](https://github.com/clc15735)
 - [**Nikolett Bajna**](https://github.com/nikolettbajna)
-- [*Liam Harrold**](https://github.com/LHarroldQA)
-- [*Avi Hart**](https://github.com/AviNissimHart)
-- [*Elizabeth Lewis**](https://github.com/elewisQA)
+- [**Liam Harrold**](https://github.com/LHarroldQA)
+- [**Avi Hart**](https://github.com/AviNissimHart)
+- [**Elizabeth Lewis**](https://github.com/elewisQA)
 
 ## Acknowledgements
 
