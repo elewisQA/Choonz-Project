@@ -26,7 +26,7 @@ import com.qa.choonz.rest.dto.GenreDTO;
 
 @SpringBootTest
 @AutoConfigureMockMvc
-public class TESTGenreControllerIntegration {
+class TestGenreControllerIntegration {
 	
     @Autowired
     private MockMvc mock;

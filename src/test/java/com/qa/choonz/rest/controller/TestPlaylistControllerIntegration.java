@@ -26,7 +26,7 @@ import com.qa.choonz.rest.dto.PlaylistDTO;
 
 @SpringBootTest
 @AutoConfigureMockMvc
-public class TESTPlaylistControllerIntegration {
+class TestPlaylistControllerIntegration {
 	
     @Autowired
     private MockMvc mock;

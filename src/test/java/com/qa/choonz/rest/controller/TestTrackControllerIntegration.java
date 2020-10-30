@@ -30,7 +30,7 @@ import com.qa.choonz.rest.dto.TrackDTO;
 
 @SpringBootTest
 @AutoConfigureMockMvc
-public class TESTTrackControllerIntegration {
+class TestTrackControllerIntegration {
 
     @Autowired
     private MockMvc mock;

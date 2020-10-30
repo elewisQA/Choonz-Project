@@ -24,7 +24,7 @@ import com.qa.choonz.rest.dto.PlaylistDTO;
 import com.qa.choonz.service.PlaylistService;
 
 @SpringBootTest
-public class TESTPlaylistControllerUnit {
+class TestPlaylistControllerUnit {
 
 	@Autowired
 	private PlaylistController controller;

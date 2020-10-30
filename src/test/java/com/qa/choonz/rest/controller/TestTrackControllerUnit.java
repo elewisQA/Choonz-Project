@@ -25,7 +25,7 @@ import com.qa.choonz.rest.dto.TrackDTO;
 import com.qa.choonz.service.TrackService;
 
 @SpringBootTest
-public class TESTTrackControllerUnit {
+class TestTrackControllerUnit {
 	
 	@Autowired
 	private TrackController controller;
