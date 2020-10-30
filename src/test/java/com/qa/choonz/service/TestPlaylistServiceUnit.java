@@ -46,6 +46,7 @@ class TestPlaylistServiceUnit {
     final String name = "Tunes";
     final String description = "Bangers only";
     final String artwork = "artwork";
+    final String user = "TestUser";
     List<Track> tracks;
     
     @BeforeEach
@@ -53,7 +54,7 @@ class TestPlaylistServiceUnit {
     	this.playlistList = new ArrayList<>();
     	this.tracks = new ArrayList<>();
     	this.testPlaylist = new Playlist(this.id,this.name,this.description
-    			,this.artwork,this.tracks);
+    			,this.artwork,this.tracks, this.user);
     	this.playlistList.add(testPlaylist);
     	this.playlistDTO = this.mapToDTO(testPlaylist);
     }
@@ -95,20 +96,21 @@ class TestPlaylistServiceUnit {
     
     @Test
     void updateTest() {
-    	Playlist playlist = new Playlist(this.id,this.name,this.description,this.artwork,this.tracks);
+    	Playlist playlist = new Playlist(this.id,this.name,this.description,this.artwork,this.tracks, this.user);
     	
-    	PlaylistDTO playlistDTO = new PlaylistDTO(this.id,this.name,this.description,this.artwork,this.tracks);
+    	PlaylistDTO playlistDTO = new PlaylistDTO(this.id,this.name,this.description,this.artwork,this.tracks, this.user);
     	
     	Playlist updatedPlaylist = new Playlist(this.id,
     			playlistDTO.getName(),
     			playlistDTO.getDescription(),
     			playlistDTO.getArtwork(),
-    			this.tracks);
+    			this.tracks, this.user);
     	
     	PlaylistDTO updatedPlaylistDTO = new PlaylistDTO(this.id,updatedPlaylist.getName()
     			,updatedPlaylist.getDescription()
     			,updatedPlaylist.getArtwork()
-    			,updatedPlaylist.getTracks());
+    			,updatedPlaylist.getTracks()
+    			,updatedPlaylist.getUser());
     	
 		when(this.repo.findById(this.id)).thenReturn(Optional.of(playlist));
 		

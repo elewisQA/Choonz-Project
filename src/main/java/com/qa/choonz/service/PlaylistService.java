@@ -47,6 +47,7 @@ public class PlaylistService {
         toUpdate.setDescription(playlist.getDescription());
         toUpdate.setArtwork(playlist.getArtwork());
         toUpdate.setTracks(playlist.getTracks());
+        toUpdate.setUser(playlist.getUser());
         Playlist updated = this.repo.save(toUpdate);
         return this.mapToDTO(updated);
     }
