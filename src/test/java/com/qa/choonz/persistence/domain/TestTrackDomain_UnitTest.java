@@ -18,7 +18,7 @@ import com.qa.choonz.persistence.domain.Track;
 
 public class TestTrackDomain_UnitTest {
 	//--[ Test Variables ]--
-	Track testTrack;
+	private Track testTrack;
 	
 	@BeforeEach
 	void init() {

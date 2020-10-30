@@ -13,7 +13,7 @@ import org.junit.jupiter.api.Test;
 
 class TestPlaylistDomain_UnitTest {
 	// Test Variables 
-	Playlist testPlaylist;
+	private Playlist testPlaylist;
 	
 	@BeforeEach
 	void init() {

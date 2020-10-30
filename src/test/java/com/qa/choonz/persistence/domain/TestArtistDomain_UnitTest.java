@@ -57,7 +57,7 @@ class TestArtistDomain_UnitTest {
 	
 	@Test
 	void testGetId() {
-		assertEquals(this.testArtist.getId(), this.id);
+		assertEquals(this.id, this.testArtist.getId());
 	}
 	
 	@Test
@@ -67,12 +67,12 @@ class TestArtistDomain_UnitTest {
 		this.testArtist.setId(newId);
 		
 		// test assertion
-		assertEquals(this.testArtist.getId(), newId);
+		assertEquals(newId, this.testArtist.getId());
 	}
 	
 	@Test
 	void testGetName() {
-		assertEquals(this.testArtist.getName(), this.name);
+		assertEquals(this.name, this.testArtist.getName());
 	}
 	
 	@Test
@@ -82,12 +82,12 @@ class TestArtistDomain_UnitTest {
 		this.testArtist.setName(newName);
 		
 		// test assertion
-		assertEquals(this.testArtist.getName(), newName);
+		assertEquals(newName, this.testArtist.getName());
 	}
 	
 	@Test
 	void testGetAlbums() {
-		assertEquals(this.testArtist.getAlbums(), this.testAlbums);
+		assertEquals(this.testAlbums, this.testArtist.getAlbums());
 	}
 	
 	@Test
@@ -99,7 +99,7 @@ class TestArtistDomain_UnitTest {
 		this.testArtist.setAlbums(newAlbums);
 		
 		// test assertion
-		assertEquals(this.testArtist.getAlbums(), newAlbums);
+		assertEquals(newAlbums, this.testArtist.getAlbums());
 	}
 	
 	
@@ -113,19 +113,19 @@ class TestArtistDomain_UnitTest {
 				this.testAlbums);
 		
 		assertTrue(!this.testArtist.equals(emptyArtist));
-		assertEquals(this.testArtist, fullArtist);
+		assertEquals(fullArtist, this.testArtist);
 	}
 	
 	@Test
 	void testHashCode() {
 		// TODO check this method is correct / if better test method exists
-		assertEquals(this.testArtist.hashCode(), -192099002);
+		assertEquals(-192099002, this.testArtist.hashCode());
 	}
 	
 	@Test
 	void testToString() {
-		assertEquals(this.testArtist.toString(),
-				"Artist [id=1, name=Pink Floyd, picture=../, albums=[]]");
+		assertEquals("Artist [id=1, name=Pink Floyd, picture=../, albums=[]]",
+				this.testArtist.toString());
 	}
 	
 	//--[ Test Tear-Down ]--

@@ -61,7 +61,7 @@ class TestAlbumDomain_UnitTest {
 	
 	@Test
 	void testGetId() {
-		assertEquals(this.testAlbum.getId(), this.id);
+		assertEquals(this.id, this.testAlbum.getId());
 	}
 	
 	@Test
@@ -71,12 +71,12 @@ class TestAlbumDomain_UnitTest {
 		this.testAlbum.setId(newId);
 		
 		// test assertion
-		assertEquals(this.testAlbum.getId(), newId);
+		assertEquals(newId, this.testAlbum.getId());
 	}
 	
 	@Test
 	void testGetName() {
-		assertEquals(this.testAlbum.getName(), this.name);
+		assertEquals(this.name, this.testAlbum.getName());
 	}
 	
 	@Test
@@ -86,12 +86,12 @@ class TestAlbumDomain_UnitTest {
 		this.testAlbum.setName(newName);
 		
 		// test assertion
-		assertEquals(this.testAlbum.getName(), newName);
+		assertEquals(newName, this.testAlbum.getName());
 	}
 	
 	@Test
 	void testGetTracks() {
-		assertEquals(this.testAlbum.getTracks(), this.tracks);
+		assertEquals(this.tracks, this.testAlbum.getTracks());
 	}
 	
 	@Test
@@ -101,12 +101,12 @@ class TestAlbumDomain_UnitTest {
 		this.testAlbum.setTracks(newTracks);
 		
 		// test assertion
-		assertEquals(this.testAlbum.getTracks(), newTracks);
+		assertEquals(newTracks, this.testAlbum.getTracks());
 	}
 	
 	@Test
 	void testGetArtist() {
-		assertEquals(this.testAlbum.getArtist(), null);
+		assertEquals(null, this.testAlbum.getArtist());
 	}
 	
 	@Test
@@ -115,12 +115,12 @@ class TestAlbumDomain_UnitTest {
 		this.testAlbum.setArtist(null);
 		
 		// test assertion
-		assertEquals(this.testAlbum.getArtist(), null);
+		assertEquals(null, this.testAlbum.getArtist());
 	}
 	
 	@Test
 	void testGetGenre() {
-		assertEquals(this.testAlbum.getGenre(), null);
+		assertEquals(null, this.testAlbum.getGenre());
 	}
 	
 	@Test
@@ -129,7 +129,7 @@ class TestAlbumDomain_UnitTest {
 		this.testAlbum.setGenre(null);
 		
 		// test assertion
-		assertEquals(this.testAlbum.getGenre(), null);
+		assertEquals(null, this.testAlbum.getGenre());
 	}
 	
 	@Test
@@ -146,22 +146,22 @@ class TestAlbumDomain_UnitTest {
 		
 		// test assertion
 		assertFalse(this.testAlbum.equals(emptyAlbum));
-		assertEquals(this.testAlbum, fullAlbum);
+		assertEquals(fullAlbum, this.testAlbum);
 	}
 	
 	@Test
 	void testToString() {
 		//TODO fill this method in
-		assertEquals(this.testAlbum.toString(),
-				"Album [id=1, name=Dark Side of the Moon, "
+		assertEquals("Album [id=1, name=Dark Side of the Moon, "
 						+ "tracks=[], artist=null, genre=null, "
-						+ "cover=not-a-cover]");
+						+ "cover=not-a-cover]",
+						this.testAlbum.toString());
 	}
 	
 	@Test
 	void testHashCode() {
 		// TODO check this method is correct / if better test method exists
-		assertEquals(this.testAlbum.hashCode(), -1870013350);
+		assertEquals(-1870013350, this.testAlbum.hashCode());
 	}
 	
 	//--[ Test Tear-Down ]--

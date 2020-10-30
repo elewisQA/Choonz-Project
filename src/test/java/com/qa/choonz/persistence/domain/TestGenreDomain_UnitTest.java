@@ -63,7 +63,7 @@ public class TestGenreDomain_UnitTest {
 	
 	@Test
 	void testGetId() {
-		assertEquals(this.testGenre.getId(), this.id);
+		assertEquals(this.id, this.testGenre.getId());
 	}
 	
 	@Test
@@ -71,12 +71,12 @@ public class TestGenreDomain_UnitTest {
 		Long newId = 2l;
 		this.testGenre.setId(newId);
 		
-		assertEquals(this.testGenre.getId(), newId);
+		assertEquals(newId, this.testGenre.getId());
 	}
 	
 	@Test
 	void testGetName() {
-		assertEquals(this.testGenre.getName(), this.name);
+		assertEquals(this.name, this.testGenre.getName());
 	}
 	
 	@Test
@@ -84,12 +84,12 @@ public class TestGenreDomain_UnitTest {
 		String newName = "R&B";
 		this.testGenre.setName(newName);
 		
-		assertEquals(this.testGenre.getName(), newName);
+		assertEquals(newName, this.testGenre.getName());
 	}
 	
 	@Test
 	void testGetDescription() {
-		assertEquals(this.testGenre.getDescription(), this.description);
+		assertEquals(this.description, this.testGenre.getDescription());
 	}
 	
 	@Test
@@ -97,12 +97,12 @@ public class TestGenreDomain_UnitTest {
 		String newDescription = "Deep music";
 		this.testGenre.setDescription(newDescription);
 		
-		assertEquals(this.testGenre.getDescription(), newDescription);
+		assertEquals(newDescription, this.testGenre.getDescription());
 	}
 	
 	@Test
 	void testGetAlbums() {
-		assertEquals(this.testGenre.getAlbums(), this.albums);
+		assertEquals(this.albums, this.testGenre.getAlbums());
 	}
 	
 	@Test
@@ -112,18 +112,19 @@ public class TestGenreDomain_UnitTest {
 		newAlbums.add(newAlbum);
 		testGenre.setAlbums(newAlbums);
 		
-		assertEquals(this.testGenre.getAlbums(), newAlbums);
+		assertEquals(newAlbums, this.testGenre.getAlbums());
 	}
 	
 	@Test
 	void testToString() {
-		assertEquals(this.testGenre.toString(),
-				"Genre [id=1, name=Psychadelic Rock, picture=../, description=Unusual rock-music., albums=[]]");
+		assertEquals("Genre [id=1, name=Psychadelic Rock, picture=../, description=Unusual rock-music., albums=[]]",
+				this.testGenre.toString());
 	}
 	
 	@Test
 	void testHashCode() {
-		assertEquals(this.testGenre.hashCode(), -320901008);
+		assertEquals(-320901008,
+				this.testGenre.hashCode());
 	}
 	
 	@AfterEach
