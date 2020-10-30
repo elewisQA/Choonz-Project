@@ -1,13 +1,11 @@
 package com.qa.choonz.rest.dto;
 
-import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -39,7 +37,7 @@ public class TESTAlbumDTO {
 	public void noArgsConstructorTest() {
 		AlbumDTO newAlbum = new AlbumDTO();
 		
-		assertThat(newAlbum instanceof AlbumDTO);
+		assertTrue(newAlbum instanceof AlbumDTO);
 	}
 	
 	@Test
@@ -52,7 +50,7 @@ public class TESTAlbumDTO {
 				null,
 				this.cover);
 		
-		assertThat(newAlbum instanceof AlbumDTO);
+		assertTrue(newAlbum instanceof AlbumDTO);
 	}
 	
 	@Test
@@ -104,13 +102,13 @@ public class TESTAlbumDTO {
 				null,
 				this.cover);
 		
-		assertThat(!this.testAlbumDTO.equals(emptyAlbum));
-		assertThat(this.testAlbumDTO.equals(fullAlbum));
+		assertTrue(!this.testAlbumDTO.equals(emptyAlbum));
+		assertTrue(this.testAlbumDTO.equals(fullAlbum));
 	}
 	
 	@Test
 	void testToString() {
-		assertThat(this.testAlbumDTO.toString()
+		assertTrue(this.testAlbumDTO.toString()
 				.equals("AlbumDTO [id=1, name=Dark Side of the Moon, "
 						+ "tracks=[], artist=null, genre=null, "
 						+ "cover=not-a-cover]"));
@@ -118,7 +116,7 @@ public class TESTAlbumDTO {
 	
 	@Test
 	void testHashCode() {
-		assertThat(this.testAlbumDTO.hashCode() == -1870013350);
+		assertTrue(this.testAlbumDTO.hashCode() == -1870013350);
 	}
 	
 	@AfterEach

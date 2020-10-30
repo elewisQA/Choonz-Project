@@ -1,13 +1,10 @@
 package com.qa.choonz.rest.dto;
 
-import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -94,7 +91,7 @@ public class TESTPlaylistDTO {
 	
 	@Test
 	public void toStringTests() {		
-		assertThat(this.testPlaylist.toString()
+		assertTrue(this.testPlaylist.toString()
 				.equals("PlaylistDTO [id=1, name=Choonz, description=Bangers, artwork=Picture, tracks=null]"));
 	}
 	
@@ -116,8 +113,8 @@ public class TESTPlaylistDTO {
 				this.artwork,
 				this.testTracks);
 		
-		assertThat(!this.testPlaylist.equals(emptyPlaylist));
-		assertThat(this.testPlaylist.equals(fullPlaylist));
+		assertTrue(!this.testPlaylist.equals(emptyPlaylist));
+		assertTrue(this.testPlaylist.equals(fullPlaylist));
 	}
 	
 	@AfterEach
