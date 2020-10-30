@@ -119,7 +119,7 @@ fetch('http://localhost:8082/artists/read')
     
         for (let key of alldata) {
           console.log(key);
-          console.log(key['artistName']);
+          console.log(key['name']);
     
           let dropdown = document.getElementById("artistDD");
           let option = document.createElement("option");
@@ -136,7 +136,7 @@ fetch('http://localhost:8082/artists/read')
     
         for (let key of alldata) {
           console.log(key);
-          console.log(key['genreName']);
+          console.log(key['name']);
     
           let dropdown = document.getElementById("genreDD");
           let option = document.createElement("option");
