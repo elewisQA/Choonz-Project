@@ -81,18 +81,18 @@
           </button> -->
         </div>
         <div class="modal-body">
-          <form name="createNewGenre" class="genres" id="playlistModal" method="POST" onsubmit="return validateForm()">
+          <form name="createNewPlaylist" class="playlist" id="playlistModal" method="POST" onsubmit="return validateForm()">
             <div class="form-group">
-              <label for="genreName">Name: </label>
+              <label for="playlistName">Name: </label>
               <input type="text" class="form-control" id="playlistName" name="name">
             </div>
             <div class="form-group">
-              <label for="genrePic">Picture URL: </label>
+              <label for="playlistPic">Picture URL: </label>
               <input type="text" class="form-control" id="playlistPic" name="pic">     
             </div>
             <div class="form-group">
-              <label for="genreDesc">Description: </label>
-              <textarea class="form-control" id="playlistDesc" name="desc" form="genresModal"></textarea>
+              <label for="playlistDesc">Description: </label>
+              <textarea class="form-control" id="playlistDesc" name="desc" form="playlistModal"></textarea>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -105,7 +105,7 @@
     </div>
   </div>
   <!-- /Modal -->
-
+      <script src="../static/js/newPlaylist.js"></script>
       <script src="../static/js/playlists.js"></script>
       <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>    
