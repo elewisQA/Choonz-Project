@@ -42,7 +42,7 @@ fetch('http://localhost:8082/playlists/read')
         container.appendChild(info);
         
         let link = document.createElement("a");
-        link.href = "#";
+        link.href = "viewPlaylist.html?id=" + key['id'];
         let text = document.createElement("h1");
         text.className = "card-title";
         text.textContent = key['name'];
