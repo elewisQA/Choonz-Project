@@ -24,11 +24,15 @@ public class AuthUtils {
 		return token;
 	}
 	
-	public static Long getTokenOwner(String token) throws TokenNotFoundException {
+	public static Boolean validToken(String token) {
+		return userTokens.containsKey(token);
+	}
+	
+	public static Long getTokenOwner(String token) {
 		if (userTokens.containsKey(token)) {
 			return userTokens.get(token);
 		} else {
-			throw new TokenNotFoundException();
+			return null;
 		}
 	}
 	
