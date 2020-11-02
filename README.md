@@ -48,4 +48,5 @@ TBD
 - [**Elizabeth Lewis**](https://github.com/elewisQA)
 
 ## Acknowledgements
+- [**Baeldung**](https://www.baeldung.com/java-random-string) - for Random-String generation code
 
