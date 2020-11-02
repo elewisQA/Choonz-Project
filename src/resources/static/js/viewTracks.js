@@ -38,6 +38,7 @@ function populate(data) {
     tableContainer.appendChild(table);
     table.appendChild(tableBody);
     // Populate the table
+    count = 0;
     for (let key in data) {
         // data.sort(function(a,b){
         //     if (a.name < b.name) {return -1;}
@@ -69,7 +70,7 @@ function populate(data) {
      row.appendChild(albumCover);
 
      let songName = document.createElement("td");
-     songName.id = "trackName" + albumId;
+     songName.id = "trackName" + count;
      let link = document.createElement("a");
      link.href = "viewArtist.html?id=" + data[key]['id'];
      link.textContent = value;
@@ -77,7 +78,7 @@ function populate(data) {
      let br = document.createElement("br");
      songName.appendChild(link);
      songName.appendChild(br);
-     getArtist(albumId);
+     getArtist(albumId, count);
 
         // let br = document.createElement("br");
         // songName.appendChild(br);
@@ -109,10 +110,25 @@ function populate(data) {
       let dropdown = document.createElement("div");
       dropdown.className = "dropdown-menu";
       dropdownMenu.appendChild(dropdown);
+
+      let linkPlaylist = document.createElement("a");
+      linkPlaylist.href="#";
+      linkPlaylist.className = "dropdown-item";
+      linkPlaylist.textContent = "Add to Playlist";
+      dropdown.appendChild(linkPlaylist);
+
+      let spanPlaylist = document.createElement("span");
+      spanPlaylist.id ="album-menu-playlist";
+      linkPlaylist.appendChild(spanPlaylist);
+
+      let iconPlaylist = document.createElement("i");
+      iconPlaylist.className = "fas fa-music";
+      spanPlaylist.appendChild(iconPlaylist);
+      count ++;
     }
 }
 
-function getArtist(albumId) {
+function getArtist(albumId, count) {
   
  fetch('http://localhost:8082/albums/read/' + albumId)
    .then(
@@ -133,7 +149,7 @@ function getArtist(albumId) {
         //  artistLink.textContent = data['artist']['name'];
         //  find.appendChild(br);
         //  find.appendChild(artistLink);
-         addArtist(data);
+         addArtist(data, count);
        });
      }
    )
@@ -142,8 +158,8 @@ function getArtist(albumId) {
    });
 }
 
-function addArtist(data){
-  console.log(data)
+function addArtist(data, count){
+  console.log(data['artist']['id'])
 //   let find = document.getElementById("row_id");
 //   let songArtist = document.createElement("td");
 //      let link = document.createElement("a");
@@ -154,7 +170,7 @@ function addArtist(data){
 
 //         artistName = data['artist']['name'];
 
-        let find = document.getElementById("trackName" + data['artist']['id']);
+        let find = document.getElementById("trackName" + count);
         let br = document.createElement("br");
         let artistLink = document.createElement("a");
         artistLink.style = "font-size: 14px; color: #444; margin-left: 20px;";
