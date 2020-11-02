@@ -8,8 +8,10 @@ import org.springframework.stereotype.Service;
 
 import com.qa.choonz.exception.PlaylistNotFoundException;
 import com.qa.choonz.persistence.domain.Playlist;
+import com.qa.choonz.persistence.domain.Track;
 import com.qa.choonz.persistence.repository.PlaylistRepository;
 import com.qa.choonz.rest.dto.PlaylistDTO;
+import com.qa.choonz.rest.dto.TrackDTO;
 
 @Service
 public class PlaylistService {
@@ -62,6 +64,26 @@ public class PlaylistService {
     public boolean delete(long id) {
         this.repo.deleteById(id);
         return !this.repo.existsById(id);
+    }
+    
+    public PlaylistDTO add(long playlistId,long trackId) {
+    	PlaylistDTO readPlaylist = read(playlistId);
+    	List<Track> tracks = readPlaylist.getTracks();
+    	for(Track track : tracks) {
+    		
+    	}
+    	return new PlaylistDTO();
+    }
+    
+    public PlaylistDTO removeTrack(long playlistId,long trackId) {
+    	PlaylistDTO readPlaylist = read(playlistId);
+    	List<Track> tracks = readPlaylist.getTracks();
+    	for(Track track : tracks) {
+    		if(track.getId() == trackId) {
+    			tracks.remove(track);
+    		}
+    	}
+    	return readPlaylist;
     }
 
 }
