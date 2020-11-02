@@ -152,33 +152,33 @@ function populate(data) {
         }
     }
 
-    let findDelete = document.getElementById("modal-footer");
-    let deleteButton = document.createElement("a");
-    //deleteButton.href="albums.html";
-    deleteButton.className="btn btn-danger";
-    deleteButton.textContent = "Delete";
-    deleteButton.setAttribute("onClick", "location.href = 'genres.html';");
-    deleteButton.addEventListener("click", function(stop){
-      stop.preventDefault(); 
-      deleteAlbum(data['id']);    
-    })
-    findDelete.appendChild(deleteButton);
+    // let findDelete = document.getElementById("modal-footer");
+    // let deleteButton = document.createElement("a");
+    // //deleteButton.href="albums.html";
+    // deleteButton.className="btn btn-danger";
+    // deleteButton.textContent = "Delete";
+    // deleteButton.setAttribute("onClick", "location.href = 'genres.html';");
+    // deleteButton.addEventListener("click", function(stop){
+    //   stop.preventDefault(); 
+    //   deleteAlbum(data['id']);    
+    // })
+    // findDelete.appendChild(deleteButton);
 }
 
-function deleteTrack(id) {
-  fetch('http://localhost:8082/tracks/delete/' + id, {
-  method: 'DELETE',
-  })
-  .then(res => res.text()) // or res.json()
-  .then(res => console.log(res))
+// function deleteTrack(id) {
+//   fetch('http://localhost:8082/tracks/delete/' + id, {
+//   method: 'DELETE',
+//   })
+//   .then(res => res.text()) // or res.json()
+//   .then(res => console.log(res))
 
-}
+// }
 
-function deleteAlbum(id) {
-  fetch('http://localhost:8082/genres/delete/' + id, {
-  method: 'DELETE',
-  })
-  .then(res => res.text()) // or res.json()
-  .then(res => console.log(res))
+// function deleteAlbum(id) {
+//   fetch('http://localhost:8082/genres/delete/' + id, {
+//   method: 'DELETE',
+//   })
+//   .then(res => res.text()) // or res.json()
+//   .then(res => console.log(res))
 
-}
+// }
