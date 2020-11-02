@@ -19,5 +19,27 @@ public class RouteContoller {
     public String tracks() {
         return "tracks.html";
     }
+    
+    @GetMapping(value = "/albums")
+    public String albums() {
+        return "Albums.html";
+    }
+    
+    @GetMapping(value = "/genres")
+    public String genres() {
+        return "genres.html";
+    }
+    
+    @GetMapping(value = "/artists")
+    public String artists() {
+        return "artists.html";
+    }
+    
+    @GetMapping(value = "/playlists")
+    public String playlists() {
+        return "playlists.html";
+        // to be confirmed later
+    }
+    
 
 }
