@@ -1,6 +1,5 @@
 package com.qa.choonz.rest.dto;
 
-import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -37,7 +36,7 @@ public class TestGenreDTO {
 	void testZeroArgsConstructor() {
 		GenreDTO newTestGenre = new GenreDTO();
 
-		assertThat(newTestGenre instanceof GenreDTO);
+		assertTrue(newTestGenre instanceof GenreDTO);
 	}
 	
 	@Test
@@ -54,7 +53,7 @@ public class TestGenreDTO {
 				newDesc,
 				newTestAlbums);	
 	
-		assertThat(newTestGenre instanceof GenreDTO);
+		assertTrue(newTestGenre instanceof GenreDTO);
 	}
 	
 	@Test
@@ -93,8 +92,8 @@ public class TestGenreDTO {
 	
 	@Test
 	void testToString() {
-		assertThat(this.testGenre.toString()
-				.equals("GenreDTO [id=1, name=Pop, description=Pop music, albums=null]"));
+		assertTrue(this.testGenre.toString()
+				.equals("GenreDTO [id=1, name=Pop, picture=../, description=Pop music, albums=[]]"));
 	}
 	
 	@Test
@@ -115,8 +114,8 @@ public class TestGenreDTO {
 				this.description,
 				this.testAlbums);
 		
-		assertThat(!this.testGenre.equals(emptyGenre));
-		assertThat(this.testGenre.equals(fullGenre));
+		assertTrue(!this.testGenre.equals(emptyGenre));
+		assertTrue(this.testGenre.equals(fullGenre));
 	}
 	
 	@AfterEach
