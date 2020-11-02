@@ -76,8 +76,8 @@ public class TestUserControllerUnit {
     	HttpHeaders headers = new HttpHeaders();
     	headers.add("token", token);
     	
-        assertThat(new ResponseEntity<UserDTO>(this.userDTO,headers,HttpStatus.CREATED))
-                .isEqualTo(this.controller.create(testUser));
+        assertThat(new ResponseEntity<UserDTO>(this.userDTO,headers,HttpStatus.CREATED).getBody())
+                .isEqualTo(this.controller.create(testUser).getBody());
         
         verify(this.service, times(1)).create(this.testUser);
     }
