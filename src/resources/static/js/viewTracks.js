@@ -1,22 +1,3 @@
-fetch('http://localhost:8082/artists/read')
-.then(
-  function(response) {
-    if (response.status !== 200) {
-      console.log('Looks like there was a problem. Status Code: ' +
-        response.status);
-      return;
-    }
-
-    // Examine the text in the response
-    response.json().then(function(a) {
-      console.log(a);
-      artists(a);
-    });
-  }
-)
-.catch(function(err) {
-  console.log('Fetch Error :-S', err);
-});
 
 fetch('http://localhost:8082/tracks/read')
   .then(
@@ -45,21 +26,8 @@ fetch('http://localhost:8082/tracks/read')
     console.log('Fetch Error :-S', err);
   });
 
-    function artists(a){
-        for (let n in a) {
-            let name = a[n]["name"];
-            console.log(name);
-            let br = document.createElement("br");
-            songName.appendChild(br);
-            let artistLink = document.createElement("a");
-            artistLink.href = "#";
-            artistLink.textContent = "Artist";
-            songName.appendChild(artistLink);
-        }
-    }
 
-function populate(data, artist) {
-    console.log(artist);
+function populate(data) {
     let find = document.getElementById("main_info");
 
     let tableContainer = document.createElement("div");
@@ -145,6 +113,7 @@ function populate(data, artist) {
 
 
 function getArtist(albumId) {
+  
  fetch('http://localhost:8082/albums/read/' + albumId)
    .then(
      function(response) {
@@ -157,7 +126,7 @@ function getArtist(albumId) {
        // Examine the text in the response
        response.json().then(function(data) {
          console.log(data['artist']['name']);
-         addArtist(data);
+         //addArtist(data);
        });
      }
    )
