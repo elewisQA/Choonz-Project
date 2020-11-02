@@ -8,12 +8,14 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import java.util.ArrayList;
 import java.util.List;
 
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
@@ -24,6 +26,7 @@ import com.qa.choonz.persistence.domain.Track;
 import com.qa.choonz.persistence.domain.User;
 import com.qa.choonz.persistence.repository.PlaylistRepository;
 import com.qa.choonz.rest.dto.PlaylistDTO;
+import com.qa.choonz.utils.AuthUtils;
 
 @SpringBootTest
 @AutoConfigureMockMvc
@@ -56,6 +59,14 @@ class TestPlaylistControllerIntegration {
     private List<Track> tracks;
     private final User testUser = null;
     
+	private String token;
+	private HttpHeaders headers;
+    
+	@BeforeAll
+	static void setup() {
+		AuthUtils auth = new AuthUtils();
+	}
+    
     @BeforeEach
     void init() {
     	this.repo.deleteAll();
@@ -71,12 +82,15 @@ class TestPlaylistControllerIntegration {
     	this.playlistDTO = this.mapToDTO(this.testPlaylistWithId);
     	
     	this.id = this.testPlaylistWithId.getId();
+    	this.token = AuthUtils.newToken(this.id);
+    	this.headers = new HttpHeaders();
+    	headers.add("token", token);
     }
     
     @Test
     void testCreate() throws Exception {
         this.mock
-        	.perform(request(HttpMethod.POST, "/playlists/create").contentType(MediaType.APPLICATION_JSON)
+        	.perform(request(HttpMethod.POST, "/playlists/create").header("token", token).contentType(MediaType.APPLICATION_JSON)
                 .content(this.objectMapper.writeValueAsString(testPlaylist))
                 .accept(MediaType.APPLICATION_JSON))
         .andExpect(status().isCreated())
@@ -121,7 +135,7 @@ class TestPlaylistControllerIntegration {
     	updatedPlaylist.setUser(null);
     	
         String output = this.mock
-                .perform(request(HttpMethod.POST, "/playlists/update/" + this.id).accept(MediaType.APPLICATION_JSON)
+                .perform(request(HttpMethod.POST, "/playlists/update/" + this.id).header("token", token).accept(MediaType.APPLICATION_JSON)
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(this.objectMapper.writeValueAsString(newPlaylist)))
                 .andExpect(status().isAccepted()).andReturn().getResponse().getContentAsString();
@@ -132,7 +146,7 @@ class TestPlaylistControllerIntegration {
     
     @Test
     void testDelete() throws Exception {
-        this.mock.perform(request(HttpMethod.DELETE, "/playlists/delete/" + this.id)).andExpect(status().isNoContent());
+        this.mock.perform(request(HttpMethod.DELETE, "/playlists/delete/" + this.id).header("token", token)).andExpect(status().isNoContent());
     }
 
 }
