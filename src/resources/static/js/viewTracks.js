@@ -113,6 +113,7 @@ function populate(data) {
 }
 
 function getArtist(albumId) {
+  
  fetch('http://localhost:8082/albums/read/' + albumId)
    .then(
      function(response) {
