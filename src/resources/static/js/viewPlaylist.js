@@ -3,6 +3,7 @@ for (let found of findId) {
     let id = found[1];
     console.log(id);
     getID(id);  
+    readPlaylists(); 
  } 
 
 function getID(id) {
@@ -128,27 +129,37 @@ function populate(data) {
         iconDelete.className = "far fa-trash-alt";
         spanDelete.appendChild(iconDelete);
 
-        let linkPlaylist = document.createElement("a");
-        linkPlaylist.href="#";
-        linkPlaylist.className = "dropdown-item";
-        linkPlaylist.textContent = "Add to Playlist";
-        dropdown.appendChild(linkPlaylist);
+      let linkPlaylist = document.createElement("button");
+      linkPlaylist.href="#";
+      linkPlaylist.className = "dropdown-item";
+      linkPlaylist.id = "dropdownMenu222";
+      linkPlaylist.type = "button";
+      linkPlaylist.setAttribute("data-toggle", "dropdown");
+      linkPlaylist.setAttribute("aria-haspopup", "true");
+      linkPlaylist.setAttribute("aria-expanded", "false");
+      linkPlaylist.textContent = "Add to Playlist";
+      dropdown.appendChild(linkPlaylist);
 
-        let spanPlaylist = document.createElement("span");
-        spanPlaylist.id ="album-menu-playlist";
-        linkPlaylist.appendChild(spanPlaylist);
+      let spanPlaylist = document.createElement("span");
+      spanPlaylist.id ="album-menu-playlist";
+      linkPlaylist.appendChild(spanPlaylist);
 
-        let iconPlaylist = document.createElement("i");
-        iconPlaylist.className = "fas fa-music";
-        spanPlaylist.appendChild(iconPlaylist);
+      let iconPlaylist = document.createElement("i");
+      iconPlaylist.className = "fas fa-music";
+      spanPlaylist.appendChild(iconPlaylist);
+
+      let secondDropdown = document.createElement("div");
+      secondDropdown.className = "dropdown-menu";
+      secondDropdown.id ="second_dropdown"
+      secondDropdown.setAttribute("aria-labelledby", "dropdownMenu222");
+      dropdown.appendChild(secondDropdown);
         
         songCount ++;
     }
 
-    //Delete album functionality for admin
+   
     let findDelete = document.getElementById("modal-footer");
     let deleteButton = document.createElement("a");
-    //deleteButton.href="playlists.html";
     deleteButton.className="btn btn-danger";
     deleteButton.textContent = "Delete";
     deleteButton.setAttribute("onClick", "location.href = 'playlists.html';");
@@ -177,3 +188,37 @@ function deleteTrack(id) {
     .then(res => console.log(res))
   
   }
+
+  function readPlaylists() {
+    fetch('http://localhost:8082/playlists/read')
+     .then(
+       function(response) {
+         if (response.status !== 200) {
+           console.log('Looks like there was a problem. Status Code: ' +
+             response.status);
+           return;
+         }
+   
+         // Examine the text in the response
+         response.json().then(function(data) {
+           console.log(data);
+           addPlaylists(data);
+         });
+       }
+     )
+     .catch(function(err) {
+       console.log('Fetch Error :-S', err);
+     });
+   }
+  
+   function addPlaylists(data) {
+    let find = document.getElementById("second_dropdown");
+    for (let key of data) {
+      console.log(key);
+      let selectPlaylist = document.createElement("a");
+      selectPlaylist.className = "dropdown-item";
+      selectPlaylist.href="#";
+      selectPlaylist.textContent = key['name'];
+      find.appendChild(selectPlaylist);
+    }
+   }
