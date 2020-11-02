@@ -84,9 +84,11 @@ function populate(data) {
 
             let albumCover = document.createElement("th");
             albumCover.scope = "row";
+            albumCover.style =  "width: 100px;";
             let albumImage = document.createElement("img");
             albumImage.src = a["cover"];
             albumImage.id = "img_track_album";
+            albumImage.style = "width: 70px;";
             albumCover.appendChild(albumImage);
             row.appendChild(albumCover);
 
