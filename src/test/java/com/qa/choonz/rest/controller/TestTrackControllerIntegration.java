@@ -20,12 +20,9 @@ import org.springframework.test.web.servlet.MockMvc;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.qa.choonz.persistence.domain.Album;
-import com.qa.choonz.persistence.domain.Artist;
 import com.qa.choonz.persistence.domain.Playlist;
 import com.qa.choonz.persistence.domain.Track;
 import com.qa.choonz.persistence.repository.TrackRepository;
-import com.qa.choonz.rest.dto.ArtistDTO;
-import com.qa.choonz.rest.dto.PlaylistDTO;
 import com.qa.choonz.rest.dto.TrackDTO;
 
 @SpringBootTest
