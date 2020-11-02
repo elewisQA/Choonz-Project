@@ -1,23 +1,3 @@
-fetch('http://localhost:8082/artists/read')
-.then(
-  function(response) {
-    if (response.status !== 200) {
-      console.log('Looks like there was a problem. Status Code: ' +
-        response.status);
-      return;
-    }
-
-    // Examine the text in the response
-    response.json().then(function(a) {
-      console.log(a);
-      artists(a);
-    });
-  }
-)
-.catch(function(err) {
-  console.log('Fetch Error :-S', err);
-});
-
 fetch('http://localhost:8082/tracks/read')
   .then(
     function(response) {
@@ -28,10 +8,10 @@ fetch('http://localhost:8082/tracks/read')
       }
 
       // Examine the text in the response
-    //   response.json().then(function(data) {
-    //     console.log(data);
-    //     populate(data);
-    //   });
+      // response.json().then(function(data) {
+      //   console.log(data);
+      //   populate(data);
+      // });
     response.json().then(
         data => {
             data.sort((a, b) => (a.name > b.name) ? 1 : (b.name > a.name)? -1 : 0)
@@ -45,21 +25,8 @@ fetch('http://localhost:8082/tracks/read')
     console.log('Fetch Error :-S', err);
   });
 
-    function artists(a){
-        for (let n in a) {
-            let name = a[n]["name"];
-            console.log(name);
-            let br = document.createElement("br");
-            songName.appendChild(br);
-            let artistLink = document.createElement("a");
-            artistLink.href = "#";
-            artistLink.textContent = "Artist";
-            songName.appendChild(artistLink);
-        }
-    }
 
-function populate(data, artist) {
-    console.log(artist);
+function populate(data) {
     let find = document.getElementById("main_info");
 
     let tableContainer = document.createElement("div");
@@ -78,8 +45,8 @@ function populate(data, artist) {
         //     else{return 0;}
         // });
         let albumId = data[key]["album"]["id"];
-        console.log(data[key]['album']['id']);
-        getArtist(albumId);
+        console.log(albumId);
+        //console.log(data[key]['album']['id']);
      let value = data[key]["name"];
      let album = data[key]["album"]["cover"];
      console.log(value);
@@ -91,32 +58,34 @@ function populate(data, artist) {
      let albumCover = document.createElement("th");
      albumCover.scope = "row";
      albumCover.style =  "width: 100px;";
+     let albumlink = document.createElement("a");
+     albumlink.href = "viewAlbum.html?id=" + data[key]["album"]["id"];
      let albumImage = document.createElement("img");
      albumImage.src = album;
      albumImage.id = "img_track_album";
      albumImage.style = "width: 70px;";
-     albumCover.appendChild(albumImage);
+     albumlink.appendChild(albumImage);
+     albumCover.appendChild(albumlink);
      row.appendChild(albumCover);
 
      let songName = document.createElement("td");
+     songName.id = "trackName" + albumId;
      let link = document.createElement("a");
-     link.href = "#";
+     link.href = "viewArtist.html?id=" + data[key]['id'];
      link.textContent = value;
      row.appendChild(songName);
+     let br = document.createElement("br");
      songName.appendChild(link);
+     songName.appendChild(br);
+     getArtist(albumId);
 
-    //  function artists(a){
-    //     for (let n in a) {
-    //     let name = a[n]["name"];
-    //     console.log(name);
-    //     let br = document.createElement("br");
-    //     songName.appendChild(br);
-    //     let artistLink = document.createElement("a");
-    //     artistLink.href = "#";
-    //     artistLink.textContent = "Artist";
-    //     songName.appendChild(artistLink);
-    //     }
-    //  }
+        // let br = document.createElement("br");
+        // songName.appendChild(br);
+        // let artistLink = document.createElement("a");
+        // artistLink.id = "artistLinkID";
+        // artistLink.href = "#";
+        // artistLink.textContent = "artist";
+        // songName.appendChild(artistLink);
 
       
      let songIcon = document.createElement("td");
@@ -143,7 +112,6 @@ function populate(data, artist) {
     }
 }
 
-
 function getArtist(albumId) {
  fetch('http://localhost:8082/albums/read/' + albumId)
    .then(
@@ -157,6 +125,13 @@ function getArtist(albumId) {
        // Examine the text in the response
        response.json().then(function(data) {
          console.log(data['artist']['name']);
+        //  let find = document.getElementById("trackName");
+        //  let br = document.createElement("br");
+        //  let artistLink = document.createElement("a");
+        //  artistLink.href = "#";
+        //  artistLink.textContent = data['artist']['name'];
+        //  find.appendChild(br);
+        //  find.appendChild(artistLink);
          addArtist(data);
        });
      }
@@ -168,12 +143,23 @@ function getArtist(albumId) {
 
 function addArtist(data){
   console.log(data)
-  let find = document.getElementById("row_id");
-  let songArtist = document.createElement("td");
-     let link = document.createElement("a");
-     link.href = "#";
-     link.textContent = data['artist']['name'];
-     songArtist.appendChild(link);
-     find.appendChild(songArtist);
-  
+//   let find = document.getElementById("row_id");
+//   let songArtist = document.createElement("td");
+//      let link = document.createElement("a");
+//      link.href = "#";
+//      link.textContent = data['artist']['name'];
+//      songArtist.appendChild(link);
+//      find.appendChild(songArtist);
+
+//         artistName = data['artist']['name'];
+
+        let find = document.getElementById("trackName" + data['artist']['id']);
+        let br = document.createElement("br");
+        let artistLink = document.createElement("a");
+        artistLink.style = "font-size: 14px; color: #444; margin-left: 20px;";
+        artistLink.href = "viewArtist.html?id=" + data['artist']['id'];
+        artistLink.textContent = data['artist']['name'];
+        find.appendChild(br);
+        find.appendChild(artistLink);
+        find.id = "done";  
 }
