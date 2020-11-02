@@ -44,7 +44,7 @@ fetch('http://localhost:8082/genres/read')
       let text = document.createElement("div");
       text.className = "card-img-overlay text-center";
       let linkGenre = document.createElement("a");
-      linkGenre.href = "#";
+      linkGenre.href = "viewGenre.html?id=" + key['id'];
       let genre = document.createElement("h1");
       genre.className = "card-title";
       let genreText = document.createTextNode(key['name']);
@@ -56,24 +56,24 @@ fetch('http://localhost:8082/genres/read')
       column.appendChild(card);
       
     }
-    let find = document.getElementById("genres");
-    let column = document.createElement("div");
-    column.className = "col mb-4";
-    let card = document.createElement("div");
-    card.className = "card text-center text-white";
-    find.appendChild(column);
-    column.appendChild(card);
+    // let find = document.getElementById("genres");
+    // let column = document.createElement("div");
+    // column.className = "col mb-4";
+    // let card = document.createElement("div");
+    // card.className = "card text-center text-white";
+    // find.appendChild(column);
+    // column.appendChild(card);
 
-    let linkAdd = document.createElement("a");
-    linkAdd.setAttribute("id", "addnew");
-    linkAdd.href ="#";
-    linkAdd.setAttribute("data-toggle", "modal")
-    linkAdd.setAttribute("data-target", "#exampleModal")
-    card.appendChild(linkAdd);
+    // let linkAdd = document.createElement("a");
+    // linkAdd.setAttribute("id", "addnew");
+    // linkAdd.href ="#";
+    // linkAdd.setAttribute("data-toggle", "modal")
+    // linkAdd.setAttribute("data-target", "#exampleModal")
+    // card.appendChild(linkAdd);
 
-    let icon = document.createElement("i");
-    icon.className = "fas fa-plus";
-    icon.style = "color: whitesmoke;";
-    linkAdd.appendChild(icon);
+    // let icon = document.createElement("i");
+    // icon.className = "fas fa-plus";
+    // icon.style = "color: whitesmoke;";
+    // linkAdd.appendChild(icon);
 
   }
