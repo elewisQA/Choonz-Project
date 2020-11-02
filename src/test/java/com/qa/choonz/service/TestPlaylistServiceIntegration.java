@@ -15,6 +15,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import com.qa.choonz.persistence.domain.Playlist;
 import com.qa.choonz.persistence.domain.Track;
+import com.qa.choonz.persistence.domain.User;
 import com.qa.choonz.persistence.repository.PlaylistRepository;
 import com.qa.choonz.rest.dto.PlaylistDTO;
 
@@ -42,6 +43,7 @@ class TestPlaylistServiceIntegration {
 	private final String DESC = "This is a test playlist.";
 	private final String ART = "../";
 	private List<Track> tracks;
+	private User testUser;
 	private Playlist testPlaylist;
 	private Playlist testPlaylistWithId;
 	private PlaylistDTO playlistDTOWithId;
@@ -58,6 +60,7 @@ class TestPlaylistServiceIntegration {
 		testPlaylist.setDescription(DESC);
 		testPlaylist.setTracks(tracks);
 		testPlaylist.setArtwork(ART);
+		testPlaylist.setUser(testUser);
 		this.testPlaylistWithId = this.repo.save(testPlaylist);
 		this.id = this.testPlaylistWithId.getId();
 		
