@@ -41,9 +41,11 @@ public class ArtistService {
         return this.mapToDTO(found);
     }
     
-    public ArtistDTO search(String searchTerm) {
-    	Artist foundArtist = this.repo.findAll().stream().filter(n -> n.getName() == searchTerm).map(this::mapToDTO).collect(Collectors.toList());
-    	return this.mapToDTO(foundArtist);
+    public List<ArtistDTO> search(String searchTerm) {
+    	ArtistDTO searched = this.repo.findAll().stream().map(this::mapToDTO).collect(Collectors.toList());
+    	
+    			stream().filter(searched.getName().contains(searchTerm).stream().map(this::mapToDTO).collect(Collectors.toList()));
+    	return this.mapToDTO(searched);
     }
 
     public ArtistDTO update(Artist artist, long id) {
