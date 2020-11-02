@@ -1,5 +1,6 @@
 package com.qa.choonz.service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -10,6 +11,7 @@ import com.qa.choonz.exception.PlaylistNotFoundException;
 import com.qa.choonz.persistence.domain.Playlist;
 import com.qa.choonz.persistence.domain.Track;
 import com.qa.choonz.persistence.repository.PlaylistRepository;
+import com.qa.choonz.persistence.repository.TrackRepository;
 import com.qa.choonz.rest.dto.PlaylistDTO;
 import com.qa.choonz.rest.dto.TrackDTO;
 
@@ -17,16 +19,26 @@ import com.qa.choonz.rest.dto.TrackDTO;
 public class PlaylistService {
 
     private PlaylistRepository repo;
+    private TrackRepository trackRepo;
     private ModelMapper mapper;
 
-    public PlaylistService(PlaylistRepository repo, ModelMapper mapper) {
+    public PlaylistService(PlaylistRepository repo, TrackRepository trackRepo,ModelMapper mapper) {
         super();
         this.repo = repo;
+        this.trackRepo = trackRepo;
         this.mapper = mapper;
     }
 
     private PlaylistDTO mapToDTO(Playlist playlist) {
         return this.mapper.map(playlist, PlaylistDTO.class);
+    }
+    
+    private Playlist mapFromDTO(PlaylistDTO playlistDTO) {
+        return this.mapper.map(playlistDTO, Playlist.class);
+    }
+    
+    private Track mapFromTrackDTO(TrackDTO trackDTO) {
+        return this.mapper.map(trackDTO, Track.class);
     }
 
     public PlaylistDTO create(Playlist playlist) {
@@ -67,23 +79,31 @@ public class PlaylistService {
     }
     
     public PlaylistDTO add(long playlistId,long trackId) {
+    	TrackService trackService = new TrackService(trackRepo,mapper);
+    	TrackDTO getTrackDTO = trackService.read(trackId);
+    	Track getTrack = this.mapFromTrackDTO(getTrackDTO);
+    	
     	PlaylistDTO readPlaylist = read(playlistId);
-    	List<Track> tracks = readPlaylist.getTracks();
-    	for(Track track : tracks) {
-    		
-    	}
-    	return new PlaylistDTO();
+    	Playlist playlist = this.mapFromDTO(readPlaylist);
+    	List<Track> tracks = playlist.getTracks();
+    	tracks.add(getTrack);
+    	Playlist added = this.repo.save(playlist);
+    	
+    	return this.mapToDTO(playlist);
     }
     
     public PlaylistDTO removeTrack(long playlistId,long trackId) {
     	PlaylistDTO readPlaylist = read(playlistId);
-    	List<Track> tracks = readPlaylist.getTracks();
+    	Playlist playlist = this.mapFromDTO(readPlaylist);
+    	List<Track> tracks = playlist.getTracks();
     	for(Track track : tracks) {
     		if(track.getId() == trackId) {
     			tracks.remove(track);
     		}
     	}
-    	return readPlaylist;
+    	Playlist removed = this.repo.save(playlist);
+    	
+    	return this.mapToDTO(removed);
     }
 
 }
