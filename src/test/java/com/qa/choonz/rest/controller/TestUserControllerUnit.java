@@ -9,12 +9,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
@@ -22,6 +24,7 @@ import com.qa.choonz.persistence.domain.Playlist;
 import com.qa.choonz.persistence.domain.User;
 import com.qa.choonz.rest.dto.UserDTO;
 import com.qa.choonz.service.UserService;
+import com.qa.choonz.utils.AuthUtils;
 
 @SpringBootTest
 public class TestUserControllerUnit {
@@ -48,6 +51,13 @@ public class TestUserControllerUnit {
 	private final String password = "password";
 	private List<Playlist> playlists;
 	
+	private String token;
+	
+	@BeforeAll
+	static void setup() {
+		AuthUtils auth = new AuthUtils();
+	}
+	
     @BeforeEach
     void init() {
     	this.userList = new ArrayList<>();
@@ -55,14 +65,19 @@ public class TestUserControllerUnit {
     	this.testUser = new User(this.id,this.username,this.password,this.playlists);
     	this.userList.add(testUser);
     	this.userDTO = this.mapToDTO(testUser);
+    	
+    	this.token = AuthUtils.newToken(this.id);
     }
     
     @Test
     void createTest() {
         when(this.service.create(testUser)).thenReturn(this.userDTO);
         
-        assertThat(new ResponseEntity<UserDTO>(this.userDTO, HttpStatus.CREATED))
-                .isEqualTo(this.controller.create(testUser));
+    	HttpHeaders headers = new HttpHeaders();
+    	headers.add("token", token);
+    	
+        assertThat(new ResponseEntity<UserDTO>(this.userDTO,headers,HttpStatus.CREATED).getBody())
+                .isEqualTo(this.controller.create(testUser).getBody());
         
         verify(this.service, times(1)).create(this.testUser);
     }
@@ -101,12 +116,12 @@ public class TestUserControllerUnit {
     	when(service.update(newUser, id)).thenReturn(updatedUser);
     	
     	assertThat(new ResponseEntity<UserDTO>(updatedUser,HttpStatus.ACCEPTED))
-		.isEqualTo(this.controller.update(newUser,this.id));
+		.isEqualTo(this.controller.update(newUser,this.id,this.token));
     }
     
     @Test
     void deleteTest() {
-    	this.controller.delete(this.id);
+    	this.controller.delete(this.id,this.token);
     	
     	verify(this.service, times(1)).delete(id);
     }

@@ -36,6 +36,18 @@ public class UserService {
 		return this.repo.findAll().stream().map(this::mapToDTO).collect(Collectors.toList());
 	}
 	
+	public Long login(String username, String password) {
+		List<UserDTO> users = this.repo.findAll().stream().map(this::mapToDTO).collect(Collectors.toList());
+		for (UserDTO user: users) {
+			if (user.getUsername().equals(username) 
+					&& user.getPassword().equals(password)) {
+				// If a match is found, return true
+				return user.getId();
+			}
+		}
+		return null;
+	}
+	
 	public UserDTO read(long id) {
 		User found = this.repo.findById(id).orElseThrow(UserNotFoundException::new);
 		return this.mapToDTO(found);

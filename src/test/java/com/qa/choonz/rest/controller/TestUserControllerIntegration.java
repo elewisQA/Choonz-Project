@@ -8,12 +8,14 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import java.util.ArrayList;
 import java.util.List;
 
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
@@ -23,6 +25,7 @@ import com.qa.choonz.persistence.domain.Playlist;
 import com.qa.choonz.persistence.domain.User;
 import com.qa.choonz.persistence.repository.UserRepository;
 import com.qa.choonz.rest.dto.UserDTO;
+import com.qa.choonz.utils.AuthUtils;
 
 @SpringBootTest
 @AutoConfigureMockMvc
@@ -53,6 +56,14 @@ public class TestUserControllerIntegration {
 	private final String password = "password";
 	private List<Playlist> playlists;
 	
+	private String token;
+	private HttpHeaders headers;
+	
+	@BeforeAll
+	static void setup() {
+		AuthUtils auth = new AuthUtils();
+	}
+	
     @BeforeEach
     void init() {
     	this.repo.deleteAll();
@@ -66,12 +77,15 @@ public class TestUserControllerIntegration {
     	this.userDTO = this.mapToDTO(testUser);
     	
     	this.id = this.testUserWithId.getId();
+    	this.token = AuthUtils.newToken(this.id);
+    	this.headers = new HttpHeaders();
+    	headers.add("token", token);
     }
     
     @Test
     void testCreate() throws Exception {
         this.mock
-        	.perform(request(HttpMethod.POST, "/users/create").contentType(MediaType.APPLICATION_JSON)
+        	.perform(request(HttpMethod.POST, "/users/create").header("token", token).contentType(MediaType.APPLICATION_JSON)
                 .content(this.objectMapper.writeValueAsString(testUser))
                 .accept(MediaType.APPLICATION_JSON))
         .andExpect(status().isCreated())
@@ -107,7 +121,7 @@ public class TestUserControllerIntegration {
 
     	
         String output = this.mock
-                .perform(request(HttpMethod.POST, "/users/update/" + this.id).accept(MediaType.APPLICATION_JSON)
+                .perform(request(HttpMethod.POST,"/users/update/" + this.id).headers(headers).accept(MediaType.APPLICATION_JSON)
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(this.objectMapper.writeValueAsString(newUser)))
                 .andExpect(status().isAccepted()).andReturn().getResponse().getContentAsString();
@@ -117,6 +131,6 @@ public class TestUserControllerIntegration {
     
     @Test
     void testDelete() throws Exception {
-        this.mock.perform(request(HttpMethod.DELETE, "/users/delete/" + this.id)).andExpect(status().isNoContent());
+        this.mock.perform(request(HttpMethod.DELETE, "/users/delete/" + this.id).header("token", token)).andExpect(status().isNoContent());
     }
 }
