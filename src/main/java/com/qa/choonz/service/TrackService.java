@@ -44,10 +44,18 @@ public class TrackService {
     public TrackDTO update(Track track, long id) {
         Track toUpdate = this.repo.findById(id).orElseThrow(TrackNotFoundException::new);
         toUpdate.setName(track.getName());
-        toUpdate.setAlbum(track.getAlbum());
-        toUpdate.setDuration(track.getDuration());
-        toUpdate.setLyrics(track.getLyrics());
-        toUpdate.setPlaylists(track.getPlaylists());
+        if(track.getAlbum() != null) {
+        	toUpdate.setAlbum(track.getAlbum());
+        }
+        if(track.getDuration() > 0) {
+        	toUpdate.setDuration(track.getDuration());
+        }
+        if(track.getLyrics() != null) {
+        	toUpdate.setLyrics(track.getLyrics());
+        }
+        if(track.getPlaylists() != null) {
+        	toUpdate.setPlaylists(track.getPlaylists());
+        }
         Track updated = this.repo.save(toUpdate);
         return this.mapToDTO(updated);
     }
