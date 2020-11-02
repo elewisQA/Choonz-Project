@@ -101,10 +101,10 @@ class TestArtistControllerIntegration {
     	Artist newArtist = new Artist();
     	newArtist.setId(this.id);
     	newArtist.setName("Tyler the creator");
-    	newArtist.setAlbums(null);
+    	newArtist.setAlbums(new ArrayList<>());
     	Artist updatedArtist = new Artist();
     	updatedArtist.setName(newArtist.getName());
-    	updatedArtist.setAlbums(null);
+    	updatedArtist.setAlbums(new ArrayList<>());
     	updatedArtist.setId(this.id);
     	
         String output = this.mock
