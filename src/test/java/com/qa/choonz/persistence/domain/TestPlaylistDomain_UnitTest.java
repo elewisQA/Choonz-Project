@@ -29,7 +29,7 @@ class TestPlaylistDomain_UnitTest {
 	
 	@Test
 	void testAllArgsConstructor() {
-		Playlist newPlaylist = new Playlist(1L, "Choonz", "Bangers", "Picture", null);
+		Playlist newPlaylist = new Playlist(1L, "Choonz", "Bangers", "Picture", null, null);
 		assertTrue(newPlaylist instanceof Playlist);
 	}
 	
@@ -73,17 +73,17 @@ class TestPlaylistDomain_UnitTest {
 	}
 	
 	@Test
-	void toStringTests() {		
-		Playlist newPlaylist = new Playlist(1L,"Choonz","Bangers","Picture",null);
+	void toStringTests() {	
+		Playlist newPlaylist = new Playlist(1L,"Choonz","Bangers","Picture",null, null);
 		
-		assertEquals("Playlist [id=1, name=Choonz, description=Bangers, artwork=Picture, tracks=null]"
+		assertEquals("Playlist [id=1, name=Choonz, description=Bangers, artwork=Picture, tracks=null, user=null]"
 				,newPlaylist.toString());
 	}
 	
 	@Test
 	void hashCodeTest() {		
-		Playlist playlist1 = new Playlist(1L,"Choonz","Bangers","Picture",null);
-		Playlist playlist2 = new Playlist(1L,"Choonz","Bangers","Picture",null);
+		Playlist playlist1 = new Playlist(1L,"Choonz","Bangers","Picture",null, null);
+		Playlist playlist2 = new Playlist(1L,"Choonz","Bangers","Picture",null, null);
 		
 		assertEquals(playlist1.hashCode(), playlist2.hashCode());
 	}

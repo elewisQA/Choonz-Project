@@ -9,19 +9,23 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
 import com.qa.choonz.persistence.domain.Playlist;
 import com.qa.choonz.persistence.domain.Track;
+import com.qa.choonz.persistence.domain.User;
 import com.qa.choonz.rest.dto.PlaylistDTO;
 import com.qa.choonz.service.PlaylistService;
+import com.qa.choonz.utils.AuthUtils;
 
 @SpringBootTest
 class TestPlaylistControllerUnit {
@@ -48,23 +52,36 @@ class TestPlaylistControllerUnit {
     private final String description = "Bangers only";
     private final String artwork = "artwork";
     private List<Track> tracks;
+    private final User testUser = null;
+    
+    private String token;
+    
+	@BeforeAll
+	static void setup() {
+		AuthUtils auth = new AuthUtils();
+	}
     
     @BeforeEach
     void init() {
     	this.playlistList = new ArrayList<>();
     	this.tracks = new ArrayList<>();
     	this.testPlaylist = new Playlist(this.id,this.name,this.description
-    			,this.artwork,this.tracks);
+    			,this.artwork,this.tracks,this.testUser);
     	this.playlistList.add(testPlaylist);
     	this.playlistDTO = this.mapToDTO(testPlaylist);
+    	
+    	this.token = AuthUtils.newToken(this.id);
     }
     
     @Test
     void createTest() {
         when(this.service.create(testPlaylist)).thenReturn(this.playlistDTO);
         
-        assertThat(new ResponseEntity<PlaylistDTO>(this.playlistDTO, HttpStatus.CREATED))
-                .isEqualTo(this.controller.create(testPlaylist));
+        HttpHeaders headers = new HttpHeaders();
+    	headers.add("token", token);
+        
+        assertThat(new ResponseEntity<PlaylistDTO>(this.playlistDTO, headers, HttpStatus.CREATED).getBody())
+                .isEqualTo(this.controller.create(testPlaylist, this.token).getBody());
         
         verify(this.service, times(1)).create(this.testPlaylist);
     }
@@ -95,22 +112,23 @@ class TestPlaylistControllerUnit {
     @Test
     void updateTest() {
     	Playlist newPlaylist = new Playlist(this.id,this.name,this.description,this.artwork
-    			,this.tracks);
+    			,this.tracks,this.testUser);
     	
     	PlaylistDTO updatedPlaylist = new PlaylistDTO(this.id,newPlaylist.getName()
     			,newPlaylist.getDescription()
     			,newPlaylist.getArtwork()
-    			,newPlaylist.getTracks());
+    			,newPlaylist.getTracks()
+    			,newPlaylist.getUser());
     	
     	when(service.update(newPlaylist, id)).thenReturn(updatedPlaylist);
     	
     	assertThat(new ResponseEntity<PlaylistDTO>(updatedPlaylist,HttpStatus.ACCEPTED))
-		.isEqualTo(this.controller.update(newPlaylist,this.id));
+		.isEqualTo(this.controller.update(newPlaylist,this.id, this.token));
     }
     
     @Test
     void deleteTest() {
-    	this.controller.delete(this.id);
+    	this.controller.delete(this.id, this.token);
     	
     	verify(this.service, times(1)).delete(id);
     }

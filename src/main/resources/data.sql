@@ -35,6 +35,10 @@ INSERT INTO TRACK(ID, DURATION, NAME, ALBUM_ID) VALUES (19, 5.06, 'Wanderlust', 
 INSERT INTO TRACK(ID, DURATION, NAME, ALBUM_ID) VALUES (20, 7.35, 'Kiss Land', 4);
 INSERT INTO TRACK(ID, DURATION, NAME, ALBUM_ID) VALUES (21, 6.15, 'Pretty', 4);
 INSERT INTO TRACK(ID, DURATION, NAME, ALBUM_ID) VALUES (22, 7.24, 'Tears In The Rain', 4);
+
+/* Insert a user */
+INSERT INTO USER(ID, USERNAME, PASSWORD) VALUES (1, 'test', 'password');
+
 /* Insert some playlists */
 INSERT INTO PLAYLIST VALUES (1, 'https://i.pinimg.com/564x/38/41/48/384148d27fb01b2ff9455e05aa7b3557.jpg', 'Number one playlist!', 'Playlist One');
 INSERT INTO PLAYLIST VALUES (2, 'https://i.pinimg.com/564x/d0/5b/98/d05b98026f6628b5f23c33c65a3d36b5.jpg', 'Second best playlist!', 'Playlist 2');

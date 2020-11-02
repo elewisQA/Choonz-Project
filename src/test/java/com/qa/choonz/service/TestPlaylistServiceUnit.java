@@ -18,6 +18,7 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 
 import com.qa.choonz.persistence.domain.Playlist;
 import com.qa.choonz.persistence.domain.Track;
+import com.qa.choonz.persistence.domain.User;
 import com.qa.choonz.persistence.repository.PlaylistRepository;
 import com.qa.choonz.rest.dto.PlaylistDTO;
 
@@ -41,6 +42,7 @@ class TestPlaylistServiceUnit {
     private Playlist testPlaylist;
     private Playlist testPlaylistWithId;
     private PlaylistDTO playlistDTO;
+    private User testUser;
     
     final Long id = 1L;
     final String name = "Tunes";
@@ -53,7 +55,7 @@ class TestPlaylistServiceUnit {
     	this.playlistList = new ArrayList<>();
     	this.tracks = new ArrayList<>();
     	this.testPlaylist = new Playlist(this.id,this.name,this.description
-    			,this.artwork,this.tracks);
+    			,this.artwork,this.tracks, this.testUser);
     	this.playlistList.add(testPlaylist);
     	this.playlistDTO = this.mapToDTO(testPlaylist);
     }
@@ -95,20 +97,21 @@ class TestPlaylistServiceUnit {
     
     @Test
     void updateTest() {
-    	Playlist playlist = new Playlist(this.id,this.name,this.description,this.artwork,this.tracks);
+    	Playlist playlist = new Playlist(this.id,this.name,this.description,this.artwork,this.tracks, this.testUser);
     	
-    	PlaylistDTO playlistDTO = new PlaylistDTO(this.id,this.name,this.description,this.artwork,this.tracks);
+    	PlaylistDTO playlistDTO = new PlaylistDTO(this.id,this.name,this.description,this.artwork,this.tracks, this.testUser);
     	
     	Playlist updatedPlaylist = new Playlist(this.id,
     			playlistDTO.getName(),
     			playlistDTO.getDescription(),
     			playlistDTO.getArtwork(),
-    			this.tracks);
+    			this.tracks, this.testUser);
     	
     	PlaylistDTO updatedPlaylistDTO = new PlaylistDTO(this.id,updatedPlaylist.getName()
     			,updatedPlaylist.getDescription()
     			,updatedPlaylist.getArtwork()
-    			,updatedPlaylist.getTracks());
+    			,updatedPlaylist.getTracks()
+    			,updatedPlaylist.getUser());
     	
 		when(this.repo.findById(this.id)).thenReturn(Optional.of(playlist));
 		
