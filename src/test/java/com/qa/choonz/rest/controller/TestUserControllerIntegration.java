@@ -8,6 +8,8 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.net.ssl.SSLEngineResult.Status;
+
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -110,6 +112,21 @@ public class TestUserControllerIntegration {
     			.andExpect(status().isOk()).andReturn().getResponse().getContentAsString();
     	
     	assertEquals(this.objectMapper.writeValueAsString(userList),content);
+    }
+    
+    @Test
+    void testLogin() throws Exception{
+    	this.mock
+    	.perform(request(HttpMethod.POST, "/users/login").header("token", token).contentType(MediaType.APPLICATION_JSON)
+            .content(this.objectMapper.writeValueAsString(testUser))
+            .accept(MediaType.APPLICATION_JSON))
+    		.andExpect(status().isOk());
+    	// TODO the response code is subject to change
+    }
+    
+    @Test
+    void testLogout() throws Exception{
+    	
     }
     
     @Test
