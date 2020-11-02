@@ -104,12 +104,12 @@ class TestGenreControllerIntegration {
     	newGenre.setId(this.id);
     	newGenre.setName("Rock");
     	newGenre.setDescription("Guitar smash");
-    	newGenre.setAlbums(null);
+    	newGenre.setAlbums(new ArrayList<>());
     	Genre updatedGenre = new Genre();
     	updatedGenre.setId(this.id);
     	updatedGenre.setName(newGenre.getName());
     	updatedGenre.setDescription(newGenre.getDescription());
-    	updatedGenre.setAlbums(null);
+    	updatedGenre.setAlbums(new ArrayList<>());
     	
         String output = this.mock
                 .perform(request(HttpMethod.POST, "/genres/update/" + this.id).accept(MediaType.APPLICATION_JSON)
