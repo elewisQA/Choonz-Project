@@ -12,29 +12,29 @@ public class AuthUtils {
 	private static Map<String, Long> adminTokens; // Future-proofing, used to lock-off API calls
 
 	public AuthUtils() {
-		if (AuthUtils.userTokens != null) {
-			AuthUtils.userTokens = new HashMap<>();
+		if (userTokens == null) {
+			userTokens = new HashMap<>();
 		}
 	}
 	
 	//--[ Login Methods ]--
 	public static String newToken(Long userId) {
 		String token = generateToken();
-		AuthUtils.userTokens.put(token, userId);
+		userTokens.put(token, userId);
 		return token;
 	}
 	
 	public static Long getTokenOwner(String token) throws TokenNotFoundException {
-		if (AuthUtils.userTokens.containsKey(token)) {
-			return AuthUtils.userTokens.get(token);
+		if (userTokens.containsKey(token)) {
+			return userTokens.get(token);
 		} else {
 			throw new TokenNotFoundException();
 		}
 	}
 	
 	public static void deleteToken(String token) {
-		if (AuthUtils.userTokens.containsKey(token)) {
-			AuthUtils.userTokens.remove(token);
+		if (userTokens.containsKey(token)) {
+			userTokens.remove(token);
 		}
 	}
 	
@@ -46,7 +46,7 @@ public class AuthUtils {
 		// Thanks to Baeldung for this code
 		return rng.ints(lowerLimit, upperLimit + 1)
 	    	      .filter(i -> (i <= 57 || i >= 65) && (i <= 90 || i >= 97))	// Filter-method to avoid going out of range
-	    	      .limit(AuthUtils.tokenLength)
+	    	      .limit(tokenLength)
 	    	      .collect(StringBuilder::new, StringBuilder::appendCodePoint, StringBuilder::append)
 	    	      .toString();
 	}
