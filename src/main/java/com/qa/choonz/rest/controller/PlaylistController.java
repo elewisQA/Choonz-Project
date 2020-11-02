@@ -70,9 +70,14 @@ public class PlaylistController {
         }
     }
     
-    @PutMapping("/remove/{playlistId}/{trackId}")
+    @PostMapping("/add/{playlistId}/{trackId}")
+    public ResponseEntity<PlaylistDTO> add(@PathVariable long playlistId,@PathVariable long trackId){
+    	return new ResponseEntity<PlaylistDTO>(this.service.addTrack(playlistId, trackId), HttpStatus.ACCEPTED);
+    }
+    
+    @PostMapping("/remove/{playlistId}/{trackId}")
     public ResponseEntity<PlaylistDTO> remove(@PathVariable long playlistId,@PathVariable long trackId){
-		return new ResponseEntity<PlaylistDTO>(this.service.removeTrack(playlistId, trackId), HttpStatus.ACCEPTED);
+    	return new ResponseEntity<PlaylistDTO>(this.service.removeTrack(playlistId, trackId), HttpStatus.ACCEPTED);
     }
 
 }

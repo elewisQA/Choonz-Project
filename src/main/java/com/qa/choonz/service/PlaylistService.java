@@ -1,6 +1,5 @@
 package com.qa.choonz.service;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -78,7 +77,7 @@ public class PlaylistService {
         return !this.repo.existsById(id);
     }
     
-    public PlaylistDTO add(long playlistId,long trackId) {
+    public PlaylistDTO addTrack(long playlistId,long trackId) {
     	TrackService trackService = new TrackService(trackRepo,mapper);
     	TrackDTO getTrackDTO = trackService.read(trackId);
     	Track getTrack = this.mapFromTrackDTO(getTrackDTO);
@@ -89,7 +88,7 @@ public class PlaylistService {
     	tracks.add(getTrack);
     	Playlist added = this.repo.save(playlist);
     	
-    	return this.mapToDTO(playlist);
+    	return this.mapToDTO(added);
     }
     
     public PlaylistDTO removeTrack(long playlistId,long trackId) {
