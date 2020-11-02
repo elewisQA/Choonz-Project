@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.qa.choonz.exception.TokenNotFoundException;
 import com.qa.choonz.persistence.domain.User;
 import com.qa.choonz.rest.dto.UserDTO;
 import com.qa.choonz.service.UserService;
@@ -73,13 +74,20 @@ public class UserController {
     }
     
     @PostMapping("/update/{id}")
-    public ResponseEntity<UserDTO> update(@RequestBody User user, @PathVariable long id) {
-        return new ResponseEntity<UserDTO>(this.service.update(user, id), HttpStatus.ACCEPTED);
+    public ResponseEntity<UserDTO> update(@RequestBody User user, @PathVariable long id, @RequestHeader("token") String token) {
+	    if (AuthUtils.getTokenOwner(token) != id) {
+	    	return new ResponseEntity<UserDTO>(HttpStatus.UNAUTHORIZED);
+	    }
+	    return new ResponseEntity<UserDTO>(this.service.update(user, id), 
+	    		HttpStatus.ACCEPTED);
     }
     
     @DeleteMapping("delete/{id}")
-    public ResponseEntity<UserDTO> delete(@PathVariable long id) {
-        return this.service.delete(id) ? new ResponseEntity<UserDTO>(HttpStatus.NO_CONTENT)
+    public ResponseEntity<UserDTO> delete(@PathVariable long id, @RequestHeader("token") String token) {
+    	if (AuthUtils.getTokenOwner(token) != id) {
+    		return new ResponseEntity<UserDTO>(HttpStatus.UNAUTHORIZED);
+    	}
+    	return this.service.delete(id) ? new ResponseEntity<UserDTO>(HttpStatus.NO_CONTENT)
                 : new ResponseEntity<UserDTO>(HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
