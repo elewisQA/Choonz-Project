@@ -77,11 +77,15 @@ function populate(data, artist) {
         //     else if (a.name > b.name) {return 1;}
         //     else{return 0;}
         // });
+        let albumId = data[key]["album"]["id"];
+        console.log(data[key]['album']['id']);
+        getArtist(albumId);
      let value = data[key]["name"];
      let album = data[key]["album"]["cover"];
      console.log(value);
      console.log(album);
      let row = document.createElement("tr");
+     row.id = "row_id";
      tableBody.appendChild(row);
 
      let albumCover = document.createElement("th");
@@ -137,4 +141,39 @@ function populate(data, artist) {
       dropdown.className = "dropdown-menu";
       dropdownMenu.appendChild(dropdown);
     }
+}
+
+
+function getArtist(albumId) {
+ fetch('http://localhost:8082/albums/read/' + albumId)
+   .then(
+     function(response) {
+       if (response.status !== 200) {
+         console.log('Looks like there was a problem. Status Code: ' +
+           response.status);
+         return;
+       }
+
+       // Examine the text in the response
+       response.json().then(function(data) {
+         console.log(data['artist']['name']);
+         addArtist(data);
+       });
+     }
+   )
+   .catch(function(err) {
+     console.log('Fetch Error :-S', err);
+   });
+}
+
+function addArtist(data){
+  console.log(data)
+  let find = document.getElementById("row_id");
+  let songArtist = document.createElement("td");
+     let link = document.createElement("a");
+     link.href = "#";
+     link.textContent = data['artist']['name'];
+     songArtist.appendChild(link);
+     find.appendChild(songArtist);
+  
 }
