@@ -44,20 +44,20 @@ function populate(data) {
 
     let albumName = document.createElement("h1");
     albumName.style = "font-size: 45px;";
-    albumName.textContent = data["name"];
+    albumName.textContent = data['name'];
 
     let linkArtist = document.createElement("a");
-    linkArtist.href="#";
+    linkArtist.href="viewArtist.html?id=" + data['artist']['id'];
     let artist = document.createElement("h2");
     artist.style = "font-size: 25px;";
-    artist.textContent = data["artist"]["name"];
+    artist.textContent = data['artist']['name'];
     linkArtist.appendChild(artist);
 
     let linkGenre = document.createElement("a");
     linkGenre.href="#";
     let genre = document.createElement("p");
     genre.style = "font-size: 17px;";
-    genre.textContent = data["genre"]["name"];
+    genre.textContent = data['genre']['name'];
     linkGenre.appendChild(genre);
 
     // let linkInfo = document.createElement("a");
