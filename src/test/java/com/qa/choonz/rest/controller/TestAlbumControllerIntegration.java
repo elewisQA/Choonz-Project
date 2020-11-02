@@ -105,12 +105,12 @@ class TestAlbumControllerIntegration {
     	newAlbum.setName("Flower Boy");
     	newAlbum.setCover("new image");
     	newAlbum.setGenre(null);
-    	newAlbum.setTracks(null);
+    	newAlbum.setTracks(new ArrayList<>());
     	Album updatedAlbum = new Album();
     	updatedAlbum.setName(newAlbum.getName());
     	updatedAlbum.setCover(newAlbum.getCover());
     	updatedAlbum.setGenre(null);
-    	updatedAlbum.setTracks(null);
+    	updatedAlbum.setTracks(new ArrayList<>());
     	updatedAlbum.setId(this.id);
     	
         String output = this.mock
