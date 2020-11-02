@@ -107,13 +107,13 @@ class TestPlaylistControllerIntegration {
     	newPlaylist.setName("Big tunes");
     	newPlaylist.setDescription("Big bangers");
     	newPlaylist.setArtwork("Art");
-    	newPlaylist.setTracks(null);
+    	newPlaylist.setTracks(new ArrayList<>());
     	Playlist updatedPlaylist = new Playlist();
     	updatedPlaylist.setId(this.id);
     	updatedPlaylist.setName(newPlaylist.getName());
     	updatedPlaylist.setDescription(newPlaylist.getDescription());
     	updatedPlaylist.setArtwork(newPlaylist.getArtwork());
-    	updatedPlaylist.setTracks(null);
+    	updatedPlaylist.setTracks(new ArrayList<>());
     	
         String output = this.mock
                 .perform(request(HttpMethod.POST, "/playlists/update/" + this.id).accept(MediaType.APPLICATION_JSON)
