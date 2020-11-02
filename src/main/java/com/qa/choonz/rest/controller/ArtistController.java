@@ -43,6 +43,11 @@ public class ArtistController {
     public ResponseEntity<ArtistDTO> read(@PathVariable long id) {
         return new ResponseEntity<ArtistDTO>(this.service.read(id), HttpStatus.OK);
     }
+    
+    @GetMapping("/search/{searchTerm}")
+    public ResponseEntity<ArtistDTO> search(@PathVariable String searchTerm) {
+    	return new ResponseEntity<ArtistDTO>(this.service.search(searchTerm), HttpStatus.OK);
+    }
 
     @PostMapping("/update/{id}")
     public ResponseEntity<ArtistDTO> update(@RequestBody Artist artist, @PathVariable long id) {
