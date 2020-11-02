@@ -47,7 +47,7 @@ public class TrackService {
         if(track.getAlbum() != null) {
         	toUpdate.setAlbum(track.getAlbum());
         }
-        if(track.getDuration() < 0) {
+        if(track.getDuration() > 0) {
         	toUpdate.setDuration(track.getDuration());
         }
         if(track.getLyrics() != null) {
