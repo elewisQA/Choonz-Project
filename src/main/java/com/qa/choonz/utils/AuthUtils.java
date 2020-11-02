@@ -30,6 +30,12 @@ public class AuthUtils {
 		}
 	}
 	
+	public void deleteToken(String token) {
+		if (userTokens.containsKey(token)) {
+			userTokens.remove(token);
+		}
+	}
+	
 	private String generateToken() {
 		// Use random-number generated values, cast to chars.
 		int lowerLimit = 48;	// Set bounds for character values, lowest is '0', highest is 'z'
