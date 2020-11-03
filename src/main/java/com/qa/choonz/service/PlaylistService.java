@@ -69,7 +69,7 @@ public class PlaylistService {
         return !this.repo.existsById(id);
     }
     
-    public PlaylistDTO addTrack(long playlistId,long trackId) {
+    public PlaylistDTO addTrack(Long playlistId,Long trackId) {
     	Track track = this.trackRepo.findById(trackId).orElseThrow(TrackNotFoundException::new);
     	Playlist playlist = this.repo.findById(playlistId).orElseThrow(PlaylistNotFoundException::new);    	
     	List<Track> tracks = playlist.getTracks();
@@ -86,7 +86,7 @@ public class PlaylistService {
     	return this.mapToDTO(added);
     }
     
-    public PlaylistDTO removeTrack(long playlistId,long trackId) {
+    public PlaylistDTO removeTrack(Long playlistId,Long trackId) {
     	Track track = this.trackRepo.findById(trackId).orElseThrow(TrackNotFoundException::new);
     	Playlist playlist = this.repo.findById(playlistId).orElseThrow(PlaylistNotFoundException::new);    	
     	List<Track> tracks = playlist.getTracks();

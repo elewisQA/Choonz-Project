@@ -70,12 +70,12 @@ public class PlaylistController {
     }
     
     @PostMapping("/add/{playlistId}/{trackId}")
-    public ResponseEntity<PlaylistDTO> add(@PathVariable long playlistId,@PathVariable long trackId){
+    public ResponseEntity<PlaylistDTO> add(@PathVariable Long playlistId,@PathVariable Long trackId){
     	return new ResponseEntity<PlaylistDTO>(this.service.addTrack(playlistId, trackId), HttpStatus.ACCEPTED);
     }
     
     @PostMapping("/remove/{playlistId}/{trackId}")
-    public ResponseEntity<PlaylistDTO> remove(@PathVariable long playlistId,@PathVariable long trackId){
+    public ResponseEntity<PlaylistDTO> remove(@PathVariable Long playlistId,@PathVariable Long trackId){
     	return new ResponseEntity<PlaylistDTO>(this.service.removeTrack(playlistId, trackId), HttpStatus.ACCEPTED);
     }
 
