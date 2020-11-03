@@ -48,7 +48,7 @@ class TestTrackServiceUnit {
     final String name = "Song";
     final Album album = null;
     final Playlist playlist = null;
-    final int duration = 180;
+    final Float duration = 1.80F;
     final String lyrics = "Lyrics";
     
     @BeforeEach
