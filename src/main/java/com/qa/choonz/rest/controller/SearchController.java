@@ -41,12 +41,9 @@ public class SearchController {
 		this.playlistService = playlistService;
 	}
 	
-	/*
-	@GetMapping("/{search}")
-	public ResponseEntity<Object> searchAll() {
-		
-	}
-	*/
+	// TODO change for-loops to streams (maybe more efficient?)
+	// TODO improve search-method to better deal with case, etc.
+	// maybe using REGEX?
 	
 	@GetMapping("/artists/{query}")
 	public ResponseEntity<List<ArtistDTO>> searchArtists(@PathVariable String query) {		
