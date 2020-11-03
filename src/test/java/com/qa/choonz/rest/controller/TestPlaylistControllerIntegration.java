@@ -15,17 +15,22 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.qa.choonz.exception.TrackNotFoundException;
 import com.qa.choonz.persistence.domain.Playlist;
 import com.qa.choonz.persistence.domain.Track;
 import com.qa.choonz.persistence.domain.User;
 import com.qa.choonz.persistence.repository.PlaylistRepository;
+import com.qa.choonz.persistence.repository.TrackRepository;
 import com.qa.choonz.rest.dto.PlaylistDTO;
+import com.qa.choonz.rest.dto.TrackDTO;
+import com.qa.choonz.service.TrackService;
 import com.qa.choonz.utils.AuthUtils;
 
 @SpringBootTest
@@ -37,6 +42,9 @@ class TestPlaylistControllerIntegration {
     
     @Autowired
     private PlaylistRepository repo;
+    
+    @Autowired
+    private TrackRepository trackRepo;
     
     @Autowired
     private ModelMapper modelMapper;
@@ -148,5 +156,5 @@ class TestPlaylistControllerIntegration {
     void testDelete() throws Exception {
         this.mock.perform(request(HttpMethod.DELETE, "/playlists/delete/" + this.id).header("token", token)).andExpect(status().isNoContent());
     }
-
+    
 }
