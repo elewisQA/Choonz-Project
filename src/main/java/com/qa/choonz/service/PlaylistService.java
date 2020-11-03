@@ -32,10 +32,6 @@ public class PlaylistService {
         return this.mapper.map(playlist, PlaylistDTO.class);
     }
     
-    private Playlist mapFromDTO(PlaylistDTO playlistDTO) {
-        return this.mapper.map(playlistDTO, Playlist.class);
-    }
-    
     public PlaylistDTO create(Playlist playlist) {
         Playlist created = this.repo.save(playlist);
         return this.mapToDTO(created);
@@ -75,9 +71,7 @@ public class PlaylistService {
     
     public PlaylistDTO addTrack(long playlistId,long trackId) {
     	Track track = this.trackRepo.findById(trackId).orElseThrow(TrackNotFoundException::new);
-    	
-    	Playlist playlist = this.repo.findById(playlistId).orElseThrow(PlaylistNotFoundException::new);
-    	
+    	Playlist playlist = this.repo.findById(playlistId).orElseThrow(PlaylistNotFoundException::new);    	
     	List<Track> tracks = playlist.getTracks();
     	List<Playlist> trackPlaylists = track.getPlaylists();
 
@@ -87,16 +81,14 @@ public class PlaylistService {
     	track.setPlaylists(trackPlaylists);
     	
     	Playlist added = this.repo.save(playlist);
-    	Track updated = this.trackRepo.save(track);
+    	this.trackRepo.save(track);
     	
     	return this.mapToDTO(added);
     }
     
     public PlaylistDTO removeTrack(long playlistId,long trackId) {
     	Track track = this.trackRepo.findById(trackId).orElseThrow(TrackNotFoundException::new);
-    	
-    	Playlist playlist = this.repo.findById(playlistId).orElseThrow(PlaylistNotFoundException::new);
-    	
+    	Playlist playlist = this.repo.findById(playlistId).orElseThrow(PlaylistNotFoundException::new);    	
     	List<Track> tracks = playlist.getTracks();
     	List<Playlist> trackPlaylists = track.getPlaylists();
     	
@@ -112,7 +104,7 @@ public class PlaylistService {
     	track.setPlaylists(trackPlaylists);
     	
     	Playlist removed = this.repo.save(playlist);
-    	Track updated = this.trackRepo.save(track);
+    	this.trackRepo.save(track);
     	
     	return this.mapToDTO(removed);
     }
