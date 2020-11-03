@@ -1,6 +1,7 @@
 package com.qa.choonz.rest.dto;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 
@@ -14,14 +15,14 @@ import org.junit.jupiter.api.Test;
 import com.qa.choonz.persistence.domain.Album;
 import com.qa.choonz.persistence.domain.Playlist;
 
-public class TestTrackDTO {
+class TestTrackDTO {
 
 	TrackDTO testTrack;
     final long id=1L;
     final String name="Song";
     final Album album=null;
     private List<Playlist> playlists;
-    final int duration=180;
+    final Float duration = 1.80F;
     final String lyrics="Lyrics";
     
 	@BeforeEach
@@ -49,7 +50,7 @@ public class TestTrackDTO {
 		String newName = "New song";
 		Album newAlbum = null;
 		List<Playlist> newPlaylists = new ArrayList<Playlist>();
-		int newDuration = 240;
+		Float newDuration = 2.4F;
 		String newLyrics = "New lyrics";
 		TrackDTO newTestTrack = new TrackDTO(
 				newId, 
@@ -96,7 +97,7 @@ public class TestTrackDTO {
 	
 	@Test
 	void getSetDurationTest() {
-		int newDuration = 240;
+		Float newDuration = 2.4F;
 		this.testTrack.setDuration(newDuration);
 
 		assertEquals(newDuration,this.testTrack.getDuration());
@@ -112,17 +113,16 @@ public class TestTrackDTO {
 	
 	@Test
 	public void toStringTests() {
-		System.out.println(this.testTrack.toString());
 		assertTrue(this.testTrack.toString()
-				.equals("TrackDTO [id=1, name=Song, album=null, playlist=[], duration=180, lyrics=Lyrics]"));
+				.equals("TrackDTO [id=1, name=Song, album=null, playlist=[], duration=1.8, lyrics=Lyrics]"));
 	}
 	
 	@Test
 	public void hashCodeTest() {		
-		TrackDTO track1 = new TrackDTO(1L,"Pop",null,null,180,"Lyrics");
-		TrackDTO track2 = new TrackDTO(1L,"Pop",null,null,180,"Lyrics");
+		TrackDTO track1 = new TrackDTO(1L,"Pop",null,null,1.8F,"Lyrics");
+		TrackDTO track2 = new TrackDTO(1L,"Pop",null,null,1.8F,"Lyrics");
 		
-		assertTrue(track1.hashCode() == track2.hashCode());
+		assertEquals(track1.hashCode(), track2.hashCode());
 	}
 	
 	@Test
@@ -136,8 +136,8 @@ public class TestTrackDTO {
 				this.duration,
 				this.lyrics);
 		
-		assertTrue(!this.testTrack.equals(emptyTrack));
-		assertTrue(this.testTrack.equals(fullTrack));
+		assertNotEquals(this.testTrack, emptyTrack);
+		assertEquals(this.testTrack, fullTrack);
 	}
 	
 	@AfterEach

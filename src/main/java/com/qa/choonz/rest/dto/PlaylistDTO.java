@@ -1,4 +1,3 @@
-  
 package com.qa.choonz.rest.dto;
 
 import java.util.List;
@@ -18,7 +17,6 @@ public class PlaylistDTO {
 
     public PlaylistDTO() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
     public PlaylistDTO(long id, String name, String description, String artwork, 

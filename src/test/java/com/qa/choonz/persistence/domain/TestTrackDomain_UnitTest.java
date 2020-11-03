@@ -1,7 +1,7 @@
 package com.qa.choonz.persistence.domain;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -12,11 +12,7 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import com.qa.choonz.persistence.domain.Album;
-import com.qa.choonz.persistence.domain.Playlist;
-import com.qa.choonz.persistence.domain.Track;
-
-public class TestTrackDomain_UnitTest {
+class TestTrackDomain_UnitTest {
 	//--[ Test Variables ]--
 	private Track testTrack;
 	
@@ -36,7 +32,7 @@ public class TestTrackDomain_UnitTest {
 	void testAllArgsConstructor() {
 		List<Playlist> playlists = new ArrayList<>();
 		Album album = new Album();
-		Track newTrack = new Track(1L, "track", album, playlists, 5, "../");
+		Track newTrack = new Track(1L, "track", album, playlists, 5F, "../");
 		assertTrue(newTrack instanceof Track);
 	}
 	
@@ -74,9 +70,9 @@ public class TestTrackDomain_UnitTest {
 	
 	@Test
 	void getSetDurationTest() {
-		this.testTrack.setDuration(180);
+		this.testTrack.setDuration(1.80F);
 		
-		assertEquals(180, this.testTrack.getDuration());
+		assertEquals(1.80F, this.testTrack.getDuration());
 	}
 	
 	@Test
@@ -88,9 +84,9 @@ public class TestTrackDomain_UnitTest {
 	
 	@Test
 	void toStringTests() {		
-		Track track = new Track(1L,"Song",null,null,180,"Lyrics");
+		Track track = new Track(1L,"Song",null,null,1.8F,"Lyrics");
 		assertNotNull(track.toString());
-		assertEquals("Track [id=1, name=Song, album=null, playlists=null, duration=180, lyrics=Lyrics]", 
+		assertEquals("Track [id=1, name=Song, album=null, playlists=null, duration=1.8, lyrics=Lyrics]", 
 				track.toString());
 	}
 	
@@ -99,8 +95,8 @@ public class TestTrackDomain_UnitTest {
 		Album album = new Album();
 		List<Playlist> playlists = new ArrayList<Playlist>();
 		
-		Track track1 = new Track(1L,"Song",album,playlists,180,"Lyrics");
-		Track track2 = new Track(1L,"Song",album,playlists,180,"Lyrics");
+		Track track1 = new Track(1L,"Song",album,playlists,1.8F,"Lyrics");
+		Track track2 = new Track(1L,"Song",album,playlists,1.8F,"Lyrics");
 		
 		assertEquals(track1.hashCode(), track2.hashCode());
 	}
@@ -110,10 +106,10 @@ public class TestTrackDomain_UnitTest {
 		Album album = new Album();
 		List<Playlist> playlists = new ArrayList<Playlist>();
 		
-		Track track = new Track(1L,"Song",album,playlists,180,"Lyrics");
+		Track track = new Track(1L,"Song",album,playlists,1.8F,"Lyrics");
 		
 		assertEquals(track, track);
-		assertFalse(track.equals(null));
+		assertNotEquals(null, track);
 	}
 	
 	@AfterEach

@@ -1,7 +1,7 @@
 package com.qa.choonz.persistence.domain;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.ArrayList;
@@ -12,7 +12,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 //===[ Testing Code ]===
-public class TestUserDomain_UnitTest {
+class TestUserDomain_UnitTest {
 	//--[ Test Variables ]--
 	User testUser;
 	final Long id = 1L;
@@ -117,7 +117,7 @@ public class TestUserDomain_UnitTest {
 				this.username,
 				this.pass,
 				this.playlists);
-		assertFalse(this.testUser.equals(emptyUser));
+		assertNotEquals(this.testUser, emptyUser);
 		assertEquals(fullUser, this.testUser);
 	}
 	
