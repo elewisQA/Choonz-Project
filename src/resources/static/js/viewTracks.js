@@ -114,6 +114,11 @@ function populate(data) {
       let linkPlaylist = document.createElement("a");
       linkPlaylist.href="#";
       linkPlaylist.className = "dropdown-item";
+      linkPlaylist.id = "dropdownMenu222";
+      linkPlaylist.type = "button";
+      linkPlaylist.setAttribute("data-toggle", "dropdown");
+      linkPlaylist.setAttribute("aria-haspopup", "true");
+      linkPlaylist.setAttribute("aria-expanded", "false");
       linkPlaylist.textContent = "Add to Playlist";
       dropdown.appendChild(linkPlaylist);
 
@@ -124,6 +129,14 @@ function populate(data) {
       let iconPlaylist = document.createElement("i");
       iconPlaylist.className = "fas fa-music";
       spanPlaylist.appendChild(iconPlaylist);
+
+      let secondDropdown = document.createElement("div");
+      secondDropdown.className = "dropdown-menu";
+      secondDropdown.id ="second_dropdown" + count;
+      secondDropdown.setAttribute("aria-labelledby", "dropdownMenu222");
+      dropdown.appendChild(secondDropdown);
+      readPlaylists(count);
+
       count ++;
     }
 }
@@ -180,3 +193,37 @@ function addArtist(data, count){
         find.appendChild(artistLink);
         find.id = "done";  
 }
+
+function readPlaylists(songCount) {
+  fetch('http://localhost:8082/playlists/read')
+   .then(
+     function(response) {
+       if (response.status !== 200) {
+         console.log('Looks like there was a problem. Status Code: ' +
+           response.status);
+         return;
+       }
+ 
+       // Examine the text in the response
+       response.json().then(function(data) {
+         console.log(data);
+         addPlaylists(data, songCount);
+       });
+     }
+   )
+   .catch(function(err) {
+     console.log('Fetch Error :-S', err);
+   });
+ }
+
+ function addPlaylists(data, songCount) {
+  let find = document.getElementById("second_dropdown"+songCount);
+  for (let key of data) {
+    console.log(key);
+    let selectPlaylist = document.createElement("a");
+    selectPlaylist.className = "dropdown-item";
+    selectPlaylist.href="#";
+    selectPlaylist.textContent = key['name'];
+    find.appendChild(selectPlaylist);
+  }
+ }
