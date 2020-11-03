@@ -3,7 +3,6 @@ for (let found of findId) {
     let id = found[1];
     console.log(id);
     getID(id);  
-    readPlaylists(); 
  } 
 
 function getID(id) {
@@ -117,11 +116,13 @@ function populate(data) {
         linkDelete.href='#';
         linkDelete.className = "dropdown-item";
   
+        let trackId = data['tracks'][key]['id'];
         linkDelete.setAttribute("onClick", "window.location.reload();");
         linkDelete.addEventListener("click", function(stop){
             stop.preventDefault();  
-            deleteTrack(data['tracks'][key]['id'], playlistId);    
+            deleteTrack(trackId, playlistId);    
         })
+
         linkDelete.textContent = "Delete";
         dropdown.appendChild(linkDelete);
         let spanDelete = document.createElement("span");
@@ -152,10 +153,10 @@ function populate(data) {
 
       let secondDropdown = document.createElement("div");
       secondDropdown.className = "dropdown-menu";
-      secondDropdown.id ="second_dropdown"
+      secondDropdown.id ="second_dropdown" + songCount;
       secondDropdown.setAttribute("aria-labelledby", "dropdownMenu222");
       dropdown.appendChild(secondDropdown);
-        
+      readPlaylists(songCount, trackId);  
         songCount ++;
     }
 
@@ -213,7 +214,7 @@ function deleteTrack(id, playlistId) {
   
   }
 
-  function readPlaylists() {
+  function readPlaylists(songCount, trackId) {
     fetch('http://localhost:8082/playlists/read')
      .then(
        function(response) {
@@ -226,7 +227,7 @@ function deleteTrack(id, playlistId) {
          // Examine the text in the response
          response.json().then(function(data) {
            console.log(data);
-           addPlaylists(data);
+           addPlaylists(data, songCount, trackId);
          });
        }
      )
@@ -235,8 +236,8 @@ function deleteTrack(id, playlistId) {
      });
    }
   
-   function addPlaylists(data) {
-    let find = document.getElementById("second_dropdown");
+   function addPlaylists(data, songCount, trackId) {
+    let find = document.getElementById("second_dropdown"+ songCount);
     for (let key of data) {
       console.log(key);
       let selectPlaylist = document.createElement("a");
@@ -245,10 +246,35 @@ function deleteTrack(id, playlistId) {
       selectPlaylist.textContent = key['name'];
       selectPlaylist.addEventListener("click", function(stop){
         stop.preventDefault();  
-        addTrack(data['tracks'][key]['id'], playlistId);    
+        addTrack(trackId, key['id']);    
       })
-      find.appendChild(selectPlaylist);
-
-      
+      find.appendChild(selectPlaylist);   
     }
    }
+
+function addTrack(trackId, playlistId){
+  fetch('http://localhost:8082/playlists/add/' + playlistId+'/'+trackId,{
+    method: 'post',
+    headers: {
+      "Content-type": "application/json",
+      "token": "iJrzsalBq6"
+    },
+  })
+  .then(
+    function(response) {
+      if (response.status !== 202) {
+        console.log('Looks like there was a problem. Status Code: ' +
+          response.status);
+        return;
+      }
+
+      // Examine the text in the response
+      response.json().then(function(data) {
+        console.log(data);
+      });
+    }
+  )
+  .catch(function(err) {
+    console.log('Fetch Error :-S', err);
+  });
+}
