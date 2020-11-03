@@ -510,3 +510,22 @@ padding-left: 2%;
   color: #444;
   margin-left: 20px;
 }
+
+#image_album_viewTrack {
+  width: 95%;
+  position: sticky;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 2%;
+  margin-top: 10%;
+}
+
+#sidebar{
+  height: 90%;
+  width: 30%;
+  position: fixed;
+  z-index: 1;
+  top: 10%;
+  left: 0;
+  overflow-x: hidden;
+  background-color: lightgray;
+}

@@ -49,6 +49,7 @@ public class Track {
     // in seconds
     private int duration;
 
+    @Size(max = 6000)
     private String lyrics;
 
     public Track() {
@@ -57,7 +58,7 @@ public class Track {
     }
 
     public Track(long id, @NotNull @Size(max = 100) String name, Album album, List<Playlist> playlists, int duration,
-            String lyrics) {
+    		@Size(max = 6000) String lyrics) {
         super();
         this.id = id;
         this.name = name;

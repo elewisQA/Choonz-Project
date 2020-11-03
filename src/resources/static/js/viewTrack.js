@@ -34,16 +34,26 @@ function viewTrack(data) {
     let find = document.getElementById("main_info_track");
     getDetails(albumId)
 
+    let side = document.getElementById("sidebar");
     let trackDuration = document.createElement("p");
     trackDuration.id = "trackDuration";
     trackDuration.textContent = "Duration: " + data["duration"];
-    find.appendChild(trackDuration);
+    side.appendChild(trackDuration);
 
     let trackContainer = document.getElementById("track_info_container");
     let trackName = document.createElement("h2");
-    trackName.style = "font-size: 45px;";
+    trackName.style = "font-size: 45px; text-align: center;";
     trackName.textContent = data["name"];
     trackContainer.appendChild(trackName);
+
+    let lyrics = document.createElement("p");
+    let myLyrics = data["lyrics"].replace(/#0/g, '<br />');
+    // console.log(data["lyrics"]);
+    // console.log(myLyrics);
+    lyrics.style = "text-align: center;";
+    lyrics.innerHTML = myLyrics;
+    trackContainer.appendChild(lyrics);
+
     find.appendChild(trackContainer);
 }
 
@@ -72,10 +82,10 @@ function getDetails(albumId) {
    }
    
    function addDetails(data){
-        let find = document.getElementById("main_info_track");
+        let find = document.getElementById("sidebar");
         let image = document.createElement("img");
         image.src = data['cover'];
-        image.id = "image_album";
+        image.id = "image_album_viewTrack";
         find.appendChild(image);
 
         let br = document.createElement("br");
