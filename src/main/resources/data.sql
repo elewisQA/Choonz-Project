@@ -81,6 +81,7 @@ INSERT INTO USER(ID, USERNAME, PASSWORD) VALUES (1, 'test', 'password');
 INSERT INTO PLAYLIST VALUES (1, 'https://i.pinimg.com/564x/38/41/48/384148d27fb01b2ff9455e05aa7b3557.jpg', 'Number one playlist!', 'Playlist One', 1);
 INSERT INTO PLAYLIST VALUES (2, 'https://i.pinimg.com/564x/d0/5b/98/d05b98026f6628b5f23c33c65a3d36b5.jpg', 'Second best playlist!', 'Playlist 2', 1);
 INSERT INTO PLAYLIST VALUES (3, 'https://images.ctfassets.net/cnu0m8re1exe/kz2EOc6Ql3Ls4DHgaZuV5/49800604018f6bfa14abde25e4f2cb06/broken-heart.jpg?w=650&h=433&fit=fill', 'When you feel down', 'HeartBreak', 1);
+
 /* Add some songs to a playlist */ 
 INSERT INTO track_playlists VALUES(1, 1);
 INSERT INTO track_playlists VALUES(11, 1);
