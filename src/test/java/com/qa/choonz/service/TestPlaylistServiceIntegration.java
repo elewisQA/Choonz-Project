@@ -1,14 +1,10 @@
 package com.qa.choonz.service;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.assertj.core.api.Assertions.assertThatIllegalStateException;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
-
-import javax.print.DocFlavor.SERVICE_FORMATTED;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -31,11 +27,11 @@ class TestPlaylistServiceIntegration {
 	@Autowired
 	private PlaylistService service;
 	
-	@Autowired
-	private TrackService tService;
-	
-	@Autowired
-	private TrackRepository tRepo;
+//	@Autowired
+//	private TrackService tService;
+//	
+//	@Autowired
+//	private TrackRepository tRepo;
 	
 	@Autowired
 	private PlaylistRepository repo;
@@ -48,9 +44,9 @@ class TestPlaylistServiceIntegration {
 		return this.modelMapper.map(playlist, PlaylistDTO.class);
 	}
 	
-	private TrackDTO TmapToDTO(Track track) {
-		return this.modelMapper.map(track, TrackDTO.class);
-	}
+//	private TrackDTO TmapToDTO(Track track) {
+//		return this.modelMapper.map(track, TrackDTO.class);
+//	}
 	
 	//--[ Set-up Test Variables ]--
 	private Long id;
