@@ -38,7 +38,8 @@ function addPlaylist(playlistName, playlistPic, playlistDesc) {
     fetch('http://localhost:8082/playlists/create', {
         method: 'post',
         headers: {
-              "Content-type": "application/json"
+              "Content-type": "application/json",
+              "token": "ZlIPk78cDh"
         },
         body:json = JSON.stringify({
             "name": playlistName,
@@ -50,7 +51,7 @@ function addPlaylist(playlistName, playlistPic, playlistDesc) {
         .then(json)
         .then(function (data) {
             console.log('Request succeeded with JSON response', data);
-            // window.location.href = "albums.html";
+            window.location.href = "playlists.html";
         })
         .catch(function (error) {
             console.log('Request failed', error);
