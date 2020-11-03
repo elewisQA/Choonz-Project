@@ -66,7 +66,7 @@ class TestUserControllerUnit {
     	this.userList.add(testUser);
     	this.userDTO = this.mapToDTO(testUser);
     	
-    	this.token = AuthUtils.newToken(this.id).toString();
+    	this.token = AuthUtils.newToken(this.id);
 //    	this.token = AuthUtils.
     }
     
