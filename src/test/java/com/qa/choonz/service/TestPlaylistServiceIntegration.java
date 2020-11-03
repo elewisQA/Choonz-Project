@@ -92,6 +92,16 @@ class TestPlaylistServiceIntegration {
 	}
 	
 	@Test
+	void testAddTrack() {
+		
+	}
+	
+	@Test
+	void testRemoveTrack() {
+		
+	}
+	
+	@Test
 	void testUpdate() throws Exception {
 		assertThat(this.playlistDTOWithId.getName())
 		.isEqualTo(this.service

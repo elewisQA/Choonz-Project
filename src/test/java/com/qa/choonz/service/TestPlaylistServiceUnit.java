@@ -96,6 +96,16 @@ class TestPlaylistServiceUnit {
     }
     
     @Test
+	void testAddTrack() {
+		
+	}
+	
+	@Test
+	void testRemoveTrack() {
+		
+	}
+    
+    @Test
     void updateTest() {
     	Playlist playlist = new Playlist(this.id,this.name,this.description,this.artwork,this.tracks, this.testUser);
     	

@@ -118,6 +118,16 @@ class TestPlaylistControllerIntegration {
     }
     
     @Test
+	void testAddTrack() {
+		
+	}
+	
+	@Test
+	void testRemoveTrack() {
+		
+	}
+    
+    @Test
     void testUpdate() throws Exception{
     	Playlist newPlaylist = new Playlist();
     	newPlaylist.setId(this.id);
