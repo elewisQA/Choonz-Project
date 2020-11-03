@@ -7,6 +7,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
 import com.qa.choonz.exception.PlaylistNotFoundException;
+import com.qa.choonz.exception.TrackNotFoundException;
 import com.qa.choonz.persistence.domain.Playlist;
 import com.qa.choonz.persistence.domain.Track;
 import com.qa.choonz.persistence.repository.PlaylistRepository;
@@ -36,10 +37,6 @@ public class PlaylistService {
         return this.mapper.map(playlistDTO, Playlist.class);
     }
     
-    private Track mapFromTrackDTO(TrackDTO trackDTO) {
-        return this.mapper.map(trackDTO, Track.class);
-    }
-
     public PlaylistDTO create(Playlist playlist) {
         Playlist created = this.repo.save(playlist);
         return this.mapToDTO(created);
@@ -78,15 +75,19 @@ public class PlaylistService {
     }
     
     public PlaylistDTO addTrack(long playlistId,long trackId) {
-    	TrackService trackService = new TrackService(trackRepo,mapper);
-    	TrackDTO getTrackDTO = trackService.read(trackId);
-    	Track getTrack = this.mapFromTrackDTO(getTrackDTO);
+    	Track getTrack = this.trackRepo.findById(trackId).orElseThrow(TrackNotFoundException::new);
     	
     	PlaylistDTO readPlaylist = read(playlistId);
     	Playlist playlist = this.mapFromDTO(readPlaylist);
     	List<Track> tracks = playlist.getTracks();
+    	List<Playlist> trackPlaylists = getTrack.getPlaylists();
+
     	tracks.add(getTrack);
+    	trackPlaylists.add(playlist);
+    	playlist.setTracks(tracks);
+    	
     	Playlist added = this.repo.save(playlist);
+    	Track updated = this.trackRepo.save(getTrack);
     	
     	return this.mapToDTO(added);
     }
@@ -95,11 +96,13 @@ public class PlaylistService {
     	PlaylistDTO readPlaylist = read(playlistId);
     	Playlist playlist = this.mapFromDTO(readPlaylist);
     	List<Track> tracks = playlist.getTracks();
+    	
     	for(Track track : tracks) {
     		if(track.getId() == trackId) {
     			tracks.remove(track);
     		}
     	}
+    	playlist.setTracks(tracks);
     	Playlist removed = this.repo.save(playlist);
     	
     	return this.mapToDTO(removed);
