@@ -42,10 +42,13 @@ class TestPlaylistServiceIntegration {
 	
 	//--[ Set-up Test Variables ]--
 	private Long id;
+	private Long trackId = 1L;
 	private final String NAME = "Playlist Tree";
 	private final String DESC = "This is a test playlist.";
 	private final String ART = "../";
 	private List<Track> tracks;
+	private List<Track> testTracks;
+	private Track testTrack;
 	private User testUser;
 	private Playlist testPlaylist;
 	private Playlist testPlaylistWithId;
@@ -57,6 +60,15 @@ class TestPlaylistServiceIntegration {
 	void init() {
 		this.repo.deleteAll();
 		tracks = new ArrayList<Track>();
+		
+		// Making track list to use for add / remove tests
+				this.testTracks = new ArrayList<Track>();
+				this.testTrack = new Track();
+				this.testTrack.setId(this.trackId);
+				this.testTrack.setName("testtrackname");
+				this.testTrack.setLyrics("testtrcklyrics");
+				this.testTrack.setDuration(5);
+				this.testTracks.add(testTrack);
 		// Instantiate the test-playlist
 		testPlaylist = new Playlist();
 		testPlaylist.setName(NAME);
@@ -92,6 +104,22 @@ class TestPlaylistServiceIntegration {
 		assertThat(Stream.of(this.playlistDTOWithId)
 				.collect(Collectors.toList()))
 		.isEqualTo(this.service.read());
+	}
+	
+	@Test
+	void testAddTrack() throws Exception {
+//		tService.create(this.testTrack);
+//		playlistDTOWithId.setTracks(testTracks);
+//		service.addTrack(this.id, this.trackId);
+		assertThat(this.playlistDTOWithId.getTracks().size() + 1)
+		.isEqualTo(this.service.addTrack(this.id, this.trackId).getTracks().size());
+	}
+	
+	@Test
+	void testRemoveTrack() throws Exception {
+		assertThat(this.playlistDTOWithId.getTracks().size() - 1)
+		.isEqualTo(this.service.removeTrack(this.id, this.trackId).getTracks().size());
+		
 	}
 	
 	@Test
