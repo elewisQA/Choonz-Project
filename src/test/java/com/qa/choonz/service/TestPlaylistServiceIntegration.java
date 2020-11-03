@@ -32,6 +32,9 @@ class TestPlaylistServiceIntegration {
 	private PlaylistRepository repo;
 	
 	@Autowired
+	private TrackRepository tRepo;
+	
+	@Autowired
 	private ModelMapper modelMapper;
 
 	
@@ -42,13 +45,14 @@ class TestPlaylistServiceIntegration {
 	
 	//--[ Set-up Test Variables ]--
 	private Long id;
-	private Long trackId = 1L;
+	private Long trackId;
 	private final String NAME = "Playlist Tree";
 	private final String DESC = "This is a test playlist.";
 	private final String ART = "../";
 	private List<Track> tracks;
 	private List<Track> testTracks;
 	private Track testTrack;
+	private Track testTrackWithId;
 	private User testUser;
 	private Playlist testPlaylist;
 	private Playlist testPlaylistWithId;
@@ -64,11 +68,15 @@ class TestPlaylistServiceIntegration {
 		// Making track list to use for add / remove tests
 				this.testTracks = new ArrayList<Track>();
 				this.testTrack = new Track();
-				this.testTrack.setId(this.trackId);
+//				this.testTrack.setId(this.trackId);
 				this.testTrack.setName("testtrackname");
 				this.testTrack.setLyrics("testtrcklyrics");
 				this.testTrack.setDuration(5);
+//				this.testTrackWithId = this.tRepo.save(testTrack);
+//				this.trackId = this.testTrackWithId.getId();
 				this.testTracks.add(testTrack);
+				
+				
 		// Instantiate the test-playlist
 		testPlaylist = new Playlist();
 		testPlaylist.setName(NAME);

@@ -20,6 +20,7 @@ import com.qa.choonz.persistence.domain.Playlist;
 import com.qa.choonz.persistence.domain.Track;
 import com.qa.choonz.persistence.domain.User;
 import com.qa.choonz.persistence.repository.PlaylistRepository;
+import com.qa.choonz.persistence.repository.TrackRepository;
 import com.qa.choonz.rest.dto.PlaylistDTO;
 
 @SpringBootTest
@@ -30,6 +31,9 @@ class TestPlaylistServiceUnit {
 	
 	@MockBean
 	private PlaylistRepository repo;
+	
+	@MockBean
+	private TrackRepository tRepo;
 	
 	@MockBean
 	private ModelMapper modelMapper;
@@ -43,6 +47,7 @@ class TestPlaylistServiceUnit {
     private Playlist testPlaylistWithId;
     private PlaylistDTO playlistDTO;
     private User testUser;
+    private Track testTrack;
     
     final Long id = 1L;
     final String name = "Tunes";
@@ -93,6 +98,21 @@ class TestPlaylistServiceUnit {
         assertThat(this.service.read().isEmpty()).isFalse();
 
         verify(repo, times(1)).findAll();
+    }
+    
+    @Test
+    void addTrackTest() {
+//        Playlist playlist = new Playlist(this.id, this.name, this.description, this.artwork, this.tracks, this.testUser);
+//        
+//        PlaylistDTO playlistDTO = new PlaylistDTO(this.id,this.name,this.description,this.artwork,this.tracks, this.testUser);
+//        
+//        Playlist updatedPlaylist = new Playlist(this.id,
+        		
+    }
+    
+    @Test
+    void removeTrackTest() {
+        
     }
     
     @Test
