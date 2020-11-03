@@ -50,7 +50,8 @@ public class SearchController {
 		List<ArtistDTO> matchedArtists = new ArrayList<>();
 		List<ArtistDTO> allArtists = this.artistService.read();
 		for (ArtistDTO a: allArtists) {
-			if (a.getName().contains(query)) {
+//			if (a.getName().contains(query)) {
+			if (containsIgnoreCase(a.getName(), query)) {
 				matchedArtists.add(a);
 			}
 		}
@@ -62,7 +63,8 @@ public class SearchController {
 		List<AlbumDTO> matchedAlbums = new ArrayList<>();
 		List<AlbumDTO> allAlbums = this.albumService.read();
 		for (AlbumDTO a: allAlbums) {
-			if (a.getName().contains(query)) {
+//			if (a.getName().contains(query)) {
+			if (containsIgnoreCase(a.getName(), query)) {
 				matchedAlbums.add(a);
 			}
 		}
@@ -74,7 +76,8 @@ public class SearchController {
 		List<GenreDTO> matchedGenres = new ArrayList<>();
 		List<GenreDTO> allGenres = this.genreService.read();
 		for (GenreDTO g: allGenres) {
-			if (g.getName().contains(query)) {
+//			if (g.getName().contains(query)) {
+			if (containsIgnoreCase(g.getName(), query)) {
 				matchedGenres.add(g);
 			}
 		}
@@ -86,7 +89,8 @@ public class SearchController {
 		List<TrackDTO> matchedTracks = new ArrayList<>();
 		List<TrackDTO> allTracks = this.trackService.read();
 		for (TrackDTO t: allTracks) {
-			if (t.getName().contains(query)) {
+//			if (t.getName().contains(query)) {
+			if (containsIgnoreCase(t.getName(), query)) {
 				matchedTracks.add(t);
 			}
 		}
@@ -104,4 +108,8 @@ public class SearchController {
 		}
 		return new ResponseEntity<List<PlaylistDTO>>(matchedPlaylists, HttpStatus.FOUND);
 	}
+	
+	public static boolean containsIgnoreCase(String str, String subString) {
+        return str.toLowerCase().contains(subString.toLowerCase());
+    }
 }
