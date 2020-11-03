@@ -1,6 +1,7 @@
 package com.qa.choonz.rest.dto;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.ArrayList;
@@ -14,7 +15,7 @@ import com.qa.choonz.persistence.domain.Playlist;
 import com.qa.choonz.persistence.domain.Track;
 import com.qa.choonz.persistence.domain.User;
 
-public class TestPlaylistDTO {
+class TestPlaylistDTO {
 	
 	PlaylistDTO testPlaylist;
 	final long id = 1L;
@@ -38,14 +39,14 @@ public class TestPlaylistDTO {
 	}
 	
 	@Test
-	public void noArgsconstructorTest() {
+	void noArgsconstructorTest() {
 		Playlist emptyPlaylist = new Playlist();
 		
 		assertTrue(emptyPlaylist instanceof Playlist);
 	}
 	
 	@Test
-	public void allArgsconstructorTest() {
+	void allArgsconstructorTest() {
 		Playlist playlist = new Playlist(1L,"Choonz","Bangers","Picture",null, null);
 		assertTrue(playlist instanceof Playlist);
 	}
@@ -67,7 +68,7 @@ public class TestPlaylistDTO {
 	}
 	
 	@Test
-	public void getSetDescriptionTest() {
+	void getSetDescriptionTest() {
 		String newDesc = "Fresh tunes";
 		this.testPlaylist.setDescription(newDesc);
 		
@@ -75,7 +76,7 @@ public class TestPlaylistDTO {
 	}
 	
 	@Test
-	public void getSetArtworkTest() {
+	void getSetArtworkTest() {
 		String newArt = "Picture";
 		this.testPlaylist.setArtwork(newArt);
 		
@@ -94,18 +95,18 @@ public class TestPlaylistDTO {
 	// TODO Album getting / setting not yet implemented in PlaylistDTO
 	
 	@Test
-	public void toStringTests() {
-		assertTrue(this.testPlaylist.toString()
-				.equals("PlaylistDTO [id=1, name=Tunes, description=Bangers only, artwork=Arty, "
-						+ "tracks=[], user=User [id=null, username=null, password=null, playlists=[]]]"));
+	void toStringTests() {
+		assertEquals(this.testPlaylist.toString(),
+				"PlaylistDTO [id=1, name=Tunes, description=Bangers only, artwork=Arty, "
+						+ "tracks=[], user=User [id=null, username=null, password=null, playlists=[]]]");
 	}
 	
 	@Test
-	public void hashCodeTest() {		
+	void hashCodeTest() {		
 		PlaylistDTO playlist1 = new PlaylistDTO(1L,"Choonz","Bangers","Picture",null, null);
 		PlaylistDTO playlist2 = new PlaylistDTO(1L,"Choonz","Bangers","Picture",null, null);
 		
-		assertTrue(playlist1.hashCode() == playlist2.hashCode());
+		assertEquals(playlist1.hashCode(), playlist2.hashCode());
 	}
 	
 	@Test
@@ -119,8 +120,8 @@ public class TestPlaylistDTO {
 				this.testTracks,
 				this.testUser);
 		
-		assertTrue(!this.testPlaylist.equals(emptyPlaylist));
-		assertTrue(this.testPlaylist.equals(fullPlaylist));
+		assertNotEquals(this.testPlaylist, emptyPlaylist);
+		assertEquals(this.testPlaylist, fullPlaylist);
 	}
 	
 	@AfterEach

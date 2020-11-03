@@ -5,6 +5,7 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -15,7 +16,7 @@ import org.junit.jupiter.api.Test;
 import com.qa.choonz.persistence.domain.Playlist;
 import com.qa.choonz.persistence.domain.User;
 
-public class TestUserDTO {
+class TestUserDTO {
 	//--[ Test Variables ]--
 	UserDTO testUserDTO;
 	final Long id = 1L;
@@ -35,14 +36,14 @@ public class TestUserDTO {
 	}
 	
 	@Test
-	public void testZeroArgsConstructor() {
+	void testZeroArgsConstructor() {
 		UserDTO newUser = new UserDTO();
 		
 		assertTrue(newUser instanceof UserDTO);
 	}
 	
 	@Test
-	public void testAllArgsConstructor() {
+	void testAllArgsConstructor() {
 		UserDTO newUser = new UserDTO(
 				this.id,
 				this.username,
@@ -92,7 +93,7 @@ public class TestUserDTO {
 				this.username,
 				this.pass,
 				this.playlists);
-		assertFalse(this.testUserDTO.equals(emptyUser));
+		assertNotEquals(this.testUserDTO, emptyUser);
 		assertEquals(fullUser, this.testUserDTO);
 	}
 	
