@@ -47,7 +47,7 @@ class TestTrackControllerUnit {
 	private final String name = "Song";
 	private final Album album = null;
 	private final List<Playlist> playlist = null;
-	private final int duration = 180;
+	private final Float duration = 1.8F;
 	private final String lyrics = "Lyrics";
 
     @BeforeEach

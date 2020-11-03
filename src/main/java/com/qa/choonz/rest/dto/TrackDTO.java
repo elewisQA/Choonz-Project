@@ -12,14 +12,14 @@ public class TrackDTO {
     private String name;
     private Album album;
     private List<Playlist> playlists;
-    private int duration;
+    private Float duration;
     private String lyrics;
 
     public TrackDTO() {
         super();
     }
 
-    public TrackDTO(long id, String name, Album album, List<Playlist> playlists, int duration, String lyrics) {
+    public TrackDTO(long id, String name, Album album, List<Playlist> playlists, Float duration, String lyrics) {
     	super();
     	this.id = id;
     	this.name = name;
@@ -62,11 +62,11 @@ public class TrackDTO {
 		this.playlists = playlists;
 	}
 
-	public int getDuration() {
+	public Float getDuration() {
 		return duration;
 	}
 
-	public void setDuration(int duration) {
+	public void setDuration(Float duration) {
 		this.duration = duration;
 	}
 

@@ -22,7 +22,7 @@ class TestTrackDTO {
     final String name="Song";
     final Album album=null;
     private List<Playlist> playlists;
-    final int duration=180;
+    final Float duration = 1.80F;
     final String lyrics="Lyrics";
     
 	@BeforeEach
@@ -50,7 +50,7 @@ class TestTrackDTO {
 		String newName = "New song";
 		Album newAlbum = null;
 		List<Playlist> newPlaylists = new ArrayList<Playlist>();
-		int newDuration = 240;
+		Float newDuration = 2.4F;
 		String newLyrics = "New lyrics";
 		TrackDTO newTestTrack = new TrackDTO(
 				newId, 
@@ -97,7 +97,7 @@ class TestTrackDTO {
 	
 	@Test
 	void getSetDurationTest() {
-		int newDuration = 240;
+		Float newDuration = 2.4F;
 		this.testTrack.setDuration(newDuration);
 
 		assertEquals(newDuration,this.testTrack.getDuration());
@@ -112,16 +112,15 @@ class TestTrackDTO {
 	}
 	
 	@Test
-	void toStringTests() {
-		System.out.println(this.testTrack.toString());
-		assertEquals("TrackDTO [id=1, name=Song, album=null, playlist=[], duration=180, lyrics=Lyrics]",
-				this.testTrack.toString());
+	public void toStringTests() {
+		assertTrue(this.testTrack.toString()
+				.equals("TrackDTO [id=1, name=Song, album=null, playlist=[], duration=1.8, lyrics=Lyrics]"));
 	}
 	
 	@Test
-	void hashCodeTest() {		
-		TrackDTO track1 = new TrackDTO(1L,"Pop",null,null,180,"Lyrics");
-		TrackDTO track2 = new TrackDTO(1L,"Pop",null,null,180,"Lyrics");
+	public void hashCodeTest() {		
+		TrackDTO track1 = new TrackDTO(1L,"Pop",null,null,1.8F,"Lyrics");
+		TrackDTO track2 = new TrackDTO(1L,"Pop",null,null,1.8F,"Lyrics");
 		
 		assertEquals(track1.hashCode(), track2.hashCode());
 	}
