@@ -270,13 +270,18 @@ body {
   color: rgb(72, 86, 97);
 }
 
-#image_album {
+#image_album, #image_genre {
   width: 30%;
   position: sticky;
   top: 24%;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   border-radius: 2%;
   margin-top: 5%;
+}
+#img_track_album{
+  width: 15%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 2%;
 }
 
 #text_container {
