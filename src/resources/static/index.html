@@ -22,7 +22,7 @@
     <div class="collapse navbar-collapse" id="collapsingNavbar">
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
             <li class="nav-item">
-                <a class="nav-link" href="/tracks">Featured Tracks</a>
+                <a class="nav-link" href="tracks.html">Featured Tracks</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="artists.html">Artists</a>
@@ -63,7 +63,7 @@
                 <h2>LOGIN</h2>
                 <input type="text" placeholder="Username">
                 <input type="password" placeholder="Password">
-                <input type="button" value="Login">
+                <input type="button" value="Login" onclick="javascript:getToken();">
                 <a href="">Forgot password?</a>
             </div>
         </div>
@@ -116,6 +116,7 @@
 
 <!-- /Register -->
 
+<script src="https://cdn.auth0.com/js/auth0-spa-js/1.9/auth0-spa-js.production.js"></script>
 <script src="../static/js/front.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

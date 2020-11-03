@@ -30,7 +30,7 @@ function populate(data) {
     let find = document.getElementById("main_info");
 
     let tableContainer = document.createElement("div");
-    tableContainer.id = "table_container";
+    tableContainer.id = "table_container_tracks";
     let table = document.createElement("table");
     table.className = "table table-hover";
     let tableBody = document.createElement("tbody");
@@ -91,6 +91,7 @@ function populate(data) {
       
      let songIcon = document.createElement("td");
      let dropdownMenu = document.createElement("div");
+
      dropdownMenu.className="dropdown";
      songIcon.appendChild(dropdownMenu);
       
@@ -114,6 +115,11 @@ function populate(data) {
       let linkPlaylist = document.createElement("a");
       linkPlaylist.href="#";
       linkPlaylist.className = "dropdown-item";
+      linkPlaylist.id = "dropdownMenu222";
+      linkPlaylist.type = "button";
+      linkPlaylist.setAttribute("data-toggle", "dropdown");
+      linkPlaylist.setAttribute("aria-haspopup", "true");
+      linkPlaylist.setAttribute("aria-expanded", "false");
       linkPlaylist.textContent = "Add to Playlist";
       dropdown.appendChild(linkPlaylist);
 
@@ -124,6 +130,14 @@ function populate(data) {
       let iconPlaylist = document.createElement("i");
       iconPlaylist.className = "fas fa-music";
       spanPlaylist.appendChild(iconPlaylist);
+
+      let secondDropdown = document.createElement("div");
+      secondDropdown.className = "dropdown-menu";
+      secondDropdown.id ="second_dropdown" + count;
+      secondDropdown.setAttribute("aria-labelledby", "dropdownMenu222");
+      dropdown.appendChild(secondDropdown);
+      readPlaylists(count);
+
       count ++;
     }
 }
@@ -173,10 +187,44 @@ function addArtist(data, count){
         let find = document.getElementById("trackName" + count);
         let br = document.createElement("br");
         let artistLink = document.createElement("a");
-        artistLink.style = "font-size: 14px; color: #444; margin-left: 20px;";
+        artistLink.style = "font-size: 14px; color: #444;";
         artistLink.href = "viewArtist.html?id=" + data['artist']['id'];
         artistLink.textContent = data['artist']['name'];
         find.appendChild(br);
         find.appendChild(artistLink);
         find.id = "done";  
 }
+
+function readPlaylists(songCount) {
+  fetch('http://localhost:8082/playlists/read')
+   .then(
+     function(response) {
+       if (response.status !== 200) {
+         console.log('Looks like there was a problem. Status Code: ' +
+           response.status);
+         return;
+       }
+ 
+       // Examine the text in the response
+       response.json().then(function(data) {
+         console.log(data);
+         addPlaylists(data, songCount);
+       });
+     }
+   )
+   .catch(function(err) {
+     console.log('Fetch Error :-S', err);
+   });
+ }
+
+ function addPlaylists(data, songCount) {
+  let find = document.getElementById("second_dropdown"+songCount);
+  for (let key of data) {
+    console.log(key);
+    let selectPlaylist = document.createElement("a");
+    selectPlaylist.className = "dropdown-item";
+    selectPlaylist.href="#";
+    selectPlaylist.textContent = key['name'];
+    find.appendChild(selectPlaylist);
+  }
+ }

@@ -3,7 +3,7 @@ for (let found of findId) {
     let id = found[1];
     console.log(id);
     getID(id);
-    readPlaylists();  
+      
  } 
 
 function getID(id) {
@@ -54,7 +54,7 @@ function populate(data) {
     linkArtist.appendChild(artist);
 
     let linkGenre = document.createElement("a");
-    linkGenre.href="#";
+    linkGenre.href="viewGenre.html?id=" + data['genre']['id'];
     let genre = document.createElement("p");
     genre.style = "font-size: 17px;";
     genre.textContent = data['genre']['name'];
@@ -165,10 +165,10 @@ function populate(data) {
 
       let secondDropdown = document.createElement("div");
       secondDropdown.className = "dropdown-menu";
-      secondDropdown.id ="second_dropdown"
+      secondDropdown.id ="second_dropdown" + songCount;
       secondDropdown.setAttribute("aria-labelledby", "dropdownMenu222");
       dropdown.appendChild(secondDropdown);
-
+      readPlaylists(songCount);
      songCount++;
     }
     //Delete album functionality for admin
@@ -183,6 +183,7 @@ function populate(data) {
     //   deleteAlbum(data['id']);    
     // })
     // findDelete.appendChild(deleteButton);
+    
 }
 
 function deleteTrack(id) {
@@ -203,7 +204,7 @@ function deleteAlbum(id) {
 
 }
 
-function readPlaylists() {
+function readPlaylists(songCount) {
   fetch('http://localhost:8082/playlists/read')
    .then(
      function(response) {
@@ -216,7 +217,7 @@ function readPlaylists() {
        // Examine the text in the response
        response.json().then(function(data) {
          console.log(data);
-         addPlaylists(data);
+         addPlaylists(data, songCount);
        });
      }
    )
@@ -225,8 +226,8 @@ function readPlaylists() {
    });
  }
 
- function addPlaylists(data) {
-  let find = document.getElementById("second_dropdown");
+ function addPlaylists(data, songCount) {
+  let find = document.getElementById("second_dropdown"+songCount);
   for (let key of data) {
     console.log(key);
     let selectPlaylist = document.createElement("a");
