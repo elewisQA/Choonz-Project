@@ -14,7 +14,6 @@ public class ArtistDTO {
 
     public ArtistDTO() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
     public ArtistDTO(long id, String name, String picture, List<Album> albums) {

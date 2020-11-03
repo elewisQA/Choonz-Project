@@ -17,7 +17,6 @@ import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 @Entity
@@ -53,7 +52,6 @@ public class Track {
 
     public Track() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
     public Track(long id, @NotNull @Size(max = 100) String name, Album album, List<Playlist> playlists, int duration,
