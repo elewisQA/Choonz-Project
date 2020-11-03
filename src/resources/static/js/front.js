@@ -55,42 +55,36 @@ function register() {
   return true; 
 } 
 
-var token_ // variable will store the token
-var userName = "test"; // app clientID
-var passWord = "password"; // app clientSecret
-var caspioTokenUrl = "http://localhost:8082/users/login"; // Your application token endpoint  
-var request = new XMLHttpRequest(); 
+function login() {
 
-function getToken(url, clientID, clientSecret) {
-    var key;           
-    request.open("POST", url, true); 
-    request.setRequestHeader("Content-type", "application/json");
-    request.send("grant_type=client_credentials&client_id="+clientID+"&"+"client_secret="+clientSecret); // specify the credentials to receive the token on request
-    request.onreadystatechange = function () {
-        if (request.readyState == request.DONE) {
-            var response = request.responseText;
-            var obj = JSON.parse(response); 
-            key = obj.access_token; //store the value of the accesstoken
-            token_ = key; // store token in your global variable "token_" or you could simply return the value of the access token from the function
-            console.log("DONE");
+  fetch('http://localhost:8082/users/login', {
+      method: 'post',
+      headers: {
+           "Content-type": "application/json",
+           "username": "test",
+           "password": "password"
+      }
+      })
+      .then(
+        function(response) {
+          if (response.status !== 200) {
+            console.log('Looks like there was a problem. Status Code: ' +
+              response.status);
+            return;
+          }
+          response.json().then(function(success) {
+            if(success){
+              console.log(response);
+              console.log('Login successful');
+            }
+            else{
+              console.log("Login failed! Please check your login details.");
+            }
+          });
         }
-    }
+      )
+      .catch(function (error) {
+          console.log('Request failed', error);
+          console.log('Login failed');
+      });
 }
-// Get the token
-getToken(caspioTokenUrl, userName, passWord);
-
-// function CallWebAPI() {
-//   var request_ = new XMLHttpRequest();        
-//   var encodedParams = encodeURIComponent(params);
-//   request_.open("GET", "http://localhost:8082/users/login", true);
-//   request_.setRequestHeader("Authorization", "Bearer "+ token_);
-//   request_.send();
-//   request_.onreadystatechange = function () {
-//       if (request_.readyState == 4 && request_.status == 200) {
-//           var response = request_.responseText;
-//           var obj = JSON.parse(response); 
-//           // handle data as needed... 
-
-//       }
-//   }
-// } 
