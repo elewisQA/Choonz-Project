@@ -21,7 +21,7 @@ function artistSearch(query) {
 
             response.json().then(function (data) {
                 console.log(data);
-                let container = document.getElementById("artist_results");
+                let container = document.getElementById("artists");
                 for (let i = 0; i < data.length; i++) {
                     populateArtists(data[i], container);
                 }             
@@ -44,7 +44,7 @@ function albumSearch(query) {
 
             response.json().then(function (data) {
                 console.log(data);
-                let container = document.getElementById("album_results");
+                let container = document.getElementById("albums");
                 for (let i = 0; i < data.length; i++) {
                     populateAlbums(data[i], container);
                 }
@@ -67,7 +67,7 @@ function trackSearch(query) {
 
             response.json().then(function (data) {
                 console.log(data);    
-                let container = document.getElementById("track_results");    
+                let container = document.getElementById("tracks");    
                 for (let i = 0; i < data.length; i++) {
                     populateTracks(data[i], container);
                 }
@@ -90,7 +90,7 @@ function genreSearch(query) {
 
             response.json().then(function (data) {
                 console.log(data);    
-                let container = document.getElementById("genre_results");       
+                let container = document.getElementById("genres");       
                 for (let i = 0; i < data.length; i++) {
                     populateGenres(data[i], container);
                 }
@@ -113,7 +113,7 @@ function playlistSearch(query) {
 
             response.json().then(function (data) {
                 console.log(data);        
-                let container = document.getElementById("playlist_results");    
+                let container = document.getElementById("playlists");    
                 for (let i = 0; i < data.length; i++) {
                     populatePlaylists(data[i], container);
                 }
@@ -133,7 +133,7 @@ function populateArtists(artist, container) {
 
     // Setup Result Card 
     let card = document.createElement("div");
-    card.setAttribute("class", "card-text-center");
+    card.setAttribute("class", "card text-center");
 
     // Add Image
     let img = document.createElement("img");
@@ -143,12 +143,14 @@ function populateArtists(artist, container) {
 
     // Add Details about
     let cardText = document.createElement("div");
+    cardText.setAttribute("class", "card-body");
     let group = document.createElement("h5");
     group.innerHTML = "Artist";
     cardText.appendChild(group);
     let link = document.createElement("a");
     link.setAttribute("href", "viewArtist.html?id=" + artist['id']);
     let title = document.createElement("h5");
+    title.setAttribute("class", "card-title");
     title.innerHTML = artist['name'];
     link.appendChild(title);
     cardText.appendChild(link);
@@ -166,7 +168,7 @@ function populateAlbums(album, container) {
 
     // Setup Result Card 
     let card = document.createElement("div");
-    card.setAttribute("class", "card-text-center");
+    card.setAttribute("class", "card text-center");
 
     // Add Image
     let img = document.createElement("img");
@@ -176,12 +178,15 @@ function populateAlbums(album, container) {
 
     // Add Details about
     let cardText = document.createElement("div");
+    cardText.setAttribute("class", "card-body");
     let group = document.createElement("h5");
     group.innerHTML = "Album";
+    group.setAttribute("class", "card-title");
     cardText.appendChild(group);
     let link = document.createElement("a");
     link.setAttribute("href", "viewArtist.html?id=" + album['id']);
     let title = document.createElement("h5");
+    title.setAttribute("class", "card-title");
     title.innerHTML = album['name'];
     link.appendChild(title);
     cardText.appendChild(link);
@@ -199,7 +204,7 @@ function populateTracks(track, container) {
 
     // Setup Result Card 
     let card = document.createElement("div");
-    card.setAttribute("class", "card-text-center");
+    card.setAttribute("class", "card text-center");
 
     // Add Image
     let img = document.createElement("img");
@@ -212,10 +217,13 @@ function populateTracks(track, container) {
     let cardText = document.createElement("div");
     let group = document.createElement("h5");
     group.innerHTML = "Song";
+    group.setAttribute("class", "card-title");
     cardText.appendChild(group);
+    cardText.setAttribute("class", "card-body");
     let link = document.createElement("a");
     link.setAttribute("href", "viewArtist.html?id=" + track['id']);
     let title = document.createElement("h5");
+    title.setAttribute("class", "card-title");
     title.innerHTML = track['name'];
     link.appendChild(title);
     cardText.appendChild(link);
@@ -233,7 +241,7 @@ function populateGenres(genre, container) {
 
     // Setup Result Card 
     let card = document.createElement("div");
-    card.setAttribute("class", "card-text-center");
+    card.setAttribute("class", "card text-center");
 
     // Add Image
     let img = document.createElement("img");
@@ -245,10 +253,13 @@ function populateGenres(genre, container) {
     let cardText = document.createElement("div");
     let group = document.createElement("h5");
     group.innerHTML = "Genre";
+    group.setAttribute("class", "card-title");
     cardText.appendChild(group);
+    cardText.setAttribute("class", "card-body");
     let link = document.createElement("a");
     link.setAttribute("href", "viewArtist.html?id=" + genre['id']);
     let title = document.createElement("h5");
+    title.setAttribute("class", "card-title");
     title.innerHTML = genre['name'];
     link.appendChild(title);
     cardText.appendChild(link);
@@ -261,12 +272,13 @@ function populateGenres(genre, container) {
 
 function populatePlaylists(playlist, container) {
     // Column Organization
+    console.log(playlist['name']);
     let column = document.createElement("div");
     column.setAttribute("class", "col mb-4");
 
     // Setup Result Card 
     let card = document.createElement("div");
-    card.setAttribute("class", "card-text-center");
+    card.setAttribute("class", "card text-center");
 
     // Add Image
     let img = document.createElement("img");
@@ -278,10 +290,13 @@ function populatePlaylists(playlist, container) {
     let cardText = document.createElement("div");
     let group = document.createElement("h5");
     group.innerHTML = "Playlist";
+    group.setAttribute("class", "card-title");
     cardText.appendChild(group);
+    cardText.setAttribute("class", "card-body");
     let link = document.createElement("a");
     link.setAttribute("href", "viewArtist.html?id=" + playlist['id']);
     let title = document.createElement("h5");
+    title.setAttribute("class", "card-title");
     title.innerHTML = playlist['name'];
     link.appendChild(title);
     cardText.appendChild(link);
