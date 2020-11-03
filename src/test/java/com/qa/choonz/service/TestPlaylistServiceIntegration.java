@@ -53,6 +53,7 @@ class TestPlaylistServiceIntegration {
 	private List<Track> testTracks;
 	private Track testTrack;
 	private Track testTrackWithId;
+	private Track trackDTOWithId;
 	private User testUser;
 	private Playlist testPlaylist;
 	private Playlist testPlaylistWithId;
