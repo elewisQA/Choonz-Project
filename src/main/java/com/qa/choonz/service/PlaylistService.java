@@ -13,7 +13,6 @@ import com.qa.choonz.persistence.domain.Track;
 import com.qa.choonz.persistence.repository.PlaylistRepository;
 import com.qa.choonz.persistence.repository.TrackRepository;
 import com.qa.choonz.rest.dto.PlaylistDTO;
-import com.qa.choonz.rest.dto.TrackDTO;
 
 @Service
 public class PlaylistService {
@@ -85,6 +84,7 @@ public class PlaylistService {
     	tracks.add(getTrack);
     	trackPlaylists.add(playlist);
     	playlist.setTracks(tracks);
+    	getTrack.setPlaylists(trackPlaylists);
     	
     	Playlist added = this.repo.save(playlist);
     	Track updated = this.trackRepo.save(getTrack);
@@ -93,17 +93,22 @@ public class PlaylistService {
     }
     
     public PlaylistDTO removeTrack(long playlistId,long trackId) {
+    	Track getTrack = this.trackRepo.findById(trackId).orElseThrow(TrackNotFoundException::new);
+    	
     	PlaylistDTO readPlaylist = read(playlistId);
     	Playlist playlist = this.mapFromDTO(readPlaylist);
     	List<Track> tracks = playlist.getTracks();
+    	List<Playlist> trackPlaylists = getTrack.getPlaylists();
     	
-    	for(Track track : tracks) {
-    		if(track.getId() == trackId) {
-    			tracks.remove(track);
-    		}
+    	if(tracks.contains(getTrack)) {
+    		tracks.remove(getTrack);
     	}
     	playlist.setTracks(tracks);
+    	trackPlaylists.remove(playlist);
+    	getTrack.setPlaylists(trackPlaylists);
+    	
     	Playlist removed = this.repo.save(playlist);
+    	Track updated = this.trackRepo.save(getTrack);
     	
     	return this.mapToDTO(removed);
     }
