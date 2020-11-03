@@ -1,6 +1,7 @@
 package com.qa.choonz.service;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,8 +13,8 @@ import org.junit.jupiter.api.Test;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.test.mock.mockito.MockBean;
 
+import com.qa.choonz.exception.TrackNotFoundException;
 import com.qa.choonz.persistence.domain.Playlist;
 import com.qa.choonz.persistence.domain.Track;
 import com.qa.choonz.persistence.domain.User;
@@ -30,6 +31,9 @@ class TestPlaylistServiceIntegration {
 	
 	@Autowired
 	private PlaylistRepository repo;
+	
+    @Autowired
+    private TrackRepository trackRepo;
 	
 	@Autowired
 	private ModelMapper modelMapper;
@@ -56,6 +60,7 @@ class TestPlaylistServiceIntegration {
 	@BeforeEach
 	void init() {
 		this.repo.deleteAll();
+		
 		tracks = new ArrayList<Track>();
 		// Instantiate the test-playlist
 		testPlaylist = new Playlist();
@@ -109,4 +114,24 @@ class TestPlaylistServiceIntegration {
 		assertThat(this.service.delete(this.id)).isTrue();
 	}
 	
+	@Test
+	void testAddTrack(){
+    	Track track = this.trackRepo.findById(2L).orElseThrow(TrackNotFoundException::new);
+    	List<Track> trackList = new ArrayList<>();
+    	List<Playlist> playlistList = new ArrayList<>();
+    	playlistList.add(testPlaylist);
+    	track.setPlaylists(playlistList);
+    	trackList.add(track);
+    	testPlaylist.setTracks(trackList);
+    	
+    	assertEquals(testPlaylist.getName(),this.service.addTrack(id, track.getId()).getName());
+	}
+	
+	@Test
+	void testRemoveTrack(){  
+		Track track = this.trackRepo.findById(2L).orElseThrow(TrackNotFoundException::new);
+		
+		assertEquals(testPlaylist.getName(),this.service.removeTrack(id, track.getId()).getName());
+	}
+
 }
