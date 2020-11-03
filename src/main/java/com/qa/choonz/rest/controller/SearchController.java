@@ -102,7 +102,8 @@ public class SearchController {
 		List<PlaylistDTO> matchedPlaylists = new ArrayList<>();
 		List<PlaylistDTO> allPlaylists = this.playlistService.read();
 		for (PlaylistDTO p: allPlaylists) {
-			if (p.getName().contains(query)) {
+//			if (p.getName().contains(query)) {
+			if (containsIgnoreCase(p.getName(), query)) {
 				matchedPlaylists.add(p);
 			}
 		}
