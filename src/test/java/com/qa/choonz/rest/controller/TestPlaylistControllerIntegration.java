@@ -168,7 +168,7 @@ class TestPlaylistControllerIntegration {
     	testPlaylist.setTracks(trackList);
     	
         String output = this.mock
-                .perform(request(HttpMethod.POST, "/playlists/add/" + this.id + "/" + 2L).accept(MediaType.APPLICATION_JSON)
+                .perform(request(HttpMethod.POST, "/playlists/add/" + this.id + "/" + 2L).header("token", token).accept(MediaType.APPLICATION_JSON)
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(this.objectMapper.writeValueAsString(testPlaylist)))
                 .andExpect(status().isAccepted()).andReturn().getResponse().getContentAsString();
@@ -181,7 +181,7 @@ class TestPlaylistControllerIntegration {
     	Track track = this.trackRepo.findById(2L).orElseThrow(TrackNotFoundException::new);
     	
         String output = this.mock
-                .perform(request(HttpMethod.POST, "/playlists/remove/" + this.id + "/" + 2L).accept(MediaType.APPLICATION_JSON)
+                .perform(request(HttpMethod.POST, "/playlists/remove/" + this.id + "/" + 2L).header("token", token).accept(MediaType.APPLICATION_JSON)
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(this.objectMapper.writeValueAsString(testPlaylist)))
                 .andExpect(status().isAccepted()).andReturn().getResponse().getContentAsString();
