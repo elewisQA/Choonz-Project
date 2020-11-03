@@ -61,7 +61,7 @@ function login() {
       method: 'post',
       headers: {
            "Content-type": "application/json",
-           "username": "test",
+           "username": "username",
            "password": "password"
       }
       })
