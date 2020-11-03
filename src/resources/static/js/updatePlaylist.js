@@ -50,7 +50,7 @@ function validateForm(){
            method: 'post',
            headers: {
                 "Content-type": "application/json",
-                "token": "ZlIPk78cDh"
+                "token": "IKnnHQY5av"
            },
            body:json = JSON.stringify({
             "name": playlistName,

@@ -39,7 +39,7 @@ function addPlaylist(playlistName, playlistPic, playlistDesc) {
         method: 'post',
         headers: {
               "Content-type": "application/json",
-              "token": "ZlIPk78cDh"
+              "token": "IKnnHQY5av"
         },
         body:json = JSON.stringify({
             "name": playlistName,
@@ -51,7 +51,7 @@ function addPlaylist(playlistName, playlistPic, playlistDesc) {
         .then(json)
         .then(function (data) {
             console.log('Request succeeded with JSON response', data);
-            window.location.href = "playlists.html";
+            //window.location.href = "playlists.html";
         })
         .catch(function (error) {
             console.log('Request failed', error);
