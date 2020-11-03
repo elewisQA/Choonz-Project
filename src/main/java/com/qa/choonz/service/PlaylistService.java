@@ -74,41 +74,45 @@ public class PlaylistService {
     }
     
     public PlaylistDTO addTrack(long playlistId,long trackId) {
-    	Track getTrack = this.trackRepo.findById(trackId).orElseThrow(TrackNotFoundException::new);
+    	Track track = this.trackRepo.findById(trackId).orElseThrow(TrackNotFoundException::new);
     	
-    	PlaylistDTO readPlaylist = read(playlistId);
-    	Playlist playlist = this.mapFromDTO(readPlaylist);
+    	Playlist playlist = this.repo.findById(playlistId).orElseThrow(PlaylistNotFoundException::new);
+    	
     	List<Track> tracks = playlist.getTracks();
-    	List<Playlist> trackPlaylists = getTrack.getPlaylists();
+    	List<Playlist> trackPlaylists = track.getPlaylists();
 
-    	tracks.add(getTrack);
+    	tracks.add(track);
     	trackPlaylists.add(playlist);
     	playlist.setTracks(tracks);
-    	getTrack.setPlaylists(trackPlaylists);
+    	track.setPlaylists(trackPlaylists);
     	
     	Playlist added = this.repo.save(playlist);
-    	Track updated = this.trackRepo.save(getTrack);
+    	Track updated = this.trackRepo.save(track);
     	
     	return this.mapToDTO(added);
     }
     
     public PlaylistDTO removeTrack(long playlistId,long trackId) {
-    	Track getTrack = this.trackRepo.findById(trackId).orElseThrow(TrackNotFoundException::new);
+    	Track track = this.trackRepo.findById(trackId).orElseThrow(TrackNotFoundException::new);
     	
-    	PlaylistDTO readPlaylist = read(playlistId);
-    	Playlist playlist = this.mapFromDTO(readPlaylist);
+    	Playlist playlist = this.repo.findById(playlistId).orElseThrow(PlaylistNotFoundException::new);
+    	
     	List<Track> tracks = playlist.getTracks();
-    	List<Playlist> trackPlaylists = getTrack.getPlaylists();
+    	List<Playlist> trackPlaylists = track.getPlaylists();
     	
-    	if(tracks.contains(getTrack)) {
-    		tracks.remove(getTrack);
+    	if(tracks.contains(track)) {
+    		tracks.remove(track);
     	}
+    	
+    	if(trackPlaylists.contains(playlist)) {
+    		trackPlaylists.remove(playlist);
+    	}
+    	
     	playlist.setTracks(tracks);
-    	trackPlaylists.remove(playlist);
-    	getTrack.setPlaylists(trackPlaylists);
+    	track.setPlaylists(trackPlaylists);
     	
     	Playlist removed = this.repo.save(playlist);
-    	Track updated = this.trackRepo.save(getTrack);
+    	Track updated = this.trackRepo.save(track);
     	
     	return this.mapToDTO(removed);
     }
