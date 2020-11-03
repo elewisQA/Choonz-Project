@@ -1,6 +1,7 @@
 package com.qa.choonz.rest.dto;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.ArrayList;
@@ -12,7 +13,7 @@ import org.junit.jupiter.api.Test;
 
 import com.qa.choonz.persistence.domain.Album;
 
-public class TestGenreDTO {
+class TestGenreDTO {
 
 	GenreDTO testGenre;
     final long id = 1L;
@@ -73,7 +74,7 @@ public class TestGenreDTO {
 	}
 	
 	@Test
-	public void getSetDescriptionTest() {
+	void getSetDescriptionTest() {
 		String newDesc = "Cheese music";
 		this.testGenre.setDescription(newDesc);
 		
@@ -92,16 +93,16 @@ public class TestGenreDTO {
 	
 	@Test
 	void testToString() {
-		assertTrue(this.testGenre.toString()
-				.equals("GenreDTO [id=1, name=Pop, picture=../, description=Pop music, albums=[]]"));
+		assertEquals(this.testGenre.toString(),
+				"GenreDTO [id=1, name=Pop, picture=../, description=Pop music, albums=[]]");
 	}
 	
 	@Test
-	public void hashCodeTest() {		
+	void hashCodeTest() {		
 		GenreDTO genre1 = new GenreDTO(1L,"Pop", "/pic/1", "Pop music",null);
 		GenreDTO genre2 = new GenreDTO(1L,"Pop", "/pic/1", "Pop music",null);
 		
-		assertTrue(genre1.hashCode() == genre2.hashCode());
+		assertEquals(genre1.hashCode(), genre2.hashCode());
 	}
 	
 	@Test
@@ -114,8 +115,8 @@ public class TestGenreDTO {
 				this.description,
 				this.testAlbums);
 		
-		assertTrue(!this.testGenre.equals(emptyGenre));
-		assertTrue(this.testGenre.equals(fullGenre));
+		assertNotEquals(this.testGenre, emptyGenre);
+		assertEquals(this.testGenre, fullGenre);
 	}
 	
 	@AfterEach

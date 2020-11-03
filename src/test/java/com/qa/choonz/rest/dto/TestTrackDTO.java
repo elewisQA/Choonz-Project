@@ -1,6 +1,7 @@
 package com.qa.choonz.rest.dto;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 
@@ -14,7 +15,7 @@ import org.junit.jupiter.api.Test;
 import com.qa.choonz.persistence.domain.Album;
 import com.qa.choonz.persistence.domain.Playlist;
 
-public class TestTrackDTO {
+class TestTrackDTO {
 
 	TrackDTO testTrack;
     final long id=1L;
@@ -111,18 +112,18 @@ public class TestTrackDTO {
 	}
 	
 	@Test
-	public void toStringTests() {
+	void toStringTests() {
 		System.out.println(this.testTrack.toString());
-		assertTrue(this.testTrack.toString()
-				.equals("TrackDTO [id=1, name=Song, album=null, playlist=[], duration=180, lyrics=Lyrics]"));
+		assertEquals(this.testTrack.toString(),
+				"TrackDTO [id=1, name=Song, album=null, playlist=[], duration=180, lyrics=Lyrics]");
 	}
 	
 	@Test
-	public void hashCodeTest() {		
+	void hashCodeTest() {		
 		TrackDTO track1 = new TrackDTO(1L,"Pop",null,null,180,"Lyrics");
 		TrackDTO track2 = new TrackDTO(1L,"Pop",null,null,180,"Lyrics");
 		
-		assertTrue(track1.hashCode() == track2.hashCode());
+		assertEquals(track1.hashCode(), track2.hashCode());
 	}
 	
 	@Test
@@ -136,8 +137,8 @@ public class TestTrackDTO {
 				this.duration,
 				this.lyrics);
 		
-		assertTrue(!this.testTrack.equals(emptyTrack));
-		assertTrue(this.testTrack.equals(fullTrack));
+		assertNotEquals(this.testTrack, emptyTrack);
+		assertEquals(this.testTrack, fullTrack);
 	}
 	
 	@AfterEach

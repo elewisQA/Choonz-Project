@@ -27,7 +27,7 @@ import com.qa.choonz.service.UserService;
 import com.qa.choonz.utils.AuthUtils;
 
 @SpringBootTest
-public class TestUserControllerUnit {
+class TestUserControllerUnit {
 
 	@Autowired
 	private UserController controller;

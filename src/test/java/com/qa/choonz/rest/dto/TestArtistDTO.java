@@ -1,6 +1,7 @@
 package com.qa.choonz.rest.dto;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.ArrayList;
@@ -12,7 +13,7 @@ import org.junit.jupiter.api.Test;
 
 import com.qa.choonz.persistence.domain.Album;
 
-public class TestArtistDTO {
+class TestArtistDTO {
 
 	ArtistDTO testArtist;
 	final Long id = 1l;
@@ -87,8 +88,8 @@ public class TestArtistDTO {
 				this.picture,
 				this.testAlbums);
 		
-		assertTrue(!this.testArtist.equals(emptyArtist));
-		assertTrue(this.testArtist.equals(fullArtist));
+		assertNotEquals(this.testArtist, emptyArtist);
+		assertEquals(this.testArtist, fullArtist);
 	}
 	
 	@Test
@@ -98,14 +99,14 @@ public class TestArtistDTO {
 				this.name, 
 				this.picture,
 				this.testAlbums);
-		assertTrue(this.testArtist.hashCode() == newArtist.hashCode());
+		assertEquals(this.testArtist.hashCode(), newArtist.hashCode());
 	}
 	
 	@Test
 	void testToString() {
 		System.out.println(this.testArtist.toString());
-		assertTrue(this.testArtist.toString()
-				.equals("ArtistDTO [id=1, name=Pink Floyd, picture=../, albums=[]]"));
+		assertEquals(this.testArtist.toString(),
+				"ArtistDTO [id=1, name=Pink Floyd, picture=../, albums=[]]");
 	}
 	
 	@AfterEach

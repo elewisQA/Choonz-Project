@@ -29,7 +29,7 @@ import com.qa.choonz.utils.AuthUtils;
 
 @SpringBootTest
 @AutoConfigureMockMvc
-public class TestUserControllerIntegration {
+class TestUserControllerIntegration {
 	
     @Autowired
     private MockMvc mock;

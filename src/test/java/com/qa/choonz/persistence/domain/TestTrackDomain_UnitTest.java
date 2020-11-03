@@ -1,7 +1,7 @@
 package com.qa.choonz.persistence.domain;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -12,11 +12,7 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import com.qa.choonz.persistence.domain.Album;
-import com.qa.choonz.persistence.domain.Playlist;
-import com.qa.choonz.persistence.domain.Track;
-
-public class TestTrackDomain_UnitTest {
+class TestTrackDomain_UnitTest {
 	//--[ Test Variables ]--
 	private Track testTrack;
 	
@@ -113,7 +109,7 @@ public class TestTrackDomain_UnitTest {
 		Track track = new Track(1L,"Song",album,playlists,180,"Lyrics");
 		
 		assertEquals(track, track);
-		assertFalse(track.equals(null));
+		assertNotEquals(track, null);
 	}
 	
 	@AfterEach
