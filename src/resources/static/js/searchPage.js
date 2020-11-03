@@ -1,3 +1,4 @@
+//---[ Basic Setup ]---
 let searchTerm = sessionStorage.getItem("query");
 console.log(searchTerm);
 
@@ -7,8 +8,7 @@ trackSearch(searchTerm);
 genreSearch(searchTerm);
 playlistSearch(searchTerm);
 
-// Populate Information on page
-
+//---[ Search Methods ]---
 function artistSearch(query) {
     fetch("http://localhost:8082/search/artists/" + query)
     .then(
@@ -20,6 +20,7 @@ function artistSearch(query) {
 
             response.json().then(function (data) {
                 console.log(data);
+                data.forEach(populateArtists);
             });
         }
     )
@@ -102,4 +103,9 @@ function playlistSearch(query) {
     .catch(function (err) {
         console.log("Fetch Error:-S", err);
     });
+}
+
+//---[ Populate Methods ]---
+function populateArtists(artist) {
+    console.log(artist['name']);
 }
