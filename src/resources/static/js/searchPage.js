@@ -1,6 +1,6 @@
 //---[ Basic Setup ]---
 let searchTerm = sessionStorage.getItem("query");
-let container = document.getElementById("search_results");
+
 console.log(searchTerm);
 
 artistSearch(searchTerm);
@@ -21,14 +21,10 @@ function artistSearch(query) {
 
             response.json().then(function (data) {
                 console.log(data);
-                let title = document.createElement("h2");
-                title.innerHTML = "Artists";
-                let artistList = document.createElement("ul");         
+                let container = document.getElementById("artist_results");
                 for (let i = 0; i < data.length; i++) {
-                    populateArtists(data[i], artistList);
-                }
-                container.appendChild(title);
-                container.appendChild(artistList);
+                    populateArtists(data[i], container);
+                }             
             });
         }
     )
@@ -48,14 +44,10 @@ function albumSearch(query) {
 
             response.json().then(function (data) {
                 console.log(data);
-                let title = document.createElement("h2");
-                title.innerHTML = "Albums";
-                let albumList = document.createElement("ul");         
+                let container = document.getElementById("album_results");
                 for (let i = 0; i < data.length; i++) {
-                    populateAlbums(data[i], albumList);
+                    populateAlbums(data[i], container);
                 }
-                container.appendChild(title);
-                container.appendChild(albumList);
             });
         }
     )
@@ -74,15 +66,11 @@ function trackSearch(query) {
             }
 
             response.json().then(function (data) {
-                console.log(data);
-                let title = document.createElement("h2");
-                title.innerHTML = "Tracks";
-                let trackList = document.createElement("ul");         
+                console.log(data);    
+                let container = document.getElementById("track_results");    
                 for (let i = 0; i < data.length; i++) {
-                    populateTracks(data[i], trackList);
+                    populateTracks(data[i], container);
                 }
-                container.appendChild(title);
-                container.appendChild(trackList);
             });
         }
     )
@@ -101,15 +89,11 @@ function genreSearch(query) {
             }
 
             response.json().then(function (data) {
-                console.log(data);
-                let title = document.createElement("h2");
-                title.innerHTML = "Genres";
-                let genreList = document.createElement("ul");         
+                console.log(data);    
+                let container = document.getElementById("genre_results");       
                 for (let i = 0; i < data.length; i++) {
-                    populateGenres(data[i], genreList);
+                    populateGenres(data[i], container);
                 }
-                container.appendChild(title);
-                container.appendChild(genreList);
             });
         }
     )
@@ -128,15 +112,11 @@ function playlistSearch(query) {
             }
 
             response.json().then(function (data) {
-                console.log(data);
-                let title = document.createElement("h2");
-                title.innerHTML = "Playlists";
-                let playlistList = document.createElement("ul");         
+                console.log(data);        
+                let container = document.getElementById("playlist_results");    
                 for (let i = 0; i < data.length; i++) {
-                    populatePlaylists(data[i], playlistList);
+                    populatePlaylists(data[i], container);
                 }
-                container.appendChild(title);
-                container.appendChild(playlistList);
             });
         }
     )
@@ -146,37 +126,168 @@ function playlistSearch(query) {
 }
 
 //---[ Populate Methods ]---
-function populateArtists(artist, list) {
-    console.log(artist['name']);
-    let newEntry = document.createElement("li");
-    newEntry.innerHTML = artist['name'];
-    list.appendChild(newEntry);
+function populateArtists(artist, container) {
+    // Column Organization
+    let column = document.createElement("div");
+    column.setAttribute("class", "col mb-4");
+
+    // Setup Result Card 
+    let card = document.createElement("div");
+    card.setAttribute("class", "card-text-center");
+
+    // Add Image
+    let img = document.createElement("img");
+    img.setAttribute("class", "card-img-top");
+    img.setAttribute("src", artist['picture']);
+    card.appendChild(img);
+
+    // Add Details about
+    let cardText = document.createElement("div");
+    let group = document.createElement("h5");
+    group.innerHTML = "Artist";
+    cardText.appendChild(group);
+    let link = document.createElement("a");
+    link.setAttribute("href", "viewArtist.html?id=" + artist['id']);
+    let title = document.createElement("h5");
+    title.innerHTML = artist['name'];
+    link.appendChild(title);
+    cardText.appendChild(link);
+    card.appendChild(cardText);
+
+    // Add it to it's own column
+    column.appendChild(card);
+    container.appendChild(column);
 }
 
-function populateAlbums(album, list) {
-    console.log(album['name']);
-    let newEntry = document.createElement("li");
-    newEntry.innerHTML = album['name'];
-    list.appendChild(newEntry);
+function populateAlbums(album, container) {
+    // Column Organization
+    let column = document.createElement("div");
+    column.setAttribute("class", "col mb-4");
+
+    // Setup Result Card 
+    let card = document.createElement("div");
+    card.setAttribute("class", "card-text-center");
+
+    // Add Image
+    let img = document.createElement("img");
+    img.setAttribute("class", "card-img-top");
+    img.setAttribute("src", album['cover']);
+    card.appendChild(img);
+
+    // Add Details about
+    let cardText = document.createElement("div");
+    let group = document.createElement("h5");
+    group.innerHTML = "Album";
+    cardText.appendChild(group);
+    let link = document.createElement("a");
+    link.setAttribute("href", "viewArtist.html?id=" + album['id']);
+    let title = document.createElement("h5");
+    title.innerHTML = album['name'];
+    link.appendChild(title);
+    cardText.appendChild(link);
+    card.appendChild(cardText);
+
+    // Add it to it's own column
+    column.appendChild(card);
+    container.appendChild(column);
 }
 
-function populateTracks(track, list) {
-    console.log(track['name']);
-    let newEntry = document.createElement("li");
-    newEntry.innerHTML = track['name'];
-    list.appendChild(newEntry);
+function populateTracks(track, container) {
+    // Column Organization
+    let column = document.createElement("div");
+    column.setAttribute("class", "col mb-4");
+
+    // Setup Result Card 
+    let card = document.createElement("div");
+    card.setAttribute("class", "card-text-center");
+
+    // Add Image
+    let img = document.createElement("img");
+    img.setAttribute("class", "card-img-top");
+    let album = track['album']
+    img.setAttribute("src", album['cover']);
+    card.appendChild(img);
+
+    // Add Details about
+    let cardText = document.createElement("div");
+    let group = document.createElement("h5");
+    group.innerHTML = "Song";
+    cardText.appendChild(group);
+    let link = document.createElement("a");
+    link.setAttribute("href", "viewArtist.html?id=" + track['id']);
+    let title = document.createElement("h5");
+    title.innerHTML = track['name'];
+    link.appendChild(title);
+    cardText.appendChild(link);
+    card.appendChild(cardText);
+
+    // Add it to it's own column
+    column.appendChild(card);
+    container.appendChild(column);
 }
 
-function populateGenres(genre, list) {
-    console.log(genre['name']);
-    let newEntry = document.createElement("li");
-    newEntry.innerHTML = genre['name'];
-    list.appendChild(newEntry);
+function populateGenres(genre, container) {
+    // Column Organization
+    let column = document.createElement("div");
+    column.setAttribute("class", "col mb-4");
+
+    // Setup Result Card 
+    let card = document.createElement("div");
+    card.setAttribute("class", "card-text-center");
+
+    // Add Image
+    let img = document.createElement("img");
+    img.setAttribute("class", "card-img-top");
+    img.setAttribute("src", genre['picture']);
+    card.appendChild(img);
+
+    // Add Details about
+    let cardText = document.createElement("div");
+    let group = document.createElement("h5");
+    group.innerHTML = "Genre";
+    cardText.appendChild(group);
+    let link = document.createElement("a");
+    link.setAttribute("href", "viewArtist.html?id=" + genre['id']);
+    let title = document.createElement("h5");
+    title.innerHTML = genre['name'];
+    link.appendChild(title);
+    cardText.appendChild(link);
+    card.appendChild(cardText);
+
+    // Add it to it's own column
+    column.appendChild(card);
+    container.appendChild(column);
 }
 
-function populatePlaylists(playlist, list) {
-    console.log(playlist['name']);
-    let newEntry = document.createElement("li");
-    newEntry.innerHTML = playlist['name'];
-    list.appendChild(newEntry);
+function populatePlaylists(playlist, container) {
+    // Column Organization
+    let column = document.createElement("div");
+    column.setAttribute("class", "col mb-4");
+
+    // Setup Result Card 
+    let card = document.createElement("div");
+    card.setAttribute("class", "card-text-center");
+
+    // Add Image
+    let img = document.createElement("img");
+    img.setAttribute("class", "card-img-top");
+    img.setAttribute("src", playlist['artwork']);
+    card.appendChild(img);
+
+    // Add Details about
+    let cardText = document.createElement("div");
+    let group = document.createElement("h5");
+    group.innerHTML = "Playlist";
+    cardText.appendChild(group);
+    let link = document.createElement("a");
+    link.setAttribute("href", "viewArtist.html?id=" + playlist['id']);
+    let title = document.createElement("h5");
+    title.innerHTML = playlist['name'];
+    link.appendChild(title);
+    cardText.appendChild(link);
+    card.appendChild(cardText);
+
+    // Add it to it's own column
+    column.appendChild(card);
+    container.appendChild(column);
 }
