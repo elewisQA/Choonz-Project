@@ -74,8 +74,8 @@ function login() {
           }
           response.json().then(function(success) {
             if(success){
-              console.log(response.headers);
-              console.log(success);
+              console.log(response);
+              console.log('Login successful');
             }
             else{
               console.log("Login failed! Please check your login details.");
