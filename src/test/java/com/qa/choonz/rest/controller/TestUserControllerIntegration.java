@@ -93,6 +93,20 @@ class TestUserControllerIntegration {
     }
     
     @Test
+    void testLogin() throws Exception {
+    	this.mock
+    		.perform(request(HttpMethod.POST, "/users/login").header("token", token).contentType(MediaType.APPLICATION_JSON)
+    					.content(this.objectMapper.writeValueAsString(testUser))
+    					.accept(MediaType.APPLICATION_JSON))
+    		.andExpect(status().isOk());
+    }
+    
+    @Test
+    void testLogout() throws Exception {
+    	// seemingly not implemented yet
+    }
+    
+    @Test
     void testReadOne() throws Exception{
     	this.mock
     			.perform(request(HttpMethod.GET,"/users/read/" + this.id).accept(MediaType.APPLICATION_JSON))

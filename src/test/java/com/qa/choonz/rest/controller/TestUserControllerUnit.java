@@ -83,6 +83,24 @@ class TestUserControllerUnit {
     }
     
     @Test
+    void loginTest() {
+    	when(this.service.login(username, password)).thenReturn(null);
+    	//the above line has an issue i believe
+    	
+    	HttpHeaders headers = new HttpHeaders();
+    	headers.add("token", token);
+    	
+    	assertThat(new ResponseEntity<UserDTO>(this.userDTO, headers, HttpStatus.OK).getBody())
+    		.isEqualTo(this.controller.login(this.username, this.password));
+    	
+    }
+    
+    @Test
+    void logoutTest() {
+    	// not implemented yet
+    }
+    
+    @Test
     void readTest() {
     	when(this.service.read(this.id)).thenReturn(this.userDTO);
     	
