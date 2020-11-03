@@ -1,4 +1,3 @@
-/* Insert Some Artists */
 INSERT INTO ARTIST(ID, PICTURE, NAME) VALUES (1, 'https://cdn.britannica.com/64/23164-050-A7D2E9D9/Pink-Floyd.jpg', 'Pink Floyd');
 INSERT INTO ARTIST(ID, PICTURE, NAME) VALUES (2, 'https://i.pinimg.com/736x/f9/8b/c0/f98bc0f9c2ed2ec01816665ccc0a9d1a.jpg', 'ABBA');
 INSERT INTO ARTIST(ID, PICTURE, NAME) VALUES (3, 'https://i.pinimg.com/originals/81/bd/9f/81bd9f9ecfbdcba163154073ab44eaaa.jpg', 'Gorrilaz');
