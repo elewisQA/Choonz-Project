@@ -49,7 +49,7 @@ public class UserController {
     	Long uid = this.service.login(username, password);
     	HttpHeaders headers = new HttpHeaders();
     	if (uid == null) {
-    		return new ResponseEntity<Boolean>(false, HttpStatus.OK);
+    		return new ResponseEntity<Boolean>(false, HttpStatus.BAD_REQUEST);
     		// TODO find suitable response code?
     	}
 		String token = AuthUtils.newToken(uid);
