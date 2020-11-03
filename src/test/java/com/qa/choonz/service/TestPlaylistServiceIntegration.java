@@ -7,6 +7,8 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+import javax.print.DocFlavor.SERVICE_FORMATTED;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.modelmapper.ModelMapper;
@@ -17,6 +19,7 @@ import com.qa.choonz.persistence.domain.Playlist;
 import com.qa.choonz.persistence.domain.Track;
 import com.qa.choonz.persistence.domain.User;
 import com.qa.choonz.persistence.repository.PlaylistRepository;
+import com.qa.choonz.persistence.repository.TrackRepository;
 import com.qa.choonz.rest.dto.PlaylistDTO;
 
 //===[ Testing Code ]===
@@ -25,6 +28,9 @@ class TestPlaylistServiceIntegration {
 	//--[ Set-up Test Integrations ]--
 	@Autowired
 	private PlaylistService service;
+	
+	@Autowired
+	private TrackRepository tRepo;
 	
 	@Autowired
 	private PlaylistRepository repo;
@@ -39,10 +45,14 @@ class TestPlaylistServiceIntegration {
 	
 	//--[ Set-up Test Variables ]--
 	private Long id;
+	private Long trackId = 1L;
 	private final String NAME = "Playlist Tree";
 	private final String DESC = "This is a test playlist.";
 	private final String ART = "../";
 	private List<Track> tracks;
+	private List<Track> testTracks;
+	private Track testTrack;
+	private Track testTrackWithId;
 	private User testUser;
 	private Playlist testPlaylist;
 	private Playlist testPlaylistWithId;
@@ -54,6 +64,16 @@ class TestPlaylistServiceIntegration {
 	void init() {
 		this.repo.deleteAll();
 		tracks = new ArrayList<Track>();
+		
+		// Making track list to use for add / remove tests
+		this.testTracks = new ArrayList<Track>();
+		this.testTrack = new Track();
+		this.testTrack.setId(this.trackId);
+		this.testTrack.setName("testtrackname");
+		this.testTrack.setLyrics("testtrcklyrics");
+		this.testTrack.setDuration(5);
+		this.testTracks.add(testTrack);
+		
 		// Instantiate the test-playlist
 		testPlaylist = new Playlist();
 		testPlaylist.setName(NAME);
@@ -93,11 +113,14 @@ class TestPlaylistServiceIntegration {
 	
 	@Test
 	void testAddTrack() {
-		
+		assertThat(this.playlistDTOWithId.getTracks().size() + 1)
+		.isEqualTo(this.service.addTrack(this.id, this.trackId).getTracks().size());
 	}
 	
 	@Test
 	void testRemoveTrack() {
+		assertThat(this.playlistDTOWithId.getTracks().size() - 1)
+		.isEqualTo(this.service.removeTrack(this.id, this.trackId).getTracks().size());
 		
 	}
 	
