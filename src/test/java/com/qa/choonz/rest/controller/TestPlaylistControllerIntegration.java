@@ -157,4 +157,20 @@ class TestPlaylistControllerIntegration {
         this.mock.perform(request(HttpMethod.DELETE, "/playlists/delete/" + this.id).header("token", token)).andExpect(status().isNoContent());
     }
     
+    @Test
+    void testAddTrack() throws Exception{
+    	Track track = this.trackRepo.findById(2L).orElseThrow(TrackNotFoundException::new);
+    	List<Track> trackList = new ArrayList<>();
+    	trackList.add(track);
+    	testPlaylist.setTracks(trackList);
+    	
+        String output = this.mock
+                .perform(request(HttpMethod.POST, "/playlists/update/" + this.id).header("token", token).accept(MediaType.APPLICATION_JSON)
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(this.objectMapper.writeValueAsString(testPlaylist)))
+                .andExpect(status().isAccepted()).andReturn().getResponse().getContentAsString();
+    	
+    	assertEquals(this.objectMapper.writeValueAsString(this.mapToDTO(testPlaylist)),output);
+    }
+    
 }
