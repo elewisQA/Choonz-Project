@@ -40,6 +40,7 @@ function addPlaylist(playlistName, playlistPic, playlistDesc) {
         headers: {
               "Content-type": "application/json",
               "token": "iJrzsalBq6"
+
         },
         body:json = JSON.stringify({
             "name": playlistName,
@@ -51,7 +52,7 @@ function addPlaylist(playlistName, playlistPic, playlistDesc) {
         .then(json)
         .then(function (data) {
             console.log('Request succeeded with JSON response', data);
-            // window.location.href = "albums.html";
+            //window.location.href = "playlists.html";
         })
         .catch(function (error) {
             console.log('Request failed', error);
