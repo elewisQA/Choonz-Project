@@ -68,5 +68,24 @@ public class PlaylistController {
         	return new ResponseEntity<PlaylistDTO>(HttpStatus.UNAUTHORIZED);
         }
     }
+    
+    @PostMapping("/add/{playlistId}/{trackId}")
+    public ResponseEntity<PlaylistDTO> add(@PathVariable Long playlistId,@PathVariable Long trackId, @RequestHeader("token") String token){
+        if (AuthUtils.validToken(token)) {
+        	return new ResponseEntity<PlaylistDTO>(this.service.addTrack(playlistId, trackId), HttpStatus.ACCEPTED);
+        } else {
+        	return new ResponseEntity<PlaylistDTO>(HttpStatus.UNAUTHORIZED);
+        }
+    	
+    }
+    
+    @PostMapping("/remove/{playlistId}/{trackId}")
+    public ResponseEntity<PlaylistDTO> remove(@PathVariable Long playlistId,@PathVariable Long trackId, @RequestHeader("token") String token){
+        if (AuthUtils.validToken(token)) {
+        	return new ResponseEntity<PlaylistDTO>(this.service.removeTrack(playlistId, trackId), HttpStatus.ACCEPTED);
+        } else {
+        	return new ResponseEntity<PlaylistDTO>(HttpStatus.UNAUTHORIZED);
+        }
+    }
 
 }

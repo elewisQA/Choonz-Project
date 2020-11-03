@@ -12,11 +12,13 @@ import org.junit.jupiter.api.Test;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
 
 import com.qa.choonz.persistence.domain.Playlist;
 import com.qa.choonz.persistence.domain.Track;
 import com.qa.choonz.persistence.domain.User;
 import com.qa.choonz.persistence.repository.PlaylistRepository;
+import com.qa.choonz.persistence.repository.TrackRepository;
 import com.qa.choonz.rest.dto.PlaylistDTO;
 
 //===[ Testing Code ]===
@@ -31,6 +33,7 @@ class TestPlaylistServiceIntegration {
 	
 	@Autowired
 	private ModelMapper modelMapper;
+
 	
 	//--[ Define Mapping Method ]--
 	private PlaylistDTO mapToDTO(Playlist playlist) {
@@ -105,4 +108,5 @@ class TestPlaylistServiceIntegration {
 	void testDelete() throws Exception {
 		assertThat(this.service.delete(this.id)).isTrue();
 	}
+	
 }
