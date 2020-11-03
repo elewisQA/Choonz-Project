@@ -135,21 +135,21 @@ class TestPlaylistControllerUnit {
     
     @Test
     void addTrackTest() {
-    	when(service.addTrack(this.testPlaylist.getId(),null)).thenReturn(playlistDTO);
+    	when(service.addTrack(this.testPlaylist.getId(),2L)).thenReturn(playlistDTO);
     	
     	assertThat(new ResponseEntity<PlaylistDTO>(this.playlistDTO,HttpStatus.ACCEPTED))
-    	.isEqualTo(this.controller.add(this.testPlaylist.getId(), null));
+    	.isEqualTo(this.controller.add(this.testPlaylist.getId(), 2L));
     	
-    	verify(this.service,times(1)).addTrack(this.testPlaylist.getId(), null);
+    	verify(this.service,times(1)).addTrack(this.testPlaylist.getId(), 2L);
     }
     
     @Test
     void removeTrackTest() {
-    	when(service.removeTrack(this.testPlaylist.getId(),null)).thenReturn(playlistDTO);
+    	when(service.removeTrack(this.testPlaylist.getId(),1L)).thenReturn(playlistDTO);
     	
     	assertThat(new ResponseEntity<PlaylistDTO>(this.playlistDTO,HttpStatus.ACCEPTED))
-    	.isEqualTo(this.controller.remove(this.testPlaylist.getId(), null));
+    	.isEqualTo(this.controller.remove(this.testPlaylist.getId(), 1L));
     	
-    	verify(this.service,times(1)).removeTrack(this.testPlaylist.getId(), null);
+    	verify(this.service,times(1)).removeTrack(this.testPlaylist.getId(), 1L);
     }
 }
