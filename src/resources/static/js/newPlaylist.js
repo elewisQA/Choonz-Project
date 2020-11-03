@@ -38,7 +38,8 @@ function addPlaylist(playlistName, playlistPic, playlistDesc) {
     fetch('http://localhost:8082/playlists/create', {
         method: 'post',
         headers: {
-              "Content-type": "application/json"
+              "Content-type": "application/json",
+              "token": "iJrzsalBq6"
         },
         body:json = JSON.stringify({
             "name": playlistName,

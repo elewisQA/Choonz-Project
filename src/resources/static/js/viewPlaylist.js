@@ -30,6 +30,7 @@ function getID(id) {
 
 function populate(data) {
     console.log(data['name']);
+    let playlistId = data['id'];
 
     let find = document.getElementById("main_info");
     let image = document.createElement("img");
@@ -115,10 +116,11 @@ function populate(data) {
         let linkDelete = document.createElement("a");
         linkDelete.href='#';
         linkDelete.className = "dropdown-item";
+  
         linkDelete.setAttribute("onClick", "window.location.reload();");
         linkDelete.addEventListener("click", function(stop){
             stop.preventDefault();  
-            deleteTrack((data['tracks'][key]['id']));    
+            deleteTrack(data['tracks'][key]['id'], playlistId);    
         })
         linkDelete.textContent = "Delete";
         dropdown.appendChild(linkDelete);
@@ -171,18 +173,40 @@ function populate(data) {
 
 }
 
-function deleteTrack(id) {
-    fetch('http://localhost:8082/tracks/delete/' + id, {
-    method: 'DELETE',
-    })
-    .then(res => res.text()) // or res.json()
-    .then(res => console.log(res))
-  
+function deleteTrack(id, playlistId) {
+  fetch('http://localhost:8082/playlists/remove/' + playlistId+'/'+id,{
+    method: 'post',
+    headers: {
+      "Content-type": "application/json",
+      "token": "iJrzsalBq6"
+    },
+  })
+  .then(
+    function(response) {
+      if (response.status !== 202) {
+        console.log('Looks like there was a problem. Status Code: ' +
+          response.status);
+        return;
+      }
+
+      // Examine the text in the response
+      response.json().then(function(data) {
+        console.log(data);
+      });
+    }
+  )
+  .catch(function(err) {
+    console.log('Fetch Error :-S', err);
+  });
   }
   
   function deletePlaylist(id) {
     fetch('http://localhost:8082/playlists/delete/' + id, {
     method: 'DELETE',
+    headers: {
+      "Content-type": "application/json",
+      "token": "qjRlE62FTb"
+    },
     })
     .then(res => res.text()) // or res.json()
     .then(res => console.log(res))
@@ -219,6 +243,12 @@ function deleteTrack(id) {
       selectPlaylist.className = "dropdown-item";
       selectPlaylist.href="#";
       selectPlaylist.textContent = key['name'];
+      selectPlaylist.addEventListener("click", function(stop){
+        stop.preventDefault();  
+        addTrack(data['tracks'][key]['id'], playlistId);    
+      })
       find.appendChild(selectPlaylist);
+
+      
     }
    }
