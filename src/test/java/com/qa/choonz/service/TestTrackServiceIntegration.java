@@ -42,7 +42,7 @@ class TestTrackServiceIntegration {
 	private Long id;
 	private final String NAME = "Comfortably Numb";
 	private final String LYRICS = "I have become comfortably numb";
-	private final int DURATION = 2;
+	private final Float DURATION = 2F;
 	private Track testTrack;
 	private Track testTrackWithId;
 	private TrackDTO trackDTOWithId;

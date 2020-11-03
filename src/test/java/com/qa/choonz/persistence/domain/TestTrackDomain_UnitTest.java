@@ -36,7 +36,7 @@ public class TestTrackDomain_UnitTest {
 	void testAllArgsConstructor() {
 		List<Playlist> playlists = new ArrayList<>();
 		Album album = new Album();
-		Track newTrack = new Track(1L, "track", album, playlists, 5, "../");
+		Track newTrack = new Track(1L, "track", album, playlists, 5F, "../");
 		assertTrue(newTrack instanceof Track);
 	}
 	
@@ -88,9 +88,9 @@ public class TestTrackDomain_UnitTest {
 	
 	@Test
 	void toStringTests() {		
-		Track track = new Track(1L,"Song",null,null,180,"Lyrics");
+		Track track = new Track(1L,"Song",null,null,1.8F,"Lyrics");
 		assertNotNull(track.toString());
-		assertEquals("Track [id=1, name=Song, album=null, playlists=null, duration=180.0, lyrics=Lyrics]", 
+		assertEquals("Track [id=1, name=Song, album=null, playlists=null, duration=1.8, lyrics=Lyrics]", 
 				track.toString());
 	}
 	
@@ -99,8 +99,8 @@ public class TestTrackDomain_UnitTest {
 		Album album = new Album();
 		List<Playlist> playlists = new ArrayList<Playlist>();
 		
-		Track track1 = new Track(1L,"Song",album,playlists,180,"Lyrics");
-		Track track2 = new Track(1L,"Song",album,playlists,180,"Lyrics");
+		Track track1 = new Track(1L,"Song",album,playlists,1.8F,"Lyrics");
+		Track track2 = new Track(1L,"Song",album,playlists,1.8F,"Lyrics");
 		
 		assertEquals(track1.hashCode(), track2.hashCode());
 	}
@@ -110,7 +110,7 @@ public class TestTrackDomain_UnitTest {
 		Album album = new Album();
 		List<Playlist> playlists = new ArrayList<Playlist>();
 		
-		Track track = new Track(1L,"Song",album,playlists,180,"Lyrics");
+		Track track = new Track(1L,"Song",album,playlists,1.8F,"Lyrics");
 		
 		assertEquals(track, track);
 		assertFalse(track.equals(null));

@@ -53,7 +53,7 @@ class TestTrackControllerIntegration {
 	private final String name = "Song";
 	private final Album album = null;
 	private List<Playlist> playlist = null;
-	private final int duration = 180;
+	private final Float duration = 1.8F;
 	private final String lyrics = "Lyrics";
 	
     @BeforeEach
@@ -111,7 +111,7 @@ class TestTrackControllerIntegration {
     	newTrack.setName("Big tune");
     	newTrack.setAlbum(this.album);
     	newTrack.setPlaylists(this.playlist);
-    	newTrack.setDuration(240);
+    	newTrack.setDuration(2.4F);
     	newTrack.setLyrics("New lyrics");
     	Track updatedTrack = new Track();
     	updatedTrack.setId(this.id);
