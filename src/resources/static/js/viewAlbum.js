@@ -54,7 +54,7 @@ function populate(data) {
     linkArtist.appendChild(artist);
 
     let linkGenre = document.createElement("a");
-    linkGenre.href="#";
+    linkGenre.href="viewGenre.html?id=" + data['genre']['id'];
     let genre = document.createElement("p");
     genre.style = "font-size: 17px;";
     genre.textContent = data['genre']['name'];

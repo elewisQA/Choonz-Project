@@ -30,7 +30,7 @@ function populate(data) {
     let find = document.getElementById("main_info");
 
     let tableContainer = document.createElement("div");
-    tableContainer.id = "table_container";
+    tableContainer.id = "table_container_tracks";
     let table = document.createElement("table");
     table.className = "table table-hover";
     let tableBody = document.createElement("tbody");
@@ -91,6 +91,7 @@ function populate(data) {
       
      let songIcon = document.createElement("td");
      let dropdownMenu = document.createElement("div");
+
      dropdownMenu.className="dropdown";
      songIcon.appendChild(dropdownMenu);
       
@@ -186,7 +187,7 @@ function addArtist(data, count){
         let find = document.getElementById("trackName" + count);
         let br = document.createElement("br");
         let artistLink = document.createElement("a");
-        artistLink.style = "font-size: 14px; color: #444; margin-left: 20px;";
+        artistLink.style = "font-size: 14px; color: #444;";
         artistLink.href = "viewArtist.html?id=" + data['artist']['id'];
         artistLink.textContent = data['artist']['name'];
         find.appendChild(br);
