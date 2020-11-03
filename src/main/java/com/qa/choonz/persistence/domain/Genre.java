@@ -40,7 +40,6 @@ public class Genre {
 
     public Genre() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
     public Genre(long id, @NotNull @Size(max = 100) String name, String picture, @NotNull @Size(max = 250) String description,

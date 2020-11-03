@@ -16,7 +16,7 @@ import com.qa.choonz.persistence.domain.Genre;
 import com.qa.choonz.persistence.domain.Track;
 
 //===[ Testing Code ]===
-public class TestGenreDomain_UnitTest {
+class TestGenreDomain_UnitTest {
 	//--[ Test Variables ]--
 	Genre testGenre;
 	final Long id = 1l;

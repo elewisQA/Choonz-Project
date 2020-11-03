@@ -3,6 +3,7 @@ package com.qa.choonz.persistence.domain;
 //---[ Imports ]---
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.ArrayList;
@@ -145,7 +146,7 @@ class TestAlbumDomain_UnitTest {
 				this.cover);
 		
 		// test assertion
-		assertFalse(this.testAlbum.equals(emptyAlbum));
+		assertNotEquals(this.testAlbum, emptyAlbum);
 		assertEquals(fullAlbum, this.testAlbum);
 	}
 	

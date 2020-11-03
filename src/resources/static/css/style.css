@@ -270,13 +270,18 @@ body {
   color: rgb(72, 86, 97);
 }
 
-#image_album {
+#image_album, #image_genre {
   width: 30%;
   position: sticky;
   top: 24%;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   border-radius: 2%;
   margin-top: 5%;
+}
+#img_track_album{
+  width: 15%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 2%;
 }
 
 #text_container {
@@ -321,8 +326,13 @@ body {
   margin-left: 30%;
 }
 
+#table_container_tracks{
+  max-width: 700px;
+ margin-left: 15%;
+}
+
 #info_tracks{
-  color: rgba(45, 145, 192, 0.726);;
+  color: rgba(45, 145, 192, 0.726);
   position: absolute;
   padding-top: 7px;
 }
@@ -341,6 +351,15 @@ body {
 }
 
 #table_container th {
+  color: #444444bd;
+}
+
+#table_container_tracks a {
+  text-decoration: none;
+  color: #242424;
+}
+
+#table_container_tracks th {
   color: #444444bd;
 }
 
