@@ -88,9 +88,9 @@ class TestUserControllerUnit {
     	//the above line has an issue i believe
     	
     	HttpHeaders headers = new HttpHeaders();
-    	headers.add("token", token);
+//    	headers.add("token", token);
     	
-    	assertThat(new ResponseEntity<UserDTO>(this.userDTO, headers, HttpStatus.OK).getBody())
+    	assertThat(new ResponseEntity<Boolean>(false, headers, HttpStatus.OK))
     		.isEqualTo(this.controller.login(this.username, this.password));
     	
     }

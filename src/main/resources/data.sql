@@ -75,7 +75,8 @@ INSERT INTO TRACK(ID, DURATION, NAME, ALBUM_ID) VALUES (49, 2.36, 'Sun', 8);
 INSERT INTO TRACK(ID, DURATION, NAME, ALBUM_ID) VALUES (50, 4.34, 'Sleep', 8);
 
 /* Insert a user */
-INSERT INTO USER(ID, USERNAME, PASSWORD) VALUES (1, 'test', 'password');
+INSERT INTO USER(ID, USERNAME, PASSWORD) VALUES (1, 'username', 'password');
+
 
 /* Insert some playlists */
 INSERT INTO PLAYLIST VALUES (1, 'https://i.pinimg.com/564x/38/41/48/384148d27fb01b2ff9455e05aa7b3557.jpg', 'Number one playlist!', 'Playlist One', 1);
