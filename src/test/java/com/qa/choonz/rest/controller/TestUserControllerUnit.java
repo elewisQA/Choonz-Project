@@ -68,6 +68,7 @@ class TestUserControllerUnit {
     	
     	this.token = AuthUtils.newToken(this.id);
 //    	this.token = AuthUtils.
+    	
     }
     
     @Test
@@ -90,9 +91,10 @@ class TestUserControllerUnit {
     	HttpHeaders headers = new HttpHeaders();
     	headers.add("token", token);
     	
-    	assertThat(new ResponseEntity<Boolean>(true, headers, HttpStatus.OK))
-    		.isEqualTo(this.controller.login(this.username, this.password));
+    	assertThat(new ResponseEntity<Boolean>(true, headers, HttpStatus.OK).getBody())
+    		.isEqualTo(this.controller.login(this.username, this.password).getBody());
     	
+    	verify(this.service, times(1)).login(this.username, this.password);
     }
     
     @Test

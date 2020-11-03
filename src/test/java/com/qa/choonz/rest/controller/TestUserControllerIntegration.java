@@ -85,7 +85,8 @@ class TestUserControllerIntegration {
     @Test
     void testCreate() throws Exception {
         this.mock
-        	.perform(request(HttpMethod.POST, "/users/create").header("token", token).contentType(MediaType.APPLICATION_JSON)
+        	.perform(request(HttpMethod.POST, "/users/create").header("token", token)
+        		.contentType(MediaType.APPLICATION_JSON)
                 .content(this.objectMapper.writeValueAsString(testUser))
                 .accept(MediaType.APPLICATION_JSON))
         .andExpect(status().isCreated())
@@ -95,7 +96,9 @@ class TestUserControllerIntegration {
     @Test
     void testLogin() throws Exception {
     	this.mock
-    		.perform(request(HttpMethod.POST, "/users/login").header("username", username).header("password", password)
+    		.perform(request(HttpMethod.POST, "/users/login")
+    				.header("username", username)
+    				.header("password", password)
     				.contentType(MediaType.APPLICATION_JSON)
     					.content(this.objectMapper.writeValueAsString(testUser))
     					.accept(MediaType.APPLICATION_JSON))
