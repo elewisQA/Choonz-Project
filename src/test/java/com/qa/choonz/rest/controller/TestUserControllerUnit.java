@@ -66,7 +66,8 @@ class TestUserControllerUnit {
     	this.userList.add(testUser);
     	this.userDTO = this.mapToDTO(testUser);
     	
-    	this.token = AuthUtils.newToken(this.id);
+    	this.token = AuthUtils.newToken(this.id).toString();
+//    	this.token = AuthUtils.
     }
     
     @Test
@@ -84,13 +85,12 @@ class TestUserControllerUnit {
     
     @Test
     void loginTest() {
-    	when(this.service.login(username, password)).thenReturn(null);
-    	//the above line has an issue i believe
+    	when(this.service.login(username, password)).thenReturn(testUser.getId());
     	
     	HttpHeaders headers = new HttpHeaders();
-//    	headers.add("token", token);
+    	headers.add("token", token);
     	
-    	assertThat(new ResponseEntity<Boolean>(false, headers, HttpStatus.OK))
+    	assertThat(new ResponseEntity<Boolean>(true, headers, HttpStatus.OK))
     		.isEqualTo(this.controller.login(this.username, this.password));
     	
     }
