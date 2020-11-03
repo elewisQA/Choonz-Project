@@ -1,6 +1,7 @@
 package com.qa.choonz.service;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatIllegalStateException;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,6 +22,7 @@ import com.qa.choonz.persistence.domain.User;
 import com.qa.choonz.persistence.repository.PlaylistRepository;
 import com.qa.choonz.persistence.repository.TrackRepository;
 import com.qa.choonz.rest.dto.PlaylistDTO;
+import com.qa.choonz.rest.dto.TrackDTO;
 
 //===[ Testing Code ]===
 @SpringBootTest
@@ -28,6 +30,9 @@ class TestPlaylistServiceIntegration {
 	//--[ Set-up Test Integrations ]--
 	@Autowired
 	private PlaylistService service;
+	
+	@Autowired
+	private TrackService tService;
 	
 	@Autowired
 	private TrackRepository tRepo;
@@ -43,9 +48,13 @@ class TestPlaylistServiceIntegration {
 		return this.modelMapper.map(playlist, PlaylistDTO.class);
 	}
 	
+	private TrackDTO TmapToDTO(Track track) {
+		return this.modelMapper.map(track, TrackDTO.class);
+	}
+	
 	//--[ Set-up Test Variables ]--
 	private Long id;
-	private Long trackId = 1L;
+	private Long trackId;
 	private final String NAME = "Playlist Tree";
 	private final String DESC = "This is a test playlist.";
 	private final String ART = "../";
@@ -53,7 +62,7 @@ class TestPlaylistServiceIntegration {
 	private List<Track> testTracks;
 	private Track testTrack;
 	private Track testTrackWithId;
-	private Track trackDTOWithId;
+	private TrackDTO trackDTOWithId;
 	private User testUser;
 	private Playlist testPlaylist;
 	private Playlist testPlaylistWithId;
@@ -69,7 +78,7 @@ class TestPlaylistServiceIntegration {
 		// Making track list to use for add / remove tests
 		this.testTracks = new ArrayList<Track>();
 		this.testTrack = new Track();
-		this.testTrack.setId(this.trackId);
+//		this.testTrack.setId(this.trackId);
 		this.testTrack.setName("testtrackname");
 		this.testTrack.setLyrics("testtrcklyrics");
 		this.testTrack.setDuration(5);
@@ -87,6 +96,7 @@ class TestPlaylistServiceIntegration {
 		
 		// Instantiate DTOs
 		this.playlistDTOWithId = this.mapToDTO(this.testPlaylistWithId);
+//		this.trackDTOWithId = this.TmapToDTO(this.testTrackWithId);
 	}
 	
 	//--[ Test Cases ]--
@@ -114,6 +124,9 @@ class TestPlaylistServiceIntegration {
 	
 	@Test
 	void testAddTrack() {
+//		tService.create(this.testTrack);
+//		playlistDTOWithId.setTracks(testTracks);
+//		service.addTrack(this.id, this.trackId);
 		assertThat(this.playlistDTOWithId.getTracks().size() + 1)
 		.isEqualTo(this.service.addTrack(this.id, this.trackId).getTracks().size());
 	}
