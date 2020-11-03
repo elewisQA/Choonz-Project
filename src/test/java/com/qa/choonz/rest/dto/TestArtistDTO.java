@@ -105,8 +105,8 @@ class TestArtistDTO {
 	@Test
 	void testToString() {
 		System.out.println(this.testArtist.toString());
-		assertEquals(this.testArtist.toString(),
-				"ArtistDTO [id=1, name=Pink Floyd, picture=../, albums=[]]");
+		assertEquals("ArtistDTO [id=1, name=Pink Floyd, picture=../, albums=[]]",
+				this.testArtist.toString());
 	}
 	
 	@AfterEach

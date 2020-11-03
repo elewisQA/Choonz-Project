@@ -93,8 +93,8 @@ class TestGenreDTO {
 	
 	@Test
 	void testToString() {
-		assertEquals(this.testGenre.toString(),
-				"GenreDTO [id=1, name=Pop, picture=../, description=Pop music, albums=[]]");
+		assertEquals("GenreDTO [id=1, name=Pop, picture=../, description=Pop music, albums=[]]",
+				this.testGenre.toString());
 	}
 	
 	@Test

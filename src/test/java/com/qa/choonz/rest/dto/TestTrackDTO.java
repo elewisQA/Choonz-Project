@@ -114,8 +114,8 @@ class TestTrackDTO {
 	@Test
 	void toStringTests() {
 		System.out.println(this.testTrack.toString());
-		assertEquals(this.testTrack.toString(),
-				"TrackDTO [id=1, name=Song, album=null, playlist=[], duration=180, lyrics=Lyrics]");
+		assertEquals("TrackDTO [id=1, name=Song, album=null, playlist=[], duration=180, lyrics=Lyrics]",
+				this.testTrack.toString());
 	}
 	
 	@Test

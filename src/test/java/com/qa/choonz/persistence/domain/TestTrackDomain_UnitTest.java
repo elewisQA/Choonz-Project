@@ -109,7 +109,7 @@ class TestTrackDomain_UnitTest {
 		Track track = new Track(1L,"Song",album,playlists,180,"Lyrics");
 		
 		assertEquals(track, track);
-		assertNotEquals(track, null);
+		assertNotEquals(null, track);
 	}
 	
 	@AfterEach

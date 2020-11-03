@@ -93,7 +93,7 @@ class TestPlaylistDomain_UnitTest {
 		Playlist newPlaylist = new Playlist();
 		
 		assertEquals(newPlaylist, this.testPlaylist);
-		assertNotEquals(newPlaylist, null);
+		assertNotEquals(null, newPlaylist);
 	}
 	
 	@AfterEach
