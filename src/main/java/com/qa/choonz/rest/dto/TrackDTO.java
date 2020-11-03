@@ -20,7 +20,7 @@ public class TrackDTO {
         // TODO Auto-generated constructor stub
     }
 
-    public TrackDTO(long id, String name, Album album, List<Playlist> playlists, float duration, String lyrics) {
+    public TrackDTO(long id, String name, Album album, List<Playlist> playlists, Float duration, String lyrics) {
     	super();
     	this.id = id;
     	this.name = name;
@@ -67,7 +67,7 @@ public class TrackDTO {
 		return duration;
 	}
 
-	public void setDuration(float duration) {
+	public void setDuration(Float duration) {
 		this.duration = duration;
 	}
 

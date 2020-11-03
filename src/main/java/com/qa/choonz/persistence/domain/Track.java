@@ -56,7 +56,7 @@ public class Track {
         // TODO Auto-generated constructor stub
     }
 
-    public Track(long id, @NotNull @Size(max = 100) String name, Album album, List<Playlist> playlists, float duration,
+    public Track(long id, @NotNull @Size(max = 100) String name, Album album, List<Playlist> playlists, Float duration,
             String lyrics) {
         super();
         this.id = id;
@@ -103,7 +103,7 @@ public class Track {
         return duration;
     }
 
-    public void setDuration(float duration) {
+    public void setDuration(Float duration) {
         this.duration = duration;
     }
 

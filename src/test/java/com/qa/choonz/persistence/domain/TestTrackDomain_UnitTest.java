@@ -74,9 +74,9 @@ public class TestTrackDomain_UnitTest {
 	
 	@Test
 	void getSetDurationTest() {
-		this.testTrack.setDuration(180);
+		this.testTrack.setDuration(1.80F);
 		
-		assertEquals(180, this.testTrack.getDuration());
+		assertEquals(1.80F, this.testTrack.getDuration());
 	}
 	
 	@Test
@@ -90,7 +90,7 @@ public class TestTrackDomain_UnitTest {
 	void toStringTests() {		
 		Track track = new Track(1L,"Song",null,null,180,"Lyrics");
 		assertNotNull(track.toString());
-		assertEquals("Track [id=1, name=Song, album=null, playlists=null, duration=180, lyrics=Lyrics]", 
+		assertEquals("Track [id=1, name=Song, album=null, playlists=null, duration=180.0, lyrics=Lyrics]", 
 				track.toString());
 	}
 	

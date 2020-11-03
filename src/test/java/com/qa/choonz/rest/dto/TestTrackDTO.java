@@ -21,7 +21,7 @@ public class TestTrackDTO {
     final String name="Song";
     final Album album=null;
     private List<Playlist> playlists;
-    final int duration=180;
+    final Float duration = 1.80F;
     final String lyrics="Lyrics";
     
 	@BeforeEach
@@ -114,7 +114,7 @@ public class TestTrackDTO {
 	public void toStringTests() {
 		System.out.println(this.testTrack.toString());
 		assertTrue(this.testTrack.toString()
-				.equals("TrackDTO [id=1, name=Song, album=null, playlist=[], duration=180, lyrics=Lyrics]"));
+				.equals("TrackDTO [id=1, name=Song, album=null, playlist=[], duration=1.80, lyrics=Lyrics]"));
 	}
 	
 	@Test
