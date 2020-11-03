@@ -49,6 +49,8 @@ class TestUserControllerUnit {
 	private final long id = 1L;
 	private final String username = "username";
 	private final String password = "password";
+	private final String badUser = "username";
+	private final String badPass = "password";
 	private List<Playlist> playlists;
 	
 	private String token;
@@ -95,6 +97,19 @@ class TestUserControllerUnit {
     		.isEqualTo(this.controller.login(this.username, this.password).getBody());
     	
     	verify(this.service, times(1)).login(this.username, this.password);
+    }
+    
+    @Test
+    void failLoginTest() {
+    	when(this.service.login(badUser, badUser)).thenReturn(testUser.getId());
+    	
+    	HttpHeaders headers = new HttpHeaders();
+    	headers.add("token", token);
+    	
+    	assertThat(new ResponseEntity<Boolean>(true, headers, HttpStatus.OK).getBody())
+    		.isEqualTo(this.controller.login(this.badUser, this.badPass).getBody());
+    	
+    	verify(this.service, times(1)).login(this.badUser, this.badPass);
     }
     
     @Test

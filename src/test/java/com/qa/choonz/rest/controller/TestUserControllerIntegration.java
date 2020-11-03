@@ -1,6 +1,10 @@
 package com.qa.choonz.rest.controller;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.request;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -17,7 +21,9 @@ import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMock
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.test.web.servlet.MockMvc;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -54,6 +60,8 @@ class TestUserControllerIntegration {
 	private Long id;
 	private final String username = "username";
 	private final String password = "password";
+	private final String badUser = "username";
+	private final String badPass = "password";
 	private List<Playlist> playlists;
 	
 	private String token;
@@ -103,6 +111,18 @@ class TestUserControllerIntegration {
     					.content(this.objectMapper.writeValueAsString(testUser))
     					.accept(MediaType.APPLICATION_JSON))
     		.andExpect(status().isOk());
+    }
+    
+    @Test
+    void failLoginTest() throws Exception {
+    	this.mock
+    		.perform(request(HttpMethod.POST, "/users/login")
+    				.header("username", badUser)
+    				.header("password", badPass)
+    				.contentType(MediaType.APPLICATION_JSON)
+    				.content(this.objectMapper.writeValueAsString(testUser))
+    				.accept(MediaType.APPLICATION_JSON))
+    		.andExpect(status().isBadRequest());
     }
     
     @Test
