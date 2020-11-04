@@ -4,7 +4,21 @@ for (let found of findId) {
     console.log(id);
     getID(id);
       
- } 
+ }
+
+ window.onload = loginout;
+
+function loginout(){
+    let lIn = document.getElementById("loginBtn");
+    let lOut = document.getElementById("logoutBtn");
+    if (sessionStorage.getItem("token") !== "") {
+      lIn.style.display = "none";
+      lOut.style.display = "block";
+    } else {
+      lIn.style.display = "block";
+      lOut.style.display = "none";
+    }
+}
 
 function getID(id) {
  fetch('http://localhost:8082/albums/read/'+id)

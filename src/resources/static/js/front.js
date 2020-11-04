@@ -1,12 +1,17 @@
+window.onload = loginout;
+
 function loginout(){
-    let lIn = document.getElementById("loginBtn");
+    //let lIn = document.getElementById("loginBtn");
     let lOut = document.getElementById("logoutBtn");
-    if (lIn.style.display === "block") {
-      lIn.style.display = "none";
+    let logPanel = document.getElementById("login");
+    if (sessionStorage.getItem("token") !== "") {
+      //lIn.style.display = "none";
+      logPanel.style.display = "none";
       lOut.style.display = "block";
     } else {
-      lIn.style.display = "block";
+      //lIn.style.display = "block";
       lOut.style.display = "none";
+      logPanel.style.display = "block";
     }
 }
 
@@ -17,14 +22,14 @@ function loginout(){
 //   });
 // });
 
-function showLogin() {
-  let x = document.getElementById("login");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
-  }
-} 
+// function showLogin() {
+//   let x = document.getElementById("login");
+//   if (x.style.display === "none") {
+//     x.style.display = "block";
+//   } else {
+//     x.style.display = "none";
+//   }
+// } 
 
 function login() {
 
@@ -161,5 +166,7 @@ function resetThis(){
 }
 
 function logoutNow(){
+  sessionStorage.setItem("token", "");
+  window.location.reload();
 
 }

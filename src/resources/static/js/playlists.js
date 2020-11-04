@@ -1,3 +1,17 @@
+window.onload = loginout;
+
+function loginout(){
+    let lIn = document.getElementById("loginBtn");
+    let lOut = document.getElementById("logoutBtn");
+    if (sessionStorage.getItem("token") !== "") {
+      lIn.style.display = "none";
+      lOut.style.display = "block";
+    } else {
+      lIn.style.display = "block";
+      lOut.style.display = "none";
+    }
+}
+
 fetch('http://localhost:8082/playlists/read')
   .then(
     function(response) {
