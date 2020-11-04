@@ -32,7 +32,6 @@ public class User {
 	
 	@NotNull
 	@Size(max = 100)
-	@Column(unique = true)
 	private String password;
 	
 	@JsonManagedReference(value="owner")
