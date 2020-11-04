@@ -33,7 +33,7 @@ let userId;
 function populate(data) {
     console.log(data['name']);
     let playlistId = data['id'];
-    userId = data['user']['id'];
+    //userId = data['user']['id'];
 
     let find = document.getElementById("main_info");
     let image = document.createElement("img");
