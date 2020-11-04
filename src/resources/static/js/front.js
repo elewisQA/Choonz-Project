@@ -106,12 +106,13 @@ function register(){
       },
       body:json = JSON.stringify({
         "password": password,
-        "username": username
+        "username": username,
+        "playlists": []
        })
     })
     .then(
       function(response) {
-        if (response.status !== 202) {
+        if (response.status !== 201) {
           console.log('Looks like there was a problem. Status Code: ' +
             response.status);
             window.alert("Something went wrong, please try again!");
@@ -127,9 +128,18 @@ function register(){
     .catch(function(err) {
       console.log('Fetch Error :-S', err);
     });
+    resetThis();
+    let x = document.getElementById("login");
+    x.style.display = "none";
     return true;
   }
   else{
     return false;
   }
+}
+
+function resetThis(){
+  document.getElementById("Username").value = '';
+  document.getElementById("Password").value = '';
+  document.getElementById("Password2").value = '';
 }

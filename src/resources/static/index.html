@@ -42,6 +42,7 @@
             <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>
         </form>
         <button type="button" id="loginBtn" class="btn btn-info" style="margin-left: 5px" onclick="showLogin()">Login</button>
+        <button type="button" id="logoutBtn" class="btn btn-info" style="margin-left: 5px" onclick="showLogin()">Logout</button>
     </div>
 </nav>
 <!-- /Navbar with search -->
@@ -96,9 +97,9 @@
                     <input type="password" class="form-control" id="Password2">
                 </div>
                 <div class="modal-footer">
-                <input type="submit" class="btn btn-secondary" value="Sign up!" name="Sign up" onclick="event.preventDefault(); register()" /> 
-                <input type="reset" class="btn btn-secondary" value="Reset" name="Reset" />
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <input type="submit" class="btn btn-success" value="Sign up" name="submit" onclick="event.preventDefault(); register()" /> 
+                <input type="reset" class="btn btn-secondary" value="Reset" name="reset" />
+                <input type="reset" class="btn btn-danger" data-dismiss="modal" value="Close" name="close" onclick="resetThis()" />
                 </div>
               </form>
         </div>
