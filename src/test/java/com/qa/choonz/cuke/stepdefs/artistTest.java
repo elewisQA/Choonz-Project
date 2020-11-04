@@ -3,6 +3,7 @@ package com.qa.choonz.cuke.stepdefs;
 import static org.junit.Assert.assertEquals;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -24,6 +25,13 @@ public class artistTest {
         driver = new ChromeDriver();
 	}
 	
+	public static void jsClick(WebDriver driver, WebElement targ) {
+//		WebElement targ = driver.findElement(By.xpath("//*[@id=\"artists\"]/div[4]/div/div/a/h5"));
+
+		JavascriptExecutor jsExe = (JavascriptExecutor) driver;
+		jsExe.executeScript("arguments[0].click()", targ);
+	}
+	
 	@Given("^The correct web address$")
 	public void the_correct_web_address() throws Throwable {
 		driver.get("http://127.0.0.1:5501/static/index.html");
@@ -36,13 +44,17 @@ public class artistTest {
 		targ = driver.findElement(By.xpath("//*[@id=\"collapsingNavbar\"]/ul/li[2]/a"));
         targ.click();
         System.out.println("Artist clicked");
+        Thread.sleep(2500);
         
 	}
 
 	@When("^I can click on an artist$")
 	public void i_can_click_on_an_artist() throws Throwable {
-		targ = driver.findElement(By.xpath("//*[@id=\"artists\"]/div[4]/div/div/a/h5"));
-        targ.click();
+		Thread.sleep(2500);
+		targ = driver.findElement(By.xpath("//*[@id=\"artists\"]/div[4]/div/div"));
+		System.out.println("Found artist to click");
+//		targ.click();
+		jsClick(driver, targ);
         System.out.println("Artist clicked");
 	}
 
