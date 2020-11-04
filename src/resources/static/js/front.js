@@ -1,9 +1,21 @@
-$(function() {
-  $('#ChangeToggle').click(function() {
-    $('#navbar-hamburger').toggleClass('hidden');
-    $('#navbar-close').toggleClass('hidden');
-  });
-});
+function loginout(){
+    let lIn = document.getElementById("loginBtn");
+    let lOut = document.getElementById("logoutBtn");
+    if (lIn.style.display === "block") {
+      lIn.style.display = "none";
+      lOut.style.display = "block";
+    } else {
+      lIn.style.display = "block";
+      lOut.style.display = "none";
+    }
+}
+
+// $(function() {
+//   $('#ChangeToggle').click(function() {
+//     $('#navbar-hamburger').toggleClass('hidden');
+//     $('#navbar-close').toggleClass('hidden');
+//   });
+// });
 
 function showLogin() {
   let x = document.getElementById("login");
@@ -37,6 +49,9 @@ function login() {
               console.log("Token: " + token); // <-- This is the username I would suggest putting it into session storage
               // sessionStorage.putItem("token", token)
               console.log('Login successful');
+              loginout();
+              let x = document.getElementById("login");
+              x.style.display = "none";
             }
             else{
               console.log("Login failed! Please check your login details.");
@@ -129,8 +144,8 @@ function register(){
       console.log('Fetch Error :-S', err);
     });
     resetThis();
-    let x = document.getElementById("login");
-    x.style.display = "none";
+    window.alert("You are successfully registered! Please login now!");
+    $('#exampleModal').modal('hide');
     return true;
   }
   else{
@@ -142,4 +157,8 @@ function resetThis(){
   document.getElementById("Username").value = '';
   document.getElementById("Password").value = '';
   document.getElementById("Password2").value = '';
+}
+
+function logoutNow(){
+
 }
