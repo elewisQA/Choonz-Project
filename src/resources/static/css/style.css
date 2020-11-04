@@ -547,3 +547,24 @@ padding-left: 2%;
 .nav-link.active{
   font-weight: bold;
 }
+
+.casouselContainer{
+  width: 50%;
+  position: absolute;
+  left: 5%;
+  bottom: 5%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.userlogedin{
+  width: 35%;
+  position: absolute;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  height: 50%;
+  right: 5%;
+  bottom: 10%;
+  background-color: whitesmoke;
+  padding: 5%;
+  display: none;
+  overflow: auto;
+}

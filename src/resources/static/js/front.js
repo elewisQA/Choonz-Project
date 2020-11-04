@@ -4,14 +4,17 @@ function loginout(){
     //let lIn = document.getElementById("loginBtn");
     let lOut = document.getElementById("logoutBtn");
     let logPanel = document.getElementById("login");
+    let welcomePanel = document.getElementById("userlogedin");
     if (sessionStorage.getItem("token") !== "") {
       //lIn.style.display = "none";
       logPanel.style.display = "none";
+      welcomePanel.style.display = "block";
       lOut.style.display = "block";
     } else {
       //lIn.style.display = "block";
       lOut.style.display = "none";
       logPanel.style.display = "block";
+      welcomePanel.style.display = "none";
     }
 }
 
@@ -80,6 +83,10 @@ function login() {
               console.log(sessionStorage.getItem("token"))
               console.log('Login successful');
               window.alert("Login Successfull! Welcome here " + username + "!");
+              let welcome = document.getElementById("welcome");
+              let span = document.createElement("a");
+              span.textContent = " " + username + "!";
+              welcome.appendChild(span);
               loginout();
               let x = document.getElementById("login");
               x.style.display = "none";
