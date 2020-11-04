@@ -34,6 +34,15 @@ public class testArtistsSelinium {
 		System.out.println("choonz website accessed");
 	}
 	
+	@When("^I navigate to the artist page")
+	public void I_navigate_to_the_Artist_page() throws Throwable {
+		targ = driver.findElement(By.xpath("//*[@id=\"collapsingNavbar\"]/ul/li[2]/a"));
+        targ.click();
+        System.out.println("Artist clicked");
+        targ = driver.findElement(By.xpath("//*[@id=\"artists\"]/div[4]/div/div/a/h5"));
+        assertEquals("The Weeknd", targ.getText());
+	}
+	
 	@After
 	public void tearDown() {
 		driver.close();

@@ -11,7 +11,7 @@ import cucumber.api.junit.Cucumber;
 // normally would be a glue link as well
 // but due to package structure here its not needed
 plugin = {"pretty", "html:target/reports/htmlReports",
-			"json:target/reports/json/demositereport.json", "junit:target/reports/xml/xmlReports"},
+			"json:target/reports/json/artistreport.json", "junit:target/reports/xml/xmlReports"},
 monochrome = true,
 tags = {"~@ignore"}
 )
