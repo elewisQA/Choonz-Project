@@ -43,16 +43,16 @@
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
       </kg.apc.jmeter.threads.UltimateThreadGroup>
       <hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="HTTP Request - create user" enabled="false">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="HTTP Request - create user" enabled="true">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
             <collectionProp name="Arguments.arguments">
               <elementProp name="" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
                 <stringProp name="Argument.value">{&#xd;
-    &quot;username&quot;: &quot;dan&quot;,&#xd;
-    &quot;password&quot;: &quot;pass&quot;,&#xd;
-    &quot;playlists&quot;: []&#xd;
+&quot;username&quot;: &quot;${__RandomString(10,abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ,)}&quot;,&#xd;
+&quot;password&quot;: &quot;myPass&quot;,&#xd;
+&quot;playlists&quot;: []&#xd;
 }</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
               </elementProp>
@@ -87,8 +87,8 @@
           </HeaderManager>
           <hashTree/>
           <JSONPathAssertion guiclass="JSONPathAssertionGui" testclass="JSONPathAssertion" testname="check if created" enabled="true">
-            <stringProp name="JSON_PATH">$.username</stringProp>
-            <stringProp name="EXPECTED_VALUE">dan</stringProp>
+            <stringProp name="JSON_PATH">$.password</stringProp>
+            <stringProp name="EXPECTED_VALUE">myPass</stringProp>
             <boolProp name="JSONVALIDATION">true</boolProp>
             <boolProp name="EXPECT_NULL">false</boolProp>
             <boolProp name="INVERT">false</boolProp>
@@ -125,11 +125,11 @@
             <collectionProp name="HeaderManager.headers">
               <elementProp name="" elementType="Header">
                 <stringProp name="Header.name">username</stringProp>
-                <stringProp name="Header.value">username</stringProp>
+                <stringProp name="Header.value">user</stringProp>
               </elementProp>
               <elementProp name="" elementType="Header">
                 <stringProp name="Header.name">password</stringProp>
-                <stringProp name="Header.value">password</stringProp>
+                <stringProp name="Header.value">pass</stringProp>
               </elementProp>
             </collectionProp>
           </HeaderManager>
