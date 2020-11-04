@@ -51,6 +51,7 @@ public class artistTest {
 	@When("^I can click on an artist$")
 	public void i_can_click_on_an_artist() throws Throwable {
 		Thread.sleep(2500);
+		driver.get("http://127.0.0.1:5501/static/artists.html");
 		targ = driver.findElement(By.xpath("//*[@id=\"artists\"]/div[4]/div/div"));
 		System.out.println("Found artist to click");
 //		targ.click();
