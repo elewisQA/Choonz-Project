@@ -59,10 +59,12 @@ function login() {
 
   fetch('http://localhost:8082/users/login', {
       method: 'post',
+      
       headers: {
            "Content-type": "application/json",
-           "username": "test",
-           "password": "password"
+           "username": "username",
+           "password": "password",
+           "Access-Control-Allow-Origin": '*'       
       }
       })
       .then(
@@ -70,11 +72,12 @@ function login() {
           if (response.status !== 200) {
             console.log('Looks like there was a problem. Status Code: ' +
               response.status);
+            console.log(response.headers);
             return;
           }
           response.json().then(function(success) {
             if(success){
-              console.log(response);
+              console.log(response.headers);
               console.log('Login successful');
             }
             else{

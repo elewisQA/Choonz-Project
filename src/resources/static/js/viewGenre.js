@@ -79,6 +79,7 @@ function populate(data) {
         for(let key in a['tracks']){
             console.log(a["tracks"][key]["id"]);
             let value = a['tracks'][key]["name"];
+            let trackId = a["tracks"][key]["id"];
             console.log(value);
             let row = document.createElement("tr");
             tableBody.appendChild(row);
@@ -163,7 +164,7 @@ function populate(data) {
             secondDropdown.id ="second_dropdown" + count;
             secondDropdown.setAttribute("aria-labelledby", "dropdownMenu222");
             dropdown.appendChild(secondDropdown);
-            readPlaylists(count);
+            readPlaylists(count, trackId);
             count ++;
         }
     }
@@ -199,7 +200,7 @@ function populate(data) {
 
 // }
 
-function readPlaylists(songCount) {
+function readPlaylists(songCount, trackId) {
   fetch('http://localhost:8082/playlists/read')
    .then(
      function(response) {
@@ -212,7 +213,7 @@ function readPlaylists(songCount) {
        // Examine the text in the response
        response.json().then(function(data) {
          console.log(data);
-         addPlaylists(data, songCount);
+         addPlaylists(data, songCount, trackId);
        });
      }
    )
@@ -221,7 +222,7 @@ function readPlaylists(songCount) {
    });
  }
 
- function addPlaylists(data, songCount) {
+ function addPlaylists(data, songCount, trackId) {
   let find = document.getElementById("second_dropdown"+songCount);
   for (let key of data) {
     console.log(key);
@@ -229,6 +230,37 @@ function readPlaylists(songCount) {
     selectPlaylist.className = "dropdown-item";
     selectPlaylist.href="#";
     selectPlaylist.textContent = key['name'];
+    selectPlaylist.addEventListener("click", function(stop){
+      stop.preventDefault();  
+      addTrack(trackId, key['id']);    
+    })
     find.appendChild(selectPlaylist);
   }
  }
+
+ function addTrack(trackId, playlistId){
+  fetch('http://localhost:8082/playlists/add/' + playlistId+'/'+trackId,{
+    method: 'post',
+    headers: {
+      "Content-type": "application/json",
+      "token": "SUXX91fZL8"
+    },
+  })
+  .then(
+    function(response) {
+      if (response.status !== 202) {
+        console.log('Looks like there was a problem. Status Code: ' +
+          response.status);
+        return;
+      }
+
+      // Examine the text in the response
+      response.json().then(function(data) {
+        console.log(data);
+      });
+    }
+  )
+  .catch(function(err) {
+    console.log('Fetch Error :-S', err);
+  });
+}
