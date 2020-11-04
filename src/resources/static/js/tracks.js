@@ -73,7 +73,7 @@ function populate(data) {
      let songName = document.createElement("td");
      songName.id = "trackName" + count;
      let link = document.createElement("a");
-     link.href = "viewTracks.html?id=" + data[key]['id'];
+     link.href = "viewTrack.html?id=" + data[key]['id'];
      link.textContent = value;
      row.appendChild(songName);
      let br = document.createElement("br");
