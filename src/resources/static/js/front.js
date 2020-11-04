@@ -68,6 +68,9 @@ function login() {
             console.log('Looks like there was a problem. Status Code: ' +
               response.status);
             console.log(response.headers);
+            window.alert("Login failed! Please check your login details.");
+            document.getElementById("userLog").value = '';
+            document.getElementById("pwLog").value = '';
             return;
           }
           response.text().then(function(token) {
@@ -76,10 +79,10 @@ function login() {
               sessionStorage.setItem("token", token)
               console.log(sessionStorage.getItem("token"))
               console.log('Login successful');
+              window.alert("Login Successfull! Welcome here " + username + "!");
               loginout();
               let x = document.getElementById("login");
               x.style.display = "none";
-              window.alert("Login Successfull! Welcome here " + username + "!");
             }
             else{
               console.log("Login failed! Please check your login details.");
