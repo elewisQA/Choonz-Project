@@ -33,7 +33,7 @@ public class PlaylistController {
 
     @PostMapping("/create")
     public ResponseEntity<PlaylistDTO> create(@RequestBody Playlist playlist, @RequestHeader("token") String token) {
-        if (AuthUtils.validToken(token)) {
+        if (AuthUtils.validToken(token) && playlist.getUser() != null) {
         	return new ResponseEntity<PlaylistDTO>(this.service.create(playlist), HttpStatus.CREATED);
         } else {
         	return new ResponseEntity<PlaylistDTO>(HttpStatus.UNAUTHORIZED);
