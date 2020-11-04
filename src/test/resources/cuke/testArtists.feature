@@ -1,4 +1,5 @@
-Feature: testArtists
+
+Feature: testing artists
 As a user
 I want to browse artists on the website
 So i can add to playlist
