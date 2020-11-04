@@ -105,8 +105,8 @@ function register(){
         "Content-type": "application/json"
       },
       body:json = JSON.stringify({
-        "password": password,
         "username": username,
+        "password": password,
         "playlists": []
        })
     })
