@@ -77,7 +77,9 @@ function login() {
           }
           response.json().then(function(success) {
             if(success){
-              console.log(response.headers);
+              for (let header of response.headers) {
+                console.log(header);
+              }
               console.log('Login successful');
             }
             else{
