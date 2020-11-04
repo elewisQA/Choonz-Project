@@ -23,6 +23,8 @@ import com.qa.choonz.rest.dto.ArtistDTO;
 import com.qa.choonz.rest.dto.GenreDTO;
 import com.qa.choonz.rest.dto.PlaylistDTO;
 import com.qa.choonz.rest.dto.TrackDTO;
+import com.qa.choonz.service.ArtistService;
+import com.qa.choonz.rest.controller.SearchController;
 @SpringBootTest
 @AutoConfigureMockMvc
 class TestSearchControllerIntegration {
@@ -41,6 +43,7 @@ class TestSearchControllerIntegration {
 	private GenreDTO genreDTO;
 	private TrackDTO trackDTO;
 	private PlaylistDTO playlistDTO;
+	private ArtistService artistService;
 	
 	private final String qArtist = "week";
 	private final String qAlbum = "kiss";
@@ -56,14 +59,22 @@ class TestSearchControllerIntegration {
 	
 	@Test
 	void testSearchArtists() throws Exception {
+//		List<ArtistDTO> allArtists = new ArrayList<>();
 		List<ArtistDTO> artistSearch = new ArrayList<>();
-		artistSearch.add(this.artistDTO);
+		List<ArtistDTO> allArtists = artistService.read();
+		allArtists.add(this.artistDTO);
+		for (ArtistDTO a: allArtists) {
+//			if (a.getName().contains(query)) {
+			if (containsIgnoreCase(a.getName(), this.qArtist)) {
+				artistSearch.add(a);
+			}
+		}
 		
 		String output = this.mock.perform(request(HttpMethod.GET, "/search/artists/" + this.qArtist)
 				.accept(MediaType.APPLICATION_JSON))
 				.andExpect(status().isFound()).andReturn().getResponse().getContentAsString();
 		
-		assertEquals(output, output);
+		assertEquals(artistSearch, output);
 	}
 	
 	@Test
@@ -113,4 +124,7 @@ class TestSearchControllerIntegration {
 		
 		assertEquals(output, output);
 	}
+	public static boolean containsIgnoreCase(String str, String subString) {
+        return str.toLowerCase().contains(subString.toLowerCase());
+    }
 }
