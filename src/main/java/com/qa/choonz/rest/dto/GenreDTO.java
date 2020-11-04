@@ -1,9 +1,6 @@
-
 package com.qa.choonz.rest.dto;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Objects;
 
 import com.qa.choonz.persistence.domain.Album;
@@ -18,7 +15,6 @@ public class GenreDTO {
 
     public GenreDTO() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
     public GenreDTO(long id, String name, String picture, String description, List<Album> albums) {

@@ -1,7 +1,7 @@
 package com.qa.choonz.persistence.domain;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.ArrayList;
@@ -93,7 +93,7 @@ class TestPlaylistDomain_UnitTest {
 		Playlist newPlaylist = new Playlist();
 		
 		assertEquals(newPlaylist, this.testPlaylist);
-		assertFalse(newPlaylist.equals(null));
+		assertNotEquals(null, newPlaylist);
 	}
 	
 	@AfterEach

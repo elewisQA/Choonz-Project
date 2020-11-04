@@ -15,17 +15,22 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.qa.choonz.exception.TrackNotFoundException;
 import com.qa.choonz.persistence.domain.Playlist;
 import com.qa.choonz.persistence.domain.Track;
 import com.qa.choonz.persistence.domain.User;
 import com.qa.choonz.persistence.repository.PlaylistRepository;
+import com.qa.choonz.persistence.repository.TrackRepository;
 import com.qa.choonz.rest.dto.PlaylistDTO;
+import com.qa.choonz.rest.dto.TrackDTO;
+import com.qa.choonz.service.TrackService;
 import com.qa.choonz.utils.AuthUtils;
 
 @SpringBootTest
@@ -37,6 +42,9 @@ class TestPlaylistControllerIntegration {
     
     @Autowired
     private PlaylistRepository repo;
+    
+    @Autowired
+    private TrackRepository trackRepo;
     
     @Autowired
     private ModelMapper modelMapper;
@@ -148,5 +156,37 @@ class TestPlaylistControllerIntegration {
     void testDelete() throws Exception {
         this.mock.perform(request(HttpMethod.DELETE, "/playlists/delete/" + this.id).header("token", token)).andExpect(status().isNoContent());
     }
-
+    
+    @Test
+    void testAddTrack() throws Exception{
+    	Track track = this.trackRepo.findById(2L).orElseThrow(TrackNotFoundException::new);
+    	List<Track> trackList = new ArrayList<>();
+    	List<Playlist> playlistList = new ArrayList<>();
+    	playlistList.add(testPlaylist);
+    	track.setPlaylists(playlistList);
+    	trackList.add(track);
+    	testPlaylist.setTracks(trackList);
+    	
+        String output = this.mock
+                .perform(request(HttpMethod.POST, "/playlists/add/" + this.id + "/" + 2L).header("token", token).accept(MediaType.APPLICATION_JSON)
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(this.objectMapper.writeValueAsString(testPlaylist)))
+                .andExpect(status().isAccepted()).andReturn().getResponse().getContentAsString();
+    	
+    	assertEquals(this.objectMapper.writeValueAsString(this.mapToDTO(testPlaylist)),output);
+    }
+    
+    @Test
+    void testDeleteTrack() throws Exception{
+    	Track track = this.trackRepo.findById(2L).orElseThrow(TrackNotFoundException::new);
+    	
+        String output = this.mock
+                .perform(request(HttpMethod.POST, "/playlists/remove/" + this.id + "/" + 2L).header("token", token).accept(MediaType.APPLICATION_JSON)
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(this.objectMapper.writeValueAsString(testPlaylist)))
+                .andExpect(status().isAccepted()).andReturn().getResponse().getContentAsString();
+    	
+    	assertEquals(this.objectMapper.writeValueAsString(this.mapToDTO(testPlaylist)),output);
+    }
+    
 }

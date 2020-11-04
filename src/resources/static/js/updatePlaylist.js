@@ -37,33 +37,35 @@ function validateForm(){
         let id = found[1];
         console.log(id); 
         updatePlaylist(playlistName, playlistPic, playlistDesc, id);
+       
     } 
      
 })
 
+
     
   function updatePlaylist(playlistName,  playlistPic, playlistDesc, id) {
-    
+
        fetch('http://localhost:8082/playlists/update/' + id, {
            method: 'post',
            headers: {
-                "Content-type": "application/json"
+                "Content-type": "application/json",
+                "token": "IKnnHQY5av"
            },
            body:json = JSON.stringify({
             "name": playlistName,
             "artwork": playlistPic,
             "description": playlistDesc,
-            "tracks": [null]
            })
            })
            .then(json)
            .then(function (data) {
                console.log('Request succeeded with JSON response', data);
-               window.location.href = "viewPlaylist.html?id=" + id;
+                window.location.href = "viewPlaylist.html?id=" + id;
            })
            .catch(function (error) {
                console.log('Request failed', error);
            });
    }
 
- 
+
