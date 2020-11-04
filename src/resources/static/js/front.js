@@ -58,13 +58,11 @@ function register() {
 function login() {
 
   fetch('http://localhost:8082/users/login', {
-      method: 'post',
-      
+      method: 'get', 
       headers: {
-           "Content-type": "application/json",
+           "Content-type": "text/plain",
            "username": "username",
-           "password": "password",
-           "Access-Control-Allow-Origin": '*'       
+           "password": "password",  
       }
       })
       .then(
@@ -75,11 +73,10 @@ function login() {
             console.log(response.headers);
             return;
           }
-          response.json().then(function(success) {
-            if(success){
-              for (let header of response.headers) {
-                console.log(header);
-              }
+          response.text().then(function(token) {
+            if(token){
+              console.log("Token: " + token); // <-- This is the username I would suggest putting it into session storage
+              // sessionStorage.putItem("token", token)
               console.log('Login successful');
             }
             else{
