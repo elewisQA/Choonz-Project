@@ -243,7 +243,7 @@ function readPlaylists(songCount, trackId) {
     method: 'post',
     headers: {
       "Content-type": "application/json",
-      "token": "SUXX91fZL8"
+      "token": sessionStorage.getItem('token')
     },
   })
   .then(
