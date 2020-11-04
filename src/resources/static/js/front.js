@@ -28,12 +28,15 @@ function showLogin() {
 
 function login() {
 
+  let username = document.getElementById("user_login").value;
+  let password = document.getElementById("password_login").value;
+
   fetch('http://localhost:8082/users/login', {
       method: 'get', 
       headers: {
            "Content-type": "text/plain",
-           "username": "username",
-           "password": "password",  
+           "username": username,
+           "password": password, 
       }
       })
       .then(
@@ -47,9 +50,11 @@ function login() {
           response.text().then(function(token) {
             if(token){
               console.log("Token: " + token); // <-- This is the username I would suggest putting it into session storage
-              sessionStorage.setItem("token", token)
-              console.log(sessionStorage.getItem("token"))
+              sessionStorage.setItem("token", token);
+              console.log(sessionStorage.getItem("token"));
+              sessionStorage.setItem("username", username);
               console.log('Login successful');
+              getUsers();
               loginout();
               let x = document.getElementById("login");
               x.style.display = "none";
@@ -162,4 +167,40 @@ function resetThis(){
 
 function logoutNow(){
 
+}
+
+
+
+function getUsers () {
+  fetch('http://localhost:8082/users/read')
+  .then(
+    function(response) {
+      if (response.status !== 200) {
+        console.log('Looks like there was a problem. Status Code: ' +
+          response.status);
+        return;
+      }
+
+      // Examine the text in the response
+      response.json().then(function(data) {
+        console.log(data);
+        for (let key of data) {
+          console.log(key);
+          getId(key);
+        }
+      });
+    }
+  )
+  .catch(function(err) {
+    console.log('Fetch Error :-S', err);
+  });
+}
+
+function getId(data) { 
+  if (data['username'] === sessionStorage.getItem('username')){
+    console.log(data['id']);
+    sessionStorage.setItem("userId", data['id']);
+  }
+
+  
 }

@@ -186,8 +186,7 @@ function deleteTrack(id, playlistId) {
       "token": sessionStorage.getItem('token')
     },
     body:json = JSON.stringify({
-      "id": id,
-      "name": "",
+      "id": playlistId,
       "user": {
         "id": userId
       }
@@ -271,8 +270,7 @@ function addTrack(trackId, playlistId){
       "token": sessionStorage.getItem('token')
     },
     body:json = JSON.stringify({
-      "id": id,
-      "name": "",
+      "id": playlistId,
       "user": {
         "id": userId
       }
