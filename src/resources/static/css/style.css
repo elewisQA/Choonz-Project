@@ -543,3 +543,7 @@ padding-left: 2%;
   overflow-x: hidden;
   background-color: lightgray;
 }
+
+.nav-link.active{
+  font-weight: bold;
+}
