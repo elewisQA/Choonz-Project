@@ -52,7 +52,7 @@ public class PlaylistController {
 
     @PostMapping("/update/{id}")
     public ResponseEntity<PlaylistDTO> update(@RequestBody Playlist playlist, @PathVariable long id, @RequestHeader("token") String token) {
-        if (AuthUtils.validToken(token)) {
+        if (AuthUtils.validToken(token, id)) {
         	return new ResponseEntity<PlaylistDTO>(this.service.update(playlist, id), HttpStatus.ACCEPTED);
         } else {
         	return new ResponseEntity<PlaylistDTO>(HttpStatus.UNAUTHORIZED);
@@ -70,9 +70,9 @@ public class PlaylistController {
     }
     
     @PostMapping("/add/{playlistId}/{trackId}")
-    public ResponseEntity<PlaylistDTO> add(@PathVariable Long playlistId,@PathVariable Long trackId, @RequestHeader("token") String token){
-        if (AuthUtils.validToken(token)) {
-        	return new ResponseEntity<PlaylistDTO>(this.service.addTrack(playlistId, trackId), HttpStatus.ACCEPTED);
+    public ResponseEntity<PlaylistDTO> add(@RequestBody Playlist playlist,@PathVariable Long trackId, @RequestHeader("token") String token){
+        if (AuthUtils.validToken(token, playlist.getUser().getId())) {
+        	return new ResponseEntity<PlaylistDTO>(this.service.addTrack(playlist.getId(), trackId), HttpStatus.ACCEPTED);
         } else {
         	return new ResponseEntity<PlaylistDTO>(HttpStatus.UNAUTHORIZED);
         }
@@ -80,9 +80,9 @@ public class PlaylistController {
     }
     
     @PostMapping("/remove/{playlistId}/{trackId}")
-    public ResponseEntity<PlaylistDTO> remove(@PathVariable Long playlistId,@PathVariable Long trackId, @RequestHeader("token") String token){
-        if (AuthUtils.validToken(token)) {
-        	return new ResponseEntity<PlaylistDTO>(this.service.removeTrack(playlistId, trackId), HttpStatus.ACCEPTED);
+    public ResponseEntity<PlaylistDTO> remove(@RequestBody Playlist playlist,@PathVariable Long trackId, @RequestHeader("token") String token){
+        if (AuthUtils.validToken(token, playlist.getUser().getId())) {
+        	return new ResponseEntity<PlaylistDTO>(this.service.removeTrack(playlist.getId(), trackId), HttpStatus.ACCEPTED);
         } else {
         	return new ResponseEntity<PlaylistDTO>(HttpStatus.UNAUTHORIZED);
         }
