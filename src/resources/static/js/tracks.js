@@ -210,7 +210,7 @@ function addArtist(data, count){
 }
 
 function readPlaylists(songCount, trackId) {
-  fetch('http://localhost:8082/playlists/read')
+  fetch('http://localhost:8082/users/read')
    .then(
      function(response) {
        if (response.status !== 200) {
@@ -221,8 +221,13 @@ function readPlaylists(songCount, trackId) {
  
        // Examine the text in the response
        response.json().then(function(data) {
-         console.log(data);
-         addPlaylists(data, songCount, trackId);
+        let userId = sessionStorage.getItem('userId'); 
+        for (let key of data) {
+         if (key['id'] == userId) {
+           console.log(key['id'])
+           addPlaylists(key, songCount, trackId)
+         }
+       }
        });
      }
    )
@@ -233,7 +238,7 @@ function readPlaylists(songCount, trackId) {
 
  function addPlaylists(data, songCount, trackId) {
   let find = document.getElementById("second_dropdown"+songCount);
-  for (let key of data) {
+  for (let key of data['playlists']) {
     console.log(key);
     let selectPlaylist = document.createElement("a");
     selectPlaylist.className = "dropdown-item";

@@ -210,6 +210,7 @@ function resetThis(){
 
 function logoutNow(){
   sessionStorage.setItem("token", "");
+  sessionStorage.setItem("userId", "");
   window.alert("Logout successful! Come back soon!");
   window.location.reload();
 

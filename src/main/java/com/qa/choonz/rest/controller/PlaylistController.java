@@ -71,7 +71,7 @@ public class PlaylistController {
     
     @PostMapping("/add/{playlistId}/{trackId}")
     public ResponseEntity<PlaylistDTO> add(@RequestBody Playlist playlist, @PathVariable Long trackId, @RequestHeader("token") String token){
-        if (AuthUtils.validToken(token) && AuthUtils.getTokenOwner(token) == playlist.getUser().getId()) {
+        if (AuthUtils.validToken(token, playlist.getUser().getId())) {
         	return new ResponseEntity<PlaylistDTO>(this.service.addTrack(playlist.getId(), trackId), HttpStatus.ACCEPTED);
         } else {
         	return new ResponseEntity<PlaylistDTO>(HttpStatus.UNAUTHORIZED);
