@@ -49,8 +49,8 @@ class TestUserControllerUnit {
 	private final long id = 1L;
 	private final String username = "username";
 	private final String password = "password";
-	private final String badUser = "username";
-	private final String badPass = "password";
+	private final String badUser = "badUname";
+	private final String badPass = "badPword";
 	private List<Playlist> playlists;
 	
 	private String token;
