@@ -125,11 +125,11 @@
             <collectionProp name="HeaderManager.headers">
               <elementProp name="" elementType="Header">
                 <stringProp name="Header.name">username</stringProp>
-                <stringProp name="Header.value">user</stringProp>
+                <stringProp name="Header.value">username</stringProp>
               </elementProp>
               <elementProp name="" elementType="Header">
                 <stringProp name="Header.name">password</stringProp>
-                <stringProp name="Header.value">pass</stringProp>
+                <stringProp name="Header.value">password</stringProp>
               </elementProp>
             </collectionProp>
           </HeaderManager>
@@ -289,13 +289,13 @@
               <elementProp name="" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
                 <stringProp name="Argument.value">{&#xd;
-&quot;name&quot;: &quot;${__RandomString(10,abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ,)}&quot;,&#xd;
-&quot;description&quot;: &quot;Big choons&quot;,&#xd;
-&quot;artwork&quot;: &quot;Art url&quot;,&#xd;
-&quot;tracks&quot;: [],&#xd;
-&quot;user&quot;: {&#xd;
-&quot;id&quot;: 1&#xd;
-}&#xd;
+    &quot;name&quot;: &quot;${__RandomString(10,abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ,)}&quot;,&#xd;
+    &quot;description&quot;: &quot;Big choons&quot;,&#xd;
+    &quot;artwork&quot;: &quot;some artwork URL&quot;,&#xd;
+    &quot;tracks&quot;: [],&#xd;
+    &quot;user&quot;: {&#xd;
+        &quot;id&quot;: 1&#xd;
+    }&#xd;
 }&#xd;
 </stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
@@ -339,7 +339,7 @@
             <boolProp name="ISREGEX">true</boolProp>
           </JSONPathAssertion>
           <hashTree/>
-          <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="get id of created playlist" enabled="true">
+          <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="get id of  playlist" enabled="true">
             <stringProp name="JSONPostProcessor.referenceNames">playlist_id</stringProp>
             <stringProp name="JSONPostProcessor.jsonPathExprs">$.id</stringProp>
             <stringProp name="JSONPostProcessor.match_numbers"></stringProp>
