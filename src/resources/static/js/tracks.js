@@ -39,7 +39,6 @@ fetch('http://localhost:8082/tracks/read')
     console.log('Fetch Error :-S', err);
   });
 
-
 function populate(data) {
     let find = document.getElementById("main_info");
 
@@ -255,6 +254,12 @@ function readPlaylists(songCount, trackId) {
       "Content-type": "application/json",
       "token": sessionStorage.getItem('token')
     },
+    body:json = JSON.stringify({
+      "id": playlistId,
+      "user": {
+        "id": sessionStorage.getItem('userId')
+      }
+     })
   })
   .then(
     function(response) {

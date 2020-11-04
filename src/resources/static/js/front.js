@@ -36,8 +36,8 @@ function loginout(){
 
 function login() {
 
-  let username = document.getElementById("userLog").value;
-  let password = document.getElementById("pwLog").value;
+  let username = document.getElementById("user_login").value;
+  let password = document.getElementById("password_login").value;
   let pw = false;
   let un = false;
 
@@ -62,7 +62,7 @@ function login() {
       headers: {
            "Content-type": "text/plain",
            "username": username,
-           "password": password,  
+           "password": password, 
       }
       })
       .then(
@@ -79,14 +79,16 @@ function login() {
           response.text().then(function(token) {
             if(token){
               console.log("Token: " + token); // <-- This is the username I would suggest putting it into session storage
-              sessionStorage.setItem("token", token)
-              console.log(sessionStorage.getItem("token"))
+              sessionStorage.setItem("token", token);
+              console.log(sessionStorage.getItem("token"));
+              sessionStorage.setItem("username", username);
               console.log('Login successful');
               window.alert("Login Successfull! Welcome here " + username + "!");
               let welcome = document.getElementById("welcome");
               let span = document.createElement("a");
               span.textContent = " " + username + "!";
               welcome.appendChild(span);
+              getUsers();
               loginout();
               let x = document.getElementById("login");
               x.style.display = "none";
@@ -211,4 +213,40 @@ function logoutNow(){
   window.alert("Logout successful! Come back soon!");
   window.location.reload();
 
+}
+
+
+
+function getUsers () {
+  fetch('http://localhost:8082/users/read')
+  .then(
+    function(response) {
+      if (response.status !== 200) {
+        console.log('Looks like there was a problem. Status Code: ' +
+          response.status);
+        return;
+      }
+
+      // Examine the text in the response
+      response.json().then(function(data) {
+        console.log(data);
+        for (let key of data) {
+          console.log(key);
+          getId(key);
+        }
+      });
+    }
+  )
+  .catch(function(err) {
+    console.log('Fetch Error :-S', err);
+  });
+}
+
+function getId(data) { 
+  if (data['username'] === sessionStorage.getItem('username')){
+    console.log(data['id']);
+    sessionStorage.setItem("userId", data['id']);
+  }
+
+  
 }

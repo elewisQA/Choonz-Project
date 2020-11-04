@@ -42,9 +42,12 @@ function getID(id) {
   });
 }
 
+let userId;
+
 function populate(data) {
     console.log(data['name']);
     let playlistId = data['id'];
+    userId = data['user']['id'];
 
     let find = document.getElementById("main_info");
     let image = document.createElement("img");
@@ -196,6 +199,12 @@ function deleteTrack(id, playlistId) {
       "Content-type": "application/json",
       "token": sessionStorage.getItem('token')
     },
+    body:json = JSON.stringify({
+      "id": playlistId,
+      "user": {
+        "id": userId
+      }
+     })
   })
   .then(
     function(response) {
@@ -274,6 +283,12 @@ function addTrack(trackId, playlistId){
       "Content-type": "application/json",
       "token": sessionStorage.getItem('token')
     },
+    body:json = JSON.stringify({
+      "id": playlistId,
+      "user": {
+        "id": userId
+      }
+     })
   })
   .then(
     function(response) {

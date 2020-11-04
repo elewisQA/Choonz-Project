@@ -47,6 +47,7 @@ document.querySelector("form.playlist").addEventListener("submit", function(stop
     
 })
 
+
 function addPlaylist(playlistName, playlistPic, playlistDesc) {
     
     fetch('http://localhost:8082/playlists/create', {
@@ -59,7 +60,10 @@ function addPlaylist(playlistName, playlistPic, playlistDesc) {
             "name": playlistName,
             "artwork": playlistPic,
             "description": playlistDesc,
-            "tracks": [null]
+            "tracks": [null],
+            "user": {
+                "id": sessionStorage.getItem("userId")
+              }
         })
         })
         .then(json)

@@ -264,6 +264,12 @@ function readPlaylists(songCount, trackId) {
       "Content-type": "application/json",
       "token": sessionStorage.getItem('token')
     },
+    body:json = JSON.stringify({
+      "id": playlistId,
+      "user": {
+        "id": sessionStorage.getItem('userId')
+      }
+     })
   })
   .then(
     function(response) {
