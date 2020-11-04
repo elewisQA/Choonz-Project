@@ -2,7 +2,8 @@ const findId = new URLSearchParams(window.location.search);
 for (let found of findId) {
     let id = found[1];
     console.log(id);
-    getID(id);  
+    getID(id); 
+    console.log(sessionStorage.getItem('token')) 
  } 
 
 function getID(id) {
@@ -179,7 +180,7 @@ function deleteTrack(id, playlistId) {
     method: 'post',
     headers: {
       "Content-type": "application/json",
-      "token": "iJrzsalBq6"
+      "token": sessionStorage.getItem('token')
     },
   })
   .then(
@@ -206,7 +207,7 @@ function deleteTrack(id, playlistId) {
     method: 'DELETE',
     headers: {
       "Content-type": "application/json",
-      "token": "qjRlE62FTb"
+      "token": sessionStorage.getItem('token')
     },
     })
     .then(res => res.text()) // or res.json()
@@ -257,7 +258,7 @@ function addTrack(trackId, playlistId){
     method: 'post',
     headers: {
       "Content-type": "application/json",
-      "token": "iJrzsalBq6"
+      "token": sessionStorage.getItem('token')
     },
   })
   .then(
