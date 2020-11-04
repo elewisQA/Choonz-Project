@@ -39,8 +39,7 @@ function addPlaylist(playlistName, playlistPic, playlistDesc) {
         method: 'post',
         headers: {
               "Content-type": "application/json",
-              "token": "iJrzsalBq6"
-
+              "token": "IKnnHQY5av"
         },
         body:json = JSON.stringify({
             "name": playlistName,

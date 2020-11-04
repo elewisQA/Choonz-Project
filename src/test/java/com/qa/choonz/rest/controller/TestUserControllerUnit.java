@@ -49,6 +49,8 @@ class TestUserControllerUnit {
 	private final long id = 1L;
 	private final String username = "username";
 	private final String password = "password";
+	private final String badUser = "badUname";
+	private final String badPass = "badPword";
 	private List<Playlist> playlists;
 	
 	private String token;
@@ -67,6 +69,8 @@ class TestUserControllerUnit {
     	this.userDTO = this.mapToDTO(testUser);
     	
     	this.token = AuthUtils.newToken(this.id);
+//    	this.token = AuthUtils.
+    	
     }
     
     @Test
@@ -84,15 +88,28 @@ class TestUserControllerUnit {
     
     @Test
     void loginTest() {
-    	when(this.service.login(username, password)).thenReturn(null);
-    	//the above line has an issue i believe
+    	when(this.service.login(username, password)).thenReturn(testUser.getId());
     	
     	HttpHeaders headers = new HttpHeaders();
-//    	headers.add("token", token);
+    	headers.add("token", token);
     	
-    	assertThat(new ResponseEntity<Boolean>(false, headers, HttpStatus.OK))
-    		.isEqualTo(this.controller.login(this.username, this.password));
+    	assertThat(new ResponseEntity<Boolean>(true, headers, HttpStatus.OK).getBody())
+    		.isEqualTo(this.controller.login(this.username, this.password).getBody());
     	
+    	verify(this.service, times(1)).login(this.username, this.password);
+    }
+    
+    @Test
+    void failLoginTest() {
+    	when(this.service.login(badUser, badUser)).thenReturn(testUser.getId());
+    	
+    	HttpHeaders headers = new HttpHeaders();
+    	headers.add("token", token);
+    	
+    	assertThat(new ResponseEntity<Boolean>(true, headers, HttpStatus.OK).getBody())
+    		.isEqualTo(this.controller.login(this.badUser, this.badPass).getBody());
+    	
+    	verify(this.service, times(1)).login(this.badUser, this.badPass);
     }
     
     @Test

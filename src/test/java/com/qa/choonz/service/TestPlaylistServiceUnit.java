@@ -20,6 +20,7 @@ import com.qa.choonz.persistence.domain.Playlist;
 import com.qa.choonz.persistence.domain.Track;
 import com.qa.choonz.persistence.domain.User;
 import com.qa.choonz.persistence.repository.PlaylistRepository;
+import com.qa.choonz.persistence.repository.TrackRepository;
 import com.qa.choonz.rest.dto.PlaylistDTO;
 
 @SpringBootTest
@@ -30,6 +31,9 @@ class TestPlaylistServiceUnit {
 	
 	@MockBean
 	private PlaylistRepository repo;
+	
+	@MockBean
+    private TrackRepository trackRepo;
 	
 	@MockBean
 	private ModelMapper modelMapper;
@@ -134,5 +138,14 @@ class TestPlaylistServiceUnit {
 		verify(this.repo, times(1)).existsById(id);
 	}
 	
+//    @Test
+//    void addTrackTest() {
+	
+//    }
+    
+//    @Test
+//    void removeTrackTest() {
+
+//    }
 	
 }
