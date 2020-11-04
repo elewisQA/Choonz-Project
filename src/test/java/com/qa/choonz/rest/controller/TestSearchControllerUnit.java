@@ -63,6 +63,8 @@ class TestSearchControllerUnit {
 		.isEqualTo(this.controller.searchAlbums("Album"));
 		
 		verify(this.albumService,times(1)).read();
+		
+		//ToDo get read working properly to compare search with actual record in database
 	}
 	
 	@Test
@@ -73,6 +75,8 @@ class TestSearchControllerUnit {
 		
 		assertThat(new ResponseEntity<List<ArtistDTO>>(artists,HttpStatus.FOUND))
 		.isEqualTo(this.controller.searchAlbums("Artist"));
+		
+		//ToDo get read working properly to compare search with actual record in database
 	}
 	
 	@Test
@@ -83,6 +87,8 @@ class TestSearchControllerUnit {
 		
 		assertThat(new ResponseEntity<List<GenreDTO>>(genres,HttpStatus.FOUND))
 		.isEqualTo(this.controller.searchAlbums("Genre"));
+		
+		//ToDo get read working properly to compare search with actual record in database
 	}
 	
 	@Test
@@ -93,6 +99,8 @@ class TestSearchControllerUnit {
 		
 		assertThat(new ResponseEntity<List<PlaylistDTO>>(playlists,HttpStatus.FOUND))
 		.isEqualTo(this.controller.searchAlbums(""));
+		
+		//ToDo get read working properly to compare search with actual record in database
 	}
 	
 	@Test
@@ -103,6 +111,8 @@ class TestSearchControllerUnit {
 		
 		assertThat(new ResponseEntity<List<TrackDTO>>(tracks,HttpStatus.FOUND))
 		.isEqualTo(this.controller.searchAlbums(""));
+		
+		//ToDo get read working properly to compare search with actual record in database
 	}
 
 }
