@@ -33,7 +33,7 @@ let userId;
 function populate(data) {
     console.log(data['name']);
     let playlistId = data['id'];
-    //userId = data['user']['id'];
+    userId = data['user']['id'];
 
     let find = document.getElementById("main_info");
     let image = document.createElement("img");
@@ -186,8 +186,7 @@ function deleteTrack(id, playlistId) {
       "token": sessionStorage.getItem('token')
     },
     body:json = JSON.stringify({
-      "id": id,
-      "name": "",
+      "id": playlistId,
       "user": {
         "id": userId
       }
@@ -271,8 +270,7 @@ function addTrack(trackId, playlistId){
       "token": sessionStorage.getItem('token')
     },
     body:json = JSON.stringify({
-      "id": id,
-      "name": "",
+      "id": playlistId,
       "user": {
         "id": userId
       }
