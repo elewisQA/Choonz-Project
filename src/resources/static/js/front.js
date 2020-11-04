@@ -76,8 +76,8 @@ function login() {
           response.text().then(function(token) {
             if(token){
               console.log("Token: " + token); // <-- This is the username I would suggest putting it into session storage
-              sessionStorage.setItem("token", token)
-              console.log(sessionStorage.getItem("token"))
+              sessionStorage.setItem("token", token);
+              console.log(sessionStorage.getItem("token"));
               console.log('Login successful');
             }
             else{

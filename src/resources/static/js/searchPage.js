@@ -144,8 +144,10 @@ function populateArtists(artist, container) {
     // Add Details about
     let cardText = document.createElement("div");
     cardText.setAttribute("class", "card-body");
+    cardText.style= "padding-top: 2%;"
     let group = document.createElement("h5");
     group.innerHTML = "Artist";
+    group.style = "font-size: medium";
     cardText.appendChild(group);
     let link = document.createElement("a");
     link.setAttribute("href", "viewArtist.html?id=" + artist['id']);
@@ -179,9 +181,11 @@ function populateAlbums(album, container) {
     // Add Details about
     let cardText = document.createElement("div");
     cardText.setAttribute("class", "card-body");
+    cardText.style= "padding-top: 2%;"
     let group = document.createElement("h5");
     group.innerHTML = "Album";
     group.setAttribute("class", "card-title");
+    group.style = "font-size: medium";
     cardText.appendChild(group);
     let link = document.createElement("a");
     link.setAttribute("href", "viewArtist.html?id=" + album['id']);
@@ -215,8 +219,10 @@ function populateTracks(track, container) {
 
     // Add Details about
     let cardText = document.createElement("div");
+    cardText.style= "padding-top: 2%;"
     let group = document.createElement("h5");
     group.innerHTML = "Song";
+    group.style = "font-size: medium";
     group.setAttribute("class", "card-title");
     cardText.appendChild(group);
     cardText.setAttribute("class", "card-body");
@@ -254,8 +260,10 @@ function populateGenres(genre, container) {
     let group = document.createElement("h5");
     group.innerHTML = "Genre";
     group.setAttribute("class", "card-title");
+    group.style = "font-size: medium";
     cardText.appendChild(group);
     cardText.setAttribute("class", "card-body");
+    cardText.style= "padding-top: 2%;"
     let link = document.createElement("a");
     link.setAttribute("href", "viewArtist.html?id=" + genre['id']);
     let title = document.createElement("h5");
@@ -288,10 +296,12 @@ function populatePlaylists(playlist, container) {
 
     // Add Details about
     let cardText = document.createElement("div");
+    cardText.style= "padding-top: 2%;"
     let group = document.createElement("h5");
     group.innerHTML = "Playlist";
     group.setAttribute("class", "card-title");
     cardText.appendChild(group);
+    group.style = "font-size: medium";
     cardText.setAttribute("class", "card-body");
     let link = document.createElement("a");
     link.setAttribute("href", "viewArtist.html?id=" + playlist['id']);
