@@ -219,15 +219,18 @@ function deleteTrack(id, playlistId) {
       "token": sessionStorage.getItem('token')
     },
     body:json = JSON.stringify({
-      "id": playlistId,
+      "id": id,
       "user": {
         "id": userId
       }
+     })
     })
     .then(res => res.text()) // or res.json()
     .then(res => console.log(res))
   
   }
+
+ 
 
   function readPlaylists(songCount, trackId) {
     fetch('http://localhost:8082/playlists/read')
