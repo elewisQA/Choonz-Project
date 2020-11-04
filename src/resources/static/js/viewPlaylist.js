@@ -218,6 +218,11 @@ function deleteTrack(id, playlistId) {
       "Content-type": "application/json",
       "token": sessionStorage.getItem('token')
     },
+    body:json = JSON.stringify({
+      "id": playlistId,
+      "user": {
+        "id": userId
+      }
     })
     .then(res => res.text()) // or res.json()
     .then(res => console.log(res))
