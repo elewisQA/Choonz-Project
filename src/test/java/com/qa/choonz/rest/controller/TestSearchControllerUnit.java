@@ -17,7 +17,6 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
-import com.qa.choonz.persistence.domain.Album;
 import com.qa.choonz.rest.dto.AlbumDTO;
 import com.qa.choonz.rest.dto.ArtistDTO;
 import com.qa.choonz.rest.dto.GenreDTO;
@@ -74,8 +73,6 @@ class TestSearchControllerUnit {
 		
 		assertThat(new ResponseEntity<List<ArtistDTO>>(artists,HttpStatus.FOUND))
 		.isEqualTo(this.controller.searchAlbums("Artist"));
-		
-		verify(this.artistService,times(1)).read();
 	}
 	
 	@Test
@@ -86,8 +83,6 @@ class TestSearchControllerUnit {
 		
 		assertThat(new ResponseEntity<List<GenreDTO>>(genres,HttpStatus.FOUND))
 		.isEqualTo(this.controller.searchAlbums("Genre"));
-		
-		verify(this.genreService,times(1)).read();
 	}
 	
 	@Test
@@ -98,8 +93,6 @@ class TestSearchControllerUnit {
 		
 		assertThat(new ResponseEntity<List<PlaylistDTO>>(playlists,HttpStatus.FOUND))
 		.isEqualTo(this.controller.searchAlbums(""));
-		
-		verify(this.playlistService,times(1)).read();
 	}
 	
 	@Test
@@ -110,8 +103,6 @@ class TestSearchControllerUnit {
 		
 		assertThat(new ResponseEntity<List<TrackDTO>>(tracks,HttpStatus.FOUND))
 		.isEqualTo(this.controller.searchAlbums(""));
-		
-		verify(this.trackService,times(1)).read();
 	}
 
 }
