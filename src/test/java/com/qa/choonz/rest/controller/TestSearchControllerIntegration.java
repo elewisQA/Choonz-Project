@@ -35,20 +35,7 @@ class TestSearchControllerIntegration {
 	
 	@Autowired
 	private ModelMapper modelMapper;
-	
-	@Autowired
-	private ObjectMapper objectMapper;
-	
-	@Autowired
-	private ArtistRepository artistRepo;
-	
-	private ArtistDTO artistDTO;
-	private AlbumDTO albumDTO;
-	private GenreDTO genreDTO;
-	private TrackDTO trackDTO;
-	private PlaylistDTO playlistDTO;
-	private ArtistService artistService;
-	
+		
 	private final String qArtist = "week";
 	private final String qAlbum = "kiss";
 	private final String qGenre = "r&";
@@ -58,7 +45,6 @@ class TestSearchControllerIntegration {
 	
 	@BeforeEach
 	void init() {
-		artistService = new ArtistService(artistRepo, modelMapper);
 	}
 	
 	@Test
@@ -115,14 +101,15 @@ class TestSearchControllerIntegration {
 	
 	@Test
 	void testSearchPlaylists() throws Exception {
-		List<PlaylistDTO> playlistSearch = new ArrayList<>();
-		playlistSearch.add(this.playlistDTO);
+		String playlistString = "[{\"id\":3,\"name\":\"HeartBreak\",\"";
 		
 		String output = this.mock.perform(request(HttpMethod.GET, "/search/playlists/" + this.qPlaylist)
 				.accept(MediaType.APPLICATION_JSON))
 				.andExpect(status().isFound()).andReturn().getResponse().getContentAsString();
 		
-		assertEquals(output, output);
+		String[] splitOutput = output.split("desc", 2);
+		
+		assertEquals(playlistString, splitOutput[0]);
 	}
 	
 	
