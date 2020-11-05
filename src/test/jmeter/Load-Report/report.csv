@@ -1,0 +1,832 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
+1604592763398,12,Read Artist,200,,Load test 1-197,text,true,,55016,128,4,4,http://localhost:8082/artists/read,8,0,1
+1604592763330,61,Read Artist,200,,Load test 1-199,text,true,,55016,128,3,3,http://localhost:8082/artists/read,58,0,33
+1604592763331,61,Read Artist,200,,Load test 1-198,text,true,,55016,128,3,3,http://localhost:8082/artists/read,58,0,33
+1604592763330,61,Read Artist,200,,Load test 1-200,text,true,,55016,128,3,3,http://localhost:8082/artists/read,58,0,33
+1604592763500,28,Read Artist,200,,Load test 1-196,text,true,,55016,128,5,5,http://localhost:8082/artists/read,23,0,2
+1604592763601,21,Read Artist,200,,Load test 1-195,text,true,,55016,128,6,6,http://localhost:8082/artists/read,17,0,1
+1604592763708,14,Read Artist,200,,Load test 1-194,text,true,,55016,128,7,7,http://localhost:8082/artists/read,9,0,1
+1604592763526,23,Read Albums,200,,Load test 1-199,text,true,,182467,127,5,5,http://localhost:8082/albums/read,11,0,0
+1604592763525,23,Read Albums,200,,Load test 1-197,text,true,,182467,127,5,5,http://localhost:8082/albums/read,13,0,0
+1604592763565,21,Read Albums,200,,Load test 1-196,text,true,,182467,127,5,5,http://localhost:8082/albums/read,15,0,0
+1604592763527,26,Read Albums,200,,Load test 1-200,text,true,,182467,127,5,5,http://localhost:8082/albums/read,14,0,0
+1604592763793,12,Read Genre,200,,Load test 1-197,text,true,,55473,127,7,7,http://localhost:8082/genres/read,7,0,0
+1604592763789,15,Read Genre,200,,Load test 1-199,text,true,,55473,127,7,7,http://localhost:8082/genres/read,9,0,0
+1604592763527,30,Read Albums,200,,Load test 1-198,text,true,,182467,127,5,5,http://localhost:8082/albums/read,19,0,0
+1604592763841,12,Read Genre,200,,Load test 1-200,text,true,,55473,127,7,7,http://localhost:8082/genres/read,6,0,0
+1604592763692,15,Read Albums,200,,Load test 1-195,text,true,,182467,127,7,7,http://localhost:8082/albums/read,10,0,0
+1604592763820,19,Read Genre,200,,Load test 1-196,text,true,,55473,127,7,7,http://localhost:8082/genres/read,18,0,0
+1604592763855,23,Read Artist,200,,Load test 1-193,text,true,,55016,128,8,8,http://localhost:8082/artists/read,16,0,5
+1604592763893,28,Read Genre,200,,Load test 1-198,text,true,,55473,127,8,8,http://localhost:8082/genres/read,21,0,0
+1604592763852,17,Read Playlist,200,,Load test 1-197,text,true,,149173,130,8,8,http://localhost:8082/playlists/read,10,0,0
+1604592763905,51,Read Genre,200,,Load test 1-195,text,true,,55473,127,8,8,http://localhost:8082/genres/read,46,0,0
+1604592763907,22,Read Playlist,200,,Load test 1-196,text,true,,149173,130,8,8,http://localhost:8082/playlists/read,19,0,0
+1604592763899,20,Read Playlist,200,,Load test 1-200,text,true,,149173,130,8,8,http://localhost:8082/playlists/read,14,0,0
+1604592763984,22,Read Artist,200,,Load test 1-192,text,true,,55016,128,9,9,http://localhost:8082/artists/read,12,0,3
+1604592763775,21,Read Albums,200,,Load test 1-194,text,true,,182467,127,7,7,http://localhost:8082/albums/read,13,0,0
+1604592763946,18,Read Playlist,200,,Load test 1-198,text,true,,149173,130,8,8,http://localhost:8082/playlists/read,14,0,0
+1604592763919,25,Read Albums,200,,Load test 1-193,text,true,,182467,127,8,8,http://localhost:8082/albums/read,19,0,0
+1604592764041,19,Read Genre,200,,Load test 1-194,text,true,,55473,127,10,10,http://localhost:8082/genres/read,15,0,0
+1604592763857,10,Read Playlist,200,,Load test 1-199,text,true,,149173,130,8,8,http://localhost:8082/playlists/read,8,0,0
+1604592764038,23,Read Artist,200,,Load test 1-191,text,true,,55016,128,10,10,http://localhost:8082/artists/read,10,0,1
+1604592763980,18,Read Playlist,200,,Load test 1-195,text,true,,149173,130,9,9,http://localhost:8082/playlists/read,14,0,0
+1604592764065,14,Create User,201,,Load test 1-198,text,true,,332,280,10,10,http://localhost:8082/users/create,14,0,0
+1604592764078,12,Read Genre,200,,Load test 1-193,text,true,,55473,127,10,10,http://localhost:8082/genres/read,8,0,0
+1604592764014,10,Create User,201,,Load test 1-200,text,true,,332,280,9,9,http://localhost:8082/users/create,10,0,0
+1604592763992,11,Create User,201,,Load test 1-196,text,true,,332,280,9,9,http://localhost:8082/users/create,10,0,0
+1604592764100,18,Create User,201,,Load test 1-199,text,true,,332,280,11,11,http://localhost:8082/users/create,17,0,0
+1604592764104,8,Create User,201,,Load test 1-195,text,true,,332,280,11,11,http://localhost:8082/users/create,7,0,0
+1604592764138,8,User Login,200,,Load test 1-198,text,true,,261,167,11,11,http://localhost:8082/users/login,8,0,0
+1604592763957,22,Create User,201,,Load test 1-197,text,true,,332,280,8,8,http://localhost:8082/users/create,21,0,0
+1604592764140,14,User Login,200,,Load test 1-200,text,true,,261,167,11,11,http://localhost:8082/users/login,14,0,0
+1604592764100,39,Read Artist,200,,Load test 1-190,text,true,,55016,128,11,11,http://localhost:8082/artists/read,33,0,1
+1604592764142,20,User Login,200,,Load test 1-199,text,true,,261,167,11,11,http://localhost:8082/users/login,20,0,0
+1604592764143,21,User Login,200,,Load test 1-196,text,true,,261,167,11,11,http://localhost:8082/users/login,21,0,0
+1604592764141,30,User Login,200,,Load test 1-195,text,true,,261,167,11,11,http://localhost:8082/users/login,30,0,0
+1604592764154,20,User Login,200,,Load test 1-197,text,true,,261,167,11,11,http://localhost:8082/users/login,20,0,0
+1604592764091,18,Read Playlist,200,,Load test 1-194,text,true,,149173,130,11,11,http://localhost:8082/playlists/read,13,0,0
+1604592764204,6,Create User,201,,Load test 1-194,text,true,,332,280,12,12,http://localhost:8082/users/create,6,0,0
+1604592764211,7,User Login,200,,Load test 1-194,text,true,,261,167,12,12,http://localhost:8082/users/login,6,0,0
+1604592764031,25,Read Albums,200,,Load test 1-192,text,true,,182467,127,10,10,http://localhost:8082/albums/read,13,0,0
+1604592764139,21,Read Playlist,200,,Load test 1-193,text,true,,149173,130,11,11,http://localhost:8082/playlists/read,17,0,0
+1604592764226,4,Create User,201,,Load test 1-193,text,true,,332,280,12,12,http://localhost:8082/users/create,4,0,0
+1604592764104,29,Read Albums,200,,Load test 1-191,text,true,,182467,127,11,11,http://localhost:8082/albums/read,20,0,0
+1604592764231,7,User Login,200,,Load test 1-193,text,true,,261,167,12,12,http://localhost:8082/users/login,7,0,0
+1604592764204,16,Read Artist,200,,Load test 1-189,text,true,,55016,128,12,12,http://localhost:8082/artists/read,11,0,2
+1604592764225,18,Read Genre,200,,Load test 1-192,text,true,,55473,127,12,12,http://localhost:8082/genres/read,11,0,0
+1604592764232,15,Read Genre,200,,Load test 1-191,text,true,,55473,127,12,12,http://localhost:8082/genres/read,10,0,0
+1604592764161,29,Read Albums,200,,Load test 1-190,text,true,,182467,127,11,11,http://localhost:8082/albums/read,20,0,0
+1604592764276,12,Read Genre,200,,Load test 1-190,text,true,,55473,127,12,12,http://localhost:8082/genres/read,7,0,0
+1604592764239,18,Read Albums,200,,Load test 1-189,text,true,,182467,127,12,12,http://localhost:8082/albums/read,10,0,0
+1604592764302,12,Read Artist,200,,Load test 1-188,text,true,,55016,128,13,13,http://localhost:8082/artists/read,8,0,1
+1604592764273,8,Read Playlist,200,,Load test 1-192,text,true,,149173,130,12,12,http://localhost:8082/playlists/read,6,0,0
+1604592764274,8,Read Playlist,200,,Load test 1-191,text,true,,149173,130,12,12,http://localhost:8082/playlists/read,6,0,0
+1604592764354,5,Create User,201,,Load test 1-192,text,true,,332,280,13,13,http://localhost:8082/users/create,5,0,0
+1604592764354,6,Create User,201,,Load test 1-191,text,true,,332,280,13,13,http://localhost:8082/users/create,6,0,0
+1604592764360,7,User Login,200,,Load test 1-192,text,true,,261,167,13,13,http://localhost:8082/users/login,7,0,0
+1604592764330,11,Read Genre,200,,Load test 1-189,text,true,,55473,127,13,13,http://localhost:8082/genres/read,7,0,0
+1604592764361,8,User Login,200,,Load test 1-191,text,true,,261,167,13,13,http://localhost:8082/users/login,8,0,0
+1604592764311,10,Read Playlist,200,,Load test 1-190,text,true,,149173,130,13,13,http://localhost:8082/playlists/read,7,0,0
+1604592764371,4,Create User,201,,Load test 1-190,text,true,,332,280,13,13,http://localhost:8082/users/create,4,0,0
+1604592764376,5,User Login,200,,Load test 1-190,text,true,,261,167,13,13,http://localhost:8082/users/login,5,0,0
+1604592764369,10,Read Playlist,200,,Load test 1-189,text,true,,149173,130,13,13,http://localhost:8082/playlists/read,8,0,0
+1604592764400,11,Read Artist,200,,Load test 1-187,text,true,,55016,128,14,14,http://localhost:8082/artists/read,7,0,1
+1604592764341,16,Read Albums,200,,Load test 1-188,text,true,,182467,127,13,13,http://localhost:8082/albums/read,9,0,0
+1604592764436,4,Create User,201,,Load test 1-189,text,true,,332,280,14,14,http://localhost:8082/users/create,4,0,0
+1604592764441,5,User Login,200,,Load test 1-189,text,true,,261,167,14,14,http://localhost:8082/users/login,5,0,0
+1604592764439,8,Read Genre,200,,Load test 1-188,text,true,,55473,127,14,14,http://localhost:8082/genres/read,4,0,0
+1604592764461,9,Read Playlist,200,,Load test 1-188,text,true,,149173,130,14,14,http://localhost:8082/playlists/read,7,0,0
+1604592764437,11,Read Albums,200,,Load test 1-187,text,true,,182467,127,14,14,http://localhost:8082/albums/read,6,0,0
+1604592764500,9,Read Artist,200,,Load test 1-186,text,true,,55016,128,15,15,http://localhost:8082/artists/read,7,0,1
+1604592764528,3,Create User,201,,Load test 1-188,text,true,,332,280,15,15,http://localhost:8082/users/create,3,0,0
+1604592764532,5,User Login,200,,Load test 1-188,text,true,,261,167,15,15,http://localhost:8082/users/login,5,0,0
+1604592764531,9,Read Genre,200,,Load test 1-187,text,true,,55473,127,15,15,http://localhost:8082/genres/read,6,0,0
+1604592764552,6,Read Playlist,200,,Load test 1-187,text,true,,149173,130,15,15,http://localhost:8082/playlists/read,4,0,0
+1604592764531,12,Read Albums,200,,Load test 1-186,text,true,,182467,127,15,15,http://localhost:8082/albums/read,8,0,0
+1604592764598,6,Create User,201,,Load test 1-187,text,true,,332,280,16,16,http://localhost:8082/users/create,6,0,0
+1604592764604,5,User Login,200,,Load test 1-187,text,true,,261,167,16,16,http://localhost:8082/users/login,5,0,0
+1604592764600,11,Read Artist,200,,Load test 1-185,text,true,,55016,128,16,16,http://localhost:8082/artists/read,8,0,1
+1604592764602,10,Read Genre,200,,Load test 1-186,text,true,,55473,127,16,16,http://localhost:8082/genres/read,6,0,0
+1604592764628,7,Read Playlist,200,,Load test 1-186,text,true,,149173,130,16,16,http://localhost:8082/playlists/read,5,0,0
+1604592764666,4,Create User,201,,Load test 1-186,text,true,,332,280,16,16,http://localhost:8082/users/create,4,0,0
+1604592764624,12,Read Albums,200,,Load test 1-185,text,true,,182467,127,16,16,http://localhost:8082/albums/read,6,0,0
+1604592764671,6,User Login,200,,Load test 1-186,text,true,,261,167,16,16,http://localhost:8082/users/login,6,0,0
+1604592764677,9,Read Genre,200,,Load test 1-185,text,true,,55473,127,16,16,http://localhost:8082/genres/read,5,0,0
+1604592764700,15,Read Artist,200,,Load test 1-184,text,true,,55016,128,17,17,http://localhost:8082/artists/read,10,0,1
+1604592764696,8,Read Playlist,200,,Load test 1-185,text,true,,149173,130,17,17,http://localhost:8082/playlists/read,6,0,0
+1604592764734,4,Create User,201,,Load test 1-185,text,true,,332,280,17,17,http://localhost:8082/users/create,4,0,0
+1604592764739,5,User Login,200,,Load test 1-185,text,true,,261,167,17,17,http://localhost:8082/users/login,5,0,0
+1604592764728,12,Read Albums,200,,Load test 1-184,text,true,,182467,127,17,17,http://localhost:8082/albums/read,7,0,0
+1604592764775,8,Read Genre,200,,Load test 1-184,text,true,,55473,127,17,17,http://localhost:8082/genres/read,5,0,0
+1604592764800,9,Read Artist,200,,Load test 1-183,text,true,,55016,128,18,18,http://localhost:8082/artists/read,6,0,1
+1604592764792,8,Read Playlist,200,,Load test 1-184,text,true,,149173,130,18,18,http://localhost:8082/playlists/read,5,0,0
+1604592764834,5,Create User,201,,Load test 1-184,text,true,,332,280,18,18,http://localhost:8082/users/create,4,0,0
+1604592764839,6,User Login,200,,Load test 1-184,text,true,,261,167,18,18,http://localhost:8082/users/login,6,0,0
+1604592764832,11,Read Albums,200,,Load test 1-183,text,true,,182467,127,18,18,http://localhost:8082/albums/read,7,0,0
+1604592764870,8,Read Genre,200,,Load test 1-183,text,true,,55473,127,18,18,http://localhost:8082/genres/read,5,0,0
+1604592764887,6,Read Playlist,200,,Load test 1-183,text,true,,149173,130,18,18,http://localhost:8082/playlists/read,4,0,0
+1604592764911,4,Create User,201,,Load test 1-183,text,true,,332,280,19,19,http://localhost:8082/users/create,4,0,0
+1604592764898,11,Read Artist,200,,Load test 1-182,text,true,,55016,128,19,19,http://localhost:8082/artists/read,8,0,1
+1604592764916,5,User Login,200,,Load test 1-183,text,true,,261,167,19,19,http://localhost:8082/users/login,5,0,0
+1604592764919,10,Read Albums,200,,Load test 1-182,text,true,,182467,127,19,19,http://localhost:8082/albums/read,6,0,0
+1604592764952,7,Read Genre,200,,Load test 1-182,text,true,,55473,127,19,19,http://localhost:8082/genres/read,5,0,0
+1604592764964,8,Read Playlist,200,,Load test 1-182,text,true,,149173,130,19,19,http://localhost:8082/playlists/read,5,0,0
+1604592764989,3,Create User,201,,Load test 1-182,text,true,,332,280,19,19,http://localhost:8082/users/create,3,0,0
+1604592764993,7,User Login,200,,Load test 1-182,text,true,,261,167,20,20,http://localhost:8082/users/login,7,0,0
+1604592764998,14,Read Artist,200,,Load test 1-181,text,true,,55016,128,20,20,http://localhost:8082/artists/read,9,0,1
+1604592765021,11,Read Albums,200,,Load test 1-181,text,true,,182467,127,20,20,http://localhost:8082/albums/read,5,0,0
+1604592765063,10,Read Genre,200,,Load test 1-181,text,true,,55473,127,20,20,http://localhost:8082/genres/read,5,0,0
+1604592765079,10,Read Playlist,200,,Load test 1-181,text,true,,149173,130,20,20,http://localhost:8082/playlists/read,6,0,0
+1604592765101,4,Create User,201,,Load test 1-181,text,true,,332,280,21,21,http://localhost:8082/users/create,4,0,0
+1604592765107,6,User Login,200,,Load test 1-181,text,true,,261,167,21,21,http://localhost:8082/users/login,5,0,0
+1604592765099,14,Read Artist,200,,Load test 1-180,text,true,,55016,128,21,21,http://localhost:8082/artists/read,10,0,1
+1604592765118,11,Read Albums,200,,Load test 1-180,text,true,,182467,127,21,21,http://localhost:8082/albums/read,7,0,0
+1604592765155,7,Read Genre,200,,Load test 1-180,text,true,,55473,127,21,21,http://localhost:8082/genres/read,4,0,0
+1604592765168,9,Read Playlist,200,,Load test 1-180,text,true,,149173,130,21,21,http://localhost:8082/playlists/read,7,0,0
+1604592765192,3,Create User,201,,Load test 1-180,text,true,,332,280,21,21,http://localhost:8082/users/create,3,0,0
+1604592765196,6,User Login,200,,Load test 1-180,text,true,,261,167,22,22,http://localhost:8082/users/login,6,0,0
+1604592765201,10,Read Artist,200,,Load test 1-179,text,true,,55016,128,22,22,http://localhost:8082/artists/read,8,0,2
+1604592765217,13,Read Albums,200,,Load test 1-179,text,true,,182467,127,22,22,http://localhost:8082/albums/read,9,0,0
+1604592765251,10,Read Genre,200,,Load test 1-179,text,true,,55473,127,22,22,http://localhost:8082/genres/read,7,0,0
+1604592765266,9,Read Playlist,200,,Load test 1-179,text,true,,149173,130,22,22,http://localhost:8082/playlists/read,7,0,0
+1604592765288,3,Create User,201,,Load test 1-179,text,true,,332,280,22,22,http://localhost:8082/users/create,3,0,0
+1604592765292,7,User Login,200,,Load test 1-179,text,true,,261,167,23,23,http://localhost:8082/users/login,6,0,0
+1604592765299,10,Read Artist,200,,Load test 1-178,text,true,,55016,128,23,23,http://localhost:8082/artists/read,8,0,1
+1604592765314,15,Read Albums,200,,Load test 1-178,text,true,,182467,127,23,23,http://localhost:8082/albums/read,10,0,0
+1604592765347,12,Read Genre,200,,Load test 1-178,text,true,,55473,127,23,23,http://localhost:8082/genres/read,7,0,0
+1604592765364,9,Read Playlist,200,,Load test 1-178,text,true,,149173,130,23,23,http://localhost:8082/playlists/read,5,0,0
+1604592765383,6,Create User,201,,Load test 1-178,text,true,,332,280,23,23,http://localhost:8082/users/create,5,0,0
+1604592765390,5,User Login,200,,Load test 1-178,text,true,,261,167,23,23,http://localhost:8082/users/login,4,0,0
+1604592765398,13,Read Artist,200,,Load test 1-177,text,true,,55016,128,24,24,http://localhost:8082/artists/read,9,0,0
+1604592765416,11,Read Albums,200,,Load test 1-177,text,true,,182467,127,24,24,http://localhost:8082/albums/read,8,0,0
+1604592765444,8,Read Genre,200,,Load test 1-177,text,true,,55473,127,24,24,http://localhost:8082/genres/read,4,0,0
+1604592765459,8,Read Playlist,200,,Load test 1-177,text,true,,149173,130,24,24,http://localhost:8082/playlists/read,6,0,0
+1604592765481,3,Create User,201,,Load test 1-177,text,true,,332,280,24,24,http://localhost:8082/users/create,3,0,0
+1604592765485,6,User Login,200,,Load test 1-177,text,true,,261,167,24,24,http://localhost:8082/users/login,6,0,0
+1604592765498,13,Read Artist,200,,Load test 1-176,text,true,,55016,128,25,25,http://localhost:8082/artists/read,10,0,1
+1604592765517,12,Read Albums,200,,Load test 1-176,text,true,,182467,127,25,25,http://localhost:8082/albums/read,8,0,0
+1604592765547,8,Read Genre,200,,Load test 1-176,text,true,,55473,127,25,25,http://localhost:8082/genres/read,4,0,0
+1604592765560,6,Read Playlist,200,,Load test 1-176,text,true,,149173,130,25,25,http://localhost:8082/playlists/read,4,0,0
+1604592765577,3,Create User,201,,Load test 1-176,text,true,,332,280,25,25,http://localhost:8082/users/create,3,0,0
+1604592765581,5,User Login,200,,Load test 1-176,text,true,,261,167,25,25,http://localhost:8082/users/login,4,0,0
+1604592765598,9,Read Artist,200,,Load test 1-175,text,true,,55016,128,26,26,http://localhost:8082/artists/read,6,0,0
+1604592765612,12,Read Albums,200,,Load test 1-175,text,true,,182467,127,26,26,http://localhost:8082/albums/read,5,0,0
+1604592765643,6,Read Genre,200,,Load test 1-175,text,true,,55473,127,26,26,http://localhost:8082/genres/read,4,0,0
+1604592765654,8,Read Playlist,200,,Load test 1-175,text,true,,149173,130,26,26,http://localhost:8082/playlists/read,7,0,0
+1604592765672,3,Create User,201,,Load test 1-175,text,true,,332,280,26,26,http://localhost:8082/users/create,3,0,0
+1604592765676,4,User Login,200,,Load test 1-175,text,true,,261,167,26,26,http://localhost:8082/users/login,4,0,0
+1604592765699,22,Read Artist,200,,Load test 1-174,text,true,,55016,128,27,27,http://localhost:8082/artists/read,13,0,2
+1604592765738,26,Read Albums,200,,Load test 1-174,text,true,,182467,127,27,27,http://localhost:8082/albums/read,15,0,0
+1604592765800,26,Read Artist,200,,Load test 1-173,text,true,,55016,128,28,28,http://localhost:8082/artists/read,21,0,4
+1604592765826,13,Read Genre,200,,Load test 1-174,text,true,,55473,127,28,28,http://localhost:8082/genres/read,8,0,0
+1604592765847,8,Read Playlist,200,,Load test 1-174,text,true,,149173,130,28,28,http://localhost:8082/playlists/read,5,0,0
+1604592765837,12,Read Albums,200,,Load test 1-173,text,true,,182467,127,28,28,http://localhost:8082/albums/read,8,0,0
+1604592765864,3,Create User,201,,Load test 1-174,text,true,,332,280,28,28,http://localhost:8082/users/create,3,0,0
+1604592765868,4,User Login,200,,Load test 1-174,text,true,,261,167,28,28,http://localhost:8082/users/login,4,0,0
+1604592765865,8,Read Genre,200,,Load test 1-173,text,true,,55473,127,28,28,http://localhost:8082/genres/read,5,0,0
+1604592765877,5,Read Playlist,200,,Load test 1-173,text,true,,149173,130,28,28,http://localhost:8082/playlists/read,3,0,0
+1604592765891,3,Create User,201,,Load test 1-173,text,true,,332,280,28,28,http://localhost:8082/users/create,3,0,0
+1604592765895,4,User Login,200,,Load test 1-173,text,true,,261,167,29,29,http://localhost:8082/users/login,4,0,0
+1604592765900,8,Read Artist,200,,Load test 1-172,text,true,,55016,128,29,29,http://localhost:8082/artists/read,6,0,1
+1604592765912,9,Read Albums,200,,Load test 1-172,text,true,,182467,127,29,29,http://localhost:8082/albums/read,5,0,0
+1604592765937,6,Read Genre,200,,Load test 1-172,text,true,,55473,127,29,29,http://localhost:8082/genres/read,4,0,0
+1604592765947,6,Read Playlist,200,,Load test 1-172,text,true,,149173,130,29,29,http://localhost:8082/playlists/read,4,0,0
+1604592765961,3,Create User,201,,Load test 1-172,text,true,,332,280,29,29,http://localhost:8082/users/create,3,0,0
+1604592765965,4,User Login,200,,Load test 1-172,text,true,,261,167,29,29,http://localhost:8082/users/login,4,0,0
+1604592765997,8,Read Artist,200,,Load test 1-171,text,true,,55016,128,30,30,http://localhost:8082/artists/read,6,0,1
+1604592766010,10,Read Albums,200,,Load test 1-171,text,true,,182467,127,30,30,http://localhost:8082/albums/read,6,0,0
+1604592766038,6,Read Genre,200,,Load test 1-171,text,true,,55473,127,30,30,http://localhost:8082/genres/read,3,0,0
+1604592766049,6,Read Playlist,200,,Load test 1-171,text,true,,149173,130,30,30,http://localhost:8082/playlists/read,4,0,0
+1604592766064,4,Create User,201,,Load test 1-171,text,true,,332,280,30,30,http://localhost:8082/users/create,4,0,0
+1604592766069,5,User Login,200,,Load test 1-171,text,true,,261,167,30,30,http://localhost:8082/users/login,5,0,0
+1604592766098,11,Read Artist,200,,Load test 1-170,text,true,,55016,128,31,31,http://localhost:8082/artists/read,8,0,1
+1604592766113,8,Read Albums,200,,Load test 1-170,text,true,,182467,127,31,31,http://localhost:8082/albums/read,5,0,0
+1604592766137,5,Read Genre,200,,Load test 1-170,text,true,,55473,127,31,31,http://localhost:8082/genres/read,3,0,0
+1604592766146,5,Read Playlist,200,,Load test 1-170,text,true,,149173,130,31,31,http://localhost:8082/playlists/read,4,0,0
+1604592766160,3,Create User,201,,Load test 1-170,text,true,,332,280,31,31,http://localhost:8082/users/create,3,0,0
+1604592766163,4,User Login,200,,Load test 1-170,text,true,,261,167,31,31,http://localhost:8082/users/login,4,0,0
+1604592766198,7,Read Artist,200,,Load test 1-169,text,true,,55016,128,32,32,http://localhost:8082/artists/read,5,0,0
+1604592766210,7,Read Albums,200,,Load test 1-169,text,true,,182467,127,32,32,http://localhost:8082/albums/read,4,0,0
+1604592766232,7,Read Genre,200,,Load test 1-169,text,true,,55473,127,32,32,http://localhost:8082/genres/read,4,0,0
+1604592766243,4,Read Playlist,200,,Load test 1-169,text,true,,149173,130,32,32,http://localhost:8082/playlists/read,3,0,0
+1604592766257,2,Create User,201,,Load test 1-169,text,true,,332,280,32,32,http://localhost:8082/users/create,2,0,0
+1604592766260,4,User Login,200,,Load test 1-169,text,true,,261,167,32,32,http://localhost:8082/users/login,4,0,0
+1604592766298,11,Read Artist,200,,Load test 1-168,text,true,,55016,128,33,33,http://localhost:8082/artists/read,7,0,1
+1604592766314,10,Read Albums,200,,Load test 1-168,text,true,,182467,127,33,33,http://localhost:8082/albums/read,6,0,0
+1604592766339,6,Read Genre,200,,Load test 1-168,text,true,,55473,127,33,33,http://localhost:8082/genres/read,4,0,0
+1604592766349,7,Read Playlist,200,,Load test 1-168,text,true,,149173,130,33,33,http://localhost:8082/playlists/read,5,0,0
+1604592766365,3,Create User,201,,Load test 1-168,text,true,,332,280,33,33,http://localhost:8082/users/create,3,0,0
+1604592766369,5,User Login,200,,Load test 1-168,text,true,,261,167,33,33,http://localhost:8082/users/login,4,0,0
+1604592766400,7,Read Artist,200,,Load test 1-167,text,true,,55016,128,34,34,http://localhost:8082/artists/read,5,0,0
+1604592766412,8,Read Albums,200,,Load test 1-167,text,true,,182467,127,34,34,http://localhost:8082/albums/read,4,0,0
+1604592766439,5,Read Genre,200,,Load test 1-167,text,true,,55473,127,34,34,http://localhost:8082/genres/read,3,0,0
+1604592766449,5,Read Playlist,200,,Load test 1-167,text,true,,149173,130,34,34,http://localhost:8082/playlists/read,3,0,0
+1604592766463,3,Create User,201,,Load test 1-167,text,true,,332,280,34,34,http://localhost:8082/users/create,3,0,0
+1604592766467,4,User Login,200,,Load test 1-167,text,true,,261,167,34,34,http://localhost:8082/users/login,4,0,0
+1604592766498,8,Read Artist,200,,Load test 1-166,text,true,,55016,128,35,35,http://localhost:8082/artists/read,5,0,1
+1604592766510,8,Read Albums,200,,Load test 1-166,text,true,,182467,127,35,35,http://localhost:8082/albums/read,5,0,0
+1604592766533,6,Read Genre,200,,Load test 1-166,text,true,,55473,127,35,35,http://localhost:8082/genres/read,4,0,0
+1604592766543,4,Read Playlist,200,,Load test 1-166,text,true,,149173,130,35,35,http://localhost:8082/playlists/read,3,0,0
+1604592766557,2,Create User,201,,Load test 1-166,text,true,,332,280,35,35,http://localhost:8082/users/create,2,0,0
+1604592766560,4,User Login,200,,Load test 1-166,text,true,,261,167,35,35,http://localhost:8082/users/login,4,0,0
+1604592766599,7,Read Artist,200,,Load test 1-165,text,true,,55016,128,36,36,http://localhost:8082/artists/read,5,0,0
+1604592766610,7,Read Albums,200,,Load test 1-165,text,true,,182467,127,36,36,http://localhost:8082/albums/read,5,0,0
+1604592766632,6,Read Genre,200,,Load test 1-165,text,true,,55473,127,36,36,http://localhost:8082/genres/read,3,0,0
+1604592766642,5,Read Playlist,200,,Load test 1-165,text,true,,149173,130,36,36,http://localhost:8082/playlists/read,3,0,0
+1604592766656,2,Create User,201,,Load test 1-165,text,true,,332,280,36,36,http://localhost:8082/users/create,2,0,0
+1604592766659,4,User Login,200,,Load test 1-165,text,true,,261,167,36,36,http://localhost:8082/users/login,4,0,0
+1604592766697,7,Read Artist,200,,Load test 1-164,text,true,,55016,128,37,37,http://localhost:8082/artists/read,5,0,1
+1604592766709,7,Read Albums,200,,Load test 1-164,text,true,,182467,127,37,37,http://localhost:8082/albums/read,4,0,0
+1604592766730,6,Read Genre,200,,Load test 1-164,text,true,,55473,127,37,37,http://localhost:8082/genres/read,4,0,0
+1604592766741,5,Read Playlist,200,,Load test 1-164,text,true,,149173,130,37,37,http://localhost:8082/playlists/read,3,0,0
+1604592766755,3,Create User,201,,Load test 1-164,text,true,,332,280,37,37,http://localhost:8082/users/create,3,0,0
+1604592766759,3,User Login,200,,Load test 1-164,text,true,,261,167,37,37,http://localhost:8082/users/login,3,0,0
+1604592766798,7,Read Artist,200,,Load test 1-163,text,true,,55016,128,38,38,http://localhost:8082/artists/read,5,0,0
+1604592766810,7,Read Albums,200,,Load test 1-163,text,true,,182467,127,38,38,http://localhost:8082/albums/read,4,0,0
+1604592766831,7,Read Genre,200,,Load test 1-163,text,true,,55473,127,38,38,http://localhost:8082/genres/read,4,0,0
+1604592766842,5,Read Playlist,200,,Load test 1-163,text,true,,149173,130,38,38,http://localhost:8082/playlists/read,3,0,0
+1604592766856,3,Create User,201,,Load test 1-163,text,true,,332,280,38,38,http://localhost:8082/users/create,3,0,0
+1604592766859,4,User Login,200,,Load test 1-163,text,true,,261,167,38,38,http://localhost:8082/users/login,4,0,0
+1604592766898,8,Read Artist,200,,Load test 1-162,text,true,,55016,128,39,39,http://localhost:8082/artists/read,6,0,1
+1604592766911,8,Read Albums,200,,Load test 1-162,text,true,,182467,127,39,39,http://localhost:8082/albums/read,5,0,0
+1604592766933,7,Read Genre,200,,Load test 1-162,text,true,,55473,127,39,39,http://localhost:8082/genres/read,5,0,0
+1604592766945,4,Read Playlist,200,,Load test 1-162,text,true,,149173,130,39,39,http://localhost:8082/playlists/read,3,0,0
+1604592766959,2,Create User,201,,Load test 1-162,text,true,,332,280,39,39,http://localhost:8082/users/create,2,0,0
+1604592766962,4,User Login,200,,Load test 1-162,text,true,,261,167,39,39,http://localhost:8082/users/login,4,0,0
+1604592766998,7,Read Artist,200,,Load test 1-161,text,true,,55016,128,40,40,http://localhost:8082/artists/read,5,0,1
+1604592767009,8,Read Albums,200,,Load test 1-161,text,true,,182467,127,40,40,http://localhost:8082/albums/read,5,0,0
+1604592767033,7,Read Genre,200,,Load test 1-161,text,true,,55473,127,40,40,http://localhost:8082/genres/read,4,0,0
+1604592767044,4,Read Playlist,200,,Load test 1-161,text,true,,149173,130,40,40,http://localhost:8082/playlists/read,3,0,0
+1604592767058,3,Create User,201,,Load test 1-161,text,true,,332,280,40,40,http://localhost:8082/users/create,3,0,0
+1604592767061,5,User Login,200,,Load test 1-161,text,true,,261,167,40,40,http://localhost:8082/users/login,5,0,0
+1604592767098,8,Read Artist,200,,Load test 1-160,text,true,,55016,128,41,41,http://localhost:8082/artists/read,6,0,1
+1604592767110,8,Read Albums,200,,Load test 1-160,text,true,,182467,127,41,41,http://localhost:8082/albums/read,5,0,0
+1604592767133,7,Read Genre,200,,Load test 1-160,text,true,,55473,127,41,41,http://localhost:8082/genres/read,5,0,0
+1604592767144,5,Read Playlist,200,,Load test 1-160,text,true,,149173,130,41,41,http://localhost:8082/playlists/read,4,0,0
+1604592767149,11,Add Track,202,,Load test 1-198,text,true,,72264,213,41,41,http://localhost:8082/playlists/add/1/13,10,0,0
+1604592767162,3,Create User,201,,Load test 1-160,text,true,,332,280,41,41,http://localhost:8082/users/create,3,0,0
+1604592767165,6,User Login,200,,Load test 1-160,text,true,,261,167,41,41,http://localhost:8082/users/login,6,0,0
+1604592767165,10,Add Track,202,,Load test 1-200,text,true,,75202,213,41,41,http://localhost:8082/playlists/add/1/13,9,0,0
+1604592767165,13,Add Track,202,,Load test 1-196,text,true,,75502,213,41,41,http://localhost:8082/playlists/add/1/13,12,0,0
+1604592767165,13,Add Track,202,,Load test 1-199,text,true,,75502,213,41,41,http://localhost:8082/playlists/add/1/13,12,0,0
+1604592767181,19,Add Track,202,,Load test 1-197,text,true,,218474,213,42,42,http://localhost:8082/playlists/add/1/13,15,0,0
+1604592767198,19,Read Artist,200,,Load test 1-159,text,true,,56689,128,42,42,http://localhost:8082/artists/read,16,0,1
+1604592767181,29,Add Track,202,,Load test 1-195,text,true,,218924,213,42,42,http://localhost:8082/playlists/add/1/13,26,0,0
+1604592767226,14,Read Albums,200,,Load test 1-159,text,true,,185097,127,42,42,http://localhost:8082/albums/read,9,0,0
+1604592767268,13,Read Genre,200,,Load test 1-159,text,true,,57160,127,42,42,http://localhost:8082/genres/read,11,0,0
+1604592767298,14,Read Artist,200,,Load test 1-158,text,true,,56703,128,43,43,http://localhost:8082/artists/read,11,0,0
+1604592767219,31,Add Track,202,,Load test 1-194,text,true,,467296,213,42,42,http://localhost:8082/playlists/add/1/13,25,0,0
+1604592767322,11,Read Albums,200,,Load test 1-158,text,true,,185119,127,43,43,http://localhost:8082/albums/read,8,0,0
+1604592767239,38,Add Track,202,,Load test 1-193,text,true,,470940,213,42,42,http://localhost:8082/playlists/add/1/13,28,0,0
+1604592767354,9,Read Genre,200,,Load test 1-158,text,true,,57160,127,43,43,http://localhost:8082/genres/read,7,0,0
+1604592767398,28,Read Artist,200,,Load test 1-157,text,true,,58733,128,44,44,http://localhost:8082/artists/read,24,0,1
+1604592767498,32,Read Artist,200,,Load test 1-156,text,true,,58740,128,45,45,http://localhost:8082/artists/read,28,0,1
+1604592767549,35,Read Albums,200,,Load test 1-156,text,true,,188309,127,45,45,http://localhost:8082/albums/read,29,0,0
+1604592767445,26,Read Albums,200,,Load test 1-157,text,true,,188298,127,44,44,http://localhost:8082/albums/read,20,0,0
+1604592767382,43,Add Track,202,,Load test 1-190,text,true,,479134,213,44,44,http://localhost:8082/playlists/add/1/13,30,0,0
+1604592767624,33,Read Genre,200,,Load test 1-156,text,true,,59204,127,45,45,http://localhost:8082/genres/read,29,0,0
+1604592767370,44,Add Track,202,,Load test 1-191,text,true,,475482,213,44,44,http://localhost:8082/playlists/add/1/13,34,0,0
+1604592767369,41,Add Track,202,,Load test 1-192,text,true,,475482,213,44,44,http://localhost:8082/playlists/add/1/13,29,0,0
+1604592767649,44,Read Genre,200,,Load test 1-157,text,true,,59208,127,46,46,http://localhost:8082/genres/read,31,0,0
+1604592767680,57,Read Artist,200,,Load test 1-155,text,true,,58754,128,47,47,http://localhost:8082/artists/read,53,0,1
+1604592767719,27,Read Artist,200,,Load test 1-154,text,true,,58754,128,47,47,http://localhost:8082/artists/read,24,0,1
+1604592767767,52,Read Albums,200,,Load test 1-154,text,true,,188342,127,48,48,http://localhost:8082/albums/read,25,0,0
+1604592767758,28,Read Albums,200,,Load test 1-155,text,true,,188339,127,47,47,http://localhost:8082/albums/read,22,0,0
+1604592767801,106,Read Artist,200,,Load test 1-153,text,true,,62815,128,49,49,http://localhost:8082/artists/read,99,0,1
+1604592767917,180,Read Genre,200,,Load test 1-154,text,true,,63272,127,49,49,http://localhost:8082/genres/read,179,0,0
+1604592767954,159,Read Genre,200,,Load test 1-155,text,true,,63272,127,50,50,http://localhost:8082/genres/read,159,0,0
+1604592768010,114,Read Albums,200,,Load test 1-153,text,true,,194719,127,50,50,http://localhost:8082/albums/read,86,0,0
+1604592767905,257,Read Artist,200,,Load test 1-152,text,true,,62815,128,50,50,http://localhost:8082/artists/read,257,0,1
+1604592767290,21,Read Playlist,200,,Load test 1-159,text,true,,985295,130,43,43,http://localhost:8082/playlists/read,7,0,0
+1604592767372,33,Read Playlist,200,,Load test 1-158,text,true,,985295,130,44,44,http://localhost:8082/playlists/read,9,0,0
+1604592768103,295,Read Artist,200,,Load test 1-151,text,true,,70943,128,53,53,http://localhost:8082/artists/read,283,0,0
+1604592768233,343,Read Artist,200,,Load test 1-150,text,true,,70943,128,54,54,http://localhost:8082/artists/read,257,0,3
+1604592768268,215,Read Genre,200,,Load test 1-153,text,true,,71400,127,53,53,http://localhost:8082/genres/read,208,0,0
+1604592767448,200,Add Track,202,,Load test 1-189,text,true,,1104217,213,45,45,http://localhost:8082/playlists/add/1/13,65,0,0
+1604592768333,568,Read Artist,200,,Load test 1-148,text,true,,70947,128,57,57,http://localhost:8082/artists/read,563,0,1
+1604592768484,420,Read Artist,200,,Load test 1-147,text,true,,70950,128,57,57,http://localhost:8082/artists/read,416,0,2
+1604592768313,412,Read Albums,200,,Load test 1-152,text,true,,207494,127,56,56,http://localhost:8082/albums/read,261,0,0
+1604592768289,554,Read Artist,200,,Load test 1-149,text,true,,70947,128,57,57,http://localhost:8082/artists/read,364,0,1
+1604592768631,534,Create User,201,,Load test 1-158,text,true,,332,280,61,61,http://localhost:8082/users/create,394,0,0
+1604592767612,205,Add Track,202,,Load test 1-187,text,true,,1113231,213,48,48,http://localhost:8082/playlists/add/1/13,79,0,0
+1604592768661,456,Read Artist,200,,Load test 1-145,text,true,,74557,128,60,60,http://localhost:8082/artists/read,379,0,1
+1604592767678,172,Add Track,202,,Load test 1-186,text,true,,1117747,213,48,48,http://localhost:8082/playlists/add/1/13,113,0,0
+1604592767539,153,Add Track,202,,Load test 1-188,text,true,,1108725,213,46,46,http://localhost:8082/playlists/add/1/13,109,0,0
+1604592767745,408,Add Track,202,,Load test 1-185,text,true,,1119547,213,50,50,http://localhost:8082/playlists/add/1/13,130,0,0
+1604592768536,2336,Create User,201,,Load test 1-159,text,true,,332,280,78,78,http://localhost:8082/users/create,2336,0,0
+1604592768758,2113,Read Artist,200,,Load test 1-144,text,true,,119711,128,78,78,http://localhost:8082/artists/read,2073,0,1
+1604592767714,209,Read Playlist,200,,Load test 1-157,text,true,,2309928,130,49,49,http://localhost:8082/playlists/read,21,0,0
+1604592769169,3582,User Login,200,,Load test 1-158,text,true,,261,167,95,95,http://localhost:8082/users/login,3582,0,0
+1604592767678,133,Read Playlist,200,,Load test 1-156,text,true,,2309928,130,48,48,http://localhost:8082/playlists/read,22,0,0
+1604592768841,3071,Read Albums,200,,Load test 1-150,text,true,,287734,127,88,88,http://localhost:8082/albums/read,2885,0,0
+1604592768677,3521,Read Albums,200,,Load test 1-151,text,true,,287734,127,91,91,http://localhost:8082/albums/read,3448,0,0
+1604592769026,3637,Read Artist,200,,Load test 1-141,text,true,,135960,128,94,94,http://localhost:8082/artists/read,3626,0,1
+1604592768985,3462,Read Artist,200,,Load test 1-143,text,true,,135960,128,93,93,http://localhost:8082/artists/read,3462,0,3
+1604592768680,4132,Read Artist,200,,Load test 1-146,text,true,,135960,128,97,97,http://localhost:8082/artists/read,4131,0,2
+1604592768910,3906,Read Artist,200,,Load test 1-142,text,true,,135960,128,97,97,http://localhost:8082/artists/read,3906,0,1
+1604592767855,459,Add Track,202,,Load test 1-184,text,true,,2877140,213,52,52,http://localhost:8082/playlists/add/1/13,338,0,0
+1604592767922,654,Add Track,202,,Load test 1-183,text,true,,2880747,213,54,54,http://localhost:8082/playlists/add/1/13,175,0,0
+1604592769080,4988,Read Albums,200,,Load test 1-148,text,true,,334884,127,110,110,http://localhost:8082/albums/read,4826,0,0
+1604592769134,6976,Read Artist,200,,Load test 1-140,text,true,,236277,128,129,129,http://localhost:8082/artists/read,6949,0,1
+1604592769081,7131,Read Albums,200,,Load test 1-147,text,true,,464900,127,131,131,http://localhost:8082/albums/read,6997,0,0
+1604592769160,7586,Read Albums,200,,Load test 1-149,text,true,,488432,127,136,136,http://localhost:8082/albums/read,7525,0,0
+1604592769074,11948,Add Track,500,,Load test 1-171,text,false,Test failed: code expected to contain /20/,13670,213,179,179,http://localhost:8082/playlists/add/1/13,11796,0,0
+1604592768904,12082,Add Track,500,,Load test 1-173,text,false,Test failed: code expected to contain /20/,13670,213,179,179,http://localhost:8082/playlists/add/1/13,11961,0,0
+1604592769118,10306,Read Genre,200,,Load test 1-152,text,true,,224956,127,163,163,http://localhost:8082/genres/read,10254,0,0
+1604592769238,10219,Read Artist,200,,Load test 1-139,text,true,,224499,128,164,164,http://localhost:8082/artists/read,10193,0,1
+1604592769438,12705,Read Artist,200,,Load test 1-138,text,true,,135967,128,190,190,http://localhost:8082/artists/read,12644,0,1
+1604592769397,12892,Read Albums,200,,Load test 1-145,text,true,,309671,127,191,191,http://localhost:8082/albums/read,12892,0,0
+1604592769442,14472,Read Artist,200,,Load test 1-137,text,true,,135967,128,200,200,http://localhost:8082/artists/read,14458,0,1
+1604592769527,15553,Read Artist,200,,Load test 1-136,text,true,,135974,128,200,200,http://localhost:8082/artists/read,15553,0,1
+1604592769622,25739,Read Artist,200,,Load test 1-135,text,true,,217253,128,200,200,http://localhost:8082/artists/read,25738,0,23
+1604592769710,30825,Read Artist,500,,Load test 1-134,text,false,Test failed: code expected to contain /200/,10596,128,199,199,http://localhost:8082/artists/read,30806,0,2
+1604592769915,30629,Read Artist,500,,Load test 1-132,text,false,Test failed: code expected to contain /200/,10596,128,199,199,http://localhost:8082/artists/read,30628,0,1
+1604592769804,30919,Read Artist,500,,Load test 1-133,text,false,Test failed: code expected to contain /200/,10596,128,199,199,http://localhost:8082/artists/read,30919,0,1
+1604592770113,30615,Read Artist,500,,Load test 1-131,text,false,Test failed: code expected to contain /200/,10596,128,199,199,http://localhost:8082/artists/read,30615,0,12
+1604592770013,31115,Add Track,500,,Load test 1-162,text,false,Test failed: code expected to contain /20/,10612,213,199,199,http://localhost:8082/playlists/add/1/13,31114,0,0
+1604592770067,31676,Add Track,500,,Load test 1-161,text,false,Test failed: code expected to contain /20/,10612,213,199,199,http://localhost:8082/playlists/add/1/13,31675,0,0
+1604592771308,31890,Read Artist,500,,Load test 1-119,text,false,Test failed: code expected to contain /200/,10596,128,199,199,http://localhost:8082/artists/read,31890,0,1
+1604592770166,33032,Remove Track,500,,Load test 1-198,text,false,Test failed: code expected to contain /20/,10731,216,199,199,http://localhost:8082/playlists/remove/1/13,33032,0,0
+1604592770182,33016,Remove Track,500,,Load test 1-199,text,false,Test failed: code expected to contain /20/,10731,216,199,199,http://localhost:8082/playlists/remove/1/13,33016,0,0
+1604592771478,31743,Read Artist,500,,Load test 1-117,text,false,Test failed: code expected to contain /200/,10596,128,199,199,http://localhost:8082/artists/read,31743,0,2
+1604592769764,33457,Add Track,500,,Load test 1-164,text,false,Test failed: code expected to contain /20/,10612,213,199,199,http://localhost:8082/playlists/add/1/13,33457,0,0
+1604592769864,33339,Add Track,500,,Load test 1-163,text,false,Test failed: code expected to contain /20/,10612,213,199,199,http://localhost:8082/playlists/add/1/13,33339,0,0
+1604592770125,33105,Read Artist,500,,Load test 1-130,text,false,Test failed: code expected to contain /200/,10596,128,199,199,http://localhost:8082/artists/read,33105,0,1
+1604592771651,32211,Read Artist,500,,Load test 1-115,text,false,Test failed: code expected to contain /200/,10596,128,199,199,http://localhost:8082/artists/read,32211,0,2
+1604592772756,31800,Read Artist,500,,Load test 1-106,text,false,Test failed: code expected to contain /200/,10596,128,199,199,http://localhost:8082/artists/read,31800,0,0
+1604592770910,34019,Read Artist,500,,Load test 1-122,text,false,Test failed: code expected to contain /200/,10596,128,199,199,http://localhost:8082/artists/read,34019,0,1
+1604592771706,33490,Read Artist,500,,Load test 1-116,text,false,Test failed: code expected to contain /200/,10596,128,199,199,http://localhost:8082/artists/read,33489,0,1
+1604592770183,35648,Remove Track,500,,Load test 1-200,text,false,Test failed: code expected to contain /20/,10731,216,199,199,http://localhost:8082/playlists/remove/1/13,35648,0,0
+1604592770183,35863,Remove Track,500,,Load test 1-196,text,false,Test failed: code expected to contain /20/,10731,216,199,199,http://localhost:8082/playlists/remove/1/13,34746,0,0
+1604592770910,35331,Read Artist,500,,Load test 1-123,text,false,Test failed: code expected to contain /200/,10596,128,199,199,http://localhost:8082/artists/read,35330,0,1
+1604592772172,34759,Remove Track,500,,Load test 1-189,text,false,Test failed: code expected to contain /20/,10731,216,199,199,http://localhost:8082/playlists/remove/1/13,34759,0,0
+1604592771127,35805,Read Artist,500,,Load test 1-121,text,false,Test failed: code expected to contain /200/,10596,128,199,199,http://localhost:8082/artists/read,35805,0,1
+1604592770460,36479,Read Artist,500,,Load test 1-127,text,false,Test failed: code expected to contain /200/,10596,128,199,199,http://localhost:8082/artists/read,36479,0,1
+1604592776211,30915,Read Artist,500,,Load test 1-69,text,false,Test failed: code expected to contain /200/,10596,128,199,199,http://localhost:8082/artists/read,30914,0,1
+1604592776387,30887,Read Artist,500,,Load test 1-68,text,false,Test failed: code expected to contain /200/,10596,128,198,198,http://localhost:8082/artists/read,30886,0,4
+1604592771778,35496,Read Artist,500,,Load test 1-114,text,false,Test failed: code expected to contain /200/,10596,128,198,198,http://localhost:8082/artists/read,35495,0,1
+1604592770779,36521,Remove Track,500,,Load test 1-191,text,false,Test failed: code expected to contain /20/,10731,216,198,198,http://localhost:8082/playlists/remove/1/13,36521,0,0
+1604592770873,36473,User Login,500,,Load test 1-159,text,false,Test failed: code expected to contain /200/,10589,167,198,198,http://localhost:8082/users/login,36473,0,0
+1604592770366,36982,Remove Track,500,,Load test 1-193,text,false,Test failed: code expected to contain /20/,10731,216,198,198,http://localhost:8082/playlists/remove/1/13,36981,0,0
+1604592770174,37176,Add Track,500,,Load test 1-160,text,false,Test failed: code expected to contain /20/,10612,213,198,198,http://localhost:8082/playlists/add/1/13,37175,0,0
+1604592770708,36664,Remove Track,500,,Load test 1-190,text,false,Test failed: code expected to contain /20/,10731,216,198,198,http://localhost:8082/playlists/remove/1/13,36664,0,0
+1604592771337,36036,Read Artist,500,,Load test 1-118,text,false,Test failed: code expected to contain /200/,10596,128,198,198,http://localhost:8082/artists/read,36036,0,1
+1604592771877,37490,Read Artist,500,,Load test 1-113,text,false,Test failed: code expected to contain /200/,10596,128,198,198,http://localhost:8082/artists/read,37490,0,2
+1604592773036,36335,Read Artist,500,,Load test 1-103,text,false,Test failed: code expected to contain /200/,10596,128,198,198,http://localhost:8082/artists/read,36334,0,1
+1604592770243,39038,Read Artist,500,,Load test 1-129,text,false,Test failed: code expected to contain /200/,10596,128,198,198,http://localhost:8082/artists/read,39038,0,1
+1604592772624,36748,Read Artist,500,,Load test 1-105,text,false,Test failed: code expected to contain /200/,10596,128,198,198,http://localhost:8082/artists/read,36747,0,2
+1604592772216,37156,Read Albums,500,,Load test 1-144,text,false,Test failed: code expected to contain /200/,10591,127,198,198,http://localhost:8082/albums/read,37155,0,0
+1604592770568,38934,Read Artist,500,,Load test 1-126,text,false,Test failed: code expected to contain /200/,10596,128,198,198,http://localhost:8082/artists/read,38934,0,2
+1604592772892,36610,Remove Track,500,,Load test 1-188,text,false,Test failed: code expected to contain /20/,10618,216,198,198,http://localhost:8082/playlists/remove/1/13,36610,0,0
+1604592772623,36880,Remove Track,500,,Load test 1-187,text,false,Test failed: code expected to contain /20/,10618,216,198,198,http://localhost:8082/playlists/remove/1/13,36880,0,0
+1604592770710,38795,Read Artist,500,,Load test 1-124,text,false,Test failed: code expected to contain /200/,10596,128,198,198,http://localhost:8082/artists/read,38794,0,1
+1604592770245,39631,Remove Track,500,,Load test 1-197,text,false,Test failed: code expected to contain /20/,10731,216,197,197,http://localhost:8082/playlists/remove/1/13,39631,0,0
+1604592770271,40395,Remove Track,500,,Load test 1-195,text,false,Test failed: code expected to contain /20/,10731,216,196,196,http://localhost:8082/playlists/remove/1/13,40395,0,0
+1604592772240,38426,Read Artist,500,,Load test 1-109,text,false,Test failed: code expected to contain /200/,10596,128,196,196,http://localhost:8082/artists/read,38426,0,1
+1604592776650,34016,Read Artist,500,,Load test 1-65,text,false,Test failed: code expected to contain /200/,10596,128,196,196,http://localhost:8082/artists/read,34016,0,2
+1604592772844,37823,Remove Track,500,,Load test 1-185,text,false,Test failed: code expected to contain /20/,10618,216,196,196,http://localhost:8082/playlists/remove/1/13,37823,0,0
+1604592771926,38741,Read Artist,500,,Load test 1-112,text,false,Test failed: code expected to contain /200/,10596,128,196,196,http://localhost:8082/artists/read,38741,0,2
+1604592776544,34196,Read Artist,500,,Load test 1-67,text,false,Test failed: code expected to contain /200/,10596,128,196,196,http://localhost:8082/artists/read,34196,0,1
+1604592772627,38113,Remove Track,500,,Load test 1-186,text,false,Test failed: code expected to contain /20/,10618,216,196,196,http://localhost:8082/playlists/remove/1/13,38113,0,0
+1604592773285,37455,Read Artist,500,,Load test 1-100,text,false,Test failed: code expected to contain /200/,10596,128,196,196,http://localhost:8082/artists/read,37455,0,1
+1604592776295,34445,Read Genre,500,,Load test 1-148,text,false,Test failed: code expected to contain /200/,10591,127,196,196,http://localhost:8082/genres/read,34445,0,0
+1604592774579,36162,Read Artist,500,,Load test 1-86,text,false,Test failed: code expected to contain /200/,10596,128,196,196,http://localhost:8082/artists/read,36161,0,50
+1604592772526,38214,Create User,500,,Load test 1-157,text,false,No results for path: $['password'],10506,280,196,196,http://localhost:8082/users/create,38214,0,0
+1604592775683,35061,Read Artist,500,,Load test 1-75,text,false,Test failed: code expected to contain /200/,10596,128,196,196,http://localhost:8082/artists/read,35060,0,4
+1604592775948,34961,Read Artist,500,,Load test 1-72,text,false,Test failed: code expected to contain /200/,10596,128,196,196,http://localhost:8082/artists/read,34961,0,2
+1604592774000,36909,Read Artist,500,,Load test 1-92,text,false,Test failed: code expected to contain /200/,10596,128,196,196,http://localhost:8082/artists/read,36909,0,1
+1604592772802,38125,Read Artist,500,,Load test 1-104,text,false,Test failed: code expected to contain /200/,10596,128,196,196,http://localhost:8082/artists/read,38125,0,89
+1604592773950,36977,Read Artist,500,,Load test 1-93,text,false,Test failed: code expected to contain /200/,10596,128,196,196,http://localhost:8082/artists/read,36977,0,1
+1604592774494,36977,Read Artist,500,,Load test 1-87,text,false,Test failed: code expected to contain /200/,10596,128,195,195,http://localhost:8082/artists/read,36977,0,1
+1604592770362,41125,Remove Track,500,,Load test 1-194,text,false,Test failed: code expected to contain /20/,10731,216,195,195,http://localhost:8082/playlists/remove/1/13,41124,0,0
+1604592773112,38376,Read Artist,500,,Load test 1-101,text,false,Test failed: code expected to contain /200/,10596,128,195,195,http://localhost:8082/artists/read,38376,0,2
+1604592772134,39358,Read Artist,500,,Load test 1-110,text,false,Test failed: code expected to contain /200/,10596,128,195,195,http://localhost:8082/artists/read,39358,0,2
+1604592776535,34960,Read Artist,500,,Load test 1-66,text,false,Test failed: code expected to contain /200/,10596,128,195,195,http://localhost:8082/artists/read,34960,0,0
+1604592774830,36668,Read Artist,500,,Load test 1-85,text,false,Test failed: code expected to contain /200/,10596,128,195,195,http://localhost:8082/artists/read,36667,0,2
+1604592776231,35277,Read Artist,500,,Load test 1-70,text,false,Test failed: code expected to contain /200/,10596,128,195,195,http://localhost:8082/artists/read,35276,0,1
+1604592774893,36815,Read Artist,500,,Load test 1-84,text,false,Test failed: code expected to contain /200/,10596,128,195,195,http://localhost:8082/artists/read,36815,0,1
+1604592776146,35562,Read Artist,500,,Load test 1-71,text,false,Test failed: code expected to contain /200/,10596,128,195,195,http://localhost:8082/artists/read,35562,0,1
+1604592773487,38222,Read Artist,500,,Load test 1-98,text,false,Test failed: code expected to contain /200/,10596,128,195,195,http://localhost:8082/artists/read,38222,0,1
+1604592774407,37425,Read Artist,500,,Load test 1-88,text,false,Test failed: code expected to contain /200/,10596,128,195,195,http://localhost:8082/artists/read,37425,0,1
+1604592775769,36284,Read Artist,500,,Load test 1-74,text,false,Test failed: code expected to contain /200/,10596,128,194,194,http://localhost:8082/artists/read,36283,0,1
+1604592774832,37221,Read Albums,500,,Load test 1-142,text,false,Test failed: code expected to contain /200/,10591,127,194,194,http://localhost:8082/albums/read,37220,0,0
+1604592774062,38181,Read Artist,500,,Load test 1-91,text,false,Test failed: code expected to contain /200/,10596,128,194,194,http://localhost:8082/artists/read,38180,0,1
+1604592777255,34988,Read Artist,500,,Load test 1-59,text,false,Test failed: code expected to contain /200/,10596,128,194,194,http://localhost:8082/artists/read,34988,0,43
+1604592778955,33290,Remove Track,500,,Load test 1-184,text,false,Test failed: code expected to contain /20/,10618,216,194,194,http://localhost:8082/playlists/remove/1/13,33290,0,0
+1604592778420,33826,Read Artist,500,,Load test 1-48,text,false,Test failed: code expected to contain /200/,10596,128,194,194,http://localhost:8082/artists/read,33826,0,1
+1604592772678,39571,Read Artist,500,,Load test 1-107,text,false,Test failed: code expected to contain /200/,10596,128,194,194,http://localhost:8082/artists/read,39571,0,1
+1604592780396,31855,Read Artist,500,,Load test 1-28,text,false,Test failed: code expected to contain /200/,10596,128,194,194,http://localhost:8082/artists/read,31855,0,2
+1604592778242,34011,Read Artist,500,,Load test 1-51,text,false,Test failed: code expected to contain /200/,10596,128,194,194,http://localhost:8082/artists/read,34010,0,1
+1604592777501,34756,Read Artist,500,,Load test 1-57,text,false,Test failed: code expected to contain /200/,10596,128,194,194,http://localhost:8082/artists/read,34756,0,2
+1604592777095,35336,Read Artist,500,,Load test 1-61,text,false,Test failed: code expected to contain /200/,10596,128,194,194,http://localhost:8082/artists/read,35335,0,1
+1604592778311,34120,Read Artist,500,,Load test 1-49,text,false,Test failed: code expected to contain /200/,10596,128,194,194,http://localhost:8082/artists/read,34119,0,1
+1604592773765,38667,Read Artist,500,,Load test 1-94,text,false,Test failed: code expected to contain /200/,10596,128,193,193,http://localhost:8082/artists/read,38667,0,1
+1604592777777,34661,Read Artist,500,,Load test 1-54,text,false,Test failed: code expected to contain /200/,10596,128,193,193,http://localhost:8082/artists/read,34481,0,0
+1604592807127,2716,Read Albums,200,,Load test 1-69,text,true,,437420,127,197,197,http://localhost:8082/albums/read,2716,0,0
+1604592772135,41680,Read Artist,500,,Load test 1-111,text,false,Test failed: code expected to contain /200/,10596,128,192,192,http://localhost:8082/artists/read,41680,0,2
+1604592770440,43419,Read Artist,500,,Load test 1-128,text,false,Test failed: code expected to contain /200/,10596,128,192,192,http://localhost:8082/artists/read,43419,0,1
+1604592774607,39252,Read Albums,500,,Load test 1-146,text,false,Test failed: code expected to contain /200/,10591,127,192,192,http://localhost:8082/albums/read,39252,0,0
+1604592770633,43226,Read Artist,500,,Load test 1-125,text,false,Test failed: code expected to contain /200/,10596,128,192,192,http://localhost:8082/artists/read,43226,0,1
+1604592777575,36286,Read Artist,500,,Load test 1-56,text,false,Test failed: code expected to contain /200/,10596,128,192,192,http://localhost:8082/artists/read,36286,0,1
+1604592777367,36504,Read Artist,500,,Load test 1-58,text,false,Test failed: code expected to contain /200/,10596,128,192,192,http://localhost:8082/artists/read,36504,0,2
+1604592775084,38812,Read Artist,500,,Load test 1-81,text,false,Test failed: code expected to contain /200/,10596,128,192,192,http://localhost:8082/artists/read,38812,0,1
+1604592773653,40253,Read Artist,500,,Load test 1-96,text,false,Test failed: code expected to contain /200/,10596,128,192,192,http://localhost:8082/artists/read,40253,0,3
+1604592779779,34128,Read Artist,500,,Load test 1-34,text,false,Test failed: code expected to contain /200/,10596,128,192,192,http://localhost:8082/artists/read,34127,0,2
+1604592778017,35892,Read Artist,500,,Load test 1-52,text,false,Test failed: code expected to contain /200/,10596,128,192,192,http://localhost:8082/artists/read,35892,0,6
+1604592774205,39707,Read Artist,500,,Load test 1-90,text,false,Test failed: code expected to contain /200/,10596,128,192,192,http://localhost:8082/artists/read,39707,0,2
+1604592774004,39909,Read Genre,500,,Load test 1-150,text,false,Test failed: code expected to contain /200/,10591,127,192,192,http://localhost:8082/genres/read,39909,0,0
+1604592774097,39820,Read Genre,500,,Load test 1-151,text,false,Test failed: code expected to contain /200/,10591,127,192,192,http://localhost:8082/genres/read,39819,0,0
+1604592779271,34646,Remove Track,500,,Load test 1-183,text,false,Test failed: code expected to contain /20/,10618,216,192,192,http://localhost:8082/playlists/remove/1/13,34645,0,0
+1604592779150,34768,Read Artist,500,,Load test 1-40,text,false,Test failed: code expected to contain /200/,10596,128,192,192,http://localhost:8082/artists/read,34768,0,0
+1604592775462,38457,Read Artist,500,,Load test 1-77,text,false,Test failed: code expected to contain /200/,10596,128,192,192,http://localhost:8082/artists/read,38456,0,2
+1604592771296,42626,Read Artist,500,,Load test 1-120,text,false,Test failed: code expected to contain /200/,10596,128,192,192,http://localhost:8082/artists/read,42626,0,1
+1604592782569,31359,Read Artist,500,,Load test 1-6,text,false,Test failed: code expected to contain /200/,10596,128,192,192,http://localhost:8082/artists/read,31359,0,1
+1604592778579,35427,Read Artist,500,,Load test 1-47,text,false,Test failed: code expected to contain /200/,10596,128,192,192,http://localhost:8082/artists/read,35427,0,3
+1604592779269,34740,Read Artist,500,,Load test 1-39,text,false,Test failed: code expected to contain /200/,10596,128,192,192,http://localhost:8082/artists/read,34740,0,2
+1604592774185,39824,Read Albums,500,,Load test 1-141,text,false,Test failed: code expected to contain /200/,10591,127,192,192,http://localhost:8082/albums/read,39824,0,0
+1604592773546,40467,Read Artist,500,,Load test 1-97,text,false,Test failed: code expected to contain /200/,10596,128,192,192,http://localhost:8082/artists/read,40467,0,1
+1604592775138,38875,Read Artist,500,,Load test 1-80,text,false,Test failed: code expected to contain /200/,10596,128,192,192,http://localhost:8082/artists/read,38875,0,1
+1604592773035,40981,Read Artist,500,,Load test 1-102,text,false,Test failed: code expected to contain /200/,10596,128,192,192,http://localhost:8082/artists/read,40981,0,2
+1604592777150,36866,Read Artist,500,,Load test 1-60,text,false,Test failed: code expected to contain /200/,10596,128,192,192,http://localhost:8082/artists/read,36866,0,1
+1604592773663,40356,Read Artist,500,,Load test 1-95,text,false,Test failed: code expected to contain /200/,10596,128,192,192,http://localhost:8082/artists/read,40355,0,4
+1604592776756,37265,Read Artist,500,,Load test 1-64,text,false,Test failed: code expected to contain /200/,10596,128,192,192,http://localhost:8082/artists/read,37264,0,1
+1604592777039,36982,Read Artist,500,,Load test 1-62,text,false,Test failed: code expected to contain /200/,10596,128,192,192,http://localhost:8082/artists/read,36982,0,1
+1604592782717,31308,Read Playlist,500,,Load test 1-152,text,false,Test failed: code expected to contain /200/,10606,130,192,192,http://localhost:8082/playlists/read,31308,0,0
+1604592776888,37137,Read Artist,500,,Load test 1-63,text,false,Test failed: code expected to contain /200/,10596,128,192,192,http://localhost:8082/artists/read,37137,0,1
+1604592773247,40779,Read Artist,500,,Load test 1-99,text,false,Test failed: code expected to contain /200/,10596,128,192,192,http://localhost:8082/artists/read,40779,0,1
+1604592779770,34257,Read Genre,500,,Load test 1-147,text,false,Test failed: code expected to contain /200/,10591,127,192,192,http://localhost:8082/genres/read,34257,0,0
+1604592777679,36348,Read Artist,500,,Load test 1-55,text,false,Test failed: code expected to contain /200/,10596,128,192,192,http://localhost:8082/artists/read,36348,0,1
+1604592775559,38469,Read Artist,500,,Load test 1-76,text,false,Test failed: code expected to contain /200/,10596,128,192,192,http://localhost:8082/artists/read,38469,0,2
+1604592770802,43227,Remove Track,500,,Load test 1-192,text,false,Test failed: code expected to contain /20/,10731,216,192,192,http://localhost:8082/playlists/remove/1/13,43227,0,0
+1604592778546,35484,Read Artist,500,,Load test 1-46,text,false,Test failed: code expected to contain /200/,10596,128,192,192,http://localhost:8082/artists/read,35484,0,1
+1604592778971,35059,Read Artist,500,,Load test 1-43,text,false,Test failed: code expected to contain /200/,10596,128,192,192,http://localhost:8082/artists/read,35059,0,0
+1604592772380,41652,Read Artist,500,,Load test 1-108,text,false,Test failed: code expected to contain /200/,10596,128,192,192,http://localhost:8082/artists/read,41650,0,1
+1604592774497,39536,Read Albums,500,,Load test 1-143,text,false,Test failed: code expected to contain /200/,10591,127,192,192,http://localhost:8082/albums/read,39536,0,0
+1604592779451,34583,Read Artist,500,,Load test 1-37,text,false,Test failed: code expected to contain /200/,10596,128,192,192,http://localhost:8082/artists/read,34583,0,0
+1604592779305,34734,Read Artist,500,,Load test 1-38,text,false,Test failed: code expected to contain /200/,10596,128,192,192,http://localhost:8082/artists/read,34734,0,1
+1604592775874,38167,Read Artist,500,,Load test 1-73,text,false,Test failed: code expected to contain /200/,10596,128,192,192,http://localhost:8082/artists/read,38166,0,1
+1604592774483,39560,Read Artist,500,,Load test 1-89,text,false,Test failed: code expected to contain /200/,10596,128,192,192,http://localhost:8082/artists/read,39560,0,0
+1604592777866,36180,Read Artist,500,,Load test 1-53,text,false,Test failed: code expected to contain /200/,10596,128,192,192,http://localhost:8082/artists/read,36180,0,42
+1604592775248,38812,Read Artist,500,,Load test 1-79,text,false,Test failed: code expected to contain /200/,10596,128,192,192,http://localhost:8082/artists/read,38812,0,1
+1604592779583,32662,Read Artist,200,,Load test 1-36,text,true,,217260,128,194,194,http://localhost:8082/artists/read,32659,0,2
+1604592778646,35683,Read Artist,500,,Load test 1-45,text,false,Test failed: code expected to contain /200/,10596,128,192,192,http://localhost:8082/artists/read,35683,0,1
+1604592781188,33141,Read Artist,500,,Load test 1-20,text,false,Test failed: code expected to contain /200/,10596,128,192,192,http://localhost:8082/artists/read,33141,0,1
+1604592778983,35346,Read Artist,500,,Load test 1-42,text,false,Test failed: code expected to contain /200/,10596,128,192,192,http://localhost:8082/artists/read,35346,0,1
+1604592780238,34092,Read Artist,500,,Load test 1-30,text,false,Test failed: code expected to contain /200/,10596,128,192,192,http://localhost:8082/artists/read,34092,0,2
+1604592778790,35540,Read Artist,500,,Load test 1-44,text,false,Test failed: code expected to contain /200/,10596,128,192,192,http://localhost:8082/artists/read,35540,0,1
+1604592778203,36128,Read Artist,500,,Load test 1-50,text,false,Test failed: code expected to contain /200/,10596,128,192,192,http://localhost:8082/artists/read,36128,0,1
+1604592774890,39442,Read Artist,500,,Load test 1-83,text,false,Test failed: code expected to contain /200/,10596,128,192,192,http://localhost:8082/artists/read,39441,0,2
+1604592773639,40690,Create User,500,,Load test 1-156,text,false,No results for path: $['password'],10506,280,192,192,http://localhost:8082/users/create,40690,0,0
+1604592775428,38904,Read Artist,500,,Load test 1-78,text,false,Test failed: code expected to contain /200/,10596,128,192,192,http://localhost:8082/artists/read,38904,0,2
+1604592780228,34105,Read Artist,500,,Load test 1-32,text,false,Test failed: code expected to contain /200/,10596,128,192,192,http://localhost:8082/artists/read,34104,0,1
+1604592780909,33424,Read Artist,500,,Load test 1-22,text,false,Test failed: code expected to contain /200/,10596,128,192,192,http://localhost:8082/artists/read,33424,0,1
+1604592775007,39327,Read Artist,500,,Load test 1-82,text,false,Test failed: code expected to contain /200/,10596,128,192,192,http://localhost:8082/artists/read,39327,0,1
+1604592775752,38583,Add Track,500,,Load test 1-158,text,false,Test failed: code expected to contain /20/,10612,213,192,192,http://localhost:8082/playlists/add/1/13,38583,0,0
+1604592779189,35146,Read Albums,500,,Load test 1-140,text,false,Test failed: code expected to contain /200/,10591,127,192,192,http://localhost:8082/albums/read,35146,0,0
+1604592779072,35264,Read Artist,500,,Load test 1-41,text,false,Test failed: code expected to contain /200/,10596,128,192,192,http://localhost:8082/artists/read,35264,0,1
+1604592780336,34001,Read Artist,500,,Load test 1-29,text,false,Test failed: code expected to contain /200/,10596,128,192,192,http://localhost:8082/artists/read,34001,0,2
+1604592779770,34567,Read Artist,500,,Load test 1-35,text,false,Test failed: code expected to contain /200/,10596,128,192,192,http://localhost:8082/artists/read,34567,0,1
+1604592780041,34298,Read Artist,500,,Load test 1-33,text,false,Test failed: code expected to contain /200/,10596,128,192,192,http://localhost:8082/artists/read,34298,0,1
+1604592782779,31572,Read Artist,500,,Load test 1-5,text,false,Test failed: code expected to contain /200/,10596,128,192,192,http://localhost:8082/artists/read,31571,0,1
+1604592782763,31594,Read Artist,500,,Load test 1-4,text,false,Test failed: code expected to contain /200/,10596,128,192,192,http://localhost:8082/artists/read,31594,0,2
+1604592783500,30860,Read Albums,500,,Load test 1-138,text,false,Test failed: code expected to contain /200/,10591,127,192,192,http://localhost:8082/albums/read,30860,0,0
+1604592780742,33631,Read Artist,500,,Load test 1-24,text,false,Test failed: code expected to contain /200/,10596,128,192,192,http://localhost:8082/artists/read,33631,0,420
+1604592780798,33578,Read Artist,500,,Load test 1-23,text,false,Test failed: code expected to contain /200/,10596,128,192,192,http://localhost:8082/artists/read,33578,0,2
+1604592780077,34299,Read Artist,500,,Load test 1-31,text,false,Test failed: code expected to contain /200/,10596,128,192,192,http://localhost:8082/artists/read,34299,0,2
+1604592781236,33141,Read Artist,500,,Load test 1-21,text,false,Test failed: code expected to contain /200/,10596,128,192,192,http://localhost:8082/artists/read,33141,0,2
+1604592780616,33761,Read Artist,500,,Load test 1-26,text,false,Test failed: code expected to contain /200/,10596,128,192,192,http://localhost:8082/artists/read,33761,0,0
+1604592780872,33508,Read Genre,500,,Load test 1-149,text,false,Test failed: code expected to contain /200/,10591,127,192,192,http://localhost:8082/genres/read,33508,0,0
+1604592781318,33063,Read Artist,500,,Load test 1-19,text,false,Test failed: code expected to contain /200/,10596,128,192,192,http://localhost:8082/artists/read,33063,0,3
+1604592780447,33934,Read Artist,500,,Load test 1-27,text,false,Test failed: code expected to contain /200/,10596,128,192,192,http://localhost:8082/artists/read,33934,0,2
+1604592810359,4155,Add Track,400,,Load test 1-159,text,false,Test failed: code expected to contain /20/,2157,10550,192,192,http://localhost:8082/playlists/add/1/13,4154,0,1
+1604592781858,33741,Read Artist,500,,Load test 1-14,text,false,Test failed: code expected to contain /200/,10596,128,192,192,http://localhost:8082/artists/read,33741,0,1
+1604592782184,33417,Read Artist,500,,Load test 1-10,text,false,Test failed: code expected to contain /200/,10596,128,192,192,http://localhost:8082/artists/read,33417,0,56
+1604592781852,33750,Read Artist,500,,Load test 1-13,text,false,Test failed: code expected to contain /200/,10596,128,192,192,http://localhost:8082/artists/read,33749,0,1
+1604592781508,34093,Read Artist,500,,Load test 1-17,text,false,Test failed: code expected to contain /200/,10596,128,192,192,http://localhost:8082/artists/read,34093,0,1
+1604592782420,33192,Read Artist,500,,Load test 1-7,text,false,Test failed: code expected to contain /200/,10596,128,192,192,http://localhost:8082/artists/read,33191,0,1
+1604592782303,33309,Read Artist,500,,Load test 1-9,text,false,Test failed: code expected to contain /200/,10596,128,192,192,http://localhost:8082/artists/read,33308,0,10
+1604592782378,33237,Read Artist,500,,Load test 1-8,text,false,Test failed: code expected to contain /200/,10596,128,192,192,http://localhost:8082/artists/read,33237,0,4
+1604592782870,32745,Read Artist,500,,Load test 1-3,text,false,Test failed: code expected to contain /200/,10596,128,192,192,http://localhost:8082/artists/read,32745,0,112
+1604592781352,34271,Read Artist,500,,Load test 1-18,text,false,Test failed: code expected to contain /200/,10596,128,192,192,http://localhost:8082/artists/read,34270,0,1
+1604592781671,33952,Read Artist,500,,Load test 1-15,text,false,Test failed: code expected to contain /200/,10596,128,192,192,http://localhost:8082/artists/read,33951,0,1
+1604592783030,32627,Read Artist,500,,Load test 1-1,text,false,Test failed: code expected to contain /200/,10596,128,192,192,http://localhost:8082/artists/read,32626,0,2
+1604592782084,33686,Read Artist,500,,Load test 1-11,text,false,Test failed: code expected to contain /200/,10596,128,192,192,http://localhost:8082/artists/read,33686,0,1
+1604592781671,34105,Read Artist,500,,Load test 1-16,text,false,Test failed: code expected to contain /200/,10596,128,192,192,http://localhost:8082/artists/read,34105,0,1
+1604592782980,32796,Read Albums,500,,Load test 1-139,text,false,Test failed: code expected to contain /200/,10591,127,192,192,http://localhost:8082/albums/read,32796,0,0
+1604592780866,34911,Read Artist,500,,Load test 1-25,text,false,Test failed: code expected to contain /200/,10596,128,192,192,http://localhost:8082/artists/read,34911,0,2
+1604592782938,32839,Read Artist,500,,Load test 1-2,text,false,Test failed: code expected to contain /200/,10596,128,192,192,http://localhost:8082/artists/read,32839,0,1
+1604592784221,31557,Remove Track,500,,Load test 1-171,text,false,Test failed: code expected to contain /20/,10618,216,192,192,http://localhost:8082/playlists/remove/1/13,31557,0,1
+1604592784965,30815,Read Albums,500,,Load test 1-137,text,false,Test failed: code expected to contain /200/,10591,127,192,192,http://localhost:8082/albums/read,30815,0,0
+1604592784356,31424,Read Genre,500,,Load test 1-145,text,false,Test failed: code expected to contain /200/,10591,127,192,192,http://localhost:8082/genres/read,31424,0,0
+1604592784254,31528,Remove Track,500,,Load test 1-173,text,false,Test failed: code expected to contain /20/,10618,216,192,192,http://localhost:8082/playlists/remove/1/13,31528,0,2
+1604592781989,33146,Read Artist,200,,Load test 1-12,text,true,,217260,128,192,192,http://localhost:8082/artists/read,33094,0,3
+1604592817524,4,Remove Track,400,,Load test 1-159,text,false,Test failed: code expected to contain /20/,2157,10553,191,191,http://localhost:8082/playlists/remove/1/13,4,0,1
+1604592786475,29816,Read Albums,200,,Load test 1-136,text,true,,437420,127,192,192,http://localhost:8082/albums/read,29752,0,0
+1604592820542,4,Create Playlist,400,,Load test 1-159,text,false,Test failed: code expected to contain /20/,2157,10737,191,191,http://localhost:8082/playlists/create,4,0,2
+1604592800545,17729,Read Albums,200,,Load test 1-132,text,true,,437420,127,191,191,http://localhost:8082/albums/read,17697,0,1
+1604592821070,4,Delete playlist,400,,Load test 1-159,text,false,Test failed: code expected to contain /20/,2157,10577,191,191,http://localhost:8082/playlists/delete/,4,0,1
+1604592798633,19961,Read Albums,200,,Load test 1-135,text,true,,437420,127,191,191,http://localhost:8082/albums/read,19895,0,0
+1604592800536,19067,Read Albums,200,,Load test 1-134,text,true,,437420,127,191,191,http://localhost:8082/albums/read,19007,0,2
+1604592800724,19265,Read Albums,200,,Load test 1-133,text,true,,437420,127,191,191,http://localhost:8082/albums/read,19202,0,0
+1604592800983,21064,Read Albums,200,,Load test 1-131,text,true,,437420,127,191,191,http://localhost:8082/albums/read,20991,0,2
+1604592803199,19373,Read Albums,200,,Load test 1-119,text,true,,437420,127,191,191,http://localhost:8082/albums/read,19259,0,1
+1604592803222,20199,Read Albums,200,,Load test 1-117,text,true,,437420,127,191,191,http://localhost:8082/albums/read,20099,0,1
+1604592803231,20660,Read Albums,200,,Load test 1-130,text,true,,437420,127,191,191,http://localhost:8082/albums/read,20598,0,1
+1604592803863,21200,Read Albums,200,,Load test 1-115,text,true,,437420,127,190,190,http://localhost:8082/albums/read,21142,0,132
+1604592804557,22036,Read Albums,200,,Load test 1-106,text,true,,437420,127,190,190,http://localhost:8082/albums/read,21931,0,1
+1604592804930,21943,Read Albums,200,,Load test 1-122,text,true,,437420,127,190,190,http://localhost:8082/albums/read,21831,0,1
+1604592805197,23443,Read Albums,200,,Load test 1-116,text,true,,437420,127,190,190,http://localhost:8082/albums/read,23363,0,1
+1604592806241,23555,Read Albums,200,,Load test 1-123,text,true,,437412,127,190,190,http://localhost:8082/albums/read,23486,0,6
+1604592806418,30166,Create Playlist,500,,Load test 1-199,text,false,Test failed: code expected to contain /20/,10639,400,189,189,http://localhost:8082/playlists/create,30166,0,1
+1604592806405,30215,Create Playlist,500,,Load test 1-198,text,false,Test failed: code expected to contain /20/,10639,400,189,189,http://localhost:8082/playlists/create,30215,0,2
+1604592806940,30097,Read Albums,500,,Load test 1-127,text,false,Test failed: code expected to contain /200/,10591,127,189,189,http://localhost:8082/albums/read,30097,0,1
+1604592806933,30104,Read Albums,500,,Load test 1-121,text,false,Test failed: code expected to contain /200/,10591,127,189,189,http://localhost:8082/albums/read,30104,0,1
+1604592837097,20,Delete playlist,404,,Load test 1-199,text,false,Test failed: code expected to contain /20/,401,240,189,189,http://localhost:8082/playlists/delete/,20,0,1
+1604592837128,4,Delete playlist,404,,Load test 1-198,text,false,Test failed: code expected to contain /20/,401,240,189,189,http://localhost:8082/playlists/delete/,4,0,1
+1604592807274,30124,Read Albums,500,,Load test 1-114,text,false,Test failed: code expected to contain /200/,10591,127,189,189,http://localhost:8082/albums/read,30124,0,32
+1604592807374,30057,Read Albums,500,,Load test 1-118,text,false,Test failed: code expected to contain /200/,10591,127,189,189,http://localhost:8082/albums/read,30057,0,1
+1604592807274,30157,Read Albums,500,,Load test 1-68,text,false,Test failed: code expected to contain /200/,10591,127,189,189,http://localhost:8082/albums/read,30157,0,37
+1604592808877,29322,Create Playlist,201,,Load test 1-200,text,true,,432,400,188,188,http://localhost:8082/playlists/create,29322,0,1
+1604592809219,28982,Create Playlist,201,,Load test 1-196,text,true,,432,400,188,188,http://localhost:8082/playlists/create,28982,0,1
+1604592809371,30149,Read Albums,500,,Load test 1-103,text,false,Test failed: code expected to contain /200/,10591,127,187,187,http://localhost:8082/albums/read,30149,0,1
+1604592809371,30149,Read Albums,500,,Load test 1-129,text,false,Test failed: code expected to contain /200/,10591,127,187,187,http://localhost:8082/albums/read,30149,0,1
+1604592809372,30151,Read Albums,500,,Load test 1-105,text,false,Test failed: code expected to contain /200/,10591,127,187,187,http://localhost:8082/albums/read,30150,0,1
+1604592809372,30152,Read Genre,500,,Load test 1-144,text,false,Test failed: code expected to contain /200/,10591,127,187,187,http://localhost:8082/genres/read,30152,0,1
+1604592809503,30061,Read Albums,500,,Load test 1-126,text,false,Test failed: code expected to contain /200/,10591,127,187,187,http://localhost:8082/albums/read,30061,0,1
+1604592809506,30400,Read Albums,500,,Load test 1-124,text,false,Test failed: code expected to contain /200/,10591,127,187,187,http://localhost:8082/albums/read,30400,0,319
+1604592810018,30044,Create Playlist,500,,Load test 1-189,text,false,Test failed: code expected to contain /20/,10639,400,187,187,http://localhost:8082/playlists/create,30044,0,1
+1604592810375,30128,Create Playlist,500,,Load test 1-193,text,false,Test failed: code expected to contain /20/,10639,400,186,186,http://localhost:8082/playlists/create,30128,0,1
+1604592810471,30038,Create Playlist,201,,Load test 1-190,text,true,,432,400,186,186,http://localhost:8082/playlists/create,30038,0,2
+1604592810488,30080,Create Playlist,500,,Load test 1-191,text,false,Test failed: code expected to contain /20/,10639,400,186,186,http://localhost:8082/playlists/create,30080,0,1
+1604592840576,70,Delete playlist,404,,Load test 1-189,text,false,Test failed: code expected to contain /20/,401,240,186,186,http://localhost:8082/playlists/delete/,70,0,0
+1604592810670,30106,Read Albums,500,,Load test 1-112,text,false,Test failed: code expected to contain /200/,10591,127,186,186,http://localhost:8082/albums/read,30106,0,1
+1604592810670,30107,Read Albums,500,,Load test 1-65,text,false,Test failed: code expected to contain /200/,10591,127,186,186,http://localhost:8082/albums/read,30106,0,1
+1604592810670,30131,Read Albums,500,,Load test 1-109,text,false,Test failed: code expected to contain /200/,10591,127,186,186,http://localhost:8082/albums/read,30131,0,1
+1604592810741,30087,Read Albums,500,,Load test 1-67,text,false,Test failed: code expected to contain /200/,10591,127,186,186,http://localhost:8082/albums/read,30087,0,1
+1604592810746,30087,Read Albums,500,,Load test 1-75,text,false,Test failed: code expected to contain /200/,10591,127,186,186,http://localhost:8082/albums/read,30087,0,1
+1604592810742,30111,Read Albums,500,,Load test 1-86,text,false,Test failed: code expected to contain /200/,10591,127,186,186,http://localhost:8082/albums/read,30111,0,1
+1604592810741,30134,Read Albums,500,,Load test 1-100,text,false,Test failed: code expected to contain /200/,10591,127,186,186,http://localhost:8082/albums/read,30133,0,1
+1604592810746,30195,User Login,500,,Load test 1-157,text,false,Test failed: code expected to contain /200/,10589,167,186,186,http://localhost:8082/users/login,30194,0,0
+1604592810911,30033,Read Albums,500,,Load test 1-92,text,false,Test failed: code expected to contain /200/,10591,127,186,186,http://localhost:8082/albums/read,30033,0,1
+1604592810741,30203,Read Playlist,500,,Load test 1-148,text,false,Test failed: code expected to contain /200/,10606,130,186,186,http://localhost:8082/playlists/read,30203,0,1
+1604592810911,30033,Read Albums,500,,Load test 1-72,text,false,Test failed: code expected to contain /200/,10591,127,186,186,http://localhost:8082/albums/read,30033,0,1
+1604592810929,30032,Read Albums,500,,Load test 1-104,text,false,Test failed: code expected to contain /200/,10591,127,186,186,http://localhost:8082/albums/read,30032,0,3
+1604592810929,30079,Read Albums,500,,Load test 1-93,text,false,Test failed: code expected to contain /200/,10591,127,186,186,http://localhost:8082/albums/read,30079,0,2
+1604592841019,4,Delete playlist,404,,Load test 1-193,text,false,Test failed: code expected to contain /20/,401,240,186,186,http://localhost:8082/playlists/delete/,4,0,1
+1604592841081,5,Delete playlist,404,,Load test 1-191,text,false,Test failed: code expected to contain /20/,401,240,186,186,http://localhost:8082/playlists/delete/,5,0,1
+1604592811473,30053,Read Albums,500,,Load test 1-87,text,false,Test failed: code expected to contain /200/,10591,127,186,186,http://localhost:8082/albums/read,30052,0,1
+1604592811495,30404,Read Albums,500,,Load test 1-110,text,false,Test failed: code expected to contain /200/,10591,127,186,186,http://localhost:8082/albums/read,30404,0,1
+1604592811490,30449,Read Albums,500,,Load test 1-101,text,false,Test failed: code expected to contain /200/,10591,127,186,186,http://localhost:8082/albums/read,30449,0,21
+1604592811499,30479,Read Albums,500,,Load test 1-85,text,false,Test failed: code expected to contain /200/,10591,127,186,186,http://localhost:8082/albums/read,30479,0,1
+1604592811714,30264,Read Albums,500,,Load test 1-98,text,false,Test failed: code expected to contain /200/,10591,127,186,186,http://localhost:8082/albums/read,30264,0,1
+1604592811710,30269,Read Albums,500,,Load test 1-84,text,false,Test failed: code expected to contain /200/,10591,127,186,186,http://localhost:8082/albums/read,30268,0,3
+1604592811509,30504,Read Albums,500,,Load test 1-70,text,false,Test failed: code expected to contain /200/,10591,127,186,186,http://localhost:8082/albums/read,30503,0,1
+1604592811834,30179,Read Albums,500,,Load test 1-88,text,false,Test failed: code expected to contain /200/,10591,127,186,186,http://localhost:8082/albums/read,30178,0,1
+1604592811497,30547,Read Albums,500,,Load test 1-66,text,false,Test failed: code expected to contain /200/,10591,127,186,186,http://localhost:8082/albums/read,30547,0,1
+1604592811710,30334,Read Albums,500,,Load test 1-71,text,false,Test failed: code expected to contain /200/,10591,127,186,186,http://localhost:8082/albums/read,30334,0,3
+1604592812054,30069,Read Albums,500,,Load test 1-74,text,false,Test failed: code expected to contain /200/,10591,127,186,186,http://localhost:8082/albums/read,30069,0,1
+1604592812054,30069,Read Genre,500,,Load test 1-142,text,false,Test failed: code expected to contain /200/,10591,127,186,186,http://localhost:8082/genres/read,30069,0,1
+1604592812244,30082,Read Albums,500,,Load test 1-91,text,false,Test failed: code expected to contain /200/,10591,127,186,186,http://localhost:8082/albums/read,30082,0,2
+1604592812245,30117,Read Albums,500,,Load test 1-59,text,false,Test failed: code expected to contain /200/,10591,127,186,186,http://localhost:8082/albums/read,30117,0,1
+1604592812251,30111,Read Albums,500,,Load test 1-107,text,false,Test failed: code expected to contain /200/,10591,127,186,186,http://localhost:8082/albums/read,30111,0,1
+1604592812248,30116,Read Albums,500,,Load test 1-48,text,false,Test failed: code expected to contain /200/,10591,127,186,186,http://localhost:8082/albums/read,30116,0,1
+1604592812253,30115,Read Albums,500,,Load test 1-28,text,false,Test failed: code expected to contain /200/,10591,127,186,186,http://localhost:8082/albums/read,30115,0,2
+1604592812254,30114,Read Albums,500,,Load test 1-51,text,false,Test failed: code expected to contain /200/,10591,127,186,186,http://localhost:8082/albums/read,30114,0,1
+1604592812432,30072,Read Albums,500,,Load test 1-49,text,false,Test failed: code expected to contain /200/,10591,127,186,186,http://localhost:8082/albums/read,30072,0,1
+1604592812434,30086,Read Albums,500,,Load test 1-94,text,false,Test failed: code expected to contain /200/,10591,127,186,186,http://localhost:8082/albums/read,30086,0,1
+1604592812440,30108,Read Albums,500,,Load test 1-54,text,false,Test failed: code expected to contain /200/,10591,127,186,186,http://localhost:8082/albums/read,30108,0,1
+1604592812259,30289,Read Albums,500,,Load test 1-57,text,false,Test failed: code expected to contain /200/,10591,127,186,186,http://localhost:8082/albums/read,30289,0,177
+1604592812623,30069,Create Playlist,500,,Load test 1-187,text,false,Test failed: code expected to contain /20/,10639,400,186,186,http://localhost:8082/playlists/create,30069,0,1
+1604592843204,8,Delete playlist,404,,Load test 1-187,text,false,Test failed: code expected to contain /20/,401,240,186,186,http://localhost:8082/playlists/delete/,8,0,2
+1604592815281,29919,Create Playlist,201,,Load test 1-184,text,true,,432,400,186,186,http://localhost:8082/playlists/create,29919,0,1
+1604592809369,33037,Read Albums,200,,Load test 1-113,text,true,,692835,127,186,186,http://localhost:8082/albums/read,32913,0,1
+1604592813692,33794,Create Playlist,500,,Load test 1-195,text,false,Test failed: code expected to contain /20/,10639,400,184,184,http://localhost:8082/playlists/create,33794,0,1
+1604592813208,34319,Read Genre,500,,Load test 1-69,text,false,Test failed: code expected to contain /200/,10591,127,183,183,http://localhost:8082/genres/read,34319,0,0
+1604592813920,33628,Read Albums,500,,Load test 1-40,text,false,Test failed: code expected to contain /200/,10591,127,183,183,http://localhost:8082/albums/read,33628,0,1
+1604592843956,3608,Add Track,400,,Load test 1-157,text,false,Test failed: code expected to contain /20/,2157,10550,183,183,http://localhost:8082/playlists/add/1/13,3608,0,1
+1604592813747,33897,Create Playlist,500,,Load test 1-186,text,false,Test failed: code expected to contain /20/,10639,400,182,182,http://localhost:8082/playlists/create,33897,0,1
+1604592813930,33715,Read Albums,500,,Load test 1-6,text,false,Test failed: code expected to contain /200/,10591,127,182,182,http://localhost:8082/albums/read,33715,0,1
+1604592813720,33954,Create Playlist,500,,Load test 1-185,text,false,Test failed: code expected to contain /20/,10526,400,181,181,http://localhost:8082/playlists/create,33954,0,1
+1604592814331,33419,Read Albums,500,,Load test 1-45,text,false,Test failed: code expected to contain /200/,10591,127,180,180,http://localhost:8082/albums/read,33418,0,1
+1604592813898,33852,Read Albums,500,,Load test 1-81,text,false,Test failed: code expected to contain /200/,10591,127,180,180,http://localhost:8082/albums/read,33852,0,1
+1604592813920,33830,Read Albums,500,,Load test 1-77,text,false,Test failed: code expected to contain /200/,10591,127,180,180,http://localhost:8082/albums/read,33830,0,1
+1604592817354,30396,Remove Track,500,,Load test 1-158,text,false,Test failed: code expected to contain /20/,10618,216,180,180,http://localhost:8082/playlists/remove/1/13,30396,0,1
+1604592812625,35125,Create Playlist,500,,Load test 1-188,text,false,Test failed: code expected to contain /20/,10639,400,180,180,http://localhost:8082/playlists/create,35125,0,0
+1604592813924,33828,Read Albums,500,,Load test 1-120,text,false,Test failed: code expected to contain /200/,10591,127,180,180,http://localhost:8082/albums/read,33828,0,1
+1604592814011,33742,Read Genre,500,,Load test 1-141,text,false,Test failed: code expected to contain /200/,10591,127,178,178,http://localhost:8082/genres/read,33742,0,1
+1604592813915,33844,Read Playlist,500,,Load test 1-150,text,false,Test failed: code expected to contain /200/,10606,130,178,178,http://localhost:8082/playlists/read,33844,0,1
+1604592813908,33854,Read Albums,500,,Load test 1-34,text,false,Test failed: code expected to contain /200/,10591,127,178,178,http://localhost:8082/albums/read,33854,0,1
+1604592813861,33902,Read Albums,500,,Load test 1-125,text,false,Test failed: code expected to contain /200/,10591,127,178,178,http://localhost:8082/albums/read,33902,0,1
+1604592812432,32766,Read Albums,200,,Load test 1-61,text,true,,692824,127,186,186,http://localhost:8082/albums/read,32672,0,1
+1604592815617,33187,Read Albums,500,,Load test 1-3,text,false,Test failed: code expected to contain /200/,10591,127,178,178,http://localhost:8082/albums/read,33187,0,1
+1604592814027,34777,Create User,500,,Load test 1-152,text,false,No results for path: $['password'],10506,280,178,178,http://localhost:8082/users/create,34777,0,1
+1604592814530,34274,Create Playlist,500,,Load test 1-194,text,false,Test failed: code expected to contain /20/,10526,400,178,178,http://localhost:8082/playlists/create,34274,0,1
+1604592814383,34553,Read Albums,500,,Load test 1-19,text,false,Test failed: code expected to contain /200/,10591,127,176,176,http://localhost:8082/albums/read,34552,0,0
+1604592813863,35073,Read Albums,500,,Load test 1-56,text,false,Test failed: code expected to contain /200/,10591,127,176,176,http://localhost:8082/albums/read,35072,0,0
+1604592814008,34928,Read Albums,500,,Load test 1-47,text,false,Test failed: code expected to contain /200/,10591,127,176,176,http://localhost:8082/albums/read,34927,0,1
+1604592818900,30036,Create Playlist,500,,Load test 1-171,text,false,Test failed: code expected to contain /20/,10526,400,176,176,http://localhost:8082/playlists/create,30035,0,1
+1604592815601,33336,Read Albums,500,,Load test 1-14,text,false,Test failed: code expected to contain /200/,10591,127,176,176,http://localhost:8082/albums/read,33336,0,1
+1604592815603,33334,Read Albums,500,,Load test 1-10,text,false,Test failed: code expected to contain /200/,10591,127,176,176,http://localhost:8082/albums/read,33334,0,1
+1604592812921,36017,Create Playlist,500,,Load test 1-197,text,false,Test failed: code expected to contain /20/,10639,400,175,175,http://localhost:8082/playlists/create,36017,0,1
+1604592815603,34165,Read Albums,500,,Load test 1-17,text,false,Test failed: code expected to contain /200/,10591,127,174,174,http://localhost:8082/albums/read,33914,0,1
+1604592814383,35818,Read Albums,500,,Load test 1-27,text,false,Test failed: code expected to contain /200/,10591,127,173,173,http://localhost:8082/albums/read,35818,0,0
+1604592815613,34613,Read Albums,500,,Load test 1-9,text,false,Test failed: code expected to contain /200/,10591,127,173,173,http://localhost:8082/albums/read,34613,0,1
+1604592814378,36761,Read Albums,500,,Load test 1-23,text,false,Test failed: code expected to contain /200/,10591,127,173,173,http://localhost:8082/albums/read,36760,0,1
+1604592814378,36761,Read Albums,500,,Load test 1-21,text,false,Test failed: code expected to contain /200/,10591,127,173,173,http://localhost:8082/albums/read,36761,0,1
+1604592814381,36759,Read Playlist,500,,Load test 1-149,text,false,Test failed: code expected to contain /200/,10606,130,173,173,http://localhost:8082/playlists/read,36759,0,1
+1604592814361,36781,Read Genre,500,,Load test 1-138,text,false,Test failed: code expected to contain /200/,10591,127,173,173,http://localhost:8082/genres/read,36780,0,1
+1604592815603,32766,Read Albums,200,,Load test 1-13,text,true,,692824,127,178,178,http://localhost:8082/albums/read,32660,0,1
+1604592814378,37104,Read Albums,500,,Load test 1-31,text,false,Test failed: code expected to contain /200/,10591,127,171,171,http://localhost:8082/albums/read,37104,0,0
+1604592814359,37123,Read Albums,500,,Load test 1-4,text,false,Test failed: code expected to contain /200/,10591,127,171,171,http://localhost:8082/albums/read,37123,0,1
+1604592814015,37493,Read Albums,500,,Load test 1-80,text,false,Test failed: code expected to contain /200/,10591,127,171,171,http://localhost:8082/albums/read,37493,0,2
+1604592814331,37177,Read Albums,500,,Load test 1-44,text,false,Test failed: code expected to contain /200/,10591,127,171,171,http://localhost:8082/albums/read,37177,0,1
+1604592814336,37179,Read Albums,500,,Load test 1-82,text,false,Test failed: code expected to contain /200/,10591,127,171,171,http://localhost:8082/albums/read,37178,0,1
+1604592814352,37167,Read Albums,500,,Load test 1-5,text,false,Test failed: code expected to contain /200/,10591,127,171,171,http://localhost:8082/albums/read,37167,0,1
+1604592814337,37213,Read Genre,500,,Load test 1-140,text,false,Test failed: code expected to contain /200/,10591,127,171,171,http://localhost:8082/genres/read,37213,0,1
+1604592814338,37212,Read Albums,500,,Load test 1-41,text,false,Test failed: code expected to contain /200/,10591,127,171,171,http://localhost:8082/albums/read,37212,0,1
+1604592814339,37218,Read Albums,500,,Load test 1-29,text,false,Test failed: code expected to contain /200/,10591,127,170,170,http://localhost:8082/albums/read,37218,0,1
+1604592814378,37180,Read Albums,500,,Load test 1-26,text,false,Test failed: code expected to contain /200/,10591,127,170,170,http://localhost:8082/albums/read,37180,0,1
+1604592814375,37183,Read Albums,500,,Load test 1-24,text,false,Test failed: code expected to contain /200/,10591,127,170,170,http://localhost:8082/albums/read,37183,0,1
+1604592815613,35966,Read Albums,500,,Load test 1-7,text,false,Test failed: code expected to contain /200/,10591,127,170,170,http://localhost:8082/albums/read,35966,0,2
+1604592814331,37250,Read Albums,500,,Load test 1-20,text,false,Test failed: code expected to contain /200/,10591,127,170,170,http://localhost:8082/albums/read,37250,0,2
+1604592814331,37253,Read Albums,500,,Load test 1-42,text,false,Test failed: code expected to contain /200/,10591,127,170,170,http://localhost:8082/albums/read,37252,0,1
+1604592814339,37253,Read Albums,500,,Load test 1-35,text,false,Test failed: code expected to contain /200/,10591,127,170,170,http://localhost:8082/albums/read,37253,0,1
+1604592814333,37261,User Login,500,,Load test 1-156,text,false,Test failed: code expected to contain /200/,10589,167,170,170,http://localhost:8082/users/login,37261,0,1
+1604592814341,37255,Read Albums,500,,Load test 1-33,text,false,Test failed: code expected to contain /200/,10591,127,169,169,http://localhost:8082/albums/read,37255,0,1
+1604592814333,37616,Read Albums,500,,Load test 1-50,text,false,Test failed: code expected to contain /200/,10591,127,169,169,http://localhost:8082/albums/read,37616,0,1
+1604592814048,37901,Read Albums,500,,Load test 1-53,text,false,Test failed: code expected to contain /200/,10591,127,169,169,http://localhost:8082/albums/read,37901,0,1
+1604592814331,37623,Read Albums,500,,Load test 1-30,text,false,Test failed: code expected to contain /200/,10591,127,169,169,http://localhost:8082/albums/read,37623,0,1
+1604592814334,37642,Read Albums,500,,Load test 1-78,text,false,Test failed: code expected to contain /200/,10591,127,169,169,http://localhost:8082/albums/read,37642,0,0
+1604592814035,37943,Read Genre,500,,Load test 1-143,text,false,Test failed: code expected to contain /200/,10591,127,169,169,http://localhost:8082/genres/read,37942,0,1
+1604592814018,37965,Read Albums,500,,Load test 1-60,text,false,Test failed: code expected to contain /200/,10591,127,168,168,http://localhost:8082/albums/read,37964,0,1
+1604592814335,37655,Read Albums,500,,Load test 1-22,text,false,Test failed: code expected to contain /200/,10591,127,168,168,http://localhost:8082/albums/read,37654,0,0
+1604592814021,37973,Read Albums,500,,Load test 1-95,text,false,Test failed: code expected to contain /200/,10591,127,168,168,http://localhost:8082/albums/read,37973,0,1
+1604592814042,37972,Read Albums,500,,Load test 1-73,text,false,Test failed: code expected to contain /200/,10591,127,168,168,http://localhost:8082/albums/read,37971,0,1
+1604592814200,37829,Read Albums,500,,Load test 1-36,text,false,Test failed: code expected to contain /200/,10591,127,168,168,http://localhost:8082/albums/read,37829,0,0
+1604592814029,38000,Read Albums,500,,Load test 1-55,text,false,Test failed: code expected to contain /200/,10591,127,168,168,http://localhost:8082/albums/read,38000,0,1
+1604592814028,38017,Read Albums,500,,Load test 1-99,text,false,Test failed: code expected to contain /200/,10591,127,168,168,http://localhost:8082/albums/read,38017,0,1
+1604592814333,37717,Read Albums,500,,Load test 1-83,text,false,Test failed: code expected to contain /200/,10591,127,168,168,http://localhost:8082/albums/read,37717,0,1
+1604592814034,38016,Read Albums,500,,Load test 1-108,text,false,Test failed: code expected to contain /200/,10591,127,168,168,http://localhost:8082/albums/read,38016,0,1
+1604592814037,39527,Read Albums,500,,Load test 1-37,text,false,Test failed: code expected to contain /200/,10591,127,167,167,http://localhost:8082/albums/read,39527,0,1
+1604592815624,37972,Read Albums,500,,Load test 1-18,text,false,Test failed: code expected to contain /200/,10591,127,167,167,http://localhost:8082/albums/read,37972,0,1
+1604592814014,39731,Read Albums,500,,Load test 1-97,text,false,Test failed: code expected to contain /200/,10591,127,167,167,http://localhost:8082/albums/read,39731,0,1
+1604592814018,39727,Read Albums,500,,Load test 1-102,text,false,Test failed: code expected to contain /200/,10591,127,167,167,http://localhost:8082/albums/read,39727,0,1
+1604592814023,39722,Read Albums,500,,Load test 1-62,text,false,Test failed: code expected to contain /200/,10591,127,167,167,http://localhost:8082/albums/read,39722,0,1
+1604592815781,37964,Read Genre,500,,Load test 1-137,text,false,Test failed: code expected to contain /200/,10591,127,167,167,http://localhost:8082/genres/read,37964,0,0
+1604592817108,36638,Create Playlist,500,,Load test 1-192,text,false,Test failed: code expected to contain /20/,10526,400,167,167,http://localhost:8082/playlists/create,36638,0,1
+1604592815658,38091,Read Albums,500,,Load test 1-1,text,false,Test failed: code expected to contain /200/,10591,127,163,163,http://localhost:8082/albums/read,38091,0,1
+1604592815778,37974,Read Genre,500,,Load test 1-139,text,false,Test failed: code expected to contain /200/,10591,127,163,163,http://localhost:8082/genres/read,37974,0,0
+1604592815781,37971,Read Playlist,500,,Load test 1-145,text,false,Test failed: code expected to contain /200/,10606,130,163,163,http://localhost:8082/playlists/read,37971,0,0
+1604592815774,37978,Read Albums,500,,Load test 1-11,text,false,Test failed: code expected to contain /200/,10591,127,163,163,http://localhost:8082/albums/read,37978,0,2
+1604592815778,37977,Read Albums,500,,Load test 1-16,text,false,Test failed: code expected to contain /200/,10591,127,161,161,http://localhost:8082/albums/read,37977,0,0
+1604592813861,39894,Read Albums,500,,Load test 1-128,text,false,Test failed: code expected to contain /200/,10591,127,161,161,http://localhost:8082/albums/read,39894,0,1
+1604592813861,39896,Read Genre,500,,Load test 1-146,text,false,Test failed: code expected to contain /200/,10591,127,160,160,http://localhost:8082/genres/read,39896,0,1
+1604592813911,39846,Read Albums,500,,Load test 1-52,text,false,Test failed: code expected to contain /200/,10591,127,160,160,http://localhost:8082/albums/read,39846,0,0
+1604592813908,39851,Read Albums,500,,Load test 1-96,text,false,Test failed: code expected to contain /200/,10591,127,159,159,http://localhost:8082/albums/read,39851,0,1
+1604592813817,39942,Read Albums,500,,Load test 1-111,text,false,Test failed: code expected to contain /200/,10591,127,159,159,http://localhost:8082/albums/read,39942,0,1
+1604592813913,39846,Read Albums,500,,Load test 1-90,text,false,Test failed: code expected to contain /200/,10591,127,159,159,http://localhost:8082/albums/read,39846,0,1
+1604592813873,39887,Read Albums,500,,Load test 1-58,text,false,Test failed: code expected to contain /200/,10591,127,159,159,http://localhost:8082/albums/read,39886,0,1
+1604592813918,39844,Read Playlist,500,,Load test 1-151,text,false,Test failed: code expected to contain /200/,10606,130,157,157,http://localhost:8082/playlists/read,39844,0,1
+1604592814032,39745,Read Albums,500,,Load test 1-46,text,false,Test failed: code expected to contain /200/,10591,127,156,156,http://localhost:8082/albums/read,39745,0,0
+1604592814011,39766,Read Albums,500,,Load test 1-39,text,false,Test failed: code expected to contain /200/,10591,127,156,156,http://localhost:8082/albums/read,39766,0,1
+1604592814045,39735,Read Albums,500,,Load test 1-89,text,false,Test failed: code expected to contain /200/,10591,127,156,156,http://localhost:8082/albums/read,39735,0,1
+1604592814062,39721,Read Albums,500,,Load test 1-79,text,false,Test failed: code expected to contain /200/,10591,127,156,156,http://localhost:8082/albums/read,39721,0,1
+1604592814023,39761,Read Albums,500,,Load test 1-64,text,false,Test failed: code expected to contain /200/,10591,127,156,156,http://localhost:8082/albums/read,39761,0,1
+1604592814033,39751,Read Albums,500,,Load test 1-43,text,false,Test failed: code expected to contain /200/,10591,127,156,156,http://localhost:8082/albums/read,39751,0,1
+1604592814334,39451,Read Albums,500,,Load test 1-32,text,false,Test failed: code expected to contain /200/,10591,127,156,156,http://localhost:8082/albums/read,39451,0,1
+1604592814041,39767,Read Albums,500,,Load test 1-38,text,false,Test failed: code expected to contain /200/,10591,127,156,156,http://localhost:8082/albums/read,39767,0,1
+1604592814030,39779,Read Albums,500,,Load test 1-76,text,false,Test failed: code expected to contain /200/,10591,127,156,156,http://localhost:8082/albums/read,39778,0,1
+1604592814027,39783,Read Albums,500,,Load test 1-63,text,false,Test failed: code expected to contain /200/,10591,127,156,156,http://localhost:8082/albums/read,39783,0,1
+1604592814029,39781,Read Playlist,500,,Load test 1-147,text,false,Test failed: code expected to contain /200/,10606,130,156,156,http://localhost:8082/playlists/read,39781,0,1
+1604592815617,38195,Read Albums,500,,Load test 1-8,text,false,Test failed: code expected to contain /200/,10591,127,155,155,http://localhost:8082/albums/read,38195,0,1
+1604592815625,38209,Read Albums,500,,Load test 1-15,text,false,Test failed: code expected to contain /200/,10591,127,155,155,http://localhost:8082/albums/read,38209,0,1
+1604592815778,38056,Read Albums,500,,Load test 1-2,text,false,Test failed: code expected to contain /200/,10591,127,155,155,http://localhost:8082/albums/read,38056,0,1
+1604592815778,38056,Read Albums,500,,Load test 1-25,text,false,Test failed: code expected to contain /200/,10591,127,155,155,http://localhost:8082/albums/read,38056,0,1
+1604592818805,35029,Create Playlist,500,,Load test 1-173,text,false,Test failed: code expected to contain /20/,10526,400,155,155,http://localhost:8082/playlists/create,35029,0,1
+1604592816929,36907,Create Playlist,500,,Load test 1-183,text,false,Test failed: code expected to contain /20/,10526,400,154,154,http://localhost:8082/playlists/create,36907,0,0
+1604592821204,32634,Read Genre,500,,Load test 1-135,text,false,Test failed: code expected to contain /200/,10591,127,153,153,http://localhost:8082/genres/read,32634,0,0
+1604592820648,33212,Read Genre,500,,Load test 1-132,text,false,Test failed: code expected to contain /200/,10591,127,152,152,http://localhost:8082/genres/read,33212,0,0
+1604592821886,31974,Read Genre,500,,Load test 1-133,text,false,Test failed: code expected to contain /200/,10591,127,152,152,http://localhost:8082/genres/read,31973,0,0
+1604592821492,32368,Read Genre,500,,Load test 1-134,text,false,Test failed: code expected to contain /200/,10591,127,152,152,http://localhost:8082/genres/read,32367,0,0
+1604592821107,32753,Read Artist,500,,Load test 1-159,text,false,Test failed: code expected to contain /200/,10596,128,152,152,http://localhost:8082/artists/read,32752,0,8
+1604592818419,34780,Read Genre,200,,Load test 1-136,text,true,,380245,127,167,167,http://localhost:8082/genres/read,34697,0,0
+1604592817307,35672,Read Albums,200,,Load test 1-12,text,true,,692824,127,167,167,http://localhost:8082/albums/read,35520,0,0
+1604592824486,29957,Read Genre,200,,Load test 1-131,text,true,,380242,127,148,148,http://localhost:8082/genres/read,29914,0,0
+1604592824997,30363,Read Genre,200,,Load test 1-119,text,true,,380242,127,148,148,http://localhost:8082/genres/read,30273,0,0
+1604592825704,30860,Read Genre,200,,Load test 1-130,text,true,,380242,127,148,148,http://localhost:8082/genres/read,30833,0,0
+1604592825371,32476,Read Genre,200,,Load test 1-117,text,true,,380242,127,147,147,http://localhost:8082/genres/read,32372,0,0
+1604592827599,32141,Read Genre,200,,Load test 1-115,text,true,,380242,127,144,144,http://localhost:8082/genres/read,32075,0,0
+1604592828535,31867,Read Genre,200,,Load test 1-106,text,true,,380242,127,144,144,http://localhost:8082/genres/read,31811,0,0
+1604592828884,31810,Read Genre,200,,Load test 1-122,text,true,,380242,127,143,143,http://localhost:8082/genres/read,31745,0,0
+1604592830887,32012,Read Genre,200,,Load test 1-116,text,true,,380242,127,142,142,http://localhost:8082/genres/read,31946,0,0
+1604592832276,31406,Read Genre,200,,Load test 1-123,text,true,,380242,127,141,141,http://localhost:8082/genres/read,31367,0,0
+1604592837038,26890,Read Genre,200,,Load test 1-127,text,true,,380242,127,140,140,http://localhost:8082/genres/read,26857,0,1
+1604592837432,30058,Read Genre,500,,Load test 1-118,text,false,Test failed: code expected to contain /200/,10591,127,137,137,http://localhost:8082/genres/read,30058,0,0
+1604592837133,28505,Read Artist,200,,Load test 1-198,text,true,,379785,128,140,140,http://localhost:8082/artists/read,28471,0,0
+1604592838714,29553,Delete playlist,204,,Load test 1-200,,true,,191,242,135,135,http://localhost:8082/playlists/delete/10,0,0,0
+1604592838714,29555,Delete playlist,204,,Load test 1-196,,true,,191,242,134,134,http://localhost:8082/playlists/delete/11,0,0,0
+1604592837038,30060,Read Genre,200,,Load test 1-121,text,true,,380242,127,139,139,http://localhost:8082/genres/read,30014,0,1
+1604592839524,30025,Read Genre,500,,Load test 1-105,text,false,Test failed: code expected to contain /200/,10591,127,132,132,http://localhost:8082/genres/read,30024,0,0
+1604592839521,30030,Read Genre,500,,Load test 1-129,text,false,Test failed: code expected to contain /200/,10591,127,132,132,http://localhost:8082/genres/read,30030,0,4
+1604592839525,30051,Read Playlist,500,,Load test 1-144,text,false,Test failed: code expected to contain /200/,10606,130,130,130,http://localhost:8082/playlists/read,30051,0,1
+1604592839565,30057,Read Genre,500,,Load test 1-126,text,false,Test failed: code expected to contain /200/,10591,127,129,129,http://localhost:8082/genres/read,30057,0,1
+1604592840646,30057,Read Artist,500,,Load test 1-189,text,false,Test failed: code expected to contain /200/,10596,128,128,128,http://localhost:8082/artists/read,30057,0,2
+1604592840777,30074,Read Genre,500,,Load test 1-65,text,false,Test failed: code expected to contain /200/,10591,127,127,127,http://localhost:8082/genres/read,30073,0,1
+1604592840834,30092,Read Genre,500,,Load test 1-75,text,false,Test failed: code expected to contain /200/,10591,127,126,126,http://localhost:8082/genres/read,30092,0,1
+1604592840802,30127,Read Genre,500,,Load test 1-109,text,false,Test failed: code expected to contain /200/,10591,127,125,125,http://localhost:8082/genres/read,30124,0,1
+1604592840829,30100,Read Genre,500,,Load test 1-67,text,false,Test failed: code expected to contain /200/,10591,127,125,125,http://localhost:8082/genres/read,30096,0,1
+1604592840854,30104,Read Genre,500,,Load test 1-86,text,false,Test failed: code expected to contain /200/,10591,127,123,123,http://localhost:8082/genres/read,30103,0,1
+1604592840945,30060,Read Genre,500,,Load test 1-72,text,false,Test failed: code expected to contain /200/,10591,127,122,122,http://localhost:8082/genres/read,30060,0,1
+1604592840945,30060,Create User,500,,Load test 1-148,text,false,No results for path: $['password'],10506,280,122,122,http://localhost:8082/users/create,30060,0,1
+1604592841009,30072,Read Genre,500,,Load test 1-93,text,false,Test failed: code expected to contain /200/,10591,127,120,120,http://localhost:8082/genres/read,30072,0,0
+1604592840875,30206,Read Genre,500,,Load test 1-100,text,false,Test failed: code expected to contain /200/,10591,127,120,120,http://localhost:8082/genres/read,30206,0,66
+1604592840962,30121,Read Genre,500,,Load test 1-104,text,false,Test failed: code expected to contain /200/,10591,127,118,118,http://localhost:8082/genres/read,30121,0,1
+1604592840945,30138,Read Genre,500,,Load test 1-92,text,false,Test failed: code expected to contain /200/,10591,127,118,118,http://localhost:8082/genres/read,30138,0,1
+1604592841019,30093,Delete playlist,500,,Load test 1-190,text,false,Test failed: code expected to contain /20/,10731,242,116,116,http://localhost:8082/playlists/delete/12,30093,0,0
+1604592841087,30091,Read Artist,500,,Load test 1-191,text,false,Test failed: code expected to contain /200/,10596,128,115,115,http://localhost:8082/artists/read,30091,0,1
+1604592841024,30154,Read Artist,500,,Load test 1-193,text,false,Test failed: code expected to contain /200/,10596,128,115,115,http://localhost:8082/artists/read,30154,0,1
+1604592837117,31135,Read Artist,200,,Load test 1-199,text,true,,379785,128,135,135,http://localhost:8082/artists/read,31074,0,1
+1604592841526,30061,Read Genre,500,,Load test 1-87,text,false,Test failed: code expected to contain /200/,10591,127,112,112,http://localhost:8082/genres/read,30060,0,1
+1604592841940,30106,Read Genre,500,,Load test 1-101,text,false,Test failed: code expected to contain /200/,10591,127,111,111,http://localhost:8082/genres/read,30106,0,0
+1604592841979,30096,Read Genre,500,,Load test 1-85,text,false,Test failed: code expected to contain /200/,10591,127,110,110,http://localhost:8082/genres/read,30096,0,1
+1604592841979,30099,Read Genre,500,,Load test 1-98,text,false,Test failed: code expected to contain /200/,10591,127,109,109,http://localhost:8082/genres/read,30099,0,1
+1604592841979,30143,Read Genre,500,,Load test 1-84,text,false,Test failed: code expected to contain /200/,10591,127,108,108,http://localhost:8082/genres/read,30143,0,1
+1604592842013,30109,Read Genre,500,,Load test 1-70,text,false,Test failed: code expected to contain /200/,10591,127,108,108,http://localhost:8082/genres/read,30109,0,1
+1604592842045,30138,Read Genre,500,,Load test 1-66,text,false,Test failed: code expected to contain /200/,10591,127,106,106,http://localhost:8082/genres/read,30138,0,1
+1604592842013,30171,Read Genre,500,,Load test 1-88,text,false,Test failed: code expected to contain /200/,10591,127,106,106,http://localhost:8082/genres/read,30171,0,1
+1604592842045,30139,Read Genre,500,,Load test 1-71,text,false,Test failed: code expected to contain /200/,10591,127,106,106,http://localhost:8082/genres/read,30139,0,1
+1604592842124,30062,Read Playlist,500,,Load test 1-142,text,false,Test failed: code expected to contain /200/,10606,130,103,103,http://localhost:8082/playlists/read,30061,0,1
+1604592842124,30123,Read Genre,500,,Load test 1-74,text,false,Test failed: code expected to contain /200/,10591,127,102,102,http://localhost:8082/genres/read,30123,0,1
+1604592837399,32491,Read Genre,200,,Load test 1-114,text,true,,380242,127,128,128,http://localhost:8082/genres/read,32430,0,0
+1604592842327,30049,Read Genre,500,,Load test 1-91,text,false,Test failed: code expected to contain /200/,10591,127,100,100,http://localhost:8082/genres/read,30049,0,1
+1604592842363,30052,Read Genre,500,,Load test 1-107,text,false,Test failed: code expected to contain /200/,10591,127,99,99,http://localhost:8082/genres/read,30052,0,0
+1604592842363,30062,Read Genre,500,,Load test 1-59,text,false,Test failed: code expected to contain /200/,10591,127,98,98,http://localhost:8082/genres/read,30062,0,0
+1604592842369,30085,Read Genre,500,,Load test 1-28,text,false,Test failed: code expected to contain /200/,10591,127,97,97,http://localhost:8082/genres/read,30084,0,0
+1604592842369,30084,Read Genre,500,,Load test 1-51,text,false,Test failed: code expected to contain /200/,10591,127,97,97,http://localhost:8082/genres/read,30084,0,1
+1604592842505,30033,Read Genre,500,,Load test 1-49,text,false,Test failed: code expected to contain /200/,10591,127,95,95,http://localhost:8082/genres/read,30033,0,0
+1604592842549,30033,Read Genre,500,,Load test 1-57,text,false,Test failed: code expected to contain /200/,10591,127,94,94,http://localhost:8082/genres/read,30033,0,0
+1604592842549,30041,Read Genre,500,,Load test 1-54,text,false,Test failed: code expected to contain /200/,10591,127,93,93,http://localhost:8082/genres/read,30041,0,0
+1604592842520,30085,Read Genre,500,,Load test 1-94,text,false,Test failed: code expected to contain /200/,10591,127,92,92,http://localhost:8082/genres/read,30085,0,1
+1604592837432,33282,Read Genre,200,,Load test 1-68,text,true,,380242,127,127,127,http://localhost:8082/genres/read,33204,0,0
+1604592839522,32418,Read Genre,200,,Load test 1-103,text,true,,380242,127,111,111,http://localhost:8082/genres/read,32356,0,4
+1604592845729,30093,Read Genre,500,,Load test 1-113,text,false,Test failed: code expected to contain /200/,10591,127,89,89,http://localhost:8082/genres/read,30093,0,0
+1604592839914,32504,Read Genre,200,,Load test 1-124,text,true,,380242,127,98,98,http://localhost:8082/genres/read,32454,0,1
+1604592840777,32326,Read Genre,200,,Load test 1-112,text,true,,380242,127,91,91,http://localhost:8082/genres/read,32290,0,1
+1604592847753,30039,Read Genre,500,,Load test 1-120,text,false,Test failed: code expected to contain /200/,10591,127,86,86,http://localhost:8082/genres/read,30039,0,1
+1604592847754,30043,Read Playlist,500,,Load test 1-141,text,false,Test failed: code expected to contain /200/,10606,130,85,85,http://localhost:8082/playlists/read,30043,0,0
+1604592847764,30033,Read Genre,500,,Load test 1-125,text,false,Test failed: code expected to contain /200/,10591,127,85,85,http://localhost:8082/genres/read,30033,0,1
+1604592847759,30038,Create User,500,,Load test 1-150,text,false,No results for path: $['password'],10506,280,85,85,http://localhost:8082/users/create,30038,0,1
+1604592847750,30068,Read Genre,500,,Load test 1-45,text,false,Test failed: code expected to contain /200/,10591,127,82,82,http://localhost:8082/genres/read,30068,0,1
+1604592847750,30085,Read Genre,500,,Load test 1-77,text,false,Test failed: code expected to contain /200/,10591,127,81,81,http://localhost:8082/genres/read,30085,0,1
+1604592847763,30087,Read Genre,500,,Load test 1-34,text,false,Test failed: code expected to contain /200/,10591,127,80,80,http://localhost:8082/genres/read,30087,0,0
+1604592847750,30100,Read Genre,500,,Load test 1-81,text,false,Test failed: code expected to contain /200/,10591,127,80,80,http://localhost:8082/genres/read,30100,0,3
+1604592841900,34096,Read Genre,200,,Load test 1-110,text,true,,380242,127,88,88,http://localhost:8082/genres/read,33961,0,1
+1604592848620,30095,Read Genre,500,,Load test 1-61,text,false,Test failed: code expected to contain /200/,10591,127,77,77,http://localhost:8082/genres/read,30095,0,0
+1604592848805,30164,Read Genre,500,,Load test 1-3,text,false,Test failed: code expected to contain /200/,10591,127,76,76,http://localhost:8082/genres/read,30164,0,1
+1604592842365,33511,Read Genre,200,,Load test 1-48,text,true,,380242,127,88,88,http://localhost:8082/genres/read,33475,0,0
+1604592848936,31786,Read Genre,500,,Load test 1-19,text,false,Test failed: code expected to contain /200/,10591,127,74,74,http://localhost:8082/genres/read,31786,0,1
+1604592850202,30555,Read Genre,500,,Load test 1-27,text,false,Test failed: code expected to contain /200/,10591,127,73,73,http://localhost:8082/genres/read,30555,0,1
+1604592849769,31003,Read Genre,500,,Load test 1-17,text,false,Test failed: code expected to contain /200/,10591,127,72,72,http://localhost:8082/genres/read,31003,0,0
+1604592843213,34078,Read Artist,200,,Load test 1-187,text,true,,379785,128,86,86,http://localhost:8082/artists/read,33998,0,1
+1604592848936,31866,Read Genre,500,,Load test 1-47,text,false,Test failed: code expected to contain /200/,10591,127,70,70,http://localhost:8082/genres/read,31866,0,1
+1604592848937,31880,Read Genre,500,,Load test 1-10,text,false,Test failed: code expected to contain /200/,10591,127,69,69,http://localhost:8082/genres/read,31880,0,1
+1604592850227,30590,Read Genre,500,,Load test 1-9,text,false,Test failed: code expected to contain /200/,10591,127,69,69,http://localhost:8082/genres/read,30590,0,1
+1604592848937,31880,Read Genre,500,,Load test 1-14,text,false,Test failed: code expected to contain /200/,10591,127,69,69,http://localhost:8082/genres/read,31880,0,1
+1604592851139,30080,Read Genre,500,,Load test 1-23,text,false,Test failed: code expected to contain /200/,10591,127,66,66,http://localhost:8082/genres/read,30080,0,1
+1604592851140,30113,Read Genre,500,,Load test 1-21,text,false,Test failed: code expected to contain /200/,10591,127,65,65,http://localhost:8082/genres/read,30113,0,1
+1604592851483,30076,Read Genre,500,,Load test 1-31,text,false,Test failed: code expected to contain /200/,10591,127,64,64,http://localhost:8082/genres/read,30076,0,1
+1604592851520,30087,Read Genre,500,,Load test 1-5,text,false,Test failed: code expected to contain /200/,10591,127,64,64,http://localhost:8082/genres/read,30087,0,1
+1604592851515,30092,Read Genre,500,,Load test 1-82,text,false,Test failed: code expected to contain /200/,10591,127,64,64,http://localhost:8082/genres/read,30092,0,1
+1604592851483,30124,Read Genre,500,,Load test 1-4,text,false,Test failed: code expected to contain /200/,10591,127,64,64,http://localhost:8082/genres/read,30124,0,1
+1604592851509,30098,Read Genre,500,,Load test 1-80,text,false,Test failed: code expected to contain /200/,10591,127,64,64,http://localhost:8082/genres/read,30098,0,0
+1604592851509,30133,Read Genre,500,,Load test 1-44,text,false,Test failed: code expected to contain /200/,10591,127,59,59,http://localhost:8082/genres/read,30133,0,0
+1604592851550,30092,Read Genre,500,,Load test 1-41,text,false,Test failed: code expected to contain /200/,10591,127,59,59,http://localhost:8082/genres/read,30092,0,1
+1604592851584,30058,Read Genre,500,,Load test 1-42,text,false,Test failed: code expected to contain /200/,10591,127,59,59,http://localhost:8082/genres/read,30058,0,1
+1604592851559,30083,Read Genre,500,,Load test 1-24,text,false,Test failed: code expected to contain /200/,10591,127,59,59,http://localhost:8082/genres/read,30083,0,0
+1604592851582,30122,Read Genre,500,,Load test 1-20,text,false,Test failed: code expected to contain /200/,10591,127,55,55,http://localhost:8082/genres/read,30122,0,1
+1604592851558,30179,Read Genre,500,,Load test 1-29,text,false,Test failed: code expected to contain /200/,10591,127,54,54,http://localhost:8082/genres/read,30179,0,0
+1604592851559,30178,Read Genre,500,,Load test 1-26,text,false,Test failed: code expected to contain /200/,10591,127,54,54,http://localhost:8082/genres/read,30178,0,0
+1604592851580,30157,Read Genre,500,,Load test 1-7,text,false,Test failed: code expected to contain /200/,10591,127,54,54,http://localhost:8082/genres/read,30157,0,1
+1604592851593,30264,Read Genre,500,,Load test 1-35,text,false,Test failed: code expected to contain /200/,10591,127,51,51,http://localhost:8082/genres/read,30264,0,0
+1604592851597,30325,Read Genre,500,,Load test 1-33,text,false,Test failed: code expected to contain /200/,10591,127,50,50,http://localhost:8082/genres/read,30325,0,1
+1604592851954,30079,Read Genre,500,,Load test 1-30,text,false,Test failed: code expected to contain /200/,10591,127,49,49,http://localhost:8082/genres/read,30079,0,1
+1604592851950,30124,Read Genre,500,,Load test 1-50,text,false,Test failed: code expected to contain /200/,10591,127,48,48,http://localhost:8082/genres/read,30124,0,1
+1604592851950,30127,Read Genre,500,,Load test 1-53,text,false,Test failed: code expected to contain /200/,10591,127,47,47,http://localhost:8082/genres/read,30127,0,1
+1604592851990,30090,Read Genre,500,,Load test 1-22,text,false,Test failed: code expected to contain /200/,10591,127,46,46,http://localhost:8082/genres/read,30089,0,1
+1604592851977,30103,Read Genre,500,,Load test 1-78,text,false,Test failed: code expected to contain /200/,10591,127,46,46,http://localhost:8082/genres/read,30102,0,0
+1604592851995,30085,Read Genre,500,,Load test 1-95,text,false,Test failed: code expected to contain /200/,10591,127,46,46,http://localhost:8082/genres/read,30084,0,1
+1604592851983,30137,Read Genre,500,,Load test 1-60,text,false,Test failed: code expected to contain /200/,10591,127,43,43,http://localhost:8082/genres/read,30137,0,1
+1604592852014,30106,Read Genre,500,,Load test 1-73,text,false,Test failed: code expected to contain /200/,10591,127,43,43,http://localhost:8082/genres/read,30106,0,1
+1604592852030,30090,Read Genre,500,,Load test 1-36,text,false,Test failed: code expected to contain /200/,10591,127,43,43,http://localhost:8082/genres/read,30090,0,1
+1604592852030,30090,Read Genre,500,,Load test 1-55,text,false,Test failed: code expected to contain /200/,10591,127,43,43,http://localhost:8082/genres/read,30090,0,1
+1604592852051,30069,Read Genre,500,,Load test 1-108,text,false,Test failed: code expected to contain /200/,10591,127,43,43,http://localhost:8082/genres/read,30069,0,1
+1604592852051,30104,Read Genre,500,,Load test 1-83,text,false,Test failed: code expected to contain /200/,10591,127,38,38,http://localhost:8082/genres/read,30104,0,1
+1604592852046,30142,Read Genre,500,,Load test 1-99,text,false,Test failed: code expected to contain /200/,10591,127,37,37,http://localhost:8082/genres/read,30142,0,1
+1604592847549,32695,Read Genre,200,,Load test 1-40,text,true,,380242,127,74,74,http://localhost:8082/genres/read,32632,0,15
+1604592853749,30096,Read Genre,500,,Load test 1-1,text,false,Test failed: code expected to contain /200/,10591,127,34,34,http://localhost:8082/genres/read,30096,0,1
+1604592853746,30099,Read Genre,500,,Load test 1-62,text,false,Test failed: code expected to contain /200/,10591,127,34,34,http://localhost:8082/genres/read,30099,0,0
+1604592853757,30088,Read Genre,500,,Load test 1-52,text,false,Test failed: code expected to contain /200/,10591,127,34,34,http://localhost:8082/genres/read,30088,0,1
+1604592853784,30100,Read Genre,500,,Load test 1-43,text,false,Test failed: code expected to contain /200/,10591,127,31,31,http://localhost:8082/genres/read,30100,0,1
+1604592853760,30124,Read Genre,500,,Load test 1-58,text,false,Test failed: code expected to contain /200/,10591,127,31,31,http://localhost:8082/genres/read,30124,0,1
+1604592853760,30124,Read Genre,500,,Load test 1-90,text,false,Test failed: code expected to contain /200/,10591,127,31,31,http://localhost:8082/genres/read,30124,0,1
+1604592853778,30106,Read Genre,500,,Load test 1-39,text,false,Test failed: code expected to contain /200/,10591,127,31,31,http://localhost:8082/genres/read,30106,0,0
+1604592853755,30129,Read Genre,500,,Load test 1-16,text,false,Test failed: code expected to contain /200/,10591,127,31,31,http://localhost:8082/genres/read,30129,0,1
+1604592853786,30098,Read Genre,500,,Load test 1-32,text,false,Test failed: code expected to contain /200/,10591,127,31,31,http://localhost:8082/genres/read,30098,0,1
+1604592853809,30085,Read Genre,500,,Load test 1-76,text,false,Test failed: code expected to contain /200/,10591,127,25,25,http://localhost:8082/genres/read,30084,0,1
+1604592853784,30111,Read Genre,500,,Load test 1-64,text,false,Test failed: code expected to contain /200/,10591,127,24,24,http://localhost:8082/genres/read,30111,0,1
+1604592853809,30123,Read Genre,500,,Load test 1-38,text,false,Test failed: code expected to contain /200/,10591,127,23,23,http://localhost:8082/genres/read,30123,0,0
+1604592853778,30154,Read Genre,500,,Load test 1-46,text,false,Test failed: code expected to contain /200/,10591,127,23,23,http://localhost:8082/genres/read,30154,0,0
+1604592853781,30197,Read Genre,500,,Load test 1-89,text,false,Test failed: code expected to contain /200/,10591,127,21,21,http://localhost:8082/genres/read,30197,0,1
+1604592853753,30265,Read Genre,500,,Load test 1-11,text,false,Test failed: code expected to contain /200/,10591,127,20,20,http://localhost:8082/genres/read,30265,0,0
+1604592853784,30234,Read Genre,500,,Load test 1-79,text,false,Test failed: code expected to contain /200/,10591,127,20,20,http://localhost:8082/genres/read,30234,0,1
+1604592853834,30238,Read Genre,500,,Load test 1-15,text,false,Test failed: code expected to contain /200/,10591,127,18,18,http://localhost:8082/genres/read,30238,0,1
+1604592853834,30238,Read Genre,500,,Load test 1-25,text,false,Test failed: code expected to contain /200/,10591,127,18,18,http://localhost:8082/genres/read,30237,0,2
+1604592853834,30238,Read Genre,500,,Load test 1-2,text,false,Test failed: code expected to contain /200/,10591,127,18,18,http://localhost:8082/genres/read,30237,0,2
+1604592853813,30260,Read Genre,500,,Load test 1-8,text,false,Test failed: code expected to contain /200/,10591,127,17,17,http://localhost:8082/genres/read,30260,0,1
+1604592853810,30264,Read Genre,500,,Load test 1-63,text,false,Test failed: code expected to contain /200/,10591,127,15,15,http://localhost:8082/genres/read,30264,0,1
+1604592847646,33695,Read Genre,200,,Load test 1-6,text,true,,380242,127,64,64,http://localhost:8082/genres/read,33636,0,1
+1604592848936,34330,Read Genre,200,,Load test 1-56,text,true,,380242,127,34,34,http://localhost:8082/genres/read,34256,0,1
+1604592851331,33102,Read Genre,200,,Load test 1-13,text,true,,380242,127,12,12,http://localhost:8082/genres/read,33067,0,0
+1604592853564,32467,Read Genre,200,,Load test 1-37,text,true,,380242,127,12,12,http://localhost:8082/genres/read,32396,0,1
+1604592853597,33230,Read Genre,200,,Load test 1-18,text,true,,380242,127,11,11,http://localhost:8082/genres/read,33157,0,0
+1604592857387,30143,Read Genre,200,,Load test 1-12,text,true,,380242,127,10,10,http://localhost:8082/genres/read,30103,0,1
