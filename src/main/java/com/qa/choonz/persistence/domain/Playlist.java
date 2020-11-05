@@ -32,12 +32,10 @@ public class Playlist {
 
     @NotNull
     @Size(max = 500)
-    @Column(unique = true)
     private String description;
 
     @NotNull
     @Size(max = 1000)
-    @Column(unique = true)
     private String artwork;
 
     @JsonIdentityInfo(
