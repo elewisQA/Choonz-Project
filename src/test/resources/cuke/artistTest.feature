@@ -23,3 +23,7 @@ artists, genres and albums
     And I can search for an genre
     Then I can create a new playlist
     And I can delete the new playlist
+    Then I can log out
+    And I can make a new user
+    Then I can log in with the new user credentials
+    And I can find a specific track page
