@@ -12,6 +12,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import cucumber.api.PendingException;
+import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -71,18 +72,19 @@ public class artistTest {
         Thread.sleep(1000);
         targ = driver.findElement(By.xpath("//*[@id=\"collapsingNavbar\"]/ul/li[2]/a"));
         targ.click();
-        System.out.println("Artist clicked");
+        System.out.println("Artist page clicked");
         Thread.sleep(2500);
         
 	}
 
 	@When("^I can click on an artist$")
 	public void i_can_click_on_an_artist() throws Throwable {
-		Thread.sleep(2500);
+		Thread.sleep(500);
 //		driver.get("http://127.0.0.1:5501/static/artists.html");
 		targ = driver.findElement(By.xpath("//*[@id=\"artists\"]/div[4]/div/div/a"));
 		System.out.println("Found artist to click");
 		targ.click();
+		Thread.sleep(500);
 //		jsClick(driver, targ);
         System.out.println("Artist clicked");
 	}
@@ -92,23 +94,25 @@ public class artistTest {
 	    targ = driver.findElement(By.xpath("//*[@id=\"artist_to_album\"]/p"));
 	    assertEquals("Kiss Land", targ.getText());
 	    targ.click();
+	    Thread.sleep(500);
 	    System.out.println("Album clicked");
 	}
 
 	@Then("^I can add a song to my desired playlist$")
 	public void i_can_add_a_song_to_my_desired_playlist() throws Throwable {
-		targ = driver.findElement(By.xpath("//*[@id=\"table_container\"]/table/tbody/tr[7]/td[2]/div"));
+		targ = driver.findElement(By.xpath("/html/body/div/div[2]/table/tbody/tr[7]/td[2]/div/a/i"));
 		targ.click();
 		Thread.sleep(500);
-		targ = driver.findElement(By.xpath("//*[@id=\"dropdownMenu222\"]"));
+		targ = driver.findElement(By.xpath("/html/body/div/div[2]/table/tbody/tr[7]/td[2]/div/div/button"));
 		targ.click();
+		Thread.sleep(500);
 		targ = driver.findElement(By.xpath("//*[@id=\"second_dropdown7\"]/a[3]"));
 		targ.click();
 		Thread.sleep(500);
 		System.out.println("Song added");
 	}
 
-	@When("^I navigate to the 'Playlist' page$")
+	@Then("^I navigate to the 'Playlist' page$")
 	public void i_navigate_to_the_Playlist_page() throws Throwable {
 		targ = driver.findElement(By.xpath("/html/body/nav/button/span"));
 		targ.click();
@@ -116,20 +120,32 @@ public class artistTest {
 		targ = driver.findElement(By.xpath("//*[@id=\"collapsingNavbar\"]/ul/li[5]/a"));
 		targ.click();
 		Thread.sleep(500);
-		targ = driver.findElement(By.xpath("//*[@id=\"playlists\"]/div[3]/div/div/a/h1"));
-		assertEquals("HeartBreak", targ.getText());
+		targ = driver.findElement(By.xpath("/html/body/div[1]/div[3]/div/div"));
 	}
 
-	@When("^I can click on my desired playlist$")
+	@Then("^I can click on my desired playlist$")
 	public void i_can_click_on_my_desired_playlist() throws Throwable {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new PendingException();
+		targ = driver.findElement(By.xpath("/html/body/div[1]/div[3]/div/div"));
+		targ.click();
+		Thread.sleep(500);
+		targ = driver.findElement(By.xpath("//*[@id=\"text_container\"]/h1"));
+		assertEquals("HeartBreak", targ.getText());
+		System.out.println("Playlist has been accessed");
+		Thread.sleep(500);
+		
 	}
 
 	@Then("^I can check the previously added song exists in the playlist$")
 	public void i_can_check_the_previously_added_song_exists_in_the_playlist() throws Throwable {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new PendingException();
+	    targ = driver.findElement(By.xpath("//*[@id=\"table_container\"]/table/tbody/tr[4]/td[1]/a"));
+		assertEquals("Wanderlust", targ.getText());
+		System.out.println("Song has been added to playlist");
 	}
+	
+	@After
+    public void tearDown() {
+        driver.close();
+        driver.quit();
+    }
 
 }
