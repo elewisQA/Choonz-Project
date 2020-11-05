@@ -63,11 +63,7 @@ class TestSearchControllerIntegration {
 	
 	@Test
 	void testSearchArtists() throws Exception {
-//		List<ArtistDTO> allArtists = new ArrayList<>();
-		List<ArtistDTO> artistSearch = new ArrayList<>();
-		this.artistDTO = this.artistService.read(4);
 		String artistString = "[{\"id\":4,\"name\":\"The Weeknd\",\"";
-		artistSearch.add(this.artistDTO);
 		
 		String output = this.mock.perform(request(HttpMethod.GET, "/search/artists/" + this.qArtist)
 				.accept(MediaType.APPLICATION_JSON))
@@ -80,8 +76,6 @@ class TestSearchControllerIntegration {
 	
 	@Test
 	void testSearchAlbums() throws Exception {
-		List<AlbumDTO> albumSearch = new ArrayList<>();
-		albumSearch.add(this.albumDTO);
 		String albumString = "[{\"id\":4,\"name\":\"Kiss Land\",\"";
 		
 		String output = this.mock.perform(request(HttpMethod.GET, "/search/albums/" + this.qAlbum)
@@ -108,14 +102,15 @@ class TestSearchControllerIntegration {
 	
 	@Test
 	void testSearchTracks() throws Exception {
-		List<TrackDTO> trackSearch = new ArrayList<>();
-		trackSearch.add(this.trackDTO);
+		String trackString = "[{\"id\":15,\"name\":\"Adaptation\",\"";
 		
 		String output = this.mock.perform(request(HttpMethod.GET, "/search/tracks/" + this.qTrack)
 				.accept(MediaType.APPLICATION_JSON))
 				.andExpect(status().isFound()).andReturn().getResponse().getContentAsString();
 		
-		assertEquals(output, output);
+		String[] splitOutput = output.split("alb", 2);
+		
+		assertEquals(trackString, splitOutput[0]);
 	}
 	
 	@Test
@@ -129,6 +124,8 @@ class TestSearchControllerIntegration {
 		
 		assertEquals(output, output);
 	}
+	
+	
 	public static boolean containsIgnoreCase(String str, String subString) {
         return str.toLowerCase().contains(subString.toLowerCase());
     }
