@@ -568,3 +568,7 @@ padding-left: 2%;
   display: none;
   overflow: auto;
 }
+
+#song_count {
+  width: 30px;
+}

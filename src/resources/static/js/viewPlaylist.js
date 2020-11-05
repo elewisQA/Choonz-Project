@@ -88,17 +88,37 @@ function populate(data) {
     tableContainer.appendChild(table);
     table.appendChild(tableBody);
     let songCount = 1;
+    //console.log(array_move(data['tracks'], 0, 1)); 
 
     for (let key in data['tracks']){
+      console.log(data['tracks']);
+      let tracks = data['tracks'];
         console.log(data['tracks'][key]);
-        let value = data['tracks'][key]['name'];
+        let value = tracks[key]['name'];
         console.log(value);
         let row = document.createElement("tr");
         tableBody.appendChild(row);
 
         let songId = document.createElement("th");
         songId.scope = "row";
-        songId.textContent = songCount;
+        let changeForm = document.createElement("input")
+        changeForm.type = "text";
+        changeForm.placeholder = songCount;
+        changeForm.id = "song_count"
+        console.log(key);
+        changeForm.addEventListener('keypress', function (stop) {
+          if (stop.key === 'Enter') {
+            stop.preventDefault(); 
+            let newPosition = (changeForm.value)-1;
+            console.log(newPosition);
+            console.log(key);
+            console.log(data['tracks']);
+            array_move(tracks, newPosition, key);  
+            //array_move([10, 20, 30, 40, 50], 0, 2);
+          }
+      });
+        //songId.textContent = songCount;
+        songId.appendChild(changeForm);
         row.appendChild(songId);
 
         let songName = document.createElement("td");
@@ -177,7 +197,6 @@ function populate(data) {
       readPlaylists(songCount, trackId);  
         songCount ++;
     }
-
    
     let findDelete = document.getElementById("modal-footer");
     let deleteButton = document.createElement("a");
@@ -306,4 +325,22 @@ function addTrack(trackId, playlistId){
   .catch(function(err) {
     console.log('Fetch Error :-S', err);
   });
+}
+
+function array_move(arr, old_index, new_index) {
+  while (old_index < 0) {
+      old_index += arr.length;
+  }
+  while (new_index < 0) {
+      new_index += arr.length;
+  }
+  if (new_index >= arr.length) {
+      var k = new_index - arr.length;
+      while ((k--) + 1) {
+          arr.push(undefined);
+      }
+  }
+  
+   arr.splice(new_index, 0, arr.splice(old_index, 1)[0]);  
+ console.log(arr);
 }

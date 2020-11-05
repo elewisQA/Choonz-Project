@@ -112,7 +112,7 @@ function populate(data) {
 
      let songName = document.createElement("td");
      let link = document.createElement("a");
-     link.href = "#";
+     link.href = "viewTrack.html?id=" + data["tracks"][key]["id"];
      link.textContent = value;
      row.appendChild(songName);
      songName.appendChild(link);
@@ -199,24 +199,6 @@ function populate(data) {
     // })
     // findDelete.appendChild(deleteButton);
     
-}
-
-function deleteTrack(id) {
-  fetch('http://localhost:8082/tracks/delete/' + id, {
-  method: 'DELETE',
-  })
-  .then(res => res.text()) // or res.json()
-  .then(res => console.log(res))
-
-}
-
-function deleteAlbum(id) {
-  fetch('http://localhost:8082/albums/delete/' + id, {
-  method: 'DELETE',
-  })
-  .then(res => res.text()) // or res.json()
-  .then(res => console.log(res))
-
 }
 
 function readPlaylists(songCount, trackId) {
