@@ -116,7 +116,8 @@ class TestUserControllerUnit {
     
     @Test
     void logoutTest() {
-    	// not implemented yet
+    	assertThat(new ResponseEntity<String>("TOKEN DELETED", HttpStatus.OK))
+    	.isEqualTo(this.controller.logout(this.token));
     }
     
     @Test

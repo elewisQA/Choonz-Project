@@ -127,7 +127,9 @@ class TestUserControllerIntegration {
     
     @Test
     void testLogout() throws Exception {
-    	// seemingly not implemented yet
+    	this.mock.perform(request(HttpMethod.GET, "/users/logout")
+    			.header("token", this.token))
+    	.andExpect(status().isOk());
     }
     
     @Test
