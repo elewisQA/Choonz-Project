@@ -28,8 +28,8 @@
       <hashTree/>
       <kg.apc.jmeter.threads.UltimateThreadGroup guiclass="kg.apc.jmeter.threads.UltimateThreadGroupGui" testclass="kg.apc.jmeter.threads.UltimateThreadGroup" testname="jp@gc - Ultimate Thread Group" enabled="true">
         <collectionProp name="ultimatethreadgroupdata">
-          <collectionProp name="1627542348">
-            <stringProp name="49586">200</stringProp>
+          <collectionProp name="1875008958">
+            <stringProp name="49">1</stringProp>
             <stringProp name="53">5</stringProp>
             <stringProp name="1567">10</stringProp>
             <stringProp name="50">2</stringProp>
@@ -327,6 +327,10 @@
                 <stringProp name="Header.name">Content-Type</stringProp>
                 <stringProp name="Header.value">application/json</stringProp>
               </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">uid</stringProp>
+                <stringProp name="Header.value">1</stringProp>
+              </elementProp>
             </collectionProp>
           </HeaderManager>
           <hashTree/>
@@ -387,6 +391,10 @@
                 <stringProp name="Header.name">Content-Type</stringProp>
                 <stringProp name="Header.value">application/json</stringProp>
               </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">uid</stringProp>
+                <stringProp name="Header.value">1</stringProp>
+              </elementProp>
             </collectionProp>
           </HeaderManager>
           <hashTree/>
@@ -434,6 +442,10 @@
                 <stringProp name="Header.name">Content-Type</stringProp>
                 <stringProp name="Header.value">application/json</stringProp>
               </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">uid</stringProp>
+                <stringProp name="Header.value">1</stringProp>
+              </elementProp>
             </collectionProp>
           </HeaderManager>
           <hashTree/>
@@ -480,6 +492,10 @@
               <elementProp name="" elementType="Header">
                 <stringProp name="Header.name">Content-Type</stringProp>
                 <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">uid</stringProp>
+                <stringProp name="Header.value">1</stringProp>
               </elementProp>
             </collectionProp>
           </HeaderManager>
@@ -549,6 +565,10 @@
               <elementProp name="" elementType="Header">
                 <stringProp name="Header.name">Content-Type</stringProp>
                 <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">uid</stringProp>
+                <stringProp name="Header.value">1</stringProp>
               </elementProp>
             </collectionProp>
           </HeaderManager>
