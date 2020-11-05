@@ -95,14 +95,15 @@ class TestSearchControllerIntegration {
 	
 	@Test
 	void testSearchGenres() throws Exception {
-		List<GenreDTO> genreSearch = new ArrayList<>();
-		genreSearch.add(this.genreDTO);
+		String genreString= "[{\"id\":3,\"name\":\"R&B\",\"";
 		
 		String output = this.mock.perform(request(HttpMethod.GET, "/search/genres/" + this.qGenre)
 				.accept(MediaType.APPLICATION_JSON))
 				.andExpect(status().isFound()).andReturn().getResponse().getContentAsString();
 		
-		assertEquals(output, output);
+		String[] splitOutput = output.split("pic", 2);
+		
+		assertEquals(genreString, splitOutput[0]);
 	}
 	
 	@Test
