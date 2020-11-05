@@ -1,0 +1,663 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
+1604592129644,7,ReadArtist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-1,text,true,,54708,128,12,10,http://localhost:8082/artists/read,5,0,1
+1604592129645,6,ReadArtist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-7,text,true,,54708,128,12,10,http://localhost:8082/artists/read,4,0,1
+1604592129644,8,ReadArtist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-2,text,true,,54708,128,12,10,http://localhost:8082/artists/read,5,0,1
+1604592129645,6,ReadArtist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-5,text,true,,54708,128,12,10,http://localhost:8082/artists/read,4,0,0
+1604592129644,9,ReadArtist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-4,text,true,,54708,128,12,10,http://localhost:8082/artists/read,7,0,1
+1604592129647,11,ReadArtist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-9,text,true,,54708,128,12,10,http://localhost:8082/artists/read,6,0,1
+1604592129644,15,ReadArtist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-3,text,true,,54708,128,12,10,http://localhost:8082/artists/read,12,0,1
+1604592129645,17,ReadArtist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-6,text,true,,54708,128,12,11,http://localhost:8082/artists/read,5,0,1
+1604592129647,18,ReadArtist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-8,text,true,,54708,128,12,11,http://localhost:8082/artists/read,16,0,1
+1604592129648,19,ReadArtist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-10,text,true,,54708,128,12,11,http://localhost:8082/artists/read,12,0,0
+1604592129662,12,ReadArtist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-11,text,true,,54708,128,12,11,http://localhost:8082/artists/read,10,0,0
+1604592129658,14,ReadAlbum - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-1,text,true,,181983,127,12,11,http://localhost:8082/albums/read,9,0,0
+1604592129660,20,ReadAlbum - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-5,text,true,,181983,127,12,11,http://localhost:8082/albums/read,12,0,0
+1604592129660,16,ReadAlbum - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-7,text,true,,181983,127,12,11,http://localhost:8082/albums/read,10,0,0
+1604592129669,16,ReadAlbum - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-3,text,true,,181983,127,12,11,http://localhost:8082/albums/read,6,0,0
+1604592129669,17,ReadAlbum - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-6,text,true,,181983,127,12,11,http://localhost:8082/albums/read,11,0,0
+1604592129660,34,ReadAlbum - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-2,text,true,,181983,127,12,11,http://localhost:8082/albums/read,23,0,0
+1604592129715,17,ReadGenre - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-5,text,true,,55165,127,12,11,http://localhost:8082/genres/read,16,0,0
+1604592129673,35,ReadAlbum - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-10,text,true,,181983,127,12,11,http://localhost:8082/albums/read,34,0,0
+1604592129722,13,ReadGenre - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-3,text,true,,55165,127,12,11,http://localhost:8082/genres/read,4,0,0
+1604592129684,35,ReadAlbum - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-11,text,true,,181983,127,12,11,http://localhost:8082/albums/read,29,0,0
+1604592129671,52,ReadAlbum - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-8,text,true,,181983,127,12,11,http://localhost:8082/albums/read,46,0,0
+1604592129665,58,ReadAlbum - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-9,text,true,,181983,127,12,11,http://localhost:8082/albums/read,8,0,0
+1604592129731,24,ReadGenre - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-2,text,true,,55165,127,12,12,http://localhost:8082/genres/read,13,0,0
+1604592129660,79,ReadAlbum - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-4,text,true,,181983,127,12,11,http://localhost:8082/albums/read,79,0,0
+1604592129739,26,ReadPlaylist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-5,text,true,,21017,130,12,12,http://localhost:8082/playlists/read,25,0,0
+1604592129747,19,ReadPlaylist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-3,text,true,,21017,130,12,12,http://localhost:8082/playlists/read,18,0,0
+1604592129765,7,ReadPlaylist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-2,text,true,,21017,130,12,12,http://localhost:8082/playlists/read,6,0,0
+1604592129718,51,ReadGenre - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-7,text,true,,55165,127,12,12,http://localhost:8082/genres/read,47,0,0
+1604592129747,22,ReadGenre - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-10,text,true,,55165,127,12,12,http://localhost:8082/genres/read,19,0,0
+1604592129756,17,ReadGenre - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-11,text,true,,55165,127,12,12,http://localhost:8082/genres/read,14,0,0
+1604592129775,3,ReadPlaylist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-7,text,true,,21017,130,12,12,http://localhost:8082/playlists/read,2,0,0
+1604592129758,20,ReadGenre - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-8,text,true,,55165,127,12,12,http://localhost:8082/genres/read,16,0,0
+1604592129779,3,ReadPlaylist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-11,text,true,,21017,130,12,12,http://localhost:8082/playlists/read,3,0,0
+1604592129767,12,ReadGenre - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-4,text,true,,55165,127,12,12,http://localhost:8082/genres/read,10,0,0
+1604592129775,11,ReadPlaylist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-10,text,true,,21017,130,12,12,http://localhost:8082/playlists/read,11,0,0
+1604592129786,5,ReadPlaylist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-4,text,true,,21017,130,12,12,http://localhost:8082/playlists/read,4,0,0
+1604592129761,28,ReadGenre - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-9,text,true,,55165,127,12,12,http://localhost:8082/genres/read,26,0,0
+1604592129798,5,ReadPlaylist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-9,text,true,,21017,130,12,12,http://localhost:8082/playlists/read,5,0,0
+1604592129783,20,ReadPlaylist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-8,text,true,,21017,130,12,12,http://localhost:8082/playlists/read,20,0,0
+1604592129749,55,ReadArtist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-12,text,true,,54708,128,12,12,http://localhost:8082/artists/read,41,0,1
+1604592129707,108,ReadGenre - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-1,text,true,,55165,127,12,12,http://localhost:8082/genres/read,92,0,0
+1604592129823,5,ReadPlaylist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-1,text,true,,21017,130,12,12,http://localhost:8082/playlists/read,5,0,0
+1604592129722,120,ReadGenre - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-6,text,true,,55165,127,12,12,http://localhost:8082/genres/read,108,0,0
+1604592129768,17,ReadTrack - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-5,text,true,,423483,127,12,12,http://localhost:8082/tracks/read,9,0,0
+1604592129853,32,ReadPlaylist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-6,text,true,,21017,130,12,12,http://localhost:8082/playlists/read,32,0,0
+1604592129817,34,ReadAlbum - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-12,text,true,,181983,127,12,12,http://localhost:8082/albums/read,25,0,0
+1604592129775,17,ReadTrack - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-2,text,true,,423483,127,12,12,http://localhost:8082/tracks/read,9,0,0
+1604592129898,10,ReadGenre - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-12,text,true,,55165,127,12,12,http://localhost:8082/genres/read,7,0,0
+1604592129915,9,ReadPlaylist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-12,text,true,,21017,130,12,12,http://localhost:8082/playlists/read,9,0,0
+1604592129780,47,ReadTrack - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-7,text,true,,423483,127,12,12,http://localhost:8082/tracks/read,41,0,0
+1604592129785,60,ReadTrack - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-11,text,true,,423483,127,12,12,http://localhost:8082/tracks/read,54,0,0
+1604592129768,75,ReadTrack - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-3,text,true,,423483,127,12,12,http://localhost:8082/tracks/read,58,0,0
+1604592129794,53,ReadTrack - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-4,text,true,,423483,127,12,12,http://localhost:8082/tracks/read,47,0,0
+1604592129806,108,ReadTrack - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-9,text,true,,423483,127,12,12,http://localhost:8082/tracks/read,100,0,0
+1604592129806,120,ReadTrack - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-8,text,true,,423483,127,12,12,http://localhost:8082/tracks/read,114,0,0
+1604592129831,120,ReadTrack - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-1,text,true,,423483,127,12,12,http://localhost:8082/tracks/read,104,0,0
+1604592129789,181,ReadTrack - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-10,text,true,,423483,127,12,12,http://localhost:8082/tracks/read,34,0,0
+1604592129936,38,ReadTrack - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-12,text,true,,423483,127,12,12,http://localhost:8082/tracks/read,31,0,0
+1604592129890,101,ReadTrack - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-6,text,true,,423483,127,12,12,http://localhost:8082/tracks/read,76,0,0
+1604592130374,2,Register - HTTP Request,201,,Stress Test - Concurrency Thread Group-ThreadStarter 1-5,text,true,,334,280,12,12,http://localhost:8082/users/create,2,0,0
+1604592130411,2,Register - HTTP Request,201,,Stress Test - Concurrency Thread Group-ThreadStarter 1-2,text,true,,334,280,12,12,http://localhost:8082/users/create,2,0,0
+1604592130444,3,Register - HTTP Request,201,,Stress Test - Concurrency Thread Group-ThreadStarter 1-7,text,true,,334,280,12,12,http://localhost:8082/users/create,2,0,0
+1604592130459,2,Register - HTTP Request,201,,Stress Test - Concurrency Thread Group-ThreadStarter 1-11,text,true,,334,280,12,12,http://localhost:8082/users/create,2,0,0
+1604592130460,1,Register - HTTP Request,201,,Stress Test - Concurrency Thread Group-ThreadStarter 1-3,text,true,,334,280,12,12,http://localhost:8082/users/create,1,0,0
+1604592130463,1,Register - HTTP Request,201,,Stress Test - Concurrency Thread Group-ThreadStarter 1-4,text,true,,334,280,12,12,http://localhost:8082/users/create,1,0,0
+1604592130524,2,Register - HTTP Request,201,,Stress Test - Concurrency Thread Group-ThreadStarter 1-9,text,true,,334,280,12,12,http://localhost:8082/users/create,2,0,0
+1604592130538,2,Register - HTTP Request,201,,Stress Test - Concurrency Thread Group-ThreadStarter 1-8,text,true,,334,280,12,12,http://localhost:8082/users/create,2,0,0
+1604592130550,2,Register - HTTP Request,201,,Stress Test - Concurrency Thread Group-ThreadStarter 1-1,text,true,,334,280,12,12,http://localhost:8082/users/create,2,0,0
+1604592130570,1,Register - HTTP Request,201,,Stress Test - Concurrency Thread Group-ThreadStarter 1-12,text,true,,334,280,12,12,http://localhost:8082/users/create,1,0,0
+1604592130571,1,Register - HTTP Request,201,,Stress Test - Concurrency Thread Group-ThreadStarter 1-10,text,true,,334,280,12,12,http://localhost:8082/users/create,1,0,0
+1604592130573,1,Register - HTTP Request,201,,Stress Test - Concurrency Thread Group-ThreadStarter 1-6,text,true,,334,280,12,12,http://localhost:8082/users/create,1,0,0
+1604592130878,61,Login - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-5,text,true,,261,167,12,12,http://localhost:8082/users/login,61,0,0
+1604592130939,0,check jmeter variables for auth_token,200,OK,Stress Test - Concurrency Thread Group-ThreadStarter 1-5,text,true,,378,0,12,12,null,0,0,0
+1604592130915,79,Login - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-2,text,true,,261,167,12,12,http://localhost:8082/users/login,79,0,0
+1604592130994,0,check jmeter variables for auth_token,200,OK,Stress Test - Concurrency Thread Group-ThreadStarter 1-2,text,true,,378,0,12,12,null,0,0,0
+1604592130949,103,Login - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-7,text,true,,261,167,12,12,http://localhost:8082/users/login,103,0,0
+1604592131052,0,check jmeter variables for auth_token,200,OK,Stress Test - Concurrency Thread Group-ThreadStarter 1-7,text,true,,378,0,12,12,null,0,0,0
+1604592130962,113,Login - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-11,text,true,,261,167,12,12,http://localhost:8082/users/login,113,0,0
+1604592131075,0,check jmeter variables for auth_token,200,OK,Stress Test - Concurrency Thread Group-ThreadStarter 1-11,text,true,,379,0,12,12,null,0,0,0
+1604592130962,151,Login - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-3,text,true,,261,167,12,12,http://localhost:8082/users/login,151,0,0
+1604592131113,0,check jmeter variables for auth_token,200,OK,Stress Test - Concurrency Thread Group-ThreadStarter 1-3,text,true,,378,0,12,12,null,0,0,0
+1604592130965,153,Login - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-4,text,true,,261,167,12,12,http://localhost:8082/users/login,153,0,0
+1604592131119,0,check jmeter variables for auth_token,200,OK,Stress Test - Concurrency Thread Group-ThreadStarter 1-4,text,true,,378,0,12,12,null,0,0,0
+1604592131028,189,Login - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-9,text,true,,261,167,12,12,http://localhost:8082/users/login,189,0,0
+1604592131218,0,check jmeter variables for auth_token,200,OK,Stress Test - Concurrency Thread Group-ThreadStarter 1-9,text,true,,378,0,12,12,null,0,0,0
+1604592131042,181,Login - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-8,text,true,,261,167,12,12,http://localhost:8082/users/login,181,0,0
+1604592131223,0,check jmeter variables for auth_token,200,OK,Stress Test - Concurrency Thread Group-ThreadStarter 1-8,text,true,,377,0,12,12,null,0,0,0
+1604592131054,181,Login - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-1,text,true,,261,167,12,12,http://localhost:8082/users/login,181,0,0
+1604592131235,0,check jmeter variables for auth_token,200,OK,Stress Test - Concurrency Thread Group-ThreadStarter 1-1,text,true,,377,0,12,12,null,0,0,0
+1604592131076,168,Login - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-6,text,true,,261,167,12,12,http://localhost:8082/users/login,168,0,0
+1604592131244,0,check jmeter variables for auth_token,200,OK,Stress Test - Concurrency Thread Group-ThreadStarter 1-6,text,true,,377,0,12,12,null,0,0,0
+1604592131074,171,Login - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-10,text,true,,261,167,12,12,http://localhost:8082/users/login,171,0,0
+1604592131245,0,check jmeter variables for auth_token,200,OK,Stress Test - Concurrency Thread Group-ThreadStarter 1-10,text,true,,379,0,12,12,null,0,0,0
+1604592131074,173,Login - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-12,text,true,,261,167,12,12,http://localhost:8082/users/login,173,0,0
+1604592131247,0,check jmeter variables for auth_token,200,OK,Stress Test - Concurrency Thread Group-ThreadStarter 1-12,text,true,,379,0,12,12,null,0,0,0
+1604592131439,20,Create Playlist - HTTP Request,500,,Stress Test - Concurrency Thread Group-ThreadStarter 1-5,text,false,No results for path: $['description'],15471,396,12,12,http://localhost:8082/playlists/create,19,0,0
+1604592131462,16,ReadArtist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-13,text,true,,54708,128,12,12,http://localhost:8082/artists/read,10,0,1
+1604592131497,15,Create Playlist - HTTP Request,500,,Stress Test - Concurrency Thread Group-ThreadStarter 1-2,text,false,No results for path: $['description'],15471,396,12,12,http://localhost:8082/playlists/create,14,0,0
+1604592131515,6,ReadArtist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-14,text,true,,54708,128,12,12,http://localhost:8082/artists/read,4,0,0
+1604592131489,22,ReadAlbum - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-13,text,true,,181983,127,12,12,http://localhost:8082/albums/read,11,0,0
+1604592131529,3,ReadGenre - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-13,text,true,,55165,127,12,12,http://localhost:8082/genres/read,2,0,0
+1604592131536,3,ReadPlaylist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-13,text,true,,21017,130,12,12,http://localhost:8082/playlists/read,2,0,0
+1604592131524,7,ReadAlbum - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-14,text,true,,181983,127,12,12,http://localhost:8082/albums/read,4,0,0
+1604592131545,3,ReadGenre - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-14,text,true,,55165,127,12,12,http://localhost:8082/genres/read,2,0,0
+1604592131552,3,ReadPlaylist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-14,text,true,,21017,130,12,12,http://localhost:8082/playlists/read,3,0,0
+1604592131554,7,Create Playlist - HTTP Request,500,,Stress Test - Concurrency Thread Group-ThreadStarter 1-7,text,false,No results for path: $['description'],15471,396,12,12,http://localhost:8082/playlists/create,7,0,0
+1604592131563,6,ReadArtist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-15,text,true,,54708,128,12,12,http://localhost:8082/artists/read,4,0,1
+1604592131576,11,Create Playlist - HTTP Request,500,,Stress Test - Concurrency Thread Group-ThreadStarter 1-11,text,false,No results for path: $['description'],15471,396,12,12,http://localhost:8082/playlists/create,10,0,0
+1604592131540,7,ReadTrack - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-13,text,true,,423483,127,12,12,http://localhost:8082/tracks/read,5,0,0
+1604592131590,11,ReadArtist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-16,text,true,,54708,128,12,12,http://localhost:8082/artists/read,8,0,1
+1604592131574,10,ReadAlbum - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-15,text,true,,181983,127,12,12,http://localhost:8082/albums/read,6,0,0
+1604592131611,5,ReadGenre - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-15,text,true,,55165,127,12,12,http://localhost:8082/genres/read,3,0,0
+1604592131614,10,Create Playlist - HTTP Request,500,,Stress Test - Concurrency Thread Group-ThreadStarter 1-3,text,false,No results for path: $['description'],15471,396,12,12,http://localhost:8082/playlists/create,10,0,0
+1604592131558,13,ReadTrack - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-14,text,true,,423483,127,12,12,http://localhost:8082/tracks/read,8,0,0
+1604592131622,7,ReadPlaylist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-15,text,true,,21017,130,12,12,http://localhost:8082/playlists/read,7,0,0
+1604592131620,14,Create Playlist - HTTP Request,500,,Stress Test - Concurrency Thread Group-ThreadStarter 1-4,text,false,No results for path: $['description'],15471,396,12,12,http://localhost:8082/playlists/create,14,0,0
+1604592131608,9,ReadAlbum - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-16,text,true,,181983,127,12,12,http://localhost:8082/albums/read,5,0,0
+1604592131628,8,ReadArtist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-17,text,true,,54708,128,12,12,http://localhost:8082/artists/read,6,0,1
+1604592131636,7,ReadArtist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-18,text,true,,54708,128,12,12,http://localhost:8082/artists/read,4,0,0
+1604592131641,6,ReadGenre - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-16,text,true,,55165,127,12,12,http://localhost:8082/genres/read,4,0,0
+1604592131653,4,ReadPlaylist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-16,text,true,,21017,130,12,12,http://localhost:8082/playlists/read,3,0,0
+1604592131641,11,ReadAlbum - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-17,text,true,,181983,127,12,12,http://localhost:8082/albums/read,4,0,0
+1604592131649,17,ReadAlbum - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-18,text,true,,181983,127,12,12,http://localhost:8082/albums/read,6,0,0
+1604592131691,7,ReadGenre - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-17,text,true,,55165,127,12,12,http://localhost:8082/genres/read,5,0,0
+1604592131694,5,ReadGenre - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-18,text,true,,55165,127,12,12,http://localhost:8082/genres/read,3,0,0
+1604592131632,14,ReadTrack - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-15,text,true,,423483,127,12,12,http://localhost:8082/tracks/read,9,0,0
+1604592131704,3,ReadPlaylist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-17,text,true,,21017,130,12,12,http://localhost:8082/playlists/read,3,0,0
+1604592131704,3,ReadPlaylist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-18,text,true,,21017,130,12,12,http://localhost:8082/playlists/read,3,0,0
+1604592131718,14,Create Playlist - HTTP Request,500,,Stress Test - Concurrency Thread Group-ThreadStarter 1-9,text,false,No results for path: $['description'],15471,396,12,12,http://localhost:8082/playlists/create,13,0,0
+1604592131726,15,Create Playlist - HTTP Request,500,,Stress Test - Concurrency Thread Group-ThreadStarter 1-8,text,false,No results for path: $['description'],15471,396,12,12,http://localhost:8082/playlists/create,15,0,0
+1604592131666,16,ReadTrack - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-16,text,true,,423483,127,12,12,http://localhost:8082/tracks/read,9,0,0
+1604592131735,16,Create Playlist - HTTP Request,500,,Stress Test - Concurrency Thread Group-ThreadStarter 1-1,text,false,No results for path: $['description'],15471,396,12,12,http://localhost:8082/playlists/create,16,0,0
+1604592131736,12,ReadArtist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-19,text,true,,54708,128,12,12,http://localhost:8082/artists/read,9,0,1
+1604592131746,10,ReadArtist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-20,text,true,,54708,128,12,11,http://localhost:8082/artists/read,8,0,1
+1604592131744,19,Create Playlist - HTTP Request,500,,Stress Test - Concurrency Thread Group-ThreadStarter 1-6,text,false,No results for path: $['description'],15471,396,12,12,http://localhost:8082/playlists/create,19,0,0
+1604592131745,20,Create Playlist - HTTP Request,500,,Stress Test - Concurrency Thread Group-ThreadStarter 1-10,text,false,No results for path: $['description'],15471,396,12,12,http://localhost:8082/playlists/create,20,0,0
+1604592131749,16,Create Playlist - HTTP Request,500,,Stress Test - Concurrency Thread Group-ThreadStarter 1-12,text,false,No results for path: $['description'],15471,396,12,12,http://localhost:8082/playlists/create,16,0,0
+1604592131758,11,ReadArtist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-21,text,true,,54708,128,12,11,http://localhost:8082/artists/read,6,0,1
+1604592131768,13,ReadArtist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-23,text,true,,54708,128,12,12,http://localhost:8082/artists/read,10,0,1
+1604592131771,11,ReadArtist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-24,text,true,,54708,128,12,12,http://localhost:8082/artists/read,9,0,1
+1604592131710,9,ReadTrack - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-17,text,true,,423483,127,12,12,http://localhost:8082/tracks/read,5,0,0
+1604592131754,14,ReadAlbum - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-19,text,true,,181983,127,12,11,http://localhost:8082/albums/read,7,0,0
+1604592131766,26,ReadArtist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-22,text,true,,54708,128,12,12,http://localhost:8082/artists/read,9,0,0
+1604592131763,12,ReadAlbum - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-20,text,true,,181983,127,12,12,http://localhost:8082/albums/read,8,0,0
+1604592131710,8,ReadTrack - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-18,text,true,,423483,127,12,12,http://localhost:8082/tracks/read,5,0,0
+1604592131796,21,ReadGenre - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-19,text,true,,55165,127,12,12,http://localhost:8082/genres/read,13,0,0
+1604592131803,14,ReadGenre - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-20,text,true,,55165,127,12,12,http://localhost:8082/genres/read,6,0,0
+1604592131826,7,ReadPlaylist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-19,text,true,,21017,130,12,12,http://localhost:8082/playlists/read,7,0,0
+1604592131827,6,ReadPlaylist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-20,text,true,,21017,130,12,12,http://localhost:8082/playlists/read,6,0,0
+1604592131775,33,ReadAlbum - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-21,text,true,,181983,127,12,12,http://localhost:8082/albums/read,14,0,0
+1604592131788,32,ReadAlbum - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-23,text,true,,181983,127,12,12,http://localhost:8082/albums/read,22,0,0
+1604592131789,31,ReadAlbum - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-24,text,true,,181983,127,12,12,http://localhost:8082/albums/read,21,0,0
+1604592131799,22,ReadAlbum - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-22,text,true,,181983,127,12,12,http://localhost:8082/albums/read,11,0,0
+1604592131840,8,ReadGenre - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-21,text,true,,55165,127,12,12,http://localhost:8082/genres/read,5,0,0
+1604592131848,7,ReadGenre - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-23,text,true,,55165,127,12,12,http://localhost:8082/genres/read,4,0,0
+1604592131849,7,ReadGenre - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-22,text,true,,55165,127,12,12,http://localhost:8082/genres/read,4,0,0
+1604592131854,5,ReadPlaylist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-21,text,true,,21017,130,12,12,http://localhost:8082/playlists/read,5,0,0
+1604592131848,8,ReadGenre - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-24,text,true,,55165,127,12,12,http://localhost:8082/genres/read,3,0,0
+1604592131863,4,ReadPlaylist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-22,text,true,,21017,130,12,12,http://localhost:8082/playlists/read,4,0,0
+1604592131862,4,ReadPlaylist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-23,text,true,,21017,130,12,12,http://localhost:8082/playlists/read,4,0,0
+1604592131866,3,ReadPlaylist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-24,text,true,,21017,130,12,12,http://localhost:8082/playlists/read,3,0,0
+1604592131836,14,ReadTrack - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-19,text,true,,423483,127,12,12,http://localhost:8082/tracks/read,9,0,0
+1604592131836,15,ReadTrack - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-20,text,true,,423483,127,12,12,http://localhost:8082/tracks/read,10,0,0
+1604592131863,14,ReadTrack - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-21,text,true,,423483,127,12,12,http://localhost:8082/tracks/read,9,0,0
+1604592131871,21,ReadTrack - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-24,text,true,,423483,127,12,12,http://localhost:8082/tracks/read,14,0,0
+1604592131870,18,ReadTrack - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-23,text,true,,423483,127,12,12,http://localhost:8082/tracks/read,12,0,0
+1604592131869,17,ReadTrack - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-22,text,true,,423483,127,12,12,http://localhost:8082/tracks/read,10,0,0
+1604592132102,3,Register - HTTP Request,201,,Stress Test - Concurrency Thread Group-ThreadStarter 1-13,text,true,,334,280,12,12,http://localhost:8082/users/create,3,0,0
+1604592132132,3,Register - HTTP Request,201,,Stress Test - Concurrency Thread Group-ThreadStarter 1-14,text,true,,334,280,12,12,http://localhost:8082/users/create,3,0,0
+1604592132210,2,Register - HTTP Request,201,,Stress Test - Concurrency Thread Group-ThreadStarter 1-15,text,true,,334,280,12,12,http://localhost:8082/users/create,1,0,0
+1604592132244,2,Register - HTTP Request,201,,Stress Test - Concurrency Thread Group-ThreadStarter 1-16,text,true,,334,280,12,12,http://localhost:8082/users/create,2,0,0
+1604592132297,3,Register - HTTP Request,201,,Stress Test - Concurrency Thread Group-ThreadStarter 1-17,text,true,,334,280,12,12,http://localhost:8082/users/create,3,0,0
+1604592132304,2,Register - HTTP Request,201,,Stress Test - Concurrency Thread Group-ThreadStarter 1-18,text,true,,334,280,12,12,http://localhost:8082/users/create,2,0,0
+1604592132448,2,Register - HTTP Request,201,,Stress Test - Concurrency Thread Group-ThreadStarter 1-19,text,true,,334,280,12,12,http://localhost:8082/users/create,2,0,0
+1604592132448,3,Register - HTTP Request,201,,Stress Test - Concurrency Thread Group-ThreadStarter 1-20,text,true,,334,280,12,12,http://localhost:8082/users/create,2,0,0
+1604592132466,3,Register - HTTP Request,201,,Stress Test - Concurrency Thread Group-ThreadStarter 1-21,text,true,,334,280,12,12,http://localhost:8082/users/create,3,0,0
+1604592132475,3,Register - HTTP Request,201,,Stress Test - Concurrency Thread Group-ThreadStarter 1-23,text,true,,334,280,12,12,http://localhost:8082/users/create,3,0,0
+1604592132475,3,Register - HTTP Request,201,,Stress Test - Concurrency Thread Group-ThreadStarter 1-22,text,true,,334,280,12,12,http://localhost:8082/users/create,3,0,0
+1604592132475,3,Register - HTTP Request,201,,Stress Test - Concurrency Thread Group-ThreadStarter 1-24,text,true,,334,280,12,12,http://localhost:8082/users/create,3,0,0
+1604592132606,69,Login - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-13,text,true,,261,167,12,12,http://localhost:8082/users/login,69,0,0
+1604592132675,0,check jmeter variables for auth_token,200,OK,Stress Test - Concurrency Thread Group-ThreadStarter 1-13,text,true,,379,0,12,12,null,0,0,0
+1604592132636,58,Login - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-14,text,true,,261,167,12,12,http://localhost:8082/users/login,58,0,0
+1604592132694,0,check jmeter variables for auth_token,200,OK,Stress Test - Concurrency Thread Group-ThreadStarter 1-14,text,true,,379,0,12,12,null,0,0,0
+1604592132715,55,Login - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-15,text,true,,261,167,18,16,http://localhost:8082/users/login,55,0,0
+1604592132770,0,check jmeter variables for auth_token,200,OK,Stress Test - Concurrency Thread Group-ThreadStarter 1-15,text,true,,379,0,19,16,null,0,0,0
+1604592132770,7,ReadArtist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-28,text,true,,54708,128,24,19,http://localhost:8082/artists/read,4,0,0
+1604592132769,8,ReadArtist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-27,text,true,,54708,128,24,19,http://localhost:8082/artists/read,6,0,1
+1604592132769,8,ReadArtist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-25,text,true,,54708,128,24,19,http://localhost:8082/artists/read,6,0,1
+1604592132771,8,ReadArtist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-29,text,true,,54708,128,24,19,http://localhost:8082/artists/read,5,0,1
+1604592132772,7,ReadArtist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-31,text,true,,54708,128,24,19,http://localhost:8082/artists/read,4,0,1
+1604592132769,20,ReadArtist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-26,text,true,,54708,128,24,22,http://localhost:8082/artists/read,17,0,1
+1604592132771,18,ReadArtist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-30,text,true,,54708,128,24,22,http://localhost:8082/artists/read,15,0,1
+1604592132780,10,ReadArtist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-32,text,true,,54708,128,24,22,http://localhost:8082/artists/read,7,0,2
+1604592132789,8,ReadArtist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-36,text,true,,54708,128,24,22,http://localhost:8082/artists/read,5,0,0
+1604592132783,15,ReadAlbum - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-28,text,true,,181983,127,24,22,http://localhost:8082/albums/read,9,0,0
+1604592132783,15,ReadAlbum - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-27,text,true,,181983,127,24,22,http://localhost:8082/albums/read,7,0,0
+1604592132785,20,ReadAlbum - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-29,text,true,,181983,127,24,22,http://localhost:8082/albums/read,11,0,0
+1604592132783,22,ReadAlbum - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-25,text,true,,181983,127,24,22,http://localhost:8082/albums/read,15,0,0
+1604592132795,14,ReadAlbum - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-30,text,true,,181983,127,24,22,http://localhost:8082/albums/read,8,0,0
+1604592132830,14,ReadGenre - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-27,text,true,,55165,127,24,22,http://localhost:8082/genres/read,10,0,0
+1604592132829,17,ReadGenre - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-28,text,true,,55165,127,24,22,http://localhost:8082/genres/read,13,0,0
+1604592132836,14,ReadGenre - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-29,text,true,,55165,127,24,22,http://localhost:8082/genres/read,11,0,0
+1604592132837,15,ReadGenre - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-25,text,true,,55165,127,24,22,http://localhost:8082/genres/read,10,0,0
+1604592132796,34,ReadAlbum - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-32,text,true,,181983,127,24,22,http://localhost:8082/albums/read,34,0,0
+1604592132853,18,ReadPlaylist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-28,text,true,,21017,130,24,24,http://localhost:8082/playlists/read,17,0,0
+1604592132853,19,ReadPlaylist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-27,text,true,,21017,130,24,24,http://localhost:8082/playlists/read,19,0,0
+1604592132788,81,ReadArtist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-33,text,true,,54708,128,24,24,http://localhost:8082/artists/read,56,0,0
+1604592132866,11,ReadPlaylist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-29,text,true,,21017,130,24,24,http://localhost:8082/playlists/read,11,0,0
+1604592132785,59,ReadAlbum - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-31,text,true,,181983,127,24,22,http://localhost:8082/albums/read,55,0,0
+1604592132795,48,ReadAlbum - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-26,text,true,,181983,127,24,22,http://localhost:8082/albums/read,44,0,0
+1604592132840,40,ReadGenre - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-30,text,true,,55165,127,24,24,http://localhost:8082/genres/read,37,0,0
+1604592132869,15,ReadPlaylist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-25,text,true,,21017,130,24,24,http://localhost:8082/playlists/read,14,0,0
+1604592132803,52,ReadAlbum - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-36,text,true,,181983,127,24,22,http://localhost:8082/albums/read,45,0,0
+1604592132867,19,ReadArtist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-35,text,true,,54708,128,24,24,http://localhost:8082/artists/read,16,0,1
+1604592132869,23,ReadGenre - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-32,text,true,,55165,127,24,24,http://localhost:8082/genres/read,20,0,0
+1604592132867,26,ReadArtist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-34,text,true,,54708,128,24,24,http://localhost:8082/artists/read,8,0,1
+1604592132883,12,ReadGenre - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-26,text,true,,55165,127,24,24,http://localhost:8082/genres/read,9,0,0
+1604592132886,15,ReadPlaylist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-30,text,true,,21017,130,24,24,http://localhost:8082/playlists/read,15,0,0
+1604592132891,13,ReadGenre - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-36,text,true,,55165,127,24,24,http://localhost:8082/genres/read,10,0,0
+1604592132882,22,ReadGenre - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-31,text,true,,55165,127,24,24,http://localhost:8082/genres/read,17,0,0
+1604592132901,6,ReadPlaylist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-26,text,true,,21017,130,24,24,http://localhost:8082/playlists/read,6,0,0
+1604592132910,7,ReadPlaylist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-36,text,true,,21017,130,24,24,http://localhost:8082/playlists/read,6,0,0
+1604592132897,24,ReadPlaylist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-32,text,true,,21017,130,24,24,http://localhost:8082/playlists/read,19,0,0
+1604592132876,22,ReadAlbum - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-33,text,true,,181983,127,24,24,http://localhost:8082/albums/read,17,0,0
+1604592132911,27,ReadPlaylist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-31,text,true,,21017,130,24,24,http://localhost:8082/playlists/read,25,0,0
+1604592132899,13,ReadAlbum - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-34,text,true,,181983,127,24,24,http://localhost:8082/albums/read,7,0,0
+1604592132892,28,ReadAlbum - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-35,text,true,,181983,127,24,24,http://localhost:8082/albums/read,7,0,0
+1604592132929,21,ReadGenre - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-33,text,true,,55165,127,24,24,http://localhost:8082/genres/read,15,0,0
+1604592132947,15,ReadGenre - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-34,text,true,,55165,127,24,24,http://localhost:8082/genres/read,12,0,0
+1604592132969,7,ReadPlaylist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-34,text,true,,21017,130,24,24,http://localhost:8082/playlists/read,6,0,0
+1604592132886,28,ReadTrack - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-25,text,true,,423483,127,24,24,http://localhost:8082/tracks/read,15,0,0
+1604592132875,40,ReadTrack - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-27,text,true,,423483,127,24,24,http://localhost:8082/tracks/read,31,0,0
+1604592132873,78,ReadTrack - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-28,text,true,,423483,127,24,24,http://localhost:8082/tracks/read,71,0,0
+1604592132957,92,ReadPlaylist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-33,text,true,,21017,130,24,24,http://localhost:8082/playlists/read,91,0,0
+1604592132921,55,ReadTrack - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-36,text,true,,423483,127,24,24,http://localhost:8082/tracks/read,46,0,0
+1604592132911,60,ReadTrack - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-26,text,true,,423483,127,24,24,http://localhost:8082/tracks/read,51,0,0
+1604592132954,116,ReadGenre - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-35,text,true,,55165,127,24,24,http://localhost:8082/genres/read,112,0,0
+1604592133081,8,ReadPlaylist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-35,text,true,,21017,130,24,24,http://localhost:8082/playlists/read,8,0,0
+1604592132746,355,Login - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-16,text,true,,261,167,24,24,http://localhost:8082/users/login,355,0,0
+1604592133101,0,check jmeter variables for auth_token,200,OK,Stress Test - Concurrency Thread Group-ThreadStarter 1-16,text,true,,379,0,24,24,null,0,0,0
+1604592132945,89,ReadTrack - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-31,text,true,,423483,127,24,24,http://localhost:8082/tracks/read,82,0,0
+1604592132880,163,ReadTrack - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-29,text,true,,423483,127,24,24,http://localhost:8082/tracks/read,158,0,0
+1604592132926,117,ReadTrack - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-32,text,true,,423483,127,24,24,http://localhost:8082/tracks/read,111,0,0
+1604592132905,152,ReadTrack - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-30,text,true,,423483,127,24,24,http://localhost:8082/tracks/read,134,0,0
+1604592132979,119,ReadTrack - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-34,text,true,,423483,127,24,24,http://localhost:8082/tracks/read,108,0,0
+1604592133053,51,ReadTrack - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-33,text,true,,423483,127,24,24,http://localhost:8082/tracks/read,14,0,0
+1604592133175,41,Create Playlist - HTTP Request,500,,Stress Test - Concurrency Thread Group-ThreadStarter 1-13,text,false,No results for path: $['description'],15471,396,24,24,http://localhost:8082/playlists/create,41,0,0
+1604592133196,33,Create Playlist - HTTP Request,500,,Stress Test - Concurrency Thread Group-ThreadStarter 1-14,text,false,No results for path: $['description'],15471,396,24,24,http://localhost:8082/playlists/create,33,0,0
+1604592133228,9,ReadArtist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-37,text,true,,54708,128,24,23,http://localhost:8082/artists/read,6,0,1
+1604592133094,99,ReadTrack - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-35,text,true,,423483,127,24,24,http://localhost:8082/tracks/read,94,0,0
+1604592133240,7,ReadArtist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-38,text,true,,54708,128,24,24,http://localhost:8082/artists/read,5,0,0
+1604592133243,11,ReadAlbum - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-37,text,true,,181983,127,24,24,http://localhost:8082/albums/read,6,0,0
+1604592133272,9,Create Playlist - HTTP Request,500,,Stress Test - Concurrency Thread Group-ThreadStarter 1-15,text,false,No results for path: $['description'],15471,396,24,24,http://localhost:8082/playlists/create,9,0,0
+1604592133253,11,ReadAlbum - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-38,text,true,,181983,127,24,24,http://localhost:8082/albums/read,7,0,0
+1604592133278,6,ReadGenre - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-37,text,true,,55165,127,24,24,http://localhost:8082/genres/read,4,0,0
+1604592133290,3,ReadPlaylist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-37,text,true,,21017,130,24,24,http://localhost:8082/playlists/read,3,0,0
+1604592133283,7,ReadArtist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-39,text,true,,54708,128,24,24,http://localhost:8082/artists/read,4,0,0
+1604592133289,7,ReadGenre - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-38,text,true,,55165,127,24,24,http://localhost:8082/genres/read,4,0,0
+1604592133301,8,ReadPlaylist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-38,text,true,,21017,130,24,24,http://localhost:8082/playlists/read,7,0,0
+1604592133296,10,ReadAlbum - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-39,text,true,,181983,127,24,24,http://localhost:8082/albums/read,6,0,0
+1604592133342,7,ReadGenre - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-39,text,true,,55165,127,24,24,http://localhost:8082/genres/read,5,0,0
+1604592133358,4,ReadPlaylist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-39,text,true,,21017,130,24,24,http://localhost:8082/playlists/read,3,0,0
+1604592133296,20,ReadTrack - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-37,text,true,,423483,127,24,24,http://localhost:8082/tracks/read,15,0,0
+1604592133311,35,ReadTrack - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-38,text,true,,423483,127,24,24,http://localhost:8082/tracks/read,30,0,0
+1604592132808,599,Login - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-18,text,true,,261,167,24,24,http://localhost:8082/users/login,599,0,0
+1604592133407,0,check jmeter variables for auth_token,200,OK,Stress Test - Concurrency Thread Group-ThreadStarter 1-18,text,true,,379,0,24,24,null,0,0,0
+1604592132954,470,Login - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-20,text,true,,261,167,24,24,http://localhost:8082/users/login,470,0,0
+1604592133424,0,check jmeter variables for auth_token,200,OK,Stress Test - Concurrency Thread Group-ThreadStarter 1-20,text,true,,379,0,24,24,null,0,0,0
+1604592132970,467,Login - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-21,text,true,,261,167,24,24,http://localhost:8082/users/login,467,0,0
+1604592133437,0,check jmeter variables for auth_token,200,OK,Stress Test - Concurrency Thread Group-ThreadStarter 1-21,text,true,,379,0,24,24,null,0,0,0
+1604592133365,25,ReadTrack - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-39,text,true,,423483,127,24,24,http://localhost:8082/tracks/read,19,0,0
+1604592132952,487,Login - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-19,text,true,,261,167,24,24,http://localhost:8082/users/login,487,0,0
+1604592133439,0,check jmeter variables for auth_token,200,OK,Stress Test - Concurrency Thread Group-ThreadStarter 1-19,text,true,,379,0,24,24,null,0,0,0
+1604592132979,462,Login - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-22,text,true,,261,167,24,24,http://localhost:8082/users/login,462,0,0
+1604592133441,0,check jmeter variables for auth_token,200,OK,Stress Test - Concurrency Thread Group-ThreadStarter 1-22,text,true,,378,0,24,24,null,0,0,0
+1604592132802,640,Login - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-17,text,true,,261,167,24,24,http://localhost:8082/users/login,640,0,0
+1604592133443,0,check jmeter variables for auth_token,200,OK,Stress Test - Concurrency Thread Group-ThreadStarter 1-17,text,true,,379,0,24,24,null,0,0,0
+1604592132979,466,Login - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-24,text,true,,261,167,24,24,http://localhost:8082/users/login,466,0,0
+1604592133445,0,check jmeter variables for auth_token,200,OK,Stress Test - Concurrency Thread Group-ThreadStarter 1-24,text,true,,379,0,24,24,null,0,0,0
+1604592132979,469,Login - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-23,text,true,,261,167,24,24,http://localhost:8082/users/login,469,0,0
+1604592133448,0,check jmeter variables for auth_token,200,OK,Stress Test - Concurrency Thread Group-ThreadStarter 1-23,text,true,,379,0,24,24,null,0,0,0
+1604592133508,1,Register - HTTP Request,201,,Stress Test - Concurrency Thread Group-ThreadStarter 1-25,text,true,,334,280,24,24,http://localhost:8082/users/create,1,0,0
+1604592133516,2,Register - HTTP Request,201,,Stress Test - Concurrency Thread Group-ThreadStarter 1-27,text,true,,334,280,24,24,http://localhost:8082/users/create,2,0,0
+1604592133536,2,Register - HTTP Request,201,,Stress Test - Concurrency Thread Group-ThreadStarter 1-28,text,true,,334,280,24,24,http://localhost:8082/users/create,2,0,0
+1604592133565,3,Register - HTTP Request,201,,Stress Test - Concurrency Thread Group-ThreadStarter 1-36,text,true,,334,280,24,24,http://localhost:8082/users/create,3,0,0
+1604592133566,2,Register - HTTP Request,201,,Stress Test - Concurrency Thread Group-ThreadStarter 1-26,text,true,,334,280,24,24,http://localhost:8082/users/create,2,0,0
+1604592133602,16,Create Playlist - HTTP Request,500,,Stress Test - Concurrency Thread Group-ThreadStarter 1-16,text,false,No results for path: $['description'],15471,396,24,24,http://localhost:8082/playlists/create,15,0,0
+1604592133622,14,ReadArtist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-40,text,true,,54708,128,24,24,http://localhost:8082/artists/read,8,0,0
+1604592133650,2,Register - HTTP Request,201,,Stress Test - Concurrency Thread Group-ThreadStarter 1-31,text,true,,334,280,24,24,http://localhost:8082/users/create,2,0,0
+1604592133653,2,Register - HTTP Request,201,,Stress Test - Concurrency Thread Group-ThreadStarter 1-29,text,true,,334,280,24,24,http://localhost:8082/users/create,2,0,0
+1604592133656,2,Register - HTTP Request,201,,Stress Test - Concurrency Thread Group-ThreadStarter 1-32,text,true,,334,280,24,24,http://localhost:8082/users/create,2,0,0
+1604592133660,2,Register - HTTP Request,201,,Stress Test - Concurrency Thread Group-ThreadStarter 1-30,text,true,,334,280,24,24,http://localhost:8082/users/create,2,0,0
+1604592133649,14,ReadAlbum - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-40,text,true,,181983,127,24,24,http://localhost:8082/albums/read,6,0,0
+1604592133685,1,Register - HTTP Request,201,,Stress Test - Concurrency Thread Group-ThreadStarter 1-34,text,true,,334,280,24,24,http://localhost:8082/users/create,1,0,0
+1604592133686,1,Register - HTTP Request,201,,Stress Test - Concurrency Thread Group-ThreadStarter 1-33,text,true,,334,280,24,24,http://localhost:8082/users/create,1,0,0
+1604592133681,4,ReadGenre - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-40,text,true,,55165,127,24,24,http://localhost:8082/genres/read,3,0,0
+1604592133689,1,ReadPlaylist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-40,text,true,,21017,130,24,24,http://localhost:8082/playlists/read,1,0,0
+1604592133692,7,ReadTrack - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-40,text,true,,423483,127,24,24,http://localhost:8082/tracks/read,4,0,0
+1604592133747,1,Register - HTTP Request,201,,Stress Test - Concurrency Thread Group-ThreadStarter 1-35,text,true,,334,280,24,24,http://localhost:8082/users/create,1,0,0
+1604592133880,3,Register - HTTP Request,201,,Stress Test - Concurrency Thread Group-ThreadStarter 1-37,text,true,,334,280,24,24,http://localhost:8082/users/create,3,0,0
+1604592133907,2,Register - HTTP Request,201,,Stress Test - Concurrency Thread Group-ThreadStarter 1-38,text,true,,334,280,24,24,http://localhost:8082/users/create,2,0,0
+1604592133909,13,Create Playlist - HTTP Request,500,,Stress Test - Concurrency Thread Group-ThreadStarter 1-18,text,false,No results for path: $['description'],15471,396,24,24,http://localhost:8082/playlists/create,12,0,0
+1604592133926,12,Create Playlist - HTTP Request,500,,Stress Test - Concurrency Thread Group-ThreadStarter 1-20,text,false,No results for path: $['description'],15471,396,24,24,http://localhost:8082/playlists/create,11,0,0
+1604592133939,1,Register - HTTP Request,201,,Stress Test - Concurrency Thread Group-ThreadStarter 1-39,text,true,,334,280,24,24,http://localhost:8082/users/create,1,0,0
+1604592133925,13,ReadArtist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-41,text,true,,54708,128,24,24,http://localhost:8082/artists/read,8,0,1
+1604592133940,11,Create Playlist - HTTP Request,500,,Stress Test - Concurrency Thread Group-ThreadStarter 1-21,text,false,No results for path: $['description'],15471,396,24,24,http://localhost:8082/playlists/create,11,0,0
+1604592133941,12,Create Playlist - HTTP Request,500,,Stress Test - Concurrency Thread Group-ThreadStarter 1-19,text,false,No results for path: $['description'],15471,396,24,23,http://localhost:8082/playlists/create,11,0,0
+1604592133943,12,Create Playlist - HTTP Request,500,,Stress Test - Concurrency Thread Group-ThreadStarter 1-22,text,false,No results for path: $['description'],15471,396,24,24,http://localhost:8082/playlists/create,12,0,0
+1604592133940,9,ReadArtist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-42,text,true,,54708,128,24,24,http://localhost:8082/artists/read,6,0,0
+1604592133945,13,Create Playlist - HTTP Request,500,,Stress Test - Concurrency Thread Group-ThreadStarter 1-17,text,false,No results for path: $['description'],15471,396,24,23,http://localhost:8082/playlists/create,13,0,0
+1604592133947,14,Create Playlist - HTTP Request,500,,Stress Test - Concurrency Thread Group-ThreadStarter 1-24,text,false,No results for path: $['description'],15471,396,24,22,http://localhost:8082/playlists/create,14,0,0
+1604592133955,8,ReadArtist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-44,text,true,,54708,128,24,23,http://localhost:8082/artists/read,5,0,1
+1604592133954,33,ReadArtist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-43,text,true,,54708,128,24,24,http://localhost:8082/artists/read,7,0,1
+1604592133945,13,ReadAlbum - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-41,text,true,,181983,127,24,23,http://localhost:8082/albums/read,7,0,0
+1604592133965,24,ReadArtist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-47,text,true,,54708,128,24,24,http://localhost:8082/artists/read,22,0,13
+1604592133963,27,ReadArtist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-46,text,true,,54708,128,24,24,http://localhost:8082/artists/read,23,0,0
+1604592133956,30,ReadAlbum - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-42,text,true,,181983,127,24,24,http://localhost:8082/albums/read,6,0,0
+1604592133997,10,ReadGenre - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-41,text,true,,55165,127,24,24,http://localhost:8082/genres/read,7,0,0
+1604592133963,50,ReadArtist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-45,text,true,,54708,128,24,24,http://localhost:8082/artists/read,41,0,0
+1604592133982,13,ReadAlbum - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-44,text,true,,181983,127,24,24,http://localhost:8082/albums/read,5,0,0
+1604592134012,18,ReadPlaylist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-41,text,true,,21017,130,24,24,http://localhost:8082/playlists/read,18,0,0
+1604592133998,19,ReadAlbum - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-46,text,true,,181983,127,24,24,http://localhost:8082/albums/read,15,0,0
+1604592134020,23,ReadGenre - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-44,text,true,,55165,127,24,24,http://localhost:8082/genres/read,19,0,0
+1604592133997,25,ReadAlbum - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-47,text,true,,181983,127,24,24,http://localhost:8082/albums/read,19,0,0
+1604592134011,35,ReadGenre - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-42,text,true,,55165,127,24,24,http://localhost:8082/genres/read,11,0,0
+1604592133995,31,ReadAlbum - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-43,text,true,,181983,127,24,24,http://localhost:8082/albums/read,27,0,0
+1604592134019,10,ReadAlbum - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-45,text,true,,181983,127,24,24,http://localhost:8082/albums/read,4,0,0
+1604592134049,14,ReadPlaylist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-44,text,true,,21017,130,24,24,http://localhost:8082/playlists/read,13,0,0
+1604592134044,17,ReadGenre - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-46,text,true,,55165,127,24,24,http://localhost:8082/genres/read,14,0,0
+1604592134050,18,ReadGenre - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-47,text,true,,55165,127,24,24,http://localhost:8082/genres/read,15,0,0
+1604592134066,6,ReadPlaylist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-46,text,true,,21017,130,24,24,http://localhost:8082/playlists/read,6,0,0
+1604592134055,19,ReadGenre - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-45,text,true,,55165,127,24,24,http://localhost:8082/genres/read,15,0,0
+1604592134074,12,ReadPlaylist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-47,text,true,,21017,130,24,24,http://localhost:8082/playlists/read,12,0,0
+1604592134054,29,ReadGenre - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-43,text,true,,55165,127,24,24,http://localhost:8082/genres/read,26,0,0
+1604592134052,38,ReadPlaylist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-42,text,true,,21017,130,24,24,http://localhost:8082/playlists/read,30,0,0
+1604592133950,144,Create Playlist - HTTP Request,500,,Stress Test - Concurrency Thread Group-ThreadStarter 1-23,text,false,No results for path: $['description'],15471,396,24,24,http://localhost:8082/playlists/create,144,0,0
+1604592134090,6,ReadPlaylist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-43,text,true,,21017,130,24,23,http://localhost:8082/playlists/read,5,0,0
+1604592134081,21,ReadPlaylist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-45,text,true,,21017,130,24,23,http://localhost:8082/playlists/read,21,0,0
+1604592134033,27,ReadTrack - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-41,text,true,,423483,127,24,24,http://localhost:8082/tracks/read,20,0,0
+1604592134126,14,ReadArtist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-48,text,true,,54708,128,24,24,http://localhost:8082/artists/read,11,0,1
+1604592134075,37,ReadTrack - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-46,text,true,,423483,127,24,23,http://localhost:8082/tracks/read,32,0,0
+1604592134093,24,ReadTrack - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-42,text,true,,423483,127,24,23,http://localhost:8082/tracks/read,19,0,0
+1604592134090,82,ReadTrack - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-47,text,true,,423483,127,24,24,http://localhost:8082/tracks/read,75,0,0
+1604592134105,74,ReadTrack - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-45,text,true,,423483,127,24,24,http://localhost:8082/tracks/read,55,0,0
+1604592134065,126,ReadTrack - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-44,text,true,,423483,127,24,24,http://localhost:8082/tracks/read,116,0,0
+1604592134157,104,ReadAlbum - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-48,text,true,,181983,127,24,24,http://localhost:8082/albums/read,98,0,0
+1604592134099,153,ReadTrack - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-43,text,true,,423483,127,24,24,http://localhost:8082/tracks/read,147,0,0
+1604592134019,502,Login - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-27,text,true,,261,167,24,24,http://localhost:8082/users/login,502,0,0
+1604592134521,0,check jmeter variables for auth_token,200,OK,Stress Test - Concurrency Thread Group-ThreadStarter 1-27,text,true,,379,0,24,24,null,0,0,0
+1604592134011,511,Login - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-25,text,true,,261,167,24,24,http://localhost:8082/users/login,511,0,0
+1604592134522,0,check jmeter variables for auth_token,200,OK,Stress Test - Concurrency Thread Group-ThreadStarter 1-25,text,true,,379,0,24,24,null,0,0,0
+1604592134228,295,Register - HTTP Request,201,,Stress Test - Concurrency Thread Group-ThreadStarter 1-40,text,true,,334,280,24,24,http://localhost:8082/users/create,295,0,0
+1604592134070,478,Login - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-26,text,true,,261,167,24,24,http://localhost:8082/users/login,478,0,0
+1604592134548,0,check jmeter variables for auth_token,200,OK,Stress Test - Concurrency Thread Group-ThreadStarter 1-26,text,true,,379,0,24,24,null,0,0,0
+1604592134287,267,ReadGenre - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-48,text,true,,55165,127,24,24,http://localhost:8082/genres/read,265,0,0
+1604592134153,420,Login - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-31,text,true,,261,167,24,24,http://localhost:8082/users/login,420,0,0
+1604592134573,0,check jmeter variables for auth_token,200,OK,Stress Test - Concurrency Thread Group-ThreadStarter 1-31,text,true,,379,0,24,24,null,0,0,0
+1604592134070,512,Login - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-36,text,true,,261,167,24,24,http://localhost:8082/users/login,512,0,0
+1604592134582,0,check jmeter variables for auth_token,200,OK,Stress Test - Concurrency Thread Group-ThreadStarter 1-36,text,true,,379,0,24,24,null,0,0,0
+1604592134156,433,Login - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-29,text,true,,261,167,24,24,http://localhost:8082/users/login,433,0,0
+1604592134590,0,check jmeter variables for auth_token,200,OK,Stress Test - Concurrency Thread Group-ThreadStarter 1-29,text,true,,379,0,24,24,null,0,0,0
+1604592134159,432,Login - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-32,text,true,,261,167,24,24,http://localhost:8082/users/login,432,0,0
+1604592134591,0,check jmeter variables for auth_token,200,OK,Stress Test - Concurrency Thread Group-ThreadStarter 1-32,text,true,,379,0,24,24,null,0,0,0
+1604592134038,554,Login - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-28,text,true,,261,167,24,24,http://localhost:8082/users/login,554,0,0
+1604592134592,0,check jmeter variables for auth_token,200,OK,Stress Test - Concurrency Thread Group-ThreadStarter 1-28,text,true,,379,0,24,24,null,0,0,0
+1604592134560,32,ReadPlaylist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-48,text,true,,21017,130,24,24,http://localhost:8082/playlists/read,32,0,0
+1604592134187,412,Login - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-34,text,true,,261,167,24,24,http://localhost:8082/users/login,412,0,0
+1604592134599,0,check jmeter variables for auth_token,200,OK,Stress Test - Concurrency Thread Group-ThreadStarter 1-34,text,true,,379,0,24,24,null,0,0,0
+1604592134189,413,Login - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-33,text,true,,261,167,24,24,http://localhost:8082/users/login,413,0,0
+1604592134602,0,check jmeter variables for auth_token,200,OK,Stress Test - Concurrency Thread Group-ThreadStarter 1-33,text,true,,379,0,24,24,null,0,0,0
+1604592134611,2,Register - HTTP Request,201,,Stress Test - Concurrency Thread Group-ThreadStarter 1-41,text,true,,334,280,24,24,http://localhost:8082/users/create,2,0,0
+1604592134595,17,ReadTrack - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-48,text,true,,423483,127,24,24,http://localhost:8082/tracks/read,12,0,0
+1604592134163,523,Login - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-30,text,true,,261,167,24,24,http://localhost:8082/users/login,523,0,0
+1604592134686,0,check jmeter variables for auth_token,200,OK,Stress Test - Concurrency Thread Group-ThreadStarter 1-30,text,true,,379,0,24,24,null,0,0,0
+1604592134695,1,Register - HTTP Request,201,,Stress Test - Concurrency Thread Group-ThreadStarter 1-46,text,true,,334,280,24,24,http://localhost:8082/users/create,1,0,0
+1604592134248,449,Login - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-35,text,true,,261,167,24,24,http://localhost:8082/users/login,449,0,0
+1604592134697,0,check jmeter variables for auth_token,200,OK,Stress Test - Concurrency Thread Group-ThreadStarter 1-35,text,true,,379,0,24,24,null,0,0,0
+1604592134385,320,Login - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-37,text,true,,261,167,24,24,http://localhost:8082/users/login,320,0,0
+1604592134706,0,check jmeter variables for auth_token,200,OK,Stress Test - Concurrency Thread Group-ThreadStarter 1-37,text,true,,379,0,24,24,null,0,0,0
+1604592134410,299,Login - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-38,text,true,,261,167,24,24,http://localhost:8082/users/login,299,0,0
+1604592134709,0,check jmeter variables for auth_token,200,OK,Stress Test - Concurrency Thread Group-ThreadStarter 1-38,text,true,,379,0,24,24,null,0,0,0
+1604592134442,269,Login - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-39,text,true,,261,167,24,24,http://localhost:8082/users/login,269,0,0
+1604592134711,0,check jmeter variables for auth_token,200,OK,Stress Test - Concurrency Thread Group-ThreadStarter 1-39,text,true,,379,0,24,24,null,0,0,0
+1604592134719,2,Register - HTTP Request,201,,Stress Test - Concurrency Thread Group-ThreadStarter 1-42,text,true,,334,280,24,24,http://localhost:8082/users/create,2,0,0
+1604592134748,2,Register - HTTP Request,201,,Stress Test - Concurrency Thread Group-ThreadStarter 1-47,text,true,,334,280,24,24,http://localhost:8082/users/create,2,0,0
+1604592134753,2,Register - HTTP Request,201,,Stress Test - Concurrency Thread Group-ThreadStarter 1-45,text,true,,334,280,24,24,http://localhost:8082/users/create,2,0,0
+1604592134774,2,Register - HTTP Request,201,,Stress Test - Concurrency Thread Group-ThreadStarter 1-44,text,true,,334,280,24,24,http://localhost:8082/users/create,2,0,0
+1604592134845,3,Register - HTTP Request,201,,Stress Test - Concurrency Thread Group-ThreadStarter 1-43,text,true,,334,280,24,24,http://localhost:8082/users/create,3,0,0
+1604592135023,18,Create Playlist - HTTP Request,500,,Stress Test - Concurrency Thread Group-ThreadStarter 1-27,text,false,No results for path: $['description'],15471,396,24,24,http://localhost:8082/playlists/create,17,0,0
+1604592135023,19,Create Playlist - HTTP Request,500,,Stress Test - Concurrency Thread Group-ThreadStarter 1-25,text,false,No results for path: $['description'],15471,396,24,23,http://localhost:8082/playlists/create,19,0,0
+1604592135050,32,Create Playlist - HTTP Request,500,,Stress Test - Concurrency Thread Group-ThreadStarter 1-26,text,false,No results for path: $['description'],15471,396,36,34,http://localhost:8082/playlists/create,31,0,0
+1604592135046,26,ReadArtist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-50,text,true,,54708,128,36,29,http://localhost:8082/artists/read,14,0,1
+1604592135048,25,ReadArtist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-52,text,true,,54708,128,36,29,http://localhost:8082/artists/read,15,0,1
+1604592135049,26,ReadArtist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-53,text,true,,54708,128,36,29,http://localhost:8082/artists/read,16,0,1
+1604592135045,30,ReadArtist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-49,text,true,,54708,128,36,29,http://localhost:8082/artists/read,16,0,1
+1604592135046,39,ReadArtist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-51,text,true,,54708,128,36,34,http://localhost:8082/artists/read,18,0,1
+1604592135077,16,ReadArtist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-55,text,true,,54708,128,36,34,http://localhost:8082/artists/read,11,0,1
+1604592135067,26,ReadArtist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-57,text,true,,54708,128,36,34,http://localhost:8082/artists/read,22,0,1
+1604592135078,18,ReadArtist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-58,text,true,,54708,128,36,34,http://localhost:8082/artists/read,13,0,1
+1604592135077,19,ReadArtist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-54,text,true,,54708,128,36,34,http://localhost:8082/artists/read,15,0,1
+1604592135079,23,ReadArtist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-59,text,true,,54708,128,36,34,http://localhost:8082/artists/read,18,0,1
+1604592135080,32,ReadArtist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-62,text,true,,54708,128,36,34,http://localhost:8082/artists/read,28,0,0
+1604592135086,37,ReadArtist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-63,text,true,,54708,128,36,34,http://localhost:8082/artists/read,33,0,0
+1604592135085,22,ReadAlbum - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-52,text,true,,181983,127,36,34,http://localhost:8082/albums/read,17,0,0
+1604592135084,26,ReadAlbum - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-50,text,true,,181983,127,36,34,http://localhost:8082/albums/read,18,0,0
+1604592135100,20,ReadAlbum - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-55,text,true,,181983,127,36,34,http://localhost:8082/albums/read,16,0,0
+1604592135133,15,ReadGenre - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-52,text,true,,55165,127,36,34,http://localhost:8082/genres/read,4,0,0
+1604592135137,12,ReadGenre - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-50,text,true,,55165,127,36,34,http://localhost:8082/genres/read,4,0,0
+1604592135068,81,ReadArtist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-56,text,true,,54708,128,36,34,http://localhost:8082/artists/read,20,0,1
+1604592135086,47,ReadAlbum - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-49,text,true,,181983,127,36,34,http://localhost:8082/albums/read,22,0,0
+1604592135154,5,ReadPlaylist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-52,text,true,,21017,130,36,34,http://localhost:8082/playlists/read,4,0,0
+1604592135158,4,Register - HTTP Request,201,,Stress Test - Concurrency Thread Group-ThreadStarter 1-48,text,true,,334,280,36,34,http://localhost:8082/users/create,4,0,0
+1604592135094,43,ReadAlbum - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-51,text,true,,181983,127,36,34,http://localhost:8082/albums/read,38,0,0
+1604592135155,15,ReadPlaylist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-50,text,true,,21017,130,36,34,http://localhost:8082/playlists/read,15,0,0
+1604592135103,55,ReadAlbum - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-58,text,true,,181983,127,36,34,http://localhost:8082/albums/read,19,0,0
+1604592135118,39,ReadAlbum - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-62,text,true,,181983,127,36,34,http://localhost:8082/albums/read,6,0,0
+1604592135159,22,ReadGenre - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-49,text,true,,55165,127,36,34,http://localhost:8082/genres/read,17,0,0
+1604592135170,15,ReadGenre - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-51,text,true,,55165,127,36,34,http://localhost:8082/genres/read,5,0,0
+1604592135091,137,Create Playlist - HTTP Request,500,,Stress Test - Concurrency Thread Group-ThreadStarter 1-29,text,false,No results for path: $['description'],15471,396,36,35,http://localhost:8082/playlists/create,136,0,0
+1604592135187,41,Create Playlist - HTTP Request,500,,Stress Test - Concurrency Thread Group-ThreadStarter 1-30,text,false,No results for path: $['description'],15471,396,36,35,http://localhost:8082/playlists/create,41,0,0
+1604592135108,62,ReadAlbum - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-59,text,true,,181983,127,36,34,http://localhost:8082/albums/read,48,0,0
+1604592135091,139,Create Playlist - HTTP Request,500,,Stress Test - Concurrency Thread Group-ThreadStarter 1-32,text,false,No results for path: $['description'],15471,396,35,33,http://localhost:8082/playlists/create,138,0,0
+1604592135188,37,ReadPlaylist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-49,text,true,,21017,130,36,34,http://localhost:8082/playlists/read,37,0,0
+1604592135186,40,ReadGenre - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-58,text,true,,55165,127,36,35,http://localhost:8082/genres/read,40,0,0
+1604592135155,23,ReadAlbum - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-56,text,true,,181983,127,36,34,http://localhost:8082/albums/read,13,0,0
+1604592135146,84,ReadGenre - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-55,text,true,,55165,127,35,33,http://localhost:8082/genres/read,15,0,0
+1604592135191,53,ReadPlaylist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-51,text,true,,21017,130,36,33,http://localhost:8082/playlists/read,53,0,0
+1604592135074,179,Create Playlist - HTTP Request,500,,Stress Test - Concurrency Thread Group-ThreadStarter 1-31,text,false,No results for path: $['description'],15471,396,36,33,http://localhost:8082/playlists/create,179,0,0
+1604592135187,65,ReadGenre - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-62,text,true,,55165,127,36,33,http://localhost:8082/genres/read,65,0,0
+1604592135100,130,ReadAlbum - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-57,text,true,,181983,127,35,33,http://localhost:8082/albums/read,22,0,0
+1604592135130,105,ReadAlbum - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-63,text,true,,181983,127,34,32,http://localhost:8082/albums/read,7,0,0
+1604592135086,145,ReadAlbum - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-53,text,true,,181983,127,34,32,http://localhost:8082/albums/read,22,0,0
+1604592135103,157,ReadAlbum - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-54,text,true,,181983,127,36,32,http://localhost:8082/albums/read,127,0,0
+1604592135243,50,ReadPlaylist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-55,text,true,,21017,130,36,32,http://localhost:8082/playlists/read,50,0,0
+1604592135174,22,ReadTrack - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-50,text,true,,423483,127,36,34,http://localhost:8082/tracks/read,15,0,0
+1604592135235,71,ReadPlaylist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-58,text,true,,21017,130,36,32,http://localhost:8082/playlists/read,70,0,0
+1604592135162,75,ReadTrack - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-52,text,true,,423483,127,34,32,http://localhost:8082/tracks/read,73,0,0
+1604592135237,66,ReadGenre - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-56,text,true,,55165,127,36,32,http://localhost:8082/genres/read,64,0,0
+1604592135104,222,Create Playlist - HTTP Request,500,,Stress Test - Concurrency Thread Group-ThreadStarter 1-33,text,false,No results for path: $['description'],15471,396,36,33,http://localhost:8082/playlists/create,222,0,0
+1604592135101,229,Create Playlist - HTTP Request,500,,Stress Test - Concurrency Thread Group-ThreadStarter 1-34,text,false,No results for path: $['description'],15471,396,36,32,http://localhost:8082/playlists/create,229,0,0
+1604592135273,54,ReadGenre - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-63,text,true,,55165,127,36,32,http://localhost:8082/genres/read,44,0,0
+1604592135094,239,Create Playlist - HTTP Request,500,,Stress Test - Concurrency Thread Group-ThreadStarter 1-28,text,false,No results for path: $['description'],15471,396,36,31,http://localhost:8082/playlists/create,239,0,0
+1604592135083,250,Create Playlist - HTTP Request,500,,Stress Test - Concurrency Thread Group-ThreadStarter 1-36,text,false,No results for path: $['description'],15471,396,36,31,http://localhost:8082/playlists/create,250,0,0
+1604592135336,11,ReadArtist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-65,text,true,,54708,128,36,35,http://localhost:8082/artists/read,9,0,0
+1604592135230,131,Create Playlist - HTTP Request,500,,Stress Test - Concurrency Thread Group-ThreadStarter 1-37,text,false,No results for path: $['description'],15471,396,36,35,http://localhost:8082/playlists/create,131,0,0
+1604592135261,100,ReadPlaylist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-62,text,true,,21017,130,36,35,http://localhost:8082/playlists/read,99,0,0
+1604592135229,135,ReadGenre - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-59,text,true,,55165,127,36,34,http://localhost:8082/genres/read,131,0,0
+1604592135225,153,Create Playlist - HTTP Request,500,,Stress Test - Concurrency Thread Group-ThreadStarter 1-35,text,false,No results for path: $['description'],15471,396,36,36,http://localhost:8082/playlists/create,152,0,0
+1604592135229,171,Create Playlist - HTTP Request,500,,Stress Test - Concurrency Thread Group-ThreadStarter 1-39,text,false,No results for path: $['description'],15471,396,36,36,http://localhost:8082/playlists/create,171,0,0
+1604592135343,38,ReadArtist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-71,text,true,,54708,128,36,35,http://localhost:8082/artists/read,30,0,1
+1604592135245,169,ReadArtist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-60,text,true,,54708,128,36,35,http://localhost:8082/artists/read,162,0,1
+1604592135400,23,ReadArtist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-73,text,true,,54708,128,36,35,http://localhost:8082/artists/read,19,0,1
+1604592135234,119,ReadTrack - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-49,text,true,,423483,127,36,35,http://localhost:8082/tracks/read,113,0,0
+1604592135325,114,ReadArtist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-64,text,true,,54708,128,36,35,http://localhost:8082/artists/read,111,0,0
+1604592135309,147,ReadPlaylist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-56,text,true,,21017,130,36,35,http://localhost:8082/playlists/read,145,0,0
+1604592135401,26,ReadAlbum - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-71,text,true,,181983,127,36,35,http://localhost:8082/albums/read,19,0,0
+1604592135250,119,ReadTrack - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-51,text,true,,423483,127,36,34,http://localhost:8082/tracks/read,109,0,0
+1604592135338,129,ReadArtist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-68,text,true,,54708,128,36,35,http://localhost:8082/artists/read,126,0,0
+1604592135338,129,ReadArtist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-67,text,true,,54708,128,36,35,http://localhost:8082/artists/read,126,0,0
+1604592135267,210,ReadGenre - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-57,text,true,,55165,127,36,35,http://localhost:8082/genres/read,206,0,0
+1604592135421,32,ReadAlbum - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-60,text,true,,181983,127,36,35,http://localhost:8082/albums/read,11,0,0
+1604592135431,22,ReadAlbum - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-73,text,true,,181983,127,36,35,http://localhost:8082/albums/read,17,0,0
+1604592135296,104,ReadTrack - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-55,text,true,,423483,127,36,36,http://localhost:8082/tracks/read,81,0,0
+1604592135230,258,Create Playlist - HTTP Request,500,,Stress Test - Concurrency Thread Group-ThreadStarter 1-38,text,false,No results for path: $['description'],15471,396,36,35,http://localhost:8082/playlists/create,258,0,0
+1604592135465,24,ReadGenre - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-71,text,true,,55165,127,36,34,http://localhost:8082/genres/read,22,0,0
+1604592135375,124,ReadArtist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-69,text,true,,54708,128,36,34,http://localhost:8082/artists/read,121,0,1
+1604592135497,6,ReadPlaylist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-71,text,true,,21017,130,36,34,http://localhost:8082/playlists/read,5,0,0
+1604592135309,105,ReadTrack - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-58,text,true,,423483,127,36,35,http://localhost:8082/tracks/read,99,0,0
+1604592135473,14,ReadAlbum - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-68,text,true,,181983,127,36,35,http://localhost:8082/albums/read,7,0,0
+1604592135372,141,ReadPlaylist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-59,text,true,,21017,130,36,36,http://localhost:8082/playlists/read,141,0,0
+1604592135474,19,ReadAlbum - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-67,text,true,,181983,127,36,34,http://localhost:8082/albums/read,12,0,0
+1604592135512,20,ReadGenre - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-68,text,true,,55165,127,36,36,http://localhost:8082/genres/read,6,0,0
+1604592135336,209,ReadArtist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-66,text,true,,54708,128,36,36,http://localhost:8082/artists/read,206,0,0
+1604592135290,257,ReadGenre - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-54,text,true,,55165,127,36,36,http://localhost:8082/genres/read,251,0,0
+1604592135226,327,ReadArtist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-61,text,true,,54708,128,36,36,http://localhost:8082/artists/read,324,0,1
+1604592135447,85,ReadAlbum - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-64,text,true,,181983,127,36,36,http://localhost:8082/albums/read,68,0,0
+1604592135506,28,ReadAlbum - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-69,text,true,,181983,127,36,36,http://localhost:8082/albums/read,7,0,0
+1604592135333,232,ReadPlaylist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-63,text,true,,21017,130,36,36,http://localhost:8082/playlists/read,232,0,0
+1604592135553,15,ReadPlaylist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-54,text,true,,21017,130,36,36,http://localhost:8082/playlists/read,14,0,0
+1604592135485,90,ReadGenre - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-73,text,true,,55165,127,36,36,http://localhost:8082/genres/read,86,0,0
+1604592135363,147,ReadTrack - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-62,text,true,,423483,127,36,35,http://localhost:8082/tracks/read,141,0,0
+1604592135485,102,ReadGenre - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-60,text,true,,55165,127,36,36,http://localhost:8082/genres/read,99,0,0
+1604592135552,16,ReadAlbum - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-66,text,true,,181983,127,36,36,http://localhost:8082/albums/read,10,0,0
+1604592135375,242,ReadArtist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-72,text,true,,54708,128,36,36,http://localhost:8082/artists/read,239,0,2
+1604592135509,111,ReadArtist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-74,text,true,,54708,128,36,36,http://localhost:8082/artists/read,108,0,1
+1604592135353,254,ReadAlbum - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-65,text,true,,181983,127,36,36,http://localhost:8082/albums/read,248,0,0
+1604592135459,130,ReadTrack - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-56,text,true,,423483,127,36,36,http://localhost:8082/tracks/read,124,0,0
+1604592135539,118,ReadPlaylist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-68,text,true,,21017,130,36,36,http://localhost:8082/playlists/read,118,0,0
+1604592135514,137,ReadArtist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-75,text,true,,54708,128,36,36,http://localhost:8082/artists/read,135,0,1
+1604592135626,16,ReadAlbum - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-72,text,true,,181983,127,36,36,http://localhost:8082/albums/read,10,0,0
+1604592135568,38,ReadTrack - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-63,text,true,,423483,127,36,36,http://localhost:8082/tracks/read,32,0,0
+1604592135485,203,ReadPlaylist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-57,text,true,,21017,130,36,36,http://localhost:8082/playlists/read,203,0,0
+1604592135534,154,ReadGenre - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-67,text,true,,55165,127,36,36,http://localhost:8082/genres/read,151,0,0
+1604592135564,133,ReadGenre - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-69,text,true,,55165,127,36,36,http://localhost:8082/genres/read,131,0,0
+1604592135277,424,ReadGenre - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-53,text,true,,55165,127,36,36,http://localhost:8082/genres/read,421,0,0
+1604592135561,123,ReadAlbum - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-61,text,true,,181983,127,36,36,http://localhost:8082/albums/read,118,0,0
+1604592135563,145,ReadGenre - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-64,text,true,,55165,127,36,36,http://localhost:8082/genres/read,142,0,0
+1604592135581,135,ReadPlaylist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-73,text,true,,21017,130,36,36,http://localhost:8082/playlists/read,135,0,0
+1604592135340,373,ReadArtist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-70,text,true,,54708,128,36,36,http://localhost:8082/artists/read,370,0,0
+1604592135594,125,ReadPlaylist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-60,text,true,,21017,130,36,36,http://localhost:8082/playlists/read,124,0,0
+1604592135506,148,ReadTrack - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-71,text,true,,423483,127,36,36,http://localhost:8082/tracks/read,141,0,0
+1604592135595,130,ReadGenre - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-66,text,true,,55165,127,36,36,http://localhost:8082/genres/read,127,0,0
+1604592135023,722,Login - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-40,text,true,,261,167,36,36,http://localhost:8082/users/login,722,0,0
+1604592135745,0,check jmeter variables for auth_token,200,OK,Stress Test - Concurrency Thread Group-ThreadStarter 1-40,text,true,,379,0,36,36,null,0,0,0
+1604592135114,633,Login - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-41,text,true,,261,167,36,36,http://localhost:8082/users/login,633,0,0
+1604592135747,0,check jmeter variables for auth_token,200,OK,Stress Test - Concurrency Thread Group-ThreadStarter 1-41,text,true,,379,0,36,36,null,0,0,0
+1604592135639,115,ReadGenre - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-65,text,true,,55165,127,36,36,http://localhost:8082/genres/read,112,0,0
+1604592135761,6,ReadPlaylist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-65,text,true,,21017,130,36,36,http://localhost:8082/playlists/read,6,0,0
+1604592135682,87,ReadGenre - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-72,text,true,,55165,127,36,36,http://localhost:8082/genres/read,84,0,0
+1604592135704,72,ReadPlaylist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-69,text,true,,21017,130,36,36,http://localhost:8082/playlists/read,70,0,0
+1604592135627,119,ReadAlbum - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-74,text,true,,181983,127,36,36,http://localhost:8082/albums/read,114,0,0
+1604592135661,93,ReadAlbum - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-75,text,true,,181983,127,36,36,http://localhost:8082/albums/read,88,0,0
+1604592135777,7,ReadPlaylist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-72,text,true,,21017,130,36,36,http://localhost:8082/playlists/read,7,0,0
+1604592135713,82,ReadPlaylist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-64,text,true,,21017,130,36,36,http://localhost:8082/playlists/read,81,0,0
+1604592135710,83,ReadGenre - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-61,text,true,,55165,127,36,36,http://localhost:8082/genres/read,80,0,0
+1604592135571,165,ReadTrack - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-54,text,true,,423483,127,36,36,http://localhost:8082/tracks/read,160,0,0
+1604592135516,231,ReadTrack - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-59,text,true,,423483,127,36,36,http://localhost:8082/tracks/read,225,0,0
+1604592135730,111,ReadPlaylist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-66,text,true,,21017,130,36,36,http://localhost:8082/playlists/read,110,0,0
+1604592135707,141,ReadPlaylist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-53,text,true,,21017,130,36,36,http://localhost:8082/playlists/read,141,0,0
+1604592135719,111,ReadAlbum - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-70,text,true,,181983,127,36,36,http://localhost:8082/albums/read,93,0,0
+1604592135694,171,ReadPlaylist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-67,text,true,,21017,130,36,36,http://localhost:8082/playlists/read,171,0,0
+1604592135661,128,ReadTrack - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-68,text,true,,423483,127,36,36,http://localhost:8082/tracks/read,121,0,0
+1604592135782,103,ReadGenre - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-74,text,true,,55165,127,36,36,http://localhost:8082/genres/read,99,0,0
+1604592135770,36,ReadTrack - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-65,text,true,,423483,127,36,36,http://localhost:8082/tracks/read,28,0,0
+1604592135785,107,ReadGenre - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-75,text,true,,55165,127,36,36,http://localhost:8082/genres/read,103,0,0
+1604592135892,10,ReadPlaylist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-74,text,true,,21017,130,36,36,http://localhost:8082/playlists/read,9,0,0
+1604592135900,6,ReadPlaylist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-75,text,true,,21017,130,36,36,http://localhost:8082/playlists/read,6,0,0
+1604592135802,110,Register - HTTP Request,201,,Stress Test - Concurrency Thread Group-ThreadStarter 1-50,text,true,,334,280,36,36,http://localhost:8082/users/create,110,0,0
+1604592135719,137,ReadTrack - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-73,text,true,,423483,127,36,36,http://localhost:8082/tracks/read,129,0,0
+1604592135721,138,ReadTrack - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-60,text,true,,423483,127,36,36,http://localhost:8082/tracks/read,131,0,0
+1604592135779,114,ReadTrack - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-69,text,true,,423483,127,36,36,http://localhost:8082/tracks/read,108,0,0
+1604592135974,6,Register - HTTP Request,201,,Stress Test - Concurrency Thread Group-ThreadStarter 1-51,text,true,,334,280,36,36,http://localhost:8082/users/create,4,0,0
+1604592135857,119,ReadGenre - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-70,text,true,,55165,127,36,36,http://localhost:8082/genres/read,116,0,0
+1604592135691,215,ReadTrack - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-57,text,true,,423483,127,36,36,http://localhost:8082/tracks/read,209,0,0
+1604592135225,781,Login - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-46,text,true,,261,167,36,36,http://localhost:8082/users/login,781,0,0
+1604592136006,1,check jmeter variables for auth_token,200,OK,Stress Test - Concurrency Thread Group-ThreadStarter 1-46,text,true,,379,0,36,36,null,0,0,0
+1604592135809,216,Register - HTTP Request,201,,Stress Test - Concurrency Thread Group-ThreadStarter 1-52,text,true,,334,280,36,36,http://localhost:8082/users/create,215,0,0
+1604592135952,77,Register - HTTP Request,201,,Stress Test - Concurrency Thread Group-ThreadStarter 1-49,text,true,,334,280,36,36,http://localhost:8082/users/create,76,0,0
+1604592135905,62,ReadTrack - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-74,text,true,,423483,127,36,36,http://localhost:8082/tracks/read,31,0,0
+1604592135986,65,ReadPlaylist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-70,text,true,,21017,130,36,36,http://localhost:8082/playlists/read,65,0,0
+1604592135787,181,ReadTrack - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-72,text,true,,423483,127,36,36,http://localhost:8082/tracks/read,149,0,0
+1604592136008,63,Register - HTTP Request,201,,Stress Test - Concurrency Thread Group-ThreadStarter 1-58,text,true,,334,280,36,36,http://localhost:8082/users/create,63,0,0
+1604592135988,83,Register - HTTP Request,201,,Stress Test - Concurrency Thread Group-ThreadStarter 1-55,text,true,,334,280,36,36,http://localhost:8082/users/create,83,0,0
+1604592135844,135,ReadTrack - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-66,text,true,,423483,127,36,36,http://localhost:8082/tracks/read,128,0,0
+1604592136086,7,Register - HTTP Request,201,,Stress Test - Concurrency Thread Group-ThreadStarter 1-62,text,true,,334,280,36,36,http://localhost:8082/users/create,7,0,0
+1604592135851,166,ReadTrack - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-53,text,true,,423483,127,36,36,http://localhost:8082/tracks/read,160,0,0
+1604592135801,317,ReadPlaylist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-61,text,true,,21017,130,36,36,http://localhost:8082/playlists/read,256,0,0
+1604592135798,231,ReadTrack - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-64,text,true,,423483,127,36,36,http://localhost:8082/tracks/read,219,0,0
+1604592135868,154,ReadTrack - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-67,text,true,,423483,127,36,36,http://localhost:8082/tracks/read,144,0,0
+1604592135256,873,Login - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-45,text,true,,261,167,36,36,http://localhost:8082/users/login,873,0,0
+1604592136129,0,check jmeter variables for auth_token,200,OK,Stress Test - Concurrency Thread Group-ThreadStarter 1-45,text,true,,379,0,36,36,null,0,0,0
+1604592135261,885,Login - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-47,text,true,,261,167,36,36,http://localhost:8082/users/login,885,0,0
+1604592136146,0,check jmeter variables for auth_token,200,OK,Stress Test - Concurrency Thread Group-ThreadStarter 1-47,text,true,,379,0,36,36,null,0,0,0
+1604592135229,924,Login - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-42,text,true,,261,167,36,36,http://localhost:8082/users/login,924,0,0
+1604592136153,0,check jmeter variables for auth_token,200,OK,Stress Test - Concurrency Thread Group-ThreadStarter 1-42,text,true,,379,0,36,36,null,0,0,0
+1604592136152,3,Register - HTTP Request,201,,Stress Test - Concurrency Thread Group-ThreadStarter 1-56,text,true,,334,280,36,36,http://localhost:8082/users/create,3,0,0
+1604592135909,178,ReadTrack - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-75,text,true,,423483,127,36,36,http://localhost:8082/tracks/read,163,0,0
+1604592136055,56,ReadTrack - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-70,text,true,,423483,127,36,36,http://localhost:8082/tracks/read,51,0,0
+1604592135349,833,Login - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-43,text,true,,261,167,36,36,http://localhost:8082/users/login,833,0,0
+1604592136183,0,check jmeter variables for auth_token,200,OK,Stress Test - Concurrency Thread Group-ThreadStarter 1-43,text,true,,379,0,36,36,null,0,0,0
+1604592136186,1,Register - HTTP Request,201,,Stress Test - Concurrency Thread Group-ThreadStarter 1-63,text,true,,334,280,36,36,http://localhost:8082/users/create,1,0,0
+1604592135277,914,Login - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-44,text,true,,261,167,36,36,http://localhost:8082/users/login,914,0,0
+1604592136191,0,check jmeter variables for auth_token,200,OK,Stress Test - Concurrency Thread Group-ThreadStarter 1-44,text,true,,379,0,36,36,null,0,0,0
+1604592136121,29,ReadTrack - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-61,text,true,,423483,127,36,36,http://localhost:8082/tracks/read,23,0,0
+1604592135663,540,Login - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-48,text,true,,261,167,36,36,http://localhost:8082/users/login,540,0,0
+1604592136204,0,check jmeter variables for auth_token,200,OK,Stress Test - Concurrency Thread Group-ThreadStarter 1-48,text,true,,379,0,36,36,null,0,0,0
+1604592136228,2,Register - HTTP Request,201,,Stress Test - Concurrency Thread Group-ThreadStarter 1-71,text,true,,334,280,36,36,http://localhost:8082/users/create,2,0,0
+1604592136247,15,Create Playlist - HTTP Request,500,,Stress Test - Concurrency Thread Group-ThreadStarter 1-40,text,false,No results for path: $['description'],15471,396,36,36,http://localhost:8082/playlists/create,14,0,0
+1604592136249,14,Create Playlist - HTTP Request,500,,Stress Test - Concurrency Thread Group-ThreadStarter 1-41,text,false,No results for path: $['description'],15471,396,35,35,http://localhost:8082/playlists/create,13,0,0
+1604592136265,14,ReadArtist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-76,text,true,,54708,128,36,36,http://localhost:8082/artists/read,8,0,1
+1604592136266,13,ReadArtist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-77,text,true,,54708,128,36,36,http://localhost:8082/artists/read,7,0,1
+1604592136311,2,Register - HTTP Request,201,,Stress Test - Concurrency Thread Group-ThreadStarter 1-54,text,true,,334,280,36,36,http://localhost:8082/users/create,2,0,0
+1604592136283,5,ReadAlbum - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-76,text,true,,181983,127,36,36,http://localhost:8082/albums/read,3,0,0
+1604592136283,5,ReadAlbum - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-77,text,true,,181983,127,36,36,http://localhost:8082/albums/read,3,0,0
+1604592136315,3,ReadGenre - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-77,text,true,,55165,127,36,36,http://localhost:8082/genres/read,2,0,0
+1604592136315,3,ReadGenre - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-76,text,true,,55165,127,36,36,http://localhost:8082/genres/read,2,0,0
+1604592136322,2,ReadPlaylist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-77,text,true,,21017,130,36,36,http://localhost:8082/playlists/read,2,0,0
+1604592136322,2,ReadPlaylist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-76,text,true,,21017,130,36,36,http://localhost:8082/playlists/read,2,0,0
+1604592136332,3,Register - HTTP Request,201,,Stress Test - Concurrency Thread Group-ThreadStarter 1-59,text,true,,334,280,36,36,http://localhost:8082/users/create,2,0,0
+1604592136326,7,ReadTrack - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-76,text,true,,423483,127,36,36,http://localhost:8082/tracks/read,4,0,0
+1604592136326,7,ReadTrack - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-77,text,true,,423483,127,36,36,http://localhost:8082/tracks/read,4,0,0
+1604592136375,1,Register - HTTP Request,201,,Stress Test - Concurrency Thread Group-ThreadStarter 1-68,text,true,,334,280,36,36,http://localhost:8082/users/create,1,0,0
+1604592136398,1,Register - HTTP Request,201,,Stress Test - Concurrency Thread Group-ThreadStarter 1-65,text,true,,334,280,36,36,http://localhost:8082/users/create,1,0,0
+1604592136432,1,Register - HTTP Request,201,,Stress Test - Concurrency Thread Group-ThreadStarter 1-73,text,true,,334,280,36,36,http://localhost:8082/users/create,1,0,0
+1604592136435,1,Register - HTTP Request,201,,Stress Test - Concurrency Thread Group-ThreadStarter 1-60,text,true,,334,280,36,36,http://localhost:8082/users/create,1,0,0
+1604592136413,54,Login - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-50,text,true,,261,167,36,36,http://localhost:8082/users/login,54,0,0
+1604592136467,0,check jmeter variables for auth_token,200,OK,Stress Test - Concurrency Thread Group-ThreadStarter 1-50,text,true,,379,0,36,36,null,0,0,0
+1604592136469,1,Register - HTTP Request,201,,Stress Test - Concurrency Thread Group-ThreadStarter 1-69,text,true,,334,280,36,36,http://localhost:8082/users/create,1,0,0
+1604592136493,1,Register - HTTP Request,201,,Stress Test - Concurrency Thread Group-ThreadStarter 1-57,text,true,,334,280,36,36,http://localhost:8082/users/create,1,0,0
+1604592136508,5,Create Playlist - HTTP Request,500,,Stress Test - Concurrency Thread Group-ThreadStarter 1-46,text,false,No results for path: $['description'],15471,396,36,36,http://localhost:8082/playlists/create,5,0,0
+1604592136514,4,ReadArtist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-78,text,true,,54708,128,36,36,http://localhost:8082/artists/read,2,0,0
+1604592136482,59,Login - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-51,text,true,,261,167,36,36,http://localhost:8082/users/login,59,0,0
+1604592136541,0,check jmeter variables for auth_token,200,OK,Stress Test - Concurrency Thread Group-ThreadStarter 1-51,text,true,,379,0,36,36,null,0,0,0
+1604592136521,5,ReadAlbum - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-78,text,true,,181983,127,36,36,http://localhost:8082/albums/read,3,0,0
+1604592136546,3,ReadGenre - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-78,text,true,,55165,127,36,36,http://localhost:8082/genres/read,2,0,0
+1604592136554,1,Register - HTTP Request,201,,Stress Test - Concurrency Thread Group-ThreadStarter 1-74,text,true,,334,280,36,36,http://localhost:8082/users/create,1,0,0
+1604592136552,2,ReadPlaylist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-78,text,true,,21017,130,36,36,http://localhost:8082/playlists/read,2,0,0
+1604592136560,1,Register - HTTP Request,201,,Stress Test - Concurrency Thread Group-ThreadStarter 1-72,text,true,,334,280,36,36,http://localhost:8082/users/create,1,0,0
+1604592136586,1,Register - HTTP Request,201,,Stress Test - Concurrency Thread Group-ThreadStarter 1-66,text,true,,334,280,36,36,http://localhost:8082/users/create,1,0,0
+1604592136555,10,ReadTrack - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-78,text,true,,423483,127,36,36,http://localhost:8082/tracks/read,6,0,0
+1604592136607,2,Register - HTTP Request,201,,Stress Test - Concurrency Thread Group-ThreadStarter 1-53,text,true,,334,280,36,36,http://localhost:8082/users/create,2,0,0
+1604592136623,1,Register - HTTP Request,201,,Stress Test - Concurrency Thread Group-ThreadStarter 1-64,text,true,,334,280,36,36,http://localhost:8082/users/create,1,0,0
+1604592136628,1,Register - HTTP Request,201,,Stress Test - Concurrency Thread Group-ThreadStarter 1-67,text,true,,334,280,36,36,http://localhost:8082/users/create,1,0,0
+1604592136531,100,Login - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-49,text,true,,261,167,36,36,http://localhost:8082/users/login,100,0,0
+1604592136631,0,check jmeter variables for auth_token,200,OK,Stress Test - Concurrency Thread Group-ThreadStarter 1-49,text,true,,379,0,36,36,null,0,0,0
+1604592136630,5,Create Playlist - HTTP Request,500,,Stress Test - Concurrency Thread Group-ThreadStarter 1-45,text,false,No results for path: $['description'],15471,396,36,36,http://localhost:8082/playlists/create,5,0,0
+1604592136637,6,ReadArtist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-79,text,true,,54708,128,36,36,http://localhost:8082/artists/read,4,0,0
+1604592136648,7,Create Playlist - HTTP Request,500,,Stress Test - Concurrency Thread Group-ThreadStarter 1-47,text,false,No results for path: $['description'],15471,396,36,36,http://localhost:8082/playlists/create,7,0,0
+1604592136527,130,Login - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-52,text,true,,261,167,36,36,http://localhost:8082/users/login,130,0,0
+1604592136657,0,check jmeter variables for auth_token,200,OK,Stress Test - Concurrency Thread Group-ThreadStarter 1-52,text,true,,379,0,36,36,null,0,0,0
+1604592136657,3,Register - HTTP Request,201,,Stress Test - Concurrency Thread Group-ThreadStarter 1-75,text,true,,334,280,36,36,http://localhost:8082/users/create,3,0,0
+1604592136654,10,Create Playlist - HTTP Request,500,,Stress Test - Concurrency Thread Group-ThreadStarter 1-42,text,false,No results for path: $['description'],15471,396,36,36,http://localhost:8082/playlists/create,9,0,0
+1604592136657,10,ReadArtist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-80,text,true,,54708,128,36,36,http://localhost:8082/artists/read,7,0,1
+1604592136674,2,Register - HTTP Request,201,,Stress Test - Concurrency Thread Group-ThreadStarter 1-70,text,true,,334,280,36,36,http://localhost:8082/users/create,1,0,0
+1604592136647,8,ReadAlbum - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-79,text,true,,181983,127,36,36,http://localhost:8082/albums/read,4,0,0
+1604592136666,7,ReadArtist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-81,text,true,,54708,128,36,36,http://localhost:8082/artists/read,4,0,0
+1604592136678,6,ReadGenre - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-79,text,true,,55165,127,36,36,http://localhost:8082/genres/read,4,0,0
+1604592136685,10,Create Playlist - HTTP Request,500,,Stress Test - Concurrency Thread Group-ThreadStarter 1-43,text,false,No results for path: $['description'],15471,396,36,36,http://localhost:8082/playlists/create,10,0,0
+1604592136690,6,ReadPlaylist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-79,text,true,,21017,130,36,35,http://localhost:8082/playlists/read,6,0,0
+1604592136710,4,Register - HTTP Request,201,,Stress Test - Concurrency Thread Group-ThreadStarter 1-61,text,true,,334,280,36,36,http://localhost:8082/users/create,4,0,0
+1604592136692,26,Create Playlist - HTTP Request,500,,Stress Test - Concurrency Thread Group-ThreadStarter 1-44,text,false,No results for path: $['description'],15471,396,36,36,http://localhost:8082/playlists/create,25,0,0
+1604592136673,10,ReadAlbum - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-80,text,true,,181983,127,36,36,http://localhost:8082/albums/read,6,0,0
+1604592136710,14,Create Playlist - HTTP Request,500,,Stress Test - Concurrency Thread Group-ThreadStarter 1-48,text,false,No results for path: $['description'],15471,396,36,36,http://localhost:8082/playlists/create,14,0,0
+1604592136679,10,ReadAlbum - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-81,text,true,,181983,127,36,36,http://localhost:8082/albums/read,4,0,0
+1604592136709,11,ReadArtist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-82,text,true,,54708,128,36,35,http://localhost:8082/artists/read,8,0,1
+1604592136722,8,ReadArtist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-83,text,true,,54708,128,36,36,http://localhost:8082/artists/read,6,0,0
+1604592136719,13,ReadGenre - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-80,text,true,,55165,127,36,36,http://localhost:8082/genres/read,10,0,0
+1604592136726,6,ReadGenre - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-81,text,true,,55165,127,36,36,http://localhost:8082/genres/read,3,0,0
+1604592136728,11,ReadArtist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-84,text,true,,54708,128,36,36,http://localhost:8082/artists/read,6,0,0
+1604592136738,7,ReadPlaylist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-81,text,true,,21017,130,36,36,http://localhost:8082/playlists/read,6,0,0
+1604592136738,14,ReadPlaylist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-80,text,true,,21017,130,36,36,http://localhost:8082/playlists/read,13,0,0
+1604592136727,13,ReadAlbum - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-82,text,true,,181983,127,36,36,http://localhost:8082/albums/read,9,0,0
+1604592136737,16,ReadAlbum - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-83,text,true,,181983,127,36,36,http://localhost:8082/albums/read,10,0,0
+1604592136745,14,ReadAlbum - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-84,text,true,,181983,127,36,36,http://localhost:8082/albums/read,9,0,0
+1604592136773,9,ReadGenre - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-82,text,true,,55165,127,36,36,http://localhost:8082/genres/read,6,0,0
+1604592136781,8,ReadGenre - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-83,text,true,,55165,127,36,36,http://localhost:8082/genres/read,5,0,0
+1604592136788,4,ReadPlaylist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-82,text,true,,21017,130,36,36,http://localhost:8082/playlists/read,4,0,0
+1604592136573,222,Login - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-58,text,true,,261,167,36,36,http://localhost:8082/users/login,222,0,0
+1604592136795,0,check jmeter variables for auth_token,200,OK,Stress Test - Concurrency Thread Group-ThreadStarter 1-58,text,true,,379,0,36,36,null,0,0,0
+1604592136795,7,ReadPlaylist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-83,text,true,,21017,130,36,36,http://localhost:8082/playlists/read,7,0,0
+1604592136788,21,ReadGenre - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-84,text,true,,55165,127,36,36,http://localhost:8082/genres/read,15,0,0
+1604592136573,243,Login - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-55,text,true,,261,167,36,36,http://localhost:8082/users/login,243,0,0
+1604592136817,0,check jmeter variables for auth_token,200,OK,Stress Test - Concurrency Thread Group-ThreadStarter 1-55,text,true,,379,0,36,36,null,0,0,0
+1604592136709,41,ReadTrack - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-79,text,true,,423483,127,36,36,http://localhost:8082/tracks/read,35,0,0
+1604592136816,8,ReadPlaylist - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-84,text,true,,21017,130,36,36,http://localhost:8082/playlists/read,8,0,0
+1604592136876,4,Register - HTTP Request,201,,Stress Test - Concurrency Thread Group-ThreadStarter 1-77,text,true,,334,280,36,36,http://localhost:8082/users/create,4,0,0
+1604592136875,5,Register - HTTP Request,201,,Stress Test - Concurrency Thread Group-ThreadStarter 1-76,text,true,,334,280,36,36,http://localhost:8082/users/create,5,0,0
+1604592136747,50,ReadTrack - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-81,text,true,,423483,127,36,36,http://localhost:8082/tracks/read,44,0,0
+1604592136755,50,ReadTrack - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-80,text,true,,423483,127,36,36,http://localhost:8082/tracks/read,41,0,0
+1604592136795,37,ReadTrack - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-82,text,true,,423483,127,36,36,http://localhost:8082/tracks/read,26,0,0
+1604592136806,29,ReadTrack - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-83,text,true,,423483,127,36,36,http://localhost:8082/tracks/read,14,0,0
+1604592136597,327,Login - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-62,text,true,,261,167,36,36,http://localhost:8082/users/login,327,0,0
+1604592136924,0,check jmeter variables for auth_token,200,OK,Stress Test - Concurrency Thread Group-ThreadStarter 1-62,text,true,,379,0,36,36,null,0,0,0
+1604592136827,61,ReadTrack - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-84,text,true,,423483,127,36,36,http://localhost:8082/tracks/read,45,0,0
+1604592136968,11,Create Playlist - HTTP Request,500,,Stress Test - Concurrency Thread Group-ThreadStarter 1-50,text,false,No results for path: $['description'],15471,396,36,36,http://localhost:8082/playlists/create,11,0,0
+1604592136658,445,Login - HTTP Request,200,,Stress Test - Concurrency Thread Group-ThreadStarter 1-56,text,true,,261,167,48,48,http://localhost:8082/users/login,445,0,0
+1604592137104,0,check jmeter variables for auth_token,200,OK,Stress Test - Concurrency Thread Group-ThreadStarter 1-56,text,true,,379,0,48,48,null,0,0,0
+1604592136731,376,Login - HTTP Request,Non HTTP response code: java.net.SocketException,Non HTTP response message: Socket closed,Stress Test - Concurrency Thread Group-ThreadStarter 1-71,text,false,Test failed: code expected to contain /20/,2699,0,48,48,http://localhost:8082/users/login,0,0,0
+1604592137001,106,ReadArtist - HTTP Request,Non HTTP response code: java.net.SocketException,Non HTTP response message: Socket closed,Stress Test - Concurrency Thread Group-ThreadStarter 1-90,text,false,Incorrect Response Code,2699,0,47,47,http://localhost:8082/artists/read,0,0,0
+1604592136900,208,Login - HTTP Request,Non HTTP response code: java.net.SocketException,Non HTTP response message: Socket closed,Stress Test - Concurrency Thread Group-ThreadStarter 1-65,text,false,Test failed: code expected to contain /20/,2699,0,46,46,http://localhost:8082/users/login,0,0,0
+1604592137011,97,ReadArtist - HTTP Request,Non HTTP response code: java.net.SocketException,Non HTTP response message: Socket closed,Stress Test - Concurrency Thread Group-ThreadStarter 1-91,text,false,Incorrect Response Code,2699,0,46,46,http://localhost:8082/artists/read,0,0,0
