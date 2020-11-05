@@ -1,12 +1,20 @@
+window.onload = loginout;
+
 function loginout(){
-    let lIn = document.getElementById("loginBtn");
+    //let lIn = document.getElementById("loginBtn");
     let lOut = document.getElementById("logoutBtn");
-    if (lIn.style.display === "block") {
-      lIn.style.display = "none";
+    let logPanel = document.getElementById("login");
+    let welcomePanel = document.getElementById("userlogedin");
+    if (sessionStorage.getItem("token") !== "") {
+      //lIn.style.display = "none";
+      logPanel.style.display = "none";
+      welcomePanel.style.display = "block";
       lOut.style.display = "block";
     } else {
-      lIn.style.display = "block";
+      //lIn.style.display = "block";
       lOut.style.display = "none";
+      logPanel.style.display = "block";
+      welcomePanel.style.display = "none";
     }
 }
 
@@ -17,20 +25,38 @@ function loginout(){
 //   });
 // });
 
-function showLogin() {
-  let x = document.getElementById("login");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
-  }
-} 
+// function showLogin() {
+//   let x = document.getElementById("login");
+//   if (x.style.display === "none") {
+//     x.style.display = "block";
+//   } else {
+//     x.style.display = "none";
+//   }
+// } 
 
 function login() {
 
   let username = document.getElementById("user_login").value;
   let password = document.getElementById("password_login").value;
+  let pw = false;
+  let un = false;
 
+  if(username === ""){
+    window.alert("Please enter your username."); 
+    return false;
+  }
+  else{
+    un = true;
+  }
+
+  if(password === ""){
+    window.alert("Please enter your password."); 
+    return false;
+  }
+  else{
+    pw = true;
+  }
+  if(un && pw ){
   fetch('http://localhost:8082/users/login', {
       method: 'get', 
       headers: {
@@ -45,6 +71,9 @@ function login() {
             console.log('Looks like there was a problem. Status Code: ' +
               response.status);
             console.log(response.headers);
+            window.alert("Login failed! Please check your login details.");
+            document.getElementById("userLog").value = '';
+            document.getElementById("pwLog").value = '';
             return;
           }
           response.text().then(function(token) {
@@ -54,6 +83,11 @@ function login() {
               console.log(sessionStorage.getItem("token"));
               sessionStorage.setItem("username", username);
               console.log('Login successful');
+              window.alert("Login Successfull! Welcome here " + username + "!");
+              let welcome = document.getElementById("welcome");
+              let span = document.createElement("a");
+              span.textContent = " " + username + "!";
+              welcome.appendChild(span);
               getUsers();
               loginout();
               let x = document.getElementById("login");
@@ -61,6 +95,7 @@ function login() {
             }
             else{
               console.log("Login failed! Please check your login details.");
+              window.alert("Login failed! Please check your login details.");
             }
           });
         }
@@ -68,7 +103,15 @@ function login() {
       .catch(function (error) {
           console.log('Request failed', error);
           console.log('Login failed');
+          window.alert("Login failed! Please try again.");
       });
+      return true;
+    }
+    else{
+      console.log("Login failed! Please check your login details.");
+      window.alert("Login failed! Please check your login details.");
+      return false;
+    }
 }
 
 
@@ -166,6 +209,10 @@ function resetThis(){
 }
 
 function logoutNow(){
+  sessionStorage.setItem("token", "");
+  sessionStorage.setItem("userId", "");
+  window.alert("Logout successful! Come back soon!");
+  window.location.reload();
 
 }
 
