@@ -89,7 +89,7 @@ class TestPlaylistControllerUnit {
     	headers.add("token", token);
         
         assertThat(new ResponseEntity<PlaylistDTO>(this.playlistDTO, headers, HttpStatus.CREATED).getBody())
-                .isEqualTo(this.controller.create(testPlaylist, this.testUser.getId(), this.token).getBody());
+                .isEqualTo(this.controller.create(testPlaylist, this.token).getBody());
         
         verify(this.service, times(1)).create(this.testPlaylist);
     }
@@ -139,7 +139,7 @@ class TestPlaylistControllerUnit {
     void deleteTest() {
     	when(service.read(this.id)).thenReturn(this.playlistDTO);
     	
-    	this.controller.delete(this.testUser.getId(), this.id, this.token);
+    	this.controller.delete(this.testUser.getId().toString(), this.id, this.token);
     	
     	verify(this.service, times(1)).delete(id);
     }
@@ -150,7 +150,7 @@ class TestPlaylistControllerUnit {
     	when(service.read(this.id)).thenReturn(this.playlistDTO);
     	
     	assertThat(new ResponseEntity<PlaylistDTO>(this.playlistDTO,HttpStatus.ACCEPTED))
-    	.isEqualTo(this.controller.add(this.testUser.getId(), 2L, this.testPlaylist.getId(), this.token));
+    	.isEqualTo(this.controller.add(this.testUser.getId().toString(), 2L, this.testPlaylist.getId(), this.token));
     	
     	verify(this.service,times(1)).addTrack(this.testPlaylist.getId(), 2L);
     }
@@ -161,7 +161,7 @@ class TestPlaylistControllerUnit {
     	when(service.read(this.id)).thenReturn(this.playlistDTO);
     	
     	assertThat(new ResponseEntity<PlaylistDTO>(this.playlistDTO,HttpStatus.ACCEPTED))
-    	.isEqualTo(this.controller.remove(this.testUser.getId(), this.testPlaylist.getId(), 1L,this.token));
+    	.isEqualTo(this.controller.remove(this.testUser.getId().toString(), this.testPlaylist.getId(), 1L,this.token));
     	
     	verify(this.service,times(1)).removeTrack(this.testPlaylist.getId(), 1L);
     }
