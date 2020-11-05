@@ -197,14 +197,9 @@ function deleteTrack(id, playlistId) {
     method: 'post',
     headers: {
       "Content-type": "application/json",
-      "token": sessionStorage.getItem('token')
+      "token": sessionStorage.getItem('token'),
+      "uid": sessionStorage.getItem('userId')
     },
-    body:json = JSON.stringify({
-      "id": playlistId,
-      "user": {
-        "id": userId
-      }
-     })
   })
   .then(
     function(response) {
@@ -230,18 +225,14 @@ function deleteTrack(id, playlistId) {
     method: 'DELETE',
     headers: {
       "Content-type": "application/json",
-      "token": sessionStorage.getItem('token')
+      "token": sessionStorage.getItem('token'),
+      "uid": sessionStorage.getItem('userId')
+      
     },
-    body:json = JSON.stringify({
-      "id": id,
-      "user": {
-        "id": userId
-      }
-     })
     })
     .then(res => res.text()) // or res.json()
     .then(res => console.log(res))
-  
+    
   }
 
  
@@ -294,14 +285,9 @@ function addTrack(trackId, playlistId){
     method: 'post',
     headers: {
       "Content-type": "application/json",
-      "token": sessionStorage.getItem('token')
+      "token": sessionStorage.getItem('token'),
+      "uid": sessionStorage.getItem('userId')
     },
-    body:json = JSON.stringify({
-      "id": playlistId,
-      "user": {
-        "id": userId
-      }
-     })
   })
   .then(
     function(response) {
