@@ -61,7 +61,7 @@ public class PlaylistController {
 
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<PlaylistDTO> delete(@RequestHeader("uid") Long userId, @PathVariable long id, @RequestHeader("token") String token) {
-        if (AuthUtils.validToken(token) && AuthUtils.getTokenOwner(token) == userId) {
+    	if (AuthUtils.validToken(token) && this.service.read(id).getUser().getId() == userId) {
     	return this.service.delete(id) ? new ResponseEntity<PlaylistDTO>(HttpStatus.NO_CONTENT)
                 : new ResponseEntity<PlaylistDTO>(HttpStatus.INTERNAL_SERVER_ERROR);
         } else {
@@ -71,7 +71,7 @@ public class PlaylistController {
     
     @PostMapping("/add/{playlistId}/{trackId}")
     public ResponseEntity<PlaylistDTO> add(@RequestHeader("uid") Long userId, @PathVariable long trackId, @PathVariable long playlistId, @RequestHeader("token") String token){
-        if (AuthUtils.validToken(token) && AuthUtils.getTokenOwner(token) == userId) {
+        if (AuthUtils.validToken(token) && this.service.read(playlistId).getUser().getId() == userId) {
         	return new ResponseEntity<PlaylistDTO>(this.service.addTrack(playlistId, trackId), HttpStatus.ACCEPTED);
         } else {
         	return new ResponseEntity<PlaylistDTO>(HttpStatus.UNAUTHORIZED);
@@ -81,7 +81,7 @@ public class PlaylistController {
     
     @PostMapping("/remove/{playlistId}/{trackId}")
     public ResponseEntity<PlaylistDTO> remove(@RequestHeader("uid") Long userId, @PathVariable long playlistId, @PathVariable long trackId, @RequestHeader("token") String token){
-        if (AuthUtils.validToken(token) && AuthUtils.getTokenOwner(token) == userId) {
+        if (AuthUtils.validToken(token) && this.service.read(playlistId).getUser().getId() == userId) {
         	return new ResponseEntity<PlaylistDTO>(this.service.removeTrack(playlistId, trackId), HttpStatus.ACCEPTED);
         } else {
         	return new ResponseEntity<PlaylistDTO>(HttpStatus.UNAUTHORIZED);
