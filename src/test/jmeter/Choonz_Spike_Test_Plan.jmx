@@ -670,7 +670,7 @@
             <connectTime>true</connectTime>
           </value>
         </objProp>
-        <stringProp name="filename"></stringProp>
+        <stringProp name="filename">C:\Users\Liam\Documents\workspace-spring-tool-suite-4-4.8.0.RELEASE\Group project\Choonz-Project\src\test\jmeter\Spike Test Reports\Aggregate_Report.csv</stringProp>
       </ResultCollector>
       <hashTree/>
       <ResultCollector guiclass="GraphVisualizer" testclass="ResultCollector" testname="Graph Results" enabled="true">
@@ -744,7 +744,7 @@
             <connectTime>true</connectTime>
           </value>
         </objProp>
-        <stringProp name="filename"></stringProp>
+        <stringProp name="filename">C:\Users\Liam\Documents\workspace-spring-tool-suite-4-4.8.0.RELEASE\Group project\Choonz-Project\src\test\jmeter\Spike Test Reports\Results_Table.csv</stringProp>
       </ResultCollector>
       <hashTree/>
     </hashTree>
