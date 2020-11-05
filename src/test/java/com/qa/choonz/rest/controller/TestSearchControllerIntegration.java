@@ -24,6 +24,7 @@ import com.qa.choonz.rest.dto.GenreDTO;
 import com.qa.choonz.rest.dto.PlaylistDTO;
 import com.qa.choonz.rest.dto.TrackDTO;
 import com.qa.choonz.service.ArtistService;
+import com.qa.choonz.persistence.repository.ArtistRepository;
 import com.qa.choonz.rest.controller.SearchController;
 @SpringBootTest
 @AutoConfigureMockMvc
@@ -34,17 +35,7 @@ class TestSearchControllerIntegration {
 	
 	@Autowired
 	private ModelMapper modelMapper;
-	
-	@Autowired
-	private ObjectMapper objectMapper;
-	
-	private ArtistDTO artistDTO;
-	private AlbumDTO albumDTO;
-	private GenreDTO genreDTO;
-	private TrackDTO trackDTO;
-	private PlaylistDTO playlistDTO;
-	private ArtistService artistService;
-	
+		
 	private final String qArtist = "week";
 	private final String qAlbum = "kiss";
 	private final String qGenre = "r&";
@@ -54,76 +45,74 @@ class TestSearchControllerIntegration {
 	
 	@BeforeEach
 	void init() {
-		
 	}
 	
 	@Test
 	void testSearchArtists() throws Exception {
-//		List<ArtistDTO> allArtists = new ArrayList<>();
-		List<ArtistDTO> artistSearch = new ArrayList<>();
-		List<ArtistDTO> allArtists = artistService.read();
-		allArtists.add(this.artistDTO);
-		for (ArtistDTO a: allArtists) {
-//			if (a.getName().contains(query)) {
-			if (containsIgnoreCase(a.getName(), this.qArtist)) {
-				artistSearch.add(a);
-			}
-		}
+		String artistString = "[{\"id\":4,\"name\":\"The Weeknd\",\"";
 		
 		String output = this.mock.perform(request(HttpMethod.GET, "/search/artists/" + this.qArtist)
 				.accept(MediaType.APPLICATION_JSON))
 				.andExpect(status().isFound()).andReturn().getResponse().getContentAsString();
 		
-		assertEquals(artistSearch, output);
+		String[] splitOutput = output.split("alb", 2);
+		
+		assertEquals(artistString, splitOutput[0]);
 	}
 	
 	@Test
 	void testSearchAlbums() throws Exception {
-		List<AlbumDTO> albumSearch = new ArrayList<>();
-		albumSearch.add(this.albumDTO);
+		String albumString = "[{\"id\":4,\"name\":\"Kiss Land\",\"";
 		
 		String output = this.mock.perform(request(HttpMethod.GET, "/search/albums/" + this.qAlbum)
 				.accept(MediaType.APPLICATION_JSON))
 				.andExpect(status().isFound()).andReturn().getResponse().getContentAsString();
+	
+		String[] splitOutput = output.split("track", 2);
 		
-		assertEquals(output, output);
+		assertEquals(albumString, splitOutput[0]);
 	}
 	
 	@Test
 	void testSearchGenres() throws Exception {
-		List<GenreDTO> genreSearch = new ArrayList<>();
-		genreSearch.add(this.genreDTO);
+		String genreString= "[{\"id\":3,\"name\":\"R&B\",\"";
 		
 		String output = this.mock.perform(request(HttpMethod.GET, "/search/genres/" + this.qGenre)
 				.accept(MediaType.APPLICATION_JSON))
 				.andExpect(status().isFound()).andReturn().getResponse().getContentAsString();
 		
-		assertEquals(output, output);
+		String[] splitOutput = output.split("pic", 2);
+		
+		assertEquals(genreString, splitOutput[0]);
 	}
 	
 	@Test
 	void testSearchTracks() throws Exception {
-		List<TrackDTO> trackSearch = new ArrayList<>();
-		trackSearch.add(this.trackDTO);
+		String trackString = "[{\"id\":15,\"name\":\"Adaptation\",\"";
 		
 		String output = this.mock.perform(request(HttpMethod.GET, "/search/tracks/" + this.qTrack)
 				.accept(MediaType.APPLICATION_JSON))
 				.andExpect(status().isFound()).andReturn().getResponse().getContentAsString();
 		
-		assertEquals(output, output);
+		String[] splitOutput = output.split("alb", 2);
+		
+		assertEquals(trackString, splitOutput[0]);
 	}
 	
 	@Test
 	void testSearchPlaylists() throws Exception {
-		List<PlaylistDTO> playlistSearch = new ArrayList<>();
-		playlistSearch.add(this.playlistDTO);
+		String playlistString = "[{\"id\":3,\"name\":\"HeartBreak\",\"";
 		
 		String output = this.mock.perform(request(HttpMethod.GET, "/search/playlists/" + this.qPlaylist)
 				.accept(MediaType.APPLICATION_JSON))
 				.andExpect(status().isFound()).andReturn().getResponse().getContentAsString();
 		
-		assertEquals(output, output);
+		String[] splitOutput = output.split("desc", 2);
+		
+		assertEquals(playlistString, splitOutput[0]);
 	}
+	
+	
 	public static boolean containsIgnoreCase(String str, String subString) {
         return str.toLowerCase().contains(subString.toLowerCase());
     }
