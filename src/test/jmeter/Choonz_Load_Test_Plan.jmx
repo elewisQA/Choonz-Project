@@ -28,12 +28,12 @@
       <hashTree/>
       <kg.apc.jmeter.threads.UltimateThreadGroup guiclass="kg.apc.jmeter.threads.UltimateThreadGroupGui" testclass="kg.apc.jmeter.threads.UltimateThreadGroup" testname="Load test" enabled="true">
         <collectionProp name="ultimatethreadgroupdata">
-          <collectionProp name="-1960102280">
-            <stringProp name="1598">20</stringProp>
+          <collectionProp name="1551353282">
+            <stringProp name="49586">200</stringProp>
             <stringProp name="0">0</stringProp>
-            <stringProp name="53">5</stringProp>
-            <stringProp name="1572">15</stringProp>
-            <stringProp name="53">5</stringProp>
+            <stringProp name="1598">20</stringProp>
+            <stringProp name="1722">60</stringProp>
+            <stringProp name="1598">20</stringProp>
           </collectionProp>
         </collectionProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
@@ -364,7 +364,7 @@
               </ResponseAssertion>
               <hashTree/>
               <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="true">
-                <stringProp name="ConstantTimer.delay">500</stringProp>
+                <stringProp name="ConstantTimer.delay">3000</stringProp>
               </ConstantTimer>
               <hashTree/>
             </hashTree>
@@ -420,7 +420,7 @@
               </ResponseAssertion>
               <hashTree/>
               <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="true">
-                <stringProp name="ConstantTimer.delay">500</stringProp>
+                <stringProp name="ConstantTimer.delay">3000</stringProp>
               </ConstantTimer>
               <hashTree/>
             </hashTree>
@@ -464,10 +464,6 @@
               <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
                 <collectionProp name="HeaderManager.headers">
                   <elementProp name="" elementType="Header">
-                    <stringProp name="Header.name">uid</stringProp>
-                    <stringProp name="Header.value">1</stringProp>
-                  </elementProp>
-                  <elementProp name="" elementType="Header">
                     <stringProp name="Header.name">token</stringProp>
                     <stringProp name="Header.value">${token}</stringProp>
                   </elementProp>
@@ -510,7 +506,7 @@
               </JSONPostProcessor>
               <hashTree/>
               <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="true">
-                <stringProp name="ConstantTimer.delay">500</stringProp>
+                <stringProp name="ConstantTimer.delay">3000</stringProp>
               </ConstantTimer>
               <hashTree/>
             </hashTree>
