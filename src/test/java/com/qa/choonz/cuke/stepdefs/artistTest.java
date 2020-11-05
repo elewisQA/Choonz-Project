@@ -154,38 +154,108 @@ public class artistTest {
 	
 	@Then("^I navigate to the search bar$")
 	public void i_navigate_to_the_search_bar() throws Throwable {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new PendingException();
+		targ = driver.findElement(By.xpath("/html/body/nav/a/img"));
+		targ.click();
+		Thread.sleep(500);
+		targ = driver.findElement(By.xpath("/html/body/nav/button/span"));
+        targ.click();
+        Thread.sleep(500);
+        targ = driver.findElement(By.xpath("//*[@id=\"collapsingNavbar\"]/form/input"));
+        targ.click();
+        Thread.sleep(500);
 	}
 
 	@Then("^I can search for an artist$")
 	public void i_can_search_for_an_artist() throws Throwable {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new PendingException();
+		targ.sendKeys("week");
+		targ = driver.findElement(By.xpath("//*[@id=\"collapsingNavbar\"]/form/button"));
+        targ.click();
+        Thread.sleep(500);
+        targ = driver.findElement(By.xpath("//*[@id=\"artists\"]/div/div/div/a/h5"));
+        assertEquals("The Weeknd", targ.getText());
+        Thread.sleep(500);
+        
+		
 	}
 
 	@Then("^I can search for an album$")
 	public void i_can_search_for_an_album() throws Throwable {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new PendingException();
+		targ = driver.findElement(By.xpath("/html/body/nav/a/img"));
+		targ.click();
+		Thread.sleep(500);
+		targ = driver.findElement(By.xpath("/html/body/nav/button/span"));
+        targ.click();
+        Thread.sleep(500);
+        targ = driver.findElement(By.xpath("//*[@id=\"collapsingNavbar\"]/form/input"));
+        targ.click();
+        Thread.sleep(500);
+        targ.sendKeys("mamm");
+		targ = driver.findElement(By.xpath("//*[@id=\"collapsingNavbar\"]/form/button"));
+        targ.click();
+        Thread.sleep(500);
+        targ = driver.findElement(By.xpath("//*[@id=\"albums\"]/div/div/div/a/h5"));
+        assertEquals("Mamma Mia! Official Soundtrack", targ.getText());
+        Thread.sleep(500);
 	}
 
 	@Then("^I can search for an song$")
 	public void i_can_search_for_an_song() throws Throwable {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new PendingException();
+		targ = driver.findElement(By.xpath("/html/body/nav/a/img"));
+		targ.click();
+		Thread.sleep(500);
+		targ = driver.findElement(By.xpath("/html/body/nav/button/span"));
+        targ.click();
+        Thread.sleep(500);
+        targ = driver.findElement(By.xpath("//*[@id=\"collapsingNavbar\"]/form/input"));
+        targ.click();
+        Thread.sleep(500);
+        targ.sendKeys("adap");
+		targ = driver.findElement(By.xpath("//*[@id=\"collapsingNavbar\"]/form/button"));
+        targ.click();
+        Thread.sleep(500);
+        targ = driver.findElement(By.xpath("//*[@id=\"tracks\"]/div/div/div/a/h5"));
+        assertEquals("Adaptation", targ.getText());
+        Thread.sleep(500);
 	}
 
 	@Then("^I can search for an playlist$")
 	public void i_can_search_for_an_playlist() throws Throwable {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new PendingException();
+		targ = driver.findElement(By.xpath("/html/body/nav/a/img"));
+		targ.click();
+		Thread.sleep(500);
+		targ = driver.findElement(By.xpath("/html/body/nav/button/span"));
+        targ.click();
+        Thread.sleep(500);
+        targ = driver.findElement(By.xpath("//*[@id=\"collapsingNavbar\"]/form/input"));
+        targ.click();
+        Thread.sleep(500);
+        targ.sendKeys("heart");
+		targ = driver.findElement(By.xpath("//*[@id=\"collapsingNavbar\"]/form/button"));
+        targ.click();
+        Thread.sleep(500);
+        targ = driver.findElement(By.xpath("//*[@id=\"playlists\"]/div/div/div/h5"));
+        assertEquals("Playlist", targ.getText());
+        Thread.sleep(500);
 	}
 
 	@Then("^I can search for an genre$")
 	public void i_can_search_for_an_genre() throws Throwable {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new PendingException();
+		targ = driver.findElement(By.xpath("/html/body/nav/a/img"));
+		targ.click();
+		Thread.sleep(500);
+		targ = driver.findElement(By.xpath("/html/body/nav/button/span"));
+        targ.click();
+        Thread.sleep(500);
+        targ = driver.findElement(By.xpath("//*[@id=\"collapsingNavbar\"]/form/input"));
+        targ.click();
+        Thread.sleep(500);
+        targ.sendKeys("disc");
+		targ = driver.findElement(By.xpath("//*[@id=\"collapsingNavbar\"]/form/button"));
+        targ.click();
+        Thread.sleep(500);
+        targ = driver.findElement(By.xpath("//*[@id=\"genres\"]/div/div/div/a/h5"));
+        assertEquals("Disco", targ.getText());
+        Thread.sleep(500);
 	}
 	
 	@After

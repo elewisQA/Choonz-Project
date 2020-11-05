@@ -5,7 +5,7 @@ So i can add to playlist
 I want to use the search bar to search for playlists, songs
 artists, genres and albums
 
-  Scenario: Browse artists on website to add song to playlist
+  Scenario: Can browse the website and test out functionality
     Given The correct web address
     When I navigate to the 'Artist' page
     And I can click on an artist
