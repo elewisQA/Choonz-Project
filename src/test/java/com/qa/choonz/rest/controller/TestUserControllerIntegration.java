@@ -104,7 +104,7 @@ class TestUserControllerIntegration {
     @Test
     void testLogin() throws Exception {
     	this.mock
-    		.perform(request(HttpMethod.POST, "/users/login")
+    		.perform(request(HttpMethod.GET, "/users/login")
     				.header("username", username)
     				.header("password", password)
     				.contentType(MediaType.APPLICATION_JSON)
@@ -116,7 +116,7 @@ class TestUserControllerIntegration {
     @Test
     void failLoginTest() throws Exception {
     	this.mock
-    		.perform(request(HttpMethod.POST, "/users/login")
+    		.perform(request(HttpMethod.GET, "/users/login")
     				.header("username", badUser)
     				.header("password", badPass)
     				.contentType(MediaType.APPLICATION_JSON)
