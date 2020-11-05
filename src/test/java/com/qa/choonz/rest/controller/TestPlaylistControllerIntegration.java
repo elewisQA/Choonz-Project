@@ -16,10 +16,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.util.LinkedMultiValueMap;
+import org.springframework.util.MultiValueMap;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.qa.choonz.exception.TrackNotFoundException;
@@ -61,11 +64,12 @@ class TestPlaylistControllerIntegration {
     private PlaylistDTO playlistDTO;
     
     private Long id;
+    private final Long uid = 1L;
     private final String name = "Tunes";
     private final String description = "Bangers only";
     private final String artwork = "artwork";
     private List<Track> tracks;
-    private final User testUser = null;
+    private User testUser = null;
     
 	private String token;
 	private HttpHeaders headers;
@@ -79,6 +83,11 @@ class TestPlaylistControllerIntegration {
     void init() {
     	this.repo.deleteAll();
     	
+    	// Initialize User
+    	this.testUser = new User();
+    	this.testUser.setId(this.uid);
+    	
+    	// Initialize Playlist
     	this.tracks = new ArrayList<>();
     	this.testPlaylist = new Playlist();
     	this.testPlaylist.setName(this.name);
@@ -90,15 +99,17 @@ class TestPlaylistControllerIntegration {
     	this.playlistDTO = this.mapToDTO(this.testPlaylistWithId);
     	
     	this.id = this.testPlaylistWithId.getId();
-    	this.token = AuthUtils.newToken(this.id);
+    	this.token = AuthUtils.newToken(this.uid);
     	this.headers = new HttpHeaders();
-    	headers.add("token", token);
+    	this.headers.setContentType(MediaType.APPLICATION_JSON);
+    	this.headers.add("token", token);
+    	this.headers.add("uid", this.uid.toString());
     }
     
     @Test
     void testCreate() throws Exception {
         this.mock
-        	.perform(request(HttpMethod.POST, "/playlists/create").header("token", token).contentType(MediaType.APPLICATION_JSON)
+        	.perform(request(HttpMethod.POST, "/playlists/create").headers(this.headers)
                 .content(this.objectMapper.writeValueAsString(testPlaylist))
                 .accept(MediaType.APPLICATION_JSON))
         .andExpect(status().isCreated())
