@@ -40,7 +40,8 @@ function addPlaylist(playlistName, playlistPic, playlistDesc) {
         method: 'post',
         headers: {
               "Content-type": "application/json",
-              "token": sessionStorage.getItem('token')
+              "token": sessionStorage.getItem('token'),
+              "uid": sessionStorage.getItem('userId')
         },
         body:json = JSON.stringify({
             "name": playlistName,
