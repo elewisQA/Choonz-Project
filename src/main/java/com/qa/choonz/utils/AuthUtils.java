@@ -28,14 +28,6 @@ public class AuthUtils {
 		return userTokens.containsKey(token);
 	}
 	
-	public static Boolean validToken(String token, Long uid) {
-		boolean result = userTokens.containsKey(token);
-		if (result) {
-			result = userTokens.get(token) == uid;
-		}
-		return result;
-	}
-	
 	public static Long getTokenOwner(String token) {
 		if (userTokens.containsKey(token)) {
 			return userTokens.get(token);

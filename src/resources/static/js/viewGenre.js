@@ -10,12 +10,12 @@ for (let found of findId) {
 function loginout(){
     let lIn = document.getElementById("loginBtn");
     let lOut = document.getElementById("logoutBtn");
-    if (sessionStorage.getItem("token") !== "") {
-      lIn.style.display = "none";
-      lOut.style.display = "block";
-    } else {
+    if ((sessionStorage.getItem("token") === null) || (sessionStorage.getItem("token") === "")) {
       lIn.style.display = "block";
       lOut.style.display = "none";
+    } else {
+      lIn.style.display = "none";
+      lOut.style.display = "block";
     }
 }
 
@@ -215,7 +215,7 @@ function populate(data) {
 // }
 
 function readPlaylists(songCount, trackId) {
-  fetch('http://localhost:8082/playlists/read')
+  fetch('http://localhost:8082/users/read')
    .then(
      function(response) {
        if (response.status !== 200) {
@@ -227,7 +227,13 @@ function readPlaylists(songCount, trackId) {
        // Examine the text in the response
        response.json().then(function(data) {
          console.log(data);
-         addPlaylists(data, songCount, trackId);
+         let userId = sessionStorage.getItem('userId'); 
+         for (let key of data) {
+          if (key['id'] == userId) {
+            console.log(key['id'])
+            addPlaylists(key, songCount, trackId)
+          }
+        }
        });
      }
    )
@@ -238,7 +244,7 @@ function readPlaylists(songCount, trackId) {
 
  function addPlaylists(data, songCount, trackId) {
   let find = document.getElementById("second_dropdown"+songCount);
-  for (let key of data) {
+  for (let key of data['playlists']) {
     console.log(key);
     let selectPlaylist = document.createElement("a");
     selectPlaylist.className = "dropdown-item";
@@ -257,14 +263,9 @@ function readPlaylists(songCount, trackId) {
     method: 'post',
     headers: {
       "Content-type": "application/json",
-      "token": sessionStorage.getItem('token')
+      "token": sessionStorage.getItem('token'),
+      "uid": sessionStorage.getItem('userId')
     },
-    body:json = JSON.stringify({
-      "id": playlistId,
-      "user": {
-        "id": sessionStorage.getItem('userId')
-      }
-     })
   })
   .then(
     function(response) {

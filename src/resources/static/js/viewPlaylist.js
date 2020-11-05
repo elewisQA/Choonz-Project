@@ -11,12 +11,12 @@ for (let found of findId) {
 function loginout(){
     let lIn = document.getElementById("loginBtn");
     let lOut = document.getElementById("logoutBtn");
-    if (sessionStorage.getItem("token") !== "") {
-      lIn.style.display = "none";
-      lOut.style.display = "block";
-    } else {
+    if ((sessionStorage.getItem("token") === null) || (sessionStorage.getItem("token") === "")) {
       lIn.style.display = "block";
       lOut.style.display = "none";
+    } else {
+      lIn.style.display = "none";
+      lOut.style.display = "block";
     }
 }
 
@@ -197,14 +197,9 @@ function deleteTrack(id, playlistId) {
     method: 'post',
     headers: {
       "Content-type": "application/json",
-      "token": sessionStorage.getItem('token')
+      "token": sessionStorage.getItem('token'),
+      "uid": sessionStorage.getItem('userId')
     },
-    body:json = JSON.stringify({
-      "id": playlistId,
-      "user": {
-        "id": userId
-      }
-     })
   })
   .then(
     function(response) {
@@ -230,16 +225,20 @@ function deleteTrack(id, playlistId) {
     method: 'DELETE',
     headers: {
       "Content-type": "application/json",
-      "token": sessionStorage.getItem('token')
+      "token": sessionStorage.getItem('token'),
+      "uid": sessionStorage.getItem('userId')
+      
     },
     })
     .then(res => res.text()) // or res.json()
     .then(res => console.log(res))
-  
+    
   }
 
+ 
+
   function readPlaylists(songCount, trackId) {
-    fetch('http://localhost:8082/playlists/read')
+    fetch('http://localhost:8082/users/read')
      .then(
        function(response) {
          if (response.status !== 200) {
@@ -251,7 +250,11 @@ function deleteTrack(id, playlistId) {
          // Examine the text in the response
          response.json().then(function(data) {
            console.log(data);
-           addPlaylists(data, songCount, trackId);
+           for (let key of data) {
+             if (key['id'] === userId) {
+              addPlaylists(key, songCount, trackId)
+             }
+           }
          });
        }
      )
@@ -262,7 +265,8 @@ function deleteTrack(id, playlistId) {
   
    function addPlaylists(data, songCount, trackId) {
     let find = document.getElementById("second_dropdown"+ songCount);
-    for (let key of data) {
+    console.log(data);
+    for (let key of data['playlists']) {
       console.log(key);
       let selectPlaylist = document.createElement("a");
       selectPlaylist.className = "dropdown-item";
@@ -281,14 +285,9 @@ function addTrack(trackId, playlistId){
     method: 'post',
     headers: {
       "Content-type": "application/json",
-      "token": sessionStorage.getItem('token')
+      "token": sessionStorage.getItem('token'),
+      "uid": sessionStorage.getItem('userId')
     },
-    body:json = JSON.stringify({
-      "id": playlistId,
-      "user": {
-        "id": userId
-      }
-     })
   })
   .then(
     function(response) {

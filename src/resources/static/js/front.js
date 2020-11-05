@@ -1,20 +1,21 @@
 window.onload = loginout;
+// window.onload = console.log("token is: ",sessionStorage.getItem("token"));
 
 function loginout(){
     //let lIn = document.getElementById("loginBtn");
     let lOut = document.getElementById("logoutBtn");
     let logPanel = document.getElementById("login");
     let welcomePanel = document.getElementById("userlogedin");
-    if (sessionStorage.getItem("token") !== "") {
+    if ((sessionStorage.getItem("token") === null) || (sessionStorage.getItem("token") === "")) {
       //lIn.style.display = "none";
-      logPanel.style.display = "none";
-      welcomePanel.style.display = "block";
-      lOut.style.display = "block";
-    } else {
-      //lIn.style.display = "block";
       lOut.style.display = "none";
       logPanel.style.display = "block";
       welcomePanel.style.display = "none";
+    } else {
+      //lIn.style.display = "block";
+      logPanel.style.display = "none";
+      welcomePanel.style.display = "block";
+      lOut.style.display = "block";
     }
 }
 
@@ -210,6 +211,24 @@ function resetThis(){
 
 function logoutNow(){
   sessionStorage.setItem("token", "");
+  sessionStorage.setItem("userId", "");
+  fetch('http://localhost:8082/users/logout', {
+    method: 'get',
+    headers: { 
+      'token': sessionStorage.getItem('token')
+    },
+  })
+  .then(
+    function(response) {
+      if (response.status !== 201) {
+        console.log("Problem with back-end logout - response code:", response.status);
+        return;
+      }
+      response.test(data).then(function(data){
+        console.log(data);
+      })
+    }
+  )
   window.alert("Logout successful! Come back soon!");
   window.location.reload();
 
