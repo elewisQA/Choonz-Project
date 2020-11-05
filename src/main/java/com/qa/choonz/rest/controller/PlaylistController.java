@@ -34,28 +34,28 @@ public class PlaylistController {
     @PostMapping("/create")
     public ResponseEntity<PlaylistDTO> create(@RequestBody Playlist playlist, @RequestHeader("token") String token) {
         if (AuthUtils.validToken(token) && AuthUtils.getTokenOwner(token) == playlist.getUser().getId()) {
-        	return new ResponseEntity<PlaylistDTO>(this.service.create(playlist), HttpStatus.CREATED);
+        	return new ResponseEntity<>(this.service.create(playlist), HttpStatus.CREATED);
         } else {
-        	return new ResponseEntity<PlaylistDTO>(HttpStatus.UNAUTHORIZED);
+        	return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
         }
     }
 
     @GetMapping("/read")
     public ResponseEntity<List<PlaylistDTO>> read() {
-        return new ResponseEntity<List<PlaylistDTO>>(this.service.read(), HttpStatus.OK);
+        return new ResponseEntity<>(this.service.read(), HttpStatus.OK);
     }
 
     @GetMapping("/read/{id}")
     public ResponseEntity<PlaylistDTO> read(@PathVariable long id) {
-        return new ResponseEntity<PlaylistDTO>(this.service.read(id), HttpStatus.OK);
+        return new ResponseEntity<>(this.service.read(id), HttpStatus.OK);
     }
 
     @PostMapping("/update/{id}")
     public ResponseEntity<PlaylistDTO> update(@RequestBody Playlist playlist, @PathVariable long id, @RequestHeader("token") String token) {
         if (AuthUtils.validToken(token) && AuthUtils.getTokenOwner(token) == playlist.getUser().getId()) {
-        	return new ResponseEntity<PlaylistDTO>(this.service.update(playlist, id), HttpStatus.ACCEPTED);
+        	return new ResponseEntity<>(this.service.update(playlist, id), HttpStatus.ACCEPTED);
         } else {
-        	return new ResponseEntity<PlaylistDTO>(HttpStatus.UNAUTHORIZED);
+        	return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
         }
     }
 
@@ -63,18 +63,18 @@ public class PlaylistController {
     public ResponseEntity<PlaylistDTO> delete(@RequestHeader("uid") String userId, @PathVariable long id, @RequestHeader("token") String token) {
     	if (AuthUtils.validToken(token) && this.service.read(id).getUser().getId() == Long.parseLong(userId)) {
     	return this.service.delete(id) ? new ResponseEntity<PlaylistDTO>(HttpStatus.NO_CONTENT)
-                : new ResponseEntity<PlaylistDTO>(HttpStatus.INTERNAL_SERVER_ERROR);
+                : new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         } else {
-        	return new ResponseEntity<PlaylistDTO>(HttpStatus.UNAUTHORIZED);
+        	return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
         }
     }
     
     @PostMapping("/add/{playlistId}/{trackId}")
     public ResponseEntity<PlaylistDTO> add(@RequestHeader("uid") String userId, @PathVariable long trackId, @PathVariable long playlistId, @RequestHeader("token") String token){
         if (AuthUtils.validToken(token) && this.service.read(playlistId).getUser().getId() == Long.parseLong(userId)) {
-        	return new ResponseEntity<PlaylistDTO>(this.service.addTrack(playlistId, trackId), HttpStatus.ACCEPTED);
+        	return new ResponseEntity<>(this.service.addTrack(playlistId, trackId), HttpStatus.ACCEPTED);
         } else {
-        	return new ResponseEntity<PlaylistDTO>(HttpStatus.UNAUTHORIZED);
+        	return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
         }
     	
     }
@@ -82,9 +82,9 @@ public class PlaylistController {
     @PostMapping("/remove/{playlistId}/{trackId}")
     public ResponseEntity<PlaylistDTO> remove(@RequestHeader("uid") String userId, @PathVariable long playlistId, @PathVariable long trackId, @RequestHeader("token") String token){
         if (AuthUtils.validToken(token) && this.service.read(playlistId).getUser().getId() == Long.parseLong(userId)) {
-        	return new ResponseEntity<PlaylistDTO>(this.service.removeTrack(playlistId, trackId), HttpStatus.ACCEPTED);
+        	return new ResponseEntity<>(this.service.removeTrack(playlistId, trackId), HttpStatus.ACCEPTED);
         } else {
-        	return new ResponseEntity<PlaylistDTO>(HttpStatus.UNAUTHORIZED);
+        	return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
         }
     }
 

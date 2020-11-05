@@ -13,7 +13,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 public class ChoonzApplication {
 
     public static void main(String[] args) {
-    	AuthUtils authManger = new AuthUtils(); // TODO find out if better place to initialize
+    	AuthUtils.initialize();
         ApplicationContext context = SpringApplication.run(ChoonzApplication.class, args);
     }
 

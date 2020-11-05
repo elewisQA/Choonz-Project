@@ -55,7 +55,7 @@ public class SearchController {
 				matchedArtists.add(a);
 			}
 		}
-		return new ResponseEntity<List<ArtistDTO>>(matchedArtists, HttpStatus.FOUND);
+		return new ResponseEntity<>(matchedArtists, HttpStatus.FOUND);
 	}
 	
 	@GetMapping("/albums/{query}")
@@ -68,7 +68,7 @@ public class SearchController {
 				matchedAlbums.add(a);
 			}
 		}
-		return new ResponseEntity<List<AlbumDTO>>(matchedAlbums, HttpStatus.FOUND);
+		return new ResponseEntity<>(matchedAlbums, HttpStatus.FOUND);
 	}
 	
 	@GetMapping("/genres/{query}")
@@ -81,7 +81,7 @@ public class SearchController {
 				matchedGenres.add(g);
 			}
 		}
-		return new ResponseEntity<List<GenreDTO>>(matchedGenres, HttpStatus.FOUND);
+		return new ResponseEntity<>(matchedGenres, HttpStatus.FOUND);
 	}
 	
 	@GetMapping("/tracks/{query}")
@@ -94,7 +94,7 @@ public class SearchController {
 				matchedTracks.add(t);
 			}
 		}
-		return new ResponseEntity<List<TrackDTO>>(matchedTracks, HttpStatus.FOUND);
+		return new ResponseEntity<>(matchedTracks, HttpStatus.FOUND);
 	}
 	
 	@GetMapping("/playlists/{query}")
@@ -107,7 +107,7 @@ public class SearchController {
 				matchedPlaylists.add(p);
 			}
 		}
-		return new ResponseEntity<List<PlaylistDTO>>(matchedPlaylists, HttpStatus.FOUND);
+		return new ResponseEntity<>(matchedPlaylists, HttpStatus.FOUND);
 	}
 	
 	public static boolean containsIgnoreCase(String str, String subString) {

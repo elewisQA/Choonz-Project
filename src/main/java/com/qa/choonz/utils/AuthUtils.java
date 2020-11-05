@@ -4,16 +4,17 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
 
-import com.qa.choonz.exception.TokenNotFoundException;
-
 public class AuthUtils {
-	private static final int tokenLength = 10;
+	private static final int TOKENLENGTH = 10;
 	private static Map<String, Long> userTokens;
 	private static Map<String, Long> adminTokens; // Future-proofing, used to lock-off API calls
-
-	public AuthUtils() {
+	
+	public static void initialize() {
 		if (userTokens == null) {
 			userTokens = new HashMap<>();
+		}
+		if (adminTokens == null) {
+			adminTokens = new HashMap<>();
 		}
 	}
 	
@@ -50,7 +51,7 @@ public class AuthUtils {
 		// Thanks to Baeldung for this code
 		return rng.ints(lowerLimit, upperLimit + 1)
 	    	      .filter(i -> (i <= 57 || i >= 65) && (i <= 90 || i >= 97))	// Filter-method to avoid going out of range
-	    	      .limit(tokenLength)
+	    	      .limit(TOKENLENGTH)
 	    	      .collect(StringBuilder::new, StringBuilder::appendCodePoint, StringBuilder::append)
 	    	      .toString();
 	}

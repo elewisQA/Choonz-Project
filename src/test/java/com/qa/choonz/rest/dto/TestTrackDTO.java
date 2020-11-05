@@ -112,13 +112,13 @@ class TestTrackDTO {
 	}
 	
 	@Test
-	public void toStringTests() {
-		assertTrue(this.testTrack.toString()
-				.equals("TrackDTO [id=1, name=Song, album=null, playlist=[], duration=1.8, lyrics=Lyrics]"));
+	void toStringTests() {
+		assertEquals(this.testTrack.toString(),
+				("TrackDTO [id=1, name=Song, album=null, playlist=[], duration=1.8, lyrics=Lyrics]"));
 	}
 	
 	@Test
-	public void hashCodeTest() {		
+	void hashCodeTest() {		
 		TrackDTO track1 = new TrackDTO(1L,"Pop",null,null,1.8F,"Lyrics");
 		TrackDTO track2 = new TrackDTO(1L,"Pop",null,null,1.8F,"Lyrics");
 		
