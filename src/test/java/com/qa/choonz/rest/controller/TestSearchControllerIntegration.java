@@ -82,12 +82,15 @@ class TestSearchControllerIntegration {
 	void testSearchAlbums() throws Exception {
 		List<AlbumDTO> albumSearch = new ArrayList<>();
 		albumSearch.add(this.albumDTO);
+		String albumString = "[{\"id\":4,\"name\":\"Kiss Land\",\"";
 		
 		String output = this.mock.perform(request(HttpMethod.GET, "/search/albums/" + this.qAlbum)
 				.accept(MediaType.APPLICATION_JSON))
 				.andExpect(status().isFound()).andReturn().getResponse().getContentAsString();
 	
-		assertEquals(output, output);
+		String[] splitOutput = output.split("track", 2);
+		
+		assertEquals(albumString, splitOutput[0]);
 	}
 	
 	@Test
