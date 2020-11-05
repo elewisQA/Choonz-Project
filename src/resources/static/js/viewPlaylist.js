@@ -247,7 +247,7 @@ function deleteTrack(id, playlistId) {
  
 
   function readPlaylists(songCount, trackId) {
-    fetch('http://localhost:8082/playlists/read')
+    fetch('http://localhost:8082/users/read')
      .then(
        function(response) {
          if (response.status !== 200) {
@@ -259,7 +259,11 @@ function deleteTrack(id, playlistId) {
          // Examine the text in the response
          response.json().then(function(data) {
            console.log(data);
-           addPlaylists(data, songCount, trackId);
+           for (let key of data) {
+             if (key['id'] === userId) {
+              addPlaylists(key, songCount, trackId)
+             }
+           }
          });
        }
      )
@@ -270,7 +274,8 @@ function deleteTrack(id, playlistId) {
   
    function addPlaylists(data, songCount, trackId) {
     let find = document.getElementById("second_dropdown"+ songCount);
-    for (let key of data) {
+    console.log(data);
+    for (let key of data['playlists']) {
       console.log(key);
       let selectPlaylist = document.createElement("a");
       selectPlaylist.className = "dropdown-item";
