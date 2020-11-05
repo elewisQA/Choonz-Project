@@ -2,8 +2,10 @@ Feature: testArtists
 As a user
 I want to browse artists on the website
 So i can add to playlist
+I want to use the search bar to search for playlists, songs
+artists, genres and albums
 
-  Scenario: Browse artists on website to add song to playlist
+  Scenario: Can browse the website and test out functionality
     Given The correct web address
     When I navigate to the 'Artist' page
     And I can click on an artist
@@ -12,3 +14,16 @@ So i can add to playlist
     Then I navigate to the 'Playlist' page
     And I can click on my desired playlist
     Then I can check the previously added song exists in the playlist
+    And I can delete the song from the playlist
+    Then I navigate to the search bar
+    And I can search for an artist
+    Then I can search for an album
+    And I can search for an song
+    Then I can search for an playlist
+    And I can search for an genre
+    Then I can create a new playlist
+    And I can delete the new playlist
+    Then I can log out
+    And I can make a new user
+    Then I can log in with the new user credentials
+    And I can find a specific track page

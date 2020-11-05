@@ -41,16 +41,16 @@ public class artistTest {
 		driver.get("http://127.0.0.1:5501/static/index.html");
 		System.out.println("choonz website accessed");
 		//log out and log in
-		targ = driver.findElement(By.xpath("/html/body/nav/button/span"));
-        targ.click();
-        Thread.sleep(500);
-		targ = driver.findElement(By.xpath("//*[@id=\"logoutBtn\"]"));
-        targ.click();
-        System.out.println("logout clicked");
-        Thread.sleep(500);
+//		targ = driver.findElement(By.xpath("/html/body/nav/button/span"));
+//        targ.click();
+//        Thread.sleep(500);
+//		targ = driver.findElement(By.xpath("//*[@id=\"logoutBtn\"]"));
+//        targ.click();
+//        System.out.println("logout clicked");
+//        Thread.sleep(500);
         Robot robot=new Robot();
-        robot.keyPress(KeyEvent.VK_ENTER);
-        robot.keyRelease(KeyEvent.VK_ENTER);
+//        robot.keyPress(KeyEvent.VK_ENTER);
+//        robot.keyRelease(KeyEvent.VK_ENTER);
         Thread.sleep(500);
         targ = driver.findElement(By.xpath("//*[@id=\"user_login\"]"));
         targ.sendKeys("username");
@@ -140,6 +140,246 @@ public class artistTest {
 	    targ = driver.findElement(By.xpath("//*[@id=\"table_container\"]/table/tbody/tr[4]/td[1]/a"));
 		assertEquals("Wanderlust", targ.getText());
 		System.out.println("Song has been added to playlist");
+	}
+	
+	@Then("^I can delete the song from the playlist$")
+	public void i_can_delete_the_song_from_the_playlist() throws Throwable {
+		targ = driver.findElement(By.xpath("/html/body/div[1]/div[2]/table/tbody/tr[4]/td[2]/div/a/i"));
+		targ.click();
+		Thread.sleep(500);
+		targ = driver.findElement(By.xpath("/html/body/div[1]/div[2]/table/tbody/tr[4]/td[2]/div/div/a"));
+		targ.click();
+		Thread.sleep(500);
+	}
+	
+	@Then("^I navigate to the search bar$")
+	public void i_navigate_to_the_search_bar() throws Throwable {
+		targ = driver.findElement(By.xpath("/html/body/nav/a/img"));
+		targ.click();
+		Thread.sleep(500);
+		targ = driver.findElement(By.xpath("/html/body/nav/button/span"));
+        targ.click();
+        Thread.sleep(500);
+        targ = driver.findElement(By.xpath("//*[@id=\"collapsingNavbar\"]/form/input"));
+        targ.click();
+        Thread.sleep(500);
+	}
+
+	@Then("^I can search for an artist$")
+	public void i_can_search_for_an_artist() throws Throwable {
+		targ.sendKeys("week");
+		targ = driver.findElement(By.xpath("//*[@id=\"collapsingNavbar\"]/form/button"));
+        targ.click();
+        Thread.sleep(500);
+        targ = driver.findElement(By.xpath("//*[@id=\"artists\"]/div/div/div/a/h5"));
+        assertEquals("The Weeknd", targ.getText());
+        Thread.sleep(500);
+        
+		
+	}
+
+	@Then("^I can search for an album$")
+	public void i_can_search_for_an_album() throws Throwable {
+		targ = driver.findElement(By.xpath("/html/body/nav/a/img"));
+		targ.click();
+		Thread.sleep(500);
+		targ = driver.findElement(By.xpath("/html/body/nav/button/span"));
+        targ.click();
+        Thread.sleep(500);
+        targ = driver.findElement(By.xpath("//*[@id=\"collapsingNavbar\"]/form/input"));
+        targ.click();
+        Thread.sleep(500);
+        targ.sendKeys("mamm");
+		targ = driver.findElement(By.xpath("//*[@id=\"collapsingNavbar\"]/form/button"));
+        targ.click();
+        Thread.sleep(500);
+        targ = driver.findElement(By.xpath("//*[@id=\"albums\"]/div/div/div/a/h5"));
+        assertEquals("Mamma Mia! Official Soundtrack", targ.getText());
+        Thread.sleep(500);
+	}
+
+	@Then("^I can search for an song$")
+	public void i_can_search_for_an_song() throws Throwable {
+		targ = driver.findElement(By.xpath("/html/body/nav/a/img"));
+		targ.click();
+		Thread.sleep(500);
+		targ = driver.findElement(By.xpath("/html/body/nav/button/span"));
+        targ.click();
+        Thread.sleep(500);
+        targ = driver.findElement(By.xpath("//*[@id=\"collapsingNavbar\"]/form/input"));
+        targ.click();
+        Thread.sleep(500);
+        targ.sendKeys("adap");
+		targ = driver.findElement(By.xpath("//*[@id=\"collapsingNavbar\"]/form/button"));
+        targ.click();
+        Thread.sleep(500);
+        targ = driver.findElement(By.xpath("//*[@id=\"tracks\"]/div/div/div/a/h5"));
+        assertEquals("Adaptation", targ.getText());
+        Thread.sleep(500);
+	}
+
+	@Then("^I can search for an playlist$")
+	public void i_can_search_for_an_playlist() throws Throwable {
+		targ = driver.findElement(By.xpath("/html/body/nav/a/img"));
+		targ.click();
+		Thread.sleep(500);
+		targ = driver.findElement(By.xpath("/html/body/nav/button/span"));
+        targ.click();
+        Thread.sleep(500);
+        targ = driver.findElement(By.xpath("//*[@id=\"collapsingNavbar\"]/form/input"));
+        targ.click();
+        Thread.sleep(500);
+        targ.sendKeys("heart");
+		targ = driver.findElement(By.xpath("//*[@id=\"collapsingNavbar\"]/form/button"));
+        targ.click();
+        Thread.sleep(500);
+        targ = driver.findElement(By.xpath("//*[@id=\"playlists\"]/div/div/div/h5"));
+        assertEquals("Playlist", targ.getText());
+        Thread.sleep(500);
+	}
+
+	@Then("^I can search for an genre$")
+	public void i_can_search_for_an_genre() throws Throwable {
+		targ = driver.findElement(By.xpath("/html/body/nav/a/img"));
+		targ.click();
+		Thread.sleep(500);
+		targ = driver.findElement(By.xpath("/html/body/nav/button/span"));
+        targ.click();
+        Thread.sleep(500);
+        targ = driver.findElement(By.xpath("//*[@id=\"collapsingNavbar\"]/form/input"));
+        targ.click();
+        Thread.sleep(500);
+        targ.sendKeys("disc");
+		targ = driver.findElement(By.xpath("//*[@id=\"collapsingNavbar\"]/form/button"));
+        targ.click();
+        Thread.sleep(500);
+        targ = driver.findElement(By.xpath("//*[@id=\"genres\"]/div/div/div/a/h5"));
+        assertEquals("Disco", targ.getText());
+        Thread.sleep(500);
+	}
+	
+	@Then("^I can create a new playlist$")
+	public void i_can_create_a_new_playlist() throws Throwable {
+		targ = driver.findElement(By.xpath("/html/body/nav/a/img"));
+		targ.click();
+		Thread.sleep(500);
+		targ = driver.findElement(By.xpath("/html/body/nav/button/span"));
+        targ.click();
+        Thread.sleep(500);
+        targ = driver.findElement(By.xpath("//*[@id=\"collapsingNavbar\"]/ul/li[5]/a"));
+        targ.click();
+        Thread.sleep(500);
+        targ = driver.findElement(By.xpath("//*[@id=\"addnew\"]/i"));
+        targ.click();
+        Thread.sleep(500);
+        targ = driver.findElement(By.xpath("//*[@id=\"playlistName\"]"));
+        targ.sendKeys("Chocolate");
+        targ = driver.findElement(By.xpath("//*[@id=\"playlistPic\"]"));
+        targ.sendKeys("https://upload.wikimedia.org/wikipedia/commons/7/70/Chocolate_%28blue_background%29.jpg");
+        targ = driver.findElement(By.xpath("//*[@id=\"playlistDesc\"]"));
+        targ.sendKeys("For when you want to listen to music while eating chocolate");
+        targ = driver.findElement(By.xpath("//*[@id=\"submit-button\"]"));
+        targ.click();
+        System.out.println("New playlist created");
+        Thread.sleep(500);
+//        targ = driver.findElement(By.xpath("//*[@id=\"playlists\"]/div[4]/div/div/a/h1"));
+//        assertEquals("Chocolate", targ.getText());
+	}
+
+	@Then("^I can delete the new playlist$")
+	public void i_can_delete_the_new_playlist() throws Throwable {
+		targ = driver.findElement(By.xpath("//*[@id=\"playlists\"]/div[4]/div/div"));
+		targ.click();
+		System.out.println("I selected my new playlist");
+		Thread.sleep(500);
+		targ = driver.findElement(By.xpath("//*[@id=\"text_container\"]/a/i"));
+		targ.click();
+		System.out.println("I clicked on the update button for playlist");
+		Thread.sleep(500);
+		targ = driver.findElement(By.xpath("//*[@id=\"modal-footer\"]/a"));
+		targ.click();
+		System.out.println("I clicked to delete the playlist");
+		Thread.sleep(500);
+	}
+	
+	@Then("^I can log out$")
+	public void i_can_log_out() throws Throwable {
+		targ = driver.findElement(By.xpath("/html/body/nav/a/img"));
+		targ.click();
+		Thread.sleep(500);
+		targ = driver.findElement(By.xpath("/html/body/nav/button/span"));
+        targ.click();
+        Thread.sleep(500);
+        targ = driver.findElement(By.xpath("//*[@id=\"logoutBtn\"]"));
+        targ.click();
+        Thread.sleep(500);
+        Robot robot=new Robot();
+        robot.keyPress(KeyEvent.VK_ENTER);
+        robot.keyRelease(KeyEvent.VK_ENTER);
+        Thread.sleep(500);
+        targ = driver.findElement(By.xpath("//*[@id=\"login\"]/div[2]/div/h2"));
+        assertEquals("LOGIN", targ.getText());
+        System.out.println("Logged out");
+	}
+
+	@Then("^I can make a new user$")
+	public void i_can_make_a_new_user() throws Throwable {
+		targ = driver.findElement(By.xpath("//*[@id=\"label-login\"]"));
+		targ.click();
+		System.out.println("Clicked register button");
+		Thread.sleep(500);
+		targ = driver.findElement(By.xpath("//*[@id=\"Username\"]"));
+		targ.sendKeys("TestUser123");
+		targ = driver.findElement(By.xpath("//*[@id=\"Password\"]"));
+		targ.sendKeys("TestPwd123");
+		targ = driver.findElement(By.xpath("//*[@id=\"Password2\"]"));
+		targ.sendKeys("TestPwd123");
+		targ = driver.findElement(By.xpath("//*[@id=\"exampleModal\"]/div/div/div[2]/form/div[4]/input[1]"));
+		targ.click();
+		System.out.println("Clicked sign up button");
+		Thread.sleep(500);
+		Robot robot=new Robot();
+        robot.keyPress(KeyEvent.VK_ENTER);
+        robot.keyRelease(KeyEvent.VK_ENTER);
+        Thread.sleep(500);
+	}
+
+	@Then("^I can log in with the new user credentials$")
+	public void i_can_log_in_with_the_new_user_credentials() throws Throwable {
+		targ = driver.findElement(By.xpath("//*[@id=\"user_login\"]"));
+        targ.sendKeys("TestUser123");
+        targ = driver.findElement(By.xpath("//*[@id=\"password_login\"]"));
+        targ.sendKeys("TestPwd123");
+        System.out.println("Sent in new login details");
+        targ = driver.findElement(By.xpath("//*[@id=\"login\"]/div[2]/div/input[3]"));
+        targ.click();
+        System.out.println("Logged in with new credentials");
+        Thread.sleep(500);
+        Robot robot=new Robot();
+        robot.keyPress(KeyEvent.VK_ENTER);
+        robot.keyRelease(KeyEvent.VK_ENTER);
+        Thread.sleep(500);
+        targ = driver.findElement(By.xpath("//*[@id=\"welcome\"]/a"));
+        assertEquals("TestUser123!", targ.getText());
+	}
+
+	@Then("^I can find a specific track page$")
+	public void i_can_find_a_specific_track_page() throws Throwable {
+		targ = driver.findElement(By.xpath("/html/body/nav/button/span"));
+        targ.click();
+        Thread.sleep(500);
+        targ = driver.findElement(By.xpath("//*[@id=\"collapsingNavbar\"]/ul/li[1]/a"));
+        targ.click();
+        System.out.println("I have navigated to the page of all tracks");
+        Thread.sleep(500);
+        targ = driver.findElement(By.xpath("/html/body/div/div/table/tbody/tr[2]/td[1]/a[1]"));
+        targ.click();
+        System.out.println("I have clicked a track");
+        Thread.sleep(500);
+        targ = driver.findElement(By.xpath("//*[@id=\"trackDuration\"]"));
+        assertEquals("Duration: 4.43", targ.getText());
+        System.out.println("Correct track page has been received");
+        Thread.sleep(5000);
 	}
 	
 	@After
