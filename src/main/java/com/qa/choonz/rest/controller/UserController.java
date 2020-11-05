@@ -50,9 +50,10 @@ public class UserController {
     	
     }
     
-    @PostMapping("/logout")
-    public void logout(@RequestHeader("token") String token) {
-    	// TODO send delete-token request to manager
+    @GetMapping("/logout")
+    public ResponseEntity<String> logout(@RequestHeader("token") String token) {
+    	AuthUtils.deleteToken(token);
+    	return new ResponseEntity<String>("TOKEN DELETED", HttpStatus.OK);
     }
 	
     @GetMapping("/read")
