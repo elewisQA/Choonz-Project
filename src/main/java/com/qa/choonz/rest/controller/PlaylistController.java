@@ -33,7 +33,7 @@ public class PlaylistController {
 
     @PostMapping("/create")
     public ResponseEntity<PlaylistDTO> create(@RequestBody Playlist playlist, @RequestHeader("token") String token) {
-        if (AuthUtils.validToken(token) && playlist.getUser() != null) {
+        if (AuthUtils.validToken(token) && AuthUtils.getTokenOwner(token) == playlist.getUser().getId()) {
         	return new ResponseEntity<PlaylistDTO>(this.service.create(playlist), HttpStatus.CREATED);
         } else {
         	return new ResponseEntity<PlaylistDTO>(HttpStatus.UNAUTHORIZED);
@@ -52,7 +52,7 @@ public class PlaylistController {
 
     @PostMapping("/update/{id}")
     public ResponseEntity<PlaylistDTO> update(@RequestBody Playlist playlist, @PathVariable long id, @RequestHeader("token") String token) {
-        if (AuthUtils.validToken(token, id)) {
+        if (AuthUtils.validToken(token) && AuthUtils.getTokenOwner(token) == playlist.getUser().getId()) {
         	return new ResponseEntity<PlaylistDTO>(this.service.update(playlist, id), HttpStatus.ACCEPTED);
         } else {
         	return new ResponseEntity<PlaylistDTO>(HttpStatus.UNAUTHORIZED);
@@ -61,7 +61,7 @@ public class PlaylistController {
 
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<PlaylistDTO> delete(@RequestBody Playlist playlist, @RequestHeader("token") String token) {
-        if (AuthUtils.validToken(token, playlist.getUser().getId())) {
+        if (AuthUtils.validToken(token) && AuthUtils.getTokenOwner(token) == playlist.getUser().getId()) {
     	return this.service.delete(playlist.getId()) ? new ResponseEntity<PlaylistDTO>(HttpStatus.NO_CONTENT)
                 : new ResponseEntity<PlaylistDTO>(HttpStatus.INTERNAL_SERVER_ERROR);
         } else {
@@ -81,7 +81,7 @@ public class PlaylistController {
     
     @PostMapping("/remove/{playlistId}/{trackId}")
     public ResponseEntity<PlaylistDTO> remove(@RequestBody Playlist playlist,@PathVariable Long trackId, @RequestHeader("token") String token){
-        if (AuthUtils.validToken(token, playlist.getUser().getId())) {
+        if (AuthUtils.validToken(token) && AuthUtils.getTokenOwner(token) == playlist.getUser().getId()) {
         	return new ResponseEntity<PlaylistDTO>(this.service.removeTrack(playlist.getId(), trackId), HttpStatus.ACCEPTED);
         } else {
         	return new ResponseEntity<PlaylistDTO>(HttpStatus.UNAUTHORIZED);
