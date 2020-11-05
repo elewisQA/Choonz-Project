@@ -213,11 +213,12 @@ function deleteTrack(id, playlistId) {
       "Content-type": "application/json",
       "token": sessionStorage.getItem('token'),
       "uid": sessionStorage.getItem('userId')
+      
     },
     })
     .then(res => res.text()) // or res.json()
     .then(res => console.log(res))
-  
+    
   }
 
  
