@@ -93,7 +93,7 @@ class TestUserControllerUnit {
     	HttpHeaders headers = new HttpHeaders();
     	headers.add("token", token);
     	
-    	assertThat(new ResponseEntity<Boolean>(true, headers, HttpStatus.OK).getBody())
+    	assertThat(new ResponseEntity<String>( token, HttpStatus.OK).getBody())
     		.isEqualTo(this.controller.login(this.username, this.password).getBody());
     	
     	verify(this.service, times(1)).login(this.username, this.password);
