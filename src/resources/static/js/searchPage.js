@@ -302,19 +302,16 @@ function populatePlaylists(playlist, container) {
 
     // Add Details about
     let cardText = document.createElement("div");
-    let group = document.createElement("h5");
-    group.innerHTML = "Playlist";
-    group.setAttribute("class", "card-title");
-    cardText.appendChild(group);
-    cardText.setAttribute("class", "card-body");
+    cardText.setAttribute("class", "card-img-overlay text-center");
+    card.appendChild(cardText)
+    
     let link = document.createElement("a");
     link.setAttribute("href", "viewArtist.html?id=" + playlist['id']);
-    let title = document.createElement("h5");
+    let title = document.createElement("h1");
     title.setAttribute("class", "card-title");
-    title.innerHTML = playlist['name'];
+    title.textContent = playlist['name'];
     link.appendChild(title);
     cardText.appendChild(link);
-    card.appendChild(cardText);
 
     // Add it to it's own column
     column.appendChild(card);
