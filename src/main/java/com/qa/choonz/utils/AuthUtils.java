@@ -17,6 +17,12 @@ public class AuthUtils {
 		}
 	}
 	
+	public static void initialize() {
+		if (userTokens == null) {
+			userTokens = new HashMap<>();
+		}
+	}
+	
 	//--[ Login Methods ]--
 	public static String newToken(Long userId) {
 		String token = generateToken();
