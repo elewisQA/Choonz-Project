@@ -21,3 +21,5 @@ artists, genres and albums
     And I can search for an song
     Then I can search for an playlist
     And I can search for an genre
+    Then I can create a new playlist
+    And I can delete the new playlist

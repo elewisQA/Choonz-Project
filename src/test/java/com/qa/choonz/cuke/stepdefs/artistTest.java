@@ -258,6 +258,51 @@ public class artistTest {
         Thread.sleep(500);
 	}
 	
+	@Then("^I can create a new playlist$")
+	public void i_can_create_a_new_playlist() throws Throwable {
+		targ = driver.findElement(By.xpath("/html/body/nav/a/img"));
+		targ.click();
+		Thread.sleep(500);
+		targ = driver.findElement(By.xpath("/html/body/nav/button/span"));
+        targ.click();
+        Thread.sleep(500);
+        targ = driver.findElement(By.xpath("//*[@id=\"collapsingNavbar\"]/ul/li[5]/a"));
+        targ.click();
+        Thread.sleep(500);
+        targ = driver.findElement(By.xpath("//*[@id=\"addnew\"]/i"));
+        targ.click();
+        Thread.sleep(500);
+        targ = driver.findElement(By.xpath("//*[@id=\"playlistName\"]"));
+        targ.sendKeys("Chocolate");
+        targ = driver.findElement(By.xpath("//*[@id=\"playlistPic\"]"));
+        targ.sendKeys("https://upload.wikimedia.org/wikipedia/commons/7/70/Chocolate_%28blue_background%29.jpg");
+        targ = driver.findElement(By.xpath("//*[@id=\"playlistDesc\"]"));
+        targ.sendKeys("For when you want to listen to music while eating chocolate");
+        targ = driver.findElement(By.xpath("//*[@id=\"submit-button\"]"));
+        targ.click();
+        System.out.println("New playlist created");
+        Thread.sleep(5000);
+//        targ = driver.findElement(By.xpath("//*[@id=\"playlists\"]/div[4]/div/div/a/h1"));
+//        assertEquals("Chocolate", targ.getText());
+	}
+
+	@Then("^I can delete the new playlist$")
+	public void i_can_delete_the_new_playlist() throws Throwable {
+		targ = driver.findElement(By.xpath("/html/body/div[1]/div[4]/div/div/a"));
+		targ.click();
+		System.out.println("I selected my new playlist");
+		Thread.sleep(5000);
+		targ = driver.findElement(By.xpath("//*[@id=\"text_container\"]/a/i"));
+		targ.click();
+		System.out.println("I clicked on the update button for playlist");
+		Thread.sleep(5000);
+		targ = driver.findElement(By.xpath("//*[@id=\"modal-footer\"]/a"));
+		targ.click();
+		System.out.println("I clicked to delete the playlist");
+		Thread.sleep(5000);
+		
+	}
+	
 	@After
     public void tearDown() {
         driver.close();
