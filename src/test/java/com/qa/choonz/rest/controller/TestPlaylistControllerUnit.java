@@ -52,7 +52,7 @@ class TestPlaylistControllerUnit {
     private final String description = "Bangers only";
     private final String artwork = "artwork";
     private List<Track> tracks;
-    private final User testUser = null;
+    private User testUser = null;
     
     private String token;
     
@@ -63,6 +63,14 @@ class TestPlaylistControllerUnit {
     
     @BeforeEach
     void init() {
+    	// Initialize User
+    	this.testUser = new User();
+    	this.testUser.setId(this.id);
+    	this.testUser.setUsername("user");
+    	this.testUser.setPassword("pass");
+    	this.testUser.setPlaylists(new ArrayList<Playlist>());   	
+    	
+    	// Initialize Playlist
     	this.playlistList = new ArrayList<>();
     	this.tracks = new ArrayList<>();
     	this.testPlaylist = new Playlist(this.id,this.name,this.description
@@ -114,11 +122,12 @@ class TestPlaylistControllerUnit {
     	Playlist newPlaylist = new Playlist(this.id,this.name,this.description,this.artwork
     			,this.tracks,this.testUser);
     	
-    	PlaylistDTO updatedPlaylist = new PlaylistDTO(this.id,newPlaylist.getName()
-    			,newPlaylist.getDescription()
-    			,newPlaylist.getArtwork()
-    			,newPlaylist.getTracks()
-    			,newPlaylist.getUser());
+    	PlaylistDTO updatedPlaylist = new PlaylistDTO(this.id,
+    			newPlaylist.getName(),
+    			newPlaylist.getDescription(),
+    			newPlaylist.getArtwork(),
+    			newPlaylist.getTracks(),
+    			newPlaylist.getUser());
     	
     	when(service.update(newPlaylist, id)).thenReturn(updatedPlaylist);
     	
@@ -128,7 +137,9 @@ class TestPlaylistControllerUnit {
     
     @Test
     void deleteTest() {
-    	this.controller.delete(this.id, this.token);
+    	when(service.read(this.id)).thenReturn(this.playlistDTO);
+    	
+    	this.controller.delete(this.testUser.getId().toString(), this.id, this.token);
     	
     	verify(this.service, times(1)).delete(id);
     }
@@ -136,9 +147,10 @@ class TestPlaylistControllerUnit {
     @Test
     void addTrackTest() {
     	when(service.addTrack(this.testPlaylist.getId(),2L)).thenReturn(playlistDTO);
+    	when(service.read(this.id)).thenReturn(this.playlistDTO);
     	
     	assertThat(new ResponseEntity<PlaylistDTO>(this.playlistDTO,HttpStatus.ACCEPTED))
-    	.isEqualTo(this.controller.add(this.testPlaylist.getId(), 2L,this.token));
+    	.isEqualTo(this.controller.add(this.testUser.getId().toString(), 2L, this.testPlaylist.getId(), this.token));
     	
     	verify(this.service,times(1)).addTrack(this.testPlaylist.getId(), 2L);
     }
@@ -146,9 +158,10 @@ class TestPlaylistControllerUnit {
     @Test
     void removeTrackTest() {
     	when(service.removeTrack(this.testPlaylist.getId(),1L)).thenReturn(playlistDTO);
+    	when(service.read(this.id)).thenReturn(this.playlistDTO);
     	
     	assertThat(new ResponseEntity<PlaylistDTO>(this.playlistDTO,HttpStatus.ACCEPTED))
-    	.isEqualTo(this.controller.remove(this.testPlaylist.getId(), 1L,this.token));
+    	.isEqualTo(this.controller.remove(this.testUser.getId().toString(), this.testPlaylist.getId(), 1L,this.token));
     	
     	verify(this.service,times(1)).removeTrack(this.testPlaylist.getId(), 1L);
     }
