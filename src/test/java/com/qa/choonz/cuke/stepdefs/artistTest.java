@@ -41,16 +41,16 @@ public class artistTest {
 		driver.get("http://127.0.0.1:5501/static/index.html");
 		System.out.println("choonz website accessed");
 		//log out and log in
-		targ = driver.findElement(By.xpath("/html/body/nav/button/span"));
-        targ.click();
-        Thread.sleep(500);
-		targ = driver.findElement(By.xpath("//*[@id=\"logoutBtn\"]"));
-        targ.click();
-        System.out.println("logout clicked");
-        Thread.sleep(500);
+//		targ = driver.findElement(By.xpath("/html/body/nav/button/span"));
+//        targ.click();
+//        Thread.sleep(500);
+//		targ = driver.findElement(By.xpath("//*[@id=\"logoutBtn\"]"));
+//        targ.click();
+//        System.out.println("logout clicked");
+//        Thread.sleep(500);
         Robot robot=new Robot();
-        robot.keyPress(KeyEvent.VK_ENTER);
-        robot.keyRelease(KeyEvent.VK_ENTER);
+//        robot.keyPress(KeyEvent.VK_ENTER);
+//        robot.keyRelease(KeyEvent.VK_ENTER);
         Thread.sleep(500);
         targ = driver.findElement(By.xpath("//*[@id=\"user_login\"]"));
         targ.sendKeys("username");
@@ -140,6 +140,52 @@ public class artistTest {
 	    targ = driver.findElement(By.xpath("//*[@id=\"table_container\"]/table/tbody/tr[4]/td[1]/a"));
 		assertEquals("Wanderlust", targ.getText());
 		System.out.println("Song has been added to playlist");
+	}
+	
+	@Then("^I can delete the song from the playlist$")
+	public void i_can_delete_the_song_from_the_playlist() throws Throwable {
+		targ = driver.findElement(By.xpath("/html/body/div[1]/div[2]/table/tbody/tr[4]/td[2]/div/a/i"));
+		targ.click();
+		Thread.sleep(500);
+		targ = driver.findElement(By.xpath("/html/body/div[1]/div[2]/table/tbody/tr[4]/td[2]/div/div/a"));
+		targ.click();
+		Thread.sleep(500);
+	}
+	
+	@Then("^I navigate to the search bar$")
+	public void i_navigate_to_the_search_bar() throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new PendingException();
+	}
+
+	@Then("^I can search for an artist$")
+	public void i_can_search_for_an_artist() throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new PendingException();
+	}
+
+	@Then("^I can search for an album$")
+	public void i_can_search_for_an_album() throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new PendingException();
+	}
+
+	@Then("^I can search for an song$")
+	public void i_can_search_for_an_song() throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new PendingException();
+	}
+
+	@Then("^I can search for an playlist$")
+	public void i_can_search_for_an_playlist() throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new PendingException();
+	}
+
+	@Then("^I can search for an genre$")
+	public void i_can_search_for_an_genre() throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new PendingException();
 	}
 	
 	@After
