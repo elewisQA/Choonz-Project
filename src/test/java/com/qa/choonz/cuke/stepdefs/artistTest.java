@@ -2,6 +2,9 @@ package com.qa.choonz.cuke.stepdefs;
 
 import static org.junit.Assert.assertEquals;
 
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -25,23 +28,48 @@ public class artistTest {
         driver = new ChromeDriver();
 	}
 	
-	public static void jsClick(WebDriver driver, WebElement targ) {
+//	public static void jsClick(WebDriver driver, WebElement targ) {
 //		WebElement targ = driver.findElement(By.xpath("//*[@id=\"artists\"]/div[4]/div/div/a/h5"));
-
-		JavascriptExecutor jsExe = (JavascriptExecutor) driver;
-		jsExe.executeScript("arguments[0].click()", targ);
-	}
+//
+//		JavascriptExecutor jsExe = (JavascriptExecutor) driver;
+//		jsExe.executeScript("arguments[0].click()", targ);
+//	}
 	
 	@Given("^The correct web address$")
 	public void the_correct_web_address() throws Throwable {
 		driver.get("http://127.0.0.1:5501/static/index.html");
-		
 		System.out.println("choonz website accessed");
+		//log out and log in
+		targ = driver.findElement(By.xpath("/html/body/nav/button/span"));
+        targ.click();
+        Thread.sleep(500);
+		targ = driver.findElement(By.xpath("//*[@id=\"logoutBtn\"]"));
+        targ.click();
+        System.out.println("logout clicked");
+        Thread.sleep(500);
+        Robot robot=new Robot();
+        robot.keyPress(KeyEvent.VK_ENTER);
+        robot.keyRelease(KeyEvent.VK_ENTER);
+        Thread.sleep(500);
+        targ = driver.findElement(By.xpath("//*[@id=\"user_login\"]"));
+        targ.sendKeys("username");
+        targ = driver.findElement(By.xpath("//*[@id=\"password_login\"]"));
+        targ.sendKeys("password");
+        targ = driver.findElement(By.xpath("//*[@id=\"login\"]/div[2]/div/input[3]"));
+        targ.click();
+        System.out.println("Logged out and in again");
+        Thread.sleep(500);
+        robot.keyPress(KeyEvent.VK_ENTER);
+        robot.keyRelease(KeyEvent.VK_ENTER);
+        Thread.sleep(500);
 	}
 
 	@When("^I navigate to the 'Artist' page$")
 	public void i_navigate_to_the_Artist_page() throws Throwable {
-		targ = driver.findElement(By.xpath("//*[@id=\"collapsingNavbar\"]/ul/li[2]/a"));
+		targ = driver.findElement(By.xpath("/html/body/nav/button/span"));
+        targ.click();
+        Thread.sleep(1000);
+        targ = driver.findElement(By.xpath("//*[@id=\"collapsingNavbar\"]/ul/li[2]/a"));
         targ.click();
         System.out.println("Artist clicked");
         Thread.sleep(2500);
@@ -51,11 +79,11 @@ public class artistTest {
 	@When("^I can click on an artist$")
 	public void i_can_click_on_an_artist() throws Throwable {
 		Thread.sleep(2500);
-		driver.get("http://127.0.0.1:5501/static/artists.html");
+//		driver.get("http://127.0.0.1:5501/static/artists.html");
 		targ = driver.findElement(By.xpath("//*[@id=\"artists\"]/div[4]/div/div/a"));
 		System.out.println("Found artist to click");
-//		targ.click();
-		jsClick(driver, targ);
+		targ.click();
+//		jsClick(driver, targ);
         System.out.println("Artist clicked");
 	}
 
@@ -63,18 +91,33 @@ public class artistTest {
 	public void i_can_select_an_album_from_the_artist() throws Throwable {
 	    targ = driver.findElement(By.xpath("//*[@id=\"artist_to_album\"]/p"));
 	    assertEquals("Kiss Land", targ.getText());
+	    targ.click();
+	    System.out.println("Album clicked");
 	}
 
 	@Then("^I can add a song to my desired playlist$")
 	public void i_can_add_a_song_to_my_desired_playlist() throws Throwable {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new PendingException();
+		targ = driver.findElement(By.xpath("//*[@id=\"table_container\"]/table/tbody/tr[7]/td[2]/div"));
+		targ.click();
+		Thread.sleep(500);
+		targ = driver.findElement(By.xpath("//*[@id=\"dropdownMenu222\"]"));
+		targ.click();
+		targ = driver.findElement(By.xpath("//*[@id=\"second_dropdown7\"]/a[3]"));
+		targ.click();
+		Thread.sleep(500);
+		System.out.println("Song added");
 	}
 
 	@When("^I navigate to the 'Playlist' page$")
 	public void i_navigate_to_the_Playlist_page() throws Throwable {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new PendingException();
+		targ = driver.findElement(By.xpath("/html/body/nav/button/span"));
+		targ.click();
+		Thread.sleep(500);
+		targ = driver.findElement(By.xpath("//*[@id=\"collapsingNavbar\"]/ul/li[5]/a"));
+		targ.click();
+		Thread.sleep(500);
+		targ = driver.findElement(By.xpath("//*[@id=\"playlists\"]/div[3]/div/div/a/h1"));
+		assertEquals("HeartBreak", targ.getText());
 	}
 
 	@When("^I can click on my desired playlist$")
