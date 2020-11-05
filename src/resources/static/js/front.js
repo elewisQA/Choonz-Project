@@ -212,6 +212,23 @@ function resetThis(){
 function logoutNow(){
   sessionStorage.setItem("token", "");
   sessionStorage.setItem("userId", "");
+  fetch('http://localhost:8082/users/logout', {
+    method: 'get',
+    headers: { 
+      'token': sessionStorage.getItem('token')
+    },
+  })
+  .then(
+    function(response) {
+      if (response.status !== 201) {
+        console.log("Problem with back-end logout - response code:", response.status);
+        return;
+      }
+      response.test(data).then(function(data){
+        console.log(data);
+      })
+    }
+  )
   window.alert("Logout successful! Come back soon!");
   window.location.reload();
 
