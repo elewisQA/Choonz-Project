@@ -7,16 +7,43 @@ for (let found of findId) {
 
  window.onload = loginout;
 
+// Show login button if you are logged out and show logout button if you are logged in
 function loginout(){
-    let lIn = document.getElementById("loginBtn");
-    let lOut = document.getElementById("logoutBtn");
-    if ((sessionStorage.getItem("token") === null) || (sessionStorage.getItem("token") === "")) {
-      lIn.style.display = "block";
-      lOut.style.display = "none";
-    } else {
-      lIn.style.display = "none";
-      lOut.style.display = "block";
+  let lIn = document.getElementById("loginBtn");
+  let lOut = document.getElementById("logoutBtn");
+  if ((sessionStorage.getItem("token") === null) || (sessionStorage.getItem("token") === "")) {
+    lIn.style.display = "block";
+    lOut.style.display = "none";
+  } else {
+    lIn.style.display = "none";
+    lOut.style.display = "block";
+  }
+}
+
+//Logout if button clicked
+function logoutNow(){
+  sessionStorage.setItem("token", "");
+  sessionStorage.setItem("userId", "");
+  fetch('http://localhost:8082/users/logout', {
+    method: 'get',
+    headers: { 
+      'token': sessionStorage.getItem('token')
+    },
+  })
+  .then(
+    function(response) {
+      if (response.status !== 201) {
+        console.log("Problem with back-end logout - response code:", response.status);
+        return;
+      }
+      response.test(data).then(function(data){
+        console.log(data);
+      })
     }
+  )
+  window.alert("Logout successful! Come back soon!");
+  window.location.reload();
+
 }
 
 function getID(id) {

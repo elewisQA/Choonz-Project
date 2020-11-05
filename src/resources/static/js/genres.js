@@ -1,15 +1,42 @@
 window.onload = loginout;
 
+// Show login button if you are logged out and show logout button if you are logged in
 function loginout(){
-    let lIn = document.getElementById("loginBtn");
-    let lOut = document.getElementById("logoutBtn");
-    if ((sessionStorage.getItem("token") === null) || (sessionStorage.getItem("token") === "")) {
-      lIn.style.display = "block";
-      lOut.style.display = "none";
-    } else {
-      lIn.style.display = "none";
-      lOut.style.display = "block";
+  let lIn = document.getElementById("loginBtn");
+  let lOut = document.getElementById("logoutBtn");
+  if ((sessionStorage.getItem("token") === null) || (sessionStorage.getItem("token") === "")) {
+    lIn.style.display = "block";
+    lOut.style.display = "none";
+  } else {
+    lIn.style.display = "none";
+    lOut.style.display = "block";
+  }
+}
+
+//Logout if button clicked
+function logoutNow(){
+  sessionStorage.setItem("token", "");
+  sessionStorage.setItem("userId", "");
+  fetch('http://localhost:8082/users/logout', {
+    method: 'get',
+    headers: { 
+      'token': sessionStorage.getItem('token')
+    },
+  })
+  .then(
+    function(response) {
+      if (response.status !== 201) {
+        console.log("Problem with back-end logout - response code:", response.status);
+        return;
+      }
+      response.test(data).then(function(data){
+        console.log(data);
+      })
     }
+  )
+  window.alert("Logout successful! Come back soon!");
+  window.location.reload();
+
 }
 
 fetch('http://localhost:8082/genres/read')
@@ -70,24 +97,5 @@ fetch('http://localhost:8082/genres/read')
       column.appendChild(card);
       
     }
-    // let find = document.getElementById("genres");
-    // let column = document.createElement("div");
-    // column.className = "col mb-4";
-    // let card = document.createElement("div");
-    // card.className = "card text-center text-white";
-    // find.appendChild(column);
-    // column.appendChild(card);
-
-    // let linkAdd = document.createElement("a");
-    // linkAdd.setAttribute("id", "addnew");
-    // linkAdd.href ="#";
-    // linkAdd.setAttribute("data-toggle", "modal")
-    // linkAdd.setAttribute("data-target", "#exampleModal")
-    // card.appendChild(linkAdd);
-
-    // let icon = document.createElement("i");
-    // icon.className = "fas fa-plus";
-    // icon.style = "color: whitesmoke;";
-    // linkAdd.appendChild(icon);
 
   }
