@@ -44,6 +44,7 @@ class TestUserControllerUnit {
 	
 	private List<User> userList;
 	private User testUser;
+	private User badTestUser;
 	private UserDTO userDTO;
 	
 	private final long id = 1L;
@@ -65,6 +66,7 @@ class TestUserControllerUnit {
     	this.userList = new ArrayList<>();
     	this.playlists = new ArrayList<>();
     	this.testUser = new User(this.id,this.username,this.password,this.playlists);
+    	this.badTestUser = new User(this.id,this.badUser,this.badPass,this.playlists);
     	this.userList.add(testUser);
     	this.userDTO = this.mapToDTO(testUser);
     	
@@ -93,21 +95,21 @@ class TestUserControllerUnit {
     	HttpHeaders headers = new HttpHeaders();
     	headers.add("token", token);
     	
-    	assertThat(new ResponseEntity<Boolean>(true, headers, HttpStatus.OK).getBody())
-    		.isEqualTo(this.controller.login(this.username, this.password).getBody());
+    	assertThat(String.class)
+    		.isEqualTo(this.controller.login(this.username, this.password).getBody().getClass());
     	
     	verify(this.service, times(1)).login(this.username, this.password);
     }
     
     @Test
     void failLoginTest() {
-    	when(this.service.login(badUser, badUser)).thenReturn(testUser.getId());
+    	when(this.service.login(badUser, badUser)).thenReturn(badTestUser.getId());
     	
     	HttpHeaders headers = new HttpHeaders();
     	headers.add("token", token);
     	
-    	assertThat(new ResponseEntity<Boolean>(true, headers, HttpStatus.OK).getBody())
-    		.isEqualTo(this.controller.login(this.badUser, this.badPass).getBody());
+    	assertThat(String.class)
+    		.isEqualTo(this.controller.login(this.badUser,this.badPass).getBody().getClass());
     	
     	verify(this.service, times(1)).login(this.badUser, this.badPass);
     }
