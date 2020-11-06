@@ -137,7 +137,7 @@ function populate(data) {
 
             let songName = document.createElement("td");
             let link = document.createElement("a");
-            link.href = "#";
+            link.href = "viewTrack.html?id=" + a["tracks"][key]["id"];
             link.textContent = value;
             row.appendChild(songName);
             songName.appendChild(link);
