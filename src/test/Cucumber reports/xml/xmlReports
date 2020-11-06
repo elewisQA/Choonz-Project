@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite failures="0" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="1" time="43.810311">
+    <testcase classname="testArtists" name="Can browse the website and test out functionality" time="43.810311">
+        <system-out><![CDATA[Given The correct web address...............................................passed
+When I navigate to the 'Artist' page........................................passed
+And I can click on an artist................................................passed
+Then I can select an album from the artist..................................passed
+And I can add a song to my desired playlist.................................passed
+Then I navigate to the 'Playlist' page......................................passed
+And I can click on my desired playlist......................................passed
+Then I can check the previously added song exists in the playlist...........passed
+And I can delete the song from the playlist.................................passed
+Then I navigate to the search bar...........................................passed
+And I can search for an artist..............................................passed
+Then I can search for an album..............................................passed
+And I can search for an song................................................passed
+Then I can search for an playlist...........................................passed
+And I can search for an genre...............................................passed
+Then I can create a new playlist............................................passed
+And I can delete the new playlist...........................................passed
+Then I can log out..........................................................passed
+And I can make a new user...................................................passed
+Then I can log in with the new user credentials.............................passed
+And I can find a specific track page........................................passed
+]]></system-out>
+    </testcase>
+</testsuite>
