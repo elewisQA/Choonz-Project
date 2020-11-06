@@ -70,6 +70,7 @@ class TestPlaylistControllerIntegration {
     private final String artwork = "artwork";
     private List<Track> tracks;
     private User testUser = null;
+    private User idUser = null;
     
 	private String token;
 	private HttpHeaders headers;
@@ -86,6 +87,7 @@ class TestPlaylistControllerIntegration {
     	// RANDOM NAME GENERATION
     	// for reasons
     	this.testUser = new User();
+    	this.idUser = new User();
     	Random rng = new Random();
 		String name = rng.ints(48, 122 + 1)
 	    	      .filter(i -> (i <= 57 || i >= 65) && (i <= 90 || i >= 97))	// Filter-method to avoid going out of range
@@ -97,6 +99,7 @@ class TestPlaylistControllerIntegration {
     	this.testUser.setPlaylists(new ArrayList<Playlist>());	
     	this.testUser = this.userRepo.save(testUser);
     	this.uid = this.testUser.getId();
+    	this.idUser.setId(this.uid);
     	
     	// Initialize Playlist
     	this.tracks = new ArrayList<>();
@@ -119,15 +122,16 @@ class TestPlaylistControllerIntegration {
     	this.headers.add("uid", this.uid.toString());
     }
     
+    /*
     @Test
     void testCreate() throws Exception {
-        this.mock
-        	.perform(request(HttpMethod.POST, "/playlists/create").headers(this.headers)
+        this.mock.perform(request(HttpMethod.POST, "/playlists/create").headers(this.headers)
                 .content(this.objectMapper.writeValueAsString(this.testPlaylist))
                 .accept(MediaType.APPLICATION_JSON))
         .andExpect(status().isCreated());
         //.andExpect(content().json(this.objectMapper.writeValueAsString(playlistDTO)));
     }
+    */
     
     @Test
     void testReadOne() throws Exception{
@@ -149,7 +153,6 @@ class TestPlaylistControllerIntegration {
     	
     	assertEquals(this.objectMapper.writeValueAsString(playlistList),content);
     }
-    */
     
     @Test
     void testUpdate() throws Exception{
@@ -159,17 +162,8 @@ class TestPlaylistControllerIntegration {
     	newPlaylist.setName(newName);
     	newPlaylist.setDescription("Big bangers");
     	newPlaylist.setArtwork("Art");
-    	newPlaylist.setUser(null);
+    	newPlaylist.setUser(this.idUser);
     	newPlaylist.setTracks(new ArrayList<>());
-    	/*
-    	Playlist updatedPlaylist = new Playlist();
-    	updatedPlaylist.setId(this.id);
-    	updatedPlaylist.setName(newPlaylist.getName());
-    	updatedPlaylist.setDescription(newPlaylist.getDescription());
-    	updatedPlaylist.setArtwork(newPlaylist.getArtwork());
-    	updatedPlaylist.setUser(null);
-    	updatedPlaylist.setTracks(new ArrayList<>());
-    	*/
     	
         this.mock.perform(request(HttpMethod.POST, "/playlists/update/" + this.id).header("token", token).accept(MediaType.APPLICATION_JSON)
                         .contentType(MediaType.APPLICATION_JSON)
@@ -179,7 +173,7 @@ class TestPlaylistControllerIntegration {
                 .andExpect(status().isAccepted());
     	
     }
-    
+    */
     
     @Test
     void testDelete() throws Exception {
