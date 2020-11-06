@@ -69,7 +69,7 @@ class TestUserControllerIntegration {
 	
 	@BeforeAll
 	static void setup() {
-		AuthUtils auth = new AuthUtils();
+		AuthUtils.initialize();
 	}
 	
     @BeforeEach
