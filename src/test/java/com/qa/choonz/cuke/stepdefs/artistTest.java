@@ -48,7 +48,7 @@ public class artistTest {
 	
 	@Given("^The correct web address$")
 	public void the_correct_web_address() throws Throwable {
-		driver.get("http://127.0.0.1:5501/static/index.html");
+		driver.get("http://localhost:8082/");
 		System.out.println("choonz website accessed");
 		//log out and log in
 //		targ = driver.findElement(By.xpath("/html/body/nav/button/span"));
