@@ -58,7 +58,7 @@ This should be scaleable from 3 to 5+ entities:
 
 ### Risk Matrix
 
-![Risk Matrix](documentation/Risk matrix.PNG)
+![Risk Matrix](documentation/RISK-MATRIX.png)
 
 ## Setting-Up Development
 1. Ensure you have the required tools (see Technical requirements)
