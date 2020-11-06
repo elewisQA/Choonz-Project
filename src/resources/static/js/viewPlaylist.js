@@ -113,8 +113,8 @@ function populate(data) {
             console.log(newPosition);
             console.log(key);
             console.log(data['tracks']);
-            array_move(tracks, newPosition, key);  
-            //array_move([10, 20, 30, 40, 50], 0, 2);
+            //array_move(tracks, newPosition, key);  
+            array_move(tracks, newPosition, key, playlistId);
           }
       });
         //songId.textContent = songCount;
@@ -327,7 +327,7 @@ function addTrack(trackId, playlistId){
   });
 }
 
-function array_move(arr, old_index, new_index) {
+function array_move(arr, old_index, new_index, playlistId) {
   while (old_index < 0) {
       old_index += arr.length;
   }
@@ -341,6 +341,59 @@ function array_move(arr, old_index, new_index) {
       }
   }
   
-   arr.splice(new_index, 0, arr.splice(old_index, 1)[0]);  
+   arr.splice(new_index, 0, arr.splice(old_index, 1)[0]); 
+  readOrder(arr, playlistId);
  console.log(arr);
 }
+
+function readOrder(arr, id) {
+  fetch('http://localhost:8082/playlists/read/' + id)
+   .then(
+     function(response) {
+       if (response.status !== 200) {
+         console.log('Looks like there was a problem. Status Code: ' +
+           response.status);
+         return;
+       }
+ 
+       // Examine the text in the response
+       response.json().then(function(data) {
+         console.log(data['tracks']);
+         let name = data['name'];
+         let description = data['description'];
+         let artwork = data['artwork'];
+         updateOrder(name, description, artwork, id, arr);
+       });
+     }
+   )
+   .catch(function(err) {
+     console.log('Fetch Error :-S', err);
+   });
+ }
+
+ function updateOrder(playlistName, playlistDesc, playlistPic, id, arr) {
+
+  fetch('http://localhost:8082/playlists/update/' + id, {
+      method: 'post',
+      headers: {
+           "Content-type": "application/json",
+           "token": sessionStorage.getItem('token'),
+           "uid": sessionStorage.getItem('userId')
+      },
+      body:json = JSON.stringify({
+       "name": playlistName,
+       "artwork": playlistPic,
+       "description": playlistDesc,
+       "tracks": arr
+      })
+      })
+      .then(json)
+      .then(function (data) {
+          console.log('Request succeeded with JSON response', data);
+           //window.location.href = "viewPlaylist.html?id=" + id;
+      })
+      .catch(function (error) {
+          console.log('Request failed', error);
+      });
+}
+

@@ -67,33 +67,5 @@ fetch('http://localhost:8082/artists/read')
       artist.appendChild(artistText);
       
     }
-    // let find = document.getElementById("artists");
-    // let column = document.createElement("div");
-    // column.className = "col mb-4";
-    // let card = document.createElement("div");
-    // card.className = "card text-center";
-    // find.appendChild(column);
-    // column.appendChild(card);
-
-    // let image = document.createElement("img");
-    // image.className = "card-img-top";
-    // image.src = "../img/newArtist.jpg";
-    // card.appendChild(image);
-
-    // let body = document.createElement("div");
-    // body.className = "card-body";
-    // card.appendChild(body);
-
-    // let linkAdd = document.createElement("a");
-    // linkAdd.className = "btn btn-info";
-    // linkAdd.href ="#";
-    // linkAdd.setAttribute("data-toggle", "modal")
-    // linkAdd.setAttribute("data-target", "#exampleModal")
-    // body.appendChild(linkAdd);
-
-    // let icon = document.createElement("i");
-    // icon.className = "fas fa-plus";
-    // icon.style = "color: whitesmoke;";
-    // linkAdd.appendChild(icon);
 
   }

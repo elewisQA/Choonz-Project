@@ -50,8 +50,7 @@ function validateForm(){
            method: 'post',
            headers: {
                 "Content-type": "application/json",
-                "token": sessionStorage.getItem('token'),
-                "uid": sessionStorage.getItem('userId')
+                "token": sessionStorage.getItem('token')
            },
            body:json = JSON.stringify({
             "name": playlistName,
@@ -62,7 +61,7 @@ function validateForm(){
            .then(json)
            .then(function (data) {
                console.log('Request succeeded with JSON response', data);
-                window.location.href = "viewPlaylist.html?id=" + id;
+                //window.location.href = "viewPlaylist.html?id=" + id;
            })
            .catch(function (error) {
                console.log('Request failed', error);

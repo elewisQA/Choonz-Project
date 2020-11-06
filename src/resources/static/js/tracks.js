@@ -53,15 +53,9 @@ function populate(data) {
     // Populate the table
     count = 0;
     for (let key in data) {
-        // data.sort(function(a,b){
-        //     if (a.name < b.name) {return -1;}
-        //     else if (a.name > b.name) {return 1;}
-        //     else{return 0;}
-        // });
         let trackId = data[key]['id'];
         let albumId = data[key]["album"]["id"];
         console.log(albumId);
-        //console.log(data[key]['album']['id']);
      let value = data[key]["name"];
      let album = data[key]["album"]["cover"];
      console.log(value);
@@ -93,15 +87,6 @@ function populate(data) {
      songName.appendChild(link);
      songName.appendChild(br);
      getArtist(albumId, count);
-
-        // let br = document.createElement("br");
-        // songName.appendChild(br);
-        // let artistLink = document.createElement("a");
-        // artistLink.id = "artistLinkID";
-        // artistLink.href = "#";
-        // artistLink.textContent = "artist";
-        // songName.appendChild(artistLink);
-
       
      let songIcon = document.createElement("td");
      let dropdownMenu = document.createElement("div");
@@ -170,13 +155,6 @@ function getArtist(albumId, count) {
        // Examine the text in the response
        response.json().then(function(data) {
          console.log(data['artist']['name']);
-        //  let find = document.getElementById("trackName");
-        //  let br = document.createElement("br");
-        //  let artistLink = document.createElement("a");
-        //  artistLink.href = "#";
-        //  artistLink.textContent = data['artist']['name'];
-        //  find.appendChild(br);
-        //  find.appendChild(artistLink);
          addArtist(data, count);
        });
      }
@@ -188,15 +166,6 @@ function getArtist(albumId, count) {
 
 function addArtist(data, count){
   console.log(data['artist']['id'])
-//   let find = document.getElementById("row_id");
-//   let songArtist = document.createElement("td");
-//      let link = document.createElement("a");
-//      link.href = "#";
-//      link.textContent = data['artist']['name'];
-//      songArtist.appendChild(link);
-//      find.appendChild(songArtist);
-
-//         artistName = data['artist']['name'];
 
         let find = document.getElementById("trackName" + count);
         let br = document.createElement("br");
