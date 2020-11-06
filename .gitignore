@@ -1,0 +1,7 @@
+target/
+.settings/
+.classpath
+.project
+bin/
+src/test/resources/drivers
+src/test/resources/drivers/chromedriver.exe

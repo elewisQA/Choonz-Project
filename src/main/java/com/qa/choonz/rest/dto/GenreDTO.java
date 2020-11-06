@@ -9,18 +9,19 @@ public class GenreDTO {
 
     private long id;
     private String name;
+    private String picture;
     private String description;
     private List<Album> albums;
 
     public GenreDTO() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
-    public GenreDTO(long id, String name, String description, List<Album> albums) {
+    public GenreDTO(long id, String name, String picture, String description, List<Album> albums) {
         super();
         this.id = id;
         this.name = name;
+        this.picture = picture;
         this.description = description;
         this.albums = albums;
     }
@@ -40,6 +41,14 @@ public class GenreDTO {
     public void setName(String name) {
         this.name = name;
     }
+    
+    public String getPicture() {
+        return picture;
+    }
+
+    public void setPicture(String picture) {
+        this.picture = picture;
+    }
 
     public String getDescription() {
         return description;
@@ -49,25 +58,25 @@ public class GenreDTO {
         this.description = description;
     }
 
-    public List<Album> getAlbums() {
-        return albums;
-    }
-
     public void setAlbums(List<Album> albums) {
         this.albums = albums;
+    }
+    
+    public List<Album> getAlbums() {
+    	return this.albums;
     }
 
     @Override
     public String toString() {
         StringBuilder builder = new StringBuilder();
-        builder.append("GenreDTO [id=").append(id).append(", name=").append(name).append(", description=")
+        builder.append("GenreDTO [id=").append(id).append(", name=").append(name).append(", picture=").append(picture).append(", description=")
                 .append(description).append(", albums=").append(albums).append("]");
         return builder.toString();
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(albums, description, id, name);
+        return Objects.hash(albums, description, id, name, picture);
     }
 
     @Override
@@ -80,7 +89,7 @@ public class GenreDTO {
         }
         GenreDTO other = (GenreDTO) obj;
         return Objects.equals(albums, other.albums) && Objects.equals(description, other.description) && id == other.id
-                && Objects.equals(name, other.name);
+                && Objects.equals(name, other.name) && Objects.equals(picture, other.picture);
     }
 
 }

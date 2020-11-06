@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/a10b9d576b.js" crossorigin="anonymous"></script>
+    <title>Playlists</title>
+</head>
+<body>
+    
+    <!-- Navbar -->
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="index.html">
+            <img class="logo" src="../img/Choonz.png" width="auto" ml-auto height="50">
+        </a>
+        <button class="navbar-toggler collapsed border-0" type="button" data-toggle="collapse" data-target="#collapsingNavbar">
+          <span class="navbar-toggler-icon"></span>
+          <div class="close-icon py-1">✖</div>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsingNavbar">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="tracks.html">Tracks</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="artists.html">Artists</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="albums.html">Albums</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="genres.html">Genres</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="playlists.html">Top Playlists</a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+            <button type="button" id="loginBtn" class="btn btn-info" style="margin-left: 5px; display: block;" onclick="location.href = 'index.html';">Login</button>
+        <button type="button" id="logoutBtn" class="btn btn-danger" style="margin-left: 5px; display: none;" onclick="logoutNow()">Logout</button>
+        </div>
+      </nav>
+
+      <div class="row row-cols-1 row-cols-md-5" id="playlists">
+        <!-- <div class="col mb-4">
+          <div class="card text-center text-white">
+            <img src="https://i.pinimg.com/564x/38/41/48/384148d27fb01b2ff9455e05aa7b3557.jpg" class="card-img-top" alt="...">
+            <div class="card-img-overlay text-center">
+                <a href=""><h1 class="card-title">00s Hits</h1></a>
+            </div>
+          </div>
+        </div> -->
+
+        <!-- <div class="col mb-4">
+            <div class="card text-center text-white">
+                <a href="#" id="addnew"><i class="fas fa-plus"></i></a>
+            </div>
+        </div> -->
+        <!-- <div class="col mb-4">
+          <div class="card text-center">
+            <img src="../img/Blank.jpg" class="card-img-top" alt="...">
+            <div class="card-body">       
+              <a class="btn btn-info" href="#">
+                <i class="fas fa-plus" style="color: whitesmoke;"></i>
+              </a>      
+            </div>
+          </div> -->
+      </div>
+
+      <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title" id="exampleModalLabel">New Playlist</h2>
+          <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button> -->
+        </div>
+        <div class="modal-body">
+          <form name="createNewPlaylist" class="playlist" id="playlistModal" method="POST" onsubmit="return validateForm()">
+            <div class="form-group">
+              <label for="playlistName">Name: </label>
+              <input type="text" class="form-control" id="playlistName" name="name">
+            </div>
+            <div class="form-group">
+              <label for="playlistPic">Picture URL: </label>
+              <input type="text" class="form-control" id="playlistPic" name="pic">     
+            </div>
+            <div class="form-group">
+              <label for="playlistDesc">Description: </label>
+              <textarea class="form-control" id="playlistDesc" name="desc" form="playlistModal"></textarea>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="reset" class="btn btn-info" id="reset-button">Clear</button>
+              <button type="submit" class="btn btn-info" id="submit-button">Save changes</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /Modal -->
+      <script src="js/newPlaylist.js"></script>
+      <script src="js/playlists.js"></script>
+      <script src="js/search.js"></script>
+      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>    
+</body>
+</html>

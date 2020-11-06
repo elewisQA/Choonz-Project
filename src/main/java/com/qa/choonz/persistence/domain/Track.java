@@ -1,5 +1,6 @@
 package com.qa.choonz.persistence.domain;
 
+import java.util.List;
 import java.util.Objects;
 
 import javax.persistence.Column;
@@ -7,9 +8,16 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinTable;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 @Entity
 public class Track {
@@ -23,29 +31,37 @@ public class Track {
     @Column(unique = true)
     private String name;
 
+    @JsonBackReference(value="album")
     @ManyToOne
     private Album album;
 
-    @ManyToOne
-    private Playlist playlist;
+    @JsonIdentityInfo(
+    		  generator = ObjectIdGenerators.PropertyGenerator.class, 
+    		  property = "id")
+    @ManyToMany
+    @JoinTable(
+    		name = "track_playlists",
+    		joinColumns = @JoinColumn(name = "track_id"),
+    		inverseJoinColumns = @JoinColumn(name = "playlist_id"))
+    private List<Playlist> playlists;
 
     // in seconds
-    private int duration;
+    private Float duration;
 
+    @Size(max = 6000)
     private String lyrics;
 
     public Track() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
-    public Track(long id, @NotNull @Size(max = 100) String name, Album album, Playlist playlist, int duration,
-            String lyrics) {
-        super();
+    public Track(long id, @NotNull @Size(max = 100) String name, Album album, List<Playlist> playlists, Float duration,
+    		@Size(max = 6000) String lyrics) {
+    	super();
         this.id = id;
         this.name = name;
         this.album = album;
-        this.playlist = playlist;
+        this.playlists = playlists;
         this.duration = duration;
         this.lyrics = lyrics;
     }
@@ -74,19 +90,19 @@ public class Track {
         this.album = album;
     }
 
-    public Playlist getPlaylist() {
-        return playlist;
+    public List<Playlist> getPlaylists() {
+        return playlists;
     }
 
-    public void setPlaylist(Playlist playlist) {
-        this.playlist = playlist;
+    public void setPlaylists(List<Playlist> playlists) {
+        this.playlists = playlists;
     }
 
-    public int getDuration() {
+    public Float getDuration() {
         return duration;
     }
 
-    public void setDuration(int duration) {
+    public void setDuration(Float duration) {
         this.duration = duration;
     }
 
@@ -98,18 +114,19 @@ public class Track {
         this.lyrics = lyrics;
     }
 
+    
     @Override
     public String toString() {
         StringBuilder builder = new StringBuilder();
         builder.append("Track [id=").append(id).append(", name=").append(name).append(", album=").append(album)
-                .append(", playlist=").append(playlist).append(", duration=").append(duration).append(", lyrics=")
+                .append(", playlists=").append(playlists).append(", duration=").append(duration).append(", lyrics=")
                 .append(lyrics).append("]");
         return builder.toString();
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(album, duration, id, lyrics, name, playlist);
+        return Objects.hash(album, duration, id, lyrics, name, playlists);
     }
 
     @Override
@@ -123,7 +140,7 @@ public class Track {
         Track other = (Track) obj;
         return Objects.equals(album, other.album) && duration == other.duration && id == other.id
                 && Objects.equals(lyrics, other.lyrics) && Objects.equals(name, other.name)
-                && Objects.equals(playlist, other.playlist);
+                && Objects.equals(playlists, other.playlists);
     }
 
 }

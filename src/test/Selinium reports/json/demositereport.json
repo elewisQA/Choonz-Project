@@ -1,0 +1,296 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 2885758300,
+              "status": "passed"
+            },
+            "match": {
+              "location": "artistTest.init()"
+            }
+          }
+        ],
+        "line": 8,
+        "name": "Can browse the website and test out functionality",
+        "description": "",
+        "id": "testartists;can-browse-the-website-and-test-out-functionality",
+        "after": [
+          {
+            "result": {
+              "duration": 698422400,
+              "status": "passed"
+            },
+            "match": {
+              "location": "artistTest.tearDown()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 2535916700,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "The correct web address",
+            "match": {
+              "location": "artistTest.the_correct_web_address()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 3795182100,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "I navigate to the \u0027Artist\u0027 page",
+            "match": {
+              "location": "artistTest.i_navigate_to_the_Artist_page()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 1154729000,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "I can click on an artist",
+            "match": {
+              "location": "artistTest.i_can_click_on_an_artist()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 645768100,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "I can select an album from the artist",
+            "match": {
+              "location": "artistTest.i_can_select_an_album_from_the_artist()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 1741158400,
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "I can add a song to my desired playlist",
+            "match": {
+              "location": "artistTest.i_can_add_a_song_to_my_desired_playlist()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1223860700,
+              "status": "passed"
+            },
+            "line": 14,
+            "name": "I navigate to the \u0027Playlist\u0027 page",
+            "match": {
+              "location": "artistTest.i_navigate_to_the_Playlist_page()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 1157558800,
+              "status": "passed"
+            },
+            "line": 15,
+            "name": "I can click on my desired playlist",
+            "match": {
+              "location": "artistTest.i_can_click_on_my_desired_playlist()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 58470400,
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "I can check the previously added song exists in the playlist",
+            "match": {
+              "location": "artistTest.i_can_check_the_previously_added_song_exists_in_the_playlist()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 1183945700,
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "I can delete the song from the playlist",
+            "match": {
+              "location": "artistTest.i_can_delete_the_song_from_the_playlist()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1782845800,
+              "status": "passed"
+            },
+            "line": 18,
+            "name": "I navigate to the search bar",
+            "match": {
+              "location": "artistTest.i_navigate_to_the_search_bar()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 1239178000,
+              "status": "passed"
+            },
+            "line": 19,
+            "name": "I can search for an artist",
+            "match": {
+              "location": "artistTest.i_can_search_for_an_artist()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 3054158300,
+              "status": "passed"
+            },
+            "line": 20,
+            "name": "I can search for an album",
+            "match": {
+              "location": "artistTest.i_can_search_for_an_album()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 3057132400,
+              "status": "passed"
+            },
+            "line": 21,
+            "name": "I can search for an song",
+            "match": {
+              "location": "artistTest.i_can_search_for_an_song()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 2921206000,
+              "status": "passed"
+            },
+            "line": 22,
+            "name": "I can search for an playlist",
+            "match": {
+              "location": "artistTest.i_can_search_for_an_playlist()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 2963629200,
+              "status": "passed"
+            },
+            "line": 23,
+            "name": "I can search for an genre",
+            "match": {
+              "location": "artistTest.i_can_search_for_an_genre()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 3330678400,
+              "status": "passed"
+            },
+            "line": 24,
+            "name": "I can create a new playlist",
+            "match": {
+              "location": "artistTest.i_can_create_a_new_playlist()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 1835331000,
+              "status": "passed"
+            },
+            "line": 25,
+            "name": "I can delete the new playlist",
+            "match": {
+              "location": "artistTest.i_can_delete_the_new_playlist()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 2299480900,
+              "status": "passed"
+            },
+            "line": 26,
+            "name": "I can log out",
+            "match": {
+              "location": "artistTest.i_can_log_out()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 1827707600,
+              "status": "passed"
+            },
+            "line": 27,
+            "name": "I can make a new user",
+            "match": {
+              "location": "artistTest.i_can_make_a_new_user()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1209398500,
+              "status": "passed"
+            },
+            "line": 28,
+            "name": "I can log in with the new user credentials",
+            "match": {
+              "location": "artistTest.i_can_log_in_with_the_new_user_credentials()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 2332803200,
+              "status": "passed"
+            },
+            "line": 29,
+            "name": "I can find a specific track page",
+            "match": {
+              "location": "artistTest.i_can_find_a_specific_track_page()"
+            },
+            "keyword": "And "
+          }
+        ]
+      }
+    ],
+    "name": "testArtists",
+    "description": "As a user\r\nI want to browse artists on the website\r\nSo i can add to playlist\r\nI want to use the search bar to search for playlists, songs\r\nartists, genres and albums",
+    "id": "testartists",
+    "keyword": "Feature",
+    "uri": "artistTest.feature"
+  }
+]
