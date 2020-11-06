@@ -10,12 +10,8 @@ public class AuthUtils {
 	private static Map<String, Long> adminTokens; // Future-proofing, used to lock-off API calls
 	
 	public static void initialize() {
-		if (userTokens == null) {
-			userTokens = new HashMap<>();
-		}
-		if (adminTokens == null) {
-			adminTokens = new HashMap<>();
-		}
+		userTokens = new HashMap<>();
+		adminTokens = new HashMap<>();
 	}
 	
 	//--[ Login Methods ]--

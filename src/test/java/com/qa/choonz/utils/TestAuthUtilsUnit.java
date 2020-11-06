@@ -6,12 +6,11 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 class TestAuthUtilsUnit {
-	private AuthUtils utils;
 	private final Long ID = 1L;
 	
 	@BeforeEach
 	void init() {
-		this.utils = new AuthUtils();
+		AuthUtils.initialize();
 	}
 	
 	@Test
