@@ -56,12 +56,15 @@ function validateForm(){
             "name": playlistName,
             "artwork": playlistPic,
             "description": playlistDesc,
+            "user": {
+                "id": sessionStorage.getItem('userId')
+            }
            })
            })
            .then(json)
            .then(function (data) {
                console.log('Request succeeded with JSON response', data);
-                //window.location.href = "viewPlaylist.html?id=" + id;
+                window.location.href = "viewPlaylist.html?id=" + id;
            })
            .catch(function (error) {
                console.log('Request failed', error);

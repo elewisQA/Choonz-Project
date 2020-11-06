@@ -377,14 +377,16 @@ function readOrder(arr, id) {
       method: 'post',
       headers: {
            "Content-type": "application/json",
-           "token": sessionStorage.getItem('token'),
-           "uid": sessionStorage.getItem('userId')
+           "token": sessionStorage.getItem('token')
       },
       body:json = JSON.stringify({
        "name": playlistName,
        "artwork": playlistPic,
        "description": playlistDesc,
-       "tracks": arr
+       "tracks": arr,
+       "user": {
+                "id": sessionStorage.getItem('userId')
+            }
       })
       })
       .then(json)
