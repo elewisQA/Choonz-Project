@@ -18,6 +18,7 @@ This should be scaleable from 3 to 5+ entities:
 - Java 14
 - Some IDE either Eclipse or Intellij
 - Springboot for your IDE
+- [Chromedriver] (https://chromedriver.chromium.org/)
 
 **Required Libraries:** (included in *pom.xml*)
 - Springboot Framework (v 2.3.4)
@@ -63,6 +64,8 @@ TBD
 2. Clone this repository or download it as a *.zip* file and un-pack it. Open the project in Eclipse or Intellij, setting it up as a Maven project.
 3. Run the 'ChoonzApplication.java' file in `src/com/qa/choonz` - this is the main runner for the Springboot application.
 4. The application should be hosted as 'localhost:8082/'
+  
+**Note:** To run Selenium tests, you will need to download ['Chromedriver.exe'](https://chromedriver.chromium.org/downloads) (*or a web-driver for your preferred browser*) and place it under `src/test/resources/drivers/`  
 
 ## Authors
 
@@ -87,4 +90,5 @@ TBD
 
 ## Acknowledgements
 - [**Baeldung**](https://www.baeldung.com/java-random-string) - for Random-String generation code
+- [**Chromedriver**](https://chromedriver.chromium.org/)
 
