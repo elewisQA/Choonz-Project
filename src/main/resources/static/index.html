@@ -3,53 +3,159 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="/css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="../static/css/style.css">
     <title>Choonz Music</title>
 </head>
 
 <body>
-<!-- Navbar -->
-
-<nav class="navbar fixed-top navbar-expand-lg bg-light navbar-light">
-    <a class="navbar-brand" href="./">
-    <img class="logo" src="../img/Choonz.jpg" width="auto" ml-auto height="50"></a>
+<!-- Navbar with search -->
+<nav class="navbar fixed-top navbar-expand-lg navbar-light">
+    <a class="navbar-brand" href="index.html">
+        <img class="logo" src="../img/Choonz.png" width="auto" ml-auto height="50">
+    </a>
     <button class="navbar-toggler collapsed border-0" type="button" data-toggle="collapse" data-target="#collapsingNavbar">
         <span class="navbar-toggler-icon"></span>
         <div class="close-icon py-1">✖</div>
     </button>
     <div class="collapse navbar-collapse" id="collapsingNavbar">
-        <ul class="nav navbar-nav">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
             <li class="nav-item">
-                <a class="nav-link" href="/tracks">Featured Tracks</a>
+                <a class="nav-link" href="tracks.html">Tracks</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/artists">Artists</a>
+                <a class="nav-link" href="artists.html">Artists</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/playlists">Top Playlists</a>
+                <a class="nav-link" href="albums.html">Albums</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="genres.html">Genres</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="playlists.html">Top Playlists</a>
             </li>
         </ul>
+        <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search">
+            <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>
+        </form>
+        <!-- <button type="button" id="loginBtn" class="btn btn-info" style="margin-left: 5px; display: block;" onclick="showLogin()">Login</button> -->
+        <button type="button" id="logoutBtn" class="btn btn-danger" style="margin-left: 5px; display: none;" onclick="logoutNow()">Logout</button>
     </div>
 </nav>
-<!-- /Navbar -->
+<!-- /Navbar with search -->
 
-<!-- Search -->
+<!-- Top quote -->
+<div class="topquote">“Where words fail, music speaks.”</div><div class="andersen">– Hans Christian Andersen</div>
+<!-- /Top quote -->
 
-    <div class="container">
-        <div class="row">
-            <div class="col-lg mt-5">
-                <form class="form-inline d-flex justify-content-center md-form form-sm">
-                    <input class="form-control form-control-sm mr-1 w-75" type="text" placeholder="Search for music..." aria-label="Search">
-                    <button type="submit" id="Search"> Search </button>
-                </form>
+<!-- Login -->
+    <div class="login-reg-panel" id="login">                      
+        <div class="register-info-box">
+            <h2>Don't have an account?</h2>
+            <label id="label-login" for="log-login-show">Register</label>
+            <input type="radio" name="active-log-panel" id="log-login-show" data-toggle="modal" data-target="#exampleModal">
+        </div>
+                            
+        <div class="white-panel">
+            <div class="login-show">
+                <h2>LOGIN</h2>
+                <input type="text" placeholder="Username" id="user_login">
+                <input type="password" placeholder="Password" id="password_login">
+                <input type="button" value="Login" onclick="javascript:login();">
+                <a href="">Forgot password?</a>
             </div>
         </div>
     </div>
+<!-- /Login -->
 
-<!-- /Search -->
+<!-- Register -->
 
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Registration form</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <form name="RegForm" method="post">
+                <div class="form-group">
+                    <label for="Username" class="col-form-label">Username:</label>
+                    <input type="text" class="form-control" id="Username">
+                </div>
+                <div class="form-group">
+                    <label for="Password" class="col-form-label">Password:</label>
+                    <input type="password" class="form-control" id="Password">
+                </div>
+                <div class="form-group">
+                    <label for="Password2" class="col-form-label">Password again:</label>
+                    <input type="password" class="form-control" id="Password2">
+                </div>
+                <div class="modal-footer">
+                <input type="submit" class="btn btn-success" value="Sign up" name="submit" onclick="event.preventDefault(); register()" /> 
+                <input type="reset" class="btn btn-secondary" value="Reset" name="reset" />
+                <input type="reset" class="btn btn-danger" data-dismiss="modal" value="Close" name="close" onclick="resetThis()" />
+                </div>
+              </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- /Register -->
+
+<!-- Carousel -->
+
+<div class="casouselContainer">
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+        <div class="carousel-item active" id="img1">
+            <img class="d-block w-100" style="height: 20%;" src="https://www.diehardagnetha.com/gallery/galleries/Color/Abba/Abba_002124_1976_Wolfgang_Heilemann_Hamburg.jpg" alt="artist">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>ABBA</h5>
+                <p>Favourite Artist of the Season</p>
+            </div>
+        </div>
+        <div class="carousel-item" id="img2">
+            <img class="d-block w-100" style="height: 20%;" src="https://ichef.bbci.co.uk/images/ic/960x540/p01bqhlb.jpg" alt="artist2">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>Pink Floyd</h5>
+                <p>Favourite Artist of the week</p>
+            </div>
+        </div>
+        <div class="carousel-item" id="img3">
+            <img class="d-block w-100" style="height: 20%;" src="https://fstvls.s3.amazonaws.com/41/41355.jpg" alt="artist3">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>Our Last Night</h5>
+                <p>Favourite Artist of the day</p>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+<!-- /Carousel -->
+
+<!-- After Login -->
+<div class="userlogedin" id="userlogedin">
+    <div class="welcome" id="welcome" style="margin-bottom: 10%;">Welcome</div>
+    <div class="whattodo">
+        Now that you are logged in, you will be able to create a new playlist and edit or delete your existing playlists.<br><br>
+        Have fun!<br>
+        <p style="float: right; margin-right: 10%;"><i>~ Team Flying</i></p>
+    </div>
+</div>
+
+<!-- /After Login -->
+
+<script src="../static/js/front.js"></script>
+<script src="../static/js/search.js"></script>
+<!-- <script src="../static/js/carousel.js"></script> -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
