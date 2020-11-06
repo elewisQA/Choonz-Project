@@ -18,7 +18,7 @@ This should be scaleable from 3 to 5+ entities:
 - Java 14
 - Some IDE either Eclipse or Intellij
 - Springboot for your IDE
-- [Chromedriver] (https://chromedriver.chromium.org/)
+- [Chromedriver](https://chromedriver.chromium.org/)
 
 **Required Libraries:** (included in *pom.xml*)
 - Springboot Framework (v 2.3.4)
@@ -51,13 +51,14 @@ This should be scaleable from 3 to 5+ entities:
 **Genres**
 - Users can browse albums that fit certain genres.
 
-## ERD
+## Documentation
+### ERD
 
 ![Entity Relationship Diagram](documentation/ERD.png)
 
-## UML
+### Risk Matrix
 
-TBD
+![Risk Matrix](documentation/Risk matrix.PNG)
 
 ## Setting-Up Development
 1. Ensure you have the required tools (see Technical requirements)
